@@ -1,0 +1,28 @@
+<aw-panel>
+    <aw-panel-body>
+        <aw-panel-section caption="Default">
+            <aw-listbox prop="data.listBox1" action="selectionChange"></aw-listbox>
+            <aw-label prop="data.box1"> </aw-label>
+        </aw-panel-section>
+        <aw-panel-section caption="Legacy: use list">
+            <aw-listbox prop="data.listBox2" action="selectionChange2" list="data.listBox1Values.dbValue"></aw-listbox>
+            <aw-label prop="data.box2"> </aw-label>
+        </aw-panel-section>
+        <aw-panel-section caption="Legacy: set first value if not set">
+            <aw-listbox prop="data.listBox3" action="selectionChange3" list="data.listBox1Values.dbValue"></aw-listbox>
+            <aw-label prop="data.box3"> </aw-label>
+        </aw-panel-section>
+        <aw-panel-section caption="Legacy: set first value if not set, list was async loaded">
+            <aw-listbox prop="data.listBox4" action="selectionChange4" list="data.listBox2Values"></aw-listbox>
+            <aw-label prop="data.box4"> </aw-label>
+        </aw-panel-section>
+        <aw-panel-section caption="listbox with select-only">
+            <aw-listbox prop="data.listBoxSelectOnly" action="selectOnlySelectionChange" is-select-only='true'>
+            </aw-listbox>
+            <aw-label prop="data.boxSelectOnly"> </aw-label>
+        </aw-panel-section>
+        <aw-panel-section caption="Default with preferred choices">
+            <aw-listbox prop="data.listBoxPreferredChoice"></aw-listbox>
+        </aw-panel-section>
+    </aw-panel-body>
+</aw-panel>

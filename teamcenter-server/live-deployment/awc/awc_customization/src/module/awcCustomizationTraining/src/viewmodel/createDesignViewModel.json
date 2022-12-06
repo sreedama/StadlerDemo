@@ -1,0 +1,305 @@
+{
+    "schemaVersion": "1.0.0",
+    "data": {
+        "listBox1": {
+            "displayName": "Active Workspace Based Applications",
+            "name": "listBox1",
+            "type": "STRING",
+            "isRequired": true,
+            "dataProvider": "dataProviderListBox1Values",
+            "dbValue": "Showcase",
+            "dispValue": "Showcase"
+        },
+        "listBoxSelectOnly": {
+            "displayName": "Active Workspace Based Applications5",
+            "name": "listBoxSelectOnly",
+            "type": "STRING",
+            "isRequired": true,
+            "dataProvider": "dataProviderListBox1Values",
+            "dbValue": "Showcase",
+            "dispValue": "Showcase"
+        },
+        "listBoxPreferredChoice": {
+            "displayName": "Applications",
+            "name": "listBoxPreferredChoice",
+            "type": "STRING",
+            "dataProvider": "dataProviderListBoxPreferredChoiceValues"
+        },
+        "listBox1Values": {
+            "type": "STRING",
+            "dbValue": [
+                {
+                    "propDisplayValue": "Easy",
+                    "propDisplayDescription": "Easy",
+                    "dispValue": "Easy",
+                    "propInternalValue": "Easy"
+                },
+                {
+                    "propDisplayValue": "Showcase",
+                    "propDisplayDescription": "Showcase",
+                    "dispValue": "Showcase",
+                    "propInternalValue": "Showcase"
+                },
+                {
+                    "propDisplayValue": "EWI",
+                    "propDisplayDescription": "EWI",
+                    "dispValue": "EWI",
+                    "propInternalValue": "EWI"
+                },
+                {
+                    "propDisplayValue": "SWI",
+                    "propDisplayDescription": "SWI",
+                    "dispValue": "SWI",
+                    "propInternalValue": "SWI"
+                },
+                {
+                    "propDisplayValue": "Mendix",
+                    "propDisplayDescription": "Mx",
+                    "dispValue": "Mendix",
+                    "propInternalValue": "Mx"
+                },
+                {
+                    "propDisplayValue": "Polarion",
+                    "propDisplayDescription": "PL",
+                    "dispValue": "Polarion",
+                    "propInternalValue": "PL"
+                }
+            ]
+        },
+        "box1": {
+            "displayName": "Selected value from Listbox",
+            "isRequired": "false",
+            "isEditable": "true",
+            "dbValue": "Showcase",
+            "dispValue": "Showcase"
+        },
+        "boxSelectOnly": {
+            "displayName": "Selected value from Listbox which is select-only",
+            "isRequired": "false",
+            "isEditable": "true",
+            "dbValue": "Showcase",
+            "dispValue": "Showcase"
+        },
+        "listBox2": {
+            "displayName": "Active Workspace Based Applications2",
+            "name": "listBox2",
+            "type": "STRING",
+            "isRequired": true,
+            "hasLov": "true",
+            "dbValue": "Showcase",
+            "dispValue": "Showcase"
+        },
+        "box2": {
+            "displayName": "Selected value from Listbox2",
+            "isRequired": "false",
+            "isEditable": "true",
+            "dbValue": "Showcase",
+            "dispValue": "Showcase"
+        },
+        "listBox3": {
+            "displayName": "Active Workspace Based Applications3",
+            "name": "listBox3",
+            "type": "STRING",
+            "isRequired": true,
+            "hasLov": "true"
+        },
+        "listBox4": {
+            "displayName": "Active Workspace Based Applications4",
+            "name": "listBox4",
+            "type": "STRING",
+            "isRequired": true,
+            "hasLov": "true"
+        },
+        "box3": {
+            "displayName": "Selected value from Listbox3",
+            "isRequired": "false",
+            "isEditable": "true",
+            "dbValue": "",
+            "dispValue": ""
+        },
+        "box4": {
+            "displayName": "Selected value from Listbox4",
+            "isRequired": "false",
+            "isEditable": "true",
+            "dbValue": "",
+            "dispValue": ""
+        }
+    },
+    "dataProviders": {
+        "dataProviderListBox1Values": {
+            "response": [
+                {
+                    "propDisplayValue": "Easy",
+                    "propDisplayDescription": "Easy",
+                    "dispValue": "Easy",
+                    "propInternalValue": "Easy"
+                },
+                {
+                    "propDisplayValue": "Showcase",
+                    "propDisplayDescription": "Showcase",
+                    "dispValue": "Showcase",
+                    "propInternalValue": "Showcase"
+                },
+                {
+                    "propDisplayValue": "EWI",
+                    "propDisplayDescription": "EWI",
+                    "dispValue": "EWI",
+                    "propInternalValue": "EWI"
+                },
+                {
+                    "propDisplayValue": "SWI",
+                    "propDisplayDescription": "SWI",
+                    "dispValue": "SWI",
+                    "propInternalValue": "SWI"
+                },
+                {
+                    "propDisplayValue": "Mendix",
+                    "propDisplayDescription": "Mx",
+                    "dispValue": "Mendix",
+                    "propInternalValue": "Mx"
+                },
+                {
+                    "propDisplayValue": "Polarion",
+                    "propDisplayDescription": "PL",
+                    "dispValue": "Polarion",
+                    "propInternalValue": "PL"
+                }
+            ]
+        },
+        "dataProviderListBoxPreferredChoiceValues": {
+            "response": [
+                {
+                    "propDisplayValue": "Easy",
+                    "propDisplayDescription": "Easy",
+                    "dispValue": "Easy",
+                    "propInternalValue": "Easy"
+                },
+                {
+                    "propDisplayValue": "Showcase",
+                    "propDisplayDescription": "Showcase",
+                    "dispValue": "Showcase",
+                    "propInternalValue": "Showcase"
+                },
+                {
+                    "propDisplayValue": "EWI",
+                    "propDisplayDescription": "EWI",
+                    "dispValue": "EWI",
+                    "propInternalValue": "EWI"
+                },
+                {
+                    "propDisplayValue": "SWI",
+                    "propDisplayDescription": "SWI",
+                    "dispValue": "SWI",
+                    "propInternalValue": "SWI"
+                },
+                {
+                    "propDisplayValue": "Mendix",
+                    "propDisplayDescription": "Mx",
+                    "dispValue": "Mendix",
+                    "propInternalValue": "Mx"
+                },
+                {
+                    "propDisplayValue": "Polarion",
+                    "propDisplayDescription": "PL",
+                    "dispValue": "Polarion",
+                    "propInternalValue": "PL"
+                }
+            ],
+            "preferredChoices": [
+                {
+                    "propDisplayValue": "Mendix",
+                    "propDisplayDescription": "Mx",
+                    "dispValue": "Mendix",
+                    "propInternalValue": "Mx"
+                },
+                {
+                    "propDisplayValue": "Polarion",
+                    "propDisplayDescription": "PL",
+                    "dispValue": "Polarion",
+                    "propInternalValue": "PL"
+                }
+            ]
+        }
+    },
+    "actions": {
+        "selectionChange": {
+            "actionType": "JSFunction",
+            "method": "returnValue",
+            "inputData": {
+                "currentValue": "{{data.listBox1.dbValue}}",
+                "object": "{{data.box1}}",
+                "property": "uiValue"
+            },
+            "outputData": {
+                "box1.uiValue": "result.uiValue"
+            },
+            "deps": "js/createDesign"
+        },
+        "selectOnlySelectionChange": {
+            "actionType": "JSFunction",
+            "method": "returnValue",
+            "inputData": {
+                "currentValue": "{{data.listBoxSelectOnly.dbValue}}",
+                "object": "{{data.boxSelectOnly}}",
+                "property": "uiValue"
+            },
+            "outputData": {
+                "boxSelectOnly.uiValue": "result.uiValue"
+            },
+            "deps": "js/createDesign"
+        },
+        "selectionChange2": {
+            "actionType": "JSFunction",
+            "method": "returnValue",
+            "inputData": {
+                "currentValue": "{{data.listBox2.dbValue}}",
+                "object": "{{data.box2}}",
+                "property": "uiValue"
+            },
+            "outputData": {
+                "box2.uiValue": "result.uiValue"
+            },
+            "deps": "js/createDesign"
+        },
+        "selectionChange3": {
+            "actionType": "JSFunction",
+            "method": "returnValue",
+            "inputData": {
+                "currentValue": "{{data.listBox3.dbValue}}",
+                "object": "{{data.box3}}",
+                "property": "uiValue"
+            },
+            "outputData": {
+                "box3.uiValue": "result.uiValue"
+            },
+            "deps": "js/createDesign"
+        },
+        "selectionChange4": {
+            "actionType": "JSFunction",
+            "method": "returnValue",
+            "inputData": {
+                "currentValue": "{{data.listBox4.dbValue}}",
+                "object": "{{data.box4}}",
+                "property": "uiValue"
+            },
+            "outputData": {
+                "box4.uiValue": "result.uiValue"
+            },
+            "deps": "js/createDesign"
+        },
+        "getList": {
+            "actionType": "JSFunctionAsync",
+            "method": "getList",
+            "inputData": {
+                "list": "{{data.listBox1Values.dbValue}}"
+            },
+            "outputData": {
+                "listBox2Values": ""
+            },
+            "deps": "js/createDesign"
+        }
+    },
+    "lifecycleHooks": {
+        "onMount": "getList"
+    }
+}

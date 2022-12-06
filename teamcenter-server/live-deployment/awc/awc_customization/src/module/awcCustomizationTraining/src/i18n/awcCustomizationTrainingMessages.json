@@ -1,0 +1,12 @@
+{
+    "header": "Header",
+    "body": "Body",
+    "footer": "Footer",
+    "checkBoxName": "Enable the OK button in footer",
+    "save": "Ok",
+    "textValue": "Contents here",
+    "Tr1CreateDesignTitle": "Tr1CreateDesign",
+    "Tr1CreateDesignDescription": "Tr1CreateDesignDescription",
+	"CreateNewDesign":"Create New Design"
+	
+}

@@ -1,0 +1,51 @@
+{
+    "commands": {
+        "Tr1CreateDesign": {
+            "iconId": "cmdReuseDocument",
+            "title": "{{i18n.Tr1CreateDesignTitle}}",
+            "description": "{{i18n.Tr1CreateDesignDescription}}"
+        }
+    },
+    "commandHandlers": {
+        "Tr1CreateDesignHandler": {
+            "id": "Tr1CreateDesign",
+            "action": "activateTr1CreateDesign",
+            "activeWhen": true,
+            "visibleWhen": {
+                "condition": "conditions.true"
+            }
+        }
+    },
+    "commandPlacements": {
+        "Tr1CreateDesignaw_rightWall": {
+            "id": "Tr1CreateDesign",
+            "uiAnchor": "aw_rightWall",
+            "priority": 100
+        }
+    },
+    "actions": {
+        "activateTr1CreateDesign": {
+            "actionType": "JSFunction",
+            "method": "activateCommandPanel",
+            "deps": "js/commandPanel.service",
+            "inputData": {
+                "commandId": "Tr1CreateDesign",
+				"location": "aw_toolsAndInfo",
+				"params": "{{ctx.state.params}}"
+            }
+        }
+    },
+    "conditions": {
+        "objectIsSelected": {
+            "expression": "ctx.selected"
+        }
+    },
+    "i18n": {
+        "Tr1CreateDesignTitle": [
+            "awcCustomizationTrainingMessages"
+        ],
+        "Tr1CreateDesignDescription": [
+            "awcCustomizationTrainingMessages"
+        ]
+    }
+}
