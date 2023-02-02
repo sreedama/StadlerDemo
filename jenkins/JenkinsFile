@@ -1,0 +1,21 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Build') {
+            steps {
+                echo 'Building Test TC_DEV NEW3..'
+            }
+        }
+        stage('Test') {
+            steps {
+                echo 'Testing Test TC_DEV NEW3qqqq....'
+            }
+        }
+        stage('Deploy') {
+            steps {
+                echo 'Deploying Test TC_DEV NEW3.....'
+            }
+        }
+    }
+}
