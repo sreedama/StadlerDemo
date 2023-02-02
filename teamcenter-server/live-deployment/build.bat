@@ -10,7 +10,7 @@ if exist deploy (
 mkdir deploy
 
 :: process all except customisations
-for /D %%D in (acls,attribute-mapping,DxDatabook,EDA_report_templates,jenkins,preferences,queries,revision-rules,stylesheets,transfer-modes,workflows) do (
+for /D %%D in (acls,attribute-mapping,DxDatabook,EDA_report_templates,jenkins,preferences,queries,revision-rules,stylesheets,transfer-modes,workflows,configuration) do (
 	if exist "%%D\build.bat" (
 		pushd "%%D"
 		cmd /C build.bat & if errorlevel 1 echo Error building "%%D" & exit /B 1
