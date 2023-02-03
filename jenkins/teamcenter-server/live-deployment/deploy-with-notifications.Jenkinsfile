@@ -1,7 +1,7 @@
 pipeline {
-    agent { label 'master' }
+    agent { label 'LOCAL' }
     parameters {
-        choice(name: 'Environment', choices: ['', 'Dev 600', 'Dev 604', 'Dev 605', 'Quality', 'Integration', 'Production', 'Training'], description: 'Deploy to chosen environment')
+        choice(name: 'Environment', choices: ['', 'LOCAL'], description: 'Deploy to chosen environment')
     }
     stages {
         stage('Update job properties') {
@@ -26,38 +26,8 @@ pipeline {
                 axes {
                     axis {
                        name 'NODE_TO_DEPLOY'
-                       values 'ch00sa600', // development
-//                              'ch00sa601', // development
-//                              'ch00sa602', // development
-//                              'ch00sa603', // development
-                                'ch00sa604', // development
-                                'ch00sa605', // development
-//                              'ch00sa606', // development
-//                              'ch00sa607', // development
-//                              'ch00sa608', // development
-//                              'ch00sa609', // development
-//                              'ch00sa610', // development
-                              'ch00sa502', // Integration App
-                              'ch00sa503', // Integration App
-                              'ch00sa504', // Integration App
-//                              'ch00sa495', // Integration Dispatcher
-//                              'ch00sa496', // Integration Dispatcher
-                              'ch00sa474', // Quality Dispatcher
-                              'ch00sa449', // Quality App
-                              'ch00sa451', // Quality App
-                              'ch00sa455', // Quality App
-							  'ch00sa100', // Quality App
-                              'ch00sa525', // Production App
-                              'ch00sa526', // Production App
-                              'ch00sa527', // Production App
-                              'ch00sa563', // Production App
-                              'ch00sa423', // Production Performance
-                              'ch00sa528', // Production Dispatcher
-                              'ch00sa531', // Production Dispatcher
-                              'ch00sa572', // Training Dispatcher
-                              'ch00sa578', // Training App
-                              'ch00sa99' // Training Active Workspace
-//                              'ch00sa580'  // Training Dispatcher
+                       values 'ch00sa600' // development
+
                    }
                 }
                 stages {
