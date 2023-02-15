@@ -1,0 +1,24 @@
+############################################################################################################
+#  CNO Task Definition File
+############################################################################################################
+# Version History
+#
+# Version    Date           Name               Description of Change
+# 1.0        28-03-2022     testu     Initial
+############################################################################################################
+
+[TASK_LIST]
+ID=Start 20 EBOM Frozen Workflow
+TYPE_LIST=C:SR5GenEngObjRevision
+VALIDATION_STATUS=OK
+ACTION_OBJECT=ALL,RELATED
+#with testing WF for only ccp link under CATPart as target
+#ACTION_OBJECT=ALL
+OPTION=SKIP_IM_WORKFLOW
+ACTION_ID_LIST=1
+
+[ACTION_LIST]
+ID=1
+TYPE=WORKFLOW
+TEMPLATE=20_EBOM_Frozen
+OBJECT_COUNT=500

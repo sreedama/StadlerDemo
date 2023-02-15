@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TcBusinessDataLocalization xmlns="http://teamcenter.com/BusinessModel/TcBusinessDataLocalization"
+    batchXSDVersion="1.0" Date="Mon Jan 17 05:42:13 PM 2022">
+  <Add>
+    <key locale="de_DE" id="LOVValue{::}SR5SFCopper{::}DIN EN 12449" status="Approved">DIN EN 12449</key>
+    <key locale="de_DE" id="LOVValueDescription{::}SR5SFCopper{::}DIN EN 12449" status="Approved">Rundrohr nahtlos 3 &gt; OD &lt;= 450 und 0.3 &gt; t &lt;= 20</key>
+    <key locale="de_DE" id="LOVValue{::}SR5SFCopper{::}DIN EN 12735-1" status="Approved">DIN EN 12735-1</key>
+	<key locale="de_DE" id="LOVValueDescription{::}SR5SFCopper{::}DIN EN 12735-1" status="Approved">Rundrohr nahtlos 3 &gt; d &lt;= 133</key>
+    <key locale="de_DE" id="LOVValue{::}SR5SFCopper{::}DIN EN 12735-2" status="Approved">DIN EN 12735-2</key>
+	<key locale="de_DE" id="LOVValueDescription{::}SR5SFCopper{::}DIN EN 12735-2" status="Approved">Rundrohr nahtlos 6 &gt; d &lt;= 133</key>
+  </Add>
+</TcBusinessDataLocalization>

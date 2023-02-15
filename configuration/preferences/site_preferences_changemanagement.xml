@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<preferences version="10.0">
+  <category name="General">
+
+    <category_description></category_description>
+
+    <preference name="TC_ChangeRequestRevision_release_procedure" type="String" array="true" disabled="false" protectionScope="User" envEnabled="false">
+      <preference_description>No description available for this preference.</preference_description>
+      <context name="Teamcenter">
+        <value>SR_ECR_Process</value>
+      </context>
+    </preference>
+
+    <preference name="TC_Epc0MfgCNRevision_release_procedure" type="String" array="true" disabled="false" protectionScope="User" envEnabled="false">
+      <preference_description>No description available for this preference.</preference_description>
+      <context name="Teamcenter">
+        <value>SR_MCN_Process</value>
+      </context>
+    </preference>
+  </category>
+
+  <category name="Change Management">
+
+    <category_description></category_description>
+
+    <preference name="ChangeNoticeRevision_default_workflow_template" type="String" array="false" disabled="false" protectionScope="User" envEnabled="false">
+      <preference_description>Defines the workflow that starts when a change notice revision is submitted.
+Valid Values:
+Any valid workflow type.</preference_description>
+      <context name="Teamcenter">
+        <value>SR_ECN_Process</value>
+      </context>
+    </preference>
+
+    <preference name="SR5DocumentCNRevision_default_workflow_template" type="String" array="false" disabled="false" protectionScope="User" envEnabled="false">
+      <preference_description>Defines the workflow that starts when a document change notice revision is submitted.
+Valid Values:
+Any valid workflow type.</preference_description>
+      <context name="Teamcenter">
+        <value>SR_DCN_Process</value>
+      </context>
+    </preference>
+
+    <preference name="ChangeRequestRevision_default_workflow_template" type="String" array="false" disabled="false" protectionScope="User" envEnabled="false">
+      <preference_description>Defines the workflow that starts when a change notice revision is submitted.
+Valid Values:
+Any valid workflow type.</preference_description>
+      <context name="Teamcenter">
+        <value>SR_ECR_Process</value>
+      </context>
+    </preference>
+
+    <preference name="Epc0MfgCNRevision_default_workflow_template" type="String" array="false" disabled="false" protectionScope="User" envEnabled="false">
+      <preference_description>Defines the workflow that starts when a change notice revision is submitted.
+Valid Values:
+Any valid workflow type.</preference_description>
+      <context name="Teamcenter">
+        <value>SR_MCN_Process</value>
+      </context>
+    </preference>
+
+    <preference name="SR5_external_revision_respect_types" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>Defines the object types that are respected to increase their external revision.</preference_description>
+      <context name="Teamcenter">
+        <value>SR5EngArticleRevision</value>
+        <value>SR5GenCatPartRevision</value>
+        <value>SR5CatDefArticleRevision</value>
+        <value>SR5TechDocumentRevision</value>
+        <value>SR5CoatingStructRevision</value>
+      </context>
+    </preference>
+
+    <preference name="SR5_external_revision_respect_status" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>Defines the status which will be respected to increment a new ItemRevisions external revision.</preference_description>
+      <context name="Teamcenter">
+        <value>SR5Status30</value>
+        <value>SR5Status40</value>
+        <value>SR5Status50</value>
+      </context>
+    </preference>
+
+    <preference name="SR5_external_revision_exclude_chars" type="String" array="false" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>Characters to exclude in the external revision pattern.</preference_description>
+      <context name="Teamcenter">
+        <value>IO</value>
+      </context>
+    </preference>
+
+  </category>
+
+  <category name="Change Management Active Workspace">
+
+    <category_description>No description available for this category.</category_description>
+
+    <preference name="AWC_ChangeNoticeRevision.SUMMARYRENDERING" type="String" array="false" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>Registration of summary stylesheet for EngineeringChangeNoticeRevision objects.</preference_description>
+      <context name="Teamcenter">
+        <value>Awp0SR5Cm1ChangeNoticeRevisionSummary</value>
+      </context>
+    </preference>
+
+    <preference name="AWC_Epc0MfgCNRevision.SUMMARYRENDERING" type="String" array="false" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>Registration of summary stylesheet for ManufacturingChangeNoticeRevision objects.</preference_description>
+      <context name="Teamcenter">
+        <value>Awp0SR5ManufacturingChangeNoticeRevisionSummary</value>
+      </context>
+    </preference>
+
+    <preference name="AWC_SR5DocumentCNRevision.SUMMARYRENDERING" type="String" array="false" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>Registration of summary stylesheet for DocumentChangeNoticeRevision objects.</preference_description>
+      <context name="Teamcenter">
+        <value>Awp0SR5DocumentChangeNoticeRevisionSummary</value>
+      </context>
+    </preference>
+
+    <preference name="AWC_ChangeRequestRevision.SUMMARYRENDERING" type="String" array="false" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>Registration of summary stylesheet for ChangeRequestRevision objects.</preference_description>
+      <context name="Teamcenter">
+        <value>Awp0SR5Cm1ChangeRequestRevisionSummary</value>
+      </context>
+    </preference>
+
+    <preference name="AWC_ChangeNotice.CREATERENDERING" type="String" array="false" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>Registration of create stylesheet for ChangeNotice objects.</preference_description>
+      <context name="Teamcenter">
+        <value>Awp0SR5Cm1ChangeNoticeCreate</value>
+      </context>
+    </preference>
+
+    <preference name="AWC_Epc0MfgCN.CREATERENDERING" type="String" array="false" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>Registration of create stylesheet for ChangeNotice objects.</preference_description>
+      <context name="Teamcenter">
+        <value>Awp0SR5ManufacturingChangeNoticeCreate</value>
+      </context>
+    </preference>
+
+    <preference name="SR5DocumentCN.CREATERENDERING" type="String" array="false" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>Registration of create stylesheet for ChangeNotice objects.</preference_description>
+      <context name="Teamcenter">
+        <value>Awp0SR5DocumentChangeNoticeCreate</value>
+      </context>
+    </preference>
+
+    <preference name="AWC_ChangeRequest.CREATERENDERING" type="String" array="false" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>Registration of create stylesheet for ChangeRequest objects.</preference_description>
+      <context name="Teamcenter">
+        <value>Awp0SR5Cm1ChangeRequestCreate</value>
+      </context>
+    </preference>
+
+  </category>
+
+  <category name="EasyPlan">
+    <category_description>EasyPlan application preferences</category_description>
+    <preference name="EPC_ManufacuringChangeNoticeType" type="String" array="false" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>Defines the internal type of Manufacturing Change Notice (MCN). Default value is &quot;Epc0MfgCN&quot;</preference_description>
+      <context name="Teamcenter">
+        <value>Epc0MfgCN</value>
+      </context>
+    </preference>
+
+  </category>
+
+  <category name="Issue Management">
+
+    <category_description></category_description>
+
+    <preference name="CM_change_derivations" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>Defines the type of change to create from a given source type during the Derive Change process.
+The format for valid values is &quot;source_type/derived_type&quot;, where:
+source_type is the type of change from which to derive change, and
+derived_type is the type of change which will be created. This is a site preference only.</preference_description>
+      <context name="Teamcenter">
+        <value>ProblemReport/ChangeRequest</value>
+        <value>ProblemReport/Cm0DevRqst</value>
+        <value>ChangeRequest/ChangeNotice</value>
+        <value>Cm0DevRqst/ChangeNotice</value>
+        <value>Cm0ActionItem/ChangeRequest</value>
+        <value>Cm0ActionItem/Cm0DevRqst</value>
+        <value>ChangeNotice/Epc0MfgCN</value>
+        <value>ChangeRequest/Epc0MfgCN</value>
+      </context>
+    </preference>
+
+  </category>
+
+</preferences>

@@ -1,0 +1,109 @@
+############################################################################################################
+#  CNO Expansion Definition File
+############################################################################################################
+# Version History
+#
+# Version    Date           Name               Description of Change
+# 1.0        22-04-2022     testu     Initial
+############################################################################################################
+
+#process
+C:ItemRevision>>process_stage_list>C:EPMTask
+
+#occurences
+C:ItemRevision>>view;99p:Latest Working>C:ItemRevision
+
+#tech document
+#obsolete
+#C:SR5GenEngObjRevision>SR5HasSpecificationDocument>SR5TechDocumentRevision
+C:SR5GenEngObjRevision>SR5HasSpecificationDocument>SR5TechDocument
+
+#obsolete
+#C:SR5GenEngObjRevision>SR5HasRequiredDocument>SR5TechDocumentRevision
+C:SR5GenEngObjRevision>SR5HasRequiredDocument>SR5TechDocument
+
+SR5TechDocument>revision_list/FILTER_LastRev>SR5TechDocumentRevision
+
+
+
+#desired attachement (no class because of ALIAS in expansion and loop without exit on ccp link inside Teamcenter)
+SR5EngEndItemRevision>IMAN_specification>CATPart
+SR5EngMajorAssyRevision>IMAN_specification>CATPart
+SR5EngArticleRevision>IMAN_specification>CATPart
+SR5NonERPArticleRevision>IMAN_specification>CATPart
+#SR5GenCatPartRevision>IMAN_specification>CATPart
+#SR5CatalogPartRevision>IMAN_specification>CATPart
+#SR5EleCatPartRevision>IMAN_specification>CATPart
+#SR5MechCatPartRevision>IMAN_specification>CATPart
+SR5EngArticleARRevision>IMAN_specification>CATPart
+SR5EngInstallLocRevision>IMAN_specification>CATPart
+
+SR5EngEndItemRevision>IMAN_specification>CATProduct
+SR5EngMajorAssyRevision>IMAN_specification>CATProduct
+SR5EngArticleRevision>IMAN_specification>CATProduct
+SR5NonERPArticleRevision>IMAN_specification>CATProduct
+#SR5GenCatPartRevision>IMAN_specification>CATProduct
+#SR5CatalogPartRevision>IMAN_specification>CATProduct
+#SR5EleCatPartRevision>IMAN_specification>CATProduct
+#SR5MechCatPartRevision>IMAN_specification>CATProduct
+SR5EngArticleARRevision>IMAN_specification>CATProduct
+SR5EngInstallLocRevision>IMAN_specification>CATProduct
+
+SR5EngEndItemRevision>IMAN_specification>CATDrawing
+SR5EngMajorAssyRevision>IMAN_specification>CATDrawing
+SR5EngArticleRevision>IMAN_specification>CATDrawing
+SR5NonERPArticleRevision>IMAN_specification>CATDrawing
+#SR5GenCatPartRevision>IMAN_specification>CATDrawing
+#SR5CatalogPartRevision>IMAN_specification>CATDrawing
+#SR5EleCatPartRevision>IMAN_specification>CATDrawing
+#SR5MechCatPartRevision>IMAN_specification>CATDrawing
+SR5EngArticleARRevision>IMAN_specification>CATDrawing
+SR5EngInstallLocRevision>IMAN_specification>CATDrawing
+
+C:SR5GenEngObjRevision>structure_revisions>C:PSBOMViewRevision
+C:SR5GenEngObjRevision>IMAN_master_form_rev>C:Form
+
+#group
+C:SR5GenEngObjRevision>>active_user>User
+User<user<GroupMember
+
+#SAP properties
+C:SR5GenEngObjRevision>items_tag>C:Item
+#SR5EngArticleRevision>items_tag>SR5EngArticle
+
+
+#ccp link: working as desired: only the needed one - same status or lower 
+CATPart>catiaV5_MML/SKIP:Engineering Approved,40 - Engineering Released,50 - Released>C:SR5GenEngObjRevision/ALIAS:MMLRevision
+CATPart>catiaV5_MMLAssy/SKIP:Engineering Approved,40 - Engineering Released,50 - Released>C:SR5GenEngObjRevision/ALIAS:ContextualRevision
+CATDrawing>catiaV5_DWGLink/SKIP:Engineering Approved,40 - Engineering Released,50 - Released>C:SR5GenEngObjRevision/ALIAS:DWGRevision
+
+# +dataset of desired ccp link
+MMLRevision>IMAN_specification>CATProduct/ALIAS:CCPRevisionCVAssy
+MMLRevision>IMAN_specification>CATPart/ALIAS:CCPRevisionCVPart
+MMLRevision>IMAN_specification>CATDrawing/ALIAS:CCPRevisionCVDraw
+
+#ContextualRevision>IMAN_specification>CATProduct/ALIAS:CCPRevisionCVAssy
+ContextualRevision>IMAN_specification>CATProduct/ALIAS:CCPContextRevisionCVAssy
+ContextualRevision>IMAN_specification>CATPart/ALIAS:CCPRevisionCVPart
+ContextualRevision>IMAN_specification>CATDrawing/ALIAS:CCPRevisionCVDraw
+
+DWGRevision>IMAN_specification>CATProduct/ALIAS:CCPRevisionCVAssy
+DWGRevision>IMAN_specification>CATPart/ALIAS:CCPRevisionCVPart
+DWGRevision>IMAN_specification>CATDrawing/ALIAS:CCPRevisionCVDraw
+
+
+#Env
+C:ItemRevision>>SR5HasEngEnvironment>SR5EngEnv
+SR5EngEnv>revision_list/FILTER_LastRev>SR5EngEnvRevision
+#SR5EngEnvRevision>view;p:Latest Working>SR5EngEnvRevision;0
+#SR5EngEnvRevision>view;p:Latest Working>SR5EngArticleRevision;0
+#Env + BaseLine
+#  duplicate revision rule with different name in order to differentiate EBOM to EnvBOM
+SR5EngEnvRevision>view;2p:Latest Working Env>C:SR5GenEngObjRevision;0
+
+
+#AltRep
+#SR5EngArticleAR>global_alt_list>SR5EngArticle
+#SR5EngArticleAR>SR5AltRepList>SR5EngArticle/ALIAS:MasterOfAltRep
+#MasterOfAltRept>revision_list/FILTER_LastRev>SR5EngArticleRevision/ALIAS:MasterOfAltRepRev
+SR5EngArticleAR>sr5AltRepList>SR5EngArticleRevision/ALIAS:MasterOfAltRepRev

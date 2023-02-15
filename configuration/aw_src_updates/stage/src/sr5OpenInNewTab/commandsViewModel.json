@@ -1,0 +1,25 @@
+{
+    "commands": {},
+    "commandHandlers": {},
+    "commandPlacements": {
+        "Awp0OpenInNewTabaw_contextMenu2": {
+            "id": "Awp0OpenInNewTab",
+            "uiAnchor": "aw_contextMenu2",
+            "priority": 5001
+        },
+        "Awp0OpenInNewTabapProcessTree_uiAnchor": {
+            "id": "Awp0OpenInNewTab",
+            "uiAnchor": "apProcessTree_uiAnchor",
+            "priority": 5001
+        },
+        "Awp0OpenINNewTabwiProcessTree_uiAnchor": {
+            "id": "Awp0OpenInNewTab",
+            "uiAnchor": "wiProcessTree_uiAnchor",
+            "priority": 5001
+        }
+    },
+    "actions": {},
+    "functions": {},
+    "conditions": {},
+    "i18n": {}
+}

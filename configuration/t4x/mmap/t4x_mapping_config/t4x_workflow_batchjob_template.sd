@@ -1,0 +1,133 @@
+##
+#===================================================
+# \copyright     2014-2019
+#                Siemens Product Lifecycle Management Software Inc.
+#                All Rights Reserved.
+#===================================================
+#
+##
+# Project:       T4X
+# @file          t4x_workflow_batchjob_template.sd
+# @brief         Customer specific namespace template for the workflow review
+#
+# @author        J.K., 20100804
+#
+#
+namespace eval ::T4X::WORKFLOW::BATCHJOB::CUSTOM {
+  namespace export sendTC_InfoEMail
+  
+  # ---------------------------------------------------------------------
+  ##
+  # Method:         ::T4X::WORKFLOW::BATCHJOB::CUSTOM::sendTC_InfoEMail
+  # \brief          procedure to send an tc email, called by work flow batch jobs
+  #
+  # \param          WorkflowTag 
+  # \param          MailText Predefined error text based on the internal collected error messages
+  #
+  # \author         J.K., 20100914
+  # \return         OK or ERROR
+  #
+  #
+  proc sendTC_InfoEMail {WorkflowTag MailText} {
+    set Status           OK
+    set signOffUserTag   ""
+    set signOffUserName  ""
+    set workflowOwnerTag ""
+    #
+    tpwrite -logchannel [::PL4X::CORE::getSessionLogChannel] -mtype INTERN "::T4X::WORKFLOW::BATCHJOB::CUSTOM::sendTC_InfoEMail starts with WorkflowTag >$WorkflowTag<"
+    #
+    # ask work flow ownerTag
+    #
+    set ItkStatus [::ITK::AOM_ask_owner $WorkflowTag]
+    #
+    tpwrite -logchannel [::PL4X::CORE::getSessionLogChannel] -mtype INTERN "::T4X::WORKFLOW::BATCHJOB::CUSTOM::AOM_ask_owner $ItkStatus"
+    #
+    if {[lindex $ItkStatus 0] == 0 && [lindex $ItkStatus 1] ne ""} {
+      set workflowOwnerTag [lindex $ItkStatus 1]
+      
+      # hex the subject and mail txt
+      set Subject "Work flow batch job error occurred"
+      #binary scan $Subject H* HexSubject
+      
+      # message can be max 218 characters long
+      set Comment [format "%s: %s" [clock format [clock seconds] -format "%Y.%m.%d-%H:%M"] $MailText]
+      
+      # create the email envelope
+      set ItkStatus [::ITK::TCTYPE_simplified_create_object2 "Envelope" "object_name" $Subject "object_desc" $Comment]
+      tpwrite -logchannel [::PL4X::CORE::getSessionLogChannel] -mtype INTERN "::T4X::WORKFLOW::BATCHJOB::CUSTOM::MAIL_create_envelope $ItkStatus"
+      if {[::ITK::isITK_ok $ItkStatus] && [lindex $ItkStatus 1] ne ""} {
+        set HexEnvelopeTag [lindex $ItkStatus 1]
+        set SaveStatus [::ITK::AOM_save_with_extensions $HexEnvelopeTag]
+        # add the workflowOwner as the mail receiver
+        if {[string trim $workflowOwnerTag] ne ""} {
+          set ItkStatus [::ITK::MAIL_add_envelope_receiver $HexEnvelopeTag $workflowOwnerTag]
+          tpwrite -logchannel [::PL4X::CORE::getSessionLogChannel] -mtype INTERN "::T4X::WORKFLOW::BATCHJOB::CUSTOM::MAIL_add_envelope_receiver WO $ItkStatus"
+          
+          # send the email
+          if {[lindex $ItkStatus 0] == 0} {
+            set ItkStatus [::ITK::MAIL_send_envelope $HexEnvelopeTag]
+            tpwrite -logchannel [::PL4X::CORE::getSessionLogChannel] -mtype INTERN "::T4X::WORKFLOW::BATCHJOB::CUSTOM::MAIL_send_envelope $ItkStatus"
+            #
+            if {[lindex $ItkStatus 0] == 0} {
+              set Status "OK"
+            } else {
+              set Status "ERROR"
+            }
+          }
+        }
+      }
+    }
+    #
+    tpwrite -logchannel [::PL4X::CORE::getSessionLogChannel] -mtype INTERN "::T4X::WORKFLOW::BATCHJOB::CUSTOM::sendTC_InfoEMail finished with Status >$Status<"
+    #
+    return $Status
+  }
+  # ---------------------------------------------------------------------
+  ##
+  # \brief          This function returns the true if the ITK status provided is matching defined rule, otherwise 
+  #                 the result will be false.
+  #
+  # \author         js, 20131122
+  #
+  # \param          TaskTag Tag of the triggered task
+  # \param          ItkStatus Status number
+  #
+  # \return         Returns a logical flag that is 
+  #                 The following values are valid:
+  #                  \n \c true \c  used to enable a retry of the batch job
+  #                  \n \c false \c  or any other value will be treated as no batch job retry possible or needed
+  #
+  #
+  proc checkTriggerStatus4Retry {TaskTag ItkStatus} {
+    #
+    set RetryFlag false
+    #
+    if {$ItkStatus != 0} {
+      set RetryFlag true
+    }
+    #
+    tpwrite -logchannel [::PL4X::CORE::getSessionLogChannel] -mtype INTERN "::T4X::WORKFLOW::BATCHJOB::CUSTOM::checkTriggerStatus4Retry finished with RetryFlag >$RetryFlag<"
+    return $RetryFlag
+  }
+
+  # ---------------------------------------------------------------------
+  ##
+  # \brief          This custom function could be used to implement customer specific rules to identify if a give Task or the 
+  #                 corresponding job is completed or not.
+  #
+  # \author         js, 20170216
+  #
+  # \param          TaskTag Workflow task tag
+  #
+  # \return         StatusDict with the following elements:
+  #                  - Status
+  #                  - ExtendedErrText
+  #
+  #
+  proc validateTaskStatus {TaskTag} {
+
+    return [::T4X::WORKFLOW::BATCHJOB::validateTaskStatus $TaskTag]
+    
+  } 
+  
+}

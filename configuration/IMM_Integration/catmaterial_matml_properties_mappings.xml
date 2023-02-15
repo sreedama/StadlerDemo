@@ -1,0 +1,3461 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MatMLToCATIAMappings>
+    <Properties>
+
+        <CATIAProperty neutralName="SAMPoissonRatio">
+            <MatMLProperty name="Poissons Ratio (NU)"/>
+            <MatMLProperty name="Poissons Ratio (NU12)"/>
+            <MatMLProperty name="Poissions Ratio"/>
+            <MatMLProperty name="PoissonsRatio"/>
+            <MatMLProperty name="Poisson's Ratio"/>
+            <MatMLProperty name="Poisson's Ratio, L"/>
+            <MatMLProperty name="Poisson'sRatio"/>
+            <MatMLProperty name="NU"/>
+        </CATIAProperty>
+		
+		<CATIAProperty neutralName="SAMShearModulus">
+            <MatMLProperty name="Shear Modulus (G)"/>
+            <MatMLProperty name="Shear Modulus (G1)"/>
+            <MatMLProperty name="Shear Modulus"/>
+            <MatMLProperty name="Shear Modulus, L"/>
+            <MatMLProperty name="ShearModulus"/>
+            <MatMLProperty name="G"/>
+            <MatMLProperty name="Shear Modulus (G1)"/>
+            <MatMLProperty name="ShearModulus1"/>
+            <MatMLProperty name="Shear Modulus, LT"/>
+            <MatMLProperty name="G1"/>
+            <MatMLProperty name="Shear Modulus (G11)"/>
+            <MatMLProperty name="Material Property Matrix (C11)"/>
+            <MatMLProperty name="Material Property Matrix (G11)"/>
+            <MatMLProperty name="ShearModulus11"/>
+            <MatMLProperty name="G11"/>
+        </CATIAProperty>
+		
+		<CATIAProperty neutralName="SAMThermalExpansion">
+            <MatMLProperty name="Thermal Expansion (TEXP)"/>
+            <MatMLProperty name="Thermal Expansion"/>
+			<MatMLProperty name="Thermal Expansion (A)_34"/>
+            <MatMLProperty name="Thermal Expansion Coefficient"/>
+            <MatMLProperty name="TEXP"/>
+            <MatMLProperty name="ThermalExpansion"/>
+            <MatMLProperty name="ThermalCoeff"/>
+            <MatMLProperty name="Thermal Expansion1"/>
+            <MatMLProperty name="ThermalExpansion1"/>
+            <MatMLProperty name="ThermalCoeff1"/>
+            <MatMLProperty name="Coefficient of Volumetric Thermal Expansion (AV)"/>
+            <MatMLProperty name="Coefficient of Volumetric Thermal Expansion"/>
+            <MatMLProperty name="CoefficientofVolumetricThermalExpansion"/>
+            <MatMLProperty name="Martensite Mean Thermal Expansion (AM)"/>
+            <MatMLProperty name="AV"/>
+        </CATIAProperty>
+		
+		<CATIAProperty neutralName="SAMYoungModulus">
+            <MatMLProperty name="YoungsModulus"/>
+			<MatMLProperty name="Youngs Modulus (E)_31"/>
+            <MatMLProperty name="Young'sModulus"/>
+            <MatMLProperty name="Youngs Modulus"/>
+            <MatMLProperty name="Young's Modulus"/>
+            <MatMLProperty name="Youngs Modulus (E)"/>
+            <MatMLProperty name="Young's Modulus (E)"/>
+            <MatMLProperty name="Modulus of Elasticity (E)"/>
+            <MatMLProperty name="Modulus of Elasticity"/>
+            <MatMLProperty name="ModulusofElasticity"/>
+            <MatMLProperty name="Modulus (L)"/>
+            <MatMLProperty name="Modulus, L"/>
+            <MatMLProperty name="E"/>
+            <MatMLProperty name="Tensile Modulus"/>
+            <MatMLProperty name="Tensile_Modulus"/>
+            <MatMLProperty name="Tensile Properties - Tensile Modulus"/>
+            <MatMLProperty name="Youngs"/>
+            <MatMLProperty name="Young's"/>
+        </CATIAProperty>
+		
+		<CATIAProperty neutralName="SAMDensity">
+		    <MatMLProperty name="Mass Density (RHO)_6"/>
+            <MatMLProperty name="Mass Density (RHO)"/>
+            <MatMLProperty name="Mass Density"/>
+            <MatMLProperty name="MassDensity"/>
+            <MatMLProperty name="SolidDensity"/>
+            <MatMLProperty name="Solid Density"/>
+            <MatMLProperty name="Density"/>
+            <MatMLProperty name="RHO"/>
+        </CATIAProperty>
+		
+		<CATIAProperty neutralName="SAMIsotropicMaterial">
+            <MatMLProperty name="IsotropicMaterial"/>
+            <MatMLProperty name="Isotropic Material"/>
+        </CATIAProperty>
+		
+		<CATIAProperty neutralName="SAMOrthotropicMaterial">
+            <MatMLProperty name="OrthotropicMaterial"/>
+            <MatMLProperty name="Orthotropic Material"/>
+        </CATIAProperty>
+		
+		<CATIAProperty neutralName="SAMFiberMaterial">
+            <MatMLProperty name="FiberMaterial"/>
+            <MatMLProperty name="Fiber Material"/>
+        </CATIAProperty>
+		
+		<CATIAProperty neutralName="SAMHoneyCombMaterial">
+            <MatMLProperty name="HoneyCombMaterial"/>
+            <MatMLProperty name="Honey Comb Material"/>
+			<MatMLProperty name="HoneyComb Material"/>
+        </CATIAProperty>
+		
+		<CATIAProperty neutralName="SAMOrthotropic3DMaterial">
+            <MatMLProperty name="Orthotropic3D Material"/>
+            <MatMLProperty name="Orthotropic 3D Material"/>
+        </CATIAProperty>
+		
+		<CATIAProperty neutralName="SAMAnisotropicMaterial">
+            <MatMLProperty name="Anisotropic Material"/>
+            <MatMLProperty name="Anisotropic_Material"/>
+        </CATIAProperty>
+		
+		<CATIAProperty neutralName="SAMMaterialType">
+            <MatMLProperty name="Material Type"/>
+            <MatMLProperty name="Material_Type"/>
+        </CATIAProperty>
+		
+		<!-- rendering properties-->
+		
+		<CATIAProperty neutralName="ADAPTIVECOEFF">
+            <MatMLProperty name="ADAPTIVECOEFF"/>
+        </CATIAProperty>
+		
+		<CATIAProperty neutralName="PREVIEWSIZE">
+            <MatMLProperty name="PREVIEWSIZE"/>
+        </CATIAProperty>
+		
+		<CATIAProperty neutralName="AmbientCoefficient">
+            <MatMLProperty name="AmbientCoefficient"/>
+        </CATIAProperty>
+		
+		<CATIAProperty neutralName="DiffuseCoefficient">
+            <MatMLProperty name="DiffuseCoefficient"/>
+        </CATIAProperty>
+		
+		<CATIAProperty neutralName="SpecularCoefficient">
+            <MatMLProperty name="SpecularCoefficient"/>
+        </CATIAProperty>
+		
+		<CATIAProperty neutralName="SpecularExponent">
+            <MatMLProperty name="SpecularExponent"/>
+        </CATIAProperty>
+		
+		<CATIAProperty neutralName="TransparencyCoefficient">
+            <MatMLProperty name="TransparencyCoefficient"/>
+        </CATIAProperty>
+		
+		<CATIAProperty neutralName="RefractionCoefficient">
+            <MatMLProperty name="RefractionCoefficient"/>
+        </CATIAProperty>
+		
+		<CATIAProperty neutralName="ReflectivityCoefficient">
+            <MatMLProperty name="ReflectivityCoefficient"/>
+        </CATIAProperty>
+		
+		<CATIAProperty neutralName="EnvironmentImage">
+            <MatMLProperty name="EnvironmentImage"/>
+        </CATIAProperty>
+		
+		<CATIAProperty neutralName="ReflectionMode">
+            <MatMLProperty name="ReflectionMode"/>
+        </CATIAProperty>
+		
+		<CATIAProperty neutralName="ReflectionHeight">
+            <MatMLProperty name="ReflectionHeight"/>
+        </CATIAProperty>
+		
+		<CATIAProperty neutralName="ReflectionLength">
+            <MatMLProperty name="ReflectionLength"/>
+        </CATIAProperty>
+		
+		<CATIAProperty neutralName="TextureType">
+            <MatMLProperty name="TextureType"/>
+        </CATIAProperty>
+		
+		<CATIAProperty neutralName="Bump">
+            <MatMLProperty name="Bump"/>
+        </CATIAProperty>
+		
+		<CATIAProperty neutralName="TextureImage">
+            <MatMLProperty name="TextureImage"/>
+        </CATIAProperty>
+		
+		<CATIAProperty neutralName="FlipU">
+            <MatMLProperty name="FlipU"/>
+        </CATIAProperty>
+		
+		<CATIAProperty neutralName="FlipV">
+            <MatMLProperty name="FlipV"/>
+        </CATIAProperty>
+		
+		<CATIAProperty neutralName="RepeatU">
+            <MatMLProperty name="RepeatU"/>
+        </CATIAProperty>
+		
+		<CATIAProperty neutralName="RepeatV">
+            <MatMLProperty name="RepeatV"/>
+        </CATIAProperty>
+		
+		<CATIAProperty neutralName="ScaleU">
+            <MatMLProperty name="ScaleU"/>
+        </CATIAProperty>
+		
+		<CATIAProperty neutralName="ScaleV">
+            <MatMLProperty name="ScaleV"/>
+        </CATIAProperty>
+		
+		<CATIAProperty neutralName="PositionU">
+            <MatMLProperty name="PositionU"/>
+        </CATIAProperty>
+		
+				<CATIAProperty neutralName="PositionV">
+            <MatMLProperty name="PositionV"/>
+        </CATIAProperty>
+		
+		<CATIAProperty neutralName="Orientation">
+            <MatMLProperty name="Orientation"/>
+        </CATIAProperty>
+		
+		<CATIAProperty neutralName="ColorNumber">
+            <MatMLProperty name="ColorNumber"/>
+        </CATIAProperty>
+		
+		<CATIAProperty neutralName="TextureComplexity">
+            <MatMLProperty name="TextureComplexity"/>
+        </CATIAProperty>
+		
+		<CATIAProperty neutralName="TextureAmplitude">
+            <MatMLProperty name="TextureAmplitude"/>
+        </CATIAProperty>
+		
+		<CATIAProperty neutralName="TextureVeinAmplitude">
+            <MatMLProperty name="TextureVeinAmplitude"/>
+        </CATIAProperty>
+		
+		<CATIAProperty neutralName="TexturePerturbation">
+            <MatMLProperty name="TexturePerturbation"/>
+        </CATIAProperty>
+		
+				<CATIAProperty neutralName="TextureGain">
+            <MatMLProperty name="TextureGain"/>
+        </CATIAProperty>
+		
+		<CATIAProperty neutralName="TextureTurbulence">
+            <MatMLProperty name="TextureTurbulence"/>
+        </CATIAProperty>
+		
+		<CATIAProperty neutralName="ChessboardTileWidth">
+            <MatMLProperty name="ChessboardTileWidth"/>
+        </CATIAProperty>
+		
+		<CATIAProperty neutralName="ChessboardTileHeight">
+            <MatMLProperty name="ChessboardTileHeight"/>
+        </CATIAProperty>
+		
+		<CATIAProperty neutralName="ChessboardOffset">
+            <MatMLProperty name="ChessboardOffset"/>
+        </CATIAProperty>
+		
+		<CATIAProperty neutralName="ChessboardJointWidth">
+            <MatMLProperty name="ChessboardJointWidth"/>
+        </CATIAProperty>
+		
+		<CATIAProperty neutralName="ChessboardJointHeight">
+            <MatMLProperty name="ChessboardJointHeight"/>
+        </CATIAProperty>
+		
+		
+
+    </Properties>
+    <Units>
+
+
+
+        <!--*************************************************-->
+        <!--                       A                         -->
+        <!--*************************************************-->
+        <CATIAUnit name="Ampere">
+            <MatMLUnit name="Ampere"/>
+        </CATIAUnit>
+
+        <CATIAUnit name="Angstrom">
+            <MatMLUnit name="Angstrom"/>
+        </CATIAUnit>
+
+        <CATIAUnit name="Atmosphere">
+            <MatMLUnit name="Atmosphere"/>
+        </CATIAUnit>
+
+
+        <!--*************************************************-->
+        <!--                       B                         -->
+        <!--*************************************************-->
+        <CATIAUnit name="Bar">
+            <MatMLUnit name="Bar"/>
+        </CATIAUnit>
+
+        <CATIAUnit name="BritshThermalUnitsInchPerPoundForceSecondSquared">
+            <MatMLUnit name="BritshThermalUnitsInchPerPoundForceSecondSquared"/>
+            <MatMLUnit name="BTU-in/lbf-sec^2"/>
+            <MatMLUnit name="BTU.in/lbf.sec^2"/>
+            <MatMLUnit name="BTU-in/lbf-sec-sec"/>
+            <MatMLUnit name="BTU.in/lbf.sec.sec"/>
+            <MatMLUnit name="BTU-in/lbf-s^2"/>
+            <MatMLUnit name="BTU.in/lbf.s^2"/>
+            <MatMLUnit name="BTU-in/lbf-s-s"/>
+            <MatMLUnit name="BTU.in/lbf.s.s"/>
+            <MatMLUnit name="BTU-in/lbf-sec2"/>
+            <MatMLUnit name="BTU.in/lbf.sec2"/>
+            <MatMLUnit name="BTU-in/lbf-s2"/>
+            <MatMLUnit name="BTU.in/lbf.s2"/>
+        </CATIAUnit>
+
+        <CATIAUnit name="BritshThermalUnitsPerMassPound">
+            <MatMLUnit name="BritshThermalUnitsPerMassPound"/>
+            <MatMLUnit name="BTU/lbm"/>
+        </CATIAUnit>
+
+        <CATIAUnit name="Btu">
+            <MatMLUnit name="Btu"/>
+        </CATIAUnit>
+
+        <CATIAUnit name="BTUPerHour">
+            <MatMLUnit name="BTUPerHour"/>
+            <MatMLUnit name="BTU/hr"/>
+        </CATIAUnit>
+
+        <CATIAUnit name="BTUPerMinute">
+            <MatMLUnit name="BTUPerMinute"/>
+            <MatMLUnit name="BTU/min"/>
+        </CATIAUnit>
+
+        <CATIAUnit name="BTUPerSecond">
+            <MatMLUnit name="HeatFlow_English1"/>
+            <MatMLUnit name="BTUPerSecond"/>
+            <MatMLUnit name="BTU/s"/>
+            <MatMLUnit name="BTU/sec"/>
+        </CATIAUnit>
+
+
+        <!--*************************************************-->
+        <!--                       C                         -->
+        <!--*************************************************-->
+        <CATIAUnit name="CaloriePerGram">
+            <MatMLUnit name="CaloriePerGram"/>
+            <MatMLUnit name="Calorie/Gram"/>
+            <MatMLUnit name="Cal/g"/>
+        </CATIAUnit>
+
+        <CATIAUnit name="Celsius">
+            <MatMLUnit name="Celsius"/>
+            <MatMLUnit name="C"/>
+        </CATIAUnit>
+
+        <CATIAUnit name="CelsiusDifference">
+            <MatMLUnit name="CelsiusDifference"/>
+            <MatMLUnit name="DeltaC"/>
+        </CATIAUnit>
+
+        <CATIAUnit name="CelsiusPerMeter">
+            <MatMLUnit name="CelsiusPerMeter"/>
+            <MatMLUnit name="Celsius/meter"/>
+            <MatMLUnit name="C/m"/>
+        </CATIAUnit>
+
+        <CATIAUnit name="CelsiusPerMilliMeter">
+            <MatMLUnit name="CelsiusPerMilliMeter"/>
+            <MatMLUnit name="Celsius/mm"/>
+            <MatMLUnit name="C/mm"/>
+        </CATIAUnit>
+
+        <CATIAUnit name="CentiMeter">
+            <MatMLUnit name="CentiMeter"/>
+            <MatMLUnit name="cm"/>
+        </CATIAUnit>
+
+        <CATIAUnit name="CentiMeterPerSecond">
+            <MatMLUnit name="CentiMeterPerSecond"/>
+            <MatMLUnit name="cm/sec"/>
+            <MatMLUnit name="cm/s"/>
+        </CATIAUnit>
+
+        <CATIAUnit name="CoefficientPerFoot">
+            <MatMLUnit name="CoefficientPerFoot"/>
+            <MatMLUnit name="PerFoot"/>
+            <MatMLUnit name="1/ft"/>
+        </CATIAUnit>
+
+        <CATIAUnit name="CoefficientPerInch">
+            <MatMLUnit name="CoefficientPerInch"/>
+            <MatMLUnit name="PerInch"/>
+            <MatMLUnit name="1/in"/>
+        </CATIAUnit>
+
+
+        <CATIAUnit name="CoefficientPerMeter">
+            <MatMLUnit name="PerMeter"/>
+            <MatMLUnit name="CoefficientPerMeter"/>
+            <MatMLUnit name="1/m"/>
+        </CATIAUnit>
+
+        <CATIAUnit name="CoefficientPerMilliMeter">
+            <MatMLUnit name="PerMillimeterMeter"/>
+            <MatMLUnit name="CoefficientPerMilliMeter"/>
+            <MatMLUnit name="1/mm"/>
+        </CATIAUnit>
+
+        <CATIAUnit name="ConvectionCoefficient_English1">
+            <MatMLUnit name="ConvectionCoefficient_English1"/>
+            <MatMLUnit name="BTU/sec-in^2-F"/>
+            <MatMLUnit name="BTU/sec-in-in-F"/>
+            <MatMLUnit name="BTU/sec.in.in.F"/>
+            <MatMLUnit name="BTU/sec.in^2.F"/>
+            <MatMLUnit name="BTU/sec-in2-F"/>
+            <MatMLUnit name="BTU/sec.in2.F"/>
+        </CATIAUnit>
+
+        <CATIAUnit name="ConvectionCoefficient_English2">
+            <MatMLUnit name="ConvectionCoefficient_English2"/>
+            <MatMLUnit name="BTU/sec-ft^2-F"/>
+            <MatMLUnit name="BTU/sec-ft-ft-F"/>
+            <MatMLUnit name="BTU/sec.ft.ft.F"/>
+            <MatMLUnit name="BTU/sec.ft^2.F"/>
+            <MatMLUnit name="BTU/sec-ft2-F"/>
+            <MatMLUnit name="BTU/sec.ft2.F"/>
+        </CATIAUnit>
+
+        <CATIAUnit name="ConvectionCoefficient_English3">
+            <MatMLUnit name="ConvectionCoefficient_English3"/>
+            <MatMLUnit name="BTU/hr-in^2-F"/>
+            <MatMLUnit name="BTU/hr-in-in-F"/>
+            <MatMLUnit name="BTU/hr.in.in.F"/>
+            <MatMLUnit name="BTU/hr.in^2.F"/>
+            <MatMLUnit name="BTU/hr-in2-F"/>
+            <MatMLUnit name="BTU/hr.in2.F"/>
+        </CATIAUnit>
+
+        <CATIAUnit name="ConvectionCoefficient_English4">
+            <MatMLUnit name="ConvectionCoefficient_English4"/>
+            <MatMLUnit name="BTU/hr-ft^2-F"/>
+            <MatMLUnit name="BTU/hr-ft-ft-F"/>
+            <MatMLUnit name="BTU/hr.ft.ft.F"/>
+            <MatMLUnit name="BTU/hr.ft^2.F"/>
+            <MatMLUnit name="BTU/hr-ft2-F"/>
+            <MatMLUnit name="BTU/hr.ft2.F"/>
+        </CATIAUnit>
+
+        <CATIAUnit name="ConvectionCoefficient_English5">
+            <MatMLUnit name="ConvectionCoefficient_English5"/>
+            <MatMLUnit name="lbf-in/sec-in^2-F"/>
+            <MatMLUnit name="lbf.in/sec.in^2.F"/>
+            <MatMLUnit name="lbf-in/sec-in-in-F"/>
+            <MatMLUnit name="lbf.in/sec.in.in.F"/>
+            <MatMLUnit name="lbfin/sec-in^2-F"/>
+            <MatMLUnit name="lbfin/sec.in^2.F"/>
+            <MatMLUnit name="lbfin/sec-in-in-F"/>
+            <MatMLUnit name="lbfin/sec.in.in.F"/>
+            <MatMLUnit name="lbf-in/sec-in2-F"/>
+            <MatMLUnit name="lbf.in/sec.in2.F"/>
+            <MatMLUnit name="lbfin/sec-in2-F"/>
+            <MatMLUnit name="lbfin/sec.in2.F"/>
+        </CATIAUnit>
+
+        <CATIAUnit name="ConvectionCoefficient_Metric1">
+            <MatMLUnit name="ConvectionCoefficient_Metric1"/>
+            <MatMLUnit name="microW/mm^2-C"/>
+            <MatMLUnit name="microW/mm-mm-C"/>
+            <MatMLUnit name="microW/mm.mm.C"/>
+            <MatMLUnit name="microW/mm^2.C"/>
+            <MatMLUnit name="microW/mm2-C"/>
+            <MatMLUnit name="microW/mm2.C"/>
+        </CATIAUnit>
+
+        <CATIAUnit name="ConvectionCoefficient_Metric2">
+            <MatMLUnit name="ConvectionCoefficient_Metric2"/>
+            <MatMLUnit name="W/mm^2-C"/>
+            <MatMLUnit name="W/mm-mm-C"/>
+            <MatMLUnit name="W/mm.mm.C"/>
+            <MatMLUnit name="W/mm^2.C"/>
+            <MatMLUnit name="W/mm2-C"/>
+            <MatMLUnit name="W/mm2.C"/>
+        </CATIAUnit>
+
+        <CATIAUnit name="ConvectionCoefficient_Metric3">
+            <MatMLUnit name="ConvectionCoefficient_Metric3"/>
+            <MatMLUnit name="mW/mm^2-C"/>
+            <MatMLUnit name="mW/mm-mm-C"/>
+            <MatMLUnit name="mW/mm.mm.C"/>
+            <MatMLUnit name="mW/mm^2.C"/>
+            <MatMLUnit name="mW/mm2-C"/>
+            <MatMLUnit name="mW/mm2.C"/>
+        </CATIAUnit>
+
+        <CATIAUnit name="ConvectionCoefficient_Metric4">
+            <MatMLUnit name="ConvectionCoefficient_Metric4"/>
+            <MatMLUnit name="W/cm^2-C"/>
+            <MatMLUnit name="W/cm-cm-C"/>
+            <MatMLUnit name="W/cm.cm.C"/>
+            <MatMLUnit name="W/cm^2.C"/>
+            <MatMLUnit name="W/cm2-C"/>
+            <MatMLUnit name="W/cm2.C"/>
+        </CATIAUnit>
+
+        <CATIAUnit name="ConvectionCoefficient_Metric5">
+            <MatMLUnit name="ConvectionCoefficient_Metric5"/>
+            <MatMLUnit name="W/m^2-C"/>
+            <MatMLUnit name="W/m-m-C"/>
+            <MatMLUnit name="W/m.m.C"/>
+            <MatMLUnit name="W/m^2.C"/>
+            <MatMLUnit name="W/m2-C"/>
+            <MatMLUnit name="W/m2.C"/>
+        </CATIAUnit>
+
+        <CATIAUnit name="ConvectionCoefficient_Metric6">
+            <MatMLUnit name="ConvectionCoefficient_Metric6"/>
+            <MatMLUnit name="W/in^2-C"/>
+            <MatMLUnit name="W/in-in-C"/>
+            <MatMLUnit name="W/in.in.C"/>
+            <MatMLUnit name="W/in^2.C"/>
+            <MatMLUnit name="W/in2-C"/>
+            <MatMLUnit name="W/in2.C"/>
+        </CATIAUnit>
+
+        <CATIAUnit name="CubicCentiMeter">
+            <MatMLUnit name="CubicCentiMeter"/>
+            <MatMLUnit name="cm-cm-cm"/>
+            <MatMLUnit name="cm.cm.cm"/>
+            <MatMLUnit name="cm^3"/>
+            <MatMLUnit name="cm3"/>
+        </CATIAUnit>
+
+        <CATIAUnit name="CubicCentiMeterPerSecond">
+            <MatMLUnit name="CubicCentiMeterPerSecond"/>
+            <MatMLUnit name="cm-cm-cm/sec"/>
+            <MatMLUnit name="cm-cm-cm/s"/>
+            <MatMLUnit name="cm.cm.cm/sec"/>
+            <MatMLUnit name="cm.cm.cm/s"/>
+            <MatMLUnit name="cm^3/sec"/>
+            <MatMLUnit name="cm^3/s"/>
+            <MatMLUnit name="cm3/sec"/>
+            <MatMLUnit name="cm3/s"/>
+        </CATIAUnit>
+
+        <CATIAUnit name="CubicFeet">
+            <MatMLUnit name="CubicFeet"/>
+            <MatMLUnit name="ft-ft-ft"/>
+            <MatMLUnit name="ft.ft.ft"/>
+            <MatMLUnit name="ft^3"/>
+            <MatMLUnit name="ft3"/>
+        </CATIAUnit>
+
+        <CATIAUnit name="CubicFeetPerHour">
+            <MatMLUnit name="CubicFeetPerHour"/>
+            <MatMLUnit name="ft-ft-ft/hr"/>
+            <MatMLUnit name="ft.ft.ft/hr"/>
+            <MatMLUnit name="ft^3/hr"/>
+            <MatMLUnit name="ft3/hr"/>
+        </CATIAUnit>
+
+        <CATIAUnit name="CubicFeetPerMinute">
+            <MatMLUnit name="CubicFeetPerMinute"/>
+            <MatMLUnit name="ft-ft-ft/min"/>
+            <MatMLUnit name="ft.ft.ft/min"/>
+            <MatMLUnit name="ft^3/min"/>
+            <MatMLUnit name="ft3/min"/>
+        </CATIAUnit>
+
+        <CATIAUnit name="CubicFeetPerSecond">
+            <MatMLUnit name="CubicFeetPerSecond"/>
+            <MatMLUnit name="ft-ft-ft/sec"/>
+            <MatMLUnit name="ft.ft.ft/sec"/>
+            <MatMLUnit name="ft^3/sec"/>
+            <MatMLUnit name="ft-ft-ft/s"/>
+            <MatMLUnit name="ft.ft.ft/s"/>
+            <MatMLUnit name="ft^3/s"/>
+            <MatMLUnit name="ft3/sec"/>
+            <MatMLUnit name="ft3/s"/>
+        </CATIAUnit>
+
+        <CATIAUnit name="CubicInch">
+            <MatMLUnit name="CubicInch"/>
+            <MatMLUnit name="in-in-in"/>
+            <MatMLUnit name="in.in.in"/>
+            <MatMLUnit name="in^3"/>
+            <MatMLUnit name="in3"/>
+        </CATIAUnit>
+
+        <CATIAUnit name="CubicInchPerSecond">
+            <MatMLUnit name="CubicInchPerSecond"/>
+            <MatMLUnit name="in-in-in/sec"/>
+            <MatMLUnit name="in-in-in/s"/>
+            <MatMLUnit name="in.in.in/sec"/>
+            <MatMLUnit name="in.in.in/s"/>
+            <MatMLUnit name="in^3/sec"/>
+            <MatMLUnit name="in^3/s"/>
+            <MatMLUnit name="in3/sec"/>
+            <MatMLUnit name="in3/s"/>
+        </CATIAUnit>
+
+        <CATIAUnit name="CubicMeter">
+            <MatMLUnit name="CubicMeter"/>
+            <MatMLUnit name="m-m-m"/>
+            <MatMLUnit name="m.m.m"/>
+            <MatMLUnit name="m^3"/>
+            <MatMLUnit name="m3"/>
+        </CATIAUnit>
+
+        <CATIAUnit name="CubicMeterPerHour">
+            <MatMLUnit name="CubicMeterPerHour"/>
+            <MatMLUnit name="m-m-m/hr"/>
+            <MatMLUnit name="m.m.m/hr"/>
+            <MatMLUnit name="m^3/hr"/>
+            <MatMLUnit name="m3/hr"/>
+        </CATIAUnit>
+
+        <CATIAUnit name="CubicMeterPerMinute">
+            <MatMLUnit name="CubicMeterPerMinute"/>
+            <MatMLUnit name="m-m-m/min"/>
+            <MatMLUnit name="m.m.m/min"/>
+            <MatMLUnit name="m^3/min"/>
+            <MatMLUnit name="m3/min"/>
+        </CATIAUnit>
+
+        <CATIAUnit name="CubicMeterPerSecond">
+            <MatMLUnit name="CubicMeterPerSecond"/>
+            <MatMLUnit name="m-m-m/sec"/>
+            <MatMLUnit name="m-m-m/s"/>
+            <MatMLUnit name="m.m.m/sec"/>
+            <MatMLUnit name="m.m.m/s"/>
+            <MatMLUnit name="m^3/sec"/>
+            <MatMLUnit name="m^3/s"/>
+            <MatMLUnit name="m3/sec"/>
+            <MatMLUnit name="m3/s"/>
+        </CATIAUnit>
+
+        <CATIAUnit name="CubicMilliMeter">
+            <MatMLUnit name="CubicMilliMeter"/>
+            <MatMLUnit name="mm-mm-mm"/>
+            <MatMLUnit name="mm.mm.mm"/>
+            <MatMLUnit name="mm^3"/>
+            <MatMLUnit name="mm3"/>
+        </CATIAUnit>
+
+        <CATIAUnit name="CubicMilliMeterPerSecond">
+            <MatMLUnit name="CubicMilliMeterPerSecond"/>
+            <MatMLUnit name="mm-mm-mm/sec"/>
+            <MatMLUnit name="mm-mm-mm/s"/>
+            <MatMLUnit name="mm.mm.mm/sec"/>
+            <MatMLUnit name="mm.mm.mm/s"/>
+            <MatMLUnit name="mm^3/sec"/>
+            <MatMLUnit name="mm^3/s"/>
+            <MatMLUnit name="mm3/sec"/>
+            <MatMLUnit name="mm3/s"/>
+        </CATIAUnit>
+
+
+        <!--*************************************************-->
+        <!--                       D                         -->
+        <!--*************************************************-->
+        <CATIAUnit name="Degrees">
+            <MatMLUnit name="Degrees"/>
+            <MatMLUnit name="deg"/>
+        </CATIAUnit>
+
+        <CATIAUnit name="DegreesPerSecond">
+            <MatMLUnit name="DegreesPerSecond"/>
+            <MatMLUnit name="Degrees/sec"/>
+            <MatMLUnit name="Degrees/s"/>
+            <MatMLUnit name="deg/sec"/>
+            <MatMLUnit name="deg/s"/>
+        </CATIAUnit>
+
+        <CATIAUnit name="DegreesPerSecondSquared">
+            <MatMLUnit name="DegreesPerSecondSquared"/>
+            <MatMLUnit name="Degrees/sec-sec"/>
+            <MatMLUnit name="Degrees/s-s"/>
+            <MatMLUnit name="Degrees/sec.sec"/>
+            <MatMLUnit name="Degrees/s.s"/>
+            <MatMLUnit name="Degrees/sec^2"/>
+            <MatMLUnit name="Degrees/s^2"/>
+            <MatMLUnit name="deg/sec-sec"/>
+            <MatMLUnit name="deg/s-s"/>
+            <MatMLUnit name="deg/sec.sec"/>
+            <MatMLUnit name="deg/s.s"/>
+            <MatMLUnit name="deg/sec^2"/>
+            <MatMLUnit name="deg/s^2"/>
+            <MatMLUnit name="Degrees/sec2"/>
+            <MatMLUnit name="Degrees/s2"/>
+            <MatMLUnit name="deg/sec2"/>
+            <MatMLUnit name="deg/s2"/>
+        </CATIAUnit>
+
+        <CATIAUnit name="DissipationRate_English1">
+            <MatMLUnit name="DissipationRate_English1"/>
+            <MatMLUnit name="in-in/sec-sec-sec"/>
+            <MatMLUnit name="in.in/sec.sec.sec"/>
+            <MatMLUnit name="in^2/sec^3"/>
+            <MatMLUnit name="in-in/s-s-s"/>
+            <MatMLUnit name="in.in/s.s.s"/>
+            <MatMLUnit name="in^2/s^3"/>
+            <MatMLUnit name="in2/sec3"/>
+            <MatMLUnit name="in2/s3"/>
+        </CATIAUnit>
+
+        <CATIAUnit name="DissipationRate_English2">
+            <MatMLUnit name="DissipationRate_English2"/>
+            <MatMLUnit name="ft-ft/sec-sec-sec"/>
+            <MatMLUnit name="ft-ft/sec.sec.sec"/>
+            <MatMLUnit name="ft^2/sec^3"/>
+            <MatMLUnit name="ft-ft/s-s-s"/>
+            <MatMLUnit name="ft-ft/s.s.s"/>
+            <MatMLUnit name="ft^2/s^3"/>
+            <MatMLUnit name="ft2/sec3"/>
+            <MatMLUnit name="ft2/s3"/>
+        </CATIAUnit>
+
+        <CATIAUnit name="DissipationRate_Metric1">
+            <MatMLUnit name="DissipationRate_Metric1"/>
+            <MatMLUnit name="mm-mm/sec-sec-sec"/>
+            <MatMLUnit name="mm.mm/sec.sec.sec"/>
+            <MatMLUnit name="mm^2/sec^3"/>
+            <MatMLUnit name="mm-mm/s-s-s"/>
+            <MatMLUnit name="mm.mm/s.s.s"/>
+            <MatMLUnit name="mm^2/s^3"/>
+            <MatMLUnit name="mm2/sec3"/>
+            <MatMLUnit name="mm2/s3"/>
+        </CATIAUnit>
+
+        <CATIAUnit name="DissipationRate_Metric2">
+            <MatMLUnit name="DissipationRate_Metric2"/>
+            <MatMLUnit name="m-m/sec-sec-sec"/>
+            <MatMLUnit name="m.m/sec.sec.sec"/>
+            <MatMLUnit name="m^2/sec^3"/>
+            <MatMLUnit name="m-m/s-s-s"/>
+            <MatMLUnit name="m.m/s.s.s"/>
+            <MatMLUnit name="m^2/s^3"/>
+            <MatMLUnit name="m2/sec3"/>
+            <MatMLUnit name="m2/s3"/>
+        </CATIAUnit>
+
+        <CATIAUnit name="DutyCycles">
+            <MatMLUnit name="DutyCycles"/>
+        </CATIAUnit>
+
+        <CATIAUnit name="DynamicViscosity_English1">
+            <MatMLUnit name="DynamicViscosity_English1"/>
+            <MatMLUnit name="lbf/sec-in^2"/>
+            <MatMLUnit name="lbf/sec-in-in"/>
+            <MatMLUnit name="lbf/sec.in.in"/>
+            <MatMLUnit name="lbf/sec.in^2"/>
+            <MatMLUnit name="lbf/sec-in2"/>
+            <MatMLUnit name="lbf/sec.in2"/>
+        </CATIAUnit>
+
+        <CATIAUnit name="DynamicViscosity_English2">
+            <MatMLUnit name="DynamicViscosity_English2"/>
+            <MatMLUnit name="lbf/sec-ft^2"/>
+            <MatMLUnit name="lbf/sec-ft-ft"/>
+            <MatMLUnit name="lbf/sec.ft.ft"/>
+            <MatMLUnit name="lbf/sec.ft^2"/>
+            <MatMLUnit name="lbf/sec-ft2"/>
+            <MatMLUnit name="lbf/sec.ft2"/>
+        </CATIAUnit>
+
+        <CATIAUnit name="DynamicViscosity_English3">
+            <MatMLUnit name="DynamicViscosity_English3"/>
+            <MatMLUnit name="lbm/in-sec"/>
+            <MatMLUnit name="lbm/in.sec"/>
+        </CATIAUnit>
+
+        <CATIAUnit name="DynamicViscosity_English4">
+            <MatMLUnit name="DynamicViscosity_English4"/>
+            <MatMLUnit name="lbm/ft-sec"/>
+            <MatMLUnit name="lbm/ft.sec"/>
+        </CATIAUnit>
+
+        <CATIAUnit name="DynamicViscosity_Metric1">
+            <MatMLUnit name="DynamicViscosity_Metric1"/>
+            <MatMLUnit name="kg/m-sec"/>
+            <MatMLUnit name="kg/m.sec"/>
+            <MatMLUnit name="kg/m-s"/>
+            <MatMLUnit name="kg/m.s"/>
+        </CATIAUnit>
+
+        <CATIAUnit name="DynamicViscosity_Metric2">
+            <MatMLUnit name="DynamicViscosity_Metric2"/>
+            <MatMLUnit name="kg/mm-sec"/>
+            <MatMLUnit name="kg/mm.sec"/>
+            <MatMLUnit name="kg/mm-s"/>
+            <MatMLUnit name="kg/mm.s"/>
+        </CATIAUnit>
+
+        <CATIAUnit name="DynamicViscosity_Metric3">
+            <MatMLUnit name="DynamicViscosity_Metric3"/>
+            <MatMLUnit name="g/cm-sec"/>
+            <MatMLUnit name="g/cm.sec"/>
+            <MatMLUnit name="g/cm-s"/>
+            <MatMLUnit name="g/cm.s"/>
+        </CATIAUnit>
+
+        <CATIAUnit name="DynamicViscosity_Metric4">
+            <MatMLUnit name="DynamicViscosity_Metric4"/>
+            <MatMLUnit name="mN-sec/mm-mm"/>
+            <MatMLUnit name="mN.sec/mm.mm"/>
+            <MatMLUnit name="mN-sec/mm^2"/>
+            <MatMLUnit name="mN.sec/mm^2"/>
+            <MatMLUnit name="mN-s/mm-mm"/>
+            <MatMLUnit name="mN.s/mm.mm"/>
+            <MatMLUnit name="mN-s/mm^2"/>
+            <MatMLUnit name="mN.s/mm^2"/>
+            <MatMLUnit name="mN-sec/mm2"/>
+            <MatMLUnit name="mN.sec/mm2"/>
+            <MatMLUnit name="mN-s/mm2"/>
+            <MatMLUnit name="mN.s/mm2"/>
+        </CATIAUnit>
+
+        <CATIAUnit name="DynamicViscosity_Metric5">
+            <MatMLUnit name="DynamicViscosity_Metric5"/>
+            <MatMLUnit name="N-sec/mm-mm"/>
+            <MatMLUnit name="N.sec/mm.mm"/>
+            <MatMLUnit name="N-sec/mm^2"/>
+            <MatMLUnit name="N.sec/mm^2"/>
+            <MatMLUnit name="N-s/mm-mm"/>
+            <MatMLUnit name="N.s/mm.mm"/>
+            <MatMLUnit name="N-s/mm^2"/>
+            <MatMLUnit name="N.s/mm^2"/>
+            <MatMLUnit name="N-sec/mm2"/>
+            <MatMLUnit name="N.sec/mm2"/>
+            <MatMLUnit name="N-s/mm2"/>
+            <MatMLUnit name="N.s/mm2"/>
+        </CATIAUnit>
+
+        <CATIAUnit name="DynamicViscosity_Metric6">
+            <MatMLUnit name="DynamicViscosity_Metric6"/>
+            <MatMLUnit name="N-sec/cm-cm"/>
+            <MatMLUnit name="N.sec/cm.cm"/>
+            <MatMLUnit name="N-sec/cm^2"/>
+            <MatMLUnit name="N.sec/cm^2"/>
+            <MatMLUnit name="N-s/cm-cm"/>
+            <MatMLUnit name="N.s/cm.cm"/>
+            <MatMLUnit name="N-s/cm^2"/>
+            <MatMLUnit name="N.s/cm^2"/>
+            <MatMLUnit name="N-sec/cm2"/>
+            <MatMLUnit name="N.sec/cm2"/>
+            <MatMLUnit name="N-s/cm2"/>
+            <MatMLUnit name="N.s/cm2"/>
+        </CATIAUnit>
+
+        <CATIAUnit name="DynamicViscosity_Metric7">
+            <MatMLUnit name="DynamicViscosity_Metric7"/>
+            <MatMLUnit name="N-sec/m-m"/>
+            <MatMLUnit name="N.sec/m.m"/>
+            <MatMLUnit name="N-sec/m^2"/>
+            <MatMLUnit name="N.sec/m^2"/>
+            <MatMLUnit name="N-s/m-m"/>
+            <MatMLUnit name="N.s/m.m"/>
+            <MatMLUnit name="N-s/m^2"/>
+            <MatMLUnit name="N.s/m^2"/>
+            <MatMLUnit name="N-sec/m2"/>
+            <MatMLUnit name="N.sec/m2"/>
+            <MatMLUnit name="N-s/m2"/>
+            <MatMLUnit name="N.s/m2"/>
+        </CATIAUnit>
+
+
+        <!--*************************************************-->
+        <!--                       E                         -->
+        <!--*************************************************-->
+        <CATIAUnit name="EnergyPerMass_English1">
+            <MatMLUnit name="EnergyPerMass_English1"/>
+            <MatMLUnit name="in-in/sec-sec"/>
+            <MatMLUnit name="in.in/sec.sec"/>
+            <MatMLUnit name="in^2/sec^2"/>
+            <MatMLUnit name="in2/sec2"/>
+        </CATIAUnit>
+
+        <CATIAUnit name="EnergyPerMass_English2">
+            <MatMLUnit name="EnergyPerMass_English2"/>
+            <MatMLUnit name="ft-ft/sec-sec"/>
+            <MatMLUnit name="ft.ft/sec.sec"/>
+            <MatMLUnit name="ft^2/sec^2"/>
+            <MatMLUnit name="ft2/sec2"/>
+        </CATIAUnit>
+
+        <CATIAUnit name="EnergyPerMass_Metric1">
+            <MatMLUnit name="EnergyPerMass_Metric1"/>
+            <MatMLUnit name="mm-mm/sec-sec"/>
+            <MatMLUnit name="mm.mm/sec.sec"/>
+            <MatMLUnit name="mm^2/sec^2"/>
+            <MatMLUnit name="mm2/sec2"/>
+        </CATIAUnit>
+
+        <CATIAUnit name="EnergyPerMass_Metric2">
+            <MatMLUnit name="EnergyPerMass_Metric2"/>
+            <MatMLUnit name="m-m/sec-sec"/>
+            <MatMLUnit name="m.m/sec.sec"/>
+            <MatMLUnit name="m^2/sec^2"/>
+            <MatMLUnit name="m2/sec2"/>
+        </CATIAUnit>
+
+
+        <!--*************************************************-->
+        <!--                       F                         -->
+        <!--*************************************************-->
+        <CATIAUnit name="Fahrenheit">
+            <MatMLUnit name="Fahrenheit"/>
+            <MatMLUnit name="F"/>
+        </CATIAUnit>
+
+        <CATIAUnit name="FahrenheitDifference">
+            <MatMLUnit name="FahrenheitDifference"/>
+            <MatMLUnit name="DeltaF"/>
+        </CATIAUnit>
+
+        <CATIAUnit name="FahrenheitPerFoot">
+            <MatMLUnit name="FahrenheitPerFoot"/>
+            <MatMLUnit name="Fahrenheit/ft"/>
+            <MatMLUnit name="F/ft"/>
+        </CATIAUnit>
+
+        <CATIAUnit name="FahrenheitPerInch">
+            <MatMLUnit name="FahrenheitPerInch"/>
+            <MatMLUnit name="Fahrenheit/in"/>
+            <MatMLUnit name="F/in"/>
+        </CATIAUnit>
+
+        <CATIAUnit name="Feet">
+            <MatMLUnit name="Feet"/>
+            <MatMLUnit name="ft"/>
+        </CATIAUnit>
+
+        <CATIAUnit name="FeetCubedPerPoundForce">
+            <MatMLUnit name="FeetCubedPerPoundForce"/>
+            <MatMLUnit name="Feet^3/lbf"/>
+            <MatMLUnit name="ft-ft-ft/lbf"/>
+            <MatMLUnit name="ft.ft.ft/lbf"/>
+            <MatMLUnit name="ft^3/lbf"/>
+            <MatMLUnit name="Feet3/lbf"/>
+            <MatMLUnit name="ft3/lbf"/>
+        </CATIAUnit>
+
+        <CATIAUnit name="FeetFourth">
+            <MatMLUnit name="FeetFourth"/>
+            <MatMLUnit name="Feet^4"/>
+            <MatMLUnit name="ft^4"/>
+            <MatMLUnit name="Feet4"/>
+            <MatMLUnit name="ft4"/>
+            <MatMLUnit name="ft-ft-ft-ft"/>
+            <MatMLUnit name="ft.ft.ft.ft"/>
+        </CATIAUnit>
+
+        <CATIAUnit name="FeetPerSecond">
+            <MatMLUnit name="FeetPerSecond"/>
+            <MatMLUnit name="Feet/sec"/>
+            <MatMLUnit name="Feet/s"/>
+            <MatMLUnit name="ft/sec"/>
+            <MatMLUnit name="ft/s"/>
+        </CATIAUnit>
+
+        <CATIAUnit name="FeetPerSquareSecond">
+            <MatMLUnit name="FeetPerSquareSecond"/>
+            <MatMLUnit name="ft/sec^2"/>
+            <MatMLUnit name="ft/s^2"/>
+            <MatMLUnit name="ft/sec2"/>
+            <MatMLUnit name="ft/s2"/>
+            <MatMLUnit name="ft/sec-sec"/>
+            <MatMLUnit name="ft/s-s"/>
+            <MatMLUnit name="ft/sec.sec"/>
+            <MatMLUnit name="ft/s.s"/>
+        </CATIAUnit>
+
+        <CATIAUnit name="FeetSixth">
+            <MatMLUnit name="FeetSixth"/>
+            <MatMLUnit name="ft^6"/>
+            <MatMLUnit name="ft6"/>
+            <MatMLUnit name="ft-ft-ft-ft-ft-ft"/>
+            <MatMLUnit name="ft.ft.ft.ft.ft.ft"/>
+        </CATIAUnit>
+
+
+        <!--*************************************************-->
+        <!--                       G                         -->
+        <!--*************************************************-->
+        <CATIAUnit name="g's">
+            <MatMLUnit name="g's"/>
+        </CATIAUnit>
+
+        <CATIAUnit name="GigaHertz">
+            <MatMLUnit name="GigaHertz"/>
+            <MatMLUnit name="GHz"/>
+        </CATIAUnit>
+
+        <CATIAUnit name="Gram">
+            <MatMLUnit name="Gram"/>
+            <MatMLUnit name="g"/>
+        </CATIAUnit>
+
+        <CATIAUnit name="GramPerHour">
+            <MatMLUnit name="GramPerHour"/>
+            <MatMLUnit name="g/hr"/>
+        </CATIAUnit>
+
+        <CATIAUnit name="GramPerMinute">
+            <MatMLUnit name="GramPerMinute"/>
+            <MatMLUnit name="g/min"/>
+        </CATIAUnit>
+
+        <CATIAUnit name="GramPerSecond">
+            <MatMLUnit name="GramPerSecond"/>
+            <MatMLUnit name="g/sec"/>
+            <MatMLUnit name="g/s"/>
+        </CATIAUnit>
+
+
+        <!--*************************************************-->
+        <!--                       H                         -->
+        <!--*************************************************-->
+
+        <CATIAUnit name="HeatFlux_English1">
+            <MatMLUnit name="HeatFlux_English1"/>
+            <MatMLUnit name="BTU/sec-in^2"/>
+            <MatMLUnit name="BTU/sec-in2"/>
+            <MatMLUnit name="BTU/sec-in-in"/>
+            <MatMLUnit name="BTU/sec.in.in"/>
+            <MatMLUnit name="BTU/secin^2"/>
+            <MatMLUnit name="BTU/secin2"/>
+        </CATIAUnit>
+
+        <CATIAUnit name="HeatFlux_English2">
+            <MatMLUnit name="HeatFlux_English2"/>
+            <MatMLUnit name="BTU/sec-ft-ft"/>
+            <MatMLUnit name="BTU/sec-ft.ft"/>
+            <MatMLUnit name="BTU/sec-ft^2"/>
+            <MatMLUnit name="BTU/secft^2"/>
+            <MatMLUnit name="BTU/sec-ft2"/>
+            <MatMLUnit name="BTU/secft2"/>
+        </CATIAUnit>
+
+        <CATIAUnit name="HeatFlux_English3">
+            <MatMLUnit name="HeatFlux_English3"/>
+            <MatMLUnit name="BTU/hr-in-in"/>
+            <MatMLUnit name="BTU/hr.in.in"/>
+            <MatMLUnit name="BTU/hr-in^2"/>
+            <MatMLUnit name="BTU/hr.in^2"/>
+            <MatMLUnit name="BTU/hrin^2"/>
+            <MatMLUnit name="BTU/hr-in2"/>
+            <MatMLUnit name="BTU/hr.in2"/>
+            <MatMLUnit name="BTU/hrin2"/>
+        </CATIAUnit>
+
+        <CATIAUnit name="HeatFlux_English4">
+            <MatMLUnit name="HeatFlux_English4"/>
+            <MatMLUnit name="BTU/hr-ft-ft"/>
+            <MatMLUnit name="BTU/hr-ft^2"/>
+            <MatMLUnit name="BTU/hrft^2"/>
+            <MatMLUnit name="BTU/hr-ft2"/>
+            <MatMLUnit name="BTU/hrft2"/>
+        </CATIAUnit>
+
+        <CATIAUnit name="HeatFlux_English5">
+            <MatMLUnit name="HeatFlux_English5"/>
+            <MatMLUnit name="lbf-in/sec-in-in"/>
+            <MatMLUnit name="lbf.in/sec.in.in"/>
+            <MatMLUnit name="lbf-in/sec-in^2"/>
+            <MatMLUnit name="lbf.in/sec.in^2"/>
+            <MatMLUnit name="lbf-in/sec-in2"/>
+            <MatMLUnit name="lbf.in/sec.in2"/>
+            <MatMLUnit name="lbfin/sec-in-in"/>
+            <MatMLUnit name="lbfin/sec.in.in"/>
+            <MatMLUnit name="lbfin/sec-in^2"/>
+            <MatMLUnit name="lbfin/sec.in^2"/>
+            <MatMLUnit name="lbfin/sec-in2"/>
+            <MatMLUnit name="lbfin/sec.in2"/>
+        </CATIAUnit>
+
+        <CATIAUnit name="HeatFlux_Metric1">
+            <MatMLUnit name="HeatFlux_Metric1"/>
+            <MatMLUnit name="microW/mm-mm"/>
+            <MatMLUnit name="microW/mm.mm"/>
+            <MatMLUnit name="microW/mm^2"/>
+            <MatMLUnit name="microW/mm2"/>
+        </CATIAUnit>
+
+        <CATIAUnit name="HeatFlux_Metric2">
+            <MatMLUnit name="HeatFlux_Metric2"/>
+            <MatMLUnit name="W/mm-mm"/>
+            <MatMLUnit name="W/mm.mm"/>
+            <MatMLUnit name="W/mm^2"/>
+            <MatMLUnit name="W/mm2"/>
+        </CATIAUnit>
+
+        <CATIAUnit name="HeatFlux_Metric3">
+            <MatMLUnit name="HeatFlux_Metric3"/>
+            <MatMLUnit name="mW/mm-mm"/>
+            <MatMLUnit name="mW/mm.mm"/>
+            <MatMLUnit name="mW/mm^2"/>
+            <MatMLUnit name="mW/mm2"/>
+        </CATIAUnit>
+
+        <CATIAUnit name="HeatFlux_Metric4">
+            <MatMLUnit name="HeatFlux_Metric4"/>
+            <MatMLUnit name="W/cm-cm"/>
+            <MatMLUnit name="W/cm.cm"/>
+            <MatMLUnit name="W/cm^2"/>
+            <MatMLUnit name="W/cm2"/>
+        </CATIAUnit>
+
+        <CATIAUnit name="HeatFlux_Metric5">
+            <MatMLUnit name="HeatFlux_Metric5"/>
+            <MatMLUnit name="W/m-m"/>
+            <MatMLUnit name="W/m.m"/>
+            <MatMLUnit name="W/m^2"/>
+            <MatMLUnit name="W/m2"/>
+        </CATIAUnit>
+
+        <CATIAUnit name="HeatFlux_Metric6">
+            <MatMLUnit name="HeatFlux_Metric6"/>
+            <MatMLUnit name="W/in-in"/>
+            <MatMLUnit name="W/in.in"/>
+            <MatMLUnit name="W/in^2"/>
+            <MatMLUnit name="W/in2"/>
+        </CATIAUnit>
+
+        <CATIAUnit name="HeatGeneration_English1">
+            <MatMLUnit name="HeatGeneration_English1"/>
+            <MatMLUnit name="BTU/sec-in^3"/>
+            <MatMLUnit name="BTU/sec-in3"/>
+            <MatMLUnit name="BTU/sec-in-in-in"/>
+            <MatMLUnit name="BTU/sec.in.in.in"/>
+            <MatMLUnit name="BTU/sec.in^3"/>
+            <MatMLUnit name="BTU/sec.in3"/>
+            <MatMLUnit name="BTU/s-in^3"/>
+            <MatMLUnit name="BTU/s-in3"/>
+            <MatMLUnit name="BTU/s-in-in-in"/>
+            <MatMLUnit name="BTU/s.in.in.in"/>
+            <MatMLUnit name="BTU/s.in^3"/>
+            <MatMLUnit name="BTU/s.in3"/>
+        </CATIAUnit>
+
+        <CATIAUnit name="HeatGeneration_English2">
+            <MatMLUnit name="HeatGeneration_English2"/>
+            <MatMLUnit name="BTU/hr-in^3"/>
+            <MatMLUnit name="BTU/hr-in3"/>
+            <MatMLUnit name="BTU/hr-in-in-in"/>
+            <MatMLUnit name="BTU/hr.in.in.in"/>
+            <MatMLUnit name="BTU/hr.in^3"/>
+            <MatMLUnit name="BTU/hr.in3"/>
+        </CATIAUnit>
+
+        <CATIAUnit name="HeatGeneration_English3">
+            <MatMLUnit name="HeatGeneration_English3"/>
+            <MatMLUnit name="BTU/hr-ft^3"/>
+            <MatMLUnit name="BTU/hr-ft3"/>
+            <MatMLUnit name="BTU/hr-ft-ft-ft"/>
+            <MatMLUnit name="BTU/hr.ft.ft.ft"/>
+            <MatMLUnit name="BTU/hr.ft^3"/>
+            <MatMLUnit name="BTU/hr.ft3"/>
+        </CATIAUnit>
+
+        <CATIAUnit name="HeatGeneration_English4">
+            <MatMLUnit name="HeatGeneration_English4"/>
+            <MatMLUnit name="lbf-in/sec-in^3"/>
+            <MatMLUnit name="lbf-in/sec-in3"/>
+            <MatMLUnit name="lbf-in/sec-in-in-in"/>
+            <MatMLUnit name="lbf.in/sec.in.in.in"/>
+            <MatMLUnit name="lbf.in/sec.in^3"/>
+            <MatMLUnit name="lbf.in/sec.in3"/>
+            <MatMLUnit name="lbf-in/s-in^3"/>
+            <MatMLUnit name="lbf-in/s-in3"/>
+            <MatMLUnit name="lbf-in/s-in-in-in"/>
+            <MatMLUnit name="lbf.in/s.in.in.in"/>
+            <MatMLUnit name="lbf.in/s.in^3"/>
+            <MatMLUnit name="lbf.in/s.in3"/>
+            <MatMLUnit name="lbfin/sec-in^3"/>
+            <MatMLUnit name="lbfin/sec-in3"/>
+            <MatMLUnit name="lbfin/sec-in-in-in"/>
+            <MatMLUnit name="lbfin/sec.in.in.in"/>
+            <MatMLUnit name="lbfin/sec.in^3"/>
+            <MatMLUnit name="lbfin/sec.in3"/>
+            <MatMLUnit name="lbfin/s-in^3"/>
+            <MatMLUnit name="lbfin/s-in3"/>
+            <MatMLUnit name="lbfin/s-in-in-in"/>
+            <MatMLUnit name="lbfin/s.in.in.in"/>
+            <MatMLUnit name="lbfin/s.in^3"/>
+            <MatMLUnit name="lbfin/s.in3"/>
+        </CATIAUnit>
+
+        <CATIAUnit name="HeatGeneration_Metric1">
+            <MatMLUnit name="HeatGeneration_Metric1"/>
+            <MatMLUnit name="microW/mm-mm-mm"/>
+            <MatMLUnit name="microW/mm.mm.mm"/>
+            <MatMLUnit name="microW/mm^3"/>
+            <MatMLUnit name="microW/mm3"/>
+        </CATIAUnit>
+
+        <CATIAUnit name="HeatGeneration_Metric2">
+            <MatMLUnit name="HeatGeneration_Metric2"/>
+            <MatMLUnit name="W/mm-mm-mm"/>
+            <MatMLUnit name="W/mm.mm.mm"/>
+            <MatMLUnit name="W/mm^3"/>
+            <MatMLUnit name="W/mm3"/>
+        </CATIAUnit>
+
+        <CATIAUnit name="HeatGeneration_Metric3">
+            <MatMLUnit name="HeatGeneration_Metric3"/>
+            <MatMLUnit name="W/m-m-m"/>
+            <MatMLUnit name="W/m.m.m"/>
+            <MatMLUnit name="W/m^3"/>
+            <MatMLUnit name="W/m3"/>
+        </CATIAUnit>
+
+        <CATIAUnit name="hertz">
+            <MatMLUnit name="hertz"/>
+            <MatMLUnit name="hz"/>
+        </CATIAUnit>
+
+        <CATIAUnit name="Hour">
+            <MatMLUnit name="Hour"/>
+            <MatMLUnit name="hr"/>
+        </CATIAUnit>
+
+
+        <!--*************************************************-->
+        <!--                       I                         -->
+        <!--*************************************************-->
+        <CATIAUnit name="Inch">
+            <MatMLUnit name="Inch"/>
+            <MatMLUnit name="in"/>
+        </CATIAUnit>
+
+        <CATIAUnit name="InchCubedPerPoundForce">
+            <MatMLUnit name="InchCubedPerPoundForce"/>
+            <MatMLUnit name="in-in-in/lbf"/>
+            <MatMLUnit name="in.in.in/lbf"/>
+            <MatMLUnit name="in^3/lbf"/>
+            <MatMLUnit name="in3/lbf"/>
+        </CATIAUnit>
+
+        <CATIAUnit name="InchFourth">
+            <MatMLUnit name="InchFourth"/>
+            <MatMLUnit name="in-in-in-in"/>
+            <MatMLUnit name="in.in.in.in"/>
+            <MatMLUnit name="in^4"/>
+            <MatMLUnit name="in4"/>
+        </CATIAUnit>
+
+        <CATIAUnit name="InchOfMercury">
+            <MatMLUnit name="InchOfMercury"/>
+        </CATIAUnit>
+
+        <CATIAUnit name="InchOfWater">
+            <MatMLUnit name="InchOfWater"/>
+        </CATIAUnit>
+
+        <CATIAUnit name="InchPerSecond">
+            <MatMLUnit name="InchPerSecond"/>
+            <MatMLUnit name="in/sec"/>
+            <MatMLUnit name="in/s"/>
+        </CATIAUnit>
+
+        <CATIAUnit name="InchPerSquareSecond">
+            <MatMLUnit name="InchPerSquareSecond"/>
+            <MatMLUnit name="in/sec-sec"/>
+            <MatMLUnit name="in/s-s"/>
+            <MatMLUnit name="in/sec.sec"/>
+            <MatMLUnit name="in/s.s"/>
+            <MatMLUnit name="in/sec^2"/>
+            <MatMLUnit name="in/sec2"/>
+            <MatMLUnit name="in/s^2"/>
+            <MatMLUnit name="in/s2"/>
+        </CATIAUnit>
+
+        <CATIAUnit name="InchSixth">
+            <MatMLUnit name="InchSixth"/>
+            <MatMLUnit name="in-in-in-in-in-in"/>
+            <MatMLUnit name="in.in.in.in.in.in"/>
+            <MatMLUnit name="in^6"/>
+            <MatMLUnit name="in6"/>
+        </CATIAUnit>
+
+
+        <!--*************************************************-->
+        <!--                       J                         -->
+        <!--*************************************************-->
+        <CATIAUnit name="Joule">
+            <MatMLUnit name="Joule"/>
+            <MatMLUnit name="J"/>
+        </CATIAUnit>
+
+        <CATIAUnit name="JoulePerKilogram">
+            <MatMLUnit name="JoulePerKilogram"/>
+            <MatMLUnit name="J/kg"/>
+        </CATIAUnit>
+
+        <!--*************************************************-->
+        <!--                       K                         -->
+        <!--*************************************************-->
+        <CATIAUnit name="Kelvin">
+            <MatMLUnit name="Kelvin"/>
+            <MatMLUnit name="K"/>
+        </CATIAUnit>
+
+        <CATIAUnit name="KelvinDifference">
+            <MatMLUnit name="KelvinDifference"/>
+            <MatMLUnit name="DeltaK"/>
+        </CATIAUnit>
+
+        <CATIAUnit name="KiloHertz">
+            <MatMLUnit name="KiloHertz"/>
+            <MatMLUnit name="kHz"/>
+        </CATIAUnit>
+
+        <CATIAUnit name="Kilogram">
+            <MatMLUnit name="Kilogram"/>
+            <MatMLUnit name="kg"/>
+        </CATIAUnit>
+
+        <CATIAUnit name="KilogramForceSecondsSquaredPerMeter">
+            <MatMLUnit name="KilogramForceSecondsSquaredPerMeter"/>
+        </CATIAUnit>
+
+        <CATIAUnit name="KilogramForceSecondsSquaredPerMilliMeter">
+            <MatMLUnit name="KilogramForceSecondsSquaredPerMilliMeter"/>
+        </CATIAUnit>
+
+        <CATIAUnit name="KilogramMeterPerSecond">
+            <MatMLUnit name="KilogramMeterPerSecond"/>
+            <MatMLUnit name="kg-m/sec"/>
+            <MatMLUnit name="kg-m/s"/>
+            <MatMLUnit name="kg.m/sec"/>
+            <MatMLUnit name="kg.m/s"/>
+        </CATIAUnit>
+
+        <CATIAUnit name="KilogramMilliMeter">
+            <MatMLUnit name="KilogramMilliMeter"/>
+            <MatMLUnit name="kg-mm"/>
+            <MatMLUnit name="kg.mm"/>
+        </CATIAUnit>
+
+        <CATIAUnit name="KilogramMilliMeterPerSecond">
+            <MatMLUnit name="KilogramMilliMeterPerSecond"/>
+            <MatMLUnit name="kg-mm/sec"/>
+            <MatMLUnit name="kg-mm/s"/>
+            <MatMLUnit name="kg.mm/sec"/>
+            <MatMLUnit name="kg.mm/s"/>
+        </CATIAUnit>
+
+        <CATIAUnit name="KilogramMilliMeterSquared">
+            <MatMLUnit name="KilogramMilliMeterSquared"/>
+            <MatMLUnit name="kg-mm-mm"/>
+            <MatMLUnit name="kg.mm.mm"/>
+            <MatMLUnit name="kg-mm^2"/>
+            <MatMLUnit name="kg-mm2"/>
+            <MatMLUnit name="kg.mm^2"/>
+            <MatMLUnit name="kg.mm2"/>
+        </CATIAUnit>
+
+        <CATIAUnit name="KilogramPerCubicMeter">
+            <MatMLUnit name="KilogramPerCubicMeter"/>
+            <MatMLUnit name="kg/m-m-m"/>
+            <MatMLUnit name="kg/m.m.m"/>
+            <MatMLUnit name="kg/m^3"/>
+            <MatMLUnit name="kg/m3"/>
+        </CATIAUnit>
+
+        <CATIAUnit name="KilogramPerCubicMilliMeter">
+            <MatMLUnit name="KilogramPerCubicMilliMeter"/>
+            <MatMLUnit name="kg/mm-mm-mm"/>
+            <MatMLUnit name="kg/mm.mm.mm"/>
+            <MatMLUnit name="kg/mm^3"/>
+            <MatMLUnit name="kg/mm3"/>
+        </CATIAUnit>
+
+        <CATIAUnit name="KilogramPerHour">
+            <MatMLUnit name="KilogramPerHour"/>
+            <MatMLUnit name="kg/hr"/>
+        </CATIAUnit>
+
+        <CATIAUnit name="KilogramPerMeter">
+            <MatMLUnit name="KilogramPerMeter"/>
+            <MatMLUnit name="kg/m"/>
+        </CATIAUnit>
+
+        <CATIAUnit name="KilogramPerMeterSquared">
+            <MatMLUnit name="KilogramPerMeterSquared"/>
+            <MatMLUnit name="kg/m-m"/>
+            <MatMLUnit name="kg/m.m"/>
+            <MatMLUnit name="kg/m^2"/>
+            <MatMLUnit name="kg/m2"/>
+        </CATIAUnit>
+
+        <CATIAUnit name="KilogramPerMilliMeter">
+            <MatMLUnit name="KilogramPerMilliMeter"/>
+            <MatMLUnit name="kg/mm"/>
+        </CATIAUnit>
+
+        <CATIAUnit name="KilogramPerMilliMeterSquared">
+            <MatMLUnit name="KilogramPerMilliMeterSquared"/>
+            <MatMLUnit name="kg/mm-mm"/>
+            <MatMLUnit name="kg/mm.mm"/>
+            <MatMLUnit name="kg/mm^2"/>
+            <MatMLUnit name="kg/mm2"/>
+        </CATIAUnit>
+
+        <CATIAUnit name="KilogramPerMinute">
+            <MatMLUnit name="KilogramPerMinute"/>
+            <MatMLUnit name="kg/min"/>
+        </CATIAUnit>
+
+        <CATIAUnit name="KilogramPerSecond">
+            <MatMLUnit name="KilogramPerSecond"/>
+            <MatMLUnit name="kg/sec"/>
+            <MatMLUnit name="kg/s"/>
+        </CATIAUnit>
+
+        <CATIAUnit name="KiloJoulePerKilogram">
+            <MatMLUnit name="KiloJoulePerKilogram"/>
+            <MatMLUnit name="kJ/kg"/>
+            <MatMLUnit name="MJ/kg" scaleFactor="1000"/>
+        </CATIAUnit>
+
+        <CATIAUnit name="KiloMeter">
+            <MatMLUnit name="KiloMeter"/>
+            <MatMLUnit name="km"/>
+        </CATIAUnit>
+
+        <CATIAUnit name="KiloMeterPerHour">
+            <MatMLUnit name="KiloMeterPerHour"/>
+            <MatMLUnit name="km/hr"/>
+        </CATIAUnit>
+
+        <CATIAUnit name="KiloOhmFoot">
+            <MatMLUnit name="KiloOhmFoot"/>
+        </CATIAUnit>
+
+        <CATIAUnit name="KiloOhmMeter">
+            <MatMLUnit name="KiloOhmMeter"/>
+        </CATIAUnit>
+
+        <CATIAUnit name="KiloWatt">
+            <MatMLUnit name="KiloWatt"/>
+            <MatMLUnit name="kWatt"/>
+            <MatMLUnit name="kW"/>
+        </CATIAUnit>
+
+
+        <!--*************************************************-->
+        <!--                       L                         -->
+        <!--*************************************************-->
+        <CATIAUnit name="LiterPerHour">
+            <MatMLUnit name="LiterPerHour"/>
+            <MatMLUnit name="l/hr"/>
+        </CATIAUnit>
+
+        <CATIAUnit name="LiterPerMinute">
+            <MatMLUnit name="LiterPerMinute"/>
+            <MatMLUnit name="l/min"/>
+        </CATIAUnit>
+
+        <CATIAUnit name="LiterPerSecond">
+            <MatMLUnit name="LiterPerSecond"/>
+            <MatMLUnit name="l/sec"/>
+            <MatMLUnit name="l/s"/>
+        </CATIAUnit>
+
+
+        <!--*************************************************-->
+        <!--                       M                         -->
+        <!--*************************************************-->
+        <CATIAUnit name="MassFlux_English3">
+            <MatMLUnit name="MassFlux_English3"/>
+            <MatMLUnit name="lbm/sec-in^2"/>
+            <MatMLUnit name="lbm/sec-in2"/>
+            <MatMLUnit name="lbm/sec-in-in"/>
+            <MatMLUnit name="lbm/sec.in^2"/>
+            <MatMLUnit name="lbm/sec.in2"/>
+            <MatMLUnit name="lbm/sec.in.in"/>
+            <MatMLUnit name="lbm/s-in^2"/>
+            <MatMLUnit name="lbm/s-in2"/>
+            <MatMLUnit name="lbm/s-in-in"/>
+            <MatMLUnit name="lbm/s.in^2"/>
+            <MatMLUnit name="lbm/s.in2"/>
+            <MatMLUnit name="lbm/s.in.in"/>
+        </CATIAUnit>
+
+        <CATIAUnit name="MassFlux_English4">
+            <MatMLUnit name="MassFlux_English4"/>
+            <MatMLUnit name="lbm/sec-ft^2"/>
+            <MatMLUnit name="lbm/sec-ft2"/>
+            <MatMLUnit name="lbm/sec-ft-ft"/>
+            <MatMLUnit name="lbm/sec.ft^2"/>
+            <MatMLUnit name="lbm/sec.ft2"/>
+            <MatMLUnit name="lbm/sec.ft.ft"/>
+            <MatMLUnit name="lbm/s-ft^2"/>
+            <MatMLUnit name="lbm/s-ft2"/>
+            <MatMLUnit name="lbm/s-ft-ft"/>
+            <MatMLUnit name="lbm/s.ft^2"/>
+            <MatMLUnit name="lbm/s.ft2"/>
+            <MatMLUnit name="lbm/s.ft.ft"/>
+        </CATIAUnit>
+
+        <CATIAUnit name="MassFlux_Metric1">
+            <MatMLUnit name="MassFlux_Metric1"/>
+            <MatMLUnit name="kg/sec-mm^2"/>
+            <MatMLUnit name="kg/sec-mm2"/>
+            <MatMLUnit name="kg/sec-mm-mm"/>
+            <MatMLUnit name="kg/sec.mm^2"/>
+            <MatMLUnit name="kg/sec.mm2"/>
+            <MatMLUnit name="kg/sec.mm.mm"/>
+            <MatMLUnit name="kg/s-mm^2"/>
+            <MatMLUnit name="kg/s-mm2"/>
+            <MatMLUnit name="kg/s-mm-mm"/>
+            <MatMLUnit name="kg/s.mm^2"/>
+            <MatMLUnit name="kg/s.mm2"/>
+            <MatMLUnit name="kg/s.mm.mm"/>
+        </CATIAUnit>
+
+        <CATIAUnit name="MassFlux_Metric2">
+            <MatMLUnit name="MassFlux_Metric2"/>
+            <MatMLUnit name="kg/sec-m^2"/>
+            <MatMLUnit name="kg/sec-m2"/>
+            <MatMLUnit name="kg/sec-m-m"/>
+            <MatMLUnit name="kg/sec.m^2"/>
+            <MatMLUnit name="kg/sec.m2"/>
+            <MatMLUnit name="kg/sec.m.m"/>
+            <MatMLUnit name="kg/s-m^2"/>
+            <MatMLUnit name="kg/s-m2"/>
+            <MatMLUnit name="kg/s-m-m"/>
+            <MatMLUnit name="kg/s.m^2"/>
+            <MatMLUnit name="kg/s.m2"/>
+            <MatMLUnit name="kg/s.m.m"/>
+        </CATIAUnit>
+
+        <CATIAUnit name="MegaHertz">
+            <MatMLUnit name="MegaHertz"/>
+            <MatMLUnit name="mHz"/>
+        </CATIAUnit>
+
+        <CATIAUnit name="MegaOhmFoot">
+            <MatMLUnit name="MegaOhmFoot"/>
+        </CATIAUnit>
+
+        <CATIAUnit name="MegaOhmMeter">
+            <MatMLUnit name="MegaOhmMeter"/>
+        </CATIAUnit>
+
+        <CATIAUnit name="Meter">
+            <MatMLUnit name="Meter"/>
+            <MatMLUnit name="m"/>
+        </CATIAUnit>
+
+        <CATIAUnit name="MeterCubedPerMilliNewton">
+            <MatMLUnit name="MeterCubedPerMilliNewton"/>
+            <MatMLUnit name="m-m-m/mN"/>
+            <MatMLUnit name="m.m.m/mN"/>
+            <MatMLUnit name="m^3/mN"/>
+            <MatMLUnit name="m3/mN"/>
+        </CATIAUnit>
+
+        <CATIAUnit name="MeterCubedPerNewton">
+            <MatMLUnit name="MeterCubedPerNewton"/>
+            <MatMLUnit name="m-m-m/N"/>
+            <MatMLUnit name="m.m.m/N"/>
+            <MatMLUnit name="m^3/N"/>
+            <MatMLUnit name="m3/N"/>
+        </CATIAUnit>
+
+        <CATIAUnit name="MeterFourth">
+            <MatMLUnit name="MeterFourth"/>
+            <MatMLUnit name="m-m-m-m"/>
+            <MatMLUnit name="m.m.m.m"/>
+            <MatMLUnit name="m^4"/>
+            <MatMLUnit name="m4"/>
+        </CATIAUnit>
+
+        <CATIAUnit name="MeterPerSecond">
+            <MatMLUnit name="MeterPerSecond"/>
+            <MatMLUnit name="m/sec"/>
+            <MatMLUnit name="m/s"/>
+        </CATIAUnit>
+
+        <CATIAUnit name="MeterPerSquareSecond">
+            <MatMLUnit name="MeterPerSquareSecond"/>
+            <MatMLUnit name="m/sec-sec"/>
+            <MatMLUnit name="m/s-s"/>
+            <MatMLUnit name="m/sec.sec"/>
+            <MatMLUnit name="m/s.s"/>
+            <MatMLUnit name="m/sec^2"/>
+            <MatMLUnit name="m/sec2"/>
+            <MatMLUnit name="m/s^2"/>
+            <MatMLUnit name="m/s2"/>
+        </CATIAUnit>
+
+        <CATIAUnit name="MeterSixth">
+            <MatMLUnit name="MeterSixth"/>
+            <MatMLUnit name="m-m-m-m-m-m"/>
+            <MatMLUnit name="m.m.m.m.m.m"/>
+            <MatMLUnit name="m^6"/>
+            <MatMLUnit name="m6"/>
+        </CATIAUnit>
+
+        <CATIAUnit name="MicroAmpere">
+            <MatMLUnit name="MicroAmpere"/>
+            <MatMLUnit name="MicroAmp"/>
+        </CATIAUnit>
+
+        <CATIAUnit name="MicroJoule">
+            <MatMLUnit name="MicroJoule"/>
+            <MatMLUnit name="MicroJ"/>
+        </CATIAUnit>
+
+        <CATIAUnit name="MicroJoulePerKilogram">
+            <MatMLUnit name="MicroJoulePerKilogram"/>
+            <MatMLUnit name="MicroJ/kg"/>
+        </CATIAUnit>
+
+        <CATIAUnit name="Micron">
+            <MatMLUnit name="Micron"/>
+        </CATIAUnit>
+
+        <CATIAUnit name="MicroVolt">
+            <MatMLUnit name="MicroVolt"/>
+            <MatMLUnit name="MicroV"/>
+        </CATIAUnit>
+
+        <CATIAUnit name="MicroWatt">
+            <MatMLUnit name="HeatFlow_Metric1"/>
+            <MatMLUnit name="MicroWatt"/>
+            <MatMLUnit name="MicroW"/>
+        </CATIAUnit>
+
+        <CATIAUnit name="Mile">
+            <MatMLUnit name="Mile"/>
+            <MatMLUnit name="mi"/>
+        </CATIAUnit>
+
+        <CATIAUnit name="MilePerHour">
+            <MatMLUnit name="MilePerHour"/>
+            <MatMLUnit name="mph"/>
+            <MatMLUnit name="mi/hr"/>
+        </CATIAUnit>
+
+        <CATIAUnit name="MilliAmpere">
+            <MatMLUnit name="MilliAmpere"/>
+        </CATIAUnit>
+
+        <CATIAUnit name="MilliMeter">
+            <MatMLUnit name="MilliMeter"/>
+            <MatMLUnit name="mm"/>
+        </CATIAUnit>
+
+        <CATIAUnit name="MilliMeterCubedPerMilliNewton">
+            <MatMLUnit name="MilliMeterCubedPerMilliNewton"/>
+            <MatMLUnit name="mm-mm-mm/mN"/>
+            <MatMLUnit name="mm.mm.mm/mN"/>
+            <MatMLUnit name="mm^3/mN"/>
+            <MatMLUnit name="mm3/mN"/>
+        </CATIAUnit>
+
+        <CATIAUnit name="MilliMeterCubedPerNewton">
+            <MatMLUnit name="MilliMeterCubedPerNewton"/>
+            <MatMLUnit name="mm-mm-mm/N"/>
+            <MatMLUnit name="mm.mm.mm/N"/>
+            <MatMLUnit name="mm^3/N"/>
+            <MatMLUnit name="mm3/N"/>
+        </CATIAUnit>
+
+        <CATIAUnit name="MilliMeterFourth">
+            <MatMLUnit name="MilliMeterFourth"/>
+            <MatMLUnit name="mm-mm-mm-mm"/>
+            <MatMLUnit name="mm.mm.mm.mm"/>
+            <MatMLUnit name="mm^4"/>
+            <MatMLUnit name="mm4"/>
+        </CATIAUnit>
+
+        <CATIAUnit name="MilliMeterOfMercury">
+            <MatMLUnit name="MilliMeterOfMercury"/>
+        </CATIAUnit>
+
+        <CATIAUnit name="MilliMeterOfWater">
+            <MatMLUnit name="MilliMeterOfWater"/>
+        </CATIAUnit>
+
+        <CATIAUnit name="MilliMeterPerSecond">
+            <MatMLUnit name="MilliMeterPerSecond"/>
+            <MatMLUnit name="mm/sec"/>
+            <MatMLUnit name="mm/s"/>
+        </CATIAUnit>
+
+        <CATIAUnit name="MilliMeterPerSquareSecond">
+            <MatMLUnit name="MilliMeterPerSquareSecond"/>
+            <MatMLUnit name="mm/sec-sec"/>
+            <MatMLUnit name="mm/s-s"/>
+            <MatMLUnit name="mm/sec.sec"/>
+            <MatMLUnit name="mm/s.s"/>
+            <MatMLUnit name="mm/sec^2"/>
+            <MatMLUnit name="mm/sec2"/>
+            <MatMLUnit name="mm/s^2"/>
+            <MatMLUnit name="mm/s2"/>
+        </CATIAUnit>
+
+        <CATIAUnit name="MilliMeterSixth">
+            <MatMLUnit name="MilliMeterSixth"/>
+            <MatMLUnit name="mm-mm-mm-mm-mm-mm"/>
+            <MatMLUnit name="mm.mm.mm.mm.mm.mm"/>
+            <MatMLUnit name="mm^6"/>
+            <MatMLUnit name="mm6"/>
+        </CATIAUnit>
+
+        <CATIAUnit name="MilliNewton">
+            <MatMLUnit name="MilliNewton"/>
+            <MatMLUnit name="mN"/>
+        </CATIAUnit>
+
+        <CATIAUnit name="MilliNewtonMilliMeter">
+            <MatMLUnit name="MilliNewtonMilliMeter"/>
+            <MatMLUnit name="StrainEnergy_Metric1"/>
+            <MatMLUnit name="mN-mm"/>
+            <MatMLUnit name="mN.mm"/>
+            <MatMLUnit name="mNmm"/>
+        </CATIAUnit>
+
+        <CATIAUnit name="MilliNewtonMilliMeterPerDegree">
+            <MatMLUnit name="MilliNewtonMilliMeterPerDegree"/>
+            <MatMLUnit name="mN-m/deg"/>
+            <MatMLUnit name="mN.m/deg"/>
+        </CATIAUnit>
+
+        <CATIAUnit name="MilliNewtonMilliMeterPerRadian">
+            <MatMLUnit name="MilliNewtonMilliMeterPerRadian"/>
+            <MatMLUnit name="mN-m/rad"/>
+            <MatMLUnit name="mN.m/rad"/>
+        </CATIAUnit>
+
+        <CATIAUnit name="MilliNewtonPerMeterCubed">
+            <MatMLUnit name="MilliNewtonPerMeterCubed"/>
+            <MatMLUnit name="mN/m-m-m"/>
+            <MatMLUnit name="mN/m.m.m"/>
+            <MatMLUnit name="mN/m^3"/>
+            <MatMLUnit name="mN/m3"/>
+        </CATIAUnit>
+
+        <CATIAUnit name="MilliNewtonPerMillimeterCubed">
+            <MatMLUnit name="MilliNewtonPerMillimeterCubed"/>
+            <MatMLUnit name="mN/mm-mm-mm"/>
+            <MatMLUnit name="mN/mm.mm.mm"/>
+            <MatMLUnit name="mN/mm^3"/>
+            <MatMLUnit name="mN/mm3"/>
+        </CATIAUnit>
+
+        <CATIAUnit name="MilliNewtonPerSquareMilliMeter">
+            <MatMLUnit name="mN/mm^2(kPa)"/>
+            <MatMLUnit name="mN/mm2(kPa)"/>
+            <MatMLUnit name="mN/mm^2"/>
+            <MatMLUnit name="mN/mm2"/>
+            <MatMLUnit name="kPa"/>
+            <MatMLUnit name="mN/mm-mm(kpa)"/>
+            <MatMLUnit name="mN/mm-mm"/>
+            <MatMLUnit name="mN/mm.mm"/>
+            <MatMLUnit name="mN/mm.mm(kpa)"/>
+        </CATIAUnit>
+
+        <CATIAUnit name="MilliNewtonSecondPerCubicMilliMeter">
+            <MatMLUnit name="MilliNewtonSecondPerCubicMilliMeter"/>
+            <MatMLUnit name="MilliNewton-SecondPerMilliMeterCubed"/>
+            <MatMLUnit name="mN-sec/mm-mm-mm"/>
+            <MatMLUnit name="mN-s/mm-mm-mm"/>
+            <MatMLUnit name="mN.sec/mm.mm.mm"/>
+            <MatMLUnit name="mN.s/mm.mm.mm"/>
+            <MatMLUnit name="mN-sec/mm^3"/>
+            <MatMLUnit name="mN-sec/mm3"/>
+            <MatMLUnit name="mN-s/mm^3"/>
+            <MatMLUnit name="mN-s/mm3"/>
+            <MatMLUnit name="mN.sec/mm^3"/>
+            <MatMLUnit name="mN.sec/mm3"/>
+            <MatMLUnit name="mN.s/mm^3"/>
+            <MatMLUnit name="mN.s/mm3"/>
+        </CATIAUnit>
+
+        <CATIAUnit name="MilliNewton-SecondPerMeterCubed">
+            <MatMLUnit name="MilliNewton-SecondPerMeterCubed"/>
+            <MatMLUnit name="mN-sec/m-m-m"/>
+            <MatMLUnit name="mN-s/m-m-m"/>
+            <MatMLUnit name="mN.sec/m.m.m"/>
+            <MatMLUnit name="mN.s/m.m.m"/>
+            <MatMLUnit name="mN-sec/m^3"/>
+            <MatMLUnit name="mN-sec/m3"/>
+            <MatMLUnit name="mN-s/m^3"/>
+            <MatMLUnit name="mN-s/m3"/>
+            <MatMLUnit name="mN.sec/m^3"/>
+            <MatMLUnit name="mN.sec/m3"/>
+            <MatMLUnit name="mN.s/m^3"/>
+            <MatMLUnit name="mN.s/m3"/>
+        </CATIAUnit>
+
+        <CATIAUnit name="MilliNewtonsPerMilliMeter">
+            <MatMLUnit name="MilliNewtonsPerMilliMeter"/>
+            <MatMLUnit name="mN/mm"/>
+        </CATIAUnit>
+
+        <CATIAUnit name="MilliVolt">
+            <MatMLUnit name="MilliVolt"/>
+            <MatMLUnit name="mV"/>
+        </CATIAUnit>
+
+        <CATIAUnit name="MilliWatt">
+            <MatMLUnit name="MilliWatt"/>
+            <MatMLUnit name="mWatt"/>
+            <MatMLUnit name="mW"/>
+        </CATIAUnit>
+
+        <CATIAUnit name="Minute">
+            <MatMLUnit name="Minute"/>
+            <MatMLUnit name="min"/>
+        </CATIAUnit>
+
+
+        <!--*************************************************-->
+        <!--                       N                         -->
+        <!--*************************************************-->
+        <CATIAUnit name="NanoMeter">
+            <MatMLUnit name="NanoMeter"/>
+        </CATIAUnit>
+
+        <CATIAUnit name="Newton">
+            <MatMLUnit name="Newton"/>
+            <MatMLUnit name="N"/>
+        </CATIAUnit>
+
+        <CATIAUnit name="NewtonMeter">
+            <MatMLUnit name="NewtonMeter"/>
+            <MatMLUnit name="StrainEnergy_Metric3"/>
+            <MatMLUnit name="N-m"/>
+            <MatMLUnit name="N.m"/>
+            <MatMLUnit name="Nm"/>
+        </CATIAUnit>
+
+        <CATIAUnit name="NewtonMeterPerDegree">
+            <MatMLUnit name="NewtonMeterPerDegree"/>
+            <MatMLUnit name="N-m/deg"/>
+            <MatMLUnit name="N.m/deg"/>
+        </CATIAUnit>
+
+        <CATIAUnit name="NewtonMeterPerRadian">
+            <MatMLUnit name="NewtonMeterPerRadian"/>
+            <MatMLUnit name="N-m/rad"/>
+            <MatMLUnit name="N.m/rad"/>
+        </CATIAUnit>
+
+        <CATIAUnit name="NewtonMilliMeter">
+            <MatMLUnit name="NewtonMilliMeter"/>
+            <MatMLUnit name="StrainEnergy_Metric2"/>
+            <MatMLUnit name="N-mm"/>
+            <MatMLUnit name="N.mm"/>
+            <MatMLUnit name="Nmm"/>
+        </CATIAUnit>
+
+        <CATIAUnit name="NewtonMilliMeterPerDegree">
+            <MatMLUnit name="NewtonMilliMeterPerDegree"/>
+            <MatMLUnit name="N-mm/deg"/>
+            <MatMLUnit name="N.mm/deg"/>
+        </CATIAUnit>
+
+        <CATIAUnit name="NewtonMilliMeterPerRadian">
+            <MatMLUnit name="NewtonMilliMeterPerRadian"/>
+            <MatMLUnit name="N-mm/rad"/>
+            <MatMLUnit name="N.mm/rad"/>
+        </CATIAUnit>
+
+        <CATIAUnit name="NewtonPerMeter">
+            <MatMLUnit name="NewtonPerMeter"/>
+            <MatMLUnit name="N/m"/>
+        </CATIAUnit>
+
+        <CATIAUnit name="NewtonPerMeterCubed">
+            <MatMLUnit name="NewtonPerMeterCubed"/>
+            <MatMLUnit name="N/m-m-m"/>
+            <MatMLUnit name="N/m.m.m"/>
+            <MatMLUnit name="N/m^3"/>
+            <MatMLUnit name="N/m3"/>
+        </CATIAUnit>
+
+        <CATIAUnit name="NewtonPerMilliMeterCubed">
+            <MatMLUnit name="NewtonPerMilliMeterCubed"/>
+            <MatMLUnit name="N/mm-mm-mm"/>
+            <MatMLUnit name="N/mm.mm.mm"/>
+            <MatMLUnit name="N/mm^3"/>
+            <MatMLUnit name="N/mm3"/>
+        </CATIAUnit>
+
+        <CATIAUnit name="NewtonPerSquareCentiMeter">
+            <MatMLUnit name="NewtonPerSquareCentiMeter"/>
+            <MatMLUnit name="N/cm-cm"/>
+            <MatMLUnit name="N/cm.cm"/>
+            <MatMLUnit name="N/cm^2"/>
+            <MatMLUnit name="N/cm2"/>
+        </CATIAUnit>
+
+        <CATIAUnit name="NewtonPerSquareMilliMeter">
+            <MatMLUnit name="NewtonPerSquareMilliMeter"/>
+            <MatMLUnit name="N/mm-mm"/>
+            <MatMLUnit name="N/mm.mm"/>
+            <MatMLUnit name="N/mm^2"/>
+            <MatMLUnit name="N/mm2"/>
+            <MatMLUnit name="N/mm-mm(mpa)"/>
+            <MatMLUnit name="N/mm.mm(mpa)"/>
+            <MatMLUnit name="N/mm^2(mpa)"/>
+            <MatMLUnit name="N/mm2(mpa)"/>
+            <MatMLUnit name="mpa"/>
+            <MatMLUnit name="gpa" scaleFactor="1000"/>
+        </CATIAUnit>
+
+        <CATIAUnit name="NewtonSecondPerCubicMeter">
+            <MatMLUnit name="NewtonSecondPerCubicMeter"/>
+            <MatMLUnit name="Newton-SecondPerMeterCubed"/>
+            <MatMLUnit name="N-sec/m-m-m"/>
+            <MatMLUnit name="N-s/m-m-m"/>
+            <MatMLUnit name="N.sec/m.m.m"/>
+            <MatMLUnit name="N.s/m.m.m"/>
+            <MatMLUnit name="N-sec/m^3"/>
+            <MatMLUnit name="N-sec/m3"/>
+            <MatMLUnit name="N-s/m^3"/>
+            <MatMLUnit name="N-s/m3"/>
+            <MatMLUnit name="N.sec/m^3"/>
+            <MatMLUnit name="N.sec/m3"/>
+            <MatMLUnit name="N.s/m^3"/>
+            <MatMLUnit name="N.s/m3"/>
+        </CATIAUnit>
+
+        <CATIAUnit name="Newton-SecondPerMilliMeterCubed">
+            <MatMLUnit name="Newton-SecondPerMilliMeterCubed"/>
+            <MatMLUnit name="N-sec/mm-mm-mm"/>
+            <MatMLUnit name="N-s/mm-mm-mm"/>
+            <MatMLUnit name="N.sec/mm.mm.mm"/>
+            <MatMLUnit name="N.s/mm.mm.mm"/>
+            <MatMLUnit name="N-sec/mm^3"/>
+            <MatMLUnit name="N-sec/mm3"/>
+            <MatMLUnit name="N-s/mm^3"/>
+            <MatMLUnit name="N-s/mm3"/>
+            <MatMLUnit name="N.sec/mm^3"/>
+            <MatMLUnit name="N.sec/mm3"/>
+            <MatMLUnit name="N.s/mm^3"/>
+            <MatMLUnit name="N.s/mm3"/>
+        </CATIAUnit>
+
+        <CATIAUnit name="NewtonsPerMilliMeter">
+            <MatMLUnit name="NewtonsPerMilliMeter"/>
+            <MatMLUnit name="N/mm"/>
+        </CATIAUnit>
+
+        <!--*************************************************-->
+        <!--                       O                         -->
+        <!--*************************************************-->
+        <CATIAUnit name="Ohm">
+            <MatMLUnit name="Ohm"/>
+        </CATIAUnit>
+
+        <CATIAUnit name="OhmCentiMeter">
+            <MatMLUnit name="OhmCentiMeter"/>
+            <MatMLUnit name="ohm.cm"/>
+            <MatMLUnit name="ohm-cm"/>
+        </CATIAUnit>
+
+        <CATIAUnit name="OhmFoot">
+            <MatMLUnit name="OhmFoot"/>
+            <MatMLUnit name="ohm.ft"/>
+            <MatMLUnit name="ohm-ft"/>
+        </CATIAUnit>
+
+        <CATIAUnit name="OhmInch">
+            <MatMLUnit name="OhmInch"/>
+            <MatMLUnit name="ohm.in"/>
+            <MatMLUnit name="ohm-in"/>
+        </CATIAUnit>
+
+        <CATIAUnit name="OhmMeter">
+            <MatMLUnit name="OhmMeter"/>
+            <MatMLUnit name="ohm.m"/>
+            <MatMLUnit name="ohm-m"/>
+        </CATIAUnit>
+
+        <CATIAUnit name="OhmMilliMeter">
+            <MatMLUnit name="OhmMilliMeter"/>
+            <MatMLUnit name="ohm.mm"/>
+            <MatMLUnit name="ohm-mm"/>
+        </CATIAUnit>
+
+        <!--*************************************************-->
+        <!--                       P                         -->
+        <!--*************************************************-->
+        <CATIAUnit name="Pascals">
+            <MatMLUnit name="Pascals"/>
+            <MatMLUnit name="Pa"/>
+            <MatMLUnit name="N/m^2(Pa)"/>
+            <MatMLUnit name="N/m2(Pa)"/>
+            <MatMLUnit name="N/m^2"/>
+            <MatMLUnit name="N/m2"/>
+            <MatMLUnit name="N/m-m"/>
+            <MatMLUnit name="N/m-m(Pa)"/>
+        </CATIAUnit>
+
+        <CATIAUnit name="PerCubicCentiMeter">
+            <MatMLUnit name="PerCubicCentiMeter"/>
+            <MatMLUnit name="1/cm-cm-cm"/>
+            <MatMLUnit name="1/cm.cm.cm"/>
+            <MatMLUnit name="1/cm^3"/>
+            <MatMLUnit name="1/cm3"/>
+        </CATIAUnit>
+
+        <CATIAUnit name="PerCubicFeet">
+            <MatMLUnit name="PerCubicFeet"/>
+            <MatMLUnit name="1/ft-ft-ft"/>
+            <MatMLUnit name="1/ft.ft.ft"/>
+            <MatMLUnit name="1/ft^3"/>
+            <MatMLUnit name="1/ft3"/>
+        </CATIAUnit>
+
+        <CATIAUnit name="PerCubicInch">
+            <MatMLUnit name="PerCubicInch"/>
+            <MatMLUnit name="1/in-in-in"/>
+            <MatMLUnit name="1/in.in.in"/>
+            <MatMLUnit name="1/in^3"/>
+            <MatMLUnit name="1/in3"/>
+        </CATIAUnit>
+
+        <CATIAUnit name="PerCubicMeter">
+            <MatMLUnit name="PerCubicMeter"/>
+            <MatMLUnit name="1/m-m-m"/>
+            <MatMLUnit name="1/m.m.m"/>
+            <MatMLUnit name="1/m^3"/>
+            <MatMLUnit name="1/m3"/>
+        </CATIAUnit>
+
+        <CATIAUnit name="PerCubicMilliMeter">
+            <MatMLUnit name="PerCubicMilliMeter"/>
+            <MatMLUnit name="1/mm-mm-mm"/>
+            <MatMLUnit name="1/mm.mm.mm"/>
+            <MatMLUnit name="1/mm^3"/>
+            <MatMLUnit name="1/mm3"/>
+        </CATIAUnit>
+
+        <CATIAUnit name="Poundal">
+            <MatMLUnit name="Poundal"/>
+            <MatMLUnit name="pdl"/>
+            <MatMLUnit name="lbm-ft/sec-sec"/>
+            <MatMLUnit name="lbm-ft/s-s"/>
+            <MatMLUnit name="lbm.ft/sec.sec"/>
+            <MatMLUnit name="lbm.ft/s.s"/>
+            <MatMLUnit name="lbm-ft/sec^2"/>
+            <MatMLUnit name="lbm-ft/sec2"/>
+            <MatMLUnit name="lbm-ft/s^2"/>
+            <MatMLUnit name="lbm-ft/s2"/>
+            <MatMLUnit name="lbm.ft/sec^2"/>
+            <MatMLUnit name="lbm.ft/sec2"/>
+            <MatMLUnit name="lbm.ft/s^2"/>
+            <MatMLUnit name="lbm.ft/s2"/>
+        </CATIAUnit>
+
+        <CATIAUnit name="PoundForce">
+            <MatMLUnit name="PoundForce"/>
+            <MatMLUnit name="lbf"/>
+        </CATIAUnit>
+
+        <CATIAUnit name="PoundForceFeet">
+            <MatMLUnit name="PoundForceFeet"/>
+            <MatMLUnit name="StrainEnergy_English2"/>
+            <MatMLUnit name="lbf-ft"/>
+            <MatMLUnit name="lbf.ft"/>
+            <MatMLUnit name="lbfft"/>
+        </CATIAUnit>
+
+        <CATIAUnit name="PoundForceInch">
+            <MatMLUnit name="PoundForceInch"/>
+            <MatMLUnit name="StrainEnergy_English1"/>
+            <MatMLUnit name="lbf-in"/>
+            <MatMLUnit name="lbf.in"/>
+            <MatMLUnit name="lbfin"/>
+        </CATIAUnit>
+
+        <CATIAUnit name="PoundForceInchPerDegree">
+            <MatMLUnit name="PoundForceInchPerDegree"/>
+            <MatMLUnit name="lbf-in/deg"/>
+            <MatMLUnit name="lbf.in/deg"/>
+        </CATIAUnit>
+
+        <CATIAUnit name="PoundForceInchPerMassPound">
+            <MatMLUnit name="PoundForceInchPerMassPound"/>
+            <MatMLUnit name="lbf-in/lbm"/>
+            <MatMLUnit name="lbf.in/lbm"/>
+        </CATIAUnit>
+
+        <CATIAUnit name="PoundForceInchPerRadian">
+            <MatMLUnit name="PoundForceInchPerRadian"/>
+            <MatMLUnit name="lbf-in/rad"/>
+            <MatMLUnit name="lbf.in/rad"/>
+        </CATIAUnit>
+
+        <CATIAUnit name="PoundForceInchPerSecond">
+            <MatMLUnit name="HeatFlow_English2"/>
+            <MatMLUnit name="PoundForceInchPerSecond"/>
+            <MatMLUnit name="lbf-in/sec"/>
+            <MatMLUnit name="lbf-in/s"/>
+            <MatMLUnit name="lbf.in/sec"/>
+            <MatMLUnit name="lbf.in/s"/>
+        </CATIAUnit>
+
+        <CATIAUnit name="PoundForceInchSecondSquared">
+            <MatMLUnit name="PoundForceInchSecondSquared"/>
+            <MatMLUnit name="lbf-in-sec-sec"/>
+            <MatMLUnit name="lbf-in-s-s"/>
+            <MatMLUnit name="lbf.in.sec.sec"/>
+            <MatMLUnit name="lbf.in.s.s"/>
+            <MatMLUnit name="lbf-in-sec^2"/>
+            <MatMLUnit name="lbf-in-sec2"/>
+            <MatMLUnit name="lbf-in-s^2"/>
+            <MatMLUnit name="lbf-in-s2"/>
+            <MatMLUnit name="lbf.in.sec2"/>
+            <MatMLUnit name="lbf.in.sec^2"/>
+            <MatMLUnit name="lbf.in.s^2"/>
+            <MatMLUnit name="lbf.in.s2"/>
+        </CATIAUnit>
+
+        <CATIAUnit name="PoundForceInchSquaredPerPoundForceSecondSquared">
+            <MatMLUnit name="PoundForceInchSquaredPerPoundForceSecondSquared"/>
+            <MatMLUnit name="lbf-in^2/lbf-sec^2"/>
+            <MatMLUnit name="lbf-in^2/lbf-s^2"/>
+            <MatMLUnit name="lbf.in^2/lbf.sec^2"/>
+            <MatMLUnit name="lbf.in^2/lbf.s^2"/>
+            <MatMLUnit name="lbf-in^2/lbf-sec-sec"/>
+            <MatMLUnit name="lbf-in^2/lbf-s-s"/>
+            <MatMLUnit name="lbf.in^2/lbf.sec.sec"/>
+            <MatMLUnit name="lbf.in^2/lbf.s.s"/>
+            <MatMLUnit name="lbf-in-in/lbf-sec^2"/>
+            <MatMLUnit name="lbf-in-in/lbf-s^2"/>
+            <MatMLUnit name="lbf.in.in/lbf.sec^2"/>
+            <MatMLUnit name="lbf.in.in/lbf.s^2"/>
+            <MatMLUnit name="lbf-in-in/lbf-sec-sec"/>
+            <MatMLUnit name="lbf-in-in/lbf-s-s"/>
+            <MatMLUnit name="lbf.in.in/lbf.sec.sec"/>
+            <MatMLUnit name="lbf.in.in/lbf.s.s"/>
+            <MatMLUnit name="lbf-in2/lbf-sec2"/>
+            <MatMLUnit name="lbf-in2/lbf-s2"/>
+            <MatMLUnit name="lbf.in2/lbf.sec2"/>
+            <MatMLUnit name="lbf.in2/lbf.s2"/>
+            <MatMLUnit name="lbf-in2/lbf-sec-sec"/>
+            <MatMLUnit name="lbf-in2/lbf-s-s"/>
+            <MatMLUnit name="lbf.in2/lbf.sec.sec"/>
+            <MatMLUnit name="lbf.in2/lbf.s.s"/>
+            <MatMLUnit name="lbf-in-in/lbf-sec2"/>
+            <MatMLUnit name="lbf-in-in/lbf-s2"/>
+            <MatMLUnit name="lbf.in.in/lbf.sec2"/>
+            <MatMLUnit name="lbf.in.in/lbf.s2"/>
+        </CATIAUnit>
+
+        <CATIAUnit name="PoundForcePerFeetSquared">
+            <MatMLUnit name="PoundForcePerFeetSquared"/>
+            <MatMLUnit name="lbf/ft-ft"/>
+            <MatMLUnit name="lbf/ft.ft"/>
+            <MatMLUnit name="lbf/ft^2"/>
+            <MatMLUnit name="lbf/ft2"/>
+        </CATIAUnit>
+
+        <CATIAUnit name="PoundForcePerFoot">
+            <MatMLUnit name="PoundForcePerFoot"/>
+            <MatMLUnit name="lbf/ft"/>
+        </CATIAUnit>
+
+        <CATIAUnit name="PoundForcePerFootCubed">
+            <MatMLUnit name="PoundForcePerFootCubed"/>
+            <MatMLUnit name="lbf/ft-ft-ft"/>
+            <MatMLUnit name="lbf/ft.ft.ft"/>
+            <MatMLUnit name="lbf/ft^3"/>
+            <MatMLUnit name="lbf/ft3"/>
+        </CATIAUnit>
+
+        <CATIAUnit name="PoundForcePerInch">
+            <MatMLUnit name="PoundForcePerInch"/>
+            <MatMLUnit name="lbf/in"/>
+        </CATIAUnit>
+
+        <CATIAUnit name="PoundForcePerInchCubed">
+            <MatMLUnit name="PoundForcePerInchCubed"/>
+            <MatMLUnit name="lbf/in-in-in"/>
+            <MatMLUnit name="lbf/in.in.in"/>
+            <MatMLUnit name="lbf/in^3"/>
+            <MatMLUnit name="lbf/in3"/>
+        </CATIAUnit>
+
+        <CATIAUnit name="PoundForcePerSquareFeet">
+            <MatMLUnit name="PoundForcePerSquareFeet"/>
+            <MatMLUnit name="lbf/ft-ft"/>
+            <MatMLUnit name="lbf/ft.ft"/>
+            <MatMLUnit name="lbf/ft^2"/>
+            <MatMLUnit name="lbf/ft2"/>
+        </CATIAUnit>
+
+        <CATIAUnit name="PoundForcePerSquareInch">
+            <MatMLUnit name="PoundForcePerSquareInch"/>
+            <MatMLUnit name="lbf/in-in(psi)"/>
+            <MatMLUnit name="lbf/in-in"/>
+            <MatMLUnit name="lbf/in.in(psi)"/>
+            <MatMLUnit name="lbf/in.in"/>
+            <MatMLUnit name="lbf/in^2"/>
+            <MatMLUnit name="lbf/in^2(psi)"/>
+            <MatMLUnit name="psi"/>
+            <MatMLUnit name="ksi" scaleFactor="1000"/>
+            <MatMLUnit name="10^6 psi" scaleFactor="1000000"/>
+            <MatMLUnit name="lbf/in2"/>
+            <MatMLUnit name="lbf/in2(psi)"/>
+            <MatMLUnit name="106 psi" scaleFactor="1000000"/>
+        </CATIAUnit>
+
+        <CATIAUnit name="PoundForceSecondPerCubicFeet">
+            <MatMLUnit name="PoundForceSecondPerCubicFeet"/>
+            <MatMLUnit name="PoundForce-SecondPerFootCubed"/>
+            <MatMLUnit name="MassFlux_English2"/>
+            <MatMLUnit name="lbf-sec/ft-ft-ft"/>
+            <MatMLUnit name="lbf-s/ft-ft-ft"/>
+            <MatMLUnit name="lbf.sec/ft.ft.ft"/>
+            <MatMLUnit name="lbf.s/ft.ft.ft"/>
+            <MatMLUnit name="lbf-sec/ft^3"/>
+            <MatMLUnit name="lbf-s/ft^3"/>
+            <MatMLUnit name="lbf.sec/ft^3"/>
+            <MatMLUnit name="lbf.s/ft^3"/>
+            <MatMLUnit name="lbf-sec/ft3"/>
+            <MatMLUnit name="lbf-s/ft3"/>
+            <MatMLUnit name="lbf.sec/ft3"/>
+            <MatMLUnit name="lbf.s/ft3"/>
+        </CATIAUnit>
+
+        <CATIAUnit name="PoundForceSecondPerCubicInch">
+            <MatMLUnit name="PoundForceSecondPerCubicInch"/>
+            <MatMLUnit name="PoundForce-SecondPerInchCubed"/>
+            <MatMLUnit name="MassFlux_English1"/>
+            <MatMLUnit name="lbf-sec/in-in-in"/>
+            <MatMLUnit name="lbf-s/in-in-in"/>
+            <MatMLUnit name="lbf.sec/in.in.in"/>
+            <MatMLUnit name="lbf.s/in.in.in"/>
+            <MatMLUnit name="lbf-sec/in^3"/>
+            <MatMLUnit name="lbf-s/in^3"/>
+            <MatMLUnit name="lbf.sec/in^3"/>
+            <MatMLUnit name="lbf.s/in^3"/>
+            <MatMLUnit name="lbf-sec/in3"/>
+            <MatMLUnit name="lbf-s/in3"/>
+            <MatMLUnit name="lbf.sec/in3"/>
+            <MatMLUnit name="lbf.s/in3"/>
+        </CATIAUnit>
+
+        <CATIAUnit name="PoundForceSecondPerInch">
+            <MatMLUnit name="PoundForceSecondPerInch"/>
+            <MatMLUnit name="PoundSecondPerInch"/>
+            <MatMLUnit name="lbf-sec/in"/>
+            <MatMLUnit name="lbf-s/in"/>
+            <MatMLUnit name="lbf.sec/in"/>
+            <MatMLUnit name="lbf.s/in"/>
+        </CATIAUnit>
+
+        <CATIAUnit name="PoundForceSecondSquared">
+            <MatMLUnit name="PoundForceSecondSquared"/>
+            <MatMLUnit name="lbf-sec-sec"/>
+            <MatMLUnit name="lbf-s-s"/>
+            <MatMLUnit name="lbf.sec.sec"/>
+            <MatMLUnit name="lbf.s.s"/>
+            <MatMLUnit name="lbf-sec^2"/>
+            <MatMLUnit name="lbf-s^2"/>
+            <MatMLUnit name="lbf.sec^2"/>
+            <MatMLUnit name="lbf.s^2"/>
+            <MatMLUnit name="lbf-sec2"/>
+            <MatMLUnit name="lbf-s2"/>
+            <MatMLUnit name="lbf.sec2"/>
+            <MatMLUnit name="lbf.s2"/>
+        </CATIAUnit>
+
+        <CATIAUnit name="PoundForceSecondSquaredPerFootCubed">
+            <MatMLUnit name="PoundForceSecondSquaredPerFootCubed"/>
+            <MatMLUnit name="lbf-sec-sec/ft^3"/>
+            <MatMLUnit name="lbf-s-s/ft^3"/>
+            <MatMLUnit name="lbf.sec.sec/ft^3"/>
+            <MatMLUnit name="lbf.s.s/ft^3"/>
+            <MatMLUnit name="lbf-sec-sec/ft-ft-ft"/>
+            <MatMLUnit name="lbf-s-s/ft-ft-ft"/>
+            <MatMLUnit name="lbf.sec.sec/ft.ft.ft"/>
+            <MatMLUnit name="lbf.s.s/ft.ft.ft"/>
+            <MatMLUnit name="lbf-sec^2/ft^3"/>
+            <MatMLUnit name="lbf-s^2/ft^3"/>
+            <MatMLUnit name="lbf.sec^2/ft^3"/>
+            <MatMLUnit name="lbf.s^2/ft^3"/>
+            <MatMLUnit name="lbf-sec^2/ft-ft-ft"/>
+            <MatMLUnit name="lbf-s^2/ft-ft-ft"/>
+            <MatMLUnit name="lbf.sec^2/ft.ft.ft"/>
+            <MatMLUnit name="lbf.s^2/ft.ft.ft"/>
+            <MatMLUnit name="lbf-sec-sec/ft3"/>
+            <MatMLUnit name="lbf-s-s/ft3"/>
+            <MatMLUnit name="lbf.sec.sec/ft3"/>
+            <MatMLUnit name="lbf.s.s/ft3"/>
+            <MatMLUnit name="lbf-sec2/ft3"/>
+            <MatMLUnit name="lbf-s2/ft3"/>
+            <MatMLUnit name="lbf.sec2/ft3"/>
+            <MatMLUnit name="lbf.s2/ft3"/>
+            <MatMLUnit name="lbf-sec2/ft-ft-ft"/>
+            <MatMLUnit name="lbf-s2/ft-ft-ft"/>
+            <MatMLUnit name="lbf.sec2/ft.ft.ft"/>
+            <MatMLUnit name="lbf.s2/ft.ft.ft"/>
+        </CATIAUnit>
+
+        <CATIAUnit name="PoundForceSecondSquaredPerFootSquared">
+            <MatMLUnit name="PoundForceSecondSquaredPerFootSquared"/>
+            <MatMLUnit name="lbf-sec-sec/ft^2"/>
+            <MatMLUnit name="lbf-s-s/ft^2"/>
+            <MatMLUnit name="lbf.sec.sec/ft^2"/>
+            <MatMLUnit name="lbf.s.s/ft^2"/>
+            <MatMLUnit name="lbf-sec-sec/ft-ft"/>
+            <MatMLUnit name="lbf-s-s/ft-ft"/>
+            <MatMLUnit name="lbf.sec.sec/ft.ft"/>
+            <MatMLUnit name="lbf.s.s/ft.ft"/>
+            <MatMLUnit name="lbf-sec^2/ft^2"/>
+            <MatMLUnit name="lbf-s^2/ft^2"/>
+            <MatMLUnit name="lbf.sec^2/ft^2"/>
+            <MatMLUnit name="lbf.s^2/ft^2"/>
+            <MatMLUnit name="lbf-sec^2/ft-ft"/>
+            <MatMLUnit name="lbf-s^2/ft-ft"/>
+            <MatMLUnit name="lbf.sec^2/ft.ft"/>
+            <MatMLUnit name="lbf.s^2/ft.ft"/>
+            <MatMLUnit name="lbf-sec-sec/ft2"/>
+            <MatMLUnit name="lbf-s-s/ft2"/>
+            <MatMLUnit name="lbf.sec.sec/ft2"/>
+            <MatMLUnit name="lbf.s.s/ft2"/>
+            <MatMLUnit name="lbf-sec2/ft2"/>
+            <MatMLUnit name="lbf-s2/ft2"/>
+            <MatMLUnit name="lbf.sec2/ft2"/>
+            <MatMLUnit name="lbf.s2/ft2"/>
+            <MatMLUnit name="lbf-sec2/ft-ft"/>
+            <MatMLUnit name="lbf-s2/ft-ft"/>
+            <MatMLUnit name="lbf.sec2/ft.ft"/>
+            <MatMLUnit name="lbf.s2/ft.ft"/>
+        </CATIAUnit>
+
+        <CATIAUnit name="PoundForceSecondSquaredPerInchCubed">
+            <MatMLUnit name="PoundForceSecondSquaredPerInchCubed"/>
+            <MatMLUnit name="lbf-sec-sec/in^3"/>
+            <MatMLUnit name="lbf-s-s/in^3"/>
+            <MatMLUnit name="lbf.sec.sec/in^3"/>
+            <MatMLUnit name="lbf.s.s/in^3"/>
+            <MatMLUnit name="lbf-sec-sec/in-in-in"/>
+            <MatMLUnit name="lbf-s-s/in-in-in"/>
+            <MatMLUnit name="lbf.sec.sec/in.in.in"/>
+            <MatMLUnit name="lbf.s.s/in.in.in"/>
+            <MatMLUnit name="lbf-sec^2/in^3"/>
+            <MatMLUnit name="lbf-s^2/in^3"/>
+            <MatMLUnit name="lbf.sec^2/in^3"/>
+            <MatMLUnit name="lbf.s^2/in^3"/>
+            <MatMLUnit name="lbf-sec^2/in-in-in"/>
+            <MatMLUnit name="lbf-s^2/in-in-in"/>
+            <MatMLUnit name="lbf.sec^2/in.in.in"/>
+            <MatMLUnit name="lbf.s^2/in.in.in"/>
+            <MatMLUnit name="lbf-sec-sec/in3"/>
+            <MatMLUnit name="lbf-s-s/in3"/>
+            <MatMLUnit name="lbf.sec.sec/in3"/>
+            <MatMLUnit name="lbf.s.s/in3"/>
+            <MatMLUnit name="lbf-sec2/in3"/>
+            <MatMLUnit name="lbf-s2/in3"/>
+            <MatMLUnit name="lbf.sec2/in3"/>
+            <MatMLUnit name="lbf.s2/in3"/>
+            <MatMLUnit name="lbf-sec2/in-in-in"/>
+            <MatMLUnit name="lbf-s2/in-in-in"/>
+            <MatMLUnit name="lbf.sec2/in.in.in"/>
+            <MatMLUnit name="lbf.s2/in.in.in"/>
+        </CATIAUnit>
+
+        <CATIAUnit name="PoundForceSecondSquaredPerInchSquared">
+            <MatMLUnit name="PoundForceSecondSquaredPerInchSquared"/>
+            <MatMLUnit name="lbf-sec-sec/in^2"/>
+            <MatMLUnit name="lbf-s-s/in^2"/>
+            <MatMLUnit name="lbf.sec.sec/in^2"/>
+            <MatMLUnit name="lbf.s.s/in^2"/>
+            <MatMLUnit name="lbf-sec-sec/in-in"/>
+            <MatMLUnit name="lbf-s-s/in-in"/>
+            <MatMLUnit name="lbf.sec.sec/in.in"/>
+            <MatMLUnit name="lbf.s.s/in.in"/>
+            <MatMLUnit name="lbf-sec^2/in^2"/>
+            <MatMLUnit name="lbf-s^2/in^2"/>
+            <MatMLUnit name="lbf.sec^2/in^2"/>
+            <MatMLUnit name="lbf.s^2/in^2"/>
+            <MatMLUnit name="lbf-sec^2/in-in"/>
+            <MatMLUnit name="lbf-s^2/in-in"/>
+            <MatMLUnit name="lbf.sec^2/in.in"/>
+            <MatMLUnit name="lbf.s^2/in.in"/>
+            <MatMLUnit name="lbf-sec-sec/in2"/>
+            <MatMLUnit name="lbf-s-s/in2"/>
+            <MatMLUnit name="lbf.sec.sec/in2"/>
+            <MatMLUnit name="lbf.s.s/in2"/>
+            <MatMLUnit name="lbf-sec2/in2"/>
+            <MatMLUnit name="lbf-s2/in2"/>
+            <MatMLUnit name="lbf.sec2/in2"/>
+            <MatMLUnit name="lbf.s2/in2"/>
+            <MatMLUnit name="lbf-sec2/in-in"/>
+            <MatMLUnit name="lbf-s2/in-in"/>
+            <MatMLUnit name="lbf.sec2/in.in"/>
+            <MatMLUnit name="lbf.s2/in.in"/>
+        </CATIAUnit>
+
+        <CATIAUnit name="PoundForceSecond">
+            <MatMLUnit name="PoundForceSecond"/>
+            <MatMLUnit name="lbf-sec"/>
+            <MatMLUnit name="lbf-s"/>
+            <MatMLUnit name="lbf.sec"/>
+            <MatMLUnit name="lbf.s"/>
+        </CATIAUnit>
+
+        <CATIAUnit name="PoundMass">
+            <MatMLUnit name="PoundMass"/>
+            <MatMLUnit name="lbm"/>
+        </CATIAUnit>
+
+        <CATIAUnit name="PoundMassFeetPerSecond">
+            <MatMLUnit name="PoundMassFeetPerSecond"/>
+            <MatMLUnit name="lbm-ft/sec"/>
+            <MatMLUnit name="lbm-ft/s"/>
+            <MatMLUnit name="lbm.ft/sec"/>
+            <MatMLUnit name="lbm.ft/s"/>
+        </CATIAUnit>
+
+        <CATIAUnit name="PoundMassFeetSquaredPerSecondCubed">
+            <MatMLUnit name="PoundMassFeetSquaredPerSecondCubed"/>
+            <MatMLUnit name="lbm-ft^2/sec^3"/>
+            <MatMLUnit name="lbm.ft^2/sec^3"/>
+            <MatMLUnit name="lbm-ft-ft/sec^3"/>
+            <MatMLUnit name="lbm.ft.ft/sec^3"/>
+            <MatMLUnit name="lbm-ft^2/sec-sec-sec"/>
+            <MatMLUnit name="lbm.ft^2/sec.sec.sec"/>
+            <MatMLUnit name="lbm-ft-ft/sec-sec-sec"/>
+            <MatMLUnit name="lbm.ft.ft/sec.sec.sec"/>
+            <MatMLUnit name="lbm-ft^2/s^3"/>
+            <MatMLUnit name="lbm.ft^2/s^3"/>
+            <MatMLUnit name="lbm-ft-ft/s^3"/>
+            <MatMLUnit name="lbm.ft.ft/s^3"/>
+            <MatMLUnit name="lbm-ft^2/s-s-s"/>
+            <MatMLUnit name="lbm.ft^2/s.s.s"/>
+            <MatMLUnit name="lbm-ft-ft/s-s-s"/>
+            <MatMLUnit name="lbm.ft.ft/s.s.s"/>
+            <MatMLUnit name="lbm-ft2/sec3"/>
+            <MatMLUnit name="lbm.ft2/sec3"/>
+            <MatMLUnit name="lbm-ft-ft/sec3"/>
+            <MatMLUnit name="lbm.ft.ft/sec3"/>
+            <MatMLUnit name="lbm-ft2/sec-sec-sec"/>
+            <MatMLUnit name="lbm.ft2/sec.sec.sec"/>
+            <MatMLUnit name="lbm-ft2/s3"/>
+            <MatMLUnit name="lbm.ft2/s3"/>
+            <MatMLUnit name="lbm-ft-ft/s3"/>
+            <MatMLUnit name="lbm.ft.ft/s3"/>
+            <MatMLUnit name="lbm-ft2/s-s-s"/>
+            <MatMLUnit name="lbm.ft2/s.s.s"/>
+        </CATIAUnit>
+
+        <CATIAUnit name="PoundMassFeetSquaredPerSecondSquared">
+            <MatMLUnit name="PoundMassFeetSquaredPerSecondSquared"/>
+            <MatMLUnit name="lbm-ft^2/sec^2"/>
+            <MatMLUnit name="lbm.ft^2/sec^2"/>
+            <MatMLUnit name="lbm-ft-ft/sec^2"/>
+            <MatMLUnit name="lbm.ft.ft/sec^2"/>
+            <MatMLUnit name="lbm-ft^2/sec-sec"/>
+            <MatMLUnit name="lbm.ft^2/sec.sec"/>
+            <MatMLUnit name="lbm-ft-ft/sec-sec"/>
+            <MatMLUnit name="lbm.ft.ft/sec.sec"/>
+            <MatMLUnit name="lbm-ft^2/s^2"/>
+            <MatMLUnit name="lbm.ft^2/s^2"/>
+            <MatMLUnit name="lbm-ft-ft/s^2"/>
+            <MatMLUnit name="lbm.ft.ft/s^2"/>
+            <MatMLUnit name="lbm-ft^2/s-s"/>
+            <MatMLUnit name="lbm.ft^2/s.s"/>
+            <MatMLUnit name="lbm-ft-ft/s-s"/>
+            <MatMLUnit name="lbm.ft.ft/s.s"/>
+            <MatMLUnit name="lbm-ft2/sec2"/>
+            <MatMLUnit name="lbm.ft2/sec2"/>
+            <MatMLUnit name="lbm-ft-ft/sec2"/>
+            <MatMLUnit name="lbm.ft.ft/sec2"/>
+            <MatMLUnit name="lbm-ft2/sec-sec"/>
+            <MatMLUnit name="lbm.ft2/sec.sec"/>
+            <MatMLUnit name="lbm-ft2/s2"/>
+            <MatMLUnit name="lbm.ft2/s2"/>
+            <MatMLUnit name="lbm-ft-ft/s2"/>
+            <MatMLUnit name="lbm.ft.ft/s2"/>
+            <MatMLUnit name="lbm-ft2/s-s"/>
+            <MatMLUnit name="lbm.ft2/s.s"/>
+        </CATIAUnit>
+
+        <CATIAUnit name="PoundMassInch">
+            <MatMLUnit name="PoundMassInch"/>
+            <MatMLUnit name="lbm-in"/>
+            <MatMLUnit name="lbm.in"/>
+        </CATIAUnit>
+
+        <CATIAUnit name="PoundMassInchPerSecond">
+            <MatMLUnit name="PoundMassInchPerSecond"/>
+            <MatMLUnit name="lbm-in/sec"/>
+            <MatMLUnit name="lbm.in/sec"/>
+            <MatMLUnit name="lbm-in/s"/>
+            <MatMLUnit name="lbm.in/s"/>
+        </CATIAUnit>
+
+        <CATIAUnit name="PoundMassInchSquared">
+            <MatMLUnit name="PoundMassInchSquared"/>
+            <MatMLUnit name="lbm-in^2"/>
+            <MatMLUnit name="lbm.in^2"/>
+            <MatMLUnit name="lbm-in2"/>
+            <MatMLUnit name="lbm.in2"/>
+            <MatMLUnit name="lbm-in-in"/>
+            <MatMLUnit name="lbm.in.in"/>
+        </CATIAUnit>
+
+        <CATIAUnit name="PoundMassperCubicInch">
+            <MatMLUnit name="PoundMassperCubicInch"/>
+            <MatMLUnit name="lbm/in^3"/>
+            <MatMLUnit name="lbm/in3"/>
+            <MatMLUnit name="lbm/in-in-in"/>
+            <MatMLUnit name="lbm/in.in.in"/>
+            <MatMLUnit name="lb/in^3"/>
+            <MatMLUnit name="lb/in3"/>
+            <MatMLUnit name="lb/in-in-in"/>
+            <MatMLUnit name="lb/in.in.in"/>
+            <MatMLUnit name="lbm/ft-ft-ft" scaleFactor="5.787e-4"/>  <!-- scalefactor = 1/(12*12*12) -->
+            <MatMLUnit name="lbm/ft.ft.ft" scaleFactor="5.787e-4"/>  <!-- scalefactor = 1/(12*12*12) -->
+            <MatMLUnit name="lbm/ft^3" scaleFactor="5.787e-4"/>       <!-- scalefactor = 1/(12*12*12) -->
+            <MatMLUnit name="lbm/ft3" scaleFactor="5.787e-4"/>       <!-- scalefactor = 1/(12*12*12) -->
+            <MatMLUnit name="lb/ft-ft-ft" scaleFactor="5.787e-4"/>  <!-- scalefactor = 1/(12*12*12) -->
+            <MatMLUnit name="lb/ft.ft.ft" scaleFactor="5.787e-4"/>  <!-- scalefactor = 1/(12*12*12) -->
+            <MatMLUnit name="lb/ft^3" scaleFactor="5.787e-4"/>       <!-- scalefactor = 1/(12*12*12) -->
+            <MatMLUnit name="lb/ft3" scaleFactor="5.787e-4"/>       <!-- scalefactor = 1/(12*12*12) -->
+        </CATIAUnit>
+
+        <CATIAUnit name="PoundMassPerFoot">
+            <MatMLUnit name="PoundMassPerFoot"/>
+            <MatMLUnit name="lbm/ft"/>
+        </CATIAUnit>
+
+        <CATIAUnit name="PoundMassPerHour">
+            <MatMLUnit name="PoundMassPerHour"/>
+            <MatMLUnit name="lbm/hr"/>
+        </CATIAUnit>
+
+        <CATIAUnit name="PoundMassPerInch">
+            <MatMLUnit name="PoundMassPerInch"/>
+            <MatMLUnit name="lbm/in"/>
+        </CATIAUnit>
+
+        <CATIAUnit name="PoundMassPerMinute">
+            <MatMLUnit name="PoundMassPerMinute"/>
+            <MatMLUnit name="lbm/min"/>
+        </CATIAUnit>
+
+        <CATIAUnit name="PoundMassPerSecond">
+            <MatMLUnit name="PoundMassPerSecond"/>
+            <MatMLUnit name="lbm/sec"/>
+            <MatMLUnit name="lbm/s"/>
+        </CATIAUnit>
+
+        <CATIAUnit name="PoundPerFootSquared">
+            <MatMLUnit name="PoundPerFootSquared"/>
+            <MatMLUnit name="lbm/ft^2"/>
+            <MatMLUnit name="lbm/ft2"/>
+            <MatMLUnit name="lbm/ft-ft"/>
+            <MatMLUnit name="lbm/ft.ft"/>
+        </CATIAUnit>
+
+        <CATIAUnit name="PoundPerInchSquared">
+            <MatMLUnit name="PoundPerInchSquared"/>
+            <MatMLUnit name="lbm/in^2"/>
+            <MatMLUnit name="lbm/in2"/>
+            <MatMLUnit name="lbm/in-in"/>
+            <MatMLUnit name="lbm/in.in"/>
+        </CATIAUnit>
+
+        <CATIAUnit name="PoundSecondPerFoot">
+            <MatMLUnit name="PoundSecondPerFoot"/>
+            <MatMLUnit name="lbf-sec/ft"/>
+            <MatMLUnit name="lbf.sec/ft"/>
+            <MatMLUnit name="lbf-s/ft"/>
+            <MatMLUnit name="lbf.s/ft"/>
+        </CATIAUnit>
+
+        <CATIAUnit name="PoundSecondsSquaredPerInch">
+            <MatMLUnit name="PoundSecondsSquaredPerInch"/>
+            <MatMLUnit name="lbf-sec^2/in"/>
+            <MatMLUnit name="lbf-sec2/in"/>
+            <MatMLUnit name="lbf.sec^2/in"/>
+            <MatMLUnit name="lbf.sec2/in"/>
+            <MatMLUnit name="lbf-sec-sec/in"/>
+            <MatMLUnit name="lbf.sec.sec/in"/>
+            <MatMLUnit name="lbf-s^2/in"/>
+            <MatMLUnit name="lbf-s2/in"/>
+            <MatMLUnit name="lbf.s^2/in"/>
+            <MatMLUnit name="lbf.s2/in"/>
+            <MatMLUnit name="lbf-s-s/in"/>
+            <MatMLUnit name="lbf.s.s/in"/>
+        </CATIAUnit>
+
+        <CATIAUnit name="PoundsSecondSquaredPerInchFourth">
+            <MatMLUnit name="PoundsSecondSquaredPerInchFourth"/>
+            <MatMLUnit name="lbf-sec^2/in^4"/>
+            <MatMLUnit name="lbf-sec2/in4"/>
+            <MatMLUnit name="lbf.sec^2/in^4"/>
+            <MatMLUnit name="lbf.sec2/in4"/>
+            <MatMLUnit name="lbf-sec-sec/in-in-in-in"/>
+            <MatMLUnit name="lbf.sec.sec/in.in.in.in"/>
+            <MatMLUnit name="lbf-s^2/in^4"/>
+            <MatMLUnit name="lbf-s2/in4"/>
+            <MatMLUnit name="lbf.s^2/in^4"/>
+            <MatMLUnit name="lbf.s2/in4"/>
+            <MatMLUnit name="lbf-s-s/in-in-in-in"/>
+            <MatMLUnit name="lbf.s.s/in.in.in.in"/>
+<!--                          stricmp( pUnitIn, "lbf/in-in-in-in"                ) == 0     ||
+                          stricmp( pUnitIn, "lbf/in^4"                       ) == 0     ) -->
+        </CATIAUnit>
+
+
+        <!--*************************************************-->
+        <!--                       Q                         -->
+        <!--*************************************************-->
+
+
+
+
+        <!--*************************************************-->
+        <!--                       R                         -->
+        <!--*************************************************-->
+        <CATIAUnit name="Radian">
+            <MatMLUnit name="Radian"/>
+            <MatMLUnit name="rad"/>
+        </CATIAUnit>
+
+        <CATIAUnit name="RadiansPerSecond">
+            <MatMLUnit name="RadiansPerSecond"/>
+            <MatMLUnit name="rad/sec"/>
+            <MatMLUnit name="rad/s"/>
+        </CATIAUnit>
+
+        <CATIAUnit name="RadiansPerSecondSquared">
+            <MatMLUnit name="RadiansPerSecondSquared"/>
+            <MatMLUnit name="rad/sec^2"/>
+            <MatMLUnit name="rad/sec2"/>
+            <MatMLUnit name="rad/sec-sec"/>
+            <MatMLUnit name="rad/sec.sec"/>
+            <MatMLUnit name="rad/s^2"/>
+            <MatMLUnit name="rad/s2"/>
+            <MatMLUnit name="rad/s-s"/>
+            <MatMLUnit name="rad/s.s"/>
+        </CATIAUnit>
+
+        <CATIAUnit name="Rankine">
+            <MatMLUnit name="Rankine"/>
+            <MatMLUnit name="R"/>
+        </CATIAUnit>
+
+        <CATIAUnit name="RankineDifference">
+            <MatMLUnit name="RankineDifference"/>
+            <MatMLUnit name="DeltaR"/>
+        </CATIAUnit>
+
+        <CATIAUnit name="RevolutionsPerMinute">
+            <MatMLUnit name="RevolutionsPerMinute"/>
+            <MatMLUnit name="rpm"/>
+            <MatMLUnit name="rev/min"/>
+        </CATIAUnit>
+
+        <CATIAUnit name="RevolutionsPerMinuteSquared">
+            <MatMLUnit name="RevolutionsPerMinuteSquared"/>
+            <MatMLUnit name="rev/min^2"/>
+            <MatMLUnit name="rev/min2"/>
+            <MatMLUnit name="rev/min-min"/>
+            <MatMLUnit name="rev/min.min"/>
+        </CATIAUnit>
+
+        <CATIAUnit name="RevolutionsPerSecond">
+            <MatMLUnit name="RevolutionsPerSecond"/>
+            <MatMLUnit name="rev/sec"/>
+            <MatMLUnit name="rev/s"/>
+        </CATIAUnit>
+
+        <CATIAUnit name="RevolutionsPerSecondSquared">
+            <MatMLUnit name="RevolutionsPerSecondSquared"/>
+            <MatMLUnit name="rev/sec^2"/>
+            <MatMLUnit name="rev/sec2"/>
+            <MatMLUnit name="rev/sec-sec"/>
+            <MatMLUnit name="rev/sec.sec"/>
+            <MatMLUnit name="rev/s^2"/>
+            <MatMLUnit name="rev/s2"/>
+            <MatMLUnit name="rev/s-s"/>
+            <MatMLUnit name="rev/s.s"/>
+        </CATIAUnit>
+
+        <CATIAUnit name="Revs">
+            <MatMLUnit name="Revs"/>
+        </CATIAUnit>
+
+
+        <!--*************************************************-->
+        <!--                       S                         -->
+        <!--*************************************************-->
+        <CATIAUnit name="Second">
+            <MatMLUnit name="Second"/>
+            <MatMLUnit name="sec"/>
+            <MatMLUnit name="s"/>
+        </CATIAUnit>
+
+        <CATIAUnit name="Siemen">
+            <MatMLUnit name="Siemen"/>
+        </CATIAUnit>
+
+        <CATIAUnit name="Slug">
+            <MatMLUnit name="Slug"/>
+        </CATIAUnit>
+
+        <CATIAUnit name="SlugsPerCubicFeet">
+            <MatMLUnit name="SlugsPerCubicFeet"/>
+            <MatMLUnit name="slug/ft-ft-ft"/>
+            <MatMLUnit name="slug/ft.ft.ft"/>
+            <MatMLUnit name="slug/ft^3"/>
+            <MatMLUnit name="slug/ft3"/>
+        </CATIAUnit>
+
+        <CATIAUnit name="SpecificHeat_English1">
+            <MatMLUnit name="SpecificHeat_English1"/>
+            <MatMLUnit name="BTU/lbm-F"/>
+            <MatMLUnit name="BTU/lbm.F"/>
+        </CATIAUnit>
+
+        <CATIAUnit name="SpecificHeat_English2">
+            <MatMLUnit name="SpecificHeat_English2"/>
+            <MatMLUnit name="BTU-in/lbf-sec-F"/>
+            <MatMLUnit name="BTU.in/lbf.sec.F"/>
+        </CATIAUnit>
+
+        <CATIAUnit name="SpecificHeat_English3">
+            <MatMLUnit name="SpecificHeat_English3"/>
+            <MatMLUnit name="lbf-in/lbm-F"/>
+            <MatMLUnit name="lbf.in/lbm.F"/>
+            <MatMLUnit name="lbfin/lbm-F"/>
+            <MatMLUnit name="lbfin/lbm.F"/>
+        </CATIAUnit>
+
+        <CATIAUnit name="SpecificHeat_English4">
+            <MatMLUnit name="SpecificHeat_English4"/>
+            <MatMLUnit name="lbf-in-in/lbf-sec-sec-F"/>
+            <MatMLUnit name="lbf.in.in/lbf.sec.sec.F"/>
+            <MatMLUnit name="lbf-in-in/lbf-sec^2-F"/>
+            <MatMLUnit name="lbf-in-in/lbf-sec2-F"/>
+            <MatMLUnit name="lbf.in.in/lbf.sec^2.F"/>
+            <MatMLUnit name="lbf.in.in/lbf.sec2.F"/>
+            <MatMLUnit name="lbf-in^2/lbf-sec^2-F"/>
+            <MatMLUnit name="lbf-in2/lbf-sec2-F"/>
+            <MatMLUnit name="lbf.in^2/lbf.sec^2.F"/>
+            <MatMLUnit name="lbf.in2/lbf.sec2.F"/>
+            <MatMLUnit name="lbfin-in/lbf-sec-sec-F"/>
+            <MatMLUnit name="lbfin.in/lbf.sec.sec.F"/>
+            <MatMLUnit name="lbfin-in/lbf-sec^2-F"/>
+            <MatMLUnit name="lbfin-in/lbf-sec2-F"/>
+            <MatMLUnit name="lbfin.in/lbf.sec^2.F"/>
+            <MatMLUnit name="lbfin.in/lbf.sec2.F"/>
+            <MatMLUnit name="lbfin^2/lbf-sec^2-F"/>
+            <MatMLUnit name="lbfin2/lbf-sec2-F"/>
+            <MatMLUnit name="lbfin^2/lbf.sec^2.F"/>
+            <MatMLUnit name="lbfin2/lbf.sec2.F"/>
+        </CATIAUnit>
+
+        <CATIAUnit name="SpecificHeat_Metric1">
+            <MatMLUnit name="SpecificHeat_Metric1"/>
+            <MatMLUnit name="microJ/kg-K"/>
+            <MatMLUnit name="microJ/kg.K"/>
+        </CATIAUnit>
+
+        <CATIAUnit name="SpecificHeat_Metric2">
+            <MatMLUnit name="SpecificHeat_Metric2"/>
+            <MatMLUnit name="J/kg-K"/>
+            <MatMLUnit name="J/kg.K"/>
+        </CATIAUnit>
+
+        <CATIAUnit name="SpecificHeat_Metric3">
+            <MatMLUnit name="SpecificHeat_Metric3"/>
+            <MatMLUnit name="kJ/kg-K"/>
+            <MatMLUnit name="kJ/kg.K"/>
+        </CATIAUnit>
+
+        <CATIAUnit name="SquareCentiMeter">
+            <MatMLUnit name="SquareCentiMeter"/>
+            <MatMLUnit name="cm-cm"/>
+            <MatMLUnit name="cm.cm"/>
+            <MatMLUnit name="cm^2"/>
+            <MatMLUnit name="cm2"/>
+        </CATIAUnit>
+
+        <CATIAUnit name="SquareCentiMeterPerNewton">
+            <MatMLUnit name="SquareCentiMeterPerNewton"/>
+            <MatMLUnit name="cm-cm/N"/>
+            <MatMLUnit name="cm.cm/N"/>
+            <MatMLUnit name="cm^2/N"/>
+            <MatMLUnit name="cm2/N"/>
+        </CATIAUnit>
+
+        <CATIAUnit name="SquareCentiMeterPerSecond">
+            <MatMLUnit name="SquareCentiMeterPerSecond"/>
+            <MatMLUnit name="cm-cm/s"/>
+            <MatMLUnit name="cm.cm/s"/>
+            <MatMLUnit name="cm^2/s"/>
+            <MatMLUnit name="cm2/s"/>
+            <MatMLUnit name="cm-cm/sec"/>
+            <MatMLUnit name="cm.cm/sec"/>
+            <MatMLUnit name="cm^2/sec"/>
+            <MatMLUnit name="cm2/sec"/>
+        </CATIAUnit>
+
+        <CATIAUnit name="SquareFeet">
+            <MatMLUnit name="SquareFeet"/>
+            <MatMLUnit name="ft-ft"/>
+            <MatMLUnit name="ft.ft"/>
+            <MatMLUnit name="ft^2"/>
+            <MatMLUnit name="ft2"/>
+        </CATIAUnit>
+
+        <CATIAUnit name="SquareFeetPerHour">
+            <MatMLUnit name="SquareFeetPerHour"/>
+            <MatMLUnit name="ft-ft/hr"/>
+            <MatMLUnit name="ft.ft/hr"/>
+            <MatMLUnit name="ft^2/hr"/>
+            <MatMLUnit name="ft2/hr"/>
+        </CATIAUnit>
+
+        <CATIAUnit name="SquareFeetPerPoundForce">
+            <MatMLUnit name="SquareFeetPerPoundForce"/>
+            <MatMLUnit name="ft-ft/lbf"/>
+            <MatMLUnit name="ft.ft/lbf"/>
+            <MatMLUnit name="ft^2/lbf"/>
+            <MatMLUnit name="ft2/lbf"/>
+        </CATIAUnit>
+
+        <CATIAUnit name="SquareFeetPerSecond">
+            <MatMLUnit name="SquareFeetPerSecond"/>
+            <MatMLUnit name="ft-ft/s"/>
+            <MatMLUnit name="ft.ft/s"/>
+            <MatMLUnit name="ft^2/s"/>
+            <MatMLUnit name="ft2/s"/>
+            <MatMLUnit name="ft-ft/sec"/>
+            <MatMLUnit name="ft.ft/sec"/>
+            <MatMLUnit name="ft^2/sec"/>
+            <MatMLUnit name="ft2/sec"/>
+        </CATIAUnit>
+
+        <CATIAUnit name="SquareInch">
+            <MatMLUnit name="SquareInch"/>
+            <MatMLUnit name="in-in"/>
+            <MatMLUnit name="in.in"/>
+            <MatMLUnit name="in^2"/>
+            <MatMLUnit name="in2"/>
+        </CATIAUnit>
+
+        <CATIAUnit name="SquareInchPerPoundForce">
+            <MatMLUnit name="SquareInchPerPoundForce"/>
+            <MatMLUnit name="in-in/lbf"/>
+            <MatMLUnit name="in.in/lbf"/>
+            <MatMLUnit name="in^2/lbf"/>
+            <MatMLUnit name="in2/lbf"/>
+        </CATIAUnit>
+
+        <CATIAUnit name="SquareInchPerSecond">
+            <MatMLUnit name="SquareInchPerSecond"/>
+            <MatMLUnit name="in-in/s"/>
+            <MatMLUnit name="in.in/s"/>
+            <MatMLUnit name="in^2/s"/>
+            <MatMLUnit name="in2/s"/>
+            <MatMLUnit name="in-in/sec"/>
+            <MatMLUnit name="in.in/sec"/>
+            <MatMLUnit name="in^2/sec"/>
+            <MatMLUnit name="in2/sec"/>
+        </CATIAUnit>
+
+        <CATIAUnit name="SquareMeter">
+            <MatMLUnit name="SquareMeter"/>
+            <MatMLUnit name="m-m"/>
+            <MatMLUnit name="m.m"/>
+            <MatMLUnit name="m^2"/>
+            <MatMLUnit name="m2"/>
+        </CATIAUnit>
+
+        <CATIAUnit name="SquareMeterPerHour">
+            <MatMLUnit name="SquareMeterPerHour"/>
+            <MatMLUnit name="m-m/hr"/>
+            <MatMLUnit name="m.m/hr"/>
+            <MatMLUnit name="m^2/hr"/>
+            <MatMLUnit name="m2/hr"/>
+        </CATIAUnit>
+
+        <CATIAUnit name="SquareMeterPerNewton">
+            <MatMLUnit name="SquareMeterPerNewton"/>
+            <MatMLUnit name="m-m/N"/>
+            <MatMLUnit name="m.m/N"/>
+            <MatMLUnit name="m^2/N"/>
+            <MatMLUnit name="m2/N"/>
+        </CATIAUnit>
+
+        <CATIAUnit name="SquareMeterPerSecond">
+            <MatMLUnit name="SquareMeterPerSecond"/>
+            <MatMLUnit name="m-m/s"/>
+            <MatMLUnit name="m.m/s"/>
+            <MatMLUnit name="m^2/s"/>
+            <MatMLUnit name="m2/s"/>
+            <MatMLUnit name="m-m/sec"/>
+            <MatMLUnit name="m.m/sec"/>
+            <MatMLUnit name="m^2/sec"/>
+            <MatMLUnit name="m2/sec"/>
+        </CATIAUnit>
+
+        <CATIAUnit name="SquareMilliMeter">
+            <MatMLUnit name="SquareMilliMeter"/>
+            <MatMLUnit name="mm-mm"/>
+            <MatMLUnit name="mm.mm"/>
+            <MatMLUnit name="mm^2"/>
+            <MatMLUnit name="mm2"/>
+        </CATIAUnit>
+
+        <CATIAUnit name="SquareMilliMeterPerMilliNewton">
+            <MatMLUnit name="SquareMilliMeterPerMilliNewton"/>
+            <MatMLUnit name="mm-mm/mN"/>
+            <MatMLUnit name="mm.mm/mN"/>
+            <MatMLUnit name="mm^2/mN"/>
+            <MatMLUnit name="mm2/mN"/>
+        </CATIAUnit>
+
+        <CATIAUnit name="SquareMilliMeterPerNewton">
+            <MatMLUnit name="SquareMilliMeterPerNewton"/>
+            <MatMLUnit name="mm-mm/N"/>
+            <MatMLUnit name="mm.mm/N"/>
+            <MatMLUnit name="mm^2/N"/>
+            <MatMLUnit name="mm2/N"/>
+        </CATIAUnit>
+
+        <CATIAUnit name="SquareMilliMeterPerSecond">
+            <MatMLUnit name="SquareMilliMeterPerSecond"/>
+            <MatMLUnit name="mm-mm/s"/>
+            <MatMLUnit name="mm.mm/s"/>
+            <MatMLUnit name="mm^2/s"/>
+            <MatMLUnit name="mm2/s"/>
+            <MatMLUnit name="mm-mm/sec"/>
+            <MatMLUnit name="mm.mm/sec"/>
+            <MatMLUnit name="mm^2/sec"/>
+            <MatMLUnit name="mm2/sec"/>
+        </CATIAUnit>
+
+        <CATIAUnit name="Strain_English1">
+            <MatMLUnit name="Strain_English1"/>
+            <MatMLUnit name="in/in"/>
+        </CATIAUnit>
+
+        <CATIAUnit name="Strain_Metric1">
+            <MatMLUnit name="Strain_Metric1"/>
+            <MatMLUnit name="mm/mm"/>
+            <MatMLUnit name="%"/>
+        </CATIAUnit>
+
+        <CATIAUnit name="StrainEnergyDensity_English1">
+            <MatMLUnit name="StrainEnergyDensity_English1"/>
+        </CATIAUnit>
+
+        <CATIAUnit name="StrainEnergyDensity_English2">
+            <MatMLUnit name="StrainEnergyDensity_English2"/>
+        </CATIAUnit>
+
+        <CATIAUnit name="StrainEnergyDensity_Metric1">
+            <MatMLUnit name="StrainEnergyDensity_Metric1"/>
+        </CATIAUnit>
+
+        <CATIAUnit name="StrainEnergyDensity_Metric2">
+            <MatMLUnit name="StrainEnergyDensity_Metric2"/>
+        </CATIAUnit>
+
+        <CATIAUnit name="StrainEnergyDensity_Metric3">
+            <MatMLUnit name="StrainEnergyDensity_Metric3"/>
+        </CATIAUnit>
+
+        <!--*************************************************-->
+        <!--                       T                         -->
+        <!--*************************************************-->
+        <CATIAUnit name="ThermalConductance_English1">
+            <MatMLUnit name="ThermalConductance_English1"/>
+            <MatMLUnit name="BTU/sec-F"/>
+            <MatMLUnit name="BTU/sec.F"/>
+            <MatMLUnit name="BTU/s-F"/>
+            <MatMLUnit name="BTU/s.F"/>
+        </CATIAUnit>
+
+        <CATIAUnit name="ThermalConductance_English2">
+            <MatMLUnit name="ThermalConductance_English2"/>
+            <MatMLUnit name="BTU/hr-F"/>
+            <MatMLUnit name="BTU/hr.F"/>
+        </CATIAUnit>
+
+        <CATIAUnit name="ThermalConductance_English3">
+            <MatMLUnit name="ThermalConductance_English3"/>
+            <MatMLUnit name="BTU/min-F"/>
+            <MatMLUnit name="BTU/min.F"/>
+        </CATIAUnit>
+
+        <CATIAUnit name="ThermalConductance_English4">
+            <MatMLUnit name="ThermalConductance_English4"/>
+            <MatMLUnit name="lbf-in/sec-F"/>
+            <MatMLUnit name="lbf.in/sec.F"/>
+            <MatMLUnit name="lbf-in/s-F"/>
+            <MatMLUnit name="lbf.in/s.F"/>
+            <MatMLUnit name="lbfin/sec-F"/>
+            <MatMLUnit name="lbfin/sec.F"/>
+            <MatMLUnit name="lbfin/s-F"/>
+            <MatMLUnit name="lbfin/s.F"/>
+        </CATIAUnit>
+
+        <CATIAUnit name="ThermalConductance_Metric1">
+            <MatMLUnit name="ThermalConductance_Metric1"/>
+            <MatMLUnit name="microW/C"/>
+        </CATIAUnit>
+
+        <CATIAUnit name="ThermalConductance_Metric2">
+            <MatMLUnit name="ThermalConductance_Metric2"/>
+            <MatMLUnit name="W/C"/>
+        </CATIAUnit>
+
+        <CATIAUnit name="ThermalConductance_Metric3">
+            <MatMLUnit name="ThermalConductance_Metric3"/>
+            <MatMLUnit name="mW/C"/>
+        </CATIAUnit>
+
+        <CATIAUnit name="ThermalConductivity_English1">
+            <MatMLUnit name="ThermalConductivity_English1"/>
+            <MatMLUnit name="BTU/sec-in-F"/>
+            <MatMLUnit name="BTU/sec.in.F"/>
+        </CATIAUnit>
+
+        <CATIAUnit name="ThermalConductivity_English2">
+            <MatMLUnit name="ThermalConductivity_English2"/>
+            <MatMLUnit name="BTU/hr-ft-F"/>
+            <MatMLUnit name="BTU/hr.ft.F"/>
+        </CATIAUnit>
+
+        <CATIAUnit name="ThermalConductivity_English3">
+            <MatMLUnit name="ThermalConductivity_English3"/>
+            <MatMLUnit name="BTU/hr-in-F"/>
+            <MatMLUnit name="BTU/hr.in.F"/>
+        </CATIAUnit>
+
+        <CATIAUnit name="ThermalConductivity_English4">
+            <MatMLUnit name="ThermalConductivity_English4"/>
+            <MatMLUnit name="BTU/sec-ft-F"/>
+            <MatMLUnit name="BTU/sec.ft.F"/>
+        </CATIAUnit>
+
+        <CATIAUnit name="ThermalConductivity_English5">
+            <MatMLUnit name="ThermalConductivity_English5"/>
+            <MatMLUnit name="lbf-in/sec-in-F"/>
+            <MatMLUnit name="lbf.in/sec.in.F"/>
+            <MatMLUnit name="lbfin/sec-in-F"/>
+            <MatMLUnit name="lbfin/sec.in.F"/>
+        </CATIAUnit>
+
+        <CATIAUnit name="ThermalConductivity_Metric1">
+            <MatMLUnit name="ThermalConductivity_Metric1"/>
+            <MatMLUnit name="microW/mm-C"/>
+            <MatMLUnit name="microW/mm.C"/>
+            <MatMLUnit name="microWatt/mm-C"/>
+            <MatMLUnit name="microWatt/mm.C"/>
+        </CATIAUnit>
+
+        <CATIAUnit name="ThermalConductivity_Metric2">
+            <MatMLUnit name="ThermalConductivity_Metric2"/>
+            <MatMLUnit name="W/mm-C"/>
+            <MatMLUnit name="W/mm.C"/>
+            <MatMLUnit name="Watt/mm-C"/>
+            <MatMLUnit name="Watt/mm.C"/>
+        </CATIAUnit>
+
+        <CATIAUnit name="ThermalConductivity_Metric3">
+            <MatMLUnit name="ThermalConductivity_Metric3"/>
+            <MatMLUnit name="W/m-K"/>
+            <MatMLUnit name="W/m.K"/>
+            <MatMLUnit name="Watt/m-K"/>
+            <MatMLUnit name="Watt/m.K"/>
+        </CATIAUnit>
+
+        <CATIAUnit name="ThermalConductivity_Metric4">
+            <MatMLUnit name="ThermalConductivity_Metric4"/>
+            <MatMLUnit name="W/m-C"/>
+            <MatMLUnit name="W/m.C"/>
+            <MatMLUnit name="Watt/m-C"/>
+            <MatMLUnit name="Watt/m.C"/>
+        </CATIAUnit>
+
+        <CATIAUnit name="ThermalConductivity_Metric5">
+            <MatMLUnit name="ThermalConductivity_Metric5"/>
+            <MatMLUnit name="mW/mm-C"/>
+            <MatMLUnit name="mW/mm.C"/>
+            <MatMLUnit name="mWatt/mm-C"/>
+            <MatMLUnit name="mWatt/mm.C"/>
+        </CATIAUnit>
+
+        <CATIAUnit name="ThermalConductivity_Metric6">
+            <MatMLUnit name="ThermalConductivity_Metric6"/>
+            <MatMLUnit name="W/cm-C"/>
+            <MatMLUnit name="W/cm.C"/>
+            <MatMLUnit name="Watt/cm-C"/>
+            <MatMLUnit name="Watt/cm.C"/>
+        </CATIAUnit>
+
+        <CATIAUnit name="ThermalEnergy_English1">
+            <MatMLUnit name="ThermalEnergy_English1"/>
+        </CATIAUnit>
+
+        <CATIAUnit name="ThermalEnergy_English2">
+            <MatMLUnit name="ThermalEnergy_English2"/>
+        </CATIAUnit>
+
+        <CATIAUnit name="ThermalEnergy_English3">
+            <MatMLUnit name="ThermalEnergy_English3"/>
+        </CATIAUnit>
+
+        <CATIAUnit name="ThermalEnergy_English4">
+            <MatMLUnit name="ThermalEnergy_English4"/>
+        </CATIAUnit>
+
+        <CATIAUnit name="ThermalEnergy_Metric1">
+            <MatMLUnit name="ThermalEnergy_Metric1"/>
+        </CATIAUnit>
+
+        <CATIAUnit name="ThermalEnergy_Metric2">
+            <MatMLUnit name="ThermalEnergy_Metric2"/>
+        </CATIAUnit>
+
+        <CATIAUnit name="ThermalEnergy_Metric3">
+            <MatMLUnit name="ThermalEnergy_Metric3"/>
+        </CATIAUnit>
+
+        <CATIAUnit name="ThermalEnergy_Metric4">
+            <MatMLUnit name="ThermalEnergy_Metric4"/>
+        </CATIAUnit>
+
+        <CATIAUnit name="ThermalEnergy_Metric5">
+            <MatMLUnit name="ThermalEnergy_Metric5"/>
+        </CATIAUnit>
+
+        <CATIAUnit name="ThermalEnergy_Metric6">
+            <MatMLUnit name="ThermalEnergy_Metric6"/>
+        </CATIAUnit>
+
+        <CATIAUnit name="ThermalEnergyPerArea_English1">
+            <MatMLUnit name="ThermalEnergyPerArea_English1"/>
+            <MatMLUnit name="BTU/in^2"/>
+            <MatMLUnit name="BTU/in2"/>
+            <MatMLUnit name="BTU/in-in"/>
+            <MatMLUnit name="BTU/in.in"/>
+        </CATIAUnit>
+
+        <CATIAUnit name="ThermalEnergyPerArea_English2">
+            <MatMLUnit name="ThermalEnergyPerArea_English2"/>
+            <MatMLUnit name="BTU/ft^2"/>
+            <MatMLUnit name="BTU/ft2"/>
+            <MatMLUnit name="BTU/ft-ft"/>
+            <MatMLUnit name="BTU/ft.ft"/>
+        </CATIAUnit>
+
+        <CATIAUnit name="ThermalEnergyPerArea_English3">
+            <MatMLUnit name="ThermalEnergyPerArea_English3"/>
+            <MatMLUnit name="lbf-in/in^2"/>
+            <MatMLUnit name="lbf-in/in2"/>
+            <MatMLUnit name="lbf.in/in^2"/>
+            <MatMLUnit name="lbf.in/in2"/>
+            <MatMLUnit name="lbf-in/in-in"/>
+            <MatMLUnit name="lbf.in/in.in"/>
+            <MatMLUnit name="lbfin/in^2"/>
+            <MatMLUnit name="lbfin/in2"/>
+            <MatMLUnit name="lbfin/in-in"/>
+            <MatMLUnit name="lbfin/in.in"/>
+        </CATIAUnit>
+
+        <CATIAUnit name="ThermalEnergyPerArea_Metric1">
+            <MatMLUnit name="ThermalEnergyPerArea_Metric1"/>
+            <MatMLUnit name="microJ/mm^2"/>
+            <MatMLUnit name="microJ/mm2"/>
+            <MatMLUnit name="microJ/mm-mm"/>
+            <MatMLUnit name="microJ/mm.mm"/>
+        </CATIAUnit>
+
+        <CATIAUnit name="ThermalEnergyPerArea_Metric2">
+            <MatMLUnit name="ThermalEnergyPerArea_Metric2"/>
+            <MatMLUnit name="J/m^2"/>
+            <MatMLUnit name="J/m2"/>
+            <MatMLUnit name="J/m-m"/>
+            <MatMLUnit name="J/m.m"/>
+        </CATIAUnit>
+
+        <CATIAUnit name="ThermalEnergyPerArea_Metric3">
+            <MatMLUnit name="ThermalEnergyPerArea_Metric3"/>
+            <MatMLUnit name="J/cm^2"/>
+            <MatMLUnit name="J/cm2"/>
+            <MatMLUnit name="J/cm-cm"/>
+            <MatMLUnit name="J/cm.cm"/>
+        </CATIAUnit>
+
+        <CATIAUnit name="ThermalExpansion_English1">
+            <MatMLUnit name="ThermalExpansion_English1"/>
+            <MatMLUnit name="1/F"/>
+            <MatMLUnit name="strain/F"/>
+        </CATIAUnit>
+
+        <CATIAUnit name="ThermalExpansion_Metric1">
+            <MatMLUnit name="ThermalExpansion_Metric1"/>
+            <MatMLUnit name="1/C"/>
+            <MatMLUnit name="strain/C"/>
+        </CATIAUnit>
+
+        <CATIAUnit name="ThermalExpansion_Metric2">
+            <MatMLUnit name="ThermalExpansion_Metric2"/>
+            <MatMLUnit name="1/K"/>
+            <MatMLUnit name="strain/K"/>
+        </CATIAUnit>
+
+        <CATIAUnit name="ThermalPIDDerivativeEnglishSecond">
+            <MatMLUnit name="ThermalPIDDerivativeEnglishSecond"/>
+        </CATIAUnit>
+
+        <CATIAUnit name="ThermalPIDDerivativeMetricSecond">
+            <MatMLUnit name="ThermalPIDDerivativeMetricSecond"/>
+        </CATIAUnit>
+
+        <CATIAUnit name="ThermalPIDGainEnglish">
+            <MatMLUnit name="ThermalPIDGainEnglish"/>
+        </CATIAUnit>
+
+        <CATIAUnit name="ThermalPIDGainMetric">
+            <MatMLUnit name="ThermalPIDGainMetric"/>
+        </CATIAUnit>
+
+        <CATIAUnit name="ThermalPIDIntegralEnglishSecond">
+            <MatMLUnit name="ThermalPIDIntegralEnglishSecond"/>
+        </CATIAUnit>
+
+        <CATIAUnit name="ThermalPIDIntegralMetricSecond">
+            <MatMLUnit name="ThermalPIDIntegralMetricSecond"/>
+        </CATIAUnit>
+
+        <CATIAUnit name="ThermalResistance_English1">
+            <MatMLUnit name="ThermalResistance_English1"/>
+            <MatMLUnit name="F/sec-BTU"/>
+            <MatMLUnit name="F/sec.BTU"/>
+            <MatMLUnit name="F/s-BTU"/>
+            <MatMLUnit name="F/s.BTU"/>
+        </CATIAUnit>
+
+        <CATIAUnit name="ThermalResistance_English2">
+            <MatMLUnit name="ThermalResistance_English2"/>
+            <MatMLUnit name="F/hr-BTU"/>
+            <MatMLUnit name="F/hr.BTU"/>
+        </CATIAUnit>
+
+        <CATIAUnit name="ThermalResistance_English3">
+            <MatMLUnit name="ThermalResistance_English3"/>
+            <MatMLUnit name="F/min-BTU"/>
+            <MatMLUnit name="F/min.BTU"/>
+        </CATIAUnit>
+
+        <CATIAUnit name="ThermalResistance_English4">
+            <MatMLUnit name="ThermalResistance_English4"/>
+            <MatMLUnit name="F/sec-lbf-in"/>
+            <MatMLUnit name="F/sec.lbf.in"/>
+            <MatMLUnit name="F/s-lbf-in"/>
+            <MatMLUnit name="F/s.lbf.in"/>
+            <MatMLUnit name="F/sec-lbfin"/>
+            <MatMLUnit name="F/sec.lbfin"/>
+            <MatMLUnit name="F/s-lbfin"/>
+            <MatMLUnit name="F/s.lbfin"/>
+        </CATIAUnit>
+
+        <CATIAUnit name="ThermalResistance_Metric1">
+            <MatMLUnit name="ThermalResistance_Metric1"/>
+            <MatMLUnit name="C/microW"/>
+            <MatMLUnit name="C/microWatt"/>
+        </CATIAUnit>
+
+        <CATIAUnit name="ThermalResistance_Metric2">
+            <MatMLUnit name="ThermalResistance_Metric2"/>
+            <MatMLUnit name="C/W"/>
+            <MatMLUnit name="C/Watt"/>
+        </CATIAUnit>
+
+        <CATIAUnit name="ThermalResistance_Metric3">
+            <MatMLUnit name="ThermalResistance_Metric3"/>
+            <MatMLUnit name="C/mW"/>
+            <MatMLUnit name="C/mWatt"/>
+        </CATIAUnit>
+
+        <CATIAUnit name="Tonne">
+            <MatMLUnit name="Tonne"/>
+            <MatMLUnit name="t"/>
+        </CATIAUnit>
+
+        <CATIAUnit name="TonnePerCubicMeter">
+            <MatMLUnit name="TonnePerCubicMeter"/>
+            <MatMLUnit name="t/m-m-m"/>
+            <MatMLUnit name="t/m.m.m"/>
+            <MatMLUnit name="t/m^3"/>
+            <MatMLUnit name="t/m3"/>
+            <MatMLUnit name="Mg/m-m-m"/>
+            <MatMLUnit name="Mg/m.m.m"/>
+            <MatMLUnit name="Mg/m^3"/>
+            <MatMLUnit name="Mg/m3"/>
+        </CATIAUnit>
+
+        <CATIAUnit name="TonnePerCubicMilliMeter">
+            <MatMLUnit name="TonnePerCubicMilliMeter"/>
+            <MatMLUnit name="t/mm-mm-mm"/>
+            <MatMLUnit name="t/mm.mm.mm"/>
+            <MatMLUnit name="t/mm^3"/>
+            <MatMLUnit name="t/mm3"/>
+            <MatMLUnit name="Mg/mm-mm-mm"/>
+            <MatMLUnit name="Mg/mm.mm.mm"/>
+            <MatMLUnit name="Mg/mm^3"/>
+            <MatMLUnit name="Mg/mm3"/>
+        </CATIAUnit>
+
+        <CATIAUnit name="TonnePerMeter">
+            <MatMLUnit name="TonnePerMeter"/>
+            <MatMLUnit name="t/m"/>
+            <MatMLUnit name="Mg/m"/>
+        </CATIAUnit>
+
+        <CATIAUnit name="TonnePerMeterSquared">
+            <MatMLUnit name="TonnePerMeterSquared"/>
+            <MatMLUnit name="t/m-m"/>
+            <MatMLUnit name="t/m.m"/>
+            <MatMLUnit name="t/m^2"/>
+            <MatMLUnit name="t/m2"/>
+            <MatMLUnit name="Mg/m-m"/>
+            <MatMLUnit name="Mg/m.m"/>
+            <MatMLUnit name="Mg/m^2"/>
+            <MatMLUnit name="Mg/m2"/>
+        </CATIAUnit>
+
+        <CATIAUnit name="TonnePerMilliMeter">
+            <MatMLUnit name="TonnePerMilliMeter"/>
+            <MatMLUnit name="t/mm"/>
+            <MatMLUnit name="Mg/mm"/>
+        </CATIAUnit>
+
+        <CATIAUnit name="TonnePerMilliMeterSquared">
+            <MatMLUnit name="TonnePerMilliMeterSquared"/>
+            <MatMLUnit name="t/mm-mm"/>
+            <MatMLUnit name="t/mm.mm"/>
+            <MatMLUnit name="t/mm^2"/>
+            <MatMLUnit name="t/mm2"/>
+            <MatMLUnit name="Mg/mm-mm"/>
+            <MatMLUnit name="Mg/mm.mm"/>
+            <MatMLUnit name="Mg/mm^2"/>
+            <MatMLUnit name="Mg/mm2"/>
+        </CATIAUnit>
+
+        <CATIAUnit name="TsaiWu_English1">
+            <MatMLUnit name="TsaiWu_English1"/>
+            <MatMLUnit name="in^4/lbf^2"/>
+            <MatMLUnit name="in4/lbf2"/>
+            <MatMLUnit name="in-in-in-in/lbf-lbf"/>
+            <MatMLUnit name="in.in.in.in/lbf.lbf"/>
+        </CATIAUnit>
+
+        <CATIAUnit name="TsaiWu_Metric1">
+            <MatMLUnit name="TsaiWu_Metric1"/>
+            <MatMLUnit name="mm^4/mN^2"/>
+            <MatMLUnit name="mm4/mN2"/>
+            <MatMLUnit name="mm-mm-mm-mm/mN-mN"/>
+            <MatMLUnit name="mm.mm.mm.mm/mN.mN"/>
+        </CATIAUnit>
+
+        <CATIAUnit name="TsaiWu_Metric2">
+            <MatMLUnit name="TsaiWu_Metric2"/>
+            <MatMLUnit name="mm^4/N^2"/>
+            <MatMLUnit name="mm4/N2"/>
+            <MatMLUnit name="mm-mm-mm-mm/N-N"/>
+            <MatMLUnit name="mm.mm.mm.mm/N.N"/>
+        </CATIAUnit>
+
+        <CATIAUnit name="TsaiWu_Metric3">
+            <MatMLUnit name="TsaiWu_Metric3"/>
+            <MatMLUnit name="m^4/N^2"/>
+            <MatMLUnit name="m4/N2"/>
+            <MatMLUnit name="m-m-m-m/N-N"/>
+            <MatMLUnit name="m.m.m.m/N.N"/>
+        </CATIAUnit>
+
+
+        <!--*************************************************-->
+        <!--                       U                         -->
+        <!--*************************************************-->
+
+
+
+        <!--*************************************************-->
+        <!--                       V                         -->
+        <!--*************************************************-->
+        <CATIAUnit name="Volt">
+            <MatMLUnit name="Volt"/>
+            <MatMLUnit name="v"/>
+        </CATIAUnit>
+
+        <CATIAUnit name="VoltPerCelsius">
+            <MatMLUnit name="VoltPerCelsius"/>
+            <MatMLUnit name="Volt/Celsius"/>
+            <MatMLUnit name="V/C"/>
+        </CATIAUnit>
+
+        <CATIAUnit name="VoltPerFahrenheit">
+            <MatMLUnit name="VoltPerFahrenheit"/>
+            <MatMLUnit name="Volt/Fahrenheit"/>
+            <MatMLUnit name="V/F"/>
+        </CATIAUnit>
+
+        <CATIAUnit name="VoltPerKelvin">
+            <MatMLUnit name="VoltPerKelvin"/>
+            <MatMLUnit name="Volt/Kelvin"/>
+            <MatMLUnit name="V/K"/>
+        </CATIAUnit>
+
+        <CATIAUnit name="VoltPerRankine">
+            <MatMLUnit name="VoltPerRankine"/>
+            <MatMLUnit name="Volt/Rankine"/>
+            <MatMLUnit name="V/R"/>
+        </CATIAUnit>
+
+
+        <!--*************************************************-->
+        <!--                       W                         -->
+        <!--*************************************************-->
+        <CATIAUnit name="Watt">
+            <MatMLUnit name="HeatFlow_Metric2"/>
+            <MatMLUnit name="Watt"/>
+            <MatMLUnit name="W"/>
+        </CATIAUnit>
+
+
+        <!--*************************************************-->
+        <!--                       X                         -->
+        <!--*************************************************-->
+
+
+
+
+        <!--*************************************************-->
+        <!--                       Y                         -->
+        <!--*************************************************-->
+
+
+
+        <!--*************************************************-->
+        <!--                       Z                         -->
+        <!--*************************************************-->
+
+    </Units>
+</MatMLToCATIAMappings>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<preferences version="10.0">
+    <category name="General">
+        <category_description></category_description>
+        <!-- check with OOTB pref syntax!
+        <preference name="appbar_title_contents" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+            <preference_description>The values in this preference are used to form the title string to be displayed in the application bar. The values that can be used "user" "userid" "group" "role" "site" "object" "rev_rule" "application" "curr_proj" and "version"</preference_description>
+            <context name="Teamcenter">
+                <value>(</value>
+                <value>user</value>
+                <value>(</value>
+                <value>userid</value>
+                <value>)</value>
+                <value>-</value>
+                <value>group</value>
+                <value>/</value>
+                <value>role</value>
+                <value>[</value>
+                <value>curr_proj</value>
+                <value>]</value>
+                <value>[</value>
+                <value>site</value>
+                <value>]</value>
+                <value>Release 1.0.0-rc1</value>
+                <value>)</value>
+            </context>
+        </preference>    
+        -->        
+    </category>
+    <category name="ASP">
+        <category_description>Preferences defined by Voestalpine customization</category_description>
+        <preference name="ASP_NOTREALPREF" type="String" array="false" disabled="true" protectionScope="Site" envEnabled="false">
+            <preference_description></preference_description>
+            <context name="Teamcenter">
+            </context>
+        </preference>     
+        <preference name="ASP_VersionInfo" type="String" array="false" disabled="false" protectionScope="Site" envEnabled="false">
+            <preference_description>This preference shows the current version of the Voestalpine configuration/customizing</preference_description>
+            <context name="Teamcenter">
+                <value>V1.0.0-rc1 from 18.06.2018</value>
+            </context>
+        </preference>    
+    </category>
+</preferences>

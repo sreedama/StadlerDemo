@@ -1,0 +1,1158 @@
+# Attribute Synchronisation mapping file for site "STADLER RAIL TCDEV" (id -1254479547)
+# TC_ROOT = d:\PLM\TC13
+# TC_DATA = d:\PLMShare\tc_data13
+# TC_DB_CONNECT = infodba:DC3IzNf+GncgGALhkEJEwsYy67FRb8xlH7V6JsDY06U@TCDEV.STADLERRAIL.CH
+# Exported by infodba (infodba) at 2021/10/04 15:46:03
+#
+# Syntax:
+#    <title> : <mapping> [ <qualifiers> ]
+#    where <mapping> is one of:
+#        IM
+#        IRM
+#        CONST( <value> )
+#        PREF( [ <scope> : ] <value> )
+#        <step>.<step>...<property>
+#        where <step> is one of:
+#            <property>
+#            GRM( <relationship-type> [ , <object-type> ] )
+#            NR( <named-reference-type> [ , <form-type> ] )
+#            SIGNOFF( [ <release-level> , ] <role> )
+#            ItemRevision
+#            Item
+#            Job
+#    and <qualifiers> are:
+#        /write_once
+#        /description=<description>
+#        /master=both|cad|iman|none
+#        /freezable
+#
+# Real mappings:
+#
+# NOTE: for item master form the qualifier master=nnn is reassigned to master=iman
+#       where nnn can be cad, both, or none.
+#
+
+# (hard-wired) DB_PART_NO : "Part Number"
+# (hard-wired) DB_PART_REV : "Part Revision"
+# (hard-wired) DB_PART_TYPE : "Part Type"
+# (hard-wired) DB_UNITS : "Part Unit of Measure"
+"DB_PART_NAME" : Item.object_name /master=iman /description="Part Name"
+"DB_PART_DESC" : Item.object_desc /master=iman /description="Part Description"
+
+{ Dataset type="DirectModel3DMarkup"
+}
+
+{ Dataset type="NetworkImage"
+}
+
+{ Dataset type="DirectModelAnimation"
+}
+
+{ Dataset type="Outlook"
+}
+
+{ Dataset type="PCF"
+}
+
+{ Dataset type="DirectModelAssembly"
+}
+
+{ Dataset type="CrfHtmlStylesheet"
+}
+
+{ Dataset type="Markup"
+}
+
+{ Dataset type="Vis_Snapshot_2D_View_Data"
+}
+
+{ Dataset type="CrfMSWordDocStylesheet"
+}
+
+{ Dataset type="Mfg0DMIS"
+}
+
+{ Dataset type="VisualReportDefinition"
+}
+
+{ Dataset type="CrfOutputExcel"
+}
+
+{ Dataset type="CrfOutputHtml"
+}
+
+{ Dataset type="Mfg0ME3DPDFInputs"
+}
+
+{ Dataset type="WordPerfect"
+}
+
+{ Dataset type="CrfOutputMSWord"
+}
+
+{ Dataset type="Mfg0OccKinematicsInfo"
+}
+
+{ Dataset type="XMLAuditLog"
+}
+
+{ Dataset type="CrfOutputPdf"
+}
+
+{ Dataset type="Mfg0PlantCarpet"
+}
+
+{ Dataset type="XMLRenderingStylesheet"
+}
+
+{ Dataset type="CrfOutputText"
+}
+
+{ Dataset type="NXAFEM"
+}
+
+{ Dataset type="XMLReportFormatter"
+}
+
+{ Dataset type="CrfOutputXml"
+}
+
+{ Dataset type="PDF"
+}
+
+{ Dataset type="NXDerived"
+}
+
+{ Dataset type="Zip"
+}
+
+{ Dataset type="Zone"
+}
+
+{ Dataset type="CrfPdfStylesheet"
+}
+
+{ Dataset type="NXMotion"
+}
+
+{ Dataset type="Fnd0ReqMarkup"
+}
+
+{ Dataset type="CrfTextStylesheet"
+}
+
+{ Dataset type="CrfXmlStylesheet"
+}
+
+{ Dataset type="DFA_KF"
+}
+
+{ Dataset type="NXRouting"
+}
+
+{ Dataset type="DXF"
+}
+
+{ Dataset type="NXSimulation"
+}
+
+{ Dataset type="DirectModel"
+}
+
+{ Dataset type="Nastran"
+}
+
+{ Dataset type="SAP2_T4S_TransActionLog"
+}
+
+{ Dataset type="TIF"
+}
+
+{ Dataset type="CATSecondaryPart"
+}
+
+{ Dataset type="Fnd0FasnGroupDefinition"
+}
+
+{ Dataset type="CATProduct"
+    { Item type="Item"
+        "partNumber" : Item.item_id /master=iman
+        "revision" : ItemRevision.item_revision_id /master=iman
+        "definition" : ItemRevision.object_name /master=iman
+        "description" : ItemRevision.object_desc /master=both
+    }
+		
+	{ Item type="SR5EngArticle"
+        "partNumber" : Item.item_id /master=iman
+        "revision" : ItemRevision.item_revision_id /master=iman
+        "definition" : ItemRevision.object_name /master=iman
+        "description" : ItemRevision.object_desc /master=both
+        "ObjectNameTerm1" : ItemRevision.sr5ObjectNameTerm1 /master=both
+        "ObjectNameTerm2" : ItemRevision.sr5ObjectNameTerm2 /master=both
+        "ObjectNameTerm3" : ItemRevision.sr5ObjectNameTerm3 /master=both
+    }
+		
+	{ Item type="SR5CatDefArticle"
+        "partNumber" : Item.item_id /master=iman
+        "revision" : ItemRevision.item_revision_id /master=iman
+        "definition" : ItemRevision.object_name /master=iman
+        "description" : ItemRevision.object_desc /master=both
+        "ObjectNameTerm1" : ItemRevision.sr5ObjectNameTerm1 /master=both
+        "ObjectNameTerm2" : ItemRevision.sr5ObjectNameTerm2 /master=both
+        "ObjectNameTerm3" : ItemRevision.sr5ObjectNameTerm3 /master=both
+    }
+		
+	{ Item type="SR5GenCatPart"
+        "partNumber" : Item.item_id /master=iman
+        "revision" : ItemRevision.item_revision_id /master=iman
+        "definition" : ItemRevision.object_name /master=iman
+        "description" : ItemRevision.object_desc /master=both
+        "ObjectNameTerm1" : ItemRevision.sr5ObjectNameTerm1 /master=both
+        "ObjectNameTerm2" : ItemRevision.sr5ObjectNameTerm2 /master=both
+        "ObjectNameTerm3" : ItemRevision.sr5ObjectNameTerm3 /master=both
+    }
+		
+	{ Item type="SR5NonERPArticle"
+        "partNumber" : Item.item_id /master=iman
+        "revision" : ItemRevision.item_revision_id /master=iman
+        "definition" : ItemRevision.object_name /master=iman
+        "description" : ItemRevision.object_desc /master=both
+        "ObjectNameTerm1" : ItemRevision.sr5ObjectNameTerm1 /master=both
+        "ObjectNameTerm2" : ItemRevision.sr5ObjectNameTerm2 /master=both
+        "ObjectNameTerm3" : ItemRevision.sr5ObjectNameTerm3 /master=both
+    }
+		
+	{ Item type="SR5EngMajorAssy"
+        "partNumber" : Item.item_id /master=iman
+        "revision" : ItemRevision.item_revision_id /master=iman
+        "definition" : ItemRevision.object_name /master=iman
+        "description" : ItemRevision.object_desc /master=both
+    }
+		
+	{ Item type="SR5EngEndItem"
+        "partNumber" : Item.item_id /master=iman
+        "revision" : ItemRevision.item_revision_id /master=iman
+        "definition" : ItemRevision.object_name /master=iman
+        "description" : ItemRevision.object_desc /master=both
+    }
+		
+	{ Item type="SR5EngEnv"
+        "partNumber" : Item.item_id /master=iman
+        "revision" : ItemRevision.item_revision_id /master=iman
+        "definition" : ItemRevision.object_name /master=iman
+        "description" : ItemRevision.object_desc /master=both
+        "ObjectNameTerm1" : ItemRevision.sr5ObjectNameTerm1 /master=both
+        "ObjectNameTerm2" : ItemRevision.sr5ObjectNameTerm2 /master=both
+        "ObjectNameTerm3" : ItemRevision.sr5ObjectNameTerm3 /master=both
+    }
+		
+	{ Item type="SR5EngInstallLoc"
+        "partNumber" : Item.item_id /master=iman
+        "revision" : ItemRevision.item_revision_id /master=iman
+        "definition" : ItemRevision.object_name /master=iman
+        "description" : ItemRevision.object_desc /master=both
+    }
+	
+    { Item type="SR5EngArticleAR"
+        "partNumber" : Item.sr5ItemIdAltRepCounter /master=iman
+        "revision" : ItemRevision.item_revision_id /master=iman
+        "definition" : ItemRevision.object_name /master=iman
+        "description" : ItemRevision.object_desc /master=both
+        "ObjectNameTerm1" : ItemRevision.sr5ObjectNameTerm1 /master=both
+        "ObjectNameTerm2" : ItemRevision.sr5ObjectNameTerm2 /master=both
+        "ObjectNameTerm3" : ItemRevision.sr5ObjectNameTerm3 /master=both
+    }
+	
+    { Item type="SR5CatDefArtAR"
+        "partNumber" : Item.sr5ItemIdAltRepCounter /master=iman
+        "revision" : ItemRevision.item_revision_id /master=iman
+        "definition" : ItemRevision.object_name /master=iman
+        "description" : ItemRevision.object_desc /master=both
+        "ObjectNameTerm1" : ItemRevision.sr5ObjectNameTerm1 /master=both
+        "ObjectNameTerm2" : ItemRevision.sr5ObjectNameTerm2 /master=both
+        "ObjectNameTerm3" : ItemRevision.sr5ObjectNameTerm3 /master=both
+    }
+	
+    { Item type="SR5GenCatPartAR"
+        "partNumber" : Item.sr5ItemIdAltRepCounter /master=iman
+        "revision" : ItemRevision.item_revision_id /master=iman
+        "definition" : ItemRevision.object_name /master=iman
+        "description" : ItemRevision.object_desc /master=both
+        "ObjectNameTerm1" : ItemRevision.sr5ObjectNameTerm1 /master=both
+        "ObjectNameTerm2" : ItemRevision.sr5ObjectNameTerm2 /master=both
+        "ObjectNameTerm3" : ItemRevision.sr5ObjectNameTerm3 /master=both
+    }
+	
+    { Item type="SR5DrawingDoc"
+        "partNumber" : Item.sr5ItemIdAltRepCounter /master=iman
+        "revision" : ItemRevision.item_revision_id /master=iman
+        "definition" : ItemRevision.object_name /master=iman
+        "description" : ItemRevision.object_desc /master=both
+    }
+}
+
+{ Dataset type="Fnd0IconResource"
+}
+
+{ Dataset type="TCPublishingTechnicalPortfolio"
+}
+
+{ Dataset type="DirectModelFlowChart"
+}
+
+{ Dataset type="CATAnalysis"
+}
+
+{ Dataset type="PDX"
+}
+
+{ Dataset type="DirectModelIllustrationBook"
+}
+
+{ Dataset type="PNG_Thumbnail"
+}
+
+{ Dataset type="CATAnalysisComputations"
+}
+
+{ Dataset type="DirectModelIllustrationSheet"
+}
+
+{ Dataset type="Photoshop"
+}
+
+{ Dataset type="CATAnalysisResults"
+}
+
+{ Dataset type="DirectModelMarkup"
+}
+
+{ Dataset type="PortfolioHFT"
+}
+
+{ Dataset type="DirectModelMotion"
+}
+
+{ Dataset type="CATCache"
+}
+
+{ Dataset type="Postscript"
+}
+
+{ Dataset type="DirectModelSession"
+}
+
+{ Dataset type="DrawingSheet"
+}
+
+{ Dataset type="CATCatalog"
+}
+
+{ Dataset type="ProgramView"
+}
+
+{ Dataset type="Fnd0LaunchPadRendering"
+}
+
+{ Dataset type="Fnd0PropertyMap"
+}
+
+{ Dataset type="RollupReport"
+}
+
+{ Dataset type="CATDrawing"
+    { Item type="Item"
+        "partNumber" : Item.item_id /master=iman
+        "revision" : ItemRevision.sr5ExternalRevision /master=iman
+    }
+
+    { Item type="SR5EngArticle"
+        "ID" : Item.item_id /master=iman /description="ID"
+        "Revision" : ItemRevision.sr5ExternalRevision /master=iman /description="Revision"
+        "Besitzer" : ItemRevision.owning_user.user_id /master=iman /description="Besitzer"
+        "Benennung_1" : ItemRevision.sr5CATIAName1 /master=iman /description="Benennung_1"
+        "Benennung_2" : ItemRevision.sr5CATIAName2 /master=iman /description="Benennung_2"
+        "Lebenszyklus" : ItemRevision.last_release_status /master=iman /description="Lebenszyklus"
+        "Unter_BG" : ItemRevision.sr5RefTagEN /master=iman /description="Unter_BG"
+		"Ursprung" : Item.GRM(IMAN_based_on).item_id /master=iman /description="Ursprung"
+		"Anzahl_Blatt" : ItemRevision.sr5NoDrawingSheets /master=cad /description="Anzahl_Blatt"
+        "Erstellname" : Item.owning_user.user_id /master=iman /description="Erstellname"
+        "Erstelldatum" : Item.creation_date /master=iman /description="Erstelldatum"
+		"Eff_Gewicht" : ItemRevision.sr5AdjustedWeight /master=iman /description="Eff_Gewicht"
+		"Zeichnungsformat" : Item.sr5DrawingFormat /master=cad /description="Zeichnungsformat"
+		"Dokumentart" : Item.sr5DrawingDCC /master=iman /description="Dokumentart"
+		"Aenderungsattribute_1" : ItemRevision.sr5ChangeAttr_Line1 /master=iman /description="Aenderungsattribute_1"
+		"Aenderungsattribute_2" : ItemRevision.sr5ChangeAttr_Line2 /master=iman /description="Aenderungsattribute_2"
+		"Aenderungsattribute_3" : ItemRevision.sr5ChangeAttr_Line3 /master=iman /description="Aenderungsattribute_3"
+		"Aenderungsattribute_4" : ItemRevision.sr5ChangeAttr_Line4 /master=iman /description="Aenderungsattribute_4"
+		"Aenderungsattribute_5" : ItemRevision.sr5ChangeAttr_Line5 /master=iman /description="Aenderungsattribute_5"
+		"Aenderungsattribute_6" : ItemRevision.sr5ChangeAttr_Line6 /master=iman /description="Aenderungsattribute_6"
+		"Aenderungsattribute_7" : ItemRevision.sr5ChangeAttr_Line7 /master=iman /description="Aenderungsattribute_7"
+		"Aenderungsattribute_8" : ItemRevision.sr5ChangeAttr_Line8 /master=iman /description="Aenderungsattribute_8"
+        "Geprueftname" : ItemRevision.GRM(IMAN_master_form).sr5ReviewedBy /master=iman /description="Geprueftname"
+        "Geprueftdatum" : ItemRevision.GRM(IMAN_master_form).sr5DateReviewed /master=iman /description="Geprueftdatum"
+        "Freigabename" : ItemRevision.GRM(IMAN_master_form).sr5EngineeringReleasedBy  /master=iman /description="Freigabename"
+        "Freigabedatum" : ItemRevision.GRM(IMAN_master_form).sr5DateEngineeringRelease /master=iman /description="Freigabedatum"
+        "Klebepruefname" : ItemRevision.GRM(IMAN_master_form).sr5GlueReleasedBy /master=iman /description="Klebepruefname"
+        "Klebepruefdatum" : ItemRevision.GRM(IMAN_master_form).sr5GlueReleasedDate /master=iman /description="Klebepruefdatum"
+        "Verschraubungspruefname" : ItemRevision.GRM(IMAN_master_form).sr5ScrewReleasedBy /master=iman /description="Verschraubungspruefname"
+        "Verschraubungspruefdatum" : ItemRevision.GRM(IMAN_master_form).sr5ScrewReleasedDate /master=iman /description="Verschraubungspruefdatum"
+        "Schweisspruefname" : ItemRevision.GRM(IMAN_master_form).sr5WeldReleasedBy /master=iman /description="Schweisspruefname"
+        "Schweisspruefdatum" : ItemRevision.GRM(IMAN_master_form).sr5WeldReleasedDate /master=iman /description="Schweisspruefdatum"
+		"Abmessung" : ItemRevision.sr5Dimension /master=iman /description="Abmessung"
+		"Hersteller" : ItemRevision.sr5Manufacturer.SR5Manufacturer.object_name /master=iman /description="Hersteller"
+		"Halbzeugartikelnummer" : ItemRevision.sr5MPN /master=iman /description="Halbzeugartikelnummer"
+		"Werkstoff" : ItemRevision.GRM(Mat1UsesMaterial,Mat1MaterialRevision).object_name /master=iman /description="Werkstoff"
+    }
+
+    { Item type="SR5EngInstallLoc"
+        "ID" : Item.item_id /master=iman /description="ID"
+        "Revision" : ItemRevision.sr5ExternalRevision /master=iman /description="Revision"
+        "Besitzer" : ItemRevision.owning_user.user_id /master=iman /description="Besitzer"
+        "Benennung_1" : ItemRevision.sr5CATIAName1 /master=iman /description="Benennung_1"
+        "Benennung_2" : ItemRevision.sr5CATIAName2 /master=iman /description="Benennung_2"
+        "Lebenszyklus" : ItemRevision.last_release_status /master=iman /description="Lebenszyklus"
+        "Unter_BG" : ItemRevision.sr5RefTagEN /master=iman /description="Unter_BG"
+		"Ursprung" : Item.GRM(IMAN_based_on).item_id /master=iman /description="Ursprung"
+		"Anzahl_Blatt" : ItemRevision.sr5NoDrawingSheets /master=cad /description="Anzahl_Blatt"
+        "Erstellname" : Item.owning_user.user_id /master=iman /description="Erstellname"
+        "Erstelldatum" : Item.creation_date /master=iman /description="Erstelldatum"
+		"Eff_Gewicht" : ItemRevision.sr5AdjustedWeight /master=iman /description="Eff_Gewicht"
+		"Zeichnungsformat" : Item.sr5DrawingFormat /master=cad /description="Zeichnungsformat"
+		"Dokumentart" : Item.sr5DrawingDCC /master=iman /description="Dokumentart"
+		"Aenderungsattribute_1" : ItemRevision.sr5ChangeAttr_Line1 /master=iman /description="Aenderungsattribute_1"
+		"Aenderungsattribute_2" : ItemRevision.sr5ChangeAttr_Line2 /master=iman /description="Aenderungsattribute_2"
+		"Aenderungsattribute_3" : ItemRevision.sr5ChangeAttr_Line3 /master=iman /description="Aenderungsattribute_3"
+		"Aenderungsattribute_4" : ItemRevision.sr5ChangeAttr_Line4 /master=iman /description="Aenderungsattribute_4"
+		"Aenderungsattribute_5" : ItemRevision.sr5ChangeAttr_Line5 /master=iman /description="Aenderungsattribute_5"
+		"Aenderungsattribute_6" : ItemRevision.sr5ChangeAttr_Line6 /master=iman /description="Aenderungsattribute_6"
+		"Aenderungsattribute_7" : ItemRevision.sr5ChangeAttr_Line7 /master=iman /description="Aenderungsattribute_7"
+		"Aenderungsattribute_8" : ItemRevision.sr5ChangeAttr_Line8 /master=iman /description="Aenderungsattribute_8"
+        "Geprueftname" : ItemRevision.GRM(IMAN_master_form).sr5ReviewedBy /master=iman /description="Geprueftname"
+        "Geprueftdatum" : ItemRevision.GRM(IMAN_master_form).sr5DateReviewed /master=iman /description="Geprueftdatum"
+        "Freigabename" : ItemRevision.GRM(IMAN_master_form).sr5EngineeringReleasedBy  /master=iman /description="Freigabename"
+        "Freigabedatum" : ItemRevision.GRM(IMAN_master_form).sr5DateEngineeringRelease /master=iman /description="Freigabedatum"
+        "Klebepruefname" : ItemRevision.GRM(IMAN_master_form).sr5GlueReleasedBy /master=iman /description="Klebepruefname"
+        "Klebepruefdatum" : ItemRevision.GRM(IMAN_master_form).sr5GlueReleasedDate /master=iman /description="Klebepruefdatum"
+        "Verschraubungspruefname" : ItemRevision.GRM(IMAN_master_form).sr5ScrewReleasedBy /master=iman /description="Verschraubungspruefname"
+        "Verschraubungspruefdatum" : ItemRevision.GRM(IMAN_master_form).sr5ScrewReleasedDate /master=iman /description="Verschraubungspruefdatum"
+        "Schweisspruefname" : ItemRevision.GRM(IMAN_master_form).sr5WeldReleasedBy /master=iman /description="Schweisspruefname"
+        "Schweisspruefdatum" : ItemRevision.GRM(IMAN_master_form).sr5WeldReleasedDate /master=iman /description="Schweisspruefdatum"
+		"Abmessung" : ItemRevision.sr5Dimension /master=iman /description="Abmessung"
+		"Hersteller" : ItemRevision.sr5Manufacturer.SR5Manufacturer.object_name /master=iman /description="Hersteller"
+		"Halbzeugartikelnummer" : ItemRevision.sr5MPN /master=iman /description="Halbzeugartikelnummer"
+		"Werkstoff" : ItemRevision.GRM(Mat1UsesMaterial,Mat1MaterialRevision).object_name /master=iman /description="Werkstoff"
+    }
+
+    { Item type="SR5EngRawArticle"
+        "ID" : Item.item_id /master=iman /description="ID"
+        "Revision" : ItemRevision.sr5ExternalRevision /master=iman /description="Revision"
+        "Besitzer" : ItemRevision.owning_user.user_id /master=iman /description="Besitzer"
+        "Benennung_1" : ItemRevision.sr5CATIAName1 /master=iman /description="Benennung_1"
+        "Benennung_2" : ItemRevision.sr5CATIAName2 /master=iman /description="Benennung_2"
+        "Lebenszyklus" : ItemRevision.last_release_status /master=iman /description="Lebenszyklus"
+        "Unter_BG" : ItemRevision.sr5RefTagEN /master=iman /description="Unter_BG"
+		"Ursprung" : Item.GRM(IMAN_based_on).item_id /master=iman /description="Ursprung"
+		"Anzahl_Blatt" : ItemRevision.sr5NoDrawingSheets /master=cad /description="Anzahl_Blatt"
+        "Erstellname" : Item.owning_user.user_id /master=iman /description="Erstellname"
+        "Erstelldatum" : Item.creation_date /master=iman /description="Erstelldatum"
+		"Eff_Gewicht" : ItemRevision.sr5AdjustedWeight /master=iman /description="Eff_Gewicht"
+		"Zeichnungsformat" : Item.sr5DrawingFormat /master=cad /description="Zeichnungsformat"
+		"Dokumentart" : Item.sr5DrawingDCC /master=iman /description="Dokumentart"
+		"Aenderungsattribute_1" : ItemRevision.sr5ChangeAttr_Line1 /master=iman /description="Aenderungsattribute_1"
+		"Aenderungsattribute_2" : ItemRevision.sr5ChangeAttr_Line2 /master=iman /description="Aenderungsattribute_2"
+		"Aenderungsattribute_3" : ItemRevision.sr5ChangeAttr_Line3 /master=iman /description="Aenderungsattribute_3"
+		"Aenderungsattribute_4" : ItemRevision.sr5ChangeAttr_Line4 /master=iman /description="Aenderungsattribute_4"
+		"Aenderungsattribute_5" : ItemRevision.sr5ChangeAttr_Line5 /master=iman /description="Aenderungsattribute_5"
+		"Aenderungsattribute_6" : ItemRevision.sr5ChangeAttr_Line6 /master=iman /description="Aenderungsattribute_6"
+		"Aenderungsattribute_7" : ItemRevision.sr5ChangeAttr_Line7 /master=iman /description="Aenderungsattribute_7"
+		"Aenderungsattribute_8" : ItemRevision.sr5ChangeAttr_Line8 /master=iman /description="Aenderungsattribute_8"
+        "Geprueftname" : ItemRevision.GRM(IMAN_master_form).sr5ReviewedBy /master=iman /description="Geprueftname"
+        "Geprueftdatum" : ItemRevision.GRM(IMAN_master_form).sr5DateReviewed /master=iman /description="Geprueftdatum"
+        "Freigabename" : ItemRevision.GRM(IMAN_master_form).sr5EngineeringReleasedBy  /master=iman /description="Freigabename"
+        "Freigabedatum" : ItemRevision.GRM(IMAN_master_form).sr5DateEngineeringRelease /master=iman /description="Freigabedatum"
+        "Klebepruefname" : ItemRevision.GRM(IMAN_master_form).sr5GlueReleasedBy /master=iman /description="Klebepruefname"
+        "Klebepruefdatum" : ItemRevision.GRM(IMAN_master_form).sr5GlueReleasedDate /master=iman /description="Klebepruefdatum"
+        "Verschraubungspruefname" : ItemRevision.GRM(IMAN_master_form).sr5ScrewReleasedBy /master=iman /description="Verschraubungspruefname"
+        "Verschraubungspruefdatum" : ItemRevision.GRM(IMAN_master_form).sr5ScrewReleasedDate /master=iman /description="Verschraubungspruefdatum"
+        "Schweisspruefname" : ItemRevision.GRM(IMAN_master_form).sr5WeldReleasedBy /master=iman /description="Schweisspruefname"
+        "Schweisspruefdatum" : ItemRevision.GRM(IMAN_master_form).sr5WeldReleasedDate /master=iman /description="Schweisspruefdatum"
+		"Abmessung" : ItemRevision.sr5Dimension /master=iman /description="Abmessung"
+		"Hersteller" : ItemRevision.sr5Manufacturer.SR5Manufacturer.object_name /master=iman /description="Hersteller"
+		"Halbzeugartikelnummer" : ItemRevision.sr5MPN /master=iman /description="Halbzeugartikelnummer"
+		"Werkstoff" : ItemRevision.GRM(Mat1UsesMaterial,Mat1MaterialRevision).object_name /master=iman /description="Werkstoff"
+    }	
+	
+    { Item type="SR5CatDefArticle"
+        "ID" : Item.item_id /master=iman /description="ID"
+        "Revision" : ItemRevision.sr5ExternalRevision /master=iman /description="Revision"
+        "Besitzer" : ItemRevision.owning_user.user_id /master=iman /description="Besitzer"
+        "Benennung_1" : ItemRevision.sr5CATIAName1 /master=iman /description="Benennung_1"
+        "Benennung_2" : ItemRevision.sr5CATIAName2 /master=iman /description="Benennung_2"
+        "Lebenszyklus" : ItemRevision.last_release_status /master=iman /description="Lebenszyklus"
+        "Unter_BG" : ItemRevision.sr5RefTagEN /master=iman /description="Unter_BG"
+		"Ursprung" : Item.GRM(IMAN_based_on).item_id /master=iman /description="Ursprung"
+		"Anzahl_Blatt" : ItemRevision.sr5NoDrawingSheets /master=cad /description="Anzahl_Blatt"
+        "Erstellname" : Item.owning_user.user_id /master=iman /description="Erstellname"
+        "Erstelldatum" : Item.creation_date /master=iman /description="Erstelldatum"
+		"Eff_Gewicht" : ItemRevision.sr5AdjustedWeight /master=iman /description="Eff_Gewicht"
+		"Zeichnungsformat" : Item.sr5DrawingFormat /master=cad /description="Zeichnungsformat"
+		"Dokumentart" : Item.sr5DrawingDCC /master=iman /description="Dokumentart"
+		"Aenderungsattribute_1" : ItemRevision.sr5ChangeAttr_Line1 /master=iman /description="Aenderungsattribute_1"
+		"Aenderungsattribute_2" : ItemRevision.sr5ChangeAttr_Line2 /master=iman /description="Aenderungsattribute_2"
+		"Aenderungsattribute_3" : ItemRevision.sr5ChangeAttr_Line3 /master=iman /description="Aenderungsattribute_3"
+		"Aenderungsattribute_4" : ItemRevision.sr5ChangeAttr_Line4 /master=iman /description="Aenderungsattribute_4"
+		"Aenderungsattribute_5" : ItemRevision.sr5ChangeAttr_Line5 /master=iman /description="Aenderungsattribute_5"
+		"Aenderungsattribute_6" : ItemRevision.sr5ChangeAttr_Line6 /master=iman /description="Aenderungsattribute_6"
+		"Aenderungsattribute_7" : ItemRevision.sr5ChangeAttr_Line7 /master=iman /description="Aenderungsattribute_7"
+		"Aenderungsattribute_8" : ItemRevision.sr5ChangeAttr_Line8 /master=iman /description="Aenderungsattribute_8"
+        "Geprueftname" : ItemRevision.GRM(IMAN_master_form).sr5ReviewedBy /master=iman /description="Geprueftname"
+        "Geprueftdatum" : ItemRevision.GRM(IMAN_master_form).sr5DateReviewed /master=iman /description="Geprueftdatum"
+        "Freigabename" : ItemRevision.GRM(IMAN_master_form).sr5EngineeringReleasedBy  /master=iman /description="Freigabename"
+        "Freigabedatum" : ItemRevision.GRM(IMAN_master_form).sr5DateEngineeringRelease /master=iman /description="Freigabedatum"
+        "Klebepruefname" : ItemRevision.GRM(IMAN_master_form).sr5GlueReleasedBy /master=iman /description="Klebepruefname"
+        "Klebepruefdatum" : ItemRevision.GRM(IMAN_master_form).sr5GlueReleasedDate /master=iman /description="Klebepruefdatum"
+        "Verschraubungspruefname" : ItemRevision.GRM(IMAN_master_form).sr5ScrewReleasedBy /master=iman /description="Verschraubungspruefname"
+        "Verschraubungspruefdatum" : ItemRevision.GRM(IMAN_master_form).sr5ScrewReleasedDate /master=iman /description="Verschraubungspruefdatum"
+        "Schweisspruefname" : ItemRevision.GRM(IMAN_master_form).sr5WeldReleasedBy /master=iman /description="Schweisspruefname"
+        "Schweisspruefdatum" : ItemRevision.GRM(IMAN_master_form).sr5WeldReleasedDate /master=iman /description="Schweisspruefdatum"
+		"Abmessung" : ItemRevision.sr5Dimension /master=iman /description="Abmessung"
+		"Hersteller" : ItemRevision.sr5Manufacturer.SR5Manufacturer.object_name /master=iman /description="Hersteller"
+		"Halbzeugartikelnummer" : ItemRevision.sr5MPN /master=iman /description="Halbzeugartikelnummer"
+		"Werkstoff" : ItemRevision.GRM(Mat1UsesMaterial,Mat1MaterialRevision).object_name /master=iman /description="Werkstoff"
+    }
+		
+    { Item type="SR5GenCatPart"
+        "ID" : Item.item_id /master=iman /description="ID"
+        "Revision" : ItemRevision.sr5ExternalRevision /master=iman /description="Revision"
+        "Besitzer" : ItemRevision.owning_user.user_id /master=iman /description="Besitzer"
+        "Benennung_1" : ItemRevision.sr5CATIAName1 /master=iman /description="Benennung_1"
+        "Benennung_2" : ItemRevision.sr5CATIAName2 /master=iman /description="Benennung_2"
+        "Lebenszyklus" : ItemRevision.last_release_status /master=iman /description="Lebenszyklus"
+        "Unter_BG" : ItemRevision.sr5RefTagEN /master=iman /description="Unter_BG"
+		"Ursprung" : Item.GRM(IMAN_based_on).item_id /master=iman /description="Ursprung"
+		"Anzahl_Blatt" : ItemRevision.sr5NoDrawingSheets /master=cad /description="Anzahl_Blatt"
+        "Erstellname" : Item.owning_user.user_id /master=iman /description="Erstellname"
+        "Erstelldatum" : Item.creation_date /master=iman /description="Erstelldatum"
+		"Eff_Gewicht" : ItemRevision.sr5AdjustedWeight /master=iman /description="Eff_Gewicht"
+		"Zeichnungsformat" : Item.sr5DrawingFormat /master=cad /description="Zeichnungsformat"
+		"Dokumentart" : Item.sr5DrawingDCC /master=iman /description="Dokumentart"
+		"Aenderungsattribute_1" : ItemRevision.sr5ChangeAttr_Line1 /master=iman /description="Aenderungsattribute_1"
+		"Aenderungsattribute_2" : ItemRevision.sr5ChangeAttr_Line2 /master=iman /description="Aenderungsattribute_2"
+		"Aenderungsattribute_3" : ItemRevision.sr5ChangeAttr_Line3 /master=iman /description="Aenderungsattribute_3"
+		"Aenderungsattribute_4" : ItemRevision.sr5ChangeAttr_Line4 /master=iman /description="Aenderungsattribute_4"
+		"Aenderungsattribute_5" : ItemRevision.sr5ChangeAttr_Line5 /master=iman /description="Aenderungsattribute_5"
+		"Aenderungsattribute_6" : ItemRevision.sr5ChangeAttr_Line6 /master=iman /description="Aenderungsattribute_6"
+		"Aenderungsattribute_7" : ItemRevision.sr5ChangeAttr_Line7 /master=iman /description="Aenderungsattribute_7"
+		"Aenderungsattribute_8" : ItemRevision.sr5ChangeAttr_Line8 /master=iman /description="Aenderungsattribute_8"
+        "Geprueftname" : ItemRevision.GRM(IMAN_master_form).sr5ReviewedBy /master=iman /description="Geprueftname"
+        "Geprueftdatum" : ItemRevision.GRM(IMAN_master_form).sr5DateReviewed /master=iman /description="Geprueftdatum"
+        "Freigabename" : ItemRevision.GRM(IMAN_master_form).sr5EngineeringReleasedBy  /master=iman /description="Freigabename"
+        "Freigabedatum" : ItemRevision.GRM(IMAN_master_form).sr5DateEngineeringRelease /master=iman /description="Freigabedatum"
+        "Klebepruefname" : ItemRevision.GRM(IMAN_master_form).sr5GlueReleasedBy /master=iman /description="Klebepruefname"
+        "Klebepruefdatum" : ItemRevision.GRM(IMAN_master_form).sr5GlueReleasedDate /master=iman /description="Klebepruefdatum"
+        "Verschraubungspruefname" : ItemRevision.GRM(IMAN_master_form).sr5ScrewReleasedBy /master=iman /description="Verschraubungspruefname"
+        "Verschraubungspruefdatum" : ItemRevision.GRM(IMAN_master_form).sr5ScrewReleasedDate /master=iman /description="Verschraubungspruefdatum"
+        "Schweisspruefname" : ItemRevision.GRM(IMAN_master_form).sr5WeldReleasedBy /master=iman /description="Schweisspruefname"
+        "Schweisspruefdatum" : ItemRevision.GRM(IMAN_master_form).sr5WeldReleasedDate /master=iman /description="Schweisspruefdatum"
+		"Abmessung" : ItemRevision.sr5Dimension /master=iman /description="Abmessung"
+		"Hersteller" : ItemRevision.sr5Manufacturer.SR5Manufacturer.object_name /master=iman /description="Hersteller"
+		"Halbzeugartikelnummer" : ItemRevision.sr5MPN /master=iman /description="Halbzeugartikelnummer"
+		"Werkstoff" : ItemRevision.GRM(Mat1UsesMaterial,Mat1MaterialRevision).object_name /master=iman /description="Werkstoff"
+    }
+
+    { Item type="SR5EngEnv"
+        "ID" : Item.item_id /master=iman /description="ID"
+        "Revision" : ItemRevision.sr5ExternalRevision /master=iman /description="Revision"
+        "Besitzer" : ItemRevision.owning_user.user_id /master=iman /description="Besitzer"
+        "Benennung_1" : ItemRevision.sr5CATIAName1 /master=iman /description="Benennung_1"
+        "Benennung_2" : ItemRevision.sr5CATIAName2 /master=iman /description="Benennung_2"
+        "Lebenszyklus" : ItemRevision.last_release_status /master=iman /description="Lebenszyklus"
+        "Unter_BG" : ItemRevision.sr5RefTagEN /master=iman /description="Unter_BG"
+		"Ursprung" : Item.GRM(IMAN_based_on).item_id /master=iman /description="Ursprung"
+		"Anzahl_Blatt" : ItemRevision.sr5NoDrawingSheets /master=cad /description="Anzahl_Blatt"
+        "Erstellname" : Item.owning_user.user_id /master=iman /description="Erstellname"
+        "Erstelldatum" : Item.creation_date /master=iman /description="Erstelldatum"
+		"Eff_Gewicht" : ItemRevision.sr5AdjustedWeight /master=iman /description="Eff_Gewicht"
+		"Zeichnungsformat" : Item.sr5DrawingFormat /master=cad /description="Zeichnungsformat"
+		"Dokumentart" : Item.sr5DrawingDCC /master=iman /description="Dokumentart"
+		"Aenderungsattribute_1" : ItemRevision.sr5ChangeAttr_Line1 /master=iman /description="Aenderungsattribute_1"
+		"Aenderungsattribute_2" : ItemRevision.sr5ChangeAttr_Line2 /master=iman /description="Aenderungsattribute_2"
+		"Aenderungsattribute_3" : ItemRevision.sr5ChangeAttr_Line3 /master=iman /description="Aenderungsattribute_3"
+		"Aenderungsattribute_4" : ItemRevision.sr5ChangeAttr_Line4 /master=iman /description="Aenderungsattribute_4"
+		"Aenderungsattribute_5" : ItemRevision.sr5ChangeAttr_Line5 /master=iman /description="Aenderungsattribute_5"
+		"Aenderungsattribute_6" : ItemRevision.sr5ChangeAttr_Line6 /master=iman /description="Aenderungsattribute_6"
+		"Aenderungsattribute_7" : ItemRevision.sr5ChangeAttr_Line7 /master=iman /description="Aenderungsattribute_7"
+		"Aenderungsattribute_8" : ItemRevision.sr5ChangeAttr_Line8 /master=iman /description="Aenderungsattribute_8"
+        "Geprueftname" : ItemRevision.GRM(IMAN_master_form).sr5ReviewedBy /master=iman /description="Geprueftname"
+        "Geprueftdatum" : ItemRevision.GRM(IMAN_master_form).sr5DateReviewed /master=iman /description="Geprueftdatum"
+        "Freigabename" : ItemRevision.GRM(IMAN_master_form).sr5EngineeringReleasedBy  /master=iman /description="Freigabename"
+        "Freigabedatum" : ItemRevision.GRM(IMAN_master_form).sr5DateEngineeringRelease /master=iman /description="Freigabedatum"
+        "Klebepruefname" : ItemRevision.GRM(IMAN_master_form).sr5GlueReleasedBy /master=iman /description="Klebepruefname"
+        "Klebepruefdatum" : ItemRevision.GRM(IMAN_master_form).sr5GlueReleasedDate /master=iman /description="Klebepruefdatum"
+        "Verschraubungspruefname" : ItemRevision.GRM(IMAN_master_form).sr5ScrewReleasedBy /master=iman /description="Verschraubungspruefname"
+        "Verschraubungspruefdatum" : ItemRevision.GRM(IMAN_master_form).sr5ScrewReleasedDate /master=iman /description="Verschraubungspruefdatum"
+        "Schweisspruefname" : ItemRevision.GRM(IMAN_master_form).sr5WeldReleasedBy /master=iman /description="Schweisspruefname"
+        "Schweisspruefdatum" : ItemRevision.GRM(IMAN_master_form).sr5WeldReleasedDate /master=iman /description="Schweisspruefdatum"
+    }
+
+    { Item type="SR5EngMajorAssy"
+        "ID" : Item.item_id /master=iman /description="ID"
+        "Revision" : ItemRevision.sr5ExternalRevision /master=iman /description="Revision"
+        "Besitzer" : ItemRevision.owning_user.user_id /master=iman /description="Besitzer"
+        "Benennung_1" : ItemRevision.sr5CATIAName1 /master=iman /description="Benennung_1"
+        "Benennung_2" : ItemRevision.sr5CATIAName2 /master=iman /description="Benennung_2"
+        "Lebenszyklus" : ItemRevision.last_release_status /master=iman /description="Lebenszyklus"
+        "Unter_BG" : ItemRevision.sr5RefTagEN /master=iman /description="Unter_BG"
+		"Ursprung" : Item.GRM(IMAN_based_on).item_id /master=iman /description="Ursprung"
+		"Anzahl_Blatt" : ItemRevision.sr5NoDrawingSheets /master=cad /description="Anzahl_Blatt"
+        "Erstellname" : Item.owning_user.user_id /master=iman /description="Erstellname"
+        "Erstelldatum" : Item.creation_date /master=iman /description="Erstelldatum"
+		"Eff_Gewicht" : ItemRevision.sr5AdjustedWeight /master=iman /description="Eff_Gewicht"
+		"Zeichnungsformat" : Item.sr5DrawingFormat /master=cad /description="Zeichnungsformat"
+		"Dokumentart" : Item.sr5DrawingDCC /master=iman /description="Dokumentart"
+		"Aenderungsattribute_1" : ItemRevision.sr5ChangeAttr_Line1 /master=iman /description="Aenderungsattribute_1"
+		"Aenderungsattribute_2" : ItemRevision.sr5ChangeAttr_Line2 /master=iman /description="Aenderungsattribute_2"
+		"Aenderungsattribute_3" : ItemRevision.sr5ChangeAttr_Line3 /master=iman /description="Aenderungsattribute_3"
+		"Aenderungsattribute_4" : ItemRevision.sr5ChangeAttr_Line4 /master=iman /description="Aenderungsattribute_4"
+		"Aenderungsattribute_5" : ItemRevision.sr5ChangeAttr_Line5 /master=iman /description="Aenderungsattribute_5"
+		"Aenderungsattribute_6" : ItemRevision.sr5ChangeAttr_Line6 /master=iman /description="Aenderungsattribute_6"
+		"Aenderungsattribute_7" : ItemRevision.sr5ChangeAttr_Line7 /master=iman /description="Aenderungsattribute_7"
+		"Aenderungsattribute_8" : ItemRevision.sr5ChangeAttr_Line8 /master=iman /description="Aenderungsattribute_8"
+        "Geprueftname" : ItemRevision.GRM(IMAN_master_form).sr5ReviewedBy /master=iman /description="Geprueftname"
+        "Geprueftdatum" : ItemRevision.GRM(IMAN_master_form).sr5DateReviewed /master=iman /description="Geprueftdatum"
+        "Freigabename" : ItemRevision.GRM(IMAN_master_form).sr5EngineeringReleasedBy  /master=iman /description="Freigabename"
+        "Freigabedatum" : ItemRevision.GRM(IMAN_master_form).sr5DateEngineeringRelease /master=iman /description="Freigabedatum"
+        "Klebepruefname" : ItemRevision.GRM(IMAN_master_form).sr5GlueReleasedBy /master=iman /description="Klebepruefname"
+        "Klebepruefdatum" : ItemRevision.GRM(IMAN_master_form).sr5GlueReleasedDate /master=iman /description="Klebepruefdatum"
+        "Verschraubungspruefname" : ItemRevision.GRM(IMAN_master_form).sr5ScrewReleasedBy /master=iman /description="Verschraubungspruefname"
+        "Verschraubungspruefdatum" : ItemRevision.GRM(IMAN_master_form).sr5ScrewReleasedDate /master=iman /description="Verschraubungspruefdatum"
+        "Schweisspruefname" : ItemRevision.GRM(IMAN_master_form).sr5WeldReleasedBy /master=iman /description="Schweisspruefname"
+        "Schweisspruefdatum" : ItemRevision.GRM(IMAN_master_form).sr5WeldReleasedDate /master=iman /description="Schweisspruefdatum"
+    }
+	
+    { Item type="SR5DrawingDoc"
+        "ID" : Item.item_id /master=iman /description="ID"
+        "Revision" : ItemRevision.sr5ExternalRevision /master=iman /description="Revision"
+        "Besitzer" : ItemRevision.owning_user.user_id /master=iman /description="Besitzer"
+        "Benennung_1" : ItemRevision.sr5CATIAName1 /master=iman /description="Benennung_1"
+        "Benennung_2" : ItemRevision.sr5CATIAName2 /master=iman /description="Benennung_2"
+        "Lebenszyklus" : ItemRevision.last_release_status /master=iman /description="Lebenszyklus"
+        "Unter_BG" : ItemRevision.sr5RefTagEN /master=iman /description="Unter_BG"
+		"Ursprung" : Item.GRM(IMAN_based_on).item_id /master=iman /description="Ursprung"
+		"Anzahl_Blatt" : ItemRevision.sr5NoDrawingSheets /master=cad /description="Anzahl_Blatt"
+        "Erstellname" : Item.owning_user.user_id /master=iman /description="Erstellname"
+        "Erstelldatum" : Item.creation_date /master=iman /description="Erstelldatum"
+		"Eff_Gewicht" : ItemRevision.sr5AdjustedWeight /master=iman /description="Eff_Gewicht"
+		"Zeichnungsformat" : Item.sr5DrawingFormat /master=cad /description="Zeichnungsformat"
+		"Dokumentart" : Item.sr5DrawingDCC /master=iman /description="Dokumentart"
+		"Aenderungsattribute_1" : ItemRevision.sr5ChangeAttr_Line1 /master=iman /description="Aenderungsattribute_1"
+		"Aenderungsattribute_2" : ItemRevision.sr5ChangeAttr_Line2 /master=iman /description="Aenderungsattribute_2"
+		"Aenderungsattribute_3" : ItemRevision.sr5ChangeAttr_Line3 /master=iman /description="Aenderungsattribute_3"
+		"Aenderungsattribute_4" : ItemRevision.sr5ChangeAttr_Line4 /master=iman /description="Aenderungsattribute_4"
+		"Aenderungsattribute_5" : ItemRevision.sr5ChangeAttr_Line5 /master=iman /description="Aenderungsattribute_5"
+		"Aenderungsattribute_6" : ItemRevision.sr5ChangeAttr_Line6 /master=iman /description="Aenderungsattribute_6"
+		"Aenderungsattribute_7" : ItemRevision.sr5ChangeAttr_Line7 /master=iman /description="Aenderungsattribute_7"
+		"Aenderungsattribute_8" : ItemRevision.sr5ChangeAttr_Line8 /master=iman /description="Aenderungsattribute_8"
+        "Geprueftname" : ItemRevision.GRM(IMAN_master_form).sr5ReviewedBy /master=iman /description="Geprueftname"
+        "Geprueftdatum" : ItemRevision.GRM(IMAN_master_form).sr5DateReviewed /master=iman /description="Geprueftdatum"
+        "Freigabename" : ItemRevision.GRM(IMAN_master_form).sr5EngineeringReleasedBy  /master=iman /description="Freigabename"
+        "Freigabedatum" : ItemRevision.GRM(IMAN_master_form).sr5DateEngineeringRelease /master=iman /description="Freigabedatum"
+    }
+
+}
+
+{ Dataset type="ECSnapshot"
+}
+
+{ Dataset type="STL"
+}
+
+{ Dataset type="Sheet"
+}
+
+{ Dataset type="ExcelReportFormatter"
+}
+
+{ Dataset type="Fnd0BMIDEDeployArchive"
+}
+
+{ Dataset type="CATMfgProduct"
+}
+
+{ Dataset type="SimulationProcessStudio"
+}
+
+{ Dataset type="Fnd0BMIDEProjectBackup"
+}
+
+{ Dataset type="CATPart"
+    { Item type="Item"
+        "partNumber" : Item.item_id /master=iman
+        "revision" : ItemRevision.item_revision_id /master=iman
+        "definition" : ItemRevision.sr5CATIADisplayName /master=iman
+        "description" : ItemRevision.object_desc /master=both
+    }
+		
+	{ Item type="SR5EngArticle"
+        "partNumber" : Item.item_id /master=iman
+        "revision" : ItemRevision.item_revision_id /master=iman
+        "definition" : ItemRevision.sr5CATIADisplayName /master=iman
+        "description" : ItemRevision.object_desc /master=both
+    }
+		
+	{ Item type="SR5CatDefArticle"
+        "partNumber" : Item.item_id /master=iman
+        "revision" : ItemRevision.item_revision_id /master=iman
+        "definition" : ItemRevision.sr5CATIADisplayName /master=iman
+        "description" : ItemRevision.object_desc /master=both
+    }
+		
+	{ Item type="SR5GenCatPart"
+        "partNumber" : Item.item_id /master=iman
+        "revision" : ItemRevision.item_revision_id /master=iman
+        "definition" : ItemRevision.sr5CATIADisplayName /master=iman
+        "description" : ItemRevision.object_desc /master=both
+    }
+		
+	{ Item type="SR5NonERPArticle"
+        "partNumber" : Item.item_id /master=iman
+        "revision" : ItemRevision.item_revision_id /master=iman
+        "definition" : ItemRevision.sr5CATIADisplayName /master=iman
+        "description" : ItemRevision.object_desc /master=both
+    }
+		
+	{ Item type="SR5EngMajorAssy"
+        "partNumber" : Item.item_id /master=iman
+        "revision" : ItemRevision.item_revision_id /master=iman
+        "definition" : ItemRevision.sr5CATIADisplayName /master=iman
+        "description" : ItemRevision.object_desc /master=both
+    }
+		
+	{ Item type="SR5EngEndItem"
+        "partNumber" : Item.item_id /master=iman
+        "revision" : ItemRevision.item_revision_id /master=iman
+        "definition" : ItemRevision.sr5CATIADisplayName /master=iman
+        "description" : ItemRevision.object_desc /master=both
+    }
+		
+	{ Item type="SR5EngEnv"
+        "partNumber" : Item.item_id /master=iman
+        "revision" : ItemRevision.item_revision_id /master=iman
+        "definition" : ItemRevision.sr5CATIADisplayName /master=iman
+        "description" : ItemRevision.object_desc /master=both
+    }
+		
+	{ Item type="SR5EngInstallLoc"
+        "partNumber" : Item.item_id /master=iman
+        "revision" : ItemRevision.item_revision_id /master=iman
+        "definition" : ItemRevision.sr5CATIADisplayName /master=iman
+        "description" : ItemRevision.object_desc /master=both
+    }
+	
+    { Item type="SR5EngArticleAR"
+        "partNumber" : Item.sr5ItemIdAltRepCounter /master=iman
+        "revision" : ItemRevision.item_revision_id /master=iman
+        "definition" : ItemRevision.sr5CATIADisplayName /master=iman
+        "description" : ItemRevision.object_desc /master=both
+    }
+	
+    { Item type="SR5CatDefArtAR"
+        "partNumber" : Item.sr5ItemIdAltRepCounter /master=iman
+        "revision" : ItemRevision.item_revision_id /master=iman
+        "definition" : ItemRevision.sr5CATIADisplayName /master=iman
+        "description" : ItemRevision.object_desc /master=both
+    }
+	
+    { Item type="SR5GenCatPartAR"
+        "partNumber" : Item.sr5ItemIdAltRepCounter /master=iman
+        "revision" : ItemRevision.item_revision_id /master=iman
+        "definition" : ItemRevision.sr5CATIADisplayName /master=iman
+        "description" : ItemRevision.object_desc /master=both
+    }
+	
+    { Item type="SR5EngRawArticle"
+        "partNumber" : Item.sr5ItemIdAltRepCounter /master=iman
+        "revision" : ItemRevision.item_revision_id /master=iman
+        "definition" : ItemRevision.object_name /master=iman
+        "description" : ItemRevision.object_desc /master=both
+    }
+	
+    { Item type="SR5DrawingDoc"
+        "partNumber" : Item.sr5ItemIdAltRepCounter /master=iman
+        "revision" : ItemRevision.item_revision_id /master=iman
+        "definition" : ItemRevision.object_name /master=iman
+        "description" : ItemRevision.object_desc /master=both
+    }
+
+}
+
+{ Dataset type="SnapShotViewData"
+}
+
+{ Dataset type="Fnd0BMIDEResource"
+}
+
+{ Dataset type="Fnd0ConsentDataset"
+}
+
+{ Dataset type="Spatial_Data"
+}
+
+{ Dataset type="CATProcess"
+}
+
+{ Dataset type="TCPublishingAliases"
+}
+
+{ Dataset type="Fnd0ContextMenuSuppRuleXML"
+}
+
+{ Dataset type="TCPublishingPage"
+}
+
+{ Dataset type="UGSCENARIO"
+}
+
+{ Dataset type="Briefcase"
+}
+
+{ Dataset type="Image"
+}
+
+{ Dataset type="CAEAnalysisDS"
+}
+
+{ Dataset type="CAEBC"
+}
+
+{ Dataset type="Fnd0SharedMetadataCache"
+}
+
+{ Dataset type="TechnicalPortfolioXML"
+}
+
+{ Dataset type="Fnd0SpatialHierarchy"
+}
+
+{ Dataset type="CATSecondaryProduct"
+}
+
+{ Dataset type="TempDirectModelMarkup"
+}
+
+{ Dataset type="Fnd0TcVisConstraint"
+}
+
+{ Dataset type="CATShape"
+}
+
+{ Dataset type="TempMarkup"
+}
+
+{ Dataset type="Fnd0TcVisFilter"
+}
+
+{ Dataset type="Text"
+}
+
+{ Dataset type="CATcgm"
+}
+
+{ Dataset type="Fnd0Visio"
+}
+
+{ Dataset type="UGALTREP"
+}
+
+{ Dataset type="CATwrl"
+}
+
+{ Dataset type="Fnd0VisioTmplDataset"
+}
+
+{ Dataset type="JPEG"
+}
+
+{ Dataset type="Arm0SavedRule"
+}
+
+{ Dataset type="FullText"
+}
+
+{ Dataset type="UGCAMCLSF"
+}
+
+{ Dataset type="Cat2AssyConfig"
+}
+
+{ Dataset type="GIF"
+}
+
+{ Dataset type="UGCAMPTP"
+}
+
+{ Dataset type="catia"
+}
+
+{ Dataset type="HPGL"
+}
+
+{ Dataset type="UGCAMShopDoc"
+}
+
+{ Dataset type="UGCAMTemplateData"
+}
+
+{ Dataset type="HTML"
+}
+
+{ Dataset type="catia2D"
+}
+
+{ Dataset type="UGENGINEROLL"
+}
+
+{ Dataset type="AdobeIllustrator"
+}
+
+{ Dataset type="AdobeInDesign"
+}
+
+{ Dataset type="ICSClassFiles"
+}
+
+{ Dataset type="IMANReportData"
+}
+
+{ Dataset type="catiaSecondary"
+}
+
+{ Dataset type="UGMASTER"
+    "DB_PART_NAME" : Item.object_name /write_once /description="Part Name"
+    "DB_PART_DESC" : Item.object_desc /write_once /description="Part Description"
+
+}
+
+{ Dataset type="Bitmap"
+}
+
+{ Dataset type="IMANReportDesign"
+}
+
+{ Dataset type="Bitmap_Thumbnail"
+}
+
+{ Dataset type="IPAConfig"
+}
+
+{ Dataset type="UGPART"
+    # (hard-wired) DB_DATASET_ID : "Part File ID"
+    # (hard-wired) DB_DATASET_REV : "Part File Rev"
+
+}
+
+{ Dataset type="Fnd0GraphicsData"
+}
+
+{ Dataset type="Fnd0VideoData"
+}
+
+{ Dataset type="NX0LRuleData"
+}
+
+{ Dataset type="Vis_Session"
+}
+
+{ Dataset type="ClearanceResults"
+}
+
+{ Dataset type="MSWordTemplate"
+}
+
+{ Dataset type="NX0TDP"
+}
+
+{ Dataset type="VisPublishVisioStencil"
+}
+
+{ Dataset type="VisPublishVisioTemplate"
+}
+
+{ Dataset type="ClearanceResultsFilter"
+}
+
+{ Dataset type="MSWordTemplateX"
+}
+
+{ Dataset type="VisQualityCluster"
+}
+
+{ Dataset type="CrfExcelStylesheet"
+}
+
+{ Dataset type="CAEConn"
+}
+
+{ Dataset type="JPEG_Thumbnail"
+}
+
+{ Dataset type="JtSimplification"
+}
+
+{ Dataset type="UGTIREOFFSET"
+}
+
+{ Dataset type="CAEGeom"
+    "DB_PART_NAME" : Item.object_name /write_once /description="Part Name"
+    "DB_PART_DESC" : Item.object_desc /write_once /description="Part Description"
+
+}
+
+{ Dataset type="Awb0CompareResult"
+}
+
+{ Dataset type="UGTIRESPINDLE"
+}
+
+{ Dataset type="Awp0FTSIndexer"
+}
+
+{ Dataset type="KRX"
+}
+
+{ Dataset type="VSAMeasurementDoc"
+}
+
+{ Dataset type="CAELoad"
+}
+
+{ Dataset type="CAEMesh"
+    "DB_PART_NAME" : Item.object_name /write_once /description="Part Name"
+    "DB_PART_DESC" : Item.object_desc /write_once /description="Part Description"
+
+}
+
+{ Dataset type="Awv0MMPDeltaCollection"
+}
+
+{ Dataset type="MEMachineDriver"
+}
+
+{ Dataset type="VSAProcessDoc"
+}
+
+{ Dataset type="MISC"
+}
+
+{ Dataset type="NX0ApplicationData"
+}
+
+{ Dataset type="ValidationResultLog"
+}
+
+{ Dataset type="CAEResults"
+}
+
+{ Dataset type="MSExcel"
+}
+
+{ Dataset type="NX0BookletDataset"
+}
+
+{ Dataset type="MSExcelTemplate"
+}
+
+{ Dataset type="ValidationRuleSet"
+}
+
+{ Dataset type="CAESolution"
+    "DB_PART_NAME" : Item.object_name /write_once /description="Part Name"
+    "DB_PART_DESC" : Item.object_desc /write_once /description="Part Description"
+
+}
+
+{ Dataset type="MSWordX"
+}
+
+{ Dataset type="NX0MotionSim"
+}
+
+{ Dataset type="MSExcelTemplateX"
+}
+
+{ Dataset type="VisJackEnvironment"
+}
+
+{ Dataset type="VisJackFigure"
+}
+
+{ Dataset type="MSExcelX"
+}
+
+{ Dataset type="VisJackPosture"
+}
+
+{ Dataset type="CAESolver"
+}
+
+{ Dataset type="MSPowerPoint"
+}
+
+{ Dataset type="VisJackPsurf"
+}
+
+{ Dataset type="CAEStructureMap"
+}
+
+{ Dataset type="NX0RoutingPipePartData"
+}
+
+{ Dataset type="MSPowerPointTemplate"
+}
+
+{ Dataset type="VisMovieCapture"
+}
+
+{ Dataset type="CLIPS"
+}
+
+{ Dataset type="MSPowerPointTemplateX"
+}
+
+{ Dataset type="NX0RoutingRunData"
+}
+
+{ Dataset type="VisPublishGeometryAsset"
+}
+
+{ Dataset type="CME_Report"
+}
+
+{ Dataset type="ClearanceDBConnection"
+}
+
+{ Dataset type="MSPowerPointX"
+}
+
+{ Dataset type="NX0RoutingSpecData"
+}
+
+{ Dataset type="VisPublishTechnicalIllustration"
+}
+
+{ Dataset type="ClearanceDBReport"
+}
+
+{ Dataset type="MSProject"
+}
+
+{ Dataset type="NX0SheetMetalExport"
+}
+
+{ Dataset type="MSWord"
+}
+
+{ Dataset type="VisPublishTechnicalPortfolio"
+}
+

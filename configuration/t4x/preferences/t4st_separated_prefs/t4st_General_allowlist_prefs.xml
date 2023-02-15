@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<preferences version="10.0">
+  <category name="SAP Gateway T4ST">
+
+    <preference name="T4ST_PropertyListMode4Mat1MaterialRevision" type="Integer" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>AllowList</preference_description>
+      <context name="Teamcenter">
+        <value>2</value>
+      </context>
+    </preference>
+    <preference name="T4ST_Property2ProcessList4Mat1MaterialRevision" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>AllowList special attributes - defined during implementation</preference_description>
+      <context name="Teamcenter">
+        <value>object_name</value>
+      </context>
+    </preference>
+
+  </category>
+</preferences>

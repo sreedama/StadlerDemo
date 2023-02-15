@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TcBusinessDataLocalization xmlns="http://teamcenter.com/BusinessModel/TcBusinessDataLocalization"
+    batchXSDVersion="1.0" Date="Mon Jan 17 05:41:46 PM 2022">
+  <Add>
+    <key locale="de_DE" id="LOVValue{::}SR5SFPlastic{::}DIN EN 60893-1" status="Approved">DIN EN 60893-1</key>
+    <key locale="de_DE" id="LOVValueDescription{::}SR5SFPlastic{::}DIN EN 60893-1"
+        status="Approved">Tafel</key>
+    <key locale="de_DE" id="LOVValue{::}SR5SFPlastic{::}DIN EN 438-4" status="Approved">DIN EN 438-4</key>
+    <key locale="de_DE" id="LOVValueDescription{::}SR5SFPlastic{::}DIN EN 438-4" status="Approved">HPL-Platte</key>
+  </Add>
+</TcBusinessDataLocalization>

@@ -1,0 +1,731 @@
+##
+#===================================================
+# \copyright     2014-2019
+#                Siemens Product Lifecycle Management Software Inc.
+#                All Rights Reserved.
+#===================================================
+# \file          t4s_dir_mapping_template.sd
+#
+# \brief         Mapping file for T4S document info record transfer
+#
+# \details       The file contains the custom specific part of a T4S document info record transfer:
+#                \li Procedure \b TC_Object2SAP_DocumentInfoRecord maps Teamcenter attributes to SAP attributes (so called \c mapping). 
+#                \li Procedure \b SAP_DocumentInfoRecord2TC_Object maps SAP attributes back to Teamcenter attributes (so called \c reverse \c mapping). 
+#
+# \note          For the data exchange between Teamcenter and T4S the internal TCL dictionary \c ::TcData is used.
+#                It contains specific attributes of the Teamcenter object to be transferred 
+#                and additional information about the current transaction. 
+#                For the data exchange between T4S and SAP the internal TCL array \c ::SAPDat is used.\n
+#                Teamcenter attributes can be read from \c ::TcData with function \c ::T4X::TC::MAPPING::FieldMapping.\n
+#                Teamcenter attributes can be written to \c ::TcData with function \c ::T4X::TC::MAPPING::storeReverseMappingAttribute.\n 
+#                SAP attributes can be read from \c ::SAPDat using function \c ::T4S::TC::MAPPING::SAPFieldMapping.\n
+#                SAP attributes can be written to \c ::SAPDat with \c set \c ::SAPDat(<key>) \c value.\n 
+#
+# \pre           For the material master transfer the following preferences are used:
+#                \li \c T4S_DocumentInfoRecordTypeList : list of allowed Teamcenter object types
+#                \li \c T4S_DocumentInfoRecordMapping4<ObjectType> : list of Teamcenter data types to read attributes from
+#                \li \c T4S_DocumentInfoRecordMapping2<ObjectType> : list of Teamcenter data types to write back during reverse mapping
+#                \li \c T4S_DocumentInfoRecordFieldMapping2<DataType> : list of Teamcenter attributes to write back during reverse mapping (optional)
+#                \li \c T4S_DocumentInfoRecordDefaultDocumentKey4<DataType> : defines document type, part and version for Teamcenter data type
+#                \li \c T4S_DocumentInfoRecordMappingNamedFileList4<DataType> : list of Teamcenter data types to read files from
+#
+# \author        JS., 20030109
+#
+# ------------------------------------------------------------------------------------------------------ 
+
+namespace eval ::T4S::DIR::CUSTOM::MAPPING {
+  namespace export TC_Object2SAP_DocumentInfoRecord
+  namespace export SAP_DocumentInfoRecord2TC_Object
+  namespace export callCustomerRuleHandler
+
+
+  # ---------------------------------------------------------------------
+  ##
+  # Method:         ::T4S::DIR::CUSTOM::MAPPING::TC_Object2SAP_DocumentInfoRecord
+  #
+  # \brief         Customer specific mapping function to define the document info record to be transferred to SAP 
+  #
+  # \details       The procedure maps the following Teamcenter attributes to SAP attributes:
+  #                \n \c object_name -> \c SAP \c Description
+  #                \n \c SAP_DirNo -> \c SAP \c Id
+  #                \n \c SAP_DirType -> \c SAP \c Document \c type
+  #                \n \c SAP_DirPart -> \c SAP \c Document \c part
+  #                \n \c SAP_DirVersion -> \c SAP \c Document \c version
+  #
+  # \param         TransactionId Unique ID for the transfer transaction
+  # \param         ObjectTypeName Teamcenter object type
+  # \param         ObjectClassName Teamcenter object class
+  # \param         ItemType Teamcenter item type
+  # \param         ItemRevisionType Teamcenter item revision type
+  # \param         args Not used
+  #
+  # \return        Return code used by the following transfer function. 
+  #                The following values are valid:
+  #                \n \c OK                 -> T4S will continue with the next transfer step
+  #                \n \c REVERSEMAPPINGONLY -> T4S will skip the transfer to SAP and will just do the reverse mapping 
+  #                \n \c SKIPPED            -> T4S will skip the transfer to SAP
+  #                \n \c ERROR              -> T4S will stop transfer and raise an error
+  #
+  # \author        M.L., 20130514
+  #
+  # ------------------------------------------------------------------------------------------------------
+  proc TC_Object2SAP_DocumentInfoRecord {TransactionId ObjectTypeName ObjectClassName ItemType ItemRevisionType args} {
+	
+		variable TcDIR
+    array unset TcDIR
+
+    # Reset some internal variables
+    set ::errorCode "NONE"
+    set ::errorInfo ""
+		
+    # useful debugging 
+		::T4X::TC::MAPPING::printTcData $TransactionId
+		
+		::T4X::TRANSLOG::writeCustomMappingLog $TransactionId INFO "---------------------------------"
+		::T4X::TRANSLOG::writeCustomMappingLog $TransactionId INFO " DIR MAPPING VERSION: 2021-10-19"
+		::T4X::TRANSLOG::writeCustomMappingLog $TransactionId INFO "---------------------------------"
+		
+    # Store procedure name in variable
+    set FunctionName "[lindex [info level 0] 0]"
+		
+		# Write information to session log
+    tpwrite -logchannel [::PL4X::CORE::getSessionLogChannel] -mtype INTERN "$FunctionName starts with $ObjectTypeName, $ObjectClassName, $ItemType, $ItemRevisionType"
+		
+    set Status "OK"
+		
+    if {[info exists ::TcData(SiteIdName)]} {
+      set SiteName [string trim $::TcData(SiteIdName)]
+      # This is an identifier for the Teamcenter Database
+    } else {
+      set SiteName "SiteName_not_found"
+    }
+		
+		# set ::SAPDat(Document:Parameter:DeleteTempSAPOriginals) 	"TRUE"
+    # set ::SAPDat(Document:Parameter:DeleteTempOriginals) 			"TRUE"
+    # set ::SAPDat(Document:Parameter:DeleteOldFileSystemFiles) "TRUE"
+		# set ::SAPDat(Document:Parameter:SkipCreateNewVersion) 		"TRUE"
+
+    # Define some variables depending on ObjectClassName
+    if {$ObjectClassName eq "Dataset"} {
+      set DatasetType          $::TcData(ItemInfo:TypeName)
+      tpwrite -logchannel [::PL4X::CORE::getSessionLogChannel] -mtype INTERN "::T4S::DIR::CUSTOM::MAPPING::TC_Object2SAP_DocumentInfoRecord DatasetType: $DatasetType"
+      set Item                 "$ObjectTypeName:IMAN_specification:$ItemRevisionType:items_tag:$ItemType"
+      set ItemID               [::T4X::TC::MAPPING::FieldMapping $Item "item_id"]
+      set ItemMaster           "$ObjectTypeName:IMAN_specification:$ItemRevisionType:items_tag:$ItemType:IMAN_master_form:$ItemType Master"
+      set ItemRev              "$ObjectTypeName:IMAN_specification:$ItemRevisionType"
+      set ItemRevMaster        "$ObjectTypeName:IMAN_specification:$ItemRevisionType:IMAN_master_form_rev:$ItemRevisionType Master"
+      set DatasetExtension     "$ObjectTypeName:ref_list/T4S_DATASET_EXTENSION:T4S_DatasetExtensionForm"
+      tpwrite -logchannel [::PL4X::CORE::getSessionLogChannel] -mtype INTERN "+++++++++++ DIR Dataset branch: Dataset type '$DatasetType' in Item '$ItemID'"
+    } elseif {$ObjectClassName eq "ItemRevision"} {
+      tpwrite -logchannel [::PL4X::CORE::getSessionLogChannel] -mtype INTERN "::T4S::DIR::CUSTOM::MAPPING::TC_Object2SAP_DocumentInfoRecord for ItemRevision: $::TcData(ItemInfo:TypeName)"
+      set Item                 "$ItemRevisionType:items_tag:$ItemType"
+      set ItemID               [::T4X::TC::MAPPING::FieldMapping $Item "item_id"]
+      set ItemMaster           "$ItemRevisionType:items_tag:$ItemType:IMAN_master_form:$ItemType Master"
+      set ItemRev              $ItemRevisionType
+      set ItemRevMaster        "$ItemRevisionType:IMAN_master_form_rev:$ItemRevisionType Master"
+      set DatasetExtension     "$ItemRevisionType:IMAN_specification:T4S_DatasetExtensionForm"
+      tpwrite -logchannel [::PL4X::CORE::getSessionLogChannel] -mtype INTERN "+++++++++++ DIR ItemRevision branch: ItemRevision type '$::TcData(ItemInfo:TypeName)' in Item '$ItemID'"
+    }
+    
+		#########################################################################################################################################
+		# Read some attributes from Teamcenter object
+		#########################################################################################################################################
+		
+    # Read the Document keys from DatasetExtensionForm
+    # set T4S_DIR_No      [::T4X::TC::MAPPING::FieldMapping $DatasetExtension "SAP_DirNo"]
+    # set T4S_DIR_Type    [::T4X::TC::MAPPING::FieldMapping $DatasetExtension "SAP_DirType"] 
+    # set T4S_DIR_Part    [::T4X::TC::MAPPING::FieldMapping $DatasetExtension "SAP_DirPart"] 
+    # set T4S_DIR_Version [::T4X::TC::MAPPING::FieldMapping $DatasetExtension "SAP_DirVersion"]
+		
+		set TcDIR(DocNumber)		$ItemID
+		# set TcDIR(DocType)			[::T4X::TC::MAPPING::FieldMapping $ItemRev "sr5DocumentType"]
+		set TcDIR(DocType)			$::T4S_Defaults(DIRType)
+		set TcDIR(DocPart)			$::T4S_Defaults(DIRPart)
+		set TcDIR(DocVersion)		[::T4X::TC::MAPPING::FieldMapping $ItemRev "item_revision_id"]
+		set TcDIR(DocObjectUID)	[::T4X::TC::MAPPING::FieldMapping $ItemRev "fnd0objectId"]
+		
+    set TcDIR(DocDesc)			[::T4X::TC::MAPPING::FieldMapping $ItemRevMaster "SAP2Description"]
+    if {$TcDIR(DocDesc) eq ""} {
+      set TcDIR(DocDesc)		[::T4X::TC::MAPPING::FieldMapping $ItemRev "object_name"]
+    }
+		
+    
+    # Check the Document keys
+    #
+    # Check if a new internal SAP document number is needed
+    # if {$T4S_DIR_No eq ""} {
+      # set sap_number_type [::T4X::TC::MAPPING::FieldMapping $ItemRevMaster "sap2DirNoType"]
+      # if {$sap_number_type ne "internal" } {
+        # # extern SAP number will be set
+        # tpwrite -logchannel [::PL4X::CORE::getSessionLogChannel] -mtype INTERN "+++++++++++++++++++++++++++++ SAP_DirNo is empty -> use default +++++++++++++++++++++++++++++"
+        # set T4S_DIR_No   $ItemID
+      # }
+    # }    
+    # Check for "Dataset" if type, part or version are empty and define them in mapping
+    if {$ObjectClassName eq "Dataset"} {
+      if {$TcDIR(DocType) eq ""} {
+        tpwrite -logchannel [::PL4X::CORE::getSessionLogChannel] -mtype INTERN "+++++++++++++++++++++++++++++ SAP_DirType is empty -> use default +++++++++++++++++++++++++++++"
+        set TcDIR(DocType) $::T4S_Defaults(DIRType)
+      }
+      if {$TcDIR(DocPart) eq ""} {
+        tpwrite -logchannel [::PL4X::CORE::getSessionLogChannel] -mtype INTERN "+++++++++++++++++++++++++++++ SAP_DirPart is empty -> use default +++++++++++++++++++++++++++++"
+        set TcDIR(DocPart) $::T4S_Defaults(DIRPart)
+      }
+      if {$TcDIR(DocVersion) eq ""} {
+        tpwrite -logchannel [::PL4X::CORE::getSessionLogChannel] -mtype INTERN "+++++++++++++++++++++++++++++ SAP_DirVersion is empty -> use default +++++++++++++++++++++++++++++"
+        set TcDIR(DocVersion) $::T4S_Defaults(DIRVersion)
+      }
+    }
+		
+		#########################################################################################################################################
+		# Print TC Data to translog
+		#########################################################################################################################################
+		::T4X::TRANSLOG::writeCustomMappingLog $TransactionId  INFO ""    
+		::T4X::TRANSLOG::writeCustomMappingLog $TransactionId  INFO "##### Print the Teamcenter Data #####"
+		
+		foreach elem [::T4X::CORE::sortIndexedInterfaceTable [array names TcDIR *]] {
+			::T4X::TRANSLOG::writeCustomMappingLog $TransactionId  INFO "TcDIR($elem) : $TcDIR($elem)"
+		}
+		::T4X::TRANSLOG::writeCustomMappingLog $TransactionId  INFO "######################################"
+		::T4X::TRANSLOG::writeCustomMappingLog $TransactionId  INFO ""  
+    
+    # Set the Document keys
+    set ::SAPDat(Document:DrawData:DOCUMENTNUMBER)       $TcDIR(DocNumber)
+    set ::SAPDat(Document:DrawData:DOCUMENTTYPE)         $TcDIR(DocType)
+    set ::SAPDat(Document:DrawData:DOCUMENTPART)         $TcDIR(DocPart)
+    set ::SAPDat(Document:DrawData:DOCUMENTVERSION)      $TcDIR(DocVersion)
+
+    # Set the CAD indicator
+    set ::SAPDat(Document:DrawData:CADINDICATOR)         "X"
+
+    # Set the DIR description
+    set ::SAPDat(Document:DrawData:DESCRIPTION)          $TcDIR(DocDesc)
+    # Set the DIR description in specific languages, no matter of the current connection
+    # ::TPSAP::DIR::setSAPDocumentDescription 1 "" "EN" "EN: $TcDIR(DocDesc)"
+    # ::TPSAP::DIR::setSAPDocumentDescription 2 "" "DE" "DE: $TcDIR(DocDesc)"
+    # ::TPSAP::DIR::setSAPDocumentDescription 3 "" "FR" "FR: $TcDIR(DocDesc)"
+    ::TPSAP::DIR::setSAPDocumentDescription 1 "" "EN" "$TcDIR(DocDesc)"
+    ::TPSAP::DIR::setSAPDocumentDescription 2 "" "DE" "$TcDIR(DocDesc)"
+    # ::TPSAP::DIR::setSAPDocumentDescription 3 "" "FR" "$TcDIR(DocDesc)"
+		
+		# set ::SAPDat(Document:DrawData:STATUSINTERN)				"FR"
+		set ::SAPDat(Document:DrawData:STATUSEXTERN)				"IA" ;# In Work
+		::T4X::TRANSLOG::writeCustomMappingLog $TransactionId WARNING "DIR status is set to IW -> In Work"
+		# set ::SAPDat(Document:DrawData:LABORATORY)					$TcDIR(Lab)
+		
+		# set ::SAPDat(Document:DrawData:ECNUMBER) 						$TcDIR(ChangeNo)
+		
+		#########################################################################################################################################
+		# Maintain Custom Fields
+		#########################################################################################################################################
+		# set AENNR "12345678901" 
+		# set Index "1" 
+		# set intMatNrLen                  [::TPSAP::S4::getMatNrLength4TargetSystem]
+		# set strExtensionInStructureName  [::TPSAP::S4::get_BAPI_TE_MARA_Name4TargetSystem]
+		# set strExtensionInXStructureName [::TPSAP::S4::get_BAPI_TE_MARAX_Name4TargetSystem]
+
+		# set ExtensionInString [format "%${intMatNrLen}s%-12s" $TcDIR(DocNumber) $AENNR]
+		# set ::SAPDat(Material:EXTENSIONIN:STRUCTURE:$Index) $strExtensionInStructureName
+		# set ::SAPDat(Material:EXTENSIONIN:VALUEPART1:$Index) [string range $ExtensionInString 0 239]
+		# set ::SAPDat(Material:EXTENSIONIN:VALUEPART2:$Index) [string range $ExtensionInString 240 479]
+		# set ::SAPDat(Material:EXTENSIONIN:VALUEPART3:$Index) [string range $ExtensionInString 480 719]
+		# set ::SAPDat(Material:EXTENSIONIN:VALUEPART4:$Index) [string range $ExtensionInString 720 959]
+
+		# set ExtensionInXString [format "%${intMatNrLen}s%1s" $TcDIR(DocNumber) "X"]
+		# set ::SAPDat(Material:EXTENSIONINX:STRUCTURE:$Index) $strExtensionInXStructureName
+		# set ::SAPDat(Material:EXTENSIONINX:VALUEPART1:$Index) [string range $ExtensionInXString 0 239]
+		# set ::SAPDat(Material:EXTENSIONINX:VALUEPART2:$Index) [string range $ExtensionInXString 240 479]
+		# set ::SAPDat(Material:EXTENSIONINX:VALUEPART3:$Index) [string range $ExtensionInXString 480 719]
+		# set ::SAPDat(Material:EXTENSIONINX:VALUEPART4:$Index) [string range $ExtensionInXString 720 959]
+		
+    # ::T4X::TRANSLOG::writeCustomMappingLog $TransactionId INFO  "\n\n\n++++++++++++++++++++++++++++++++++++++++++++++++++++++++++"
+    # ::T4X::TRANSLOG::writeCustomMappingLog $TransactionId INFO  "..................... ExtensionInString:          >$ExtensionInString<"
+    # ::T4X::TRANSLOG::writeCustomMappingLog $TransactionId INFO  ".PART1: >[string range $ExtensionInString 0 239]< "
+    # ::T4X::TRANSLOG::writeCustomMappingLog $TransactionId INFO  ".PART2: >[string range $ExtensionInString 240 479]< "
+    # ::T4X::TRANSLOG::writeCustomMappingLog $TransactionId INFO  ".PART3: >[string range $ExtensionInString 480 719]< "
+    # ::T4X::TRANSLOG::writeCustomMappingLog $TransactionId INFO  ".PART4: >[string range $ExtensionInString 720 959]< "
+    # ::T4X::TRANSLOG::writeCustomMappingLog $TransactionId INFO  "..................... ExtensionInXString:         >$ExtensionInXString<"
+    # ::T4X::TRANSLOG::writeCustomMappingLog $TransactionId INFO  ".PART1: >[string range $ExtensionInXString 0 239]< "
+    # ::T4X::TRANSLOG::writeCustomMappingLog $TransactionId INFO  ".PART2: >[string range $ExtensionInXString 240 479]< "
+    # ::T4X::TRANSLOG::writeCustomMappingLog $TransactionId INFO  ".PART3: >[string range $ExtensionInXString 480 719]< "
+    # ::T4X::TRANSLOG::writeCustomMappingLog $TransactionId INFO  ".PART4: >[string range $ExtensionInXString 720 959]< "
+    # ::T4X::TRANSLOG::writeCustomMappingLog $TransactionId INFO  "++++++++++++++++++++++++++++++++++++++++++++++++++++++++++\n\n\n"
+		#########################################################################################################################################
+
+    # Set the Object link
+		set TcDIR(MMlist)   {}
+		set sPath2Material  "$ItemRevisionType:IMAN_specification:SR4EPartRevision"
+		
+		# Get list of Materials
+		set lRcGetWhereReferencedRevs [::T4X::TC::MAPPING::findObjectList "$sPath2Material" "object_tag"]
+		set PreCheckIfExists [lindex $lRcGetWhereReferencedRevs 0]
+		# ::T4X::TRANSLOG::writeCustomMappingLog $TransactionId INFO "Object_Tag PreCheckIfExists: >$PreCheckIfExists<"
+		#tpwrite -logchannel "/test/where_described.log" -mtype INTERN "findObjectList WhereDescribedByPath >$sPath2Material< RC >$lRcGetWhereReferencedRevs<" 
+		# if one or more found
+		if { [lindex $lRcGetWhereReferencedRevs 0] == "OK" } {
+			::T4X::TRANSLOG::writeCustomMappingLog $TransactionId INFO "findObjectList WhereReferencedPath >$sPath2Material< RC >$lRcGetWhereReferencedRevs<" 
+			# loop over all DescribedByItems of this type
+			foreach sHexInfo [lrange $lRcGetWhereReferencedRevs 1 end] { 
+									
+				# Read ItemId
+				set sItemId ""
+				set lRcGetAttr [::T4X::TC::MAPPING::getObjectAttributeValue "$sHexInfo" "$sPath2Material" "sr4SAPID"]
+				if { ( [lindex $lRcGetAttr 0] == "OK" ) } {
+					set sItemId [lindex $lRcGetAttr 1]					
+				}
+				# set MaterialNumber   [::TPSAP::MM::getExternalMaterialNumber   $sItemId]          
+				# set intMaterialNumber   [::TPSAP::MM::getInternalMaterialNumber   $sItemId]
+				set MaterialNumber  [string trimleft $sItemId 0]
+				set rc [::TPSAP::MM::checkMaterialMasterExistence $MaterialNumber]
+				::T4X::TRANSLOG::writeCustomMappingLog $TransactionId INFO "checkMaterialMasterExistence $MaterialNumber: >$rc<"
+				if {$rc eq "OK"} {
+					lappend TcDIR(MMlist) $MaterialNumber           
+				}            
+			}
+		}
+		# set lRcGetWhereDescribedByRevs [::T4X::TC::MAPPING::findObjectList "$sPath2Material" "a7_erp_transfer_id"]
+		# if { [lindex $lRcGetWhereDescribedByRevs 0] == "OK" } {
+			# tpwrite -logchannel [::T4X::CORE::getSessionLogChannel] -mtype INTERN "TEST CORINNA:  $lRcGetWhereDescribedByRevs "
+		# }
+				
+    set ::SAPDat(Document:ObjectLink:MATERIAL) $TcDIR(MMlist)
+		
+
+    # # Check the document key fields and add needed defaults
+    # ::T4S::DIR::MAPPING::checkSAPDocumentKey             $ObjectTypeName
+    # ::T4S::DIR::MAPPING::getDocumentInfoRecordOriginals  $ObjectTypeName
+
+    # # Note that this is filled by T4S itself, not explicitly in the mapping
+    # if {$::SAPDat(Document:Files:NumberOfFiles) == 0} {
+      # # Maybe it is ok, but this warning might be useful for error tracking
+      # tpwrite -logchannel [::PL4X::CORE::getSessionLogChannel] -mtype WARNING "::T4S::DIR::CUSTOM::MAPPING::TC_Object2SAP_DocumentInfoRecord: The number of files is zero! -----------------------------"
+      # ::T4X::TRANSLOG::writeCustomMappingLog $TransactionId INFO "+++++ The number of files is zero! +++++"
+    # }
+		
+		# # Set Teamcenter URL for DIR:
+		# set LinkUrl "http://tc-demo12-dev5.lmtec.eu:3000/#/com.siemens.splm.clientfx.tcui.xrt.showObject?uid=$ObjectUID"
+		# # URL to a Network drive:
+		# # set LinkUrl "\\\\Fileserver\\ShareDirectory\\MyFile.doc"
+		# set ::SAPDat(Document:Parameter:OriginalsUseURL)           TRUE
+		# set FileIndex 1
+		# set ::SAPDat(Document:Files:DOCFILE:$FileIndex)            $LinkUrl
+		# set ::SAPDat(Document:Files:SOURCEDATACARRIER:$FileIndex)  ""
+		# set ::SAPDat(Document:Files:DESCRIPTION:$FileIndex)        "Original URL"
+		# set ::SAPDat(Document:Files:WSAPPLICATION:$FileIndex)      "URL"
+		# set ::SAPDat(Document:Files:STORAGECATEGORY:$FileIndex)    ""
+		# set ::SAPDat(Document:Files:DATACARRIER:$FileIndex)        ""
+		# set ::SAPDat(Document:Files:ORIGINALTYPE:$FileIndex)       $FileIndex
+		# set ::SAPDat(Document:Files:NumberOfFiles)                 $FileIndex
+
+    # foreach FileId [array names ::SAPDat Document:FileNames:DatacarrierPath:*] {
+      # set FileIndex [lindex [split $FileId ":"] end]
+      # ::T4X::TRANSLOG::writeCustomMappingLog $TransactionId INFO "+++++ TC Dataset file $::SAPDat(Document:FileNames:ImanFilename:$FileIndex) +++++"
+      # #set ::SAPDat(Document:FileNames:UserDefinedFilename:$FileIndex) "My_file_name"
+    # }
+    
+    # #
+    # # SAP classification based on Teamcenter classification
+    # #
+    # set classification_type [::T4X::TC::MAPPING::FieldMapping $ItemRevMaster "sap2useClassification"]
+      
+    # if {$classification_type eq "single"} {         
+       # # Read the attribute value for the attribute ID 6001 and 6002 of the Class "CL001-017"
+       # binary scan "CL0001-017" H* Class
+       # set ClassAttributeId "6001"
+       # set CH2000 [::T4X::TC::MAPPING::FieldMapping "${ItemRev}:IMAN_classification:icm0:$Class" "ClassAttributeValue:$ClassAttributeId"]
+       # set ClassAttributeId "6002"
+       # set CH2001 [::T4X::TC::MAPPING::FieldMapping "${ItemRev}:IMAN_classification:icm0:$Class" "ClassAttributeValue:$ClassAttributeId"]
+         
+       # set ::SAPDat(Document:Parameter:UpdateClassification)     "TRUE"
+       # set Status   [::TPSAP::CLASS::selectClassificationDefinition "CL0001" "017" "" "" "" "1"]
+       # set Status   [::TPSAP::CLASS::storeObjectClassificationStringValue "1" "CH2000" $CH2000 "" "000" "" ""]
+       # set Status   [::TPSAP::CLASS::storeObjectClassificationStringValue "2" "CH2001" $CH2001 "" "000" "" ""]
+    # } 
+    # # end of Classification
+
+
+    tpwrite -logchannel [::PL4X::CORE::getSessionLogChannel] -mtype INTERN "::T4S::DIR::CUSTOM::MAPPING::TC_Object2SAP_DocumentInfoRecord Returns $Status"
+    return $Status
+  }  
+
+  # ---------------------------------------------------------------------
+  ##
+  # Method:         ::T4S::DIR::CUSTOM::MAPPING::getDocumentKey4ObjectLink
+  # \brief          Returns for a given index of a reletaed object the corresponding document key for the object link
+  # 
+  # \param          TransactionId Unique ID for the transfer transaction
+  # \param          PositionIndex Position index identifier of the related document
+  # \param          ObjectTypeName Teamcenter object type
+  # \param          ObjectClassName Teamcenter object class
+  # \param          args Not used
+  #
+  # \author         J.S., 20040502
+  # \return         DocumentKey of the found document to document link
+  #
+  #
+  proc getDocumentKey4ObjectLink {TransactionId PositionIndex ObjectTypeName ObjectClassName args} {
+    set ::errorCode "NONE"
+    set ::errorInfo ""
+    tpwrite -logchannel [::PL4X::CORE::getSessionLogChannel] -mtype INTERN "::T4S::DIR::CUSTOM::MAPPING::getDocumentKey4ObjectLink starts"
+    set DocumentKey ""
+    if {$ObjectClassName eq "Dataset"} {
+      set DocumentType    [::T4X::TC::MAPPING::IndexedFieldMapping $PositionIndex "$ObjectTypeName:T4S_NamedReferences:T4S_DatasetExtensionForm" "SAP_DirType"]
+      set DocumentNumber  [::T4X::TC::MAPPING::IndexedFieldMapping $PositionIndex "$ObjectTypeName:T4S_NamedReferences:T4S_DatasetExtensionForm" "SAP_DirNo"]
+      set DocumentPart    [::T4X::TC::MAPPING::IndexedFieldMapping $PositionIndex "$ObjectTypeName:T4S_NamedReferences:T4S_DatasetExtensionForm" "SAP_DirPart"]
+      set DocumentVersion [::T4X::TC::MAPPING::IndexedFieldMapping $PositionIndex "$ObjectTypeName:T4S_NamedReferences:T4S_DatasetExtensionForm" "SAP_DirVersion"]
+      set DocumentKey [format "%-3.3s%-25.25s%-2.2s%-3.3s" $DocumentType [::TPSAP::DIR::getInternalDocumentNumber $DocumentNumber] $DocumentVersion $DocumentPart]
+    } elseif {$ObjectClassName eq "ItemRevision"} {
+      set ItemRevisionType $ObjectTypeName
+      regsub -all "Revision" $ObjectTypeName {} ItemType
+      set ItemType [string trim $ItemType]
+
+      set DocumentNumber     [::T4X::TC::MAPPING::IndexedFieldMapping $PositionIndex "${ItemRevisionType}:items_tag:${ItemType}" "item_id"]
+      set DocumentVersion    "00"
+      set DocumentType       "DRW"
+      set DocumentPart       "000"
+      set DocumentKey [format "%-3.3s%-25.25s%-2.2s%-3.3s" $DocumentType [::TPSAP::DIR::getInternalDocumentNumber $DocumentNumber] $DocumentVersion $DocumentPart]
+    }
+    tpwrite -logchannel [::PL4X::CORE::getSessionLogChannel] -mtype INTERN "::T4S::DIR::CUSTOM::MAPPING::getDocumentKey4ObjectLink Returns DocumentKey=$DocumentKey"
+    return $DocumentKey
+  }  
+
+  # ---------------------------------------------------------------------
+  ##
+  # Method:         ::T4S::DIR::CUSTOM::MAPPING::getDocumentInfoRecordStructure
+  #
+  # \brief          This mapping function can be used to fill the DOCUMENTSTRUCTURE buffer 
+  #                 that is required to create Document BOM or document structure.
+  #
+  # \param          ParentObjectTypeName Object type of the structure header
+  # \param          Index Index information of the next document structure line
+  # \param          PositionIndex Position index of the related document
+  # \param          ObjectTypeName Teamcenter object type
+  # \param          ObjectClassName Teamcenter object class
+  # \param          args Not used
+  #
+  # \return         Mapping Status of the Document Structure line
+  #
+  #
+  proc getDocumentInfoRecordStructure {ParentObjectTypeName Index PositionIndex ObjectTypeName ObjectClassName args} {
+    set Status "OK"
+    tpwrite -logchannel [::PL4X::CORE::getSessionLogChannel] -mtype INTERN "::T4S::DIR::CUSTOM::MAPPING::getDocumentInfoRecordStructure Start with $ObjectTypeName"
+    #
+    if {$ObjectClassName eq "Dataset"} {
+      set ::SAPDat(Document:DOCUMENTSTRUCTURE:DELETEVALUE:$Index)     ""
+      set ::SAPDat(Document:DOCUMENTSTRUCTURE:DOCUMENTTYPE:$Index)    [::T4X::TC::MAPPING::IndexedFieldMapping $PositionIndex "$ObjectTypeName:T4S_NamedReferences:T4S_DatasetExtensionForm" "SAP_DirType"]
+      set ::SAPDat(Document:DOCUMENTSTRUCTURE:DOCUMENTNUMBER:$Index)  [::T4X::TC::MAPPING::IndexedFieldMapping $PositionIndex "$ObjectTypeName:T4S_NamedReferences:T4S_DatasetExtensionForm" "SAP_DirNo"]
+      set ::SAPDat(Document:DOCUMENTSTRUCTURE:DOCUMENTPART:$Index)    [::T4X::TC::MAPPING::IndexedFieldMapping $PositionIndex "$ObjectTypeName:T4S_NamedReferences:T4S_DatasetExtensionForm" "SAP_DirPart"]
+      set ::SAPDat(Document:DOCUMENTSTRUCTURE:DOCUMENTVERSION:$Index) [::T4X::TC::MAPPING::IndexedFieldMapping $PositionIndex "$ObjectTypeName:T4S_NamedReferences:T4S_DatasetExtensionForm" "SAP_DirVersion"]
+      set ::SAPDat(Document:DOCUMENTSTRUCTURE:QUANTITY:$Index)        "1"
+      set ::SAPDat(Document:DOCUMENTSTRUCTURE:SORTSTRING:$Index)      ""
+      set ::SAPDat(Document:DOCUMENTSTRUCTURE:CAD_POS:$Index)         "X"
+    } elseif {$ObjectClassName eq "ItemRevision"} {
+      set ItemRevisionType $ObjectTypeName
+      regsub -all "Revision" $ObjectTypeName {} ItemType
+      set ItemType [string trim $ItemType]
+      set ::SAPDat(Document:DOCUMENTSTRUCTURE:DELETEVALUE:$Index)     ""
+      set ::SAPDat(Document:DOCUMENTSTRUCTURE:DOCUMENTTYPE:$Index)    DRW
+      set ::SAPDat(Document:DOCUMENTSTRUCTURE:DOCUMENTNUMBER:$Index)  [::T4X::TC::MAPPING::IndexedFieldMapping $PositionIndex "${ItemRevisionType}:items_tag:${ItemType}" "item_id"]
+      set ::SAPDat(Document:DOCUMENTSTRUCTURE:DOCUMENTPART:$Index)    000
+      set ::SAPDat(Document:DOCUMENTSTRUCTURE:DOCUMENTVERSION:$Index) 00
+      set ::SAPDat(Document:DOCUMENTSTRUCTURE:QUANTITY:$Index)        "1"
+      set ::SAPDat(Document:DOCUMENTSTRUCTURE:SORTSTRING:$Index)      ""
+      set ::SAPDat(Document:DOCUMENTSTRUCTURE:CAD_POS:$Index)         "X"
+    }
+    tpwrite -logchannel [::PL4X::CORE::getSessionLogChannel] -mtype INTERN "::T4S::DIR::CUSTOM::MAPPING::getDocumentInfoRecordStructure returns $Status"
+    return $Status
+  }  
+
+  # ---------------------------------------------------------------------
+  ##
+  # Method:         ::T4S::DIR::CUSTOM::MAPPING::getDocumentInfoRecordInfo
+  #
+  # \brief          Customer specific Mapping function for the get DocumentInfoRecord infos
+  #                 the resulting data is stored in the coresponding ::DirResultDat array
+  #
+  # \author         J.S., 20090909
+  # \param          DocumentNumber SAP Id of document info record
+  # \param          DocumentType SAP Type of document info record
+  # \param          DocumentPart SAP Part of document info record
+  # \param          DocumentVersion SAP Version of document info record
+  # \param          args not used
+  #
+  # \return         list of status
+  #
+  # 
+  proc getDocumentInfoRecordInfo {DocumentNumber DocumentType DocumentPart DocumentVersion args} {
+    set SAPVERSION [::TPSAP::getReleaseInfo]
+    ##
+    # get DocumentInfoRecord Info
+    ##
+    if {$SAPVERSION ne "UNKNOWNRELEASE"} {
+      set Status [lindex [::TPSAP::DIR::getDocumentInfoRecordInfo $DocumentNumber $DocumentType $DocumentPart $DocumentVersion] 0]
+    } else {
+      set Status "LOGON_ERROR"
+    }
+    return $Status
+  }
+  
+
+  # ---------------------------------------------------------------------
+  ##
+  # Method:         ::T4S::DIR::CUSTOM::MAPPING::SAP_DocumentInfoRecord2TC_Object
+  ##
+  #
+  # \brief         Customer specific reverse mapping function for the T4S document info record transfer
+  #
+  # \details       The procedure maps the following SAP attributes back to Teamcenter attributes: 
+  #                \n \c SAP \c Document \c number -> \c SAP_DirNo
+  #                \n \c SAP \c Document \c type -> \c SAP_DirType
+  #                \n \c SAP \c Document \c part -> \c SAP_DirPart
+  #                \n \c SAP \c Document \c version -> \c SAP_DirVersion
+  #                \n \c T4S \c transfer \c status -> \c SentDIRToSAP  
+  #
+  # \param         TransactionId Unique ID for the transfer transaction
+  # \param         Status SAP transfer status. 
+  #                The following values are valid:
+  #                \n \c SKIPPED                   -> the transfer was skipped
+  #                \n \c ERROR                     -> the transfer was stopped by an error
+  #                \n \c UNKNOWN                   -> the transfer was stopped by an unknown error
+  #                \n \c UPDATED_WITH_ERROR        -> the transfer was stopped by an minor error in one of the additional transfer steps
+  #                \n \c CREATED, \c CHANGED, \c UPDATED -> and some other values are used for a successful transfer
+  # \param         DocumentNumber SAP Id of document info record
+  # \param         DocumentType SAP Type of document info record
+  # \param         DocumentPart SAP Part of document info record
+  # \param         DocumentVersion SAP Version of document info record
+  # \param         args Not used
+  #
+  # \return        Return code used by the following Tc object update function. 
+  #                The following values are valid:
+  #                \n \c OK                 -> T4S will update the Tc object based on the reverse mapping preferences and the reverse mapping buffer
+  #                \n \c SKIPPED            -> T4S will skip the TcData object
+  #                \n \c ERROR              -> T4S will stop transfer and raise an error
+  #
+  # \author        J.S., 20040512
+  #
+  # 
+  proc SAP_DocumentInfoRecord2TC_Object {TransactionId Status DocumentNumber DocumentType DocumentPart DocumentVersion args} {
+    set ::errorCode "NONE"
+    set ::errorInfo ""
+    set MappingStatus "OK"
+    
+    set DocumentKey "${DocumentNumber}_${DocumentType}_${DocumentPart}_[string trim ${DocumentVersion}]"
+    tpwrite -logchannel [::PL4X::CORE::getSessionLogChannel] -mtype INTERN "::T4S::DIR::CUSTOM::MAPPING::SAP_DocumentInfoRecord2TC_Object starts $Status $DocumentNumber $DocumentType $DocumentPart $DocumentVersion"
+    tpwrite -logchannel [::PL4X::CORE::getSessionLogChannel] -mtype INTERN "+++++ DIR reverse mapping: ObjectClassName: '$::TcData(ItemInfo:ObjectClassName)', Status: '$Status' ++++++++++++++++++++++++++++++++++++++++++++++"
+    if {$::TcData(ItemInfo:ObjectClassName) eq "Dataset"} {
+      set DatasetType        $::TcData(ItemInfo:TypeName)        ;# my own type name
+      set ItemRevisionType   $::TcData(ItemInfo:ParentTypeName)  ;# my parent object's type name
+      set DatasetExtension   "$DatasetType:ref_list/T4S_DATASET_EXTENSION:T4S_DatasetExtensionForm"
+    } elseif {$::TcData(ItemInfo:ObjectClassName) eq "ItemRevision"} {
+      set ItemRevisionType   $::TcData(ItemInfo:TypeName)        ;# my own type name
+      set DatasetExtension   "$ItemRevisionType:IMAN_specification:T4S_DatasetExtensionForm"
+    }
+    regsub -all "Revision" $ItemRevisionType {} ItemType
+    set ItemType             [string trim $ItemType]
+    set Item                 "$ItemRevisionType:items_tag:$ItemType"
+    # set ItemMaster           "$ItemRevisionType:items_tag:$ItemType:IMAN_master_form:$ItemType Master"
+    set ItemRev              $ItemRevisionType
+    # set ItemRevMaster        "$ItemRevisionType:IMAN_master_form_rev:$ItemRevisionType Master"
+
+    if {$Status eq "ERROR" || $Status eq "UNKNOWN"} {
+			set T4STransferStatus "DIR transfer $Status - [clock format [clock seconds] -format "%Y-%m-%d %R"]"
+			
+			tpwrite -logchannel [::PL4X::CORE::getSessionLogChannel] -mtype INTERN "++++++++++ Reverse mapping value 'sr5SAPTransStatus': '$T4STransferStatus' ++++++++++"
+      ::T4X::TC::MAPPING::storeReverseMappingAttribute DocumentInfoRecord $ItemRev sr5SAPTransStatus $T4STransferStatus
+
+    } else {
+      # If one of the additional transactions failed, do something else:
+      if {$Status eq "UPDATED_WITH_ERROR"} {
+        set T4STransferStatus "DIR transfer $Status - [clock format [clock seconds] -format "%Y-%m-%d %R"]"
+      } else {
+				set T4STransferStatus "DIR transferred to $::T4S::SapInfo(SapSystem) at [clock format [clock seconds] -format "%Y-%m-%d %R"]"			
+			}
+			
+			# The parameter DocumentNumber is always in the internal format that you need for asking SAP for more data.
+			# For storing in TC, the external format is recommended (cut leading zeros...):
+			set SAPId       [::TPSAP::DIR::getExternalDocumentNumber [string trim $DocumentNumber]]
+			
+			# Current time stamp
+			set TimeStamp [clock format [clock seconds] -format "%Y-%m-%d %R"]
+
+      set DocumentUserName     [::T4S::TC::MAPPING::SAPFieldMapping DocumentInfoRecord $DocumentKey DOCUMENTDATA:USERNAME]
+      tpwrite -logchannel [::PL4X::CORE::getSessionLogChannel] -mtype INTERN "::T4S::DIR::CUSTOM::MAPPING::SAP_DocumentInfoRecord2TC_Object SAP2SAPLogin: $DocumentUserName"
+      # ::T4X::TC::MAPPING::storeReverseMappingAttribute DocumentInfoRecord $ItemRevMaster SAP2SAPLogin $DocumentUserName
+
+      tpwrite -logchannel [::PL4X::CORE::getSessionLogChannel] -mtype INTERN "++++++++++ Reverse mapping value 'sr5SAPID': '$SAPId' ++++++++++"  
+      ::T4X::TC::MAPPING::storeReverseMappingAttribute DocumentInfoRecord $ItemRev sr5SAPID $SAPId
+			tpwrite -logchannel [::PL4X::CORE::getSessionLogChannel] -mtype INTERN "++++++++++ Reverse mapping value 'sr5SAPTransDate': '$TimeStamp' ++++++++++"  
+      ::T4X::TC::MAPPING::storeReverseMappingAttribute DocumentInfoRecord $ItemRev sr5SAPTransDate $TimeStamp
+      tpwrite -logchannel [::PL4X::CORE::getSessionLogChannel] -mtype INTERN "++++++++++ Reverse mapping value 'sr5SAPTransStatus': '$T4STransferStatus' ++++++++++"  
+      ::T4X::TC::MAPPING::storeReverseMappingAttribute DocumentInfoRecord $ItemRev sr5SAPTransStatus $T4STransferStatus
+			
+			# ::T4X::TC::MAPPING::storeReverseMappingAttribute DocumentInfoRecord $DatasetExtension SentDIRToSAP     [clock format [clock seconds] -format "%Y-%m-%d %R"]
+      # ::T4X::TC::MAPPING::storeReverseMappingAttribute DocumentInfoRecord $DatasetExtension SAP_DirType      $DocumentType
+      # ::T4X::TC::MAPPING::storeReverseMappingAttribute DocumentInfoRecord $DatasetExtension SAP_DirNo        $T4SDIR_No
+      # ::T4X::TC::MAPPING::storeReverseMappingAttribute DocumentInfoRecord $DatasetExtension SAP_DirPart      $DocumentPart
+      # ::T4X::TC::MAPPING::storeReverseMappingAttribute DocumentInfoRecord $DatasetExtension SAP_DirVersion   $DocumentVersion
+      #
+    }
+
+    #Examples:
+    #set DocumentStatus       [::T4S::TC::MAPPING::SAPFieldMapping DocumentInfoRecord $DocumentKey DOCUMENTDATA:STATUSEXTERN]
+    #set DocumentUserName     [::T4S::TC::MAPPING::SAPFieldMapping DocumentInfoRecord $DocumentKey DOCUMENTDATA:USERNAME]
+    #set DocumentLaboratory   [::T4S::TC::MAPPING::SAPFieldMapping DocumentInfoRecord $DocumentKey DOCUMENTDATA:LABORATORY]
+    #set DocumentChangeNumber [::T4S::TC::MAPPING::SAPFieldMapping DocumentInfoRecord $DocumentKey DOCUMENTDATA:ECNUMBER]
+    #::T4X::TC::MAPPING::storeReverseMappingAttribute DocumentInfoRecord "${ItemRevisionType}:Tc_master_form_rev:ItemRevision Master" user_data_3 $DocumentStatus
+
+    tpwrite -logchannel [::PL4X::CORE::getSessionLogChannel] -mtype INTERN "::T4S::DIR::CUSTOM::MAPPING::SAP_DocumentInfoRecord2TC_Object Returns"
+    return $MappingStatus
+  }  
+
+  # ---------------------------------------------------------------------
+  ##
+  # Method:         ::T4S::DIR::CUSTOM::MAPPING::callCustomerRuleHandler
+  # \brief          Customer specific documentinforecord RulleHandler function template
+  #
+  # \author         J.S., 20050401
+  #
+  # \param          TransactionId unique ID for the transfer transaction
+  #
+  # \param          Action Work flow action
+  # \param          RuleName specified rule name in the work flow arguments 
+  #                 named "-user_rule". If the argument is not specified the value 
+  #                 is "Default"
+  # \param          TransactionId Unique ID for the transfer transaction
+  # \param          ObjectTypeName Teamcenter object type
+  # \param          ObjectClassName Teamcenter object class
+  # \param          ItemType Teamcenter item type
+  # \param          ItemRevisionType Teamcenter item revision type
+  # \param          args Not used
+  #  
+  # \return         EPM_nogo or EPM_go
+  #
+  #
+  proc callCustomerRuleHandler {TransactionId Action RuleName ObjectTypeName ObjectClassName ItemType ItemRevisionType args} {
+    set ::errorCode "NONE"
+    set ::errorInfo ""
+    tpwrite -logchannel [::PL4X::CORE::getSessionLogChannel] -mtype INTERN "::T4S::DIR::CUSTOM::MAPPING::callCustomerRuleHandler Starts with $TransactionId $Action $RuleName $ObjectTypeName $ObjectClassName $ItemType $ItemRevisionType"
+    set Decision "EPM_nogo"
+    set Status "OK"
+
+    if {[string toupper $RuleName] eq "CHECK_DESCRIPTION"} {
+      if {[string length $::SAPDat(Document:DrawData:DESCRIPTION)] > 0} {
+        set Decision "EPM_go"
+      } elseif {[string length $::SAPDat(Document:DOCUMENTDESCRIPTIONS:DESCRIPTION:1)] > 0} {
+        set Decision "EPM_go"
+      } else {
+        #
+        # here you can add your error message for the portal
+        #
+      }
+    } elseif {[string toupper $RuleName] eq "CHECK_EXISTS"} {
+      if {[string length $::SAPDat(Document:DrawData:DOCUMENTNUMBER)] > 0 && [string length $::SAPDat(Document:DrawData:DOCUMENTPART)] > 0 && [string length $::SAPDat(Document:DrawData:DOCUMENTTYPE)] > 0 && [string length $::SAPDat(Document:DrawData:DOCUMENTVERSION)] > 0} {
+        if { [::TPSAP::DIR::ExistenceCheck $::SAPDat(Document:DrawData:DOCUMENTNUMBER) $::SAPDat(Document:DrawData:DOCUMENTTYPE) $::SAPDat(Document:DrawData:DOCUMENTPART) $::SAPDat(Document:DrawData:DOCUMENTVERSION)] eq "OK"} {
+          set Decision "EPM_go"
+        } else {
+          #
+          # here you can add your error message for the portal
+          #
+        }
+      } else {
+        #
+        # here you can add your error message for the portal
+        #
+      }
+    }
+    tpwrite -logchannel [::PL4X::CORE::getSessionLogChannel] -mtype INTERN "::T4S::DIR::CUSTOM::MAPPING::callCustomerRuleHandler Returns $Decision"
+    return $Decision
+  }
+}
+
+#
+namespace eval ::T4S::DIR::CUSTOM {
+  # ---------------------------------------------------------------------
+  ##
+  # Method:         ::T4S::DIR::CUSTOM::additionalUpdates4DocumentInfoRecord
+  #
+  # \brief          Function can be used to define additional customer specific
+  #                 updates after the document info record transfer.
+  #
+  # \author         J.S., 20090909
+  #
+  # \param          TransactionId unique ID for the transfer transaction
+  # \param          DocumentNumber SAP Id of document info record
+  # \param          DocumentType SAP Type of document info record
+  # \param          DocumentPart SAP Part of document info record
+  # \param          DocumentVersion SAP Version of document info record
+  #
+  # \return         SKIPPED, OK or ERROR in the case on an error
+  #
+  #
+  proc additionalUpdates4DocumentInfoRecord {TransactionId DocumentNumber DocumentType DocumentPart DocumentVersion} {
+    set Status "SKIPPED"
+    ::T4X::TRANSLOG::writeCustomMappingLog $TransactionId "INFO" "additionalUpdates4DocumentInfoRecord starts with DocumentKey = $DocumentNumber/$DocumentType/$DocumentPart/$DocumentVersion"
+    #
+    # Now we start a customer specific additional update function for a document info record
+    #
+		# set DocStatus [::TPSAP::DIR::setDocumentState $DocumentNumber $DocumentType $DocumentPart $DocumentVersion "" "FR" "SYS_RFC_PLM"]
+		# tpwrite -logchannel "/tmp/update.log" -mtype INTERN "setDocumentState returns $DocStatus"
+		# if {$DocStatus eq "OK"} {
+		 # ::T4X::TRANSLOG::writeCustomMappingLog $TransactionId INFO "DIR status is set to FR -> Released successful!!!"
+		 # tpwrite -logchannel [::PL4X::CORE::getSessionLogChannel] -mtype INTERN "DIR status is set to FR -> Released successful!!!"
+		 # set Status "OK"
+		# } else {
+		 # ::T4X::TRANSLOG::writeCustomMappingLog $TransactionId ERROR "setDocumentState ERROR!!!"
+		 # tpwrite -logchannel [::PL4X::CORE::getSessionLogChannel] -mtype ERROR "setDocumentState ERROR!!!"
+		 # set Status "ERROR"
+		# }
+		
+    ::T4X::TRANSLOG::writeCustomMappingLog $TransactionId "INFO" "additionalUpdates4DocumentInfoRecord returns with Status $Status"
+    return $Status
+  }
+}
+#
+# Examples for possible settings for DIR:
+#
+#SAP DIR document data (DrawData structure)
+#set ::SAPDat(Document:DrawData:DOCUMENTTYPE) "" ; # Document type
+#set ::SAPDat(Document:DrawData:DOCUMENTNUMBER) "" ; # Document number
+#set ::SAPDat(Document:DrawData:DOCUMENTVERSION) "" ; # Document version
+#set ::SAPDat(Document:DrawData:DOCUMENTPART) "" ; # Document part
+#set ::SAPDat(Document:DrawData:DESCRIPTION) "" ; # Document description
+#set ::SAPDat(Document:DrawData:USERNAME) "" ; # Name of person responsible
+#set ::SAPDat(Document:DrawData:STATUSEXTERN) "" ; # Status of a document (language-dependent)
+#set ::SAPDat(Document:DrawData:STATUSINTERN) "" ; # Document status
+#set ::SAPDat(Document:DrawData:STATUSLOG) "" ; # Document management log field
+#set ::SAPDat(Document:DrawData:LABORATORY) "" ; # Laboratory/design office
+#set ::SAPDat(Document:DrawData:ECNUMBER) "" ; # Change number
+#set ::SAPDat(Document:DrawData:VALIDFROMDATE) "" ; # Valid-from date
+#set ::SAPDat(Document:DrawData:REVLEVEL) "" ; # Revision level
+#set ::SAPDat(Document:DrawData:DELETEINDICATOR) "" ; # Deletion indicator
+#set ::SAPDat(Document:DrawData:CADINDICATOR) "" ; # CAD indicator
+#set ::SAPDat(Document:DrawData:STRUCTUREINDICATOR) "" ; # Document management indicator
+#set ::SAPDat(Document:DrawData:PREDOCUMENTNUMBER) "" ; # Document number of superior document
+#set ::SAPDat(Document:DrawData:PREDOCUMENTVERSION) "" ; # Document version of superior document
+#set ::SAPDat(Document:DrawData:PREDOCUMENTPART) "" ; # Partial document of superior document
+#set ::SAPDat(Document:DrawData:PREDOCUMENTTYPE) "" ; # Document type of the superior document
+#set ::SAPDat(Document:DrawData:AUTHORITYGROUP) "" ; # Authorization group
+#set ::SAPDat(Document:DrawData:DOCFILE:1) "" ; # Original of document
+#set ::SAPDat(Document:DrawData:DATACARRIER1) "" ; # Name of data carrier
+#set ::SAPDat(Document:DrawData:WSAPPLICATION1) "" ; # Application
+#set ::SAPDat(Document:DrawData:DOCFILE:2) "" ; # Original of document
+#set ::SAPDat(Document:DrawData:DATACARRIER2) "" ; # Name of data carrier
+#set ::SAPDat(Document:DrawData:WSAPPLICATION2) "" ; # Application
+#set ::SAPDat(Document:DrawData:VRLDAT) "" ; # Due date
+#set ::SAPDat(Document:DrawData:USERDEFINED1) "" ; # Reserve field DRAW
+#set ::SAPDat(Document:DrawData:USERDEFINED2) "" ; # Reserve field DRAW
+#set ::SAPDat(Document:DrawData:USERDEFINED3) "" ; # Reserve field DRAW
+#set ::SAPDat(Document:DrawData:USERDEFINED4) "" ; # Reserve field DRAW
+#set ::SAPDat(Document:DrawData:SAVEDOCFILE1) "" ; # Original of document
+#set ::SAPDat(Document:DrawData:SAVEDATACARRIER1) "" ; # Name of data carrier
+#set ::SAPDat(Document:DrawData:SAVEDOCFILE2) "" ; # Original of document
+#set ::SAPDat(Document:DrawData:SAVEDATACARRIER2) "" ; # Name of data carrier
+#set ::SAPDat(Document:DrawData:CREATEDATE) "" ; # Output date for document
+#set ::SAPDat(Document:DrawData:REFDOCUMENTNUMBER) "" ; # Document number of source document
+#set ::SAPDat(Document:DrawData:REFDOCUMENTPART) "" ; # Document part of source document
+#set ::SAPDat(Document:DrawData:REFDOCUMENTVERSION) "" ; # Document version of source document
+#set ::SAPDat(Document:DrawData:FILESIZE1) "" ; # File length of original
+#set ::SAPDat(Document:DrawData:FILESIZE2) "" ; # File length of original
+#
+#SAP DIR object link data (ObjectLink structure)
+#set ::SAPDat(Document:ObjectLink:MATERIAL) "" ; # List of all material master object links to the current DIR

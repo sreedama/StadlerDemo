@@ -1,0 +1,93 @@
+{
+    "schemaVersion": "1.0.0",
+    "imports":
+    [
+        "js/aw-command-panel.directive",
+        "js/aw-file-upload.directive",
+        "js/aw-panel-body.directive",
+        "js/aw-panel-footer.directive",
+        "js/aw-listbox.directive",
+        "js/aw-button.directive",
+        "js/aw-i18n.directive"
+    ],
+    "data":{
+        "exportTypeListBox": {
+            "displayName": "{{i18n.Type}}",
+            "type": "STRING",
+            "hasLov":"true",
+            "isRequired": "true",
+            "dbValue": "",
+            "dispValue": ""
+        }
+    },
+    "actions": {
+        "openSummaryLog": {
+            "actionType": "JSFunction",
+            "method": "openFile",
+            "inputData": {
+                "data": "{{data.fileTicket}}"
+            },
+            "deps": "js/fmsUtils"
+        },    
+      "openMultipleFilesFromTickets": {
+        "actionType": "JSFunction",
+        "method": "openFiles",
+        "deps": "js/fmsUtils",
+        "inputData": {
+          "fileTickets": "{{data.fileNamesAndTickets}}"
+        }
+      },
+        "exportMaterials": {
+            "actionType": "JSFunction",
+            "method": "exportMaterials",
+            "inputData": {
+                "data": "{{data}}",
+				"ctx": "{{ctx}}"				
+            },
+            "deps": "js/Mtw0ExportMaterials"
+        },
+        "loadTypesFromPreference": {
+            "actionType": "JSFunction",
+            "method": "loadTypesFromPreference",
+            "inputData": {
+                "input": "{{data}}",
+                "ctx": "{{ctx}}"
+            },
+            "outputData": {
+                "preferences": ""
+            },
+            "deps": "js/Mtw0ExportMaterials"
+        }        
+    },
+    "onEvent":
+    [    
+        {
+            "eventId": "awPanel.reveal",
+            "action": "loadCatalogs"
+        },
+        {
+            "eventId": "awPanel.reveal",
+            "action": "loadTypesFromPreference"
+        }        
+    ],
+    "i18n": {
+        "Mtw0ExportMaterialsTitle": [
+          "MaterialMgmtMessages"
+        ],
+        "Mtw0ExportMaterials": [
+          "MaterialMgmtMessages"
+        ],
+        "Type": [
+          "MaterialMgmtMessages"
+        ],
+        "Mtw0FileName": [
+          "MaterialMgmtMessages"
+        ],
+		"Mtw0ExportSuccessfull": [
+          "MaterialMgmtMessages"
+        ]
+    },
+    "preferences": [
+        "IMM_EXPORT_FILTERS"
+    ]
+}

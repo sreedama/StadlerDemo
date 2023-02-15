@@ -1,0 +1,15 @@
+<aw-command-panel caption="i18n.objectInformationLabel">
+    <aw-panel-body>
+        <aw-panel-section exist-when="data.selectedBomLine">
+            <aw-xrt type="INFO" vmo="data.selectedBomLine"></aw-xrt>
+        </aw-panel-section>
+    </aw-panel-body>
+    <aw-panel-footer>
+        <aw-button action="startEdit" default="false" visible-when="conditions.IsMasterFormEditButtonVisible">
+            <aw-i18n>i18n.startEditButtonText</aw-i18n>
+        </aw-button>
+        <aw-button action="save" default="false" visible-when="conditions.IsSaveButtonVisible">
+            <aw-i18n>i18n.save</aw-i18n>
+        </aw-button>
+    </aw-panel-footer>
+</aw-command-panel>

@@ -1,0 +1,20 @@
+############################################################################################################
+#  CNO External Script Definition File for CNO Document Content Checker
+#
+# Please notice that the script execution is done on the application server.
+# It is also recommended to use different files for external scripts.
+############################################################################################################
+# Version History
+#
+# Version   Date         Name            Description of Change
+# 1.00     10.10.2019   Yalcintepe       CVF-608# Document Content Check Script
+############################################################################################################
+
+#IMPORTANT: external scripting
+interpreter=external
+
+[callDocumentChecker]
+#Linux: java -jar $TC_ROOT/bin/cno/cno_content_checker/CnoContentChecker.jar -input_file="%1" -search_content="%2" -case_sensitive=true
+#java -jar %TC_ROOT%/bin/cno/cno_content_checker/CnoContentChecker.jar -input_file="%1" -search_content="%2" -case_sensitive=true
+
+%TC_ROOT%/bin/cno/cno_content_checker/CnoContentChecker.bat

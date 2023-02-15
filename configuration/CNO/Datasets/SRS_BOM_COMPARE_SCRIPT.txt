@@ -1,0 +1,81 @@
+############################################################################################################
+#  CNO Script Definition File
+#
+# Please notice that syntax errors in one script can cause issues in all scripts in the same file.
+############################################################################################################
+# Version History
+#
+# Version   Date         Name            Description of Change
+# 1.00     26.05.2018   Yalcintepe       Initial
+############################################################################################################
+
+#IMPORTANT: internal scripting
+interpreter=internal
+
+//find Revision
+function IdRevision(attribut00, attribut01, attribut02, attribut03) {
+    var returnValue=false;
+    if (attribut02.length<1) {
+         returnValue=attribut01.concat("/", attribut03);
+    } else {
+         if(attribut00.indexOf("SR5EngArticle")!=-1 || attribut00.indexOf("SR5CatDefArticle")!=-1 || attribut00.indexOf("SR5GenCatPart")!=-1 || attribut00.indexOf("SR5EleCatPart")!=-1 || attribut00.indexOf("SR5MechCatPart")!=-1 || attribut00.indexOf("SR5CoatingStruct")!=-1 || attribut00.indexOf("SR5TechDocument")!=-1) {
+            returnValue=attribut01.concat("/", attribut02, "/", attribut03); 
+        }
+    }
+    return returnValue;  
+}
+
+//find Uom
+function Uom(attribut03) {
+    var returnValue=false;
+    returnValue=attribut03;
+    if(attribut03.indexOf("each")!=-1 || attribut03.indexOf("St")!=-1 || attribut03.indexOf("jede")!=-1) {
+        returnValue="piece";
+    } 
+    return returnValue;  
+}
+
+//find Quantity
+function Quantity(attribut02, attribut03) {
+    var returnValue=false;
+    returnValue=attribut02;
+    if (attribut02.length<1) {
+        if(attribut03.indexOf("piece")!=-1 || attribut03.indexOf("each")!=-1 || attribut03.indexOf("St")!=-1) {
+            returnValue="1";
+        } else {
+            returnValue=" ";
+        }
+    }
+    return returnValue;  
+}
+
+//find Weight
+function Weight(attribut13) {
+    if(attribut13.indexOf("NaN")!=-1 || attribut13.length<1) {
+        attribut13="0";
+    }
+    var pointNum = parseFloat(attribut13);
+    return Math.round(pointNum*1000)/1000;
+}
+
+//find ColorName
+function ColorName (attribut01, attribut02) {
+    var returnValue=false;
+    if(attribut01.indexOf("Color Definition")!=-1 || attribut01.indexOf("Farbdefinition")!=-1) {
+        returnValue=attribut02; 
+    } else {
+        returnValue=" ";
+    }
+    return returnValue;  
+}
+
+//find CoatingName
+function CoatingName (attribut01, attribut02) {
+    var returnValue=false;
+    if(attribut01.indexOf("Coating Structure")!=-1 || attribut01.indexOf("Beschichtungsaufbau")!=-1) {
+        returnValue=attribut02; 
+    } else {
+        returnValue=" ";
+    }
+    return returnValue;  
+}

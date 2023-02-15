@@ -1,0 +1,14 @@
+############################################################################################################
+#  CNO Object Property Definition File
+############################################################################################################
+# Version History
+#
+# Version    Date           Name               Description of Change
+# 1.0        24-01-2022     Frithjof Streitz     Initial
+############################################################################################################
+
+C:ItemRevision>view:bl_rev_last_release_status
+#SR5EngMajorAssyRevision>view:bl_rev_last_release_status
+#IMAN_specification:secondary_object~CATProduct or Part or Drawing
+C:Dataset:?object_type~Dataset Type
+C:Dataset:sr5QCheckEvaluation

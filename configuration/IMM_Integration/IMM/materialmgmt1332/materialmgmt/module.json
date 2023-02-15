@@ -1,0 +1,1670 @@
+{
+  "name": "materialmgmt",
+	"description": "Material Management module for the Active Workspace Client.",
+  "type": [
+    "native"
+  ],
+  "srcDir": "src_native",
+  "pathOffset": ".",
+  "skipAudit": true,
+  "skipTest": true,
+  "version": "6.0.0",
+  "author": "Siemens Product Lifecycle Management Software Inc.",
+  "aliasRegistry": {
+    "typeMaterial48": [
+      "Mat1Material"
+    ],
+    "typeMaterialRevision48": [
+      "Mat1MaterialRevision"
+    ],
+    "typeSubstance48": [
+      "Mat1Substance"
+    ],
+    "typeCompoundMaterial48": [
+      "Mat1CompMaterial"
+    ],
+    "typeCompoundMaterialRevision48": [
+      "Mat1CompMaterialRevision"
+    ],
+    "typeMatmlDataset48": [
+      "Mat1MatML"
+    ],
+    "typeMaterialParameters48": [
+      "Mat1Parameter"
+    ],
+    "typeInheritedMaterialParameter48": [
+      "Mat1InheritedParameter"
+    ],
+    "typeMaterialClass48": [
+      "Mat1MaterialClassification"
+    ],
+    "typeParameterDefinitionDictionary48": [
+      "Mat1MetaParameter"
+    ],
+    "typeMaterialsChart48": [
+      "Mat1ParameterSmartTable"
+    ],
+    "typeBaseUnit48": [
+      "Mat1BaseUnit"
+    ],
+    "typeDerivedUnit48": [
+      "Mat1DerivedUnit"
+    ],
+    "typeUnitAlternateName48": [
+      "Mat1UnitAltName"
+    ],
+    "typeUnitCategory48": [
+      "Mat1UnitCategory"
+    ],
+    "typeSessionUnit48": [
+      "Mat1SessionUnits"
+    ],
+    "typeSessionUnitCategory48": [
+      "Mat1SessionUnitCategory"
+    ]
+  },
+  "commandsViewModel": {
+    "commands": {
+      "Mtw0ExportMaterials": {
+        "iconId": "cmdExport",
+        "title": "{{i18n.Mtw0ExportMaterialsTitle}}",
+        "description": "{{i18n.Mtw0ExportMaterialDesc}}",
+        "isGroup": false
+      },
+      "Mtw0ImportMaterials": {
+        "iconId": "cmdImport",
+        "title": "{{i18n.Mtw0ImportMaterialsTitle}}",
+        "description": "{{i18n.Mtw0ImportMaterialsDesc}}",
+        "isGroup": false
+      },
+      "Mtw0ImportClasses": {
+        "iconId": "cmdImport",
+        "title": "{{i18n.Mtw0ImportClassesTitle}}",
+        "description": "{{i18n.Mtw0ImportClassesDesc}}",
+        "isGroup": false
+      },
+      "Mtw0ImportUnits": {
+        "iconId": "cmdImport",
+        "title": "{{i18n.Mtw0ImportUnitsTitle}}",
+        "description": "{{i18n.Mtw0ImportUnitsDesc}}",
+        "isGroup": false
+      },
+      "Mtw0UnitDeleteCommand": {
+        "iconId": "cmdDelete",
+        "isGroup": false,
+        "title": "{{i18n.delete}}",
+        "description": "{{i18n.deleteConvDesc}}"
+      },
+      "Mtw0ShowSessionOptions": {
+        "iconId": "cmdMeasurementUnits",
+        "title": "{{i18n.Mtw0ShowSessionOptions}}",
+        "description": "{{i18n.Mtw0ShowSessionOptionsDesc}}",
+        "isGroup": false
+      },
+      "Mtw0OverrideParameter": {
+        "iconId": "cmdOverwrite",
+        "title": "{{i18n.Mtw0OverrideParameter}}"
+      },
+      "Mtw0ShowAddObject": {
+        "iconId": "cmdAdd",
+        "title": "{{i18n.AddToTitle}}",
+        "description": "{{i18n.Mtw0ShowAddObjectDesc}}"
+      },
+      "Mtw0OpenSmartTable": {
+        "iconId": "cmdOpen",
+        "title": "{{i18n.showObjectCell}}"
+      },
+      "Mtw0OpenSmartTableContextMenu": {
+        "iconId": "cmdOpen",
+        "title": "{{i18n.showObjectCell}}"
+      },
+      "Mtw0SmartCurveTableStartEdit": {
+        "iconId": "cmdEdit",
+        "title": "{{i18n.Awp0StartEditTitle}}",
+        "isGroup": false,
+        "isToggle": false
+      },
+      "Mtw0SmartCurveTableCancelEdits": {
+        "iconId": "cmdCancelEdit",
+        "title": "{{i18n.CancelEdit}}",
+        "description": "{{i18n.CancelEditAttributeTableDesc}}",
+        "isGroup": false,
+        "isToggle": false
+      },
+      "Mtw0SmartCurveTableSaveEdits": {
+        "iconId": "cmdSave",
+        "title": "{{i18n.SaveEdit}}",
+        "description": "{{i18n.SaveEditAttributeTableDesc}}",
+        "isGroup": false,
+        "isToggle": false
+      },
+      "Mtw0SmartCurveTableAddRow": {
+        "iconId": "cmdAdd",
+        "title": "{{i18n.add}}",
+        "isGroup": false,
+        "isToggle": false
+      },
+      "Mtw0SmartCurveTableAddDuplicateRows": {
+        "iconId": "cmdDuplicate",
+        "title": "{{i18n.Awp0TablePropertyDuplicateTitle}}",
+        "isGroup": false,
+        "isToggle": false
+      },
+      "Mtw0SmartCurveTableRemoveRows": {
+        "iconId": "cmdRemove",
+        "title": "{{i18n.Awp0TablePropertyRemoveTitle}}",
+        "isGroup": false,
+        "isToggle": false
+      },
+      "Mtw0AddSmartTable": {
+        "iconId": "cmdAdd",
+        "title": "{{i18n.add}}",
+        "isGroup": false,
+        "isToggle": false
+      },
+      "Mtw0RemoveSmartTable": {
+        "iconId": "cmdRemove",
+        "title": "{{i18n.Awp0TablePropertyRemoveTitle}}",
+        "isGroup": false,
+        "isToggle": false
+      },
+      "Mtw0ShowAddParameter": {
+        "iconId": "cmdAdd",
+        "title": "{{i18n.AddParameter}}"
+      },
+      "Mtw0ShowAddClasses": {
+        "iconId": "cmdAdd",
+        "title": "{{i18n.add}}"
+      },
+      "Awp0CustomCut": {
+        "iconId": "cmdRemove",
+        "title": "{{i18n.Awp0CutTitle}}"
+      },
+      "Mtw0CustomCutParameter": {
+        "iconId": "cmdRemove",
+        "title": "{{i18n.CutParameter}}"
+      },
+      "Mtw0CustomCutClass": {
+        "iconId": "cmdRemove",
+        "title": "{{i18n.Awp0CutTitle}}"
+      },
+      "Mtw0ShowAddMetaSingleParameter": {
+        "iconId": "cmdAdd",
+        "title": "{{i18n.AddParameterDescriptor}}"
+      },
+      "Mtw0ShowAddMetaSmartTableParameter": {
+        "iconId": "cmdAdd",
+        "title": "{{i18n.AddParameterDescriptor}}"
+      },
+      "Mtw0InheritMaterial": {
+        "iconId": "cmdOverwrite",
+        "isGroup": false,
+        "title": "{{i18n.Mtw0InheritMaterialTitle}}",
+        "description": "{{i18n.Mtw0InheritMaterialDesc}}"
+      },
+      "Mtw0MaterialSearch": {
+        "iconId": "cmdSearch",
+        "isGroup": false,
+        "title": "{{i18n.materialSearchApplicationTitle}}"
+      },
+      "Mtw0MetaParamRemove": {
+        "iconId": "cmdRemove",
+        "isGroup": false,
+        "title": "{{i18n.remove}}"
+      },
+      "Mtw0AddBaseUnit": {
+        "iconId": "cmdAdd",
+        "isGroup": false,
+        "title": "{{i18n.Mtw0AddBaseUnit}}",
+        "description": "{{i18n.Mtw0AddBaseUnitDesc}}"
+      },
+      "Mtw0AddDerivedUnit": {
+        "iconId": "cmdAdd",
+        "isGroup": false,
+        "title": "{{i18n.Mtw0AddDerivedUnit}}",
+        "description": "{{i18n.Mtw0AddDerivedUnitDesc}}"
+      },
+      "Mtw0AddUnitAliasName": {
+        "iconId": "cmdAdd",
+        "isGroup": false,
+        "title": "{{i18n.Mtw0AddUnitAliasName}}",
+        "description": "{{i18n.Mtw0AddUnitAliasNameDesc}}"
+      },
+      "Mtw0AddUnitCategory": {
+        "iconId": "cmdAdd",
+        "isGroup": false,
+        "title": "{{i18n.Mtw0AddUnitCategory}}",
+        "description": "{{i18n.Mtw0AddUnitCategoryDesc}}"
+      },
+      "Mtw0OverrideSubstance": {
+        "iconId": "cmdOverwrite",
+        "isGroup": false,
+        "title": "{{i18n.Mtw0OverrideSubstance}}",
+        "description": "{{i18n.Mtw0OverrideSubstanceDesc}}"
+      },
+      "Mtw0AddReferenceParameter": {
+        "iconId": "cmdReference",
+        "isGroup": false,
+        "title": "{{i18n.Mtw0AddReferenceParamTitle}}",
+        "description": "{{i18n.Mtw0AddReferenceParamDesc}}"
+      },
+      "Mtw0RemoveMatInheritance": {
+        "iconId": "cmdRemove",
+        "title": "{{i18n.Mtw0RemoveMatInheritanceTitle}}",
+        "description": "{{i18n.Mtw0RemoveMatInheritanceDesc}}",
+        "isGroup": false,
+        "isToggle": false
+      }
+    },
+    "commandHandlers": {
+      "Mtw0ExportMaterialsCommandHandler": {
+        "id": "Mtw0ExportMaterials",
+        "action": "Mtw0ExportMaterialsAction",
+        "activeWhen": true,
+        "visibleWhen": {
+          "condition": "conditions.isCtxMaterialRevisions"
+        }
+      },    
+      "Mtw0ImportUnitsCommandHandler": {
+        "id": "Mtw0ImportUnits",
+        "action": "Mtw0ImportUnitsAction",
+        "activeWhen": true,
+        "visibleWhen": {
+          "condition": "conditions.isCtxFolder"
+        }
+      },    
+      "Mtw0ImportClassesCommandHandler": {
+        "id": "Mtw0ImportClasses",
+        "action": "Mtw0ImportClassesAction",
+        "activeWhen": true,
+        "visibleWhen": {
+          "condition": "conditions.isCtxFolder"
+        }
+      },    
+      "Mtw0ImportMaterialsCommandHandler": {
+        "id": "Mtw0ImportMaterials",
+        "action": "Mtw0ImportMaterialsAction",
+        "activeWhen": true,
+        "visibleWhen": {
+          "condition": "conditions.isMaterialImportAllowed"
+        }
+      },    
+      "Mtw0UnitDeleteCommandHandler": {
+        "id": "Mtw0UnitDeleteCommand",
+        "action": "Mtw0UnitDeleteCommandAction",
+        "activeWhen": true,
+        "visibleWhen": {
+          "condition": "conditions.isVisibleMtw0UnitDeleteCommandAction"
+        },
+        "enableWhen": {
+          "condition": "conditions.isVisibleMtw0UnitDeleteCommandAction"
+        }
+      },
+      "Mtw0ShowSessionOptionsCommandHandler": {
+        "id": "Mtw0ShowSessionOptions",
+        "action": "Mtw0ShowSessionOptionsAction",
+        "activeWhen": true,
+        "visibleWhen": {
+          "condition": "conditions.isVisibleMtw0ShowSessionOptions"
+        }
+      },
+      "Mtw0ShowAddObjectCommandHandler": {
+        "id": "Mtw0ShowAddObject",
+        "action": "addEventChangeOperation",
+        "activeWhen": true,
+        "visibleWhen": {
+          "condition": "conditions.addObjectCmdVisibility"
+        }
+      },
+      "Mtw0OverrideParameterCommandHandler": {
+        "id": "Mtw0OverrideParameter",
+        "action": "Mtw0OverrideParameterAction",
+        "activeWhen": true,
+        "visibleWhen": {
+          "condition": "conditions.isVisibleMtw0OverrideParameter"
+        }
+      },
+      "Mtw0OpenSmartTableCommandHandler": {
+        "id": "Mtw0OpenSmartTable",
+        "activeWhen": true,
+        "visibleWhen": true,
+        "action": "Mtw0OpenSmartTableAction"
+      },
+      "Mtw0OpenSmartTableContextMenuCommandHandler": {
+        "id": "Mtw0OpenSmartTableContextMenu",
+        "activeWhen": true,
+        "visibleWhen": true,
+        "action": "Mtw0OpenSmartTableContextMenuAction"
+      },
+      "Mtw0SmartCurveTableStartEditCommandHandler": {
+        "id": "Mtw0SmartCurveTableStartEdit",
+        "activeWhen": true,
+        "visibleWhen": {
+          "condition": "conditions.isVisibleMtw0SmartCurveTableStartEdit"
+        },
+        "action": "Mtw0SmartCurveTableStartEditAction"
+      },
+      "Mtw0SmartCurveTableCancelEditsCommandHandler": {
+        "id": "Mtw0SmartCurveTableCancelEdits",
+        "activeWhen": true,
+        "visibleWhen": {
+          "condition": "conditions.isVisibleMtw0SmartCurveTableSaveCancelEdits"
+        },
+        "action": "Mtw0SmartCurveTableCancelEditsAction"
+      },
+      "Mtw0SmartCurveTableSaveEditsCommandHandler": {
+        "id": "Mtw0SmartCurveTableSaveEdits",
+        "activeWhen": true,
+        "visibleWhen": {
+          "condition": "conditions.isVisibleMtw0SmartCurveTableSaveCancelEdits"
+        },
+        "action": "Mtw0SmartCurveTableSaveEditsAction"
+      },
+      "Mtw0SmartCurveTableAddRowCommandHandler": {
+        "id": "Mtw0SmartCurveTableAddRow",
+        "activeWhen": true,
+        "visibleWhen": {
+          "condition": "conditions.isVisibleMtw0SmartCurveTableAddRow"
+        },
+        "action": "Mtw0SmartCurveTableAddRowAction"
+      },
+      "Mtw0SmartCurveTableAddDuplicateRowsCommandHandler": {
+        "id": "Mtw0SmartCurveTableAddDuplicateRows",
+        "activeWhen": true,
+        "visibleWhen": {
+          "condition": "conditions.isVisibleMtw0SmartCurveTableDuplicateRows"
+        },
+        "action": "Mtw0SmartCurveTableAddDuplicateRowsAction"
+      },
+      "Mtw0SmartCurveTableRemoveRowsCommandHandler": {
+        "id": "Mtw0SmartCurveTableRemoveRows",
+        "activeWhen": true,
+        "visibleWhen": {
+          "condition": "conditions.isVisibleMtw0SmartCurveTableRemoveRows"
+        },
+        "action": "Mtw0SmartCurveTableRemoveRowsAction"
+      },
+      "Mtw0AddSmartTableCommandHandler": {
+        "id": "Mtw0AddSmartTable",
+        "activeWhen": true,
+        "visibleWhen": {
+          "condition": "conditions.isVisibleMtw0AddSmartTable"
+        },
+        "action": "Mtw0AddSmartTableAction"
+      },
+      "Mtw0RemoveSmartTableCommandHandler": {
+        "id": "Mtw0RemoveSmartTable",
+        "activeWhen": true,
+        "visibleWhen": {
+          "condition": "conditions.isVisibleMtw0RemoveSmartTable"
+        },
+        "action": "performDeleteParameterOperation"
+      },	  
+      "Mtw0CustomCutParameterCommandHandler": {
+        "id": "Mtw0CustomCutParameter",
+        "action": "performDeleteParameterOperation",
+        "activeWhen": true,
+        "visibleWhen": {
+          "condition": "conditions.cutParameterCmdVisibility"
+        }
+      },
+      "Mtw0CustomCutClassCommandHandler": {
+        "id": "Mtw0CustomCutClass",
+        "action": "performDeleteClassOperation",
+        "activeWhen": true,
+        "visibleWhen": {
+          "condition": "conditions.cutClassCmdVisibility"
+        }
+      },
+      "Mtw0ShowAddClassesCommandHandler": {
+        "id": "Mtw0ShowAddClasses",
+        "action": "activateClassesPanel",
+        "activeWhen": true,
+        "visibleWhen": {
+          "condition": "conditions.addClassCmdVisibility"
+        }
+      },
+      "Mtw0ShowAddParameterCommandHandler": {
+        "id": "Mtw0ShowAddParameter",
+        "action": "addEventChangeParameterOperation",
+        "activeWhen": true,
+        "visibleWhen": {
+          "condition": "conditions.addParameterCmdVisibility"
+        }
+      },
+      "Awp0CustomCutCommandHandler": {
+        "id": "Awp0Cut",
+        "action": "performCutOperation",
+        "activeWhen": true,
+        "visibleWhen": {
+          "condition": "conditions.mtw0CutCommandActive"
+        }
+      },
+      "Mtw0ShowAddMetaSingleParameterCommandHandler": {
+        "id": "Mtw0ShowAddMetaSingleParameter",
+        "action": "addEventChangeParameterDescriptorOperation",
+        "activeWhen": true,
+        "visibleWhen": {
+          "condition": "conditions.addParameterDescriptorCmdVisibility"
+        }
+      },
+      "Mtw0ShowAddMetaSmartTableParameterCommandHandler": {
+        "id": "Mtw0ShowAddMetaSmartTableParameter",
+        "action": "addEventChangeSmartTableParameterDescriptorOperation",
+        "activeWhen": true,
+        "visibleWhen": {
+          "condition": "conditions.addSmartTableParameterDescriptorCmdVisibility"
+        }
+      },
+      "Mtw0InheritMaterialCommandHandler": {
+        "id": "Mtw0InheritMaterial",
+        "action": "activateMtw0InheritMaterial",
+        "activeWhen": true,
+        "visibleWhen": {
+          "condition": "conditions.isInheritMaterialCmdVisible"
+        }
+      },
+      "Mtw0MaterialSearchCommandHandler": {
+        "id": "Mtw0MaterialSearch",
+        "action": "activateMaterialSearch",
+        "activeWhen": true,
+        "visibleWhen": {
+          "condition": "conditions.IsMtw0MaterialSearchCmdVisiblityCheck"
+        }
+      },
+      "Mtw0MetaParamRemoveCommandHandler": {
+        "id": "Mtw0MetaParamRemove",
+        "action": "removeMetaParameter",
+        "activeWhen": true,
+        "visibleWhen": true
+      },
+      "Mtw0AddBaseUnitCommandHandler": {
+        "id": "Mtw0AddBaseUnit",
+        "action": "activateMtw0AddBaseUnit",
+        "activeWhen": true,
+        "visibleWhen": {
+          "condition": "conditions.IsMtw0AddBaseUnitCmdVisiblityCheck"
+        }
+      },
+      "Mtw0AddDerivedUnitCommandHandler": {
+        "id": "Mtw0AddDerivedUnit",
+        "action": "activateMtw0AddDerivedUnit",
+        "activeWhen": true,
+        "visibleWhen": {
+          "condition": "conditions.IsMtw0AddDerivedUnitCmdVisiblityCheck"
+        }
+      },
+      "Mtw0AddUnitAliasNameCommandHandler": {
+        "id": "Mtw0AddUnitAliasName",
+        "action": "activateMtw0AddUnitAliasName",
+        "activeWhen": true,
+        "visibleWhen": {
+          "condition": "conditions.IsMtw0AddUnitAliasNameCmdVisiblityCheck"
+        }
+      },
+      "Mtw0AddUnitCategoryCommandHandler": {
+        "id": "Mtw0AddUnitCategory",
+        "action": "activateMtw0AddUnitCategory",
+        "activeWhen": true,
+        "visibleWhen": {
+          "condition": "conditions.IsMtw0AddUnitCategoryCmdVisiblityCheck"
+        }
+      },
+      "Mtw0OverrideSubstanceCommandHandler": {
+        "id": "Mtw0OverrideSubstance",
+        "action": "mtw0OverrideSubstanceAction",
+        "activeWhen": true,
+        "visibleWhen": {
+          "condition": "conditions.IsMtw0OverrideSubstanceCmdVisiblityCheck"
+        }
+      },
+      "Mtw0AddReferenceParameterCommandHandler": {
+        "id": "Mtw0AddReferenceParameter",
+        "action": "activateMtw0AddReferenceParameter",
+        "activeWhen": true,
+        "visibleWhen": {
+          "condition": "conditions.isMtw0AddReferenceParameterCmdVisible"
+        }
+      },
+      "Mtw0RemoveMatInheritanceCommandHandler": {
+        "id": "Mtw0RemoveMatInheritance",
+        "activeWhen": true,
+        "visibleWhen": {
+          "condition": "conditions.isVisibleMtw0RemoveMatInheritance"
+        },
+        "action": "removeMaterialInheritanceOperation"
+      }
+    },
+    "commandPlacements": {
+      "Mtw0ExportMaterialsCommandPlacement": {
+        "id": "Mtw0ExportMaterials",
+        "uiAnchor": "aw_rightWall",
+        "priority": 650,
+        "parentGroupId": "Awp0ShareGroup"
+      },
+      "Mtw0ImportClassesCommandPlacement": {
+        "id": "Mtw0ImportClasses",
+        "uiAnchor": "aw_rightWall",
+        "priority": 630,
+        "parentGroupId": "Awp0NewGroup"
+      },
+      "Mtw0ImportUnitsCommandPlacement": {
+        "id": "Mtw0ImportUnits",
+        "uiAnchor": "aw_rightWall",
+        "priority": 640,
+        "parentGroupId": "Awp0NewGroup"
+      },
+      "Mtw0ImportMaterialsCommandPlacement": {
+        "id": "Mtw0ImportMaterials",
+        "uiAnchor": "aw_rightWall",
+        "priority": 650,
+        "parentGroupId": "Awp0NewGroup"
+      },
+      "Mtw0UnitDeleteCommandCommandPlacement": {
+        "id": "Mtw0UnitDeleteCommand",
+        "uiAnchor": "aw_rightWall",
+        "priority": 500,
+        "parentGroupId": "Awp0EditGroup"
+      },
+      "Mtw0ShowSessionOptionsCommandPlacement": {
+        "id": "Mtw0ShowSessionOptions",
+        "uiAnchor": "aw_userSessionbar",
+        "priority": 100
+      },
+      "Mtw0SmartCurveTableStartEditCommandPlacement": {
+        "id": "Mtw0SmartCurveTableStartEdit",
+        "uiAnchor": "Mtw0SmartCurveTableEditCommandAnchor",
+        "priority": 100
+      },
+      "Mtw0OverrideParameterCommandPlacement": {
+        "id": "Mtw0OverrideParameter",
+        "uiAnchor": "aw_rightWall",
+        "priority": 340,
+        "parentGroupId": "Awp0EditGroup"
+      },
+      "Mtw0OpenSmartTableCommandPlacement": {
+        "id": "Mtw0OpenSmartTable",
+        "uiAnchor": "Mtw0SmartTableListCommandAnchor",
+        "priority": 100,
+        "cellDisplay": {
+          "hover": true,
+          "position": "TOP_RIGHT"
+        }
+      },
+      "Mtw0OpenSmartTableContextMenuCommandPlacement": {
+        "id": "Mtw0OpenSmartTableContextMenu",
+        "uiAnchor": "Mtw0SmartTableListContextMenuCommandAnchor",
+        "priority": 100
+      },
+      "Mtw0SmartCurveTableCancelEditsCommandPlacement": {
+        "id": "Mtw0SmartCurveTableCancelEdits",
+        "uiAnchor": "Mtw0SmartCurveTableEditCommandAnchor",
+        "priority": 150
+      },
+      "Mtw0SmartCurveTableSaveEditsCommandPlacement": {
+        "id": "Mtw0SmartCurveTableSaveEdits",
+        "uiAnchor": "Mtw0SmartCurveTableEditCommandAnchor",
+        "priority": 250
+      },
+      "Mtw0SmartCurveTableAddRowCommandPlacement": {
+        "id": "Mtw0SmartCurveTableAddRow",
+        "uiAnchor": "Mtw0SmartCurveTableAddRemoveDuplicateCommandAnchor",
+        "priority": 100
+      },
+      "Mtw0SmartCurveTableAddDuplicateRowsCommandPlacement": {
+        "id": "Mtw0SmartCurveTableAddDuplicateRows",
+        "uiAnchor": "Mtw0SmartCurveTableAddRemoveDuplicateCommandAnchor",
+        "priority": 150
+      },
+      "Mtw0SmartCurveTableRemoveRowsCommandPlacement": {
+        "id": "Mtw0SmartCurveTableRemoveRows",
+        "uiAnchor": "Mtw0SmartCurveTableAddRemoveDuplicateCommandAnchor",
+        "priority": 250
+      },
+      "Mtw0AddSmartTableCommandPlacement": {
+        "id": "Mtw0AddSmartTable",
+        "uiAnchor": "Mtw0SmartTableAddRemoveCommandAnchor",
+        "priority": 100
+      },
+      "Mtw0RemoveSmartTableCommandPlacement": {
+        "id": "Mtw0RemoveSmartTable",
+        "uiAnchor": "Mtw0SmartTableAddRemoveCommandAnchor",
+        "priority": 250
+      },
+      "Mtw0InheritMaterialCommandPlacement": {
+        "id": "Mtw0InheritMaterial",
+        "uiAnchor": "aw_rightWall",
+        "priority": 620,
+        "parentGroupId": "Awp0ManageGroup"
+      },
+      "Mtw0MaterialSearchToolbar": {
+        "id": "Mtw0MaterialSearch",
+        "uiAnchor": "aw_primaryWorkArea",
+        "priority": 30
+      },
+      "Mtw0MetaParamRemoveCommandPlacement": {
+        "id": "Mtw0MetaParamRemove",
+        "uiAnchor": "mtw0CmdPanelMetaParamAnchor",
+        "priority": 100
+      },
+      "Mtw0AddBaseUnitCommandPlacement": {
+        "id": "Mtw0AddBaseUnit",
+        "uiAnchor": "aw_rightWall",
+        "priority": 250,
+        "parentGroupId": "Awp0NewGroup"
+      },
+      "Mtw0AddDerivedUnitCommandPlacement": {
+        "id": "Mtw0AddDerivedUnit",
+        "uiAnchor": "aw_rightWall",
+        "priority": 250,
+        "parentGroupId": "Awp0NewGroup"
+      },
+      "Mtw0AddUnitAliasNameCommandPlacement": {
+        "id": "Mtw0AddUnitAliasName",
+        "uiAnchor": "aw_rightWall",
+        "priority": 250,
+        "parentGroupId": "Awp0NewGroup"
+      },
+      "Mtw0AddUnitCategoryCommandPlacement": {
+        "id": "Mtw0AddUnitCategory",
+        "uiAnchor": "aw_rightWall",
+        "priority": 250,
+        "parentGroupId": "Awp0NewGroup"
+      },
+      "Mtw0OverrideSubstanceCommandPlacement": {
+        "id": "Mtw0OverrideSubstance",
+        "uiAnchor": "aw_rightWall",
+        "priority": 260,
+        "parentGroupId": "Awp0EditGroup"
+      },
+	  "Mtw0AddReferenceParameterCommandPlacement": {
+        "id": "Mtw0AddReferenceParameter",
+        "uiAnchor": "aw_rightWall",
+        "priority": 620,
+        "parentGroupId": "Awp0ManageGroup"
+      },
+      "Mtw0RemoveMatInheritanceCommandPlacement": {
+        "id": "Mtw0RemoveMatInheritance",
+        "uiAnchor": "aw_rightWall",
+        "priority": 630,
+        "parentGroupId": "Awp0ManageGroup"
+      }
+    },
+    "actions": {
+      "activateClassesPanel": {
+        "actionType": "JSFunction",
+        "method": "activateCommandPanel",
+        "deps": "js/commandPanel.service",
+        "inputData": {
+          "commandId": "Mtw0ShowAddClasses",
+          "location": "aw_toolsAndInfo"
+		}		  
+	  },
+      "Mtw0ExportMaterialsAction": {
+        "actionType": "JSFunction",
+        "method": "activateExportMaterialsPanel",
+        "deps": "js/Mtw0ExportMaterials",
+        "inputData": {
+          "commandId": "Mtw0ExportMaterials",
+          "location": "aw_toolsAndInfo"
+        }
+      },
+      "Mtw0ImportClassesAction": {
+        "actionType": "JSFunction",
+        "method": "activateImportClassesPanel",
+        "deps": "js/Mtw0ImportClasses",
+        "inputData": {
+          "commandId": "Mtw0ImportClasses",
+          "location": "aw_toolsAndInfo"
+        }
+      },
+      "Mtw0ImportUnitsAction": {
+        "actionType": "JSFunction",
+        "method": "activateImportUnitsPanel",
+        "deps": "js/Mtw0ImportUnits",
+        "inputData": {
+          "commandId": "Mtw0ImportUnits",
+          "location": "aw_toolsAndInfo"
+        }
+      },
+      "Mtw0ImportMaterialsAction": {
+        "actionType": "JSFunction",
+        "method": "activateImportMaterialsPanel",
+        "deps": "js/Mtw0ImportMaterials",
+        "inputData": {
+          "commandId": "Mtw0ImportMaterials",
+          "location": "aw_toolsAndInfo"
+        }
+      },
+      "Mtw0UnitDeleteCommandAction": {
+        "actionType": "TcSoaService",
+        "serviceName": "Core-2006-03-DataManagement",
+        "method": "deleteObjects",
+        "inputData": {
+          "objects": [
+            "{{ctx.mselected[0]}}"
+          ]
+        },
+        "events": {
+          "success": [
+            {
+              "name": "cdm.relatedModified",
+              "eventData": {
+                "relatedModified": [
+                  "{{ctx.selected}}"
+                ],
+                "refreshLocationFlag": true
+              }
+            },
+            {
+              "name": "treeGrid.plTable.reload"
+            },
+            {
+              "name": "complete",
+              "eventData": {
+                "source": "toolAndInfoPanel"
+              }
+            }
+          ]
+        },
+        "actionMessages": {
+          "failure": [
+            {
+              "message": "soaOperationFailure"
+            }
+          ]
+        }
+      },
+      "Mtw0ShowSessionOptionsAction": {
+        "actionType": "Event",
+        "method": "Event",
+        "inputData": {
+          "events": [
+            {
+              "name": "awsidenav.openClose",
+              "eventData": {
+                "id": "globalNavigationSideNav",
+                "includeView": "Mtw0ShowIMMSessionOptions",
+                "keepOthersOpen": true,
+                "commandId": "Mtw0ShowSessionOptions"
+              }
+            }
+          ]
+        }
+      },
+      "addEventChangeOperation": {
+        "actionType": "JSFunction",
+        "method": "activateShowAddObjectPanel",
+        "deps": "js/Mtw0ShowAddObjectService",
+        "inputData": {
+          "commandId": "Mtw0ShowAddObject",
+          "location": "aw_toolsAndInfo",
+          "data": "{{data}}",
+          "ctx": "{{ctx}}",
+          "objectSetSource ": "{{commandContext.objectSetSource}}"
+        }
+      },
+      "Mtw0OpenSmartTableAction": {
+        "actionType": "Navigate",
+        "navigateTo": "com_siemens_splm_clientfx_tcui_xrt_showObject",
+        "navigationParams": {
+          "uid": "{{commandContext.vmo.uid}}"
+        }
+      },
+      "Mtw0OpenSmartTableContextMenuAction": {
+        "actionType": "Navigate",
+        "navigateTo": "com_siemens_splm_clientfx_tcui_xrt_showObject",
+        "navigationParams": {
+          "uid": "{{ctx.selected.uid}}"
+        }
+      },
+      "Mtw0SmartCurveTableStartEditAction": {
+        "actionType": "Event",
+        "method": "Event",
+        "inputData": {
+          "events": [
+            {
+              "name": "Mtw0.SmartCurveTable.StartEdit",
+              "eventData": {
+                "ctx": "{{ctx}}",
+                "commandContext": "{{commandContext}}"
+              }
+            }
+          ]
+        }
+      },
+      "Mtw0SmartCurveTableCancelEditsAction": {
+        "actionType": "Event",
+        "method": "Event",
+        "inputData": {
+          "events": [
+            {
+              "name": "Mtw0.SmartCurveTable.CancelEdits",
+              "eventData": {
+                "ctx": "{{ctx}}",
+                "commandContext": "{{commandContext}}"
+              }
+            }
+          ]
+        }
+      },
+      "Mtw0SmartCurveTableSaveEditsAction": {
+        "actionType": "Event",
+        "method": "Event",
+        "inputData": {
+          "events": [
+            {
+              "name": "Mtw0.SmartCurveTable.SaveEdits",
+              "eventData": {
+                "ctx": "{{ctx}}",
+                "commandContext": "{{commandContext}}",
+                "dataProviders": "{{dataProviders}}"
+              }
+            }
+          ]
+        }
+      },
+      "Mtw0SmartCurveTableAddRowAction": {
+        "actionType": "Event",
+        "method": "Event",
+        "inputData": {
+          "events": [
+            {
+              "name": "Mtw0.SmartCurveTable.AddRow",
+              "eventData": {
+                "ctx": "{{ctx}}",
+                "commandContext": "{{commandContext}}"
+              }
+            }
+          ]
+        }
+      },
+      "Mtw0SmartCurveTableAddDuplicateRowsAction": {
+        "actionType": "Event",
+        "method": "Event",
+        "inputData": {
+          "events": [
+            {
+              "name": "Mtw0.SmartCurveTable.DuplicateRows",
+              "eventData": {
+                "ctx": "{{ctx}}",
+                "commandContext": "{{commandContext}}"
+              }
+            }
+          ]
+        }
+      },
+      "Mtw0SmartCurveTableRemoveRowsAction": {
+        "actionType": "Event",
+        "method": "Event",
+        "inputData": {
+          "events": [
+            {
+              "name": "Mtw0.SmartCurveTable.RemoveRows",
+              "eventData": {
+                "ctx": "{{ctx}}",
+                "commandContext": "{{commandContext}}"
+              }
+            }
+          ]
+        }
+      },
+      "Mtw0OverrideParameterAction": {
+        "actionType": "TcSoaService",
+        "serviceName": "Core-2006-03-DataManagement",
+        "deps": "js/Mtw0ShowAddParameterService",
+        "method": "getProperties",
+        "inputData": {
+          "objects": "{{ctx.mselected}}",
+          "attributes": [
+            "mat1Parameter"
+          ]
+        },
+        "policy": {
+          "types": [
+            {
+              "name": "BusinessObject",
+              "properties": [
+                {
+                  "name": "object_type"
+                },
+                {
+                  "name": "object_name"
+                }
+              ]
+            },
+            {
+              "name": "Mat1Parameter",
+              "properties": [
+                {
+                  "name": "mat1MetaParameter",
+                  "modifiers": [
+                    {
+                      "name": "withProperties",
+                      "Value": "true"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "Mat1ParameterDouble",
+              "properties": [
+                {
+                  "name": "mat1Value"
+                },
+                {
+                  "name": "mat1ValueMax"
+                },
+                {
+                  "name": "mat1IsInRange"
+                }
+              ]
+            },
+            {
+              "name": "Mat1ParameterString",
+              "properties": [
+                {
+                  "name": "mat1Value"
+                }
+              ]
+            }
+          ]
+        },
+        "outputData": {
+          "newParameters": "{{function:overrideInheritedParameters}}"
+        },
+        "actionMessages": {
+          "success": [
+            {
+              "message": "Mtw0InheritedParameterOverrideSuccess"
+            }
+          ],
+          "failure": [
+            {
+              "message": "Mtw0InheritedParameterOverrideFail"
+            }
+          ]
+        }
+      },
+      "Mtw0AddSmartTableAction": {
+        "actionType": "JSFunction",
+        "method": "activateShowAddParameterPanel",
+        "deps": "js/Mtw0ShowAddParameterService",
+        "inputData": {
+          "commandId": "Mtw0AddSmartTable",
+          "location": "aw_toolsAndInfo",
+          "data": "{{data}}",
+          "ctx": "{{ctx}}",
+          "objectSetSource ": "{{commandContext.objectSetSource}}"
+        }
+      },
+      "Mtw0AddSmartTableAction2": {
+        "actionType": "Event",
+        "method": "Event",
+        "inputData": {
+          "events": [
+            {
+              "name": "Mtw0.SmartTable.Add",
+              "eventData": {
+                "ctx": "{{ctx}}",
+                "commandContext": "{{commandContext}}"
+              }
+            }
+          ]
+        }
+      },
+      "Mtw0RemoveSmartTableAction": {
+        "actionType": "Event",
+        "method": "Event",
+        "inputData": {
+          "events": [
+            {
+              "name": "Mtw0.SmartCurveTable.RemoveRows",
+              "eventData": {
+                "ctx": "{{ctx}}",
+                "commandContext": "{{commandContext}}"
+              }
+            }
+          ]
+        }
+      },
+      "addEventChangeParameterOperation": {
+        "actionType": "JSFunction",
+        "method": "activateShowAddParameterPanel",
+        "deps": "js/Mtw0ShowAddParameterService",
+        "inputData": {
+          "commandId": "Mtw0ShowAddParameter",
+          "location": "aw_toolsAndInfo",
+          "data": "{{data}}",
+          "ctx": "{{ctx}}",
+          "objectSetSource ": "{{commandContext.objectSetSource}}"
+        }
+      },
+      "addEventChangeParameterDescriptorOperation": {
+        "actionType": "JSFunction",
+        "method": "activateShowAddParameterDescriptorPanel",
+        "deps": "js/Mtw0ShowAddParameterService",
+        "inputData": {
+          "commandId": "Mtw0ShowAddMetaSingleParameter",
+          "location": "aw_toolsAndInfo",
+          "data": "{{data}}",
+          "ctx": "{{ctx}}",
+          "objectSetSource ": "{{commandContext.objectSetSource}}"
+        }
+      },
+      "addEventChangeSmartTableParameterDescriptorOperation": {
+        "actionType": "JSFunction",
+        "method": "activateShowAddSmartTableParameterDescriptorPanel",
+        "deps": "js/Mtw0ShowAddParameterService",
+        "inputData": {
+          "commandId": "Mtw0ShowAddMetaSmartTableParameter",
+          "location": "aw_toolsAndInfo",
+          "data": "{{data}}",
+          "ctx": "{{ctx}}",
+          "objectSetSource ": "{{commandContext.objectSetSource}}"
+        }
+      },
+      "performDeleteClassOperation": {
+        "actionType": "JSFunction",
+        "method": "removeClassFromMaterial",
+        "deps": "js/Mtw0ShowAddClassesService",
+        "inputData": {
+          "data": "{{data}}",
+          "ctx": "{{ctx}}"
+        },
+        "events": {
+          "success": [
+            {
+              "name": "cdm.relatedModified",
+              "eventData": {
+				"relatedModified": [
+					"{{ctx.pselected}}"
+				],
+				"refreshLocationFlag": true
+              }
+            }
+          ]
+        }
+      },
+      "performDeleteParameterOperation": {
+        "actionType": "TcSoaService",
+        "deps": "js/Mtw0ShowAddParameterService",
+        "serviceName": "Core-2006-03-DataManagement",
+        "method": "deleteObjects",
+        "inputData": {
+          "objects": "{{function:getSelectedParametersArray}}"
+        },
+        "events": {
+          "success": [
+            {
+              "name": "cdm.relatedModified",
+              "eventData": {
+                "relatedModified": "{{function:adaptedRelatedModifiedCutInput}}",
+                "createdObjects": "",
+                "childObjects": "{{ctx.mselected}}"
+              }
+            },
+            {
+              "name": "cutToAwClipboard"
+            }
+          ]
+        }
+      },
+      "activateMtw0InheritMaterial": {
+        "actionType": "JSFunction",
+        "method": "activateCommandPanel",
+        "deps": "js/commandPanel.service",
+        "inputData": {
+          "commandId": "Mtw0InheritMaterial",
+          "location": "aw_toolsAndInfo"
+        }
+      },
+      "activateMaterialSearch": {
+        "actionType": "JSFunction",
+        "method": "activateCommandPanel",
+        "deps": "js/commandPanel.service",
+        "inputData": {
+          "commandId": "Mtw0MaterialSearch",
+          "location": "aw_navigation"
+        }
+      },
+      "removeMetaParameter": {
+        "actionType": "JSFunction",
+        "method": "removeMetaParameter",
+        "deps": "js/Mtw0AdvanceMaterialSearch",
+        "inputData": {
+          "commandContext": "{{commandContext}}"
+        }
+      },
+      "activateMtw0AddBaseUnit": {
+        "actionType": "JSFunction",
+        "method": "activateCommandPanel",
+        "deps": "js/commandPanel.service",
+        "inputData": {
+          "commandId": "Mtw0AddBaseUnit",
+          "location": "aw_toolsAndInfo"
+        }
+      },
+      "activateMtw0AddDerivedUnit": {
+        "actionType": "JSFunction",
+        "method": "activateCommandPanel",
+        "deps": "js/commandPanel.service",
+        "inputData": {
+          "commandId": "Mtw0AddDerivedUnit",
+          "location": "aw_toolsAndInfo"
+        }
+      },
+      "activateMtw0AddUnitAliasName": {
+        "actionType": "JSFunction",
+        "method": "activateCommandPanel",
+        "deps": "js/commandPanel.service",
+        "inputData": {
+          "commandId": "Mtw0AddUnitAliasName",
+          "location": "aw_toolsAndInfo"
+        }
+      },
+      "activateMtw0AddUnitCategory": {
+        "actionType": "JSFunction",
+        "method": "activateCommandPanel",
+        "deps": "js/commandPanel.service",
+        "inputData": {
+          "commandId": "Mtw0AddUnitCategory",
+          "location": "aw_toolsAndInfo"
+        }
+      },
+      "mtw0OverrideSubstanceAction": {
+        "actionType": "JSFunctionAsync",
+        "method": "mtw0OverrideSubstanceAction",
+        "inputData": {
+          "selectedObjects": {
+            "$adapt": "{{ctx.mselected}}"
+          }
+        },
+        "deps": "js/Mtw0UtilService"
+      },
+      "activateMtw0AddReferenceParameter": {
+        "actionType": "JSFunction",
+        "method": "activateCommandPanel",
+        "deps": "js/commandPanel.service",
+        "inputData": {
+          "commandId": "Mtw0AddReferenceParameter",
+          "location": "aw_toolsAndInfo"
+        }
+      },
+      "removeMaterialInheritanceOperation": {
+        "actionType": "TcSoaService",
+        "serviceName": "Core-2010-09-DataManagement",
+        "deps": "js/Mtw0CompareMaterialParameterService",
+        "method": "setProperties",
+        "inputData": {
+          "info": [
+            {
+              "object": "{{ctx.selected}}",
+              "vecNameVal": [
+                {
+                  "name": "mat1ExtendsMaterial",
+                  "values": [
+                    ""
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        "events": {
+          "success": [
+            {
+              "name": "cdm.relatedModified",
+              "eventData": {
+                "relatedModified": [
+                  "{{ctx.selected}}"
+                ],
+                "refreshLocationFlag": true
+              }
+            },
+            {
+              "name": "cutToAwClipboard"
+            }
+          ]
+        }
+      }
+    },
+    "functions": {
+      "overrideInheritedParameters": {
+        "functionName": "overrideInheritedParameters",
+        "parameters": [
+          "{{ctx}}",
+          "{{data}}"
+        ]
+      },
+      "getSelectedParametersArray": {
+        "functionName": "getSelectedParametersArray",
+        "parameters": [
+          "{{ctx.mselected}}"
+        ]
+      }
+    },
+    "conditions": {
+      "isMaterialImportAllowed":{
+        "expression": "ctx.selected.modelType.typeHierarchyArray.indexOf('Mat1MatCatalogRevision') > -1 || ctx.pselected.modelType.typeHierarchyArray.indexOf('Folder') > -1 || ctx.selected.modelType.typeHierarchyArray.indexOf('Folder') > -1"
+      },		
+      "isCtxMaterialCatalog":{
+        "expression": "ctx.pselected.modelType.typeHierarchyArray.indexOf('Mat1MatCatalog') > -1 || ctx.selected.modelType.typeHierarchyArray.indexOf('Mat1MatCatalogRevision') > -1"
+      },
+      "isCtxMaterialRevisions":{
+        "expression": "ctx.selected.modelType.typeHierarchyArray.indexOf( 'Mat1MaterialRevision' ) > -1"
+      },
+      "isCtxFolder":{
+        "expression": "ctx.pselected.modelType.typeHierarchyArray.indexOf('Folder') > -1 || ctx.selected.modelType.typeHierarchyArray.indexOf('Folder') > -1"
+      },		
+      "isVisibleMtw0UnitDeleteCommandAction": {
+        "expression": "ctx.sublocation.clientScopeURI === 'showMaterialUnits' && ( ctx.selected.type==='Mat1UnitCategory' || ctx.selected.type==='Mat1BaseUnit' || ctx.selected.type==='Mat1DerivedUnit' || ctx.selected.type==='Mat1UnitAltName')"
+      },
+      "isVisibleMtw0ShowSessionOptions": {
+        "expression": "1 === 1"
+      },
+      "isEcnChangeContextY": {
+        "expression": "ctx.userSession.props.cm0GlobalChangeContext && ctx.userSession.props.cm0GlobalChangeContext.displayValues[0] !== '' && ctx.preferences.CM_enable_global_change_context && ctx.preferences.CM_enable_global_change_context[0] === 'true'"
+      },
+      "isNoChangeContextY": {
+        "expression": "ctx.userSession.props.cm0GlobalChangeContext && ctx.userSession.props.cm0GlobalChangeContext.displayValues[0] === '' && ctx.preferences.CM_enable_global_change_context && ctx.preferences.CM_enable_global_change_context[0] === 'true'"
+      },
+      "addObjectCmdVisibility": {
+        "expression": "(ctx.visibleServerCommands.Mtw0ShowAddObject)&&((commandContext.objectSetSource==='Mat1UsesSubstance.Mat1Substance' && ctx.mselected[0].modelType.typeHierarchyArray.indexOf( 'Mat1MaterialRevision' ) > -1) || (commandContext.objectSetSource==='Mat1MadeFromMaterial.Mat1MaterialRevision' && ctx.mselected[0].modelType.typeHierarchyArray.indexOf( 'Mat1CompMaterialRevision' ) > -1)|| ((commandContext.objectSetSource==='Mat1UsesMaterial.Mat1MaterialRevision' || commandContext.objectSetSource==='Mat1UsesMaterialForCoating.Mat1MaterialRevision') && ((ctx.mselected[0].modelType.typeHierarchyArray.indexOf( 'Part' ) > -1)|| (ctx.mselected[0].modelType.typeHierarchyArray.indexOf( 'CommercialPart Revision' ) > -1)||(ctx.mselected[0].modelType.typeHierarchyArray.indexOf( 'RetailMaterialRevision' ) > -1)||(ctx.mselected[0].modelType.typeHierarchyArray.indexOf( 'Part Revision' ) > -1) || (ctx.mselected[0].modelType.typeHierarchyArray.indexOf( 'ItemRevision' ) > -1)))) "
+      },
+      "isVisibleMtw0SmartCurveTableStartEdit": {
+        "expression": "!ctx.Mtw0SmartCurveTableDataProvider_editInProgress"
+      },
+      "isVisibleMtw0SmartCurveTableSaveCancelEdits": {
+        "expression": "ctx.Mtw0SmartCurveTableDataProvider_editInProgress"
+      },
+      "isVisibleMtw0SmartCurveTableAddRow": {
+        "expression": "( ctx.locationContext.modelObject.type === 'Mat1MaterialRevision' ) || ( ctx.mselected[0].type === 'Mat1SmartCurve' ) || ( ctx.selected.type === 'SmartCurvePoints' && ctx.mselected.length === 1 )"
+      },
+      "isVisibleMtw0SmartCurveTableDuplicateRows": {
+        "expression": "ctx.selected.type === 'SmartCurvePoints' && (!ctx.Mtw0SmartCurveTableDataProvider_editInProgress)"
+      },
+      "isVisibleMtw0SmartCurveTableRemoveRows": {
+        "expression": "ctx.selected.type === 'SmartCurvePoints' && (!ctx.Mtw0SmartCurveTableDataProvider_editInProgress)"
+      },
+      "isVisibleMtw0AddSmartTable": {
+        "expression": "1 === 1"
+      },
+      "isVisibleMtw0OverrideParameter": {
+        "expression": "((ctx.selected.modelType.typeHierarchyArray.indexOf( 'Mat1InheritedParamString' ) > -1) || (ctx.selected.modelType.typeHierarchyArray.indexOf( 'Mat1InheritedParamDouble' ) > -1)) && (ctx.pselected.modelType.typeHierarchyArray.indexOf( 'Mat1MaterialRevision' ) > -1)   && ctx.visibleServerCommands.Awp0StartEdit && ctx['NONE'].canStartEdit()"
+      },
+      "isVisibleMtw0RemoveSmartTable": {
+        "expression": "ctx.mselected.length === 1 && ctx.mselected[0].type === 'Mat1ParameterSmartTable'"
+      },
+      "addParameterCmdVisibility": {
+        "expression": "(ctx.selected.props.is_modifiable.dbValues[0] == '1' && ctx.selected.type==='Mat1MaterialRevision' && commandContext.objectSetSource==='mat1Parameters.Mat1ParameterDouble,mat1Parameters.Mat1ParameterString')"
+      },
+      "addClassCmdVisibility": {
+        "expression": "(ctx.selected.type==='Mat1MaterialRevision') && (ctx.selected.props.is_modifiable.dbValues[0] == '1') && (commandContext.objectSetSource==='mat1MatClassifications.Mat1MatClassification')"
+      },
+      "addParameterDescriptorCmdVisibility": {
+        "expression": "(ctx.selected.props.is_modifiable.dbValues[0] == '1' && ctx.selected.type==='Mat1MatCatalogRevision' && commandContext.objectSetSource==='mat1MetaParameters.Mat1MetaSingleParameter')"
+      },
+      "addSmartTableParameterDescriptorCmdVisibility": {
+        "expression": "(ctx.selected.props.is_modifiable.dbValues[0] == '1' && ctx.selected.type==='Mat1MatCatalogRevision' && commandContext.objectSetSource==='mat1MetaParameters.Mat1MetaSmartTable')"
+      },
+      "mtw0CutCommandActive": {
+        "expression": "(!(ctx.selected.type==='Mat1ParameterDouble' || ctx.selected.type==='Mat1ParameterString' || ctx.selected.type==='Mat1ParameterSmartTable' ))"
+      },
+      "cutParameterCmdVisibility": {
+        "expression": "ctx.pselected.props.is_modifiable.dbValues[0] == '1' && (!(ctx.selected.type==='Mat1MaterialRevision' && commandContext.objectSetSource==='mat1Parameters.Mat1ParameterDouble,mat1Parameters.Mat1ParameterString,mat1Parameters.Mat1ParameterSmartTable'))"
+      },
+      "cutClassCmdVisibility": {
+        "expression": "(ctx.pselected) && (ctx.selected) && (ctx.pselected.props.is_modifiable.dbValues[0] == '1') && (ctx.selected.modelType.typeHierarchyArray.includes('Mat1MatClassification')) && (ctx.pselected.modelType.typeHierarchyArray.includes('Mat1MaterialRevision')) && (commandContext.objectSetSource==='mat1MatClassifications.Mat1MatClassification')"
+      },
+      "isInheritMaterialCmdVisible": {
+        "expression": "ctx.mselected.length === 1 && (ctx.selected.modelType.typeHierarchyArray.indexOf( 'Mat1MaterialRevision' ) > -1) && ctx.visibleServerCommands.Awp0StartEdit && ctx['NONE'].canStartEdit()"
+      },
+      "IsMtw0MaterialSearchCmdVisiblityCheck": {
+        "expression": "ctx.sublocation.clientScopeURI === 'Mtw0MaterialSearch'"
+      },
+      "IsMtw0AddBaseUnitCmdVisiblityCheck": {
+        "expression": "ctx.sublocation.clientScopeURI === 'showMaterialUnits' && ctx.selected.type==='Mat1UnitCategory'"
+      },
+      "IsMtw0AddDerivedUnitCmdVisiblityCheck": {
+        "expression": "ctx.sublocation.clientScopeURI === 'showMaterialUnits' && ctx.selected.type==='Mat1BaseUnit'"
+      },
+      "IsMtw0AddUnitAliasNameCmdVisiblityCheck": {
+        "expression": "ctx.sublocation.clientScopeURI === 'showMaterialUnits' && ctx.selected.type==='Mat1DerivedUnit'"
+      },
+      "IsMtw0AddUnitCategoryCmdVisiblityCheck": {
+        "expression": "ctx.sublocation.clientScopeURI === 'showMaterialUnits'"
+      },
+      "IsMtw0OverrideSubstanceCmdVisiblityCheck": {
+        "expression": "ctx.mselected.length === 1 && (ctx.mselected[0].modelType.typeHierarchyArray.indexOf( 'Mat1Substance' ) > -1) && (ctx.pselected.modelType.typeHierarchyArray.indexOf( 'Mat1MaterialRevision' ) > -1) && ( ctx.relationContext.relationInfo[0].relationObject.props.mat1OriginalUsesSubstance.dbValue !== null )"
+      },
+      "IsMtw0ExportMaterialCmdVisiblityCheck": {
+        "expression": "(ctx.selected.modelType.typeHierarchyArray.indexOf( 'Mat1MaterialRevision' ) > -1) ||( ctx.selected.modelType.typeHierarchyArray.indexOf( 'Mat1MatCatalog' ) > -1) "
+      },
+      "isMtw0AddReferenceParameterCmdVisible": {
+        "expression": "(((ctx.pselected.modelType.typeHierarchyArray.indexOf( 'Mat1MaterialRevision' ) > -1 || ctx.selected.modelType.typeHierarchyArray.indexOf( 'Mat1MaterialRevision' ) > -1) && ctx.mselected.length === 1 && ( ctx.mselected[0].modelType.typeHierarchyArray.indexOf( 'Mat1ParameterDouble' ) > -1 || ctx.mselected[0].modelType.typeHierarchyArray.indexOf( 'Mat1ParameterString' ) > -1)) || (ctx.pselected.type==='Mat1ParameterSmartTable' && ctx.mselected.length === 1))"
+      },
+      "isVisibleMtw0RemoveMatInheritance": {
+        "expression": "ctx.mselected.length === 1 && (ctx.selected.modelType.typeHierarchyArray.indexOf( 'Mat1MaterialRevision' ) > -1) && ctx.visibleServerCommands.Awp0StartEdit && ctx['NONE'].canStartEdit()"
+      }
+    },
+    "i18n": {
+	   "soaOperationFailure": {
+        "messageType": "ERROR",
+        "messageText": "{{errorCode}}"
+      },
+      "AddToTitle": [
+        "MaterialMgmtMessages"
+      ],
+      "Mtw0InheritedParameterOverrideSuccess": [
+        "MaterialMgmtMessages"
+      ],
+      "Mtw0InheritedParameterOverrideFail": [
+        "MaterialMgmtMessages"
+      ],
+      "Mtw0OverrideParameter": [
+        "MaterialMgmtMessages"
+      ],
+      "Mtw0ShowObjectDesc": [
+        "MaterialMgmtMessages"
+      ],
+      "Mtw0ShowAddObjectDesc": [
+        "MaterialMgmtMessages"
+      ],
+      "Mtw0ShowSessionOptions": [
+        "MaterialMgmtMessages"
+      ],
+      "Mtw0ShowSessionOptionsDesc": [
+        "MaterialMgmtMessages"
+      ],
+      "Mtw0CompareMatParamTitle": [
+        "MaterialMgmtMessages"
+      ],
+      "Mtw0CompareMatParamDesc": [
+        "MaterialMgmtMessages"
+      ],
+      "Mtw0InheritMaterialTitle": [
+        "MaterialMgmtMessages"
+      ],
+      "Mtw0InheritMaterialDesc": [
+        "MaterialMgmtMessages"
+      ],
+      "materialSearchApplicationTitle": [
+        "Mtw0MaterialSearchMessages"
+      ],
+      "Mtw0AddBaseUnit": [
+        "MaterialMgmtMessages"
+      ],
+      "Mtw0AddBaseUnitDesc": [
+        "MaterialMgmtMessages"
+      ],
+      "Mtw0AddDerivedUnit": [
+        "MaterialMgmtMessages"
+      ],
+      "Mtw0AddDerivedUnitDesc": [
+        "MaterialMgmtMessages"
+      ],
+      "Mtw0AddUnitAliasName": [
+        "MaterialMgmtMessages"
+      ],
+      "Mtw0AddUnitAliasNameDesc": [
+        "MaterialMgmtMessages"
+      ],
+      "Mtw0AddUnitCategory": [
+        "MaterialMgmtMessages"
+      ],
+      "Mtw0AddUnitCategoryDesc": [
+        "MaterialMgmtMessages"
+      ],
+      "Mtw0OverrideSubstance": [
+        "MaterialMgmtMessages"
+      ],
+      "Mtw0OverrideSubstanceDesc": [
+        "MaterialMgmtMessages"
+      ],
+      "Mtw0AddReferenceParamTitle": [
+        "MaterialMgmtMessages"
+      ],
+      "Mtw0AddReferenceParamDesc": [
+        "MaterialMgmtMessages"
+      ],
+      "Mtw0RemoveMatInheritanceTitle": [
+        "MaterialMgmtMessages"
+      ],
+      "Mtw0RemoveMatInheritanceDesc": [
+        "MaterialMgmtMessages"
+      ],
+	  "Mtw0ImportMaterialsTitle": [
+        "MaterialMgmtMessages"
+      ],
+      "Mtw0ExportMaterialsTitle": [
+        "MaterialMgmtMessages"
+      ],
+	  "Mtw0ExportMaterialDesc": [
+        "MaterialMgmtMessages"
+      ],
+      "Mtw0ImportMaterialsDesc": [
+        "MaterialMgmtMessages"
+      ],
+      "Mtw0ImportClassesTitle": [
+        "MaterialMgmtMessages"
+      ],
+      "Mtw0ImportClassesDesc": [
+        "MaterialMgmtMessages"
+      ],
+      "Mtw0ImportUnitsTitle": [
+        "MaterialMgmtMessages"
+      ],
+      "Mtw0ImportUnitsDesc": [
+        "MaterialMgmtMessages"
+      ]
+    }
+  },
+  "highlighter": {
+    "searchHighlighter": {
+      "subLocationName": "com_siemens_splm_client_mtw0material_SearchLocation",
+      "highlightStyle": "<span class=\"aw-widgets-showCellHighlighter\">$1</span>",
+      "conditions": {
+        "highlightCondition": {
+          "expression": "true"
+        }
+      }
+    }
+  },
+  "secondaryWorkareaTabs": [
+    {
+      "name": {
+        "source": "/i18n/MaterialMgmtMessages",
+        "key": "Mtw0CompareMatParamTitle"
+      },
+      "priority": 200,
+      "view": "Mtw0CompareMaterialParameter",
+      "visibleWhen": {
+        "$and": [
+          {
+            "$source": "ctx.mselected.length",
+            "$query": {
+              "$gt": 1
+            }
+          },
+          {
+            "$source": "ctx.mselected",
+            "$query": {
+              "$all": {
+                "$source": "modelType.typeHierarchyArray",
+                "$query": {
+                  "$in": [
+                    "Mat1MaterialRevision"
+                  ]
+                }
+              }
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "states": {
+    "com_siemens_splm_client_materialsearch_SearchLocation": {
+      "controller": "DefaultLocationCtrl",
+      "data": {
+        "browserSubTitle": {
+          "source": "/i18n/Mtw0MaterialSearchMessages",
+          "key": "materialSearchApplicationTitle"
+        },
+        "headerTitle": {
+          "source": "/i18n/Mtw0MaterialSearchMessages",
+          "key": "materialSearchApplicationTitle"
+        },
+        "propertyPolicy": "/policies/searchObjectPropertyPolicy.json"
+      },
+      "dependencies": [
+        "js/aw.default.location.controller"
+      ],
+      "templateUrl": "/html/aw.default.location.html"
+    },
+    "Mtw0MaterialSearch": {
+      "controller": "MaterialSearchSubLocationCtrl",
+      "data": {
+        "breadcrumbConfig": {
+          "type": "navigate",
+          "noBreadCrumb": "false"
+        },
+        "source": "primaryWorkArea",
+        "priority": 400,
+        "label": {
+          "source": "/i18n/Mtw0MaterialSearchMessages",
+          "key": "search"
+        },
+        "clientScopeURI": "Awp0SearchResults",
+        "nameToken": "com.siemens.splm.client.search:MaterialSearchSubLocation",
+        "viewBase": "Mtw0MaterialSearch",
+        "viewModes": {
+          "SummaryView": {
+            "primaryWorkArea": "list",
+            "secondaryWorkArea": true
+          },
+          "ListView": {
+            "primaryWorkArea": "list",
+            "secondaryWorkArea": true
+          }
+        }
+      },
+      "dependencies": [
+        "js/aw.materialSearch.sublocation.controller"
+      ],
+      "parent": "com_siemens_splm_client_materialsearch_SearchLocation",
+      "type": "subLocation",
+      "url": "/Mtw0MaterialSearch",
+      "templateUrl": "/html/aw.native.sublocation.html"
+    },
+    "com_siemens_splm_client_materialmgmt_DeclarationLocation": {
+      "data": {
+        "browserTitle": {
+          "source": "/i18n/MaterialMgmtMessages",
+          "key": "unitsLocationTitle"
+        },
+        "headerTitle": {
+          "source": "/i18n/MaterialMgmtMessages",
+          "key": "unitsLocationTitle"
+        }
+      },
+      "type": "location"
+    },
+    "Mtw0ShowMaterialUnitsDashBoard": {
+      "controller": "NativeSubLocationCtrl",
+      "data": {
+        "breadcrumbConfig": {
+          "type": "navigate",
+          "noBreadCrumb": "false"
+        },
+        "source": "primaryWorkArea",
+        "priority": 0,
+        "label": {
+          "source": "/i18n/MaterialMgmtMessages",
+          "key": "unitSubLocationTitle"
+        },
+        "clientScopeURI": "showMaterialUnits",
+        "nameToken": "com.siemens.splm.client.materialmgmt:materialUnitsSubLocation",
+        "viewModes": {
+          "TreeView": {
+            "primaryWorkArea": "tree",
+            "secondaryWorkArea": false
+          },
+          "TreeSummaryView": {
+            "primaryWorkArea": "tree",
+            "secondaryWorkArea": true
+          }
+        },
+        "defaultDisplayMode": "TreeSummaryView",
+        "viewBase": "Mtw0ShowMaterialUnits"
+      },
+      "parent": "com_siemens_splm_client_materialmgmt_DeclarationLocation",
+      "dependencies": [
+        "js/aw.native.sublocation.controller"
+      ],
+      "type": "subLocation",
+      "url": "/showMaterialUnits",
+      "templateUrl": "/html/aw.native.sublocation.html"
+    }
+  },
+  "typeIconsRegistry": [
+    {
+      "type": {
+        "names": [
+          "Mtw0MaterialSubstanceInfo"
+        ],
+        "prop": {
+          "names": [
+            "mtw0Material"
+          ],
+          "type": {
+            "names": [
+              "Mat1MaterialRevision"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "type": {
+        "names": [
+          "Mtw0MaterialSubstanceInfo"
+        ],
+        "prop": {
+          "names": [
+            "mtw0Substance"
+          ],
+          "type": {
+            "names": [
+              "Mat1Substance"
+            ]
+          }
+        }
+      }
+    }
+  ],
+  "typeProperties": {
+    "typeProperties": {
+      "Mtw0MaterialSubstanceInfo": {
+        "displayProperty": "object_string",
+        "additionalProperties": [
+          {
+            "name": "mtw0Material"
+          },
+          {
+            "name": "mtw0Substance"
+          }
+        ]
+      },
+      "ItemRevision": {
+        "additionalProperties": [
+          {
+            "name": "VMRepresents"
+          }
+        ]
+      }
+    }
+  }
+}

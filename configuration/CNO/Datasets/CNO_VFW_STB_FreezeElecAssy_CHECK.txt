@@ -1,0 +1,22 @@
+############################################################################################################
+#  CNO Check Definition File
+############################################################################################################
+# Version History
+#
+# Version    Date           Name               Description of Change
+# 1.0        15-03-2022     testu     Initial
+############################################################################################################
+
+#ID=STB-SRS610-A;scope=object;CRITERIA=AND;CHECK=R5ElectricAssyRevision>structure_revisions>C:PSBOMViewRevision
+C:PSBOMViewRevision:PSBOMView_Name§count gt 0§*~A BOM must be present~ At least one BOM exist
+
+
+# root object
+root:C:ItemRevision:checked_out§not allowed§True&&true&&Y&&Yes~Root object is checked-out~Root object is checked-in
+root:C:ItemRevision:last_release_status§allowed§empty~Root object already have a status [VAL_OBJECT:last_release_status]~Root object will get status 20
+
+#not compatible with a reuse of VFW at start of WF: STB system is already setting this value before the workflow actually start
+#root:C:ItemRevision:fnd0InProcess§not allowed§regex(^[Tt]rue$)~Root object is already inside a workflow~no active Workflow is running on Root object
+#Worfklow solution
+C:EPMTask:object_name§count lt 2§*~Object is already inside another workflow, list: [C:EPMTask:object_name]~no active Workflow is running
+#UI solution is handle by CNO_VFW_CHECK_RULES

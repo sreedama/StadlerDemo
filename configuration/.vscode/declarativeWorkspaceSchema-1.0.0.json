@@ -1,0 +1,219 @@
+{
+    "$schema": "http://json-schema.org/draft-06/schema#",
+    "description": "This is the schema the declarative workspace (in JSON format) must adhere to. The Apollo audit check validates all workspace JSON files against this schema. For explanation of the keywords of this schema, please visit https://ajv.js.org/keywords.html",
+    "definitions": {
+        "conditionOrBoolDef": {
+            "oneOf": [ {
+                    "type": "object",
+                    "properties": {
+                        "condition": {
+                            "type": "string",
+                            "description": "Condition expression that evaluates to : 'true' or 'false'"
+                        }
+                    }
+                },
+                {
+                    "type": "boolean"
+                }
+            ]
+        },
+        "conditionDef": {
+            "additionalProperties": false,
+            "type": "object",
+            "description": "Expressions can be defined as simple strings or object.",
+            "properties": {
+                "expression": {
+                    "$ref": "#/definitions/expressionStringOrObjectDef"
+                }
+            },
+            "required": [
+                "expression"
+            ]
+        },
+        "expressionStringOrObjectDef": {
+            "oneOf": [ {
+                    "type": "object",
+                    "description": "Expression can be defined as object with the support of below operators.",
+                    "additionalProperties": false,
+                    "properties": {
+                        "$source": {
+                            "$ref": "#/definitions/sourceStringOrObjectDef",
+                            "description": "Indicates the reference on data context node to be used as starting point for evaluation. For ex. 'ctx.selected'"
+                        },
+                        "$query": {
+                            "type": "object",
+                            "description": "Defines the query to be executed on the source"
+                        },
+                        "$and": {
+                            "type": "array",
+                            "description": "Indicates logical 'AND' of each query result"
+                        },
+                        "$or": {
+                            "type": "array",
+                            "description": "Indicates logical 'OR' of each query result"
+                        },
+                        "$all": {
+                            "type": "array",
+                            "description": "Indicates logical 'ALL' of each query result"
+                        },
+                        "$eventSource": {
+                            "type": "string",
+                            "description": "This operator lets user specify the viewId or viewName or 'self' to write a condition to enable the events to be filtered out based on whether or not it is triggered from the same viewModel."
+                        },
+                        "$not": {
+                            "type": "object",
+                            "description": "Indicates logical 'NOT' of a query result"
+                        }
+                    }
+                },
+                {
+                    "type": "string",
+                    "description": "Expression as simple string: 'expression': 'ctx.mselected && ctx.mselected.length > 1'"
+                }
+            ]
+        },
+        "sourceStringOrObjectDef": {
+            "oneOf": [ {
+                    "type": "string"
+                },
+                {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "properties": {
+                        "$adapt": {
+                            "type": "string",
+                            "description": "Indicates that the resulting source should be adapted before evaluating the query"
+                        }
+                    }
+                }
+            ]
+        }
+    },
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {
+        "schemaVersion": {
+            "type": [ "string", "integer" ],
+            "description": "Version of the schema it complies with"
+
+        },
+        "workspaceId": {
+            "type": "string",
+            "description": "A unique identifier string for the workspace"
+        },
+        "workspaceName": {
+            "type": [ "string", "object" ],
+            "additionalProperties": false,
+            "properties": {
+                "source": {
+                    "type": "string"
+                },
+                "key": {
+                    "type": "string"
+                }
+            }
+        },
+        "workspaceType": {
+            "type": "string",
+            "description": "A string value specifying the type of workspace.The allowed values are - 'Inclusive','Exclusive' ",
+            "enum": [ "Inclusive", "Exclusive" ]
+        },
+        "defaultPage": {
+            "type": "string",
+            "description": "The page which will be shown by default when user logs in / changes workspace"
+        },
+        "includeInSolutions": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            },
+            "minItems": 1,
+            "uniqueItems": true
+        },
+        "availablePages": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            },
+            "minItems": 1,
+            "uniqueItems": true
+        },
+        "includedCommands": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            },
+            "minItems": 0,
+            "uniqueItems": true
+        },
+        "excludedCommands": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            },
+            "minItems": 0,
+            "uniqueItems": true
+        },
+        "availableNavigations": {
+            "type": "array",
+            "description": "An array of json object defining configurable behavior for actions",
+            "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                    "key": {
+                        "type": "string",
+                        "description": "action id"
+                    },
+                    "page": {
+                        "type": "string",
+                        "description": "The id of the page to navigate to"
+                    },
+                    "params": {
+                        "type": "object",
+                        "description": "The set of parameters that are added to URL when user is navigated to designated page"
+                    },
+                    "activeWhen": {
+                        "$ref": "#/definitions/conditionOrBoolDef",
+                        "description": "The name of the declarative condition which decides which navigation configuration to pick"
+                    }
+                }
+            },
+            "minItems": 1,
+            "uniqueItems": true
+        },
+        "availableContextConfigurations": {
+            "type": "array",
+            "description": "It's an Optional parameter and it's an array of strings where each value is the contextId for each of link which would show-up in context control while working in a specific workspace. Each value is the state defined in contextConfiguration.json.If availableContextConfigurations is not defined, then all of the contextIds/contextConfiguration available in the kit would show up.",
+            "items": {
+                "type": "string"
+            },
+            "minItems": 1,
+            "uniqueItems": true
+        },
+        "scope": {
+            "type": "string",
+            "description": "scope of the workspace"
+        },
+        "conditions": {
+            "type": "object",
+            "description": "Conditions provide live logic evaluation. They can evaluate to true/false. They can be used in visible-when clauses and can be used for event handling (onEvent handler). The data value can be live evaluated by condition. The conditions can refer to view model state and can update view model state. They can leverage Boolean condition expressions like '&&', '||', '==', '!='",
+            "patternProperties": {
+                "\\b[a-z]+[A-Z]*([A-Z]*[a-z]*[0-9]*)*\\b": {
+                    "$ref": "#/definitions/conditionDef"
+                }
+            }
+        },
+        "settings": {
+            "type": "object",
+            "description": "Additional workspace settings which can be supplied to ctx and read at runtime."
+        }
+    },
+    "required": [
+        "schemaVersion",
+        "workspaceId",
+        "workspaceName",
+        "workspaceType",
+        "defaultPage"
+    ]
+}

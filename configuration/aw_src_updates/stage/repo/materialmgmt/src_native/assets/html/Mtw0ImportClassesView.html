@@ -1,0 +1,13 @@
+<aw-command-panel caption="i18n.Mtw0ImportClasses">
+    <aw-panel-body>
+        <aw-listbox prop="data.catalogListBox" list="data.catalogs" is-select-only="true"></aw-listbox>
+        <aw-label prop="data.selectFile"></aw-label>
+        <aw-file-upload type-filter=".csv" is-required="true"></aw-file-upload>
+    </aw-panel-body>
+
+    <aw-panel-footer> 
+        <aw-button action="getFMSFileTicket" visible-when="(data.fileName && data.fileName != '')" >
+            <aw-i18n>i18n.Mtw0ImportClasses</aw-i18n>
+        </aw-button>
+    </aw-panel-footer>   
+</aw-command-panel>

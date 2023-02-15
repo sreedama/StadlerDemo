@@ -1,0 +1,84 @@
+############################################################################################################
+#  CNO Check Definition File
+############################################################################################################
+# Version History
+#
+# Version    Date           Name               Description of Change
+# 1.0        01-06-2022     testu     Initial
+############################################################################################################
+
+#find in process
+SR5TechDocumentRevision:fnd0InProcess§not allowed§regex(^[TtWw][RrAa][UuHh][EeRr]$)~Object is already inside another workflow~Object is not inside another workflow
+
+#seleted object
+root:C:ItemRevision:DB_Type§allowed§SR5TechDocumentRevision||SR5CoatingStructRevision~only Tech Doc and Coating Structure are accepted~Tech Doc and Coating Structure is accepted
+
+#Content
+SR5TechDocumentRevision:DocumentContent§not allowed§empty~Attribute Document Content must be filled~Attribute Document Content is not empty
+
+#Dataset
+C:Dataset:object_type§count gt 0§*~Dataset must exist (Word, Excel, PPT, PDF, JPEG, etc. …)~Dataset exist
+
+#language
+C:Dataset:DocumentLanguage§not allowed§empty~Document language must be set~Language is set
+
+#ConfidentialityClass
+SR5TechDocument:ConfidentialityClass§not allowed§ &&empty~Confidentiality Class must be defined~Confidentiality Class is defined
+
+#checked-out
+C:Dataset:checked_out§not allowed§Y~Object [VAL_OBJECT:object_type] is checked-out~Object [VAL_OBJECT:object_type] is checked_in
+C:Form:checked_out§not allowed§Y~Object [VAL_OBJECT:object_type] is checked-out~Object [VAL_OBJECT:object_type] is checked_in
+SR5TechDocumentRevision:checked_out§not allowed§Y~Object [VAL_OBJECT:DB_Type] is checked-out~Object [VAL_OBJECT:DB_Type] is checked_in
+
+#File
+ImanFile:ByteSize§gt§10~Corrupt File: smaller than 10 b~File bigger than 10 b
+
+#Named Reference exist
+C:Dataset:NamedReference§not allowed§empty~missing named reference~named reference exist
+
+#named Reference must be unsique
+ID=File;scope=object;CRITERIA=CONDITION;CHECK=C:Dataset:object_type§not allowed§CATPart&&CATProduct&&CATDrawing~List of Dataset which could have more than one named reference
+ID=File;scope=object;CRITERIA=CONDITION;CHECK=C:Dataset:NamedReference§not allowed§empty
+ID=File;scope=object;CRITERIA=AND;CHECK=C:Dataset:FileType§not allowed§regex(.*,.*)~named reference is not unique~named reference is unique
+
+#Content of named reference
+#ID=File;scope=object;CRITERIA=CONDITION;CHECK=C:Dataset:object_type§allowed§PDF||MS W*||MS E*||MS P*||Text||HTML||XML*
+#ID=File;scope=object;CRITERIA=AND;CHECK=C:Dataset:need_content§eq§extern(callDocumentChecker("[VAL_OBJECT>ref_list>ImanFile:FILE_EXPORT]","Quick"))~WARNING: INFO: file probably empty, stadler has not be found inside this [VAL_OBJECT:object_type]~text marker found
+
+#ID=File;scope=object;CRITERIA=CONDITION;CHECK=C:Dataset:object_type§allowed§PDF||MS W*||MS E*||MS P*||Text||HTML||XML*
+#ID=File;scope=object;CRITERIA=OR;CHECK=C:Dataset:need_content§eq§extern(callDocumentChecker("[VAL_OBJECT>ref_list>ImanFile:FILE_EXPORT]","a"))~WARNING: INFO: file probably empty, stadler has not be found inside this [VAL_OBJECT:object_type]~text marker found
+#ID=File;scope=object;CRITERIA=OR;CHECK=C:Dataset:need_content§eq§extern(callDocumentChecker("[VAL_OBJECT>ref_list>ImanFile:FILE_EXPORT]","b"))~WARNING: INFO: file probably empty, stadler has not be found inside this [VAL_OBJECT:object_type]~text marker found
+#ID=File;scope=object;CRITERIA=OR;CHECK=C:Dataset:need_content§eq§extern(callDocumentChecker("[VAL_OBJECT>ref_list>ImanFile:FILE_EXPORT]","c"))~WARNING: INFO: file probably empty, stadler has not be found inside this [VAL_OBJECT:object_type]~text marker found
+#ID=File;scope=object;CRITERIA=OR;CHECK=C:Dataset:need_content§eq§extern(callDocumentChecker("[VAL_OBJECT>ref_list>ImanFile:FILE_EXPORT]","d"))~WARNING: INFO: file probably empty, stadler has not be found inside this [VAL_OBJECT:object_type]~text marker found
+#ID=File;scope=object;CRITERIA=OR;CHECK=C:Dataset:need_content§eq§extern(callDocumentChecker("[VAL_OBJECT>ref_list>ImanFile:FILE_EXPORT]","e"))~WARNING: INFO: file probably empty, stadler has not be found inside this [VAL_OBJECT:object_type]~text marker found
+#ID=File;scope=object;CRITERIA=OR;CHECK=C:Dataset:need_content§eq§extern(callDocumentChecker("[VAL_OBJECT>ref_list>ImanFile:FILE_EXPORT]","f"))~WARNING: INFO: file probably empty, stadler has not be found inside this [VAL_OBJECT:object_type]~text marker found
+#ID=File;scope=object;CRITERIA=OR;CHECK=C:Dataset:need_content§eq§extern(callDocumentChecker("[VAL_OBJECT>ref_list>ImanFile:FILE_EXPORT]","g"))~WARNING: INFO: file probably empty, stadler has not be found inside this [VAL_OBJECT:object_type]~text marker found
+#ID=File;scope=object;CRITERIA=OR;CHECK=C:Dataset:need_content§eq§extern(callDocumentChecker("[VAL_OBJECT>ref_list>ImanFile:FILE_EXPORT]","h"))~WARNING: INFO: file probably empty, stadler has not be found inside this [VAL_OBJECT:object_type]~text marker found
+#ID=File;scope=object;CRITERIA=OR;CHECK=C:Dataset:need_content§eq§extern(callDocumentChecker("[VAL_OBJECT>ref_list>ImanFile:FILE_EXPORT]","i"))~WARNING: INFO: file probably empty, stadler has not be found inside this [VAL_OBJECT:object_type]~text marker found
+#ID=File;scope=object;CRITERIA=OR;CHECK=C:Dataset:need_content§eq§extern(callDocumentChecker("[VAL_OBJECT>ref_list>ImanFile:FILE_EXPORT]","j"))~WARNING: INFO: file probably empty, stadler has not be found inside this [VAL_OBJECT:object_type]~text marker found
+#ID=File;scope=object;CRITERIA=OR;CHECK=C:Dataset:need_content§eq§extern(callDocumentChecker("[VAL_OBJECT>ref_list>ImanFile:FILE_EXPORT]","k"))~WARNING: INFO: file probably empty, stadler has not be found inside this [VAL_OBJECT:object_type]~text marker found
+#ID=File;scope=object;CRITERIA=OR;CHECK=C:Dataset:need_content§eq§extern(callDocumentChecker("[VAL_OBJECT>ref_list>ImanFile:FILE_EXPORT]","l"))~WARNING: INFO: file probably empty, stadler has not be found inside this [VAL_OBJECT:object_type]~text marker found
+#ID=File;scope=object;CRITERIA=OR;CHECK=C:Dataset:need_content§eq§extern(callDocumentChecker("[VAL_OBJECT>ref_list>ImanFile:FILE_EXPORT]","m"))~WARNING: INFO: file probably empty, stadler has not be found inside this [VAL_OBJECT:object_type]~text marker found
+#ID=File;scope=object;CRITERIA=OR;CHECK=C:Dataset:need_content§eq§extern(callDocumentChecker("[VAL_OBJECT>ref_list>ImanFile:FILE_EXPORT]","n"))~WARNING: INFO: file probably empty, stadler has not be found inside this [VAL_OBJECT:object_type]~text marker found
+#ID=File;scope=object;CRITERIA=OR;CHECK=C:Dataset:need_content§eq§extern(callDocumentChecker("[VAL_OBJECT>ref_list>ImanFile:FILE_EXPORT]","o"))~WARNING: INFO: file probably empty, stadler has not be found inside this [VAL_OBJECT:object_type]~text marker found
+#ID=File;scope=object;CRITERIA=OR;CHECK=C:Dataset:need_content§eq§extern(callDocumentChecker("[VAL_OBJECT>ref_list>ImanFile:FILE_EXPORT]","p"))~WARNING: INFO: file probably empty, stadler has not be found inside this [VAL_OBJECT:object_type]~text marker found
+#ID=File;scope=object;CRITERIA=OR;CHECK=C:Dataset:need_content§eq§extern(callDocumentChecker("[VAL_OBJECT>ref_list>ImanFile:FILE_EXPORT]","q"))~WARNING: INFO: file probably empty, stadler has not be found inside this [VAL_OBJECT:object_type]~text marker found
+#ID=File;scope=object;CRITERIA=OR;CHECK=C:Dataset:need_content§eq§extern(callDocumentChecker("[VAL_OBJECT>ref_list>ImanFile:FILE_EXPORT]","r"))~WARNING: INFO: file probably empty, stadler has not be found inside this [VAL_OBJECT:object_type]~text marker found
+#ID=File;scope=object;CRITERIA=OR;CHECK=C:Dataset:need_content§eq§extern(callDocumentChecker("[VAL_OBJECT>ref_list>ImanFile:FILE_EXPORT]","s"))~WARNING: INFO: file probably empty, stadler has not be found inside this [VAL_OBJECT:object_type]~text marker found
+#ID=File;scope=object;CRITERIA=OR;CHECK=C:Dataset:need_content§eq§extern(callDocumentChecker("[VAL_OBJECT>ref_list>ImanFile:FILE_EXPORT]","t"))~WARNING: INFO: file probably empty, stadler has not be found inside this [VAL_OBJECT:object_type]~text marker found
+#ID=File;scope=object;CRITERIA=OR;CHECK=C:Dataset:need_content§eq§extern(callDocumentChecker("[VAL_OBJECT>ref_list>ImanFile:FILE_EXPORT]","u"))~WARNING: INFO: file probably empty, stadler has not be found inside this [VAL_OBJECT:object_type]~text marker found
+#ID=File;scope=object;CRITERIA=OR;CHECK=C:Dataset:need_content§eq§extern(callDocumentChecker("[VAL_OBJECT>ref_list>ImanFile:FILE_EXPORT]","v"))~WARNING: INFO: file probably empty, stadler has not be found inside this [VAL_OBJECT:object_type]~text marker found
+#ID=File;scope=object;CRITERIA=OR;CHECK=C:Dataset:need_content§eq§extern(callDocumentChecker("[VAL_OBJECT>ref_list>ImanFile:FILE_EXPORT]","w"))~WARNING: INFO: file probably empty, stadler has not be found inside this [VAL_OBJECT:object_type]~text marker found
+#ID=File;scope=object;CRITERIA=OR;CHECK=C:Dataset:need_content§eq§extern(callDocumentChecker("[VAL_OBJECT>ref_list>ImanFile:FILE_EXPORT]","x"))~WARNING: INFO: file probably empty, stadler has not be found inside this [VAL_OBJECT:object_type]~text marker found
+#ID=File;scope=object;CRITERIA=OR;CHECK=C:Dataset:need_content§eq§extern(callDocumentChecker("[VAL_OBJECT>ref_list>ImanFile:FILE_EXPORT]","y"))~WARNING: INFO: file probably empty, stadler has not be found inside this [VAL_OBJECT:object_type]~text marker found
+#ID=File;scope=object;CRITERIA=OR;CHECK=C:Dataset:need_content§eq§extern(callDocumentChecker("[VAL_OBJECT>ref_list>ImanFile:FILE_EXPORT]","z"))~WARNING: INFO: file probably empty, stadler has not be found inside this [VAL_OBJECT:object_type]~text marker found
+#ID=File;scope=object;CRITERIA=OR;CHECK=C:Dataset:need_content§eq§extern(callDocumentChecker("[VAL_OBJECT>ref_list>ImanFile:FILE_EXPORT]","0"))~WARNING: INFO: file probably empty, stadler has not be found inside this [VAL_OBJECT:object_type]~text marker found
+#ID=File;scope=object;CRITERIA=OR;CHECK=C:Dataset:need_content§eq§extern(callDocumentChecker("[VAL_OBJECT>ref_list>ImanFile:FILE_EXPORT]","1"))~WARNING: INFO: file probably empty, stadler has not be found inside this [VAL_OBJECT:object_type]~text marker found
+#ID=File;scope=object;CRITERIA=OR;CHECK=C:Dataset:need_content§eq§extern(callDocumentChecker("[VAL_OBJECT>ref_list>ImanFile:FILE_EXPORT]","2"))~WARNING: INFO: file probably empty, stadler has not be found inside this [VAL_OBJECT:object_type]~text marker found
+#ID=File;scope=object;CRITERIA=OR;CHECK=C:Dataset:need_content§eq§extern(callDocumentChecker("[VAL_OBJECT>ref_list>ImanFile:FILE_EXPORT]","3"))~WARNING: INFO: file probably empty, stadler has not be found inside this [VAL_OBJECT:object_type]~text marker found
+#ID=File;scope=object;CRITERIA=OR;CHECK=C:Dataset:need_content§eq§extern(callDocumentChecker("[VAL_OBJECT>ref_list>ImanFile:FILE_EXPORT]","4"))~WARNING: INFO: file probably empty, stadler has not be found inside this [VAL_OBJECT:object_type]~text marker found
+#ID=File;scope=object;CRITERIA=OR;CHECK=C:Dataset:need_content§eq§extern(callDocumentChecker("[VAL_OBJECT>ref_list>ImanFile:FILE_EXPORT]","5"))~WARNING: INFO: file probably empty, stadler has not be found inside this [VAL_OBJECT:object_type]~text marker found
+#ID=File;scope=object;CRITERIA=OR;CHECK=C:Dataset:need_content§eq§extern(callDocumentChecker("[VAL_OBJECT>ref_list>ImanFile:FILE_EXPORT]","6"))~WARNING: INFO: file probably empty, stadler has not be found inside this [VAL_OBJECT:object_type]~text marker found
+#ID=File;scope=object;CRITERIA=OR;CHECK=C:Dataset:need_content§eq§extern(callDocumentChecker("[VAL_OBJECT>ref_list>ImanFile:FILE_EXPORT]","7"))~WARNING: INFO: file probably empty, stadler has not be found inside this [VAL_OBJECT:object_type]~text marker found
+#ID=File;scope=object;CRITERIA=OR;CHECK=C:Dataset:need_content§eq§extern(callDocumentChecker("[VAL_OBJECT>ref_list>ImanFile:FILE_EXPORT]","8"))~WARNING: INFO: file probably empty, stadler has not be found inside this [VAL_OBJECT:object_type]~text marker found
+#ID=File;scope=object;CRITERIA=OR;CHECK=C:Dataset:need_content§eq§extern(callDocumentChecker("[VAL_OBJECT>ref_list>ImanFile:FILE_EXPORT]","9"))~WARNING: INFO: file probably empty, stadler has not be found inside this [VAL_OBJECT:object_type]~text marker found

@@ -1,0 +1,13 @@
+############################################################################################################
+#  CNO Check Definition File
+############################################################################################################
+# Version History
+#
+# Version    Date           Name               Description of Change
+# 1.0        19-08-2021     infodba     Initial
+############################################################################################################
+
+
+
+C:ItemRevision>view:ATTR_COMBINATION§eq§count([C:ItemRevision>view:bl_sequence_no]_*)~Position and ItemID combination is not valid~All good
+

@@ -1,0 +1,34 @@
+############################################################################################################
+#  CNO Check Definition File
+############################################################################################################
+# Version History
+#
+# Version    Date           Name               Description of Change
+# 1.0        22-03-2022     user01     Initial
+############################################################################################################
+
+ID=6;scope=occurrence;CRITERIA=CONDITION;CHECK=C:ItemRevision>view:bl_rev_last_release_status§not allowed§70*&&80*&&90*
+ID=6;scope=occurrence;CRITERIA=CONDITION;CHECK=C:ItemRevision>view:DB_bl_rev_object_type§allowed§SR5EngArticleRevision||SR5EngEndItemRevision||SR5EngMajorAssyRevision
+#not for SR5NonERPArticleRevision||SR5EngArticleARRevision
+# ? #||SR5EngInstallLocRevision
+ID=6;scope=occurrence;CRITERIA=AND;CHECK=C:ItemRevision>view:bl_ReviewedBy_DateReviewed§not allowed§regex(^_|..*_|_..*|.*_01-01-0001$)~occurences [VAL_OBJECT:bl_rev_object_string] with no Norm check
+
+ID=4;scope=occurrence;CRITERIA=CONDITION;CHECK=C:ItemRevision>view:bl_rev_last_release_status§not allowed§empty&&20*&&30*
+ID=4;scope=occurrence;CRITERIA=AND;CHECK=C:ItemRevision>view:bl_rev_last_release_status§not allowed§70*&&80*&&90*~occurences [VAL_OBJECT:bl_rev_object_string] with status 70 and higher, must be replaced~status on level one is accepted: In Work, 20, 30, 40 or 50
+
+ID=5;scope=object;CRITERIA=CONDITION;CHECK=C:ItemRevision:last_release_status§allowed§empty||20*||30*
+ID=5;scope=object;CRITERIA=CONDITION;CHECK=C:ItemRevision:DB_object_type§allowed§SR5EngArticleRevision||SR5EngEndItemRevision||SR5EngMajorAssyRevision
+#not for SR5NonERPArticleRevision||SR5EngArticleARRevision
+# ? #||SR5EngInstallLocRevision
+ID=5;scope=object;CRITERIA=AND;CHECK=C:ItemRevision>process_stage_list>C:EPMTask:object_string§not allowed§*~WARNING: INFO: associated Workflow [VAL_RELATED_OBJECT:object_string] for object [VAL_OBJECT:object_string]
+
+ID=2;scope=object;CRITERIA=CONDITION;CHECK=C:ItemRevision:last_release_status§allowed§empty||20*||30*
+ID=2;scope=object;CRITERIA=CONDITION;CHECK=C:ItemRevision:DB_object_type§allowed§SR5EngArticleRevision||SR5EngEndItemRevision||SR5EngMajorAssyRevision
+#not for SR5NonERPArticleRevision||SR5EngArticleARRevision
+# ? #||SR5EngInstallLocRevision
+ID=2;scope=object;CRITERIA=AND;CHECK=C:ItemRevision>process_stage_list>C:EPMTask:object_string§count eq 1§*~Workflow is missing: might be abort, cancelled, deleted, stopped for object [VAL_OBJECT:object_string]~Workflow exist
+
+
+ID=7;scope=object;CRITERIA=CONDITION;CHECK=ContextualRevision>IMAN_specification>CCPRevisionCVPart:DB_dataset_type§eq§CATPart
+#ID=7;scope=object;CRITERIA=AND;CHECK=ContextualRevision:sr5CPReviewedBy§not allowed§empty~Contextual link to reference without Norm check yet, check norm of it first~Contextual link to reference with Norm check
+ID=7;scope=object;CRITERIA=AND;CHECK=ContextualRevision:sr5_ReviewedBy_DateReviewed§not allowed§regex(^_|..*_|_..*|.*_01-01-0001$)~Contextual link to reference without Norm check yet, check norm of it first~Contextual link to reference with Norm check

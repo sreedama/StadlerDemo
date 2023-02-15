@@ -1,0 +1,37 @@
+############################################################################################################
+#  CNO Check Definition File
+############################################################################################################
+# Version History
+#
+# Version    Date           Name               Description of Change
+# 1.0        15-03-2022     testu     Initial
+############################################################################################################
+
+#ID=STB-SRS610-A;scope=object;CRITERIA=AND;CHECK=R5ElectricAssyRevision>structure_revisions>C:PSBOMViewRevision
+C:PSBOMViewRevision:PSBOMView_Name§count gt 0§*~A BOM must be present~ At least one BOM exist
+
+
+# root object
+root:C:ItemRevision:checked_out§not allowed§True&&true&&Y&&Yes~Root object is checked-out~Root object is checked-in
+root:C:ItemRevision:last_release_status§allowed§empty||20*||30*~Root object already have a status [VAL_OBJECT:last_release_status]~Root object will get status 40
+
+#not compatible with a reuse of VFW at start of WF: STB system is already setting this value before the workflow actually start
+#root:C:ItemRevision:fnd0InProcess§not allowed§regex(^[Tt]rue$)~Root object is already inside a workflow~no active Workflow is running on Root object
+#Worfklow solution
+C:EPMTask:object_name§count lt 2§*~Object is already inside another workflow, list: [C:EPMTask:object_name]~no active Workflow is running
+#UI solution is handle by CNO_VFW_CHECK_RULES
+
+
+
+
+#ID=STB-SRS610-B;scope=occurrence;CRITERIA=AND;CHECK=
+C:ItemRevision>view:BOM_occurrence_release_status_list§allowed§40*~Child must be in status 40~Child with status 40
+
+#ID=STB-SRS610-C;scope=object;CRITERIA=AND;CHECK=SR5ElectricAssyRevision>IMAN_specification>PDF
+PDF:Dataset_Name§count gt 0§*~Dataset PDF with Relation IMAN_specification under SR5ElectricAssyRevision must be present~PDF present
+
+#ID=STB-SRS610-D;scope=object;CRITERIA=AND;CHECK=SR5ElectricAssyRevision>IMAN_specification>SR5E3S
+SR5E3S:Dataset_Name§count gt 0§*~Dataset SR5E3S with Relation IMAN_specification under SR5ElectricAssyRevision must be present~SR5E3S present
+
+#ID=STB-SRS610-E;scope=object;CRITERIA=AND;CHECK=SR5ElectricAssyRevision>IMAN_specification>MSExcelX
+MSExcelX:Dataset_Name§count eq 5§*~5 Datasets XLSX with Relation IMAN_specification under SR5ElectricAssyRevision must be present~5 Datasets XLSX

@@ -1,0 +1,6 @@
+{
+    "name": "sr5DisplayForm",
+    "description": "This is the sr5DisplayForm module",
+    "skipTest": true,
+    "skipAudit": true
+}

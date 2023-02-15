@@ -1,0 +1,18 @@
+############################################################################################################
+#  CNO JOB Definition File
+############################################################################################################
+# Version History
+#
+# Version    Date           Name               Description of Change
+# 1.0        02-05-2022     testu     Initial
+############################################################################################################
+
+#Help text for user interface
+HELP=[en_US={CNO_LOGO}<br><h4>{TC_USERNAME}, Please follow these steps for PreRelease operation:</h4><ul><li>Start the validation for 30-PreRelease on a Document</li><li>Check the result report and eventually perform the needed correction</li><li>If allowed, start the predefined worklfow 30 Post Action</li></ul>]###[de_DE={CNO_LOGO}<br><h4>{TC_USERNAME}, Bitte f&uuml;hren Sie folgende Schritte f&uuml;r die Vorab-Freigabeoperation durch:</h4><ul><li>Starten Sie den Validierungsprozess f&uuml;r 30-PreRelease auf ein Dokument</li><li>Pr&uuml;fen Sie den Ergebnisreport und beheben Sie den Fehler</li><li>Wenn m&ouml;glich, Starten Sie die definierte Prozess-30-Postaktion</li></ul>]###
+
+
+QUERY=CNO_VFW_STB_QUERY
+EXPANSION=SR5_Document_EXPANSION
+PROPERTY=SR5_Document_PROPERTY
+CHECK=SR5_Document_CHECK,SR5_Document_PreRelease_CHECK
+TASK=SR5_Document_PreRelease_TASK

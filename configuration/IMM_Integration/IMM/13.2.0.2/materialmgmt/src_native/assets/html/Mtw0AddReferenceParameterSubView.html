@@ -1,0 +1,37 @@
+<aw-panel-body visible-when="conditions.isRefParamSelected">
+    <aw-list-filter prop="data.filterBox" dataprovider="data.dataProviders.performSearch">
+        <aw-default-cell vmo="item"></aw-default-cell>
+    </aw-list-filter>
+</aw-panel-body>
+<aw-form name="mtw0AddRefParamForm">
+    <aw-panel-body exist-when="!conditions.isRefParamSelected">
+        <aw-panel-header>
+            <aw-back-button title="{{data.dataProviders.performSearch.selectedObjects[0].cellHeader1}}"
+                action="clearSelectedType" exist-when="!conditions.isRefParamSelected"></aw-back-button>
+            <aw-break></aw-break>
+        </aw-panel-header>
+        <aw-panel-section>
+            <aw-widget prop="data.mat1RefParamName" hint="textfield"></aw-widget>
+            <aw-widget prop="data.mat1RefDataType" hint="textfield"></aw-widget>
+            <aw-widget prop="data.mat1RefParamValue"
+                visible-when="{{data.dataProviders.performSearch.selectedObjects[0].props.mat1DataType.dbValues[0] === 'Double'}}">
+            </aw-widget>
+
+            <aw-widget prop="data.mat1RefParamStringValue"
+                visible-when="{{data.dataProviders.performSearch.selectedObjects[0].props.mat1DataType.dbValues[0] === 'String'}}">
+            </aw-widget>
+            <aw-widget prop="data.mat1RefParamValueMax"
+                visible-when="{{data.dataProviders.performSearch.selectedObjects[0].props.mat1DataType.dbValues[0] === 'Double'}}">
+            </aw-widget>
+            <aw-widget prop="data.mat1RefParamUnit" visible-when="{{data.dataProviders.performSearch.selectedObjects[0].props.mat1DataType.dbValues[0] === 'Double'}}"></aw-widget>
+        </aw-panel-section>
+    </aw-panel-body>
+</aw-form>
+<aw-panel-footer>
+    <aw-button action="createParameter" visible-when="conditions.isFormValid && !conditions.isRefParamSelected">
+        <aw-i18n>i18n.AddRefParameter</aw-i18n>
+    </aw-button>
+    <aw-button action="createParameter" visible-when="conditions.isFormStringValid && !conditions.isRefParamSelected">
+        <aw-i18n>i18n.AddRefParameter</aw-i18n>
+    </aw-button>    
+</aw-panel-footer>

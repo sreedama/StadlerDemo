@@ -1,0 +1,34 @@
+############################################################################################################
+#  CNO COMPARE RULES Definition File
+#
+#  This config file can be used with the CNO_VALIDATION_REPORT_RULES preference to define group or role
+#  specific config rules available in Active Workspace or Rich Client
+############################################################################################################
+# Version History
+#
+# Version   Date         Name            Description of Change
+# 1.00     05.01.2021   Yalcintepe       CVF-907# Reporting Option
+############################################################################################################
+
+#[BOM_REPORT_EXCEL]
+#display=Bom Report in Excel
+#job=CNO_VFW_BOM_REPORT_EXCEL_JOB
+#type=C:ItemRevision
+#ItemRevision:?last_release_status=Released
+#ItemRevision:object_desc=A*,B*
+#ItemRevision:IMAN_specification!=empty
+
+
+
+[BOM_REPORT_EXCEL]
+display=Report Stadler BOM (Excel - Englisch)
+job=SRS_BOM_REPORT_EXCEL_JOB
+type=C:ItemRevision
+ItemRevision:view!=empty
+
+
+[BOM_REPORT_DE_EXCEL]
+display=Erzeugung des BOM-Reports (Excel - German)
+job=SRS_BOM_REPORT_DE_EXCEL_JOB
+type=C:ItemRevision
+ItemRevision:view!=empty

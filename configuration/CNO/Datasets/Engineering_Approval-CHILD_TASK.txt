@@ -1,0 +1,23 @@
+############################################################################################################
+#  CNO Task Definition File
+############################################################################################################
+# Version History
+#
+# Version    Date           Name               Description of Change
+# 1.0        22-03-2022     user01     Initial
+############################################################################################################
+
+
+[TASK_LIST]
+ID=SetStatusOnOccurrences
+TYPE_LIST=C:ItemRevision
+VALIDATION_STATUS=FAILED
+ACTION_OBJECT=CHILD
+CHK_ID_LIST=001
+ACTION_ID_LIST=Approved-Occurrences
+
+[ACTION_LIST]
+ID=Approved-Occurrences
+TYPE=WORKFLOW
+TEMPLATE=Engineering_Approval
+OBJECT_COUNT=1

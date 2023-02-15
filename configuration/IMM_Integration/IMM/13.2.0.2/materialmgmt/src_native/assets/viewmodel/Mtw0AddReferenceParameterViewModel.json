@@ -1,0 +1,50 @@
+{
+    "schemaVersion": "1.0.0",
+    "imports": [
+        "js/aw-command-panel.directive",
+        "js/aw-panel-body.directive",
+        "js/aw-default-cell.directive",
+        "js/aw-list-filter.directive",
+        "js/aw-panel-footer.directive",
+        "js/aw-button.directive",
+        "js/aw-i18n.directive"
+    ],
+    "onEvent": [ {
+        "eventId": "gwt.SubLocationContentSelectionChangeEvent",
+        "action": "closePanel"
+    } ],    
+    "actions": {       
+        
+        "closePanel": 
+        {
+            "actionType": "Event",
+            "method": "Event",
+            "inputData": 
+            {
+                "events": 
+                [
+                    {
+                        "name": "complete",
+                        "eventData": 
+                        {
+                            "source": "toolAndInfoPanel"
+                        }
+                    }
+                ]
+            }
+        }        
+    },
+     "functions": {
+        
+    },
+    "i18n": 
+    {
+        "AddParameter": ["MaterialMgmtMessages"],
+        "addReferenceParameter":["MaterialMgmtMessages"],
+        "selectParameter": ["MaterialMgmtMessages"],
+        "PropType": ["MaterialMgmtMessages"],        
+        "SmartTableType": ["MaterialMgmtMessages"],        
+        "Unit": ["MaterialMgmtMessages"],
+        "Category":["MaterialMgmtMessages"]
+    }
+}

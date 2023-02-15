@@ -1,0 +1,18 @@
+<aw-panel>
+    <aw-panel-body>
+        <aw-column width="3">
+            <aw-panel-section caption="Points">
+                <div>
+                    <aw-command-bar anchor="Mtw0SmartCurveTableEditCommandAnchor" alignment="HORIZONTAL" class="aw-commands-commandBarHorizontalLeft" ></aw-command-bar>  
+                    <aw-command-bar anchor="Mtw0SmartCurveTableAddRemoveDuplicateCommandAnchor" alignment="HORIZONTAL" class="aw-commands-commandBarHorizontalRight"></aw-command-bar>
+                </div>
+                <aw-splm-table gridid="Mtw0SmartCurveTable" ></aw-splm-table>
+            </aw-panel-section>
+        </aw-column>
+        <aw-column width="9" exist-when="data.Mtw0ShowSmartCurveInChart">
+            <aw-panel-section caption="Chart" exist-when="data.Mtw0ShowSmartCurveInChart">
+                <aw-chart chart-provider="data.chartProviders.Mtw0SmartCurvesChartProvider" exist-when="data.Mtw0ShowSmartCurveInChart" ></aw-chart>
+            </aw-panel-section>
+        </aw-column>
+    </aw-panel-body>
+</aw-panel>

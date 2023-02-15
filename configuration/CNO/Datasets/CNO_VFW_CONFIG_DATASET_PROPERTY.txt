@@ -1,0 +1,23 @@
+############################################################################################################
+#  CNO Object Property Definition File
+############################################################################################################
+# Version History
+#
+# Version    Date           Name               Description of Change
+# 1.0        28-03-2022     testu     Initial
+############################################################################################################
+
+Text:owning_group
+Text§True§true
+Text§admin-groups§|PREF:CNO_VALIDATION_ADMIN_GROUPS|
+ 
+Text:ref_types
+ 
+Text:?checked_out~checkedout
+ 
+ImanFile:byte_size
+ 
+Text§search§|:object_name|;1
+ 
+Text:object_name
+ImanFile§file_name§|:original_file_name^B^.|

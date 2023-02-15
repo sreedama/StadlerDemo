@@ -1,0 +1,6 @@
+
+QUERY=CNO_VFW_QUERY
+EXPANSION=BOM_Line_child_status_check_EXPANSION
+PROPERTY=BOM_Line_child_status_check_PROPERTY
+CHECK=BOM_Line_child_status_check_CHECK
+#TASK=BOM_Line_child_status_check_TASK

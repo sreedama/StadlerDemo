@@ -1,0 +1,202 @@
+{
+  // Snippets of elements and attributes of XRT stylesheets for Active Workspace
+
+  "XRT property element": {
+    "scope": "xml",
+    "prefix": "property",
+    "body": "<property name=\"${1}\" />${0}",
+    "description": "Attibutes: border, modifiable, isAutoAssign, name, renderingHint, renderingStyle, visibleWhen, (hidden, filterable, frozen - objectSet only)"
+  },
+  "XRT renderingHint attribute": {
+    "scope": "xml",
+    "prefix": "renderingHint",
+    "body": "renderingHint=\"${1|array,checkbox,checkboxoptionlov,datebutton,label,localizablearray,localizabletextarea,localizabletextfield,localizablelongtextpanel,logical,longtext,lovuicomp,objectlink,panel,radiobutton,radiobuttonoptionlov,slider,styledtextarea,styledtextfield,textarea,textfield,togglebutton|}\" ${0}"
+  },
+  "XRT renderingStyle attribute": {
+    "scope": "xml",
+    "prefix": "renderingStyle",
+    "body": "renderingStyle=\"${1|headed,headless,titled|}\" ${0}"
+  },
+  "XRT modifiable attribute": {
+    "scope": "xml",
+    "prefix": "modifiable",
+    "body": "modifiable=\"${1|true,false|}\" ${0}"
+  },
+  "XRT isAutoAssign attribute": {
+    "scope": "xml",
+    "prefix": "isAutoAssign",
+    "body": "isAutoAssign=\"${1|true,false|}\" ${0}"
+  },
+  "XRT visibleWhen attribute": {
+    "scope": "xml",
+    "prefix": "visibleWhen",
+    "body": "visibleWhen=\"${1}\" ${0}"
+  },
+  "XRT hidden attribute": {
+    "scope": "xml",
+    "prefix": "hidden",
+    "body": "hidden=\"true\" ${0}"
+  },
+  "XRT filterable attribute": {
+    "scope": "xml",
+    "prefix": "filterable",
+    "body": "filterable=\"false\" ${0}"
+  },
+  "XRT frozen attribute": {
+    "scope": "xml",
+    "prefix": "frozen",
+    "body": "frozen=\"true\" ${0}"
+  },
+  "XRT rendering": {
+    "scope": "xml",
+    "prefix": "rendering",
+    "body": [
+      "<rendering xsi:noNamespaceSchemaLocation= >",
+      "    ${0}",
+      "</rendering>"
+    ]
+  },
+  "XRT separator": {
+    "scope": "xml",
+    "prefix": "separator",
+    "body": "<separator/>${0}"
+  },
+  "XRT break": {
+    "scope": "xml",
+    "prefix": "break",
+    "body": "<break/>${0}"
+  },
+  "XRT inject": {
+    "scope": "xml",
+    "prefix": "inject",
+    "body": "<inject type=\"${1|dataset,preference|}\" src=\"${2}\"/>${0}"
+  },
+  "XRT content": {
+    "scope": "xml",
+    "prefix": "content",
+    "body": ["<content visibleWhen=\"${1}\">", "    ${0}", "</content>"]
+  },
+  "XRT section": {
+    "scope": "xml",
+    "prefix": "section",
+    "body": [
+      "<section title=\"${1}\" titleKey=\"${2}\" initialstate=\"${3|expanded,collabsed|}\" >",
+      "    ${0}",
+      "</section>"
+    ]
+  },
+  "XRT groupname attribute": {
+    "scope": "xml",
+    "prefix": "groupname",
+    "body": "groupname=\"${1}\" ${0}"
+  },
+  "XRT page": {
+    "scope": "xml",
+    "prefix": "page",
+    "body": ["<page titleKey=\"${1}\" title=\"${2}\" >", "    ${0}", "</page>"]
+  },
+  "XRT classificationTrace": {
+    "scope": "xml",
+    "prefix": "classificationTrace",
+    "body": "<classificationTrace/>${0}"
+  },
+  "XRT classificationProperties": {
+    "scope": "xml",
+    "prefix": "classificationProperties",
+    "body": "<classificationProperties/>${0}"
+  },
+  "XRT column": {
+    "scope": "xml",
+    "prefix": "column",
+    "body": ["<column width=\"${1}\" >", "    ${0}", "</column>"]
+  },
+  "XRT command": {
+    "scope": "xml",
+    "prefix": "command",
+    "body": "<command commandId=\"${1}\" />${0}"
+  },
+  "XRT command with parameter": {
+    "scope": "xml",
+    "prefix": "commandWithParam",
+    "body": ["<command commandId=\"${1}\" >", "    ${0}", "</command>"]
+  },
+  "XRT parameter": {
+    "scope": "xml",
+    "prefix": "parameter",
+    "body": "<parameter name=\"${1}\" value=\"${2}\" />${0}"
+  },
+  "XRT header": {
+    "scope": "xml",
+    "prefix": "header",
+    "body": [
+      "<header>",
+      "    <image source=\"type\" />",
+      "    ${0}",
+      "</header>"
+    ]
+  },
+  "XRT declarativeKey": {
+    "scope": "xml",
+    "prefix": "declarativeKey",
+    "body": "<htmlPanel declarativeKey=\"${1}\" enableresize=\"${2|false,true|}\" />${0}"
+  },
+  "XRT label": {
+    "scope": "xml",
+    "prefix": "label",
+    "body": "<label textKey=\"${1}\" text=\"${2}\" />${0}"
+  },
+  "XRT nameValueProperty": {
+    "scope": "xml",
+    "prefix": "nameValueProperty",
+    "body": [
+      "<nameValueProperty ${1|name,source|}=\"${2}\" enablePropEdit=\"${3|true,false|}\" >",
+      "    ${0}",
+      "</nameValueProperty>"
+    ]
+  },
+  "XRT objectSet": {
+    "scope": "xml",
+    "prefix": "objectSet",
+    "body": [
+      "<objectSet source=\"${1}\" defaultdisplay=\"${2|tableDisplay,listDisplay,imageDisplay,thumbnailDisplay|}\" showConfiguredRev=\"${3|false,true|}\" maxRowCount=\"${4}\" sortby=\"${5}\" sortDirection=\"${6|ascending,descending|}\" enablePropEdit=\"${7|false,true|}\" filterable=\"${8|true,false|}\" >",
+      "    ${0}",
+      "    <listDisplay/>",
+      "    <imageDisplay/>",
+      "    <thumbnailDisplay/>",
+      "</objectSet>"
+    ]
+  },
+  "XRT objectSet tableDisplay with props": {
+    "scope": "xml",
+    "prefix": "tableDisplayProps",
+    "body": [
+      "<tableDisplay enableArrange=\"${3|true,false|}\">",
+      "    ${0}",
+      "</tableDisplay>"
+    ]
+  },
+  "XRT objectSet tableDisplay with columnConfig": {
+    "scope": "xml",
+    "prefix": "tableDisplayColConfig",
+    "body": "<tableDisplay objectSetUri=\"${1}\" />${0}"
+  },
+  "XRT tableProperty without source": {
+    "scope": "xml",
+    "prefix": "tableProperty",
+    "body": ["<tableProperty name=\"${1}\" >", "    ${0}", "</tableProperty>"]
+  },
+  "XRT tableProperty with source": {
+    "scope": "xml",
+    "prefix": "tablePropertySrc",
+    "body": [
+      "<tableProperty source=\"${1}\" name=\"${2}\" >",
+      "    ${0}",
+      "</tableProperty>"
+    ]
+  },
+  "XRT dynamic compound property": {
+    "scope": "xml",
+    "prefix": "dcp",
+    "body": "\"${1|REF,REFBY,GRM,GRMS2P,GRMREL,GRMS2PREL|}(${2:Ref or Rel},${3:type name})${0}\""
+  }
+}

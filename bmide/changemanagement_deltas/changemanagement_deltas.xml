@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+@<COPYRIGHT>@
+==================================================
+Copyright 2020.
+Siemens Product Lifecycle Management Software Inc.
+All Rights Reserved.
+==================================================
+@<COPYRIGHT>@
+-->
+<TcBusinessData xmlns="http://teamcenter.com/BusinessModel/TcBusinessData" Date="Tue Feb 08 10:42:55 AM 2022">
+<Add>
+   <TcNamingRuleAttach ruleName="SR5_all_change_id" typeName="Epc0MfgCN" propertyName="item_id"
+       case="Mix" conditionName="isTrue" override="true" ruleType="NamingRule" description=""
+       sourceTemplate="sr5stadlerrailbase"/>
+   <TcNamingRuleAttach ruleName="SR5_all_change_id" typeName="Epc0MfgCN" propertyName="item_id"
+       case="Mix" conditionName="SR5isTrue" override="false" ruleType="NamingRule"
+       description="" sourceTemplate="sr5stadlerrailbase"/>
+   <TcTypeConstantAttach constantName="DisplayName" typeName="Epc0MfgCNRevision" value="$item_id+&quot;/&quot;+$item_revision_id+&quot;-&quot;+$object_name+&quot; (MCN)&quot;"
+       sourceTemplate="sr5stadlerrailbase"/>
+</Add>
+</TcBusinessData>

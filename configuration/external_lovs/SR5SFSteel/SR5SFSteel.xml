@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TcBusinessData xmlns="http://teamcenter.com/BusinessModel/TcBusinessData" batchXSDVersion="1.0"
+    Date="Mon Jan 17 05:41:31 PM 2022">
+  <Add/>
+  <Change>
+    <TcLOV name="SR5SFSteel" lovType="ListOfValuesString" usage="Exhaustive" description=""
+        isManagedExternally="true">
+      <TcLOVValue value="DIN EN 10051" description="Blech s &lt;= 25" conditionName="isTrue"/>
+      <TcLOVValue value="DIN EN 10131" description="Blech 0.35 &gt; s &lt;= 3" conditionName="isTrue"/>
+      <TcLOVValue value="DIN EN 10029" description="Blech 3 &gt; s &lt;= 400" conditionName="isTrue"/>
+      <TcLOVValue value="DIN EN 10305-1" description="Rohr D &lt;= 380" conditionName="isTrue"/>
+      <TcLOVValue value="DIN EN 10059" description="Vierkantstab" conditionName="isTrue"/>
+      <TcLOVValue value="DIN EN 10056-1" description="L-Profil gleich- und ungleichschenklig rund"
+          conditionName="isTrue"/>
+      <TcLOVValue value="DIN 1022" description="L-Profil, gleichschenklig, scharfkantig 20x3 &gt; axt &lt;= 50x5"
+          conditionName="isTrue"/>
+      <TcLOVValue value="DIN EN 10219" description="kreisfoermiges Hohlprofil dxt &lt;= 2500x40 / quadratisches Hohlprofil Bxt &lt;= 500x40 / rechteckiges Hohlprofil HxBxt &lt;= 500x500x40"
+          conditionName="isTrue"/>
+      <TcLOVValue value="DIN EN 10060" description="Rundstab" conditionName="isTrue"/>
+    </TcLOV>
+  </Change>
+</TcBusinessData>

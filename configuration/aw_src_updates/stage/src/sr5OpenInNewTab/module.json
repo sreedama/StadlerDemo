@@ -1,0 +1,6 @@
+{
+    "name": "sr5OpenInNewTab",
+    "description": "This is the sr5OpenInNewTab module",
+    "skipTest": true,
+    "skipAudit": true
+}

@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<preferences version="10.0">
+  <category name="SAP Gateway">
+    <category_description></category_description>
+<!--     <preference name="T4ST_PropertyListMode4IMAN_specification" type="Integer" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>No description available for this preference</preference_description>
+      <context name="Teamcenter">
+        <value>2</value>
+      </context>
+    </preference>      
+    <preference name="T4ST_Property2ProcessList4IMAN_specification" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>No description available for this preference</preference_description>
+      <context name="Teamcenter">
+        <value>type_string</value>
+       </context>
+    </preference> -->
+ 
+<!--     <preference name="T4ST_PropertyListMode4IMAN_manifestation" type="Integer" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>No description available for this preference</preference_description>
+      <context name="Teamcenter">
+        <value>2</value>
+      </context>
+    </preference>      
+    <preference name="T4ST_Property2ProcessList4IMAN_manifestation" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>No description available for this preference</preference_description>
+      <context name="Teamcenter">
+        <value>type_string</value>
+       </context>
+    </preference>  -->
+    
+<!-- 	<preference name="T4ST_PropertyListMode4CMHasSolutionItem" type="Integer" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>No description available for this preference</preference_description>
+      <context name="Teamcenter">
+        <value>2</value>
+      </context>
+    </preference>      
+    <preference name="T4ST_Property2ProcessList4CMHasSolutionItem" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>No description available for this preference</preference_description>
+      <context name="Teamcenter">
+      <value>type_string</value> 
+       </context>
+    </preference> -->
+    
+<!-- 	<preference name="T4ST_PropertyListMode4IMAN_based_on" type="Integer" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>No description available for this preference</preference_description>
+      <context name="Teamcenter">
+        <value>2</value>
+      </context>
+    </preference>      
+    <preference name="T4ST_Property2ProcessList4IMAN_based_on" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>No description available for this preference</preference_description>
+      <context name="Teamcenter">
+      <value>type_string</value> 
+       </context>
+    </preference> -->
+    
+<!-- 	<preference name="T4ST_PropertyListMode4IMAN_classification" type="Integer" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>No description available for this preference</preference_description>
+      <context name="Teamcenter">
+        <value>2</value>
+      </context>
+    </preference>      
+    <preference name="T4ST_Property2ProcessList4IMAN_classification" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>No description available for this preference</preference_description>
+      <context name="Teamcenter">
+      <value>type_string</value> 
+       </context>
+    </preference> -->
+    
+	<preference name="T4ST_PropertyListMode4Mat1UsesMaterial" type="Integer" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>No description available for this preference</preference_description>
+      <context name="Teamcenter">
+        <value>2</value>
+      </context>
+    </preference>      
+    <preference name="T4ST_Property2ProcessList4Mat1UsesMaterial" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>No description available for this preference</preference_description>
+      <context name="Teamcenter">
+      <value>type_string</value> 
+       </context>
+    </preference>
+    
+	<preference name="T4ST_PropertyListMode4TC_Is_Represented_By" type="Integer" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>No description available for this preference</preference_description>
+      <context name="Teamcenter">
+        <value>2</value>
+      </context>
+    </preference>      
+    <preference name="T4ST_Property2ProcessList4TC_Is_Represented_By" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>No description available for this preference</preference_description>
+      <context name="Teamcenter">
+      <value>type_string</value> 
+       </context>
+    </preference>
+    
+    <preference name="T4ST_PropertyListMode4IMAN_Rendering" type="Integer" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>No description available for this preference</preference_description>
+      <context name="Teamcenter">
+        <value>2</value>
+      </context>
+    </preference>      
+    <preference name="T4ST_Property2ProcessList4IMAN_Rendering" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>No description available for this preference</preference_description>
+      <context name="Teamcenter">
+      <value>type_string</value> 
+       </context>
+    </preference>
+    
+    <preference name="T4ST_PropertyListMode4TC_Attaches" type="Integer" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>No description available for this preference</preference_description>
+      <context name="Teamcenter">
+        <value>2</value>
+      </context>
+    </preference>      
+    <preference name="T4ST_Property2ProcessList4TC_Attaches" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>No description available for this preference</preference_description>
+      <context name="Teamcenter">
+      <value>type_string</value> 
+       </context>
+    </preference>
+    
+  </category>
+</preferences>

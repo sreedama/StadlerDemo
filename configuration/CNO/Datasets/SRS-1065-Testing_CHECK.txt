@@ -1,0 +1,11 @@
+############################################################################################################
+#  CNO Check Definition File
+############################################################################################################
+# Version History
+#
+# Version    Date           Name               Description of Change
+# 1.0        21-03-2022     testu     Initial
+############################################################################################################
+
+
+SR5MfgCNRevision:CMMaturity§not allowed§Elaborating~other MCM not allowed with elaborating

@@ -1,0 +1,103 @@
+{
+    "commands": {
+        "displayMasterFormCmd": {
+            "iconId": "cmdEditSAP",
+            "title": "{{i18n.displayMasterFormCmdCmdName}}",
+            "description": "{{i18n.displayMasterFormCmdDesc}}"
+        },
+        "displayPlantFormCmd": {
+            "iconId": "cmdEditSAP",
+            "title": "{{i18n.displayPlantFormCmdCmdName}}",
+            "description": "{{i18n.displayPlantFormCmdDesc}}"
+        }
+    },
+    "commandHandlers": {
+        "displayMasterFormCmdCommandHandler": {
+            "id": "displayMasterFormCmd",
+            "action": "activateDisplayMasterFormCmd",
+            "activeWhen": true,
+            "visibleWhen": {
+                "condition": "conditions.isAwb0ConditionalElement"
+            }
+        },
+        "displayPlantFormCmdCommandHandler": {
+            "id": "displayPlantFormCmd",
+            "action": "activateDisplayPlantFormCmd",
+            "activeWhen": true,
+            "visibleWhen": {
+                "condition": "conditions.isAwb0ConditionalElement"
+            }
+        }
+    },
+    "commandPlacements": {
+        "displayMasterFormCmdaw_contextMenu2": {
+            "id": "displayMasterFormCmd",
+            "uiAnchor": "aw_contextMenu2",
+            "priority": 120
+        },
+        "displayMasterFormCmdmbmMbom_contextMenu": {
+            "id": "displayMasterFormCmd",
+            "uiAnchor": "mbmMbom_contextMenu",
+            "priority": 120
+        },
+        "displayMasterFormCmdmbmEbom_contextMenu": {
+            "id": "displayMasterFormCmd",
+            "uiAnchor": "mbmEbom_contextMenu",
+            "priority": 120
+        },
+        "displayPlantFormCmdaw_contextMenu2": {
+            "id": "displayPlantFormCmd",
+            "uiAnchor": "aw_contextMenu2",
+            "priority": 121
+        },
+        "displayPlantformCmdmbmMbom_contextMenu": {
+            "id": "displayPlantFormCmd",
+            "uiAnchor": "mbmMbom_contextMenu",
+            "priority": 121
+        },
+        "displayPlantformCmdmbmEbom_contextMenu": {
+            "id": "displayPlantFormCmd",
+            "uiAnchor": "mbmEbom_contextMenu",
+            "priority": 121
+        }
+    },
+    "actions": {
+        "activateDisplayMasterFormCmd": {
+            "actionType": "JSFunction",
+            "method": "activateCommandPanel",
+            "deps": "js/commandPanel.service",
+            "inputData": {
+                "commandId": "displayMasterFormCmd",
+                "location": "aw_toolsAndInfo"
+            }
+        },
+        "activateDisplayPlantFormCmd": {
+            "actionType": "JSFunction",
+            "method": "activateCommandPanel",
+            "deps": "js/commandPanel.service",
+            "inputData": {
+                "commandId": "displayPlantFormCmd",
+                "location": "aw_toolsAndInfo"
+            }
+        }
+    },
+    "conditions": {
+        "isAwb0ConditionalElement": {
+            "expression": "ctx.selected.modelType.typeHierarchyArray.indexOf('Awb0ConditionalElement') > -1"
+        }
+    },
+    "i18n": {
+        "displayMasterFormCmdCmdName": [
+            "displayFormMessages"
+        ],
+        "displayMasterFormCmdDesc": [
+            "displayFormMessages"
+        ],
+        "displayPlantFormCmdCmdName": [
+            "displayFormMessages"
+        ],
+        "displayPlantFormCmdDesc": [
+            "displayFormMessages"
+        ]
+    }
+}

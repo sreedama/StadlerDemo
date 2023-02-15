@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<TcBusinessDataLocalization xmlns="http://teamcenter.com/BusinessModel/TcBusinessDataLocalization" batchXSDVersion="1.0" Date="Mon Sep 28 09:24:15 AM 2015">
+  <Add>
+    <key locale="en_US" id="LOVValue{::}SR5TypeOfProduct{::}SMILE" status="Approved">SMILE</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5TypeOfProduct{::}SMILE" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5TypeOfProduct{::}FLIRT" status="Approved">FLIRT</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5TypeOfProduct{::}FLIRT" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5TypeOfProduct{::}WINK" status="Approved">WINK</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5TypeOfProduct{::}WINK" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5TypeOfProduct{::}KISS" status="Approved">KISS</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5TypeOfProduct{::}KISS" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5TypeOfProduct{::}METRO" status="Approved">METRO</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5TypeOfProduct{::}METRO" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5TypeOfProduct{::}TINA" status="Approved">TINA</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5TypeOfProduct{::}TINA" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5TypeOfProduct{::}TRAMLINK" status="Approved">TRAMLINK</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5TypeOfProduct{::}TRAMLINK" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5TypeOfProduct{::}TANGO" status="Approved">TANGO</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5TypeOfProduct{::}TANGO" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5TypeOfProduct{::}VARIOBAHN" status="Approved">VARIOBAHN</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5TypeOfProduct{::}VARIOBAHN" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5TypeOfProduct{::}CITYLINK" status="Approved">CITYLINK</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5TypeOfProduct{::}CITYLINK" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5TypeOfProduct{::}METELITSA" status="Approved">METELITSA</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5TypeOfProduct{::}METELITSA" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5TypeOfProduct{::}SPATZ" status="Approved">SPATZ</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5TypeOfProduct{::}SPATZ" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5TypeOfProduct{::}KOMET" status="Approved">KOMET</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5TypeOfProduct{::}KOMET" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5TypeOfProduct{::}GTW" status="Approved">GTW</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5TypeOfProduct{::}GTW" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5TypeOfProduct{::}REGIO-SHUTTLE" status="Approved">REGIO-SHUTTLE</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5TypeOfProduct{::}REGIO-SHUTTLE" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5TypeOfProduct{::}EURO3000" status="Approved">EURO3000</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5TypeOfProduct{::}EURO3000" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5TypeOfProduct{::}EURO4000" status="Approved">EURO4000</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5TypeOfProduct{::}EURO4000" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5TypeOfProduct{::}EUROLIGHT" status="Approved">EUROLIGHT</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5TypeOfProduct{::}EUROLIGHT" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5TypeOfProduct{::}EURODUAL" status="Approved">EURODUAL</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5TypeOfProduct{::}EURODUAL" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5TypeOfProduct{::}TAILOR-MADE" status="Approved">TAILOR-MADE</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5TypeOfProduct{::}TAILOR-MADE" status="Approved"></key>
+  </Add>
+</TcBusinessDataLocalization>

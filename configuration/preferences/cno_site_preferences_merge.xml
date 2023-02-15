@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<preferences version="10.0">
+<category name="Active Workspace">
+    <category_description></category_description>
+	<preference name="TC_customization_libraries" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+		<preference_description></preference_description>
+		<context name="Teamcenter">
+			<value>libcno_validation_exits</value>
+		</context>
+	</preference>	
+	<preference name="AWC_StartupPreferences" type="String" array="true" disabled="false">
+      <preference_description></preference_description>
+      <context name="Teamcenter">
+        <value>CNO_QUERY_DEBUG_LEVEL</value>
+        <value>CNO_VALIDATION_CLIENT_OBJECTS</value>
+        <value>CNO_VALIDATION_CLIENT_SHOW_CHECK_DETAILS</value>
+        <value>CNO_VALIDATION_CHECK_RULES</value>
+        <value>CNO_VALIDATION_REPORT_EXCEL_TEMPLATE</value>
+      </context>
+    </preference>
+  </category> 
+</preferences>

@@ -1,0 +1,23 @@
+{
+    "materialSearchApplicationTitle": "Materialsuche",
+    "MaterialSearchPWADefaultMessage": "Geben sie ihre Suchkriterien im Fenster für die Materialsuche ein",
+    "Mtw0MatCatlogueLabel": "Kataloge",
+    "Mtw0MatParameterLabel": "Parameter",
+    "minParamValue": "min",
+    "maxParamValue": "max",
+    "uomDispValue": "Einheit",
+    "AutoUpdate": "Auto-update",
+    "ApplyAll": "Alle anwenden",
+    "RemoveAll": "Alle entfernen",
+    "ClearAll": "Zurücksetzen",
+    "remove": "Entfernen",
+    "search": "Suche",
+    "general": "Allgemein",
+    "objectType": "Objekttyp",
+    "name": "Name",
+    "description": "Beschreibung",
+    "status": "Status",
+    "customizedSearchAttr": "Angepasste Suche",
+    "materialGlobalClasses": "Globale Materialklassen",
+    "materialCatalogClasses": "Katalog-Materialklassen"
+}

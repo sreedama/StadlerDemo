@@ -1,0 +1,18 @@
+<client>
+Teamcenter Embedded Active Workspace Client
+http://srvch025064145t.stadlerrail.ch:3000
+Client_0
+C:\plm\tc13\tccs
+</client>
+<client>
+Teamcenter Standalone Active Workspace Client
+http://srvch025064145t.stadlerrail.ch:3000
+Client_1
+C:\plm\tc13\tccs
+</client>
+<client>
+Teamcenter Integration for CATIA V5 Loader
+C:\plm\TCIC_V5\racless\TcICLoader.bat
+Client_0
+C:\plm\tc13\tccs
+</client>

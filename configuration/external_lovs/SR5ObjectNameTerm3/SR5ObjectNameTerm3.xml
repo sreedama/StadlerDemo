@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<TcBusinessData xmlns="http://teamcenter.com/BusinessModel/TcBusinessData" batchXSDVersion="1.0" Date="Mon Sep 28 09:24:15 AM 2015">
+  <Add>
+  </Add>
+  <Change>
+      <TcLOV name="SR5ObjectNameTerm3" lovType="ListOfValuesString" usage="Exhaustive" description="" isManagedExternally="true">
+          <TcLOVValue value="125107" description="" conditionName="isTrue"/>
+          <TcLOVValue value="125111" description="" conditionName="isTrue"/>
+          <TcLOVValue value="162875" description="" conditionName="isTrue"/>
+          <TcLOVValue value="163647" description="" conditionName="isTrue"/>
+          <TcLOVValue value="1539330" description="" conditionName="isTrue"/>
+          <TcLOVValue value="127656" description="" conditionName="isTrue"/>
+          <TcLOVValue value="1539423" description="" conditionName="isTrue"/>
+          <TcLOVValue value="125231" description="" conditionName="isTrue"/>
+          <TcLOVValue value="1539452" description="" conditionName="isTrue"/>
+          <TcLOVValue value="128447" description="" conditionName="isTrue"/>
+          <TcLOVValue value="128204" description="" conditionName="isTrue"/>
+          <TcLOVValue value="162143" description="" conditionName="isTrue"/>
+          <TcLOVValue value="1539868" description="" conditionName="isTrue"/>
+          <TcLOVValue value="1539964" description="" conditionName="isTrue"/>
+          <TcLOVValue value="1499770" description="" conditionName="isTrue"/>
+          <TcLOVValue value="129009" description="" conditionName="isTrue"/>
+          <TcLOVValue value="128010" description="" conditionName="isTrue"/>
+          <TcLOVValue value="155629" description="" conditionName="isTrue"/>
+          <TcLOVValue value="162089" description="" conditionName="isTrue"/>
+          <TcLOVValue value="1540333" description="" conditionName="isTrue"/>
+      </TcLOV>
+  </Change>
+</TcBusinessData>

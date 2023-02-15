@@ -1,0 +1,988 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<preferences version="10.0">
+    <category name="Active Workspace.BOM">
+        <category_description>No description available for this category.</category_description>
+
+        <!-- Stylesheets for intermediary objects -->
+        <preference name="AWC_SR5EngProjectElement.SUMMARYRENDERING" type="String" array="false" disabled="false" protectionScope="User" envEnabled="false">
+            <preference_description>Registration of summary stylesheet for EngProjectElement.</preference_description>
+            <context name="Teamcenter">
+                <value>Awp0SR5EngProjectElementSummary</value>
+            </context>
+        </preference>
+
+        <preference name="AWC_SR5GenMfgObjectElement.SUMMARYRENDERING" type="String" array="false" disabled="false" protectionScope="User" envEnabled="false">
+            <preference_description>Registration of summary stylesheet for GenMfgObjectElement.</preference_description>
+            <context name="Teamcenter">
+                <value>Awp0SR5GenMfgObjElementSummary</value>
+            </context>
+        </preference>
+
+        <preference name="AWC_SR5MfgObjectElement.SUMMARYRENDERING" type="String" array="false" disabled="false" protectionScope="User" envEnabled="false">
+            <preference_description>Registration of summary stylesheet for MfgObjectElement.</preference_description>
+            <context name="Teamcenter">
+                <value>Awp0SR5MfgObjectElementSummary</value>
+            </context>
+        </preference>
+
+        <preference name="AWC_SR5GenEngObjectElement.SUMMARYRENDERING" type="String" array="false" disabled="false" protectionScope="User" envEnabled="false">
+            <preference_description>Registration of summary stylesheet for GenEngObjElement.</preference_description>
+            <context name="Teamcenter">
+                <value>Awp0SR5GenEngObjElementSummary</value>
+            </context>
+        </preference>
+
+        <preference name="AWC_SR5ColorDefElement.SUMMARYRENDERING" type="String" array="false" disabled="false" protectionScope="User" envEnabled="false">
+            <preference_description>Registration of summary stylesheet for ColorDefElement.</preference_description>
+            <context name="Teamcenter">
+                <value>Awp0SR5ColorDefElementSummary</value>
+            </context>
+        </preference>
+
+        <preference name="AWC_SR5GenDocumentElement.SUMMARYRENDERING" type="String" array="false" disabled="false" protectionScope="User" envEnabled="false">
+            <preference_description>Registration of summary stylesheet for GenDocumentElement.</preference_description>
+            <context name="Teamcenter">
+                <value>Awp0SR5GenDocumentElementSummary</value>
+            </context>
+        </preference>
+
+    </category>
+    <category name="Active Workspace">
+        <category_description>No description available for this category.</category_description>
+
+        <!-- Stylesheets for CATDrawing -->
+        <preference name="AWC_CATDrawing.INFORENDERING" type="String" array="false" disabled="false" protectionScope="User" envEnabled="false">
+            <preference_description>Registration of inforendering</preference_description>
+            <context name="Teamcenter">
+                <value>Awp0CATDrawingInfoSummary</value>
+            </context>
+        </preference>
+
+        <!-- Stylesheets for CATPart -->
+        <preference name="AWC_CATPart.INFORENDERING" type="String" array="false" disabled="false" protectionScope="User" envEnabled="false">
+            <preference_description>Registration of inforendering</preference_description>
+            <context name="Teamcenter">
+                <value>Awp0CATPartInfoSummary</value>
+            </context>
+        </preference>
+
+        <!-- Stylesheets for CATProduct -->
+        <preference name="AWC_CATProduct.INFORENDERING" type="String" array="false" disabled="false" protectionScope="User" envEnabled="false">
+            <preference_description>Registration of inforendering</preference_description>
+            <context name="Teamcenter">
+                <value>Awp0CATProductInfoSummary</value>
+            </context>
+        </preference>
+
+        <!-- Custom revise style sheets for term LOV enabled objects -->
+        <preference name="AWC_SR5EngArticleRevision.REVISERENDERING" type="String" array="false" disabled="false" protectionScope="User" envEnabled="false">
+            <preference_description>Registration of revise rendering for SR5EngArticleRevision</preference_description>
+            <context name="Teamcenter">
+                <value>SR5Awp0ItemRevReviseWithTerms</value>
+            </context>
+        </preference>
+
+        <preference name="AWC_SR5CatDefArticleRevision.REVISERENDERING" type="String" array="false" disabled="false" protectionScope="User" envEnabled="false">
+            <preference_description>Registration of revise rendering for SR5CatDefArticleRevision</preference_description>
+            <context name="Teamcenter">
+                <value>SR5Awp0ItemRevReviseWithTerms</value>
+            </context>
+        </preference>
+
+        <preference name="AWC_SR5ElectricAssyRevision.REVISERENDERING" type="String" array="false" disabled="false" protectionScope="User" envEnabled="false">
+            <preference_description>Registration of revise rendering for SR5ElectricAssyRevision</preference_description>
+            <context name="Teamcenter">
+                <value>SR5Awp0ItemRevReviseWithTerms</value>
+            </context>
+        </preference>
+
+        <preference name="AWC_SR5EngInstallLocRevision.REVISERENDERING" type="String" array="false" disabled="false" protectionScope="User" envEnabled="false">
+            <preference_description>Registration of revise rendering for SR5EngInstallLocRevision</preference_description>
+            <context name="Teamcenter">
+                <value>SR5Awp0ItemRevReviseWithTerms</value>
+            </context>
+        </preference>
+
+        <preference name="AWC_SR5EngRawArticleRevision.REVISERENDERING" type="String" array="false" disabled="false" protectionScope="User" envEnabled="false">
+            <preference_description>Registration of revise rendering for SR5EngRawArticleRevision</preference_description>
+            <context name="Teamcenter">
+                <value>SR5Awp0ItemRevReviseWithTerms</value>
+            </context>
+        </preference>
+
+        <preference name="AWC_SR5GenCatPartRevision.REVISERENDERING" type="String" array="false" disabled="false" protectionScope="User" envEnabled="false">
+            <preference_description>Registration of revise rendering for SR5GenCatPartRevision</preference_description>
+            <context name="Teamcenter">
+                <value>SR5Awp0ItemRevReviseWithTerms</value>
+            </context>
+        </preference>
+
+        <preference name="AWC_SR5SoftwareRevision.REVISERENDERING" type="String" array="false" disabled="false" protectionScope="User" envEnabled="false">
+            <preference_description>Registration of revise rendering for SR5SoftwareRevision</preference_description>
+            <context name="Teamcenter">
+                <value>SR5Awp0ItemRevReviseWithTerms</value>
+            </context>
+        </preference>
+
+        <preference name="AWC_SR5ToolRevision.REVISERENDERING" type="String" array="false" disabled="false" protectionScope="User" envEnabled="false">
+            <preference_description>Registration of revise rendering for SR5ToolRevision</preference_description>
+            <context name="Teamcenter">
+                <value>SR5Awp0ItemRevReviseWithTerms</value>
+            </context>
+        </preference>
+
+        <!-- Custom save as style sheets for term LOV enabled objects -->
+        <preference name="AWC_SR5EngArticleRevision.SAVEASRENDERING" type="String" array="false" disabled="false" protectionScope="User" envEnabled="false">
+            <preference_description>Registration of revise rendering for SR5EngArticleRevision</preference_description>
+            <context name="Teamcenter">
+                <value>SR5Awp0ItemRevSaveAsWithTerms</value>
+            </context>
+        </preference>
+
+        <preference name="AWC_SR5CatDefArticleRevision.SAVEASRENDERING" type="String" array="false" disabled="false" protectionScope="User" envEnabled="false">
+            <preference_description>Registration of revise rendering for SR5CatDefArticleRevision</preference_description>
+            <context name="Teamcenter">
+                <value>SR5Awp0ItemRevSaveAsWithTerms</value>
+            </context>
+        </preference>
+
+        <preference name="AWC_SR5ElectricAssyRevision.SAVEASRENDERING" type="String" array="false" disabled="false" protectionScope="User" envEnabled="false">
+            <preference_description>Registration of revise rendering for SR5ElectricAssyRevision</preference_description>
+            <context name="Teamcenter">
+                <value>SR5Awp0ItemRevSaveAsWithTerms</value>
+            </context>
+        </preference>
+
+        <preference name="AWC_SR5EngInstallLocRevision.SAVEASRENDERING" type="String" array="false" disabled="false" protectionScope="User" envEnabled="false">
+            <preference_description>Registration of revise rendering for SR5EngInstallLocRevision</preference_description>
+            <context name="Teamcenter">
+                <value>SR5Awp0ItemRevSaveAsWithTerms</value>
+            </context>
+        </preference>
+
+        <preference name="AWC_SR5EngRawArticleRevision.SAVEASRENDERING" type="String" array="false" disabled="false" protectionScope="User" envEnabled="false">
+            <preference_description>Registration of revise rendering for SR5EngRawArticleRevision</preference_description>
+            <context name="Teamcenter">
+                <value>SR5Awp0ItemRevSaveAsWithTerms</value>
+            </context>
+        </preference>
+
+        <preference name="AWC_SR5GenCatPartRevision.SAVEASRENDERING" type="String" array="false" disabled="false" protectionScope="User" envEnabled="false">
+            <preference_description>Registration of revise rendering for SR5GenCatPartRevision</preference_description>
+            <context name="Teamcenter">
+                <value>SR5Awp0ItemRevSaveAsWithTerms</value>
+            </context>
+        </preference>
+
+        <preference name="AWC_SR5SoftwareRevision.SAVEASRENDERING" type="String" array="false" disabled="false" protectionScope="User" envEnabled="false">
+            <preference_description>Registration of revise rendering for SR5SoftwareRevision</preference_description>
+            <context name="Teamcenter">
+                <value>SR5Awp0ItemRevSaveAsWithTerms</value>
+            </context>
+        </preference>
+
+        <preference name="AWC_SR5ToolRevision.SAVEASRENDERING" type="String" array="false" disabled="false" protectionScope="User" envEnabled="false">
+            <preference_description>Registration of revise rendering for SR5ToolRevision</preference_description>
+            <context name="Teamcenter">
+                <value>SR5Awp0ItemRevSaveAsWithTerms</value>
+            </context>
+        </preference>
+
+        <!-- Custom style sheets for SR5GenDocument -->
+        <preference name="AWC_SR5GenDocument.CREATERENDERING" type="String" array="false" disabled="false" protectionScope="User" envEnabled="false">
+            <preference_description>Registration of create rendering for SR5GenDocument</preference_description>
+            <context name="Teamcenter">
+                <value>Awp0SR5GenDocumentCreate</value>
+            </context>
+        </preference>
+
+        <preference name="AWC_SR5GenDocument.SUMMARYRENDERING" type="String" array="false" disabled="false" protectionScope="User" envEnabled="false">
+            <preference_description>Registration of summary rendering for SR5GenDocument</preference_description>
+            <context name="Teamcenter">
+                <value>Awp0SR5GenDocumentSummary</value>
+            </context>
+        </preference>
+
+        <preference name="AWC_SR5GenDocument.showObjectLocation.SUMMARYRENDERING" type="String" array="false" disabled="false" protectionScope="User" envEnabled="false">
+            <preference_description>Registration of show object location summary rendering for SR5GenDocument</preference_description>
+            <context name="Teamcenter">
+                <value>Awp0SR5GenDocumentSummaryForShowObjectLocation</value>
+            </context>
+        </preference>
+
+        <preference name="AWC_SR5GenDocumentRevision.SUMMARYRENDERING" type="String" array="false" disabled="false" protectionScope="User" envEnabled="false">
+            <preference_description>Registration of summary rendering for SR5GenDocumentRevision</preference_description>
+            <context name="Teamcenter">
+                <value>Awp0SR5GenDocumentRevSummary</value>
+            </context>
+        </preference>
+
+        <!-- Custom style sheets for SR5CoatingStruct -->
+        <preference name="AWC_SR5CoatingStruct.CREATERENDERING" type="String" array="false" disabled="false" protectionScope="User" envEnabled="false">
+            <preference_description>Registration of create rendering for SR5CoatingStruct</preference_description>
+            <context name="Teamcenter">
+                <value>Awp0SR5CoatingStructCreate</value>
+            </context>
+        </preference>
+
+        <preference name="AWC_SR5CoatingStruct.SUMMARYRENDERING" type="String" array="false" disabled="false" protectionScope="User" envEnabled="false">
+            <preference_description>Registration of summary rendering for SR5CoatingStruct</preference_description>
+            <context name="Teamcenter">
+                <value>Awp0SR5CoatingStructSummary</value>
+            </context>
+        </preference>
+
+        <preference name="AWC_SR5CoatingStruct.showObjectLocation.SUMMARYRENDERING" type="String" array="false" disabled="false" protectionScope="User" envEnabled="false">
+            <preference_description>Registration of show object location summary rendering for SR5CoatingStruct</preference_description>
+            <context name="Teamcenter">
+                <value>Awp0SR5CoatingStructSummaryForShowObjectLocation</value>
+            </context>
+        </preference>
+
+        <preference name="AWC_SR5CoatingStructRevision.SUMMARYRENDERING" type="String" array="false" disabled="false" protectionScope="User" envEnabled="false">
+            <preference_description>Registration of summary rendering for SR5CoatingStructRevision</preference_description>
+            <context name="Teamcenter">
+                <value>Awp0SR5CoatingStructRevSummary</value>
+            </context>
+        </preference>
+
+        <!-- Custom style sheets for SR5BodNode -->
+        <preference name="AWC_SR5BodNode.CREATERENDERING" type="String" array="false" disabled="false" protectionScope="User" envEnabled="false">
+            <preference_description>Registration of create rendering for SR5BodNode</preference_description>
+            <context name="Teamcenter">
+                <value>Awp0SR5BodNodeCreate</value>
+            </context>
+        </preference>
+
+        <preference name="AWC_SR5BodNode.INFORENDERING" type="String" array="false" disabled="false" protectionScope="User" envEnabled="false">
+            <preference_description>Registration of summary rendering for SR5BodNode</preference_description>
+            <context name="Teamcenter">
+                <value>Awp0SR5BodNodeInfoSummary</value>
+            </context>
+        </preference>
+
+        <preference name="AWC_SR5BodNode.SUMMARYRENDERING" type="String" array="false" disabled="false" protectionScope="User" envEnabled="false">
+            <preference_description>Registration of summary rendering for SR5BodNode</preference_description>
+            <context name="Teamcenter">
+                <value>Awp0SR5BodNodeSummary</value>
+            </context>
+        </preference>
+
+        <preference name="AWC_SR5BodNode.showObjectLocation.SUMMARYRENDERING" type="String" array="false" disabled="false" protectionScope="User" envEnabled="false">
+            <preference_description>Registration of show object location summary rendering for SR5BodNode</preference_description>
+            <context name="Teamcenter">
+                <value>Awp0SR5BodNodeSummaryForShowObjectLocation</value>
+            </context>
+        </preference>
+
+        <preference name="AWC_SR5BodNodeRevision.INFORENDERING" type="String" array="false" disabled="false" protectionScope="User" envEnabled="false">
+            <preference_description>Registration of summary rendering for SR5BodNodeRevision</preference_description>
+            <context name="Teamcenter">
+                <value>Awp0SR5BodNodeRevInfoSummary</value>
+            </context>
+        </preference>
+
+        <preference name="AWC_SR5BodNodeRevision.SUMMARYRENDERING" type="String" array="false" disabled="false" protectionScope="User" envEnabled="false">
+            <preference_description>Registration of summary rendering for SR5BodNodeRevision</preference_description>
+            <context name="Teamcenter">
+                <value>Awp0SR5BodNodeRevSummary</value>
+            </context>
+        </preference>
+
+        <preference name="AWC_SR5BodNodeRevision.showObjectLocation.SUMMARYRENDERING" type="String" array="false" disabled="false" protectionScope="User" envEnabled="false">
+            <preference_description>Registration of show object location summary rendering for SR5BodNodeRevision</preference_description>
+            <context name="Teamcenter">
+                <value>Awp0SR5BodNodeRevSummaryForShowObjectLocation</value>
+            </context>
+        </preference>
+
+        <preference name="AWC_SR5BodNodeRevision.showObjectLocation.OccurrenceManagementSubLocation.SUMMARYRENDERING" type="String" array="false" disabled="false" protectionScope="User" envEnabled="false">
+            <preference_description>Registration of show object location and occurence management sublocation summary rendering for SR5BodNodeRevision</preference_description>
+            <context name="Teamcenter">
+                <value>Awp0SR5BodNodeRevSummary</value>
+            </context>
+        </preference>
+
+        <preference name="AWC_SR5BodNodeRevision.showObjectLocation.objectNavigationSubLocation.SUMMARYRENDERING" type="String" array="false" disabled="false" protectionScope="User" envEnabled="false">
+            <preference_description>Registration of show object location and object navigation sublocation summary rendering for SR5BodNodeRevision</preference_description>
+            <context name="Teamcenter">
+                <value>Awp0SR5BodNodeRevSummary</value>
+            </context>
+        </preference>
+
+        <!-- Custom style sheets for SR5GenPart -->
+        <preference name="AWC_SR5GenPart.SUMMARYRENDERING" type="String" array="false" disabled="false" protectionScope="User" envEnabled="false">
+            <preference_description>Registration of summary rendering for SR5GenPart</preference_description>
+            <context name="Teamcenter">
+                <value>Awp0SR5GenPartSummary</value>
+            </context>
+        </preference>
+
+        <preference name="AWC_SR5GenPartRevision.SUMMARYRENDERING" type="String" array="false" disabled="false" protectionScope="User" envEnabled="false">
+            <preference_description>Registration of summary rendering for SR5GenPartRevision</preference_description>
+            <context name="Teamcenter">
+                <value>Awp0SR5GenPartRevSummary</value>
+            </context>
+        </preference>
+
+        <preference name="AWC_SR5GenPartRevision.showObjectLocation.SUMMARYRENDERING" type="String" array="false" disabled="false" protectionScope="User" envEnabled="false">
+            <preference_description>Registration of show object location summary rendering for SR5GenPartRevision</preference_description>
+            <context name="Teamcenter">
+                <value>Awp0SR5GenPartRevSummaryForShowObjectLocation</value>
+            </context>
+        </preference>
+
+        <preference name="AWC_SR5GenPartRevision.showObjectLocation.OccurrenceManagementSubLocation.SUMMARYRENDERING" type="String" array="false" disabled="false" protectionScope="User" envEnabled="false">
+            <preference_description>Registration of show object location and occurence management sublocation summary rendering for SR5GenPartRevision</preference_description>
+            <context name="Teamcenter">
+                <value>Awp0SR5GenPartRevSummary</value>
+            </context>
+        </preference>
+
+        <preference name="AWC_SR5GenPartRevision.showObjectLocation.objectNavigationSubLocation.SUMMARYRENDERING" type="String" array="false" disabled="false" protectionScope="User" envEnabled="false">
+            <preference_description>Registration of show object location and object navigation sublocation summary rendering for SR5GenPartRevision</preference_description>
+            <context name="Teamcenter">
+                <value>Awp0SR5GenPartRevSummary</value>
+            </context>
+        </preference>
+
+        <!-- Custom style sheets for SR5ColorDef -->
+        <preference name="AWC_SR5ColorDef.CREATERENDERING" type="String" array="false" disabled="false" protectionScope="User" envEnabled="false">
+            <preference_description>Registration of create rendering for SR5ColorDef</preference_description>
+            <context name="Teamcenter">
+                <value>Awp0SR5ColorDefCreate</value>
+            </context>
+        </preference>
+
+        <preference name="AWC_SR5ColorDef.SUMMARYRENDERING" type="String" array="false" disabled="false" protectionScope="User" envEnabled="false">
+            <preference_description>Registration of summary rendering for SR5ColorDef</preference_description>
+            <context name="Teamcenter">
+                <value>Awp0SR5ColorDefSummary</value>
+            </context>
+        </preference>
+
+        <preference name="AWC_SR5ColorDefRevision.SUMMARYRENDERING" type="String" array="false" disabled="false" protectionScope="User" envEnabled="false">
+            <preference_description>Registration of summary rendering for SR5ColorDefRevision</preference_description>
+            <context name="Teamcenter">
+                <value>Awp0SR5ColorDefRevSummary</value>
+            </context>
+        </preference>
+
+        <preference name="AWC_SR5ColorDefRevision.showObjectLocation.SUMMARYRENDERING" type="String" array="false" disabled="false" protectionScope="User" envEnabled="false">
+            <preference_description>Registration of show object location summary rendering for SR5ColorDefRevision</preference_description>
+            <context name="Teamcenter">
+                <value>Awp0SR5ColorDefRevSummaryForShowObjectLocation</value>
+            </context>
+        </preference>
+
+        <preference name="AWC_SR5ColorDefRevision.showObjectLocation.OccurrenceManagementSubLocation.SUMMARYRENDERING" type="String" array="false" disabled="false" protectionScope="User" envEnabled="false">
+            <preference_description>Registration of show object location and occurence management sublocation summary rendering for SR5ColorDefRevision</preference_description>
+            <context name="Teamcenter">
+                <value>Awp0SR5ColorDefRevSummary</value>
+            </context>
+        </preference>
+
+        <preference name="AWC_SR5ColorDefRevision.showObjectLocation.objectNavigationSubLocation.SUMMARYRENDERING" type="String" array="false" disabled="false" protectionScope="User" envEnabled="false">
+            <preference_description>Registration of show object location and object navigation sublocation summary rendering for SR5ColorDefRevision</preference_description>
+            <context name="Teamcenter">
+                <value>Awp0SR5ColorDefRevSummary</value>
+            </context>
+        </preference>
+
+        <!-- Custom style sheets for SR5Weld -->
+        <preference name="AWC_SR5Weld.CREATERENDERING" type="String" array="false" disabled="false" protectionScope="User" envEnabled="false">
+            <preference_description>Registration of create rendering for SR5Weld</preference_description>
+            <context name="Teamcenter">
+                <value>Awp0SR5WeldCreate</value>
+            </context>
+        </preference>
+
+        <preference name="AWC_SR5WeldRevision.SUMMARYRENDERING" type="String" array="false" disabled="false" protectionScope="User" envEnabled="false">
+            <preference_description>Registration of summary rendering for SR5WeldRevision</preference_description>
+            <context name="Teamcenter">
+                <value>Awp0SR5WeldRevSummary</value>
+            </context>
+        </preference>
+
+        <preference name="AWC_SR5WeldRevision.showObjectLocation.SUMMARYRENDERING" type="String" array="false" disabled="false" protectionScope="User" envEnabled="false">
+            <preference_description>Registration of show object location summary rendering for SR5WeldRevision</preference_description>
+            <context name="Teamcenter">
+                <value>Awp0SR5WeldRevSummaryForShowObjectLocation</value>
+            </context>
+        </preference>
+
+        <preference name="AWC_SR5WeldRevision.showObjectLocation.OccurrenceManagementSubLocation.SUMMARYRENDERING" type="String" array="false" disabled="false" protectionScope="User" envEnabled="false">
+            <preference_description>Registration of show object location and occurence management sublocation summary rendering for SR5WeldRevision</preference_description>
+            <context name="Teamcenter">
+                <value>Awp0SR5WeldRevSummary</value>
+            </context>
+        </preference>
+
+        <preference name="AWC_SR5WeldRevision.showObjectLocation.objectNavigationSubLocation.SUMMARYRENDERING" type="String" array="false" disabled="false" protectionScope="User" envEnabled="false">
+            <preference_description>Registration of show object location and object navigation sublocation summary rendering for SR5WeldRevision</preference_description>
+            <context name="Teamcenter">
+                <value>Awp0SR5WeldRevSummary</value>
+            </context>
+        </preference>
+
+        <!-- Custom style sheets for SR5EngArticle -->
+        <preference name="AWC_SR5EngArticleMaster.INFORENDERING" type="String" array="false" disabled="false" protectionScope="User" envEnabled="false">
+            <preference_description>Registration of create rendering for SR5EngArticle</preference_description>
+            <context name="Teamcenter">
+                <value>Awp0SR5EngArticleMasterInfoSummary</value>
+            </context>
+        </preference>
+
+        <preference name="AWC_SR5EngArticle.CREATERENDERING" type="String" array="false" disabled="false" protectionScope="User" envEnabled="false">
+            <preference_description>Registration of create rendering for SR5EngArticle</preference_description>
+            <context name="Teamcenter">
+                <value>Awp0SR5EngArticleCreate</value>
+            </context>
+        </preference>
+
+        <preference name="AWC_SR5EngArticle.SUMMARYRENDERING" type="String" array="false" disabled="false" protectionScope="User" envEnabled="false">
+            <preference_description>Registration of summary rendering for SR5EngArticle</preference_description>
+            <context name="Teamcenter">
+                <value>Awp0SR5EngArticleSummary</value>
+            </context>
+        </preference>
+
+        <preference name="AWC_SR5EngArticleRevision.INFORENDERING" type="String" array="false" disabled="false" protectionScope="User" envEnabled="false">
+            <preference_description>Registration of summary rendering for SR5EngArticleRevision</preference_description>
+            <context name="Teamcenter">
+                <value>Awp0SR5EngArticleRevInfoSummary</value>
+            </context>
+        </preference>
+
+        <preference name="AWC_SR5EngArticleRevision.SUMMARYRENDERING" type="String" array="false" disabled="false" protectionScope="User" envEnabled="false">
+            <preference_description>Registration of summary rendering for SR5EngArticleRevision</preference_description>
+            <context name="Teamcenter">
+                <value>Awp0SR5EngArticleRevSummary</value>
+            </context>
+        </preference>
+
+        <preference name="AWC_SR5EngArticleRevision.showObjectLocation.SUMMARYRENDERING" type="String" array="false" disabled="false" protectionScope="User" envEnabled="false">
+            <preference_description>Registration of show object location summary rendering for SR5EngArticleRevision</preference_description>
+            <context name="Teamcenter">
+                <value>Awp0SR5EngArticleRevSummaryForShowObjectLocation</value>
+            </context>
+        </preference>
+
+        <preference name="AWC_SR5EngArticleRevision.showObjectLocation.OccurrenceManagementSubLocation.SUMMARYRENDERING" type="String" array="false" disabled="false" protectionScope="User" envEnabled="false">
+            <preference_description>Registration of show object location and occurence management sublocation summary rendering for SR5EngArticleRevision</preference_description>
+            <context name="Teamcenter">
+                <value>Awp0SR5EngArticleRevSummary</value>
+            </context>
+        </preference>
+
+        <preference name="AWC_SR5EngArticleRevision.showObjectLocation.objectNavigationSubLocation.SUMMARYRENDERING" type="String" array="false" disabled="false" protectionScope="User" envEnabled="false">
+            <preference_description>Registration of show object location and object navigation sublocation summary rendering for SR5EngArticleRevision</preference_description>
+            <context name="Teamcenter">
+                <value>Awp0SR5EngArticleRevSummary</value>
+            </context>
+        </preference>
+
+        <!-- Custom style sheets for SR5EngRawArticle -->
+
+        <preference name="AWC_SR5EngRawArticle.CREATERENDERING" type="String" array="false" disabled="false" protectionScope="User" envEnabled="false">
+            <preference_description>Registration of create rendering for SR5EngRawArticle</preference_description>
+            <context name="Teamcenter">
+                <value>Awp0SR5EngRawArticleCreate</value>
+            </context>
+        </preference>
+
+        <preference name="AWC_SR5EngRawArticle.SUMMARYRENDERING" type="String" array="false" disabled="false" protectionScope="User" envEnabled="false">
+            <preference_description>Registration of summary rendering for SR5EngRawArticle</preference_description>
+            <context name="Teamcenter">
+                <value>Awp0SR5EngRawArticleSummary</value>
+            </context>
+        </preference>
+
+        <preference name="AWC_SR5EngRawArticleRevision.SUMMARYRENDERING" type="String" array="false" disabled="false" protectionScope="User" envEnabled="false">
+            <preference_description>Registration of summary rendering for SR5EngRawArticleRevision</preference_description>
+            <context name="Teamcenter">
+                <value>Awp0SR5EngRawArticleRevSummary</value>
+            </context>
+        </preference>
+
+        <preference name="AWC_SR5EngRawArticleRevision.showObjectLocation.SUMMARYRENDERING" type="String" array="false" disabled="false" protectionScope="User" envEnabled="false">
+            <preference_description>Registration of show object location summary rendering for SR5EngRawArticleRevision</preference_description>
+            <context name="Teamcenter">
+                <value>Awp0SR5EngRawArticleRevSummaryForShowObjectLocation</value>
+            </context>
+        </preference>
+
+        <preference name="AWC_SR5EngRawArticleRevision.showObjectLocation.OccurrenceManagementSubLocation.SUMMARYRENDERING" type="String" array="false" disabled="false" protectionScope="User" envEnabled="false">
+            <preference_description>Registration of show object location and occurence management sublocation summary rendering for SR5EngRawArticleRevision</preference_description>
+            <context name="Teamcenter">
+                <value>Awp0SR5EngRawArticleRevSummary</value>
+            </context>
+        </preference>
+
+        <preference name="AWC_SR5EngRawArticleRevision.showObjectLocation.objectNavigationSubLocation.SUMMARYRENDERING" type="String" array="false" disabled="false" protectionScope="User" envEnabled="false">
+            <preference_description>Registration of show object location and object navigation sublocation summary rendering for SR5EngRawArticleRevision</preference_description>
+            <context name="Teamcenter">
+                <value>Awp0SR5EngRawArticleRevSummary</value>
+            </context>
+        </preference>
+
+        <!-- Custom style sheets for SR5EngInstallLoc -->
+
+        <preference name="AWC_SR5EngInstallLoc.CREATERENDERING" type="String" array="false" disabled="false" protectionScope="User" envEnabled="false">
+            <preference_description>Registration of create rendering for SR5EngInstallLoc</preference_description>
+            <context name="Teamcenter">
+                <value>Awp0SR5EngInstallLocCreate</value>
+            </context>
+        </preference>
+
+        <preference name="AWC_SR5EngInstallLoc.SUMMARYRENDERING" type="String" array="false" disabled="false" protectionScope="User" envEnabled="false">
+            <preference_description>Registration of summary rendering for SR5EngInstallLoc</preference_description>
+            <context name="Teamcenter">
+                <value>Awp0SR5EngInstallLocSummary</value>
+            </context>
+        </preference>
+
+        <preference name="AWC_SR5EngInstallLocRevision.SUMMARYRENDERING" type="String" array="false" disabled="false" protectionScope="User" envEnabled="false">
+            <preference_description>Registration of summary rendering for SR5EngInstallLocRevision</preference_description>
+            <context name="Teamcenter">
+                <value>Awp0SR5EngInstallLocRevSummary</value>
+            </context>
+        </preference>
+
+        <preference name="AWC_SR5EngInstallLocRevision.showObjectLocation.SUMMARYRENDERING" type="String" array="false" disabled="false" protectionScope="User" envEnabled="false">
+            <preference_description>Registration of show object location summary rendering for SR5EngInstallLocRevision</preference_description>
+            <context name="Teamcenter">
+                <value>Awp0SR5EngInstallLocRevSummaryForShowObjectLocation</value>
+            </context>
+        </preference>
+
+        <preference name="AWC_SR5EngInstallLocRevision.showObjectLocation.OccurrenceManagementSubLocation.SUMMARYRENDERING" type="String" array="false" disabled="false" protectionScope="User" envEnabled="false">
+            <preference_description>Registration of show object location and occurence management sublocation summary rendering for SR5EngInstallLocRevision</preference_description>
+            <context name="Teamcenter">
+                <value>Awp0SR5EngInstallLocRevSummary</value>
+            </context>
+        </preference>
+
+        <preference name="AWC_SR5EngInstallLocRevision.showObjectLocation.objectNavigationSubLocation.SUMMARYRENDERING" type="String" array="false" disabled="false" protectionScope="User" envEnabled="false">
+            <preference_description>Registration of show object location and object navigation sublocation summary rendering for SR5EngInstallLocRevision</preference_description>
+            <context name="Teamcenter">
+                <value>Awp0SR5EngInstallLocRevSummary</value>
+            </context>
+        </preference>
+
+
+        <!-- Custom style sheets for SR5CatDefArticle -->
+        <preference name="AWC_SR5CatDefArticleMaster.INFORENDERING" type="String" array="false" disabled="false" protectionScope="User" envEnabled="false">
+            <preference_description>Registration of create rendering for SR5CatDefArticle</preference_description>
+            <context name="Teamcenter">
+                <value>Awp0SR5CatDefArticleMasterInfoSummary</value>
+            </context>
+        </preference>
+
+        <preference name="AWC_SR5CatDefArticle.CREATERENDERING" type="String" array="false" disabled="false" protectionScope="User" envEnabled="false">
+            <preference_description>Registration of create rendering for SR5CatDefArticle</preference_description>
+            <context name="Teamcenter">
+                <value>Awp0SR5CatDefArticleCreate</value>
+            </context>
+        </preference>
+
+        <preference name="AWC_SR5CatDefArticle.SUMMARYRENDERING" type="String" array="false" disabled="false" protectionScope="User" envEnabled="false">
+            <preference_description>Registration of summary rendering for SR5CatDefArticle</preference_description>
+            <context name="Teamcenter">
+                <value>Awp0SR5CatDefArticleSummary</value>
+            </context>
+        </preference>
+
+        <preference name="AWC_SR5CatDefArticleRevision.INFORENDERING" type="String" array="false" disabled="false" protectionScope="User" envEnabled="false">
+            <preference_description>Registration of summary rendering for SR5CatDefArticleRevision</preference_description>
+            <context name="Teamcenter">
+                <value>Awp0SR5CatDefArticleRevInfoSummary</value>
+            </context>
+        </preference>
+
+        <preference name="AWC_SR5CatDefArticleRevision.SUMMARYRENDERING" type="String" array="false" disabled="false" protectionScope="User" envEnabled="false">
+            <preference_description>Registration of summary rendering for SR5CatDefArticleRevision</preference_description>
+            <context name="Teamcenter">
+                <value>Awp0SR5CatDefArticleRevSummary</value>
+            </context>
+        </preference>
+
+        <preference name="AWC_SR5CatDefArticleRevision.showObjectLocation.SUMMARYRENDERING" type="String" array="false" disabled="false" protectionScope="User" envEnabled="false">
+            <preference_description>Registration of show object location summary rendering for SR5CatDefArticleRevision</preference_description>
+            <context name="Teamcenter">
+                <value>Awp0SR5CatDefArticleRevSummaryForShowObjectLocation</value>
+            </context>
+        </preference>
+
+        <preference name="AWC_SR5CatDefArticleRevision.showObjectLocation.OccurrenceManagementSubLocation.SUMMARYRENDERING" type="String" array="false" disabled="false" protectionScope="User" envEnabled="false">
+            <preference_description>Registration of show object location and occurence management sublocation summary rendering for SR5CatDefArticleRevision</preference_description>
+            <context name="Teamcenter">
+                <value>Awp0SR5CatDefArticleRevSummary</value>
+            </context>
+        </preference>
+
+        <preference name="AWC_SR5CatDefArticleRevision.showObjectLocation.objectNavigationSubLocation.SUMMARYRENDERING" type="String" array="false" disabled="false" protectionScope="User" envEnabled="false">
+            <preference_description>Registration of show object location and object navigation sublocation summary rendering for SR5CatDefArticleRevision</preference_description>
+            <context name="Teamcenter">
+                <value>Awp0SR5CatDefArticleRevSummary</value>
+            </context>
+        </preference>
+
+        <!-- Custom style sheets for SR5NonERPArticle -->
+
+        <preference name="AWC_SR5NonERPArticleRevision.SUMMARYRENDERING" type="String" array="false" disabled="false" protectionScope="User" envEnabled="false">
+            <preference_description>Registration of summary rendering for SR5NonERPArticleRevision</preference_description>
+            <context name="Teamcenter">
+                <value>Awp0SR5NonERPArticleRevSummary</value>
+            </context>
+        </preference>
+
+        <preference name="AWC_SR5NonERPArticleRevision.showObjectLocation.SUMMARYRENDERING" type="String" array="false" disabled="false" protectionScope="User" envEnabled="false">
+            <preference_description>Registration of show object location summary rendering for SR5NonERPArticleRevision</preference_description>
+            <context name="Teamcenter">
+                <value>Awp0SR5NonERPArticleRevSummaryForShowObjectLocation</value>
+            </context>
+        </preference>
+
+        <preference name="AWC_SR5NonERPArticleRevision.showObjectLocation.OccurrenceManagementSubLocation.SUMMARYRENDERING" type="String" array="false" disabled="false" protectionScope="User" envEnabled="false">
+            <preference_description>Registration of show object location and occurence management sublocation summary rendering for SR5NonERPArticleRevision</preference_description>
+            <context name="Teamcenter">
+                <value>Awp0SR5NonERPArticleRevSummary</value>
+            </context>
+        </preference>
+
+        <preference name="AWC_SR5NonERPArticleRevision.showObjectLocation.objectNavigationSubLocation.SUMMARYRENDERING" type="String" array="false" disabled="false" protectionScope="User" envEnabled="false">
+            <preference_description>Registration of show object location and object navigation sublocation summary rendering for SR5NonERPArticleRevision</preference_description>
+            <context name="Teamcenter">
+                <value>Awp0SR5NonERPArticleRevSummary</value>
+            </context>
+        </preference>
+
+        <preference name="AWC_SR5NonERPArticle.CREATERENDERING" type="String" array="false" disabled="false" protectionScope="User" envEnabled="false">
+            <preference_description>Registration of create rendering for SR5NonERPArticle</preference_description>
+            <context name="Teamcenter">
+                <value>Awp0SR5NonERPArticleCreate</value>
+            </context>
+        </preference>
+
+        <!-- Custom style sheets for SR5ElectricAssy-->
+        <preference name="AWC_SR5ElectricAssy.CREATERENDERING" type="String" array="false" disabled="false" protectionScope="User" envEnabled="false">
+            <preference_description>Registration of create rendering for SR5ElectricAssy</preference_description>
+            <context name="Teamcenter">
+                <value>Awp0SR5ElectricAssyCreate</value>
+            </context>
+        </preference>
+
+        <preference name="AWC_SR5ElectricAssyRevision.SUMMARYRENDERING" type="String" array="false" disabled="false" protectionScope="User" envEnabled="false">
+            <preference_description>Registration of summary rendering for SR5GenPartRevision</preference_description>
+            <context name="Teamcenter">
+                <value>Awp0SR5ElectricAssyRevisionSummary</value>
+            </context>
+        </preference>
+
+        <preference name="AWC_SR5ElectricAssyRevision.showObjectLocation.SUMMARYRENDERING" type="String" array="false" disabled="false" protectionScope="User" envEnabled="false">
+            <preference_description>Registration of show object location summary rendering for SR5GenPartRevision</preference_description>
+            <context name="Teamcenter">
+                <value>Awp0SR5ElectricAssyRevisionSummaryForShowObjectLocation</value>
+            </context>
+        </preference>
+
+        <preference name="AWC_SR5ElectricAssyRevision.showObjectLocation.OccurrenceManagementSubLocation.SUMMARYRENDERING" type="String" array="false" disabled="false" protectionScope="User" envEnabled="false">
+            <preference_description>Registration of show object location and occurence management sublocation summary rendering for SR5GenPartRevision</preference_description>
+            <context name="Teamcenter">
+                <value>Awp0SR5ElectricAssyRevisionSummary</value>
+            </context>
+        </preference>
+
+        <preference name="AWC_SR5ElectricAssyRevision.showObjectLocation.objectNavigationSubLocation.SUMMARYRENDERING" type="String" array="false" disabled="false" protectionScope="User" envEnabled="false">
+            <preference_description>Registration of show object location and object navigation sublocation summary rendering for SR5GenPartRevision</preference_description>
+            <context name="Teamcenter">
+                <value>Awp0SR5ElectricAssyRevisionSummary</value>
+            </context>
+        </preference>
+
+        <!-- Custom style sheets for SR5GenMfgObj-->
+        <preference name="AWC_SR5GenMfgObjMaster.INFORENDERING" type="String" array="false" disabled="false" protectionScope="User" envEnabled="false">
+            <preference_description>Registration of create rendering for SR5GenMfgObj</preference_description>
+            <context name="Teamcenter">
+                <value>Awp0SR5GenMfgObjMasterInfoSummary</value>
+            </context>
+        </preference>
+
+        <preference name="AWC_SR5GenMfgObj.CREATERENDERING" type="String" array="false" disabled="false" protectionScope="User" envEnabled="false">
+            <preference_description>Registration of create rendering for SR5GenMfgObj</preference_description>
+            <context name="Teamcenter">
+                <value>Awp0SR5GenMfgObjCreate</value>
+            </context>
+        </preference>
+
+        <preference name="AWC_SR5GenMfgObj.SUMMARYRENDERING" type="String" array="false" disabled="false" protectionScope="User" envEnabled="false">
+            <preference_description>Registration of summary rendering for SR5GenMfgObj</preference_description>
+            <context name="Teamcenter">
+                <value>Awp0SR5GenMfgObjSummary</value>
+            </context>
+        </preference>
+
+        <preference name="AWC_SR5GenMfgObjRevision.INFORENDERING" type="String" array="false" disabled="false" protectionScope="User" envEnabled="false">
+            <preference_description>Registration of info summary rendering for SR5GenMfgObjRevision</preference_description>
+            <context name="Teamcenter">
+                <value>Awp0SR5GenMfgObjRevInfoSummary</value>
+            </context>
+        </preference>
+
+        <preference name="AWC_SR5GenMfgObjRevision.SUMMARYRENDERING" type="String" array="false" disabled="false" protectionScope="User" envEnabled="false">
+            <preference_description>Registration of summary rendering for SR5GenMfgObjRevision</preference_description>
+            <context name="Teamcenter">
+                <value>Awp0SR5GenMfgObjRevSummary</value>
+            </context>
+        </preference>
+
+        <preference name="AWC_SR5MfgObjectRevision.SUMMARYRENDERING" type="String" array="false" disabled="false" protectionScope="User" envEnabled="false">
+            <preference_description>Registration of summary rendering for SR5MfgObjectRevision</preference_description>
+            <context name="Teamcenter">
+                <value>Awp0SR5MfgObjectRevSummary</value>
+            </context>
+        </preference>
+
+        <preference name="AWC_SR5GenMfgObjRevision.showObjectLocation.SUMMARYRENDERING" type="String" array="false" disabled="false" protectionScope="User" envEnabled="false">
+            <preference_description>Registration of show object location summary rendering for SR5GenMfgObjRevision</preference_description>
+            <context name="Teamcenter">
+                <value>Awp0SR5GenMfgObjRevSummaryForShowObjectLocation</value>
+            </context>
+        </preference>
+
+        <preference name="AWC_SR5MfgObjectRevision.showObjectLocation.SUMMARYRENDERING" type="String" array="false" disabled="false" protectionScope="User" envEnabled="false">
+            <preference_description>Registration of show object location summary rendering for SR5MfgObjectRevision</preference_description>
+            <context name="Teamcenter">
+                <value>Awp0SR5MfgObjectRevSummaryForShowObjectLocation</value>
+            </context>
+        </preference>
+
+        <preference name="AWC_SR5GenMfgObjRevision.showObjectLocation.OccurrenceManagementSubLocation.SUMMARYRENDERING" type="String" array="false" disabled="false" protectionScope="User" envEnabled="false">
+            <preference_description>Registration of show object location and occurence management sublocation summary rendering for SR5GenMfgObjRevision</preference_description>
+            <context name="Teamcenter">
+                <value>Awp0SR5GenMfgObjRevSummary</value>
+            </context>
+        </preference>
+
+        <preference name="AWC_SR5MfgObjectRevision.showObjectLocation.OccurrenceManagementSubLocation.SUMMARYRENDERING" type="String" array="false" disabled="false" protectionScope="User" envEnabled="false">
+            <preference_description>Registration of show object location and occurence management sublocation summary rendering for SR5MfgObjectRevision</preference_description>
+            <context name="Teamcenter">
+                <value>Awp0SR5MfgObjectRevSummary</value>
+            </context>
+        </preference>
+
+        <preference name="AWC_SR5GenMfgObjRevision.showObjectLocation.objectNavigationSubLocation.SUMMARYRENDERING" type="String" array="false" disabled="false" protectionScope="User" envEnabled="false">
+            <preference_description>Registration of show object location and object navigation sublocation summary rendering for SR5GenMfgObjRevision</preference_description>
+            <context name="Teamcenter">
+                <value>Awp0SR5GenMfgObjRevSummary</value>
+            </context>
+        </preference>
+
+        <preference name="AWC_SR5MfgObjectRevision.showObjectLocation.objectNavigationSubLocation.SUMMARYRENDERING" type="String" array="false" disabled="false" protectionScope="User" envEnabled="false">
+            <preference_description>Registration of show object location and object navigation sublocation summary rendering for SR5MfgObjectRevision</preference_description>
+            <context name="Teamcenter">
+                <value>Awp0SR5MfgObjectRevSummary</value>
+            </context>
+        </preference>
+
+        <!-- Custom style sheets for SR5GenEngObj-->
+        <preference name="AWC_SR5GenEngObjMaster.INFORENDERING" type="String" array="false" disabled="false" protectionScope="User" envEnabled="false">
+            <preference_description>Registration of create rendering for SR5GenEngObj</preference_description>
+            <context name="Teamcenter">
+                <value>Awp0SR5GenEngObjMasterInfoSummary</value>
+            </context>
+        </preference>
+
+        <preference name="AWC_SR5GenEngObj.CREATERENDERING" type="String" array="false" disabled="false" protectionScope="User" envEnabled="false">
+            <preference_description>Registration of create rendering for SR5GenEngObj</preference_description>
+            <context name="Teamcenter">
+                <value>Awp0SR5GenEngObjCreate</value>
+            </context>
+        </preference>
+
+        <preference name="AWC_SR5GenEngObj.SUMMARYRENDERING" type="String" array="false" disabled="false" protectionScope="User" envEnabled="false">
+            <preference_description>Registration of summary rendering for SR5GenEngObj</preference_description>
+            <context name="Teamcenter">
+                <value>Awp0SR5GenEngObjSummary</value>
+            </context>
+        </preference>
+
+        <preference name="AWC_SR5GenEngObjRevision.INFORENDERING" type="String" array="false" disabled="false" protectionScope="User" envEnabled="false">
+            <preference_description>Registration of info summary rendering for SR5GenEngObjRevision</preference_description>
+            <context name="Teamcenter">
+                <value>Awp0SR5GenEngObjRevInfoSummary</value>
+            </context>
+        </preference>
+
+        <preference name="AWC_SR5GenEngObjRevision.SUMMARYRENDERING" type="String" array="false" disabled="false" protectionScope="User" envEnabled="false">
+            <preference_description>Registration of summary rendering for SR5GenEngObjRevision</preference_description>
+            <context name="Teamcenter">
+                <value>Awp0SR5GenEngObjRevSummary</value>
+            </context>
+        </preference>
+
+        <preference name="AWC_SR5GenEngObjRevision.showObjectLocation.SUMMARYRENDERING" type="String" array="false" disabled="false" protectionScope="User" envEnabled="false">
+            <preference_description>Registration of show object location summary rendering for SR5GenEngObjRevision</preference_description>
+            <context name="Teamcenter">
+                <value>Awp0SR5GenEngObjRevSummaryForShowObjectLocation</value>
+            </context>
+        </preference>
+
+        <preference name="AWC_SR5GenEngObjRevision.showObjectLocation.OccurrenceManagementSubLocation.SUMMARYRENDERING" type="String" array="false" disabled="false" protectionScope="User" envEnabled="false">
+            <preference_description>Registration of show object location and occurence management sublocation summary rendering for SR5GenEngObjRevision</preference_description>
+            <context name="Teamcenter">
+                <value>Awp0SR5GenEngObjRevSummary</value>
+            </context>
+        </preference>
+
+        <preference name="AWC_SR5GenEngObjRevision.showObjectLocation.objectNavigationSubLocation.SUMMARYRENDERING" type="String" array="false" disabled="false" protectionScope="User" envEnabled="false">
+            <preference_description>Registration of show object location and object navigation sublocation summary rendering for SR5GenEngObjRevision</preference_description>
+            <context name="Teamcenter">
+                <value>Awp0SR5GenEngObjRevSummary</value>
+            </context>
+        </preference>
+
+        <!-- Custom style sheets for SR5EngProject -->
+        <preference name="AWC_SR5EngProject.CREATERENDERING" type="String" array="false" disabled="false" protectionScope="User" envEnabled="false">
+            <preference_description>Registration of create rendering for SR5EngProject</preference_description>
+            <context name="Teamcenter">
+                <value>Awp0SR5EngProjectCreate</value>
+            </context>
+        </preference>
+
+        <preference name="AWC_SR5EngProject.SUMMARYRENDERING" type="String" array="false" disabled="false" protectionScope="User" envEnabled="false">
+            <preference_description>Registration of summary rendering for SR5EngProject</preference_description>
+            <context name="Teamcenter">
+                <value>Awp0SR5EngProjectSummary</value>
+            </context>
+        </preference>
+
+        <preference name="AWC_SR5EngProjectRevision.SUMMARYRENDERING" type="String" array="false" disabled="false" protectionScope="User" envEnabled="false">
+            <preference_description>Registration of summary rendering for SR5EngProjectRevision</preference_description>
+            <context name="Teamcenter">
+                <value>Awp0SR5EngProjectRevSummary</value>
+            </context>
+        </preference>
+
+        <preference name="AWC_SR5EngProjectRevision.showObjectLocation.SUMMARYRENDERING" type="String" array="false" disabled="false" protectionScope="User" envEnabled="false">
+            <preference_description>Registration of show object location summary rendering for SR5EngProjectRevision</preference_description>
+            <context name="Teamcenter">
+                <value>Awp0SR5EngProjectRevSummaryForShowObjectLocation</value>
+            </context>
+        </preference>
+
+        <preference name="AWC_SR5EngProjectRevision.showObjectLocation.OccurrenceManagementSubLocation.SUMMARYRENDERING" type="String" array="false" disabled="false" protectionScope="User" envEnabled="false">
+            <preference_description>Registration of show object location and occurence management sublocation summary rendering for SR5EngProjectRevision</preference_description>
+            <context name="Teamcenter">
+                <value>Awp0SR5EngProjectRevSummary</value>
+            </context>
+        </preference>
+
+        <preference name="AWC_SR5EngProjectRevision.showObjectLocation.objectNavigationSubLocation.SUMMARYRENDERING" type="String" array="false" disabled="false" protectionScope="User" envEnabled="false">
+            <preference_description>Registration of show object location and object navigation sublocation summary rendering for SR5EngProjectRevision</preference_description>
+            <context name="Teamcenter">
+                <value>Awp0SR5EngProjectRevSummary</value>
+            </context>
+        </preference>
+
+        <!-- Custom style sheets for SR5Customer -->
+        <preference name="AWC_SR5Customer.CREATERENDERING" type="String" array="false" disabled="false" protectionScope="User" envEnabled="false">
+            <preference_description>Registration of create rendering for SR5Customer</preference_description>
+            <context name="Teamcenter">
+                <value>Awp0SR5CustomerCreate</value>
+            </context>
+        </preference>
+
+        <!-- Custom style sheets for SR5Plant -->
+        <preference name="AWC_SR5Plant.CREATERENDERING" type="String" array="false" disabled="false" protectionScope="User" envEnabled="false">
+            <preference_description>Registration of create rendering for SR5Plant</preference_description>
+            <context name="Teamcenter">
+                <value>Awp0SR5PlantCreate</value>
+            </context>
+        </preference>
+
+        <!-- Custom style sheets for SR5ArticleReqForm -->
+        <preference name="AWC_SR5ArticleReqForm.SUMMARYRENDERING" type="String" array="false" disabled="false" protectionScope="Site" envEnabled="false">
+            <preference_description>Description not provided during import.</preference_description>
+            <context name="Teamcenter">
+                <value>Awp0SR5ArticleReqFormSummary</value>
+            </context>
+        </preference>
+
+        <preference name="AWC_SR5ArticleReqForm.CREATERENDERING" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+            <preference_description>Description not provided during import.</preference_description>
+            <context name="Teamcenter">
+                <value>Awp0SR5ArticleReqFormCreate</value>
+            </context>
+        </preference>
+
+        <!-- Custom style sheets for SR5PlantForm -->
+        <preference name="AWC_SR5PlantForm.INFORENDERING" type="String" array="false" disabled="false" protectionScope="Site" envEnabled="false">
+            <preference_description>Description not provided during import.</preference_description>
+            <context name="Teamcenter">
+                <value>Awp0SR5PlantFormInfoSummary</value>
+            </context>
+        </preference>
+
+        <!-- Custom style sheets for SR5WFAddReqDocForm -->
+        <preference name="AWC_SR5WFAddReqDocForm.SAVEASRENDERING" type="String" array="false" disabled="false" protectionScope="Site" envEnabled="false">
+            <preference_description>Description not provided during import.</preference_description>
+            <context name="Teamcenter">
+                <value>Awp0SR5WFAddReqDocFormSaveAs</value>
+            </context>
+        </preference>
+
+        <!-- Custom style sheets for SR5MatReqForm -->
+        <preference name="AWC_SR5MatReqForm.SUMMARYRENDERING" type="String" array="false" disabled="false" protectionScope="Site" envEnabled="false">
+            <preference_description>Registration of summary rendering for SR5MatReqForm.</preference_description>
+            <context name="Teamcenter">
+                <value>Awp0SR5MatReqFormSummary</value>
+            </context>
+        </preference>
+        <preference name="AWC_SR5MatReqForm.CREATERENDERING" type="String" array="false" disabled="false" protectionScope="User" envEnabled="false">
+            <preference_description>Registration of create rendering for SR5MatReqForm</preference_description>
+            <context name="Teamcenter">
+                <value>Awp0SR5MatReqFormCreate</value>
+            </context>
+        </preference>
+
+        <!-- Custom style sheets for SR5GenCatPart -->
+        <preference name="AWC_SR5GenCatPart.CREATERENDERING" type="String" array="false" disabled="false" protectionScope="User" envEnabled="false">
+            <preference_description>Registration of create rendering for SR5GenCatPart</preference_description>
+            <context name="Teamcenter">
+                <value>Awp0SR5GenCatPartCreate</value>
+            </context>
+        </preference>
+
+        <preference name="AWC_SR5GenCatPartRevision.SUMMARYRENDERING" type="String" array="false" disabled="false" protectionScope="User" envEnabled="false">
+            <preference_description>Registration of summary rendering for SR5GenEngObjRevision</preference_description>
+            <context name="Teamcenter">
+                <value>Awp0SR5GenCatPartRevSummary</value>
+            </context>
+        </preference>
+
+        <preference name="AWC_SR5GenCatPartRevision.showObjectLocation.SUMMARYRENDERING" type="String" array="false" disabled="false" protectionScope="User" envEnabled="false">
+            <preference_description>Registration of show object location summary rendering for SR5GenEngObjRevision</preference_description>
+            <context name="Teamcenter">
+                <value>Awp0SR5GenCatPartRevSummaryForShowObjectLocation</value>
+            </context>
+        </preference>
+
+        <preference name="AWC_SR5GenCatPartRevision.showObjectLocation.OccurrenceManagementSubLocation.SUMMARYRENDERING" type="String" array="false" disabled="false" protectionScope="User" envEnabled="false">
+            <preference_description>Registration of show object location and occurence management sublocation summary rendering for SR5GenEngObjRevision</preference_description>
+            <context name="Teamcenter">
+                <value>Awp0SR5GenCatPartRevSummary</value>
+            </context>
+        </preference>
+
+        <preference name="AWC_SR5GenCatPartRevision.showObjectLocation.objectNavigationSubLocation.SUMMARYRENDERING" type="String" array="false" disabled="false" protectionScope="User" envEnabled="false">
+            <preference_description>Registration of show object location and object navigation sublocation summary rendering for SR5GenEngObjRevision</preference_description>
+            <context name="Teamcenter">
+                <value>Awp0SR5GenCatPartRevSummary</value>
+            </context>
+        </preference>
+
+    </category>
+
+</preferences>

@@ -1,0 +1,19 @@
+{
+  // Workspace definition
+  
+  "AW workspace": {
+    "scope": "xml",
+    "prefix": "workspace",
+    "body": [
+      "<Workspace id=\"${1}\">",
+      "    <WorkspaceMapping default=\"true\" group=\"${2}\" role=\"${3}\" />",
+      "    ${0}",
+      "</Workspace>"
+    ]
+  },
+  "AW workspace mapping": {
+    "scope": "xml",
+    "prefix": "wsmapping",
+    "body": "<WorkspaceMapping group=\"${1}\" role=\"${2}\" />${0}"
+  }
+}

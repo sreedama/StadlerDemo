@@ -1,0 +1,6 @@
+{
+    "name": "sr5CustomTheme",
+    "description": "This is the sr5CustomTheme module",
+    "skipTest": true,
+    "skipAudit": true
+}

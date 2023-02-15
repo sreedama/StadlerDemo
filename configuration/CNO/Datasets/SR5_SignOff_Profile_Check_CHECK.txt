@@ -1,0 +1,40 @@
+############################################################################################################
+#  CNO Check Definition File
+############################################################################################################
+# Version History
+#
+# Version    Date           Name               Description of Change
+# 1.0        08-02-2022     testu     Initial
+############################################################################################################
+#Check Signoff:fnd0AssigneeGroupRole
+#Signoff:fnd0AssigneeGroupRole§not allowed§empty~value requires~Attribute is not filled
+#Check Signoff:owning_group
+#Signoff:owning_group§not allowed§empty~value requires~Attribute is not filled
+#Check Signoff:owning_user
+#Signoff:owning_user§not allowed§empty~value requires~Attribute is not filled
+#Signoff:owning_user§exist§*~value requires~Attribute is not filled
+#EPMSelectSignoffTask>Fnd0EPMSignoff>Signoff:owning_user§exist§*~value requires~Sign-Off team to be chosen before starting Workflow
+#ID=1;scope=object;CRITERIA=CONDITION;CHECK=EPMSelectSignoffTask:object_name§eq§select-signoff-team for review task
+#ID=1;scope=object;CRITERIA=AND;CHECK=EPMSelectSignoffTask>Fnd0EPMSignoff>Signoff:owning_user§not allowed§[root:C:ItemRevision>IMAN_specification>CATDrawing:owning_user]~Reviewer should not be the same user who starts the workflow. Please reject task to reassign the task to the resourcepool.
+#ID=2;scope=object;CRITERIA=CONDITION;CHECK=EPMSelectSignoffTask:object_name§eq§select-signoff-team for Norm Check task
+#ID=2;scope=object;CRITERIA=AND;CHECK=EPMSelectSignoffTask>Fnd0EPMSignoff>Signoff:owning_user§not allowed§[root:C:ItemRevision>IMAN_specification>CATDrawing:owning_user]~Reviewer should not be the same user who starts the workflow. Please reject task to reassign the task to the resourcepool.
+#ID=1;scope=object;CRITERIA=CONDITION;CHECK=EPMSelectSignoffTask:object_name§eq§select-signoff-team for review task
+#ID=1;scope=object;CRITERIA=AND;CHECK=EPMSelectSignoffTask>Fnd0EPMSignoff>Signoff:owning_user§not allowed§[root:C:ItemRevision>process_stage_list>C:EPMTask:owning_user]~Reviewer should not be the same user who starts the workflow. 
+#ID=1;scope=object;CRITERIA=CONDITION;CHECK=EPMSelectSignoffTask:object_name§allowed§select-signoff-team for review task||select-signoff-team for Norm Check task||
+#ID=1;scope=object;CRITERIA=CONDITION;CHECK=EPMSelectSignoffTask:object_name§eq§select-signoff-team for Norm Check
+#ID=1;scope=object;CRITERIA=CONDITION;CHECK=C:Dataset:Dataset Type§exist§CATDrawing
+#ID=1;scope=object;CRITERIA=AND;CHECK=EPMSelectSignoffTask>Fnd0EPMSignoff>Signoff:owning_user§not allowed§[root:C:ItemRevision>process_stage_list>C:EPMTask:owning_user]~Reviewer should not be the same user who starts the workflow. Please reject task to reassign the task to the resourcepool.
+
+
+
+
+#ID=1;scope=object;CRITERIA=CONDITION;CHECK=EPMSelectSignoffTask:object_name§eq§select-signoff-team for review task
+#ID=1;scope=object;CRITERIA=AND;CHECK=EPMSelectSignoffTask>Fnd0EPMSignoff>Signoff:owning_user§not allowed§[root:C:ItemRevision:owning_user]~Apporver should not be the same user who owned the ItemRevision. Please reject task to reassign the task to the resourcepool.
+
+ID=2;scope=object;CRITERIA=CONDITION;CHECK=EPMSelectSignoffTask:object_name§eq§select-signoff-team for Norm Check task||Select Engineering Norm Checker
+ID=2;scope=object;CRITERIA=AND;CHECK=EPMSelectSignoffTask>Fnd0EPMSignoff>Signoff:owning_user§not allowed§[root:C:ItemRevision:owning_user]~Reviewer should not be the same user who owned the ItemRevision. Please reject task to reassign the task to the resourcepool.
+
+#SRS-2308: not only for EC
+#ID=4;CRITERIA=CONDITION;CHECK=SR5TechDocumentRevision:EC§eq§EC
+ID=4;CRITERIA=CONDITION;CHECK=EPMSelectSignoffTask:object_name§eq§select-signoff-team for Reviewer Check task||Select Document Reviewer
+ID=4;CRITERIA=AND;CHECK=Signoff:owning_user§not allowed§[root:C:ItemRevision:owning_user]~Reviewer should not be the same user who owned the DocumentRevision. Please reject task to reassign the task to the resourcepool.

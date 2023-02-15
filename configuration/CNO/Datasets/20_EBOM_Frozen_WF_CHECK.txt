@@ -1,0 +1,109 @@
+############################################################################################################
+#  CNO Check Definition File
+############################################################################################################
+# Version History
+#
+# Version    Date           Name               Description of Change
+# 1.0        28-03-2022     testu     Initial
+############################################################################################################
+
+#Process and unclear behavior of Teamcenter's customization
+C:EPMTask:num_targets§count lt 2§*~Object is already inside another workflow, list: [C:EPMTask:object_name]~no active Workflow is running
+
+
+# Occurences
+C:ItemRevision>view:bl_rev_checked_out§not allowed§True&&true&&Y&&Yes~[VAL_OBJECT:bl_rev_object_string] is checked-out on level [VAL_OBJECT:bl_level_starting_0]~Is checked-in on level [VAL_OBJECT:bl_level_starting_0]
+
+# selection child
+#sorted out be skip
+#ID=003;CRITERIA=CONDITION;CHECK=C:ItemRevision>view:bl_rev_last_release_status§allowed§empty
+#ID=003;CRITERIA=AND;CHECK=
+#bug VFW6.0.2 => should be corrected with 6.0.3.X
+C:ItemRevision>view:BL_ID_REV§allowed§[ALL_ROOT:C:ItemRevision:IR_ID_REV]~missing object [VAL_OBJECT:BL_ID_REV] that need to get a status 20 on level [VAL_OBJECT:bl_level_starting_0]
+#partial workaround:
+#C:ItemRevision>view:BL_ID_REV§allowed§[ALL_MAIN:C:ItemRevision:IR_ID_REV]~missing object [VAL_OBJECT:BL_ID_REV] that need to get a status 20 on level [VAL_OBJECT:bl_level_starting_0]
+
+#objects
+#C:ItemRevision:checked_out§not allowed§True&&true&&Y&&Yes~Root object is checked-out~Root object is checked-in
+#C:ItemRevision:last_release_status§allowed§empty~Root object already have a status [VAL_OBJECT:last_release_status]~Root object will get status 20
+C:SR5GenEngObjRevision:checked_out§not allowed§Y~object is checked-out~object is checked-in
+#complexity introduce by Eng Raw Article Revision + change on SRS-1847
+#C:SR5GenEngObjRevision:last_release_status§allowed§empty~object already have a status [VAL_OBJECT:last_release_status]~object will get status 20
+ID=20Child30;scope=object;CRITERIA=CONDITION;CHECK=C:ItemRevision:DB_Type§not allowed§SR5EngRawArticleRevision&&SR5GenCatPartRevision&&SR5CatalogPartRevision&&SR5EleCatPartRevision&&SR5MechCatPartRevision&&SR5ColorDefRevision&&SR5CoatingStructRevision&&SR5CatDefArticleRevision&&SR5CatDefArtARRevision&&SR5GenCatPartARRevision&&SR5EngRawArticleRevision
+ID=20Child30;scope=object;CRITERIA=AND;CHECK=C:SR5GenEngObjRevision:last_release_status§allowed§empty~object already have a status [VAL_OBJECT:last_release_status]~object will get status 20
+
+ID=20Child31;scope=object;CRITERIA=CONDITION;CHECK=C:ItemRevision:DB_Type§allowed§SR5EngRawArticleRevision||SR5GenCatPartRevision||SR5CatalogPartRevision||SR5EleCatPartRevision||SR5MechCatPartRevision||SR5ColorDefRevision||SR5CoatingStructRevision||SR5CatDefArticleRevision||SR5CatDefArtARRevision||SR5GenCatPartARRevision||SR5EngRawArticleRevision
+ID=20Child31;scope=object;CRITERIA=AND;CHECK=C:SR5GenEngObjRevision:last_release_status§not allowed§empty~[VAL_OBJECT:Type] with no status is not allowed~status of [VAL_OBJECT:Type] is not in work
+#
+
+
+#Status of related Doc
+SR5TechDocumentRevision:last_release_status§not allowed§80*&&90*~WARNING: INFO: Doc with specifying or required relation with a Status 80 or 90 are not recommended ~Doc with specifying or required relation have proper Status
+SR5TechDocumentRevision:last_release_status§not allowed§empty~Doc with specifying or required relation must have a Status ~Doc with specifying or required relation have Status
+
+#Q-Checker (inspired from WF-30 and WF-40)
+CATPart:sr5QCheckEvaluation§not allowed§empty&&KO~WARNING: INFO: Q-Checker Check is missing or KO~Q-Checker Check ok
+CATProduct:sr5QCheckEvaluation§not allowed§empty&&KO~WARNING: INFO: Q-Checker Check is missing or KO~Q-Checker Check ok
+CATDrawing:sr5QCheckEvaluation§not allowed§empty&&KO~WARNING: INFO: Q-Checker Check is missing or KO~Q-Checker Check ok
+
+#seleted object (inspired from WF-30 and WF-40)
+root:C:ItemRevision:DB_Type§allowed§SR5EngArticleRevision||SR5EngEndItemRevision||SR5EngMajorAssyRevision||SR5NonERPArticleRevision||SR5EngArticleARRevision||SR5EngInstallLocRevision~only Eng Article or Eng End Item or Eng Major Assy or NonERPArticle or Alt Rep of Eng Article or Eng. Install. Loc. are accepted, [VAL_OBJECT:DB_Type] not accepted~ [VAL_OBJECT:DB_Type] is accepted
+
+
+#Group Member (inspired from WF-30 and WF-40)
+#MCAD.Engineering.*.Stadler / Designer , Approver
+ID=20Group3;scope=object;CRITERIA=CONDITION;CHECK=root:C:SR5GenEngObjRevision:DB_Type§allowed§SR5EngArticleRevision||SR5EngEndItemRevision||SR5EngMajorAssyRevision||SR5NonERPArticleRevision||SR5EngArticleARRevision||SR5EngInstallLocRevision
+#ID=20Group3;scope=object;CRITERIA=AND;CHECK=root:C:SR5GenEngObjRevision:Current Group Name§allowed§regex(^MCAD\.(Engineering|Konstruktion)\.STA.\.Stadler$)~WARNING: INFO: you are not logged with MCAD.Engineering.*.Stadler~Logged in with MCAD.Engineering.*.Stadler group
+ID=20Group3;scope=object;CRITERIA=AND;CHECK=root:C:SR5GenEngObjRevision:Current Group Name§allowed§regex(^MCAD\.(Engineering|Konstruktion)\.Internal\.Stadler$)~WARNING: INFO: you are not logged with MCAD.Engineering.Internal.Stadler~Logged in with MCAD.Engineering.Internal.Stadler group
+#ID=20Group3;scope=object;CRITERIA=AND;CHECK=root:SR5EngArticleRevision:Current Role Name§allowed§Designer||Konstrukteur||Approver~you are not logged with MCAD.Engineering.*.Stadler / Designer , Approver~Logged in with MCAD.Engineering.*.Stadler / Designer , Approver
+
+#if does not need to be "logged with" but only "belongings to" then change  the expansion and use the following:
+ID=20Group4;CRITERIA=CONDITION;CHECK=root:C:SR5GenEngObjRevision:DB_Type§allowed§SR5EngArticleRevision||SR5EngEndItemRevision||SR5EngMajorAssyRevision||SR5NonERPArticleRevision||SR5EngArticleARRevision||SR5EngInstallLocRevision
+#ID=20Group4;CRITERIA=AND;CHECK=GroupMember:group§count gt 0§regex(^MCAD\.(Engineering|Konstruktion)\.STA.\.Stadler$)~Only members of MCAD.Engineering.*.Stadler group are allowed to set status~User belongs to MCAD.Engineering.*.Stadler Group
+ID=20Group4;CRITERIA=AND;CHECK=GroupMember:group§count gt 0§regex(^MCAD\.(Engineering|Konstruktion)\.Internal\.Stadler$)~Only members of MCAD.Engineering.Internal.Stadler group are allowed to set status~User belongs to MCAD.Engineering.Internal.Stadler Group
+
+
+
+#SAP (inspired from WF-30 and WF-40)
+#ID=20Child2;scope=object;CRITERIA=CONDITION;CHECK=C:SR5GenEngObjRevision:DB_Type§not allowed§SR5NonERPArticleRevision
+#ID=20Child2;scope=object;CRITERIA=AND;CHECK=C:SR5GenEngObjRevision:object_desc§allowed§empty||regex(^.{1,30}$)~WARNING: INFO: for SAP compatibility purpose the description must be shorter than 30, if longer only the first 30 charaters will be transfer~lenght of description is compatible with SAP limitation
+
+#ID=20ItemofChild1;scope=object;CRITERIA=CONDITION;CHECK=C:SR5GenEngObjRevision:DB_Type§not allowed§SR5NonERPArticleRevision
+ID=20ItemofChild1;scope=object;CRITERIA=CONDITION;CHECK=C:SR5GenEngObjRevision:DB_Type§allowed§SR5EngArticleRevision~need because of alias on this type by expansion
+ID=20ItemofChild1;scope=object;CRITERIA=AND;CHECK=C:SR5GenEngObjRevision>items_tag>C:Item:sr5SAPMaterialType§not allowed§empty~Material Type must be filled~Material Type is not empty
+#SR5EngArticleRevision>items_tag>C:Item:sr5SAPMaterialType§not allowed§empty~Material Type must be filled~Material Type is not empty
+
+#ID=20ItemofChild2;scope=object;CRITERIA=CONDITION;CHECK=C:SR5GenEngObjRevision:DB_Type§not allowed§SR5NonERPArticleRevision
+ID=20ItemofChild2;scope=object;CRITERIA=CONDITION;CHECK=C:SR5GenEngObjRevision:DB_Type§allowed§SR5EngArticleRevision~need because of alias on this type by expansion
+ID=20ItemofChild2;scope=object;CRITERIA=AND;CHECK=C:SR5GenEngObjRevision>items_tag>C:Item:sr5SAPMaterialGroup§not allowed§empty~Material Group must be filled~Material Group is not empty
+#SR5EngArticleRevision>items_tag>C:Item:sr5SAPMaterialGroup§not allowed§empty~Material Group must be filled~Material Group is not empty
+
+#ID=20ItemofChild3;scope=object;CRITERIA=CONDITION;CHECK=C:SR5GenEngObjRevision:DB_Type§not allowed§SR5NonERPArticleRevision
+ID=20ItemofChild3;scope=object;CRITERIA=CONDITION;CHECK=C:SR5GenEngObjRevision:DB_Type§allowed§SR5EngArticleRevision||SR5EngEndItemRevision||SR5EngMajorAssyRevision||SR5EngArticleARRevision
+#||SR5EngInstallLocRevision
+ID=20ItemofChild3;scope=object;CRITERIA=AND;CHECK=C:SR5GenEngObjRevision>items_tag>C:Item:uom_tag§not allowed§empty&& ~unit of measure cannot be empty~unit of measure defined
+
+
+#checked-out (inspired from WF-30 and WF-40)
+C:Dataset:checked_out§not allowed§Y~Object [VAL_OBJECT:object_type] is checked-out~Object [VAL_OBJECT:object_type] is checked_in
+C:Form:checked_out§not allowed§Y~Object [VAL_OBJECT:object_type] is checked-out~Object [VAL_OBJECT:object_type] is checked_in
+#C:SR5GenEngObjRevision:checked_out§not allowed§Y~Object [VAL_OBJECT:DB_Type] is checked-out~Object [VAL_OBJECT:DB_Type] is checked_in
+C:PSBOMViewRevision:checked_out§not allowed§Y~Object [VAL_OBJECT:object_type] is checked-out~Object [VAL_OBJECT:object_type] is checked_in
+
+
+#selection ccp
+##bug VFW6.0.2 => should be corrected with 6.0.3.X => is not completly the case
+##CATPart>catiaV5_MML>C:ItemRevision:IR_ID_REV§allowed§[ALL_ROOT:C:ItemRevision:IR_ID_REV]~missing CCP-MML object [VAL_RELATED_OBJECT:IR_ID_REV] that need to get a status 20
+##CATPart>catiaV5_MMLAssy>C:ItemRevision:IR_ID_REV§allowed§[ALL_ROOT:C:ItemRevision:IR_ID_REV]~missing ContextualLink object [VAL_RELATED_OBJECT:IR_ID_REV] that need to get a status 20
+##CATDrawing>catiaV5_DWGLink>C:ItemRevision:IR_ID_REV§allowed§[ALL_ROOT:C:ItemRevision:IR_ID_REV]~missing CCP-DWG object [VAL_RELATED_OBJECT:IR_ID_REV] that need to get a status 20
+#CATPart>catiaV5_MML>C:ItemRevision:IR_ID_REV§allowed§[ALL_ROOT:C:ItemRevision:IR_ID_REV]~WARNING: INFO: missing CCP-MML object [VAL_RELATED_OBJECT:IR_ID_REV] that need to get a status 20
+#CATPart>catiaV5_MMLAssy>C:ItemRevision:IR_ID_REV§allowed§[ALL_ROOT:C:ItemRevision:IR_ID_REV]~WARNING: INFO: missing ContextualLink object [VAL_RELATED_OBJECT:IR_ID_REV] that need to get a status 20
+#CATDrawing>catiaV5_DWGLink>C:ItemRevision:IR_ID_REV§allowed§[ALL_ROOT:C:ItemRevision:IR_ID_REV]~WARNING: INFO: missing CCP-DWG object [VAL_RELATED_OBJECT:IR_ID_REV] that need to get a status 20
+##partial workaround:
+##CATPart>catiaV5_MML>C:ItemRevision:IR_ID_REV§allowed§[ALL_MAIN:C:ItemRevision:IR_ID_REV]~missing CCP-MML object [VAL_RELATED_OBJECT:IR_ID_REV] that need to get a status 20
+##CATPart>catiaV5_MMLAssy>C:ItemRevision:IR_ID_REV§allowed§[ALL_MAIN:C:ItemRevision:IR_ID_REV]~missing ContextualLink object [VAL_RELATED_OBJECT:IR_ID_REV] that need to get a status 20
+##CATDrawing>catiaV5_DWGLink>C:ItemRevision:IR_ID_REV§allowed§[ALL_MAIN:C:ItemRevision:IR_ID_REV]~missing CCP-DWG object [VAL_RELATED_OBJECT:IR_ID_REV] that need to get a status 20
+#should be fix with VFW6.1.0 => looking good but not needed anymore due to forcing user to call WF as post action of VFW
+CATPart>catiaV5_MML>C:ItemRevision:IR_ID_REV§allowed§[ALL_ROOT:C:ItemRevision:IR_ID_REV]~missing CCP-MML object [VAL_RELATED_OBJECT:IR_ID_REV] that need to get a status 20
+CATPart>catiaV5_MMLAssy>C:ItemRevision:IR_ID_REV§allowed§[ALL_ROOT:C:ItemRevision:IR_ID_REV]~missing ContextualLink object [VAL_RELATED_OBJECT:IR_ID_REV] that need to get a status 20
+CATDrawing>catiaV5_DWGLink>C:ItemRevision:IR_ID_REV§allowed§[ALL_ROOT:C:ItemRevision:IR_ID_REV]~missing CCP-DWG object [VAL_RELATED_OBJECT:IR_ID_REV] that need to get a status 20

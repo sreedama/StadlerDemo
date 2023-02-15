@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE fmsworld SYSTEM "fmsmasterconfig.dtd">
+<fmsworld>
+   <fmsenterprise id="-1238836409" volumestate="normal">
+      <fccdefaults>
+         <property name="FCC_CacheLocation" value="$HOME/FCCCache|/tmp/$USER/FCCCache" overridable="true" />
+         <property name="FCC_HashBlockPages" value="4086" overridable="true" />
+         <property name="FCC_LogFile" value="$HOME/fcc.log|/tmp/$USER/fcc.log" overridable="true" />
+         <property name="FCC_MaxExtentFileSizeMegabytes" value="100" overridable="true" />
+         <property name="FCC_MaxExtentFiles" value="50" overridable="true" />
+         <property name="FCC_MaxReadCacheSize" value="12G" overridable="true" />
+         <property name="FCC_MaxWriteCacheSize" value="6G" overridable="true" />
+         <property name="FCC_MaximumNumberOfFilePages" value="9124" overridable="true" />
+         <property name="FCC_MaximumNumberOfSegments" value="8192" overridable="true" />
+      </fccdefaults>
+      <fscgroup id="mygroup">
+         <fsc id="FSC_SRVCH025064143T_tcservice" address="http://SRVCH025064143T.stadlerrail.ch:4544" ismaster="true">
+            <volume id="00f76164596eb628db47" enterpriseid="-1238836409" root="D:\plmvolumes\volume_adm" priority="0" />
+            <volume id="09e561683faeb628db47" enterpriseid="-1238836409" root="D:\plmvolumes\volume_migration" priority="0" />
+            <volume id="0b8261683faeb628db47" enterpriseid="-1238836409" root="D:\plmvolumes\volume_01" priority="0" />
+            <transientvolume id="78ac688159839a7d51d5e79290542936" enterpriseid="-1238836409" root="C:\\Temp\\transientVolume_infodba" priority="0" />
+         </fsc>
+         <clientmap subnet="127.0.0.1" mask="0.0.0.0">
+            <assignedfsc fscid="FSC_SRVCH025064143T_tcservice" priority="0" />
+         </clientmap>
+      </fscgroup>
+   </fmsenterprise>
+</fmsworld>

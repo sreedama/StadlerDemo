@@ -1,0 +1,145 @@
+
+<project name="Common Targets TC 8.1" default="run" basedir=".">
+	<description>
+		
+	add report for BMIDE Template.
+	
+	</description>
+
+	<!-- @SECTION_BEGIN :: Global  Definitions -->
+	<tstamp>
+		<format property="param_TouchTimeStamp" pattern="yyyyMMddHHmmssSS"/>
+	</tstamp>
+
+	<!-- @SECTION_END :: Global  Definitions -->
+
+	<!-- @SECTION_BEGIN :: global import sequence -->
+    <property   file   = "${basedir}/build.properties"/>
+	<!-- @SECTION_END   :: global import sequence -->
+
+	<property name="pFileCollectedOutput" value="${prop_FileCollectedOutput}${param_TouchTimeStamp}${prop_FileExcelOutputExtension}"/>
+
+	<!-- @SECTION_END :: Imports-Basic-Properties -->
+
+
+	<target name="usage">
+		<echo message=" ******************************************************************************" />
+		<echo message=" " />
+		<echo message=" usage:" />
+		<echo message=" " />
+		<echo message=" * implements bmide report functionality " />
+		<echo message=" " />
+		<echo message=" ******************************************************************************" />
+	</target>
+	
+	<target 
+		name="run" 
+		depends="">
+		<echo message="start :: run" level="info" />
+		<antcall target="bmide2excel"/>
+		<echo message="end :: run" level="info" />
+	</target>
+	
+	<target name="bmide2excel" depends="collect">
+				<property name="pSource" value="${prop_FileCollectedOutput}"/>
+				<property name="pTarget" value="${prop_FileExcelOutput}${param_TouchTimeStamp}${prop_FileExcelOutputExtension}"/>
+				<echo message="end :: extract configuration" level="info" />
+	            <echo message="in :: ${pSource}" level="info" />
+	            <echo message="out :: ${pTarget}" level="info" />
+				<delete file="${prop_FileExcelOutput_hw}"/>
+				<xslt extension=".xml" 
+					in="${pSource}" 
+					out="${pTarget}" 
+					style="${prop_FileStyleSheet2Excel}">
+					<param name="P_CONFIG_FILE"    expression="${prop_FILE_config}"/>
+				</xslt>
+
+				<echo message="end :: extract configuration" level="info" />
+			</target>	
+
+	<target name="delta2excel" depends="">
+				<property name="pSource" value="${prop_FileDeltaInput}"/>
+				<property name="pTarget" value="${prop_FileDeltaOutput}${param_TouchTimeStamp}${prop_FileExcelOutputExtension}"/>
+				<echo message="end :: extract configuration" level="info" />
+	            <echo message="in :: ${pSource}" level="info" />
+	            <echo message="out :: ${pTarget}" level="info" />
+				<xslt extension=".xml" 
+					in="${pSource}" 
+					out="${pTarget}" 
+					style="${prop_FileStyleSheetDeltaTypes}">
+					<param name="P_CONFIG_FILE"    expression="${prop_FILE_config}"/>
+				</xslt>
+		<!--
+				<delete file="${pSource}"/>
+-->
+				<echo message="end :: extract configuration" level="info" />
+			</target>	
+
+	<target name="filtertypes2excel" depends="collectAll">
+				<property name="pSource" value="${pFileCollectedOutput}"/>
+				<property name="pTarget" value="${prop_FileFilteredTypesOutput}${param_TouchTimeStamp}${prop_FileExcelOutputExtension}"/>
+				<echo message="end :: extract configuration" level="info" />
+	            <echo message="in :: ${pSource}" level="info" />
+	            <echo message="out :: ${pTarget}" level="info" />
+				<xslt extension=".xml" 
+					in="${pSource}" 
+					out="${pTarget}" 
+					style="${prop_FileStyleSheetFilteredTypes}">
+					<param name="P_CONFIG_FILE"    expression="${prop_FILE_config}"/>
+				</xslt>
+		<!--
+				<delete file="${pSource}"/>
+-->
+				<echo message="end :: extract configuration" level="info" />
+			</target>	
+
+
+	<target name="filterdatasets" depends="collectAll">
+				<property name="pSource" value="${pFileCollectedOutput}"/>
+				<property name="pTarget" value="${prop_FileFilteredTypesOutput}${param_TouchTimeStamp}${prop_FileExcelOutputExtension}"/>
+				<echo message="end :: extract configuration" level="info" />
+	            <echo message="in :: ${pSource}" level="info" />
+	            <echo message="out :: ${pTarget}" level="info" />
+				<xslt extension=".xml" 
+					in="${pSource}" 
+					out="${pTarget}" 
+					style="${prop_FileStyleSheetDeltaTypes}">
+					<param name="P_CONFIG_FILE"    expression="${prop_FILE_config}"/>
+				</xslt>
+				<delete file="${pSource}"/>
+				<echo message="end :: extract configuration" level="info" />
+			</target>	
+	
+	<target name="collect">
+			<echo message="start :: collect data" level="info" />
+		    <delete file="${prop_FileCollectedOutput}"/>
+			<xslt extension=".xml" 
+				in="${prop_FileCollection}" 
+				out="${prop_FileCollectedOutput}" 
+				style="${prop_FileCollectionStyleSheet}">
+				<param name="P_BMIDE_PROJECT_DIR"    expression="${prop_BMIDE_PROJECT_DIR}/"/>
+				
+			</xslt>
+			<echo message="end :: collect data" level="info" />
+			
+	</target>
+	
+	
+	<target name="collectAll">
+			<echo message="start :: collect data" level="info" />
+			<xslt extension=".xml" 
+				in="${prop_FileCollection}" 
+				out="${pFileCollectedOutput}" 
+				style="${prop_FileStyleSheetCollectFilteredTypes}">
+				<param name="P_BMIDE_PROJECT_DIR"    expression="${prop_BMIDE_PROJECT_DIR}/"/>
+				<param name="P_BMIDE_TEMPLATE_DIR"    expression="${prop_BMIDE_TEMPLATE_DIR}/"/>
+				<param name="P_DEPENDECY_COLLECTION"    expression="${prop_DependecyCollection}/"/>
+				<param name="P_EXTENSTION_NAME"    expression="${prop_EXTENSTION_NAME}"/>
+			</xslt>
+			<echo message="end :: collect data" level="info" />
+			
+	</target>
+	
+	
+	
+</project>

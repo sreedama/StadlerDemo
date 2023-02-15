@@ -1,0 +1,6 @@
+{
+    "name": "sr5WeightManagement",
+    "level": 7,
+    "kitDeps": ["Cat2HostedTcIC", "tc-aw-solution"],
+    "modules": ["sr5WeightManagement"]
+}

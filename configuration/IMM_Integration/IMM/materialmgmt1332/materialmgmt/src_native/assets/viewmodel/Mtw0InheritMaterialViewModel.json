@@ -1,0 +1,112 @@
+{
+    "schemaVersion": "1.0.0",
+    "imports": 
+    [
+        "js/aw-command-panel.directive",
+        "js/aw-panel-footer.directive",
+        "js/aw-button.directive",
+        "js/aw-i18n.directive",
+        "js/aw-form.directive",
+        "js/visible-when.directive",
+        "js/aw-add.directive"
+    ],
+
+    "actions": 
+    {
+        "setInheritMaterial": 
+        {
+            "actionType": "TcSoaService",
+            "serviceName": "Core-2010-09-DataManagement",
+             "deps": "js/Mtw0CompareMaterialParameterService",
+            "method": "setProperties",
+            "inputData": 
+            {
+                "info": 
+                [
+                    {
+                        "object": "{{ctx.selected}}",
+                        "vecNameVal": 
+                        [
+                            {
+                                "name": "mat1ExtendsMaterial",
+                                "values": 
+                                [
+                                    "{{function:getSelectedInheritedMaterial}}"
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            },
+          
+            "events": 
+            {
+                "success": 
+                [
+                    {
+                        "name": "cdm.relatedModified",
+                        "eventData": 
+                        {
+                            "relatedModified": 
+                            [
+                                "{{ctx.selected}}"
+                            ],
+                            "refreshLocationFlag": true
+                        }
+                    },
+
+                    {
+                        "name": "complete",
+                        "eventData": 
+                        {
+                            "source": "toolAndInfoPanel"
+                        }
+                    }
+                ],
+                 "failure": [
+                    {
+                        "name": "complete",
+                        "eventData": {
+                            "source": "toolAndInfoPanel"
+                        }
+                    }
+                ]
+            },
+            
+            "actionMessages": {                
+                "failure": [ {
+                    "message": "soaOperationFailure"
+                } ]
+            }
+        }
+        
+    },
+
+    "functions": 
+    {
+       "getSelectedInheritedMaterial": {
+            "functionName": "getSelectedInheritedMaterial",
+            "parameters": [
+                "{{data}}",
+                "{{ctx}}"
+               ]
+        }
+    },
+    "messages": {        
+        "soaOperationFailure": {
+            "messageType": "ERROR",
+            "messageText": "{{errorCode}}"
+        }
+    },
+    "i18n": 
+    {
+        "mtw0InheritButtonTitle": 
+        [
+            "MaterialMgmtMessages"
+        ],
+        "Mtw0InheritMaterialTitle": 
+        [
+            "MaterialMgmtMessages"
+        ]
+    }
+}

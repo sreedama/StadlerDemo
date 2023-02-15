@@ -1,0 +1,6 @@
+{
+    "name": "sr5Workspaces",
+    "description": "This is the sr5Workspaces module",
+    "skipTest": true,
+    "skipAudit": true
+}

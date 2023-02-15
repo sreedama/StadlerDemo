@@ -1,0 +1,10 @@
+<aw-command-panel caption="i18n.Mtw0InheritMaterialTitle" anchor="data.addObjectPanelPinCommands" context="data">
+    <aw-form name="mtw0InheritMaterialForm" visible-when="data.activeView!='assignProjectSub'&&data.activeView!='addReferenceSub'">
+        <aw-add selection-mode="single" include-types="Mat1MaterialRevision" type-filter="Mat1MaterialRevision" visible-tabs="palette,search"></aw-add>
+    </aw-form>    
+    <aw-panel-footer visible-when="data.activeView!='assignProjectSub'&&data.activeView!='addReferenceSub'">
+        <aw-button action="setInheritMaterial" visible-when="mtw0InheritMaterialForm.$valid"><aw-i18n>i18n.Mtw0InheritMaterialTitle</aw-i18n></aw-button>
+    </aw-panel-footer>
+</aw-command-panel>
+
+

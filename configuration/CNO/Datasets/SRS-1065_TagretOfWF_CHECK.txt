@@ -1,0 +1,20 @@
+############################################################################################################
+#  CNO Check Definition File
+############################################################################################################
+# Version History
+#
+# Version    Date           Name               Description of Change
+# 1.0        21-03-2022     testu     Initial
+############################################################################################################
+
+#C:EPMTask>root_target_attachments>C:ChangeItemRevision:CMMaturity呈q余xecuting~Maturity must be Executing if target of WF
+C:EPMTask>root_target_attachments>ChangeRequestRevision:CMMaturity呈q你pproved~ECR Maturity must be approved if target of the WF
+C:EPMTask>root_target_attachments>ChangeNoticeRevision:CMMaturity呈q低omplete~ECN Maturity must be complete if target of the WF
+C:EPMTask>root_target_attachments>SR5MfgCNRevision:CMMaturity呈q低omplete~MCN Maturity must be complete if target of the WF
+
+C:EPMTask>root_target_attachments>C:ChangeItemRevision:CMClosure呈q別pen~Closure must be open if target of WF
+
+#C:EPMTask>root_target_attachments>ChangeRequestRevision:CMDisposition呈q你pproved~ECR Disposition must be approved if target of the WF
+#C:EPMTask>root_target_attachments>ChangeNoticeRevision:CMDisposition呈q低omplete~ECN Disposition must be complete if target of the WF
+#C:EPMTask>root_target_attachments>SR5MfgCNRevision:CMDisposition呈q低omplete~MCN Disposition must be complete if target of the WF
+C:EPMTask>root_target_attachments>C:ChangeItemRevision:CMDisposition呈q你pproved~Disposition must be approved if target of the WF

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="ISO-8859-1" standalone="yes"?>
+<!--
+@<COPYRIGHT>@
+================================================================================
+Copyright 2021.
+Siemens Product Lifecycle Management Software Inc.
+All Rights Reserved.
+================================================================================
+@<COPYRIGHT>@
+
+File description:
+    File Name: tc_xrt_text_locale.xml
+
+    This file contains all the keys related to stylesheet usage.
+===============================================================================
+-->
+<textsrv filename="strxrt_text_locale.xml">
+    <key id="strxrt_specifyingdocuments">Specifying Documents</key>
+    <key id="strxrt_referencingdocuments">Referencing Documents</key>
+    <key id="strxrt_requirementsdocuments">Requirement Documents</key>
+    <key id="strxrt_Datasheets">Datasheets</key>
+</textsrv>

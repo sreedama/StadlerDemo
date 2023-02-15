@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TcBusinessDataLocalization xmlns="http://teamcenter.com/BusinessModel/TcBusinessDataLocalization"
+    batchXSDVersion="1.0" Date="Mon Jan 17 05:42:07 PM 2022">
+  <Add>
+    <key locale="de_DE" id="LOVValue{::}SR5SFAluminium{::}DIN EN 485-4" status="Approved">DIN EN 485-4</key>
+    <key locale="de_DE" id="LOVValueDescription{::}SR5SFAluminium{::}DIN EN 485-4"
+        status="Approved">Blech s &lt;= 50</key>
+    <key locale="de_DE" id="LOVValue{::}SR5SFAluminium{::}DIN EN 485-3" status="Approved">DIN EN 485-3</key>
+    <key locale="de_DE" id="LOVValueDescription{::}SR5SFAluminium{::}DIN EN 485-3"
+        status="Approved">Blech 50 &gt; s &lt;= 120</key>
+    <key locale="de_DE" id="LOVValue{::}SR5SFAluminium{::}DIN EN 755-7" status="Approved">DIN EN 755-7</key>
+    <key locale="de_DE" id="LOVValueDescription{::}SR5SFAluminium{::}DIN EN 755-7"
+        status="Approved">Rohr &gt; 8 bis 450</key>
+    <key locale="de_DE" id="LOVValue{::}SR5SFAluminium{::}DIN EN 755-8" status="Approved">DIN EN 755-8</key>
+    <key locale="de_DE" id="LOVValueDescription{::}SR5SFAluminium{::}DIN EN 755-8"
+        status="Approved">Rechteckrohr</key>
+    <key locale="de_DE" id="LOVValue{::}SR5SFAluminium{::}DIN EN 755-3" status="Approved">DIN EN 755-3</key>
+    <key locale="de_DE" id="LOVValueDescription{::}SR5SFAluminium{::}DIN EN 755-3"
+        status="Approved">Rundstab &gt;= 8 &gt; d &lt;= 320</key>
+    <key locale="de_DE" id="LOVValue{::}SR5SFAluminium{::}DIN EN 755-4" status="Approved">DIN EN 755-4</key>
+    <key locale="de_DE" id="LOVValueDescription{::}SR5SFAluminium{::}DIN EN 755-4"
+        status="Approved">Vierkantstab &gt;= 10 &gt; S &lt;= 220</key>
+    <key locale="de_DE" id="LOVValue{::}SR5SFAluminium{::}DIN EN 755-5" status="Approved">DIN EN 755-5</key>
+    <key locale="de_DE" id="LOVValueDescription{::}SR5SFAluminium{::}DIN EN 755-5"
+        status="Approved">Rechteckstange &gt;= 4 &gt; t &lt;= 240 und &gt;= 10 &gt; W &lt;= 600</key>
+    <key locale="de_DE" id="LOVValue{::}SR5SFAluminium{::}DIN EN 755-6" status="Approved">DIN EN 755-6</key>
+    <key locale="de_DE" id="LOVValueDescription{::}SR5SFAluminium{::}DIN EN 755-6"
+        status="Approved">Sechskantstange &gt;= 10 &gt; S &lt;= 220</key>
+    <key locale="de_DE" id="LOVValue{::}SR5SFAluminium{::}DIN EN 755-9" status="Approved">DIN EN 755-9</key>
+    <key locale="de_DE" id="LOVValueDescription{::}SR5SFAluminium{::}DIN EN 755-9"
+        status="Approved">L-Profil scharfkantig und rund / U-Profil scharfkantig und rund / T-Profil</key>
+  </Add>
+</TcBusinessDataLocalization>

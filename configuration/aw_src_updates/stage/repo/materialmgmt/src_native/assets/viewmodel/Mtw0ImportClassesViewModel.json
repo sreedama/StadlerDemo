@@ -1,0 +1,203 @@
+{
+    "schemaVersion": "1.0.0",
+    "imports":
+    [
+        "js/aw-command-panel.directive",
+        "js/aw-file-upload.directive",
+        "js/aw-panel-body.directive",
+        "js/aw-panel-footer.directive",
+        "js/aw-form.directive",
+        "js/aw-listbox.directive",
+        "js/aw-textbox.directive",
+        "js/aw-xrt.directive",
+        "js/aw-button.directive",
+        "js/visible-when.directive",
+        "js/exist-when.directive",
+        "js/aw-i18n.directive",
+        "js/aw-break.directive",
+        "js/aw-label.directive",
+        "js/aw-column.directive",
+        "js/aw-row.directive"
+    ],
+    "data":{
+        "catalogListBox": {
+            "displayName": "{{i18n.Mtw0Catalog}}",
+            "type": "STRING",
+            "hasLov":"true",
+            "isRequired": "false",
+            "dbValue": "",
+            "dispValue": ""
+        },
+        "selectFile": {
+            "displayName": "{{i18n.Mtw0SelectFile}}",
+            "isRequired": "true",
+            "type": "STRING"
+        }
+    },
+    "actions": {
+        "openSummaryLog": {
+            "actionType": "JSFunction",
+            "method": "openFile",
+            "inputData": {
+                "data": "{{data.fileTicket}}"
+            },
+            "deps": "js/fmsUtils"
+        },    
+      "openMultipleFilesFromTickets": {
+        "actionType": "JSFunction",
+        "method": "openFiles",
+        "deps": "js/fmsUtils",
+        "inputData": {
+          "fileTickets": "{{data.fileNamesAndTickets}}"
+        }
+      },
+        "getFMSFileTicket": {
+            "actionType": "TcSoaService",
+            "serviceName": "Core-2007-01-FileManagement",
+            "method": "getTransientFileTicketsForUpload",
+            "inputData": {
+                "transientFileInfos": [ {
+                    "fileName": "{{data.fileName}}",
+                    "isBinary": true,
+                    "deleteFlag": true
+                } ]
+            },
+
+            "outputData": {
+                "fmsTicket": "transientFileTicketInfos[0].ticket"
+            },
+
+            "events": {
+                "success": [ {
+                    "name": "fmsTicket.update"
+                } ]
+            }
+        },
+        "updateFormData": {
+            "actionType": "JSFunction",
+            "method": "updateFormData",
+            "inputData": {
+                "fileData": {
+                    "key": "fmsTicket",
+                    "value": "{{data.fmsTicket}}"
+                },
+                "data": "{{data}}"
+            },
+            "events": {
+                "success": [ {
+                        "name": "ImportClasses.gotTransientFileTicket"
+                    } ]
+            },
+            "deps": "js/declUtils"
+        },
+        "uploadFile": {
+            "actionType": "RESTService",
+            "serviceName": "",
+            "method": "POST",
+            "inputData": {
+                "request": {
+                    "method": "POST",
+                    "url": "{{Constants.fmsUrl}}",
+                    "headers": {
+                        "Content-type": "undefined"
+                    },
+
+                    "data": "{{data.formData}}"
+                }
+            },
+            "events": {
+                "success": [ {
+                    "name": "ImportClasses.importClasses"
+                } ]
+            }
+        },
+        "importClasses": {
+            "actionType": "JSFunction",
+            "method": "importClasses",
+            "inputData": {
+                "data": "{{data}}"
+            },
+            "deps": "js/Mtw0ImportClasses"
+        },
+        "loadCatalogs": {
+            "actionType": "TcSoaService",
+            "serviceName": "Query-2007-06-Finder",
+            "method": "findWorkspaceObjects",
+            "deps": "js/Mtw0ImportMaterials",
+            "inputData": {
+                "findList": [{
+                        "criterias": [{
+                                "objectType": "Mat1MatCatalog",
+                                "objectName": "",
+                                "scope": "WSO_scope_All",
+                                "owner": "",
+                                "group": "",
+                                "createdBefore": "",
+                                "modifiedBefore": "",
+                                "releasedBefore": "",
+                                "createdAfter": "",
+                                "modifiedAfter": "",
+                                "releasedAfter": ""
+                            }
+                        ]
+                    }
+                ]
+            },
+            "outputData": {
+                "catalogs": "{{function:processMaterialCatalogues}}"
+            },
+            "policy": {
+                "types": [{
+                        "name": "BusinessObject",
+                        "properties": [{
+                                "name": "object_string"
+                            }, {
+                                "name": "object_type"
+                            }, {
+                                "name": "object_name"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Mat1MatCatalog",
+                        "properties": [{
+                                "name": "item_id"
+                            }
+                        ]
+                    }]
+            }
+        }
+    },
+    "onEvent":
+    [    
+        {
+            "eventId": "awPanel.reveal",
+            "action": "loadCatalogs"
+        },
+        {
+            "eventId": "fmsTicket.update",
+            "action": "updateFormData"
+        },
+        {
+            "eventId": "ImportClasses.gotTransientFileTicket",
+            "action": "uploadFile"
+        },
+        {
+            "eventId": "ImportClasses.importClasses",
+            "action": "importClasses"
+        }        
+    ],
+    "i18n": {    
+        "Mtw0Catalog": [
+            "MaterialMgmtMessages"
+        ],
+        "Mtw0ImportClasses": [
+            "MaterialMgmtMessages"
+        ],
+        "Mtw0SelectFile": [
+            "MaterialMgmtMessages"
+        ]
+    },
+    "preferences": [
+    ]
+}

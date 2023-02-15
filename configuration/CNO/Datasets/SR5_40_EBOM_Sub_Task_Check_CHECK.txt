@@ -1,0 +1,10 @@
+############################################################################################################
+#  CNO Check Definition File
+############################################################################################################
+# Version History
+#
+# Version    Date           Name               Description of Change
+# 1.0        07-03-2022     testu     Initial
+############################################################################################################
+
+ID=001;scope=occurence;CRITERIA=AND;CHECK=C:ItemRevision>view:bl_rev_last_release_status§not allowed§empty~should not be empty

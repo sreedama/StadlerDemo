@@ -1,0 +1,180 @@
+{
+    "$schema": "http://json-schema.org/draft-06/schema#",
+    "description": "This is the schema the declarative module definition (in JSON format) must adhere to. The Apollo audit check validates all module JSON files against this schema. For explanation of the keywords of this schema, please visit https://ajv.js.org/keywords.html",
+    "definitions": {
+        "showcaseFileDef": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "moduleName": {
+                    "type": "string",
+                    "description": "Module name"
+                },
+                "path": {
+                    "type": "string",
+                    "description": "path of the showcase file"
+                }
+            }
+        }
+    },
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {
+        "name": {
+            "type": "string",
+            "description": "A name of the module"
+        },
+        "description": {
+            "type": "string",
+            "description": "A description of the module"
+        },
+        "siteDir": {
+            "type": "string",
+            "description": "site directory path for base site file "
+        },
+        "techScoreboardURL": {
+            "type": "string",
+            "description": "only valid for the type 'repo' , used to reference 3rd party approvals"
+        },
+        "srcDir": {
+            "type": "string",
+            "description": "source directory path for module file "
+        },
+        "srcZip": {
+            "type": "string",
+            "description": "zip source file for the repo module"
+        },
+        "testDir": {
+            "type": "string",
+            "description": "test directory path for module file "
+        },
+        "version": {
+            "type": "string",
+            "description": "only valid for the type 'repo' , used to indicate 3rd party version"
+        },
+        "pathOffset": {
+            "type": "string",
+            "description": "Path offset relative to the site assets directory."
+        },
+        "warOffset": {
+            "type": "string",
+            "description": "Path offset relative to the site assets directory.",
+            "deprecated": "Use pathOffset instead"
+        },
+        "dependencies": {
+            "type": "array",
+            "description": "Array of the files depend on the current module",
+            "deprecated": "No longer used."
+        },
+        "jars": {
+            "type": "array",
+            "description": "Array of the  3rd party jar dependancy on the module",
+            "deprecated": "No longer used."
+        },
+        "nativeRoots": {
+            "type": "array",
+            "description": "Array of the  source directory for the solution defaults to [ 'src' ] if not provided",
+            "items": {
+                "type": "string"
+            },
+            "minItems": 0,
+            "uniqueItems": true,
+            "deprecated": "Use srcDir instead"
+        },
+        "nativeZips": {
+            "type": "array",
+            "description": "Array of the zip source file for the repo module",
+            "items": {
+                "type": "string"
+            },
+            "minItems": 0,
+            "uniqueItems": true,
+            "deprecated": "Use srcZip instead"
+        },
+        "npmPaths": {
+            "type": "array",
+            "description": "Array of the  npm modules in the solution",
+            "items": {
+                "type": "string"
+            },
+            "minItems": 0,
+            "uniqueItems": true
+        },
+        "libPath": {
+            "type": "string",
+            "description": "library path relative to assets/lib"
+        },
+        "showcaseFiles": {
+            "type": "array",
+            "description": "Contribution to showcase. Additional files required to support this module in the showcase",
+            "additionalProperties": true,
+            "patternProperties": {
+                "\\b[A-Za-z]+([A-Z]*[a-z]*[0-9]*)*\\b": {
+                    "$ref": "#/definitions/showcaseFileDef"
+                }
+            }
+        },
+        "sonarCoverageExclusions": {
+            "type": "array",
+            "description": "Array of file patterns to be excluded from SonarQube coverage processing",
+            "items": {
+                "type": "string"
+            },
+            "minItems": 1,
+            "uniqueItems": true
+        },
+        "sonarExclusions": {
+            "type": "array",
+            "description": "Array of file patterns to be excluded from SonarQube processing",
+            "items": {
+                "type": "string"
+            },
+            "minItems": 1,
+            "uniqueItems": true
+        },
+        "type": {
+            "type": "array",
+            "description": "Array of file patterns to be excluded from SonarQube processing",
+            "items": {
+                "type": "string"
+            },
+            "minItems": 1,
+            "uniqueItems": true
+        },
+        "excludeFromAuditDeps": {
+            "type": "boolean",
+            "description": "if value is true then it will not check the audit for the module"
+        },
+        "karmaInclude": {
+            "type": "boolean",
+            "description": "It used to indicate that module should be included in the Karma setup assets directory"
+        },
+        "maintainStructure": {
+            "type": "boolean"
+        },
+        "skipAudit": {
+            "type": "boolean",
+            "description": "if value is true then this module will be exempt from the audit for the module"
+        },
+        "skipJSDoc": {
+            "type": "boolean",
+            "description": "if value is true then this module will be exempt from check the JS Doc for the module"
+        },
+        "skipTest": {
+            "type": "boolean",
+            "description": "if value is true then this module will be exempt from check the test for the module"
+        },
+        "themeExtensions": {
+            "type": "array",
+            "description": "Array of consumer provided theme (.scss) files extending AFX's theme files. For supporting modular-theme-extensions.",
+            "items": {
+                "type": "string"
+            },
+            "minItems": 1,
+            "uniqueItems": true
+        }
+    },
+    "required": [
+        "name"
+    ]
+}

@@ -1,0 +1,111 @@
+{
+    "schemaVersion": "1.0.0",
+    "imports": [
+        "js/aw-panel-section.directive",        
+        "js/aw-command-panel.directive",
+        "js/aw-panel-footer.directive",
+        "js/aw-button.directive",
+        "js/aw-i18n.directive",
+        "js/visible-when.directive",
+        "js/aw-xrt.directive",
+        "js/aw-form.directive",
+        "js/aw-panel-body.directive"
+    ],
+    "actions": {
+        "createDerivedUnit":{
+            "actionType": "TcSoaService",
+            "serviceName": "Internal-Core-2012-10-DataManagement",
+            "method": "createRelateAndSubmitObjects",
+            "inputData":
+            {
+                "inputs": "{{function:constructCreateInputforDerivedUnit}}"
+            },
+            "events":
+            {
+                "success":
+                [
+                    {
+                        "name": "cdm.relatedModified",
+                        "eventData":
+                        {
+                            "relatedModified":
+                            [
+                                "{{ctx.selected}}"
+                            ],
+                            "refreshLocationFlag": true
+                        }
+                    },
+                    {
+                        "name": "treeGrid.plTable.reload"
+                    },
+                    {
+                        "name": "complete",
+                        "eventData":
+                        {
+                            "source": "toolAndInfoPanel"
+                        }
+                    }
+                ],
+                "failure":
+                [
+                    {
+                        "name": "complete",
+                        "eventData":
+                        {
+                            "source": "toolAndInfoPanel"
+                        }
+                    }
+                ]
+            },
+            "actionMessages": {
+                "success": [
+                    {
+                        "message": "derivedunitCreateSuccessMessage"
+                    }
+                ],
+                "failure": [
+                    {
+                        "condition": "errorCode.code===515106 ",
+                        "message": "createOrUpdateFailedMessage"
+                    }
+                ]
+            },
+            "deps": "js/Mtw0ShowUnitsTreeDataService"
+        }
+        
+    },
+    
+    "messages": {
+        "createOrUpdateFailedMessage": {
+            "messageType": "ERROR",
+            "messageText": "{{i18n.failedToCreateDerivedUnit}}",
+            "messageTextParams": [
+                "{{ctx.selected.props.object_name.uiValues[0]}}"
+            ]
+        }
+    },    
+    "functions":
+    {
+        "constructCreateInputforDerivedUnit":
+        {
+            "functionName": "constructCreateInputforDerivedUnit",
+            "parameters":
+            [
+                "{{data}}"
+            ]
+        }
+    },
+    "i18n": {        
+        "Mtw0AddDerivedUnit": [
+            "MaterialMgmtMessages"
+        ],
+        "Create": [
+            "MaterialMgmtMessages"
+        ],
+        "failedToCreateDerivedUnit": [
+            "MaterialMgmtMessages"
+        ],
+        "derivedunitCreateSuccessMessage":["MaterialMgmtMessages"]
+
+    }
+}

@@ -1,0 +1,88 @@
+{
+    "commands": {
+        "calculateWeightCmd": {
+            "iconId": "cmdUpdate",
+            "title": "{{i18n.calculateWeightCmdTitle}}",
+            "description": "{{i18n.calculateWeightCmdDesc}}"
+        }
+    },
+    "commandHandlers": {
+        "calculateWeightCmdHandler": {
+            "id": "calculateWeightCmd",
+            "action": "calculatedWeightCmdAction",
+            "activeWhen": true,
+            "visibleWhen": true
+        }
+    },
+    "commandPlacements": {
+        "calculateWeightCmd_aw_contextMenu2": {
+            "id": "calculateWeightCmd",
+            "uiAnchor": "aw_contextMenu2",
+            "priority": 5003
+        }
+    },
+    "actions": {
+        "calculatedWeightCmdAction": {
+            "actionType": "JSFunction",
+            "method": "setCalculatedWeight",
+            "deps": "js/sr5WeightManagementService",
+            "inputData": {
+                "ctx": "{{ctx}}"
+            },
+            "outputData": {
+                "calculatedWeight": "calculatedWeight",
+                "weightErrorCode": "weightErrorCode",
+                "weightErrorText": "weightErrorText"
+            },
+            "actionMessages": {
+                "success": [{
+                    "condition": "data.weightErrorCode === '0'",
+                    "message": "calculateWeightSuccessMessage"
+                }, {
+                    "condition": "data.weightErrorCode !== '0'",
+                    "message": "calculatedWeightFailedMassage"
+                }]
+            },
+            "events": {
+                "success":[
+                    {
+                        "name": "primaryWorkarea.reset"
+                    }
+                ]
+            }
+        }
+    },
+    "messages": {
+        "calculateWeightSuccessMessage": {
+            "messageType": "INFO",
+            "messageText": "{{i18n.calculateWeightSuccess}}",
+            "messageTextParams": [
+                "{{data.calculatedWeight}}",
+                "{{ctx.selected.props.object_string.uiValues[0]}}"
+            ]
+        },
+        "calculatedWeightFailedMassage": {
+            "messageType": "ERROR",
+            "messageText": "{{i18n.calculateWeightFailed}}",
+            "messageTextParams": [
+                "{{data.weightErrorCode}}",
+                "{{data.weightErrorText}}"
+            ]
+        }
+    },
+    "conditions": {},
+    "i18n": {
+        "calculateWeightCmdTitle": [
+            "sr5WeightManagementMessages"
+        ],
+        "calculateWeightCmdDesc": [
+            "sr5WeightManagementMessages"
+        ],
+        "calculateWeightSuccess": [
+            "sr5WeightManagementMessages"
+        ],
+        "calculateWeightFailed": [
+            "sr5WeightManagementMessages"
+        ]
+    }
+}

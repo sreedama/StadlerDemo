@@ -1,0 +1,49 @@
+{
+  "Key": "PLMXML-Info",
+  "IsTable": false,
+  "DisplayName": "PLMXML-Info",
+  "Items": [
+    {
+      "Key": "Product",
+      "Items": [
+        {
+          "Key": "Item",
+          "Items": [
+            {
+              "Name": "object_type"
+            },
+            {
+              "Name": "item_id"
+            }
+          ]
+        },
+        {
+          "Key": "Revision",
+          "Items": [
+            {
+              "Name": "object_tag"
+            },
+            {
+              "Name": "object_tag_t4xhex"
+            },
+            {
+              "Name": "object_name"
+            },
+            {
+              "Name": "item_revision_id"
+            },
+            {
+              "Name": "ais3_ObjectKey1"
+            },
+            {
+              "Name": "ais3_ObjectKey2"
+            },
+            {
+              "Name": "ais3_ObjectKey3"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

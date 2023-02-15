@@ -1,0 +1,257 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<TcBusinessData xmlns="http://teamcenter.com/BusinessModel/TcBusinessData" batchXSDVersion="1.0" Date="Mon Sep 28 09:24:15 AM 2015">
+  <Add>
+  </Add>
+  <Change>
+      <TcLOV name="SR5ProposedClassification" lovType="ListOfValuesString" usage="Exhaustive" description="" isManagedExternally="true">
+          <TcLOVValue value="C10010000" description="10 Engineering semi-finished product/00 Sheet Metal and plates" conditionName="isTrue"/>
+          <TcLOVValue value="C10020100" description="10 Engineering semi-finished product/05 Tubes and Pipes/00 Round" conditionName="isTrue"/>
+          <TcLOVValue value="C10020200" description="10 Engineering semi-finished product/05 Tubes and Pipes/05 Rectangular" conditionName="isTrue"/>
+          <TcLOVValue value="C10029900" description="10 Engineering semi-finished product/05 Tubes and Pipes/99 Other (tubes and pipes)" conditionName="isTrue"/>
+          <TcLOVValue value="C10030100" description="10 Engineering semi-finished product/10 Bars/00 Rectangular (incl. flat steel)" conditionName="isTrue"/>
+          <TcLOVValue value="C10030200" description="10 Engineering semi-finished product/10 Bars/05 Round" conditionName="isTrue"/>
+          <TcLOVValue value="C10039900" description="10 Engineering semi-finished product/10 Bars/99 Other (bars)" conditionName="isTrue"/>
+          <TcLOVValue value="C10040100" description="10 Engineering semi-finished product/15 Profiles/00 C-Profile" conditionName="isTrue"/>
+          <TcLOVValue value="C10040200" description="10 Engineering semi-finished product/15 Profiles/05 L-Profile" conditionName="isTrue"/>
+          <TcLOVValue value="C10040300" description="10 Engineering semi-finished product/15 Profiles/10 T-Profile" conditionName="isTrue"/>
+          <TcLOVValue value="C10040400" description="10 Engineering semi-finished product/15 Profiles/15 U-Profile" conditionName="isTrue"/>
+          <TcLOVValue value="C10049800" description="10 Engineering semi-finished product/15 Profiles/98 Extruded profiles (Stadler specific)" conditionName="isTrue"/>
+          <TcLOVValue value="C10049900" description="10 Engineering semi-finished product/15 Profiles/99 Other (profiles)" conditionName="isTrue"/>
+          <TcLOVValue value="C10050000" description="10 Engineering semi-finished product/20 Cables" conditionName="isTrue"/>
+          <TcLOVValue value="C10060000" description="10 Engineering semi-finished product/25 Hoses" conditionName="isTrue"/>
+          <TcLOVValue value="C10070400" description="10 Engineering semi-finished product/30 Seals + Adhesives/15 Edge protection" conditionName="isTrue"/>
+          <TcLOVValue value="C10070500" description="10 Engineering semi-finished product/30 Seals + Adhesives/20 Clip on profiles" conditionName="isTrue"/>
+          <TcLOVValue value="C10070600" description="10 Engineering semi-finished product/30 Seals + Adhesives/25 Sealing tape" conditionName="isTrue"/>
+          <TcLOVValue value="C10070700" description="10 Engineering semi-finished product/30 Seals + Adhesives/30 Adhesive tape" conditionName="isTrue"/>
+          <TcLOVValue value="C10079900" description="10 Engineering semi-finished product/30 Seals + Adhesives/99 Other (seals)" conditionName="isTrue"/>
+          <TcLOVValue value="C10080100" description="10 Engineering semi-finished product/35 Ropes, belts and straps/00 Ropes" conditionName="isTrue"/>
+          <TcLOVValue value="C10080200" description="10 Engineering semi-finished product/35 Ropes, belts and straps/05 Straps" conditionName="isTrue"/>
+          <TcLOVValue value="C10089900" description="10 Engineering semi-finished product/35 Ropes, belts and straps/99 Other (ropes, belts and straps)" conditionName="isTrue"/>
+          <TcLOVValue value="C10090000" description="10 Engineering semi-finished product/40 Cable channels" conditionName="isTrue"/>
+          <TcLOVValue value="C20010100" description="20 Machine elements +/00 Fastening elements/00 Screws" conditionName="isTrue"/>
+          <TcLOVValue value="C20010200" description="20 Machine elements +/00 Fastening elements/05 Nuts" conditionName="isTrue"/>
+          <TcLOVValue value="C20010300" description="20 Machine elements +/00 Fastening elements/10 Washers" conditionName="isTrue"/>
+          <TcLOVValue value="C20010400" description="20 Machine elements +/00 Fastening elements/15 Pins" conditionName="isTrue"/>
+          <TcLOVValue value="C20010500" description="20 Machine elements +/00 Fastening elements/20 Inserts" conditionName="isTrue"/>
+          <TcLOVValue value="C20010600" description="20 Machine elements +/00 Fastening elements/25 Rivet" conditionName="isTrue"/>
+          <TcLOVValue value="C20010700" description="20 Machine elements +/00 Fastening elements/30 Rivet nut + stud" conditionName="isTrue"/>
+          <TcLOVValue value="C20010800" description="20 Machine elements +/00 Fastening elements/35 Clip" conditionName="isTrue"/>
+          <TcLOVValue value="C20010900" description="20 Machine elements +/00 Fastening elements/40 Bonding fasteners" conditionName="isTrue"/>
+          <TcLOVValue value="C20019900" description="20 Machine elements +/00 Fastening elements/99 Other (fastening elements)" conditionName="isTrue"/>
+          <TcLOVValue value="C20020100" description="20 Machine elements +/05 Springs + dampers/00 Compression springs" conditionName="isTrue"/>
+          <TcLOVValue value="C20020200" description="20 Machine elements +/05 Springs + dampers/05 Draw springs" conditionName="isTrue"/>
+          <TcLOVValue value="C20020300" description="20 Machine elements +/05 Springs + dampers/10 Torison springs" conditionName="isTrue"/>
+          <TcLOVValue value="C20020400" description="20 Machine elements +/05 Springs + dampers/15 Gas spring" conditionName="isTrue"/>
+          <TcLOVValue value="C20020500" description="20 Machine elements +/05 Springs + dampers/20 Rubber metal elements" conditionName="isTrue"/>
+          <TcLOVValue value="C20020600" description="20 Machine elements +/05 Springs + dampers/25 Vibration dampers" conditionName="isTrue"/>
+          <TcLOVValue value="C20020700" description="20 Machine elements +/05 Springs + dampers/30 Metal mountings" conditionName="isTrue"/>
+          <TcLOVValue value="C20029900" description="20 Machine elements +/05 Springs + dampers/99 Other (spring + dampers)" conditionName="isTrue"/>
+          <TcLOVValue value="C20030000" description="20 Machine elements +/10 Shafts + Axis" conditionName="isTrue"/>
+          <TcLOVValue value="C20040100" description="20 Machine elements +/15 Bearing/00 Rolling bearings" conditionName="isTrue"/>
+          <TcLOVValue value="C20040200" description="20 Machine elements +/15 Bearing/05 Plain bearings" conditionName="isTrue"/>
+          <TcLOVValue value="C20040300" description="20 Machine elements +/15 Bearing/99 Other (bearing)" conditionName="isTrue"/>
+          <TcLOVValue value="C20050000" description="20 Machine elements +/20 Clutch + brakes" conditionName="isTrue"/>
+          <TcLOVValue value="C20060000" description="20 Machine elements +/25 Drive" conditionName="isTrue"/>
+          <TcLOVValue value="C20070000" description="20 Machine elements +/30 Gears" conditionName="isTrue"/>
+          <TcLOVValue value="C20080100" description="20 Machine elements +/35 Functional Elements/00 Handle" conditionName="isTrue"/>
+          <TcLOVValue value="C20080200" description="20 Machine elements +/35 Functional Elements/05 Crank" conditionName="isTrue"/>
+          <TcLOVValue value="C20080300" description="20 Machine elements +/35 Functional Elements/10 Hand wheel" conditionName="isTrue"/>
+          <TcLOVValue value="C20080400" description="20 Machine elements +/35 Functional Elements/15 Lever, fork, rod" conditionName="isTrue"/>
+          <TcLOVValue value="C20080500" description="20 Machine elements +/35 Functional Elements/20 Locks" conditionName="isTrue"/>
+          <TcLOVValue value="C20080600" description="20 Machine elements +/35 Functional Elements/25 Latches" conditionName="isTrue"/>
+          <TcLOVValue value="C20080700" description="20 Machine elements +/35 Functional Elements/30 Hinges" conditionName="isTrue"/>
+          <TcLOVValue value="C20080800" description="20 Machine elements +/35 Functional Elements/35 Joints" conditionName="isTrue"/>
+          <TcLOVValue value="C20080900" description="20 Machine elements +/35 Functional Elements/40 Secure Element" conditionName="isTrue"/>
+          <TcLOVValue value="C20089900" description="20 Machine elements +/35 Functional Elements/99 Other (functional elments)" conditionName="isTrue"/>
+          <TcLOVValue value="C20090100" description="20 Machine elements +/40 Adhesives/00 Glue / Adhesive" conditionName="isTrue"/>
+          <TcLOVValue value="C20090200" description="20 Machine elements +/40 Adhesives/05 Adhesive tape" conditionName="isTrue"/>
+          <TcLOVValue value="C20090300" description="20 Machine elements +/40 Adhesives/10 Technical filling compound and surfacer" conditionName="isTrue"/>
+          <TcLOVValue value="C20090400" description="20 Machine elements +/40 Adhesives/15 Adhesive aid (activator, hardener)" conditionName="isTrue"/>
+          <TcLOVValue value="C20090500" description="20 Machine elements +/40 Adhesives/20 Adhesive mount" conditionName="isTrue"/>
+          <TcLOVValue value="C20099900" description="20 Machine elements +/40 Adhesives/99 Other (adhesivs)" conditionName="isTrue"/>
+          <TcLOVValue value="C20100100" description="20 Machine elements +/45 Seals/00 Mechanical seal / Shaft seal" conditionName="isTrue"/>
+          <TcLOVValue value="C20100200" description="20 Machine elements +/45 Seals/05 Diaphragm gasket, bellow gasket" conditionName="isTrue"/>
+          <TcLOVValue value="C20100300" description="20 Machine elements +/45 Seals/10 Sealant plate/sheet" conditionName="isTrue"/>
+          <TcLOVValue value="C20100400" description="20 Machine elements +/45 Seals/15 Flat gasket" conditionName="isTrue"/>
+          <TcLOVValue value="C20100500" description="20 Machine elements +/45 Seals/20 O-ring" conditionName="isTrue"/>
+          <TcLOVValue value="C20100600" description="20 Machine elements +/45 Seals/25 Stuffing box packing" conditionName="isTrue"/>
+          <TcLOVValue value="C20100700" description="20 Machine elements +/45 Seals/30 Translatory sealing" conditionName="isTrue"/>
+          <TcLOVValue value="C20100800" description="20 Machine elements +/45 Seals/35 Sealing tape" conditionName="isTrue"/>
+          <TcLOVValue value="C20101000" description="20 Machine elements +/45 Seals/45 Sealing compound / Sealant" conditionName="isTrue"/>
+          <TcLOVValue value="C20109900" description="20 Machine elements +/45 Seals/99 Other (seals)" conditionName="isTrue"/>
+          <TcLOVValue value="C20110100" description="20 Machine elements +/50 Stadler specific/00 Weld seams alu" conditionName="isTrue"/>
+          <TcLOVValue value="C20110200" description="20 Machine elements +/50 Stadler specific/05 Weld seams steel" conditionName="isTrue"/>
+          <TcLOVValue value="C20110300" description="20 Machine elements +/50 Stadler specific/10 Weld seams stainless steel" conditionName="isTrue"/>
+          <TcLOVValue value="C20110400" description="20 Machine elements +/50 Stadler specific/15 Weld seams laser" conditionName="isTrue"/>
+          <TcLOVValue value="C20110500" description="20 Machine elements +/50 Stadler specific/20 Ground plugs" conditionName="isTrue"/>
+          <TcLOVValue value="C20110600" description="20 Machine elements +/50 Stadler specific/25 Extansion sleeves (Stadler)" conditionName="isTrue"/>
+          <TcLOVValue value="C20110700" description="20 Machine elements +/50 Stadler specific/30 Sliding block" conditionName="isTrue"/>
+          <TcLOVValue value="C20110800" description="20 Machine elements +/50 Stadler specific/35 C-Rail" conditionName="isTrue"/>
+          <TcLOVValue value="C20120100" description="20 Machine elements +/55 Operating supplies/00 Oil" conditionName="isTrue"/>
+          <TcLOVValue value="C20120200" description="20 Machine elements +/55 Operating supplies/05 Coolant" conditionName="isTrue"/>
+          <TcLOVValue value="C20120300" description="20 Machine elements +/55 Operating supplies/10 Fuel" conditionName="isTrue"/>
+          <TcLOVValue value="C20129900" description="20 Machine elements +/55 Operating supplies/15 Other (operating supplies)" conditionName="isTrue"/>
+          <TcLOVValue value="C30010100" description="30 Fluid components +/00 Components/00 Tank" conditionName="isTrue"/>
+          <TcLOVValue value="C30010200" description="30 Fluid components +/00 Components/05 Accumulators / (Reservoir)" conditionName="isTrue"/>
+          <TcLOVValue value="C30010300" description="30 Fluid components +/00 Components/10 Control unit" conditionName="isTrue"/>
+          <TcLOVValue value="C30010400" description="30 Fluid components +/00 Components/15 Silencers / Mufflers / Catalysator" conditionName="isTrue"/>
+          <TcLOVValue value="C30010500" description="30 Fluid components +/00 Components/20 Manometer (mechanical)" conditionName="isTrue"/>
+          <TcLOVValue value="C30010600" description="30 Fluid components +/00 Components/25 Typhon / Horn" conditionName="isTrue"/>
+          <TcLOVValue value="C30010700" description="30 Fluid components +/00 Components/30 Valves" conditionName="isTrue"/>
+          <TcLOVValue value="C30010800" description="30 Fluid components +/00 Components/35 Filter" conditionName="isTrue"/>
+          <TcLOVValue value="C30010900" description="30 Fluid components +/00 Components/40 Pump / Motor / compressor" conditionName="isTrue"/>
+          <TcLOVValue value="C30011000" description="30 Fluid components +/00 Components/45 Radiator / Cooler" conditionName="isTrue"/>
+          <TcLOVValue value="C30019900" description="30 Fluid components +/00 Components/99 Other (components)" conditionName="isTrue"/>
+          <TcLOVValue value="C30020100" description="30 Fluid components +/05 Fittings/00 Pipe fittings" conditionName="isTrue"/>
+          <TcLOVValue value="C30020200" description="30 Fluid components +/05 Fittings/05 Hose fittings" conditionName="isTrue"/>
+          <TcLOVValue value="C30020300" description="30 Fluid components +/05 Fittings/10 Coupling" conditionName="isTrue"/>
+          <TcLOVValue value="C30029900" description="30 Fluid components +/05 Fittings/99 Other (fittings)" conditionName="isTrue"/>
+          <TcLOVValue value="C30030100" description="30 Fluid components +/10 Pipes  / Hoses / Channel/00 Hose (finished)" conditionName="isTrue"/>
+          <TcLOVValue value="C30030200" description="30 Fluid components +/10 Pipes  / Hoses / Channel/05 Pipes (finished)" conditionName="isTrue"/>
+          <TcLOVValue value="C30030300" description="30 Fluid components +/10 Pipes  / Hoses / Channel/10 Channel" conditionName="isTrue"/>
+          <TcLOVValue value="C30030400" description="30 Fluid components +/10 Pipes  / Hoses / Channel/15 Hose guards and hose sleeves" conditionName="isTrue"/>
+          <TcLOVValue value="C30030500" description="30 Fluid components +/10 Pipes  / Hoses / Channel/20 Bellows / Compensator" conditionName="isTrue"/>
+          <TcLOVValue value="C30039900" description="30 Fluid components +/10 Pipes  / Hoses / Channel/99 Other (tubes and hoses)" conditionName="isTrue"/>
+          <TcLOVValue value="C30040100" description="30 Fluid components +/15 Flanges/00 Flange" conditionName="isTrue"/>
+          <TcLOVValue value="C30049900" description="30 Fluid components +/15 Flanges/99 Other (flanges)" conditionName="isTrue"/>
+          <TcLOVValue value="C30050100" description="30 Fluid components +/20 Clamps/00 Clamps" conditionName="isTrue"/>
+          <TcLOVValue value="C30050200" description="30 Fluid components +/20 Clamps/05 Clamping bands" conditionName="isTrue"/>
+          <TcLOVValue value="C30059900" description="30 Fluid components +/20 Clamps/99 Other (clamps)" conditionName="isTrue"/>
+          <TcLOVValue value="C40010100" description="40 Electric components /05 Sensing (B)/00 Electric potential (BA)" conditionName="isTrue"/>
+          <TcLOVValue value="C40010200" description="40 Electric components /05 Sensing (B)/04 Resistivity (BB)" conditionName="isTrue"/>
+          <TcLOVValue value="C40010300" description="40 Electric components /05 Sensing (B)/08 Electric current (BC)" conditionName="isTrue"/>
+          <TcLOVValue value="C40010400" description="40 Electric components /05 Sensing (B)/12 Density (BD)" conditionName="isTrue"/>
+          <TcLOVValue value="C40010500" description="40 Electric components /05 Sensing (B)/16 Electric field (BE)" conditionName="isTrue"/>
+          <TcLOVValue value="C40010600" description="40 Electric components /05 Sensing (B)/20 Flow (BF)" conditionName="isTrue"/>
+          <TcLOVValue value="C40010700" description="40 Electric components /05 Sensing (B)/24 Physical dimension (BG)" conditionName="isTrue"/>
+          <TcLOVValue value="C40010800" description="40 Electric components /05 Sensing (B)/28 Energy (BH)" conditionName="isTrue"/>
+          <TcLOVValue value="C40010900" description="40 Electric components /05 Sensing (B)/32 Power (BJ)" conditionName="isTrue"/>
+          <TcLOVValue value="C40011000" description="40 Electric components /05 Sensing (B)/36 Time (BK)" conditionName="isTrue"/>
+          <TcLOVValue value="C40011100" description="40 Electric components /05 Sensing (B)/40 Level (BL)" conditionName="isTrue"/>
+          <TcLOVValue value="C40011200" description="40 Electric components /05 Sensing (B)/44 Humidity (BM)" conditionName="isTrue"/>
+          <TcLOVValue value="C40011300" description="40 Electric components /05 Sensing (B)/48 Pressure (BP)" conditionName="isTrue"/>
+          <TcLOVValue value="C40011400" description="40 Electric components /05 Sensing (B)/52 Concentration(BQ)" conditionName="isTrue"/>
+          <TcLOVValue value="C40011500" description="40 Electric components /05 Sensing (B)/56 Light and radar (BR)" conditionName="isTrue"/>
+          <TcLOVValue value="C40011600" description="40 Electric components /05 Sensing (B)/60 Time rating and speed (BS)" conditionName="isTrue"/>
+          <TcLOVValue value="C40011700" description="40 Electric components /05 Sensing (B)/64 Temperature (BT)" conditionName="isTrue"/>
+          <TcLOVValue value="C40011800" description="40 Electric components /05 Sensing (B)/68 Multi-quantity (BU)" conditionName="isTrue"/>
+          <TcLOVValue value="C40011900" description="40 Electric components /05 Sensing (B)/72 Force (BW)" conditionName="isTrue"/>
+          <TcLOVValue value="C40012000" description="40 Electric components /05 Sensing (B)/76 Audio - Visual (BX)" conditionName="isTrue"/>
+          <TcLOVValue value="C40012100" description="40 Electric components /05 Sensing (B)/80 Information (BY)" conditionName="isTrue"/>
+          <TcLOVValue value="C40012200" description="40 Electric components /05 Sensing (B)/84 Incident (BZ)" conditionName="isTrue"/>
+          <TcLOVValue value="C40019900" description="40 Electric components /05 Sensing (B)/99 Other (BD, ...)" conditionName="isTrue"/>
+          <TcLOVValue value="C40020100" description="40 Electric components /10 Storing (C)/00 Capacitive (CA)" conditionName="isTrue"/>
+          <TcLOVValue value="C40020200" description="40 Electric components /10 Storing (C)/05 Inductive (CB )" conditionName="isTrue"/>
+          <TcLOVValue value="C40020300" description="40 Electric components /10 Storing (C)/10 Rechargeable battery (CC)" conditionName="isTrue"/>
+          <TcLOVValue value="C40020400" description="40 Electric components /10 Storing (C)/15 Information (CF)" conditionName="isTrue"/>
+          <TcLOVValue value="C40030100" description="40 Electric components /15 Emitting (E)/00 Light (EA)" conditionName="isTrue"/>
+          <TcLOVValue value="C40030200" description="40 Electric components /15 Emitting (E)/05 Electric heating (EB)" conditionName="isTrue"/>
+          <TcLOVValue value="C40030300" description="40 Electric components /15 Emitting (E)/10 Electric cooling (EC)" conditionName="isTrue"/>
+          <TcLOVValue value="C40030400" description="40 Electric components /15 Emitting (E)/15 Wireless power (EE)" conditionName="isTrue"/>
+          <TcLOVValue value="C40030500" description="40 Electric components /15 Emitting (E)/20 Thermal energy transfer (EG)" conditionName="isTrue"/>
+          <TcLOVValue value="C40030600" description="40 Electric components /15 Emitting (E)/25 Thermal heating (EP)" conditionName="isTrue"/>
+          <TcLOVValue value="C40030700" description="40 Electric components /15 Emitting (E)/30 Thermal cooling (EQ)" conditionName="isTrue"/>
+          <TcLOVValue value="C40030800" description="40 Electric components /15 Emitting (E)/35 Acoustic wave (EV)" conditionName="isTrue"/>
+          <TcLOVValue value="C40039900" description="40 Electric components /15 Emitting (E)/99 Other (EP, EQ, ...)" conditionName="isTrue"/>
+          <TcLOVValue value="C40040100" description="40 Electric components /20 Protecting (F)/00 Overvoltage (FA)" conditionName="isTrue"/>
+          <TcLOVValue value="C40040200" description="40 Electric components /20 Protecting (F)/05 Earth fault current (FB)" conditionName="isTrue"/>
+          <TcLOVValue value="C40040300" description="40 Electric components /20 Protecting (F)/10 Overcurrent (FC)" conditionName="isTrue"/>
+          <TcLOVValue value="C40040400" description="40 Electric components /20 Protecting (F)/15 Field (FE)" conditionName="isTrue"/>
+          <TcLOVValue value="C40040500" description="40 Electric components /20 Protecting (F)/20 Fire protection (FM)" conditionName="isTrue"/>
+          <TcLOVValue value="C40049900" description="40 Electric components /20 Protecting (F)/99 Other (FM, .)" conditionName="isTrue"/>
+          <TcLOVValue value="C40050100" description="40 Electric components /25 Generating (G)/00 Generator (GA)" conditionName="isTrue"/>
+          <TcLOVValue value="C40050200" description="40 Electric components /25 Generating (G)/05 Battery + Fuel cell (GB)" conditionName="isTrue"/>
+          <TcLOVValue value="C40050300" description="40 Electric components /25 Generating (G)/10 Solar cell (GC)" conditionName="isTrue"/>
+          <TcLOVValue value="C40050400" description="40 Electric components /25 Generating (G)/15 Signal GF" conditionName="isTrue"/>
+          <TcLOVValue value="C40050500" description="40 Electric components /25 Generating (G)/20 Continuous transfer (GL)" conditionName="isTrue"/>
+          <TcLOVValue value="C40050600" description="40 Electric components /25 Generating (G)/25 Flow (GQ)" conditionName="isTrue"/>
+          <TcLOVValue value="C40059900" description="40 Electric components /25 Generating (G)/99 Other (GF, GL, .)" conditionName="isTrue"/>
+          <TcLOVValue value="C40060100" description="40 Electric components /30 Matter processing (H)/00 Surface treatment (HK)" conditionName="isTrue"/>
+          <TcLOVValue value="C40070100" description="40 Electric components /35 Information processing (K)/00 Electric signal (KE)" conditionName="isTrue"/>
+          <TcLOVValue value="C40070200" description="40 Electric components /35 Information processing (K)/05 Electic signal relaying (KF)" conditionName="isTrue"/>
+          <TcLOVValue value="C40070300" description="40 Electric components /35 Information processing (K)/10 Optical signalling (KG)" conditionName="isTrue"/>
+          <TcLOVValue value="C40070400" description="40 Electric components /35 Information processing (K)/15 Fluid signalling (KH)" conditionName="isTrue"/>
+          <TcLOVValue value="C40079900" description="40 Electric components /35 Information processing (K)/99 Other (K.)" conditionName="isTrue"/>
+          <TcLOVValue value="C40080100" description="40 Electric components /40 Drive (M)/00 Electric motor (MA)" conditionName="isTrue"/>
+          <TcLOVValue value="C40080200" description="40 Electric components /40 Drive (M)/05 Electromagnet (MB)" conditionName="isTrue"/>
+          <TcLOVValue value="C40090000" description="40 Electric components /45 Covering (N)" conditionName="isTrue"/>
+          <TcLOVValue value="C40100100" description="40 Electric components /50 Presentation (P)/00 Visible state indicator (PF)" conditionName="isTrue"/>
+          <TcLOVValue value="C40100200" description="40 Electric components /50 Presentation (P)/05 Scalar display (PG)" conditionName="isTrue"/>
+          <TcLOVValue value="C40100300" description="40 Electric components /50 Presentation (P)/10 Graphical display (PH)" conditionName="isTrue"/>
+          <TcLOVValue value="C40100400" description="40 Electric components /50 Presentation (P)/15 Accoustic device (PJ)" conditionName="isTrue"/>
+          <TcLOVValue value="C40100500" description="40 Electric components /50 Presentation (P)/20 Tactile device (PK)" conditionName="isTrue"/>
+          <TcLOVValue value="C40100600" description="40 Electric components /50 Presentation (P)/25 Multiple form presenting object (PZ)" conditionName="isTrue"/>
+          <TcLOVValue value="C40109900" description="40 Electric components /50 Presentation (P)/99 Other (P.)" conditionName="isTrue"/>
+          <TcLOVValue value="C40110100" description="40 Electric components /55 Controlling (Q)/00 Controlling (QA)" conditionName="isTrue"/>
+          <TcLOVValue value="C40110200" description="40 Electric components /55 Controlling (Q)/05 Seperating (QB)" conditionName="isTrue"/>
+          <TcLOVValue value="C40110300" description="40 Electric components /55 Controlling (Q)/10 Earthing (QC)" conditionName="isTrue"/>
+          <TcLOVValue value="C40110400" description="40 Electric components /55 Controlling (Q)/15 Multiple measure controlling (QZ)" conditionName="isTrue"/>
+          <TcLOVValue value="C40119900" description="40 Electric components /55 Controlling (Q)/99 Other (Q.)" conditionName="isTrue"/>
+          <TcLOVValue value="C40120101" description="40 Electric components /60 Restricting (R)/00 Electricity restricting (RA)/00 Diode (RAA)" conditionName="isTrue"/>
+          <TcLOVValue value="C40120102" description="40 Electric components /60 Restricting (R)/00 Electricity restricting (RA)/05 Resistor (RAC)" conditionName="isTrue"/>
+          <TcLOVValue value="C40120200" description="40 Electric components /60 Restricting (R)/05 Electricity stabilising (RB)" conditionName="isTrue"/>
+          <TcLOVValue value="C40129900" description="40 Electric components /60 Restricting (R)/99 Other (R.)" conditionName="isTrue"/>
+          <TcLOVValue value="C40130100" description="40 Electric components /65 Human interaction (S)/00 Face interaction (SF)" conditionName="isTrue"/>
+          <TcLOVValue value="C40130200" description="40 Electric components /65 Human interaction (S)/05 Hand interaction (SG)" conditionName="isTrue"/>
+          <TcLOVValue value="C40130300" description="40 Electric components /65 Human interaction (S)/10 Foot interaction (SH)" conditionName="isTrue"/>
+          <TcLOVValue value="C40130400" description="40 Electric components /65 Human interaction (S)/15 Finger interaction (SJ)" conditionName="isTrue"/>
+          <TcLOVValue value="C40130500" description="40 Electric components /65 Human interaction (S)/20 Movement interaction (SK)" conditionName="isTrue"/>
+          <TcLOVValue value="C40130600" description="40 Electric components /65 Human interaction (S)/25 Multi-interaction device (SZ)" conditionName="isTrue"/>
+          <TcLOVValue value="C40139900" description="40 Electric components /65 Human interaction (S)/99 Other (S.)" conditionName="isTrue"/>
+          <TcLOVValue value="C40140100" description="40 Electric components /70 Transforming (T)/00 Energy transforming (TA)" conditionName="isTrue"/>
+          <TcLOVValue value="C40140200" description="40 Electric components /70 Transforming (T)/05 Energy converting (TB)" conditionName="isTrue"/>
+          <TcLOVValue value="C40140300" description="40 Electric components /70 Transforming (T)/10 Universal power supply (TC)" conditionName="isTrue"/>
+          <TcLOVValue value="C40140400" description="40 Electric components /70 Transforming (T)/15 Signal converting (TF)" conditionName="isTrue"/>
+          <TcLOVValue value="C40149900" description="40 Electric components /70 Transforming (T)/99 Other (T.)" conditionName="isTrue"/>
+          <TcLOVValue value="C40150101" description="40 Electric components /75 Holding (U)/00 Positioning (UA)/00 Insulator (UAA)" conditionName="isTrue"/>
+          <TcLOVValue value="C40150102" description="40 Electric components /75 Holding (U)/00 Positioning (UA)/05 Cable gland (UAB)" conditionName="isTrue"/>
+          <TcLOVValue value="C40150199" description="40 Electric components /75 Holding (U)/00 Positioning (UA)/99 Other (UA.)" conditionName="isTrue"/>
+          <TcLOVValue value="C40150200" description="40 Electric components /75 Holding (U)/05 Carrying (UB)" conditionName="isTrue"/>
+          <TcLOVValue value="C40150300" description="40 Electric components /75 Holding (U)/10 Enclosing (UC)" conditionName="isTrue"/>
+          <TcLOVValue value="C40159900" description="40 Electric components /75 Holding (U)/99 Other (U.)" conditionName="isTrue"/>
+          <TcLOVValue value="C40160101" description="40 Electric components /80 Guiding (W)/00 High voltage electric energy (WB)/00 High voltage busbar (WBA)" conditionName="isTrue"/>
+          <TcLOVValue value="C40160102" description="40 Electric components /80 Guiding (W)/00 High voltage electric energy (WB)/05 High voltage cable (WBB)" conditionName="isTrue"/>
+          <TcLOVValue value="C40160199" description="40 Electric components /80 Guiding (W)/00 High voltage electric energy (WB)/99 Other (WBC, WBD)" conditionName="isTrue"/>
+          <TcLOVValue value="C40160201" description="40 Electric components /80 Guiding (W)/05 Low voltage electric energy (WD)/00 Low voltage busbar (WDA)" conditionName="isTrue"/>
+          <TcLOVValue value="C40160202" description="40 Electric components /80 Guiding (W)/05 Low voltage electric energy (WD)/05 Low voltage cable (WDB)" conditionName="isTrue"/>
+          <TcLOVValue value="C40160299" description="40 Electric components /80 Guiding (W)/05 Low voltage electric energy (WD)/99 Other (WDC, WDD)" conditionName="isTrue"/>
+          <TcLOVValue value="C40160301" description="40 Electric components /80 Guiding (W)/10 WE Reference potential (WE)/00 Earthing rail (WEA)" conditionName="isTrue"/>
+          <TcLOVValue value="C40160302" description="40 Electric components /80 Guiding (W)/10 WE Reference potential (WE)/05 Earthing cable (WEB)" conditionName="isTrue"/>
+          <TcLOVValue value="C40160303" description="40 Electric components /80 Guiding (W)/10 WE Reference potential (WE)/10 Equiptential bonding rail (WEC)" conditionName="isTrue"/>
+          <TcLOVValue value="C40160304" description="40 Electric components /80 Guiding (W)/10 WE Reference potential (WE)/15 Equiptential bonding cable (WED)" conditionName="isTrue"/>
+          <TcLOVValue value="C40160401" description="40 Electric components /80 Guiding (W)/15 Electric signal (WG)/00 Control cable (WGA)" conditionName="isTrue"/>
+          <TcLOVValue value="C40160402" description="40 Electric components /80 Guiding (W)/15 Electric signal (WG)/05 Data cable (WGB)" conditionName="isTrue"/>
+          <TcLOVValue value="C40160403" description="40 Electric components /80 Guiding (W)/15 Electric signal (WG)/10 Signal bushing (WGC)" conditionName="isTrue"/>
+          <TcLOVValue value="C40160600" description="40 Electric components /80 Guiding (W)/25 WZ Multiple flow guiding" conditionName="isTrue"/>
+          <TcLOVValue value="C40169900" description="40 Electric components /80 Guiding (W)/99 Other (W.)" conditionName="isTrue"/>
+          <TcLOVValue value="C40170101" description="40 Electric components /85 Interfacing (X)/00 High voltage connecting (XB)/00 High voltage terminal (XBA)" conditionName="isTrue"/>
+          <TcLOVValue value="C40170102" description="40 Electric components /85 Interfacing (X)/00 High voltage connecting (XB)/05 High voltage socket (XBB)" conditionName="isTrue"/>
+          <TcLOVValue value="C40170103" description="40 Electric components /85 Interfacing (X)/00 High voltage connecting (XB)/10 High voltage terminal box (XBC)" conditionName="isTrue"/>
+          <TcLOVValue value="C40170201" description="40 Electric components /85 Interfacing (X)/05 Low voltage connecting (XD)/00 Electric terminal (XDA)" conditionName="isTrue"/>
+          <TcLOVValue value="C40170202" description="40 Electric components /85 Interfacing (X)/05 Low voltage connecting (XD)/05 Power socket (XDB)" conditionName="isTrue"/>
+          <TcLOVValue value="C40170203" description="40 Electric components /85 Interfacing (X)/05 Low voltage connecting (XD)/10 Terminal box (XDC)" conditionName="isTrue"/>
+          <TcLOVValue value="C40170204" description="40 Electric components /85 Interfacing (X)/05 Low voltage connecting (XD)/15 Power outlet (XDD)" conditionName="isTrue"/>
+          <TcLOVValue value="C40170205" description="40 Electric components /85 Interfacing (X)/05 Low voltage connecting (XD)/20 Power distributer (XDE)" conditionName="isTrue"/>
+          <TcLOVValue value="C40170301" description="40 Electric components /85 Interfacing (X)/10 Potential connecting (XE)/00 PE terminal (XEA)" conditionName="isTrue"/>
+          <TcLOVValue value="C40170302" description="40 Electric components /85 Interfacing (X)/10 Potential connecting (XE)/05 PB terminal (XEB)" conditionName="isTrue"/>
+          <TcLOVValue value="C40170303" description="40 Electric components /85 Interfacing (X)/10 Potential connecting (XE)/10 FE terminal (XEC)" conditionName="isTrue"/>
+          <TcLOVValue value="C40170304" description="40 Electric components /85 Interfacing (X)/10 Potential connecting (XE)/15 FB terminal (XED)" conditionName="isTrue"/>
+          <TcLOVValue value="C40170305" description="40 Electric components /85 Interfacing (X)/10 Potential connecting (XE)/20 Earth electrode (XEE)" conditionName="isTrue"/>
+          <TcLOVValue value="C40170306" description="40 Electric components /85 Interfacing (X)/10 Potential connecting (XE)/25 Collector (XEF)" conditionName="isTrue"/>
+          <TcLOVValue value="C40170401" description="40 Electric components /85 Interfacing (X)/15 Signal connecting (XG)/00 Signal soket (XGA)" conditionName="isTrue"/>
+          <TcLOVValue value="C40170402" description="40 Electric components /85 Interfacing (X)/15 Signal connecting (XG)/05 Terminal (XGB)" conditionName="isTrue"/>
+          <TcLOVValue value="C40170403" description="40 Electric components /85 Interfacing (X)/15 Signal connecting (XG)/10 Patch panel (XGC)" conditionName="isTrue"/>
+          <TcLOVValue value="C40170404" description="40 Electric components /85 Interfacing (X)/15 Signal connecting (XG)/15 Signal distributor (XGD)" conditionName="isTrue"/>
+          <TcLOVValue value="C40179900" description="40 Electric components /85 Interfacing (X)/99 Other (X.)" conditionName="isTrue"/>
+          <TcLOVValue value="C50010000" description="50 Vehicle components +/00 Interior" conditionName="isTrue"/>
+          <TcLOVValue value="C50020000" description="50 Vehicle components +/10 Exterior" conditionName="isTrue"/>
+          <TcLOVValue value="C50030000" description="50 Vehicle components +/20 Energy storage" conditionName="isTrue"/>
+          <TcLOVValue value="C50040000" description="50 Vehicle components +/30 Engines and systems" conditionName="isTrue"/>
+          <TcLOVValue value="C50050000" description="50 Vehicle components +/40 Air conditioning / Cooling" conditionName="isTrue"/>
+          <TcLOVValue value="C50990000" description="50 Vehicle components +/99 Other (vehicle components)" conditionName="isTrue"/>
+          <TcLOVValue value="C80000000" description="80 Color" conditionName="isTrue"/>
+          <TcLOVValue value="C80010000" description="80 Color/10 Color definition" conditionName="isTrue"/>
+          <TcLOVValue value="C80020000" description="80 Color/20 Coating structure" conditionName="isTrue"/>
+      </TcLOV>
+  </Change>
+</TcBusinessData>

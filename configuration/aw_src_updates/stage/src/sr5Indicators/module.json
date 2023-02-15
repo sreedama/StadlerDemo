@@ -1,0 +1,6 @@
+{
+    "name": "sr5Indicators",
+    "description": "This is the sr5Indicators module",
+    "skipTest": true,
+    "skipAudit": true
+}

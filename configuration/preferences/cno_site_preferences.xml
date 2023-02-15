@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<preferences version="10.0">
+  <category name="General">
+    <category_description></category_description>
+	<preference name="CNO_TRACE" type="String" array="false" disabled="false" protectionScope="Site" envEnabled="false">
+		<preference_description>This is a define for the trace of the CNO Extensions. Default is info. This is a site Preference.</preference_description>
+		<context name="Teamcenter">
+			<value>OFF</value>
+		</context>
+	</preference>
+  </category> 
+  <category name="CNO_Validation.Options">
+    <category_description>CNO Validation Framework Options</category_description>
+    <preference name="CNO_QUERY_DEBUG_LEVEL" type="String" array="false" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>This is a define for the debug level of the CNO Validation Framework. Default is info. This is a site Preference.</preference_description>
+      <context name="Teamcenter">
+        <value>Error</value>
+      </context>
+    </preference>
+    <preference name="CNO_QUERY_OBJECTS_DISPLAY_STRING" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>This is a define for the display text for objects of a specific ItemType used for the CNO Framework display_string xml property. This can be a group or site Preference.</preference_description>
+      <context name="Teamcenter">
+        <value>ALL={$object_string}</value>
+        <!--<value>ALL_ITEM={$item_id} ({$object_name})</value>-->
+        <!--<value>ALL_REVISION={$item_id}/{$item_revision_id} ({$object_name})</value>-->
+        <!--<value>Design={$item_id} ({$object_name})</value>-->
+        <!--<value>Design Revision={$item_id}/{$item_revision_id} ({$object_name})</value>-->
+        <!--<value>Document={$item_id}}</value>-->
+        <!--<value>Document Revision={$item_id}/{$item_revision_id}</value>-->
+      </context>
+    </preference>
+    <preference name="CNO_QUERY_ROOT_OBJECTS_COUNT_LIMIT" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>This is a define for a limit for search results. This is a site Preference.</preference_description>
+      <context name="Teamcenter">
+        <value>total:10000</value>
+        <value>default:5000</value>
+      </context>
+    </preference>
+    <preference name="CNO_STORE_VALIDATION_ON_TASK" type="String" array="false" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>This is a define to enable the Validation Framework to store the result on the EPMTask. Default is true. This is a site Preference.</preference_description>
+      <context name="Teamcenter">
+        <value>true</value>
+      </context>
+    </preference>
+    <preference name="CNO_VALIDATION_ADMIN_GROUPS" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>Teamcenter Groups which are able to modify configurations</preference_description>
+      <context name="Teamcenter">
+        <value>dba</value>
+      </context>
+    </preference>
+    <preference name="CNO_VALIDATION_BOM_MODIFICATION_CHECK_RULES" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>This is a define for the check rules of a specific types used for the CNO Validation Framework UI. This can be a group or site Preference.</preference_description>
+      <context name="Teamcenter">
+      </context>
+    </preference>
+    <preference name="CNO_VALIDATION_CHECK_RULES" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>This is a define for the check rules of a specific ItemType used for the CNO Validation Framework UI. This can be a group or site Preference.</preference_description>
+      <context name="Teamcenter">
+        <value>config=CNO_VFW_CHECK_RULES</value>
+      </context>
+    </preference>
+    <preference name="CNO_VALIDATION_CLIENT_OBJECTS" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>This is a define to set the selectable object types and classes in the user interface. (RAC and AW)</preference_description>
+      <context name="Teamcenter">
+        <value>Item</value>
+        <value>ItemRevision</value>
+        <value>Schedule</value>
+        <value>Awb0DesignElement</value>
+        <value>Awb0PartElement</value>
+		<!--<value>Folder</value>-->
+		<!--<value>Dataset</value>-->
+      </context>
+    </preference>
+    <preference name="CNO_VALIDATION_CLIENT_SHOW_CHECK_DETAILS" type="String" array="false" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>This is a define to enable the display of validation steps in the user interface. (RAC and AW)</preference_description>
+      <context name="Teamcenter">
+        <value>false</value>
+      </context>
+    </preference>
+    <preference name="CNO_VALIDATION_COMPARE_RULES" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>This is a define for the compare rules of a specific ItemType used for the CNO Compare UI. This can be a group or site Preference.</preference_description>
+      <context name="Teamcenter">
+        <value>config=CNO_VFW_COMPARE_RULES</value>
+      </context>
+    </preference>
+    <preference name="CNO_VALIDATION_CREATE_OBJECT_CHECK_RULES" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>This is a define for the check rules of a specific types used for the CNO Validation Framework UI. This can be a group or site Preference.</preference_description>
+      <context name="Teamcenter">
+      </context>
+    </preference>
+    <preference name="CNO_VALIDATION_LICENSE" type="String" array="false" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>This is a define for the location of the license file for the CNO Validation Framework.</preference_description>
+      <context name="Teamcenter">
+        <value>TC_DATA/cno_validation.lic</value>
+      </context>
+    </preference>
+    <preference name="CNO_VALIDATION_RAC_ADMIN_CONFIG_WIZARD_CHK_RULE_SELECTIONS" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>This is a define for the chk rule selection in the Admin config wizard for the CHK file creation.</preference_description>
+      <context name="Teamcenter">
+        <value>Add Property=</value>
+        <value>Is Empty=§not allowed§empty~value requires</value>
+        <value>Is Empty (Warning)=§not allowed§empty~WARNING:Change Text</value>
+        <value>Is Equal=§eq§valid value~value is not valid</value>
+        <value>Is not Equal=§not eq§any value~value is not valid</value>
+        <value>Is Numeric=§allowed§numeric~Attribute is not numeric</value>
+        <value>Is Decimal=§allowed§decimal~Attribute is not decimal</value>
+        <value>Max Length=§allowed§regex(.{1,30})~max 30 characters</value>
+        <value>Min Length=§allowed§regex(^.{5,}$)~min 5 characters</value>
+        <value>Existence Check=§exist§*~do not exist</value>
+        <value>Wildcard Check=§not allowed§regex(.*)~Change RegEx</value>
+        <value>Value Check=§gt§1~Value is not gerater than 1</value>
+        <value>Value Check=§lt§1~Value is not lower than 1</value>
+        <value>Between check=§bt§4;6~Value must be between 4 and 6</value>
+        <value>Count Check=§eq§count([C:ItemRevision:Attribute]_*)~Combination is not valid</value>
+        <value>1 or more occurrences=§count gt 0§*~object not found</value>
+        <value>2 occurrences or less=§count lt 3§*~more than 2 occurrences</value>
+        <value>Todays Date=§eq§[SYSTEM:DATETIME]~Invalid date</value>
+        <value>Yesterday Date=§gt§calc([SYSTEM:DATETIME]-1d)~Invalid date</value>
+        <value>Future Date=§lt§calc([SYSTEM:DATETIME]+2d)~Invalid date</value>
+        <value>Related Object Date=§lt§[UGPART:last_mod_date]~Document is out-of-date</value>
+        <value>Related Object Owner=§eq§[UGPART:last_mod_user]~Owner is different</value>
+        <value>Attribute Dependency=§eq§[VAL_OBJECT:Attribute]~Change dependent attribute</value>
+        <value>Lov Dependency=§allowed§[LOV:LovName]~Attribute is not in the list</value>
+        <value>Translate=§allowed§translate(RealPropertyValue)~Value is not allowed</value>
+        <value>AutoFill=§not allowed§empty~AUTO_FILL:your new value</value>
+      </context>
+    </preference>
+    <preference name="CNO_VALIDATION_RAC_RESULT_FILTER_DEFAULT" type="String" array="false" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>This is a define to set the default filter for the result. (SHOW_ALL_RESULT|HIDE_PASSED_CHECK_RESULT|HIDE_PASSED_OBJECTS)</preference_description>
+      <context name="Teamcenter">
+        <value>SHOW_ALL_RESULT</value>
+      </context>
+    </preference>
+	<preference name="CNO_VALIDATION_RAC_SHOW_OLD_RESULT_UI" type="String" array="false" disabled="false" protectionScope="Site" envEnabled="false">
+	<preference_description>This is a define to show the old Validation UI.</preference_description>
+		<context name="Teamcenter">
+			<value>true</value>
+		</context>
+	</preference>
+    <preference name="CNO_VALIDATION_REPORT_EXCEL_TEMPLATE" type="String" array="false" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>This is a define for the excel validation report. This can be a group or site Preference.</preference_description>
+      <context name="Teamcenter">
+        <value>CNO_VFW_VALIDATION_EXCEL</value>
+      </context>
+    </preference>
+    <preference name="CNO_VALIDATION_REPORT_RULES" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>This is a define for the reporting selections of a specific ItemType used for the CNO Reproting UI. This can be a group or site Preference.</preference_description>
+      <context name="Teamcenter">
+        <value>config=CNO_VFW_REPORT_RULES</value>
+      </context>
+    </preference>
+    <preference name="CNO_VALIDATION_REVISE_OBJECT_CHECK_RULES" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>This is a define for the check rules of a specific types used for the CNO Validation Framework UI. This can be a group or site Preference.</preference_description>
+      <context name="Teamcenter">
+      </context>
+    </preference>
+    <preference name="CNO_VALIDATION_SAVEAS_OBJECT_CHECK_RULES" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>This is a define for the check rules of a specific types used for the CNO Validation Framework UI. This can be a group or site Preference.</preference_description>
+      <context name="Teamcenter">
+      </context>
+    </preference>
+    <preference name="CNO_VALIDATION_SAVE_OBJECT_CHECK_RULES" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>This is a define for the check rules of a specific types used for the CNO Validation Framework UI. This can be a group or site Preference.</preference_description>
+      <context name="Teamcenter">
+      </context>
+    </preference>
+    <preference name="CNO_VALIDATION_SAVE_PROPERTY_CHECK_RULES" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>This is a define for the check rules of a specific types used for the CNO Validation Framework UI. This can be a group or site Preference.</preference_description>
+      <context name="Teamcenter">
+      </context>
+    </preference>
+    <preference name="CNO_VALIDATION_WORKFLOW_DESCRIPTION" type="String" array="false" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>This is a define to set the text for the description of the workflow, which is triggered via task configuration.</preference_description>
+      <context name="Teamcenter">
+        <value>This is a automated job</value>
+      </context>
+    </preference>
+    <preference name="CNO_VALIDATION_WORKFLOW_NAME_PATTERN" type="String" array="false" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>This is a define to set the pattern for the name of the workflow, which is triggered via task configuration. ({$object_string}, {$item_id}, {$item_revision_id}, {$object_name})</preference_description>
+      <context name="Teamcenter">
+        <value>{$object_string}</value>
+      </context>
+    </preference>
+  </category>
+</preferences>

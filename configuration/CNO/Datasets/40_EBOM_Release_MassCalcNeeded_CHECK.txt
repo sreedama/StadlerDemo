@@ -1,0 +1,21 @@
+####################################################################################
+
+ID=MassCalcNeeded;scope=object;CRITERIA=CONDITION;CHECK=root:C:ItemRevision:DB_IR_type§allowed§SR5EngArticleRevision||SR5NonERPArticleRevision||SR5EngArticleARRevision||SR5EngEndItemRevision||SR5EngMajorAssyRevision||SR5EngInstallLocRevision||SR5CatDefArticleRevision||SR5CatDefArtARRevision||SR5EngRawArticleRevision
+#||SR5EleCatPartRevision||SR5GenCatPartRevision||SR5MechCatPartRevision||SR5CatalogPartRevision||SR5GenCatPartARRevision
+#||SR5ElectricAssyRevision
+#||SR5EngEnvRevision
+#||SR5ToolRevision
+#||SR5ColorDefRevision
+#||SR5CoatingStructRevision
+ID=MassCalcNeeded;scope=object;CRITERIA=AND;CHECK=root:C:ItemRevision:sr5AdjustedWeight§allowed§ ||empty||0.0~no need of mass calculation
+
+
+
+ID=MassCalcNeededCatalog;scope=object;CRITERIA=CONDITION;CHECK=root:C:ItemRevision:DB_IR_type§allowed§SR5EleCatPartRevision||SR5GenCatPartRevision||SR5MechCatPartRevision||SR5CatalogPartRevision||SR5GenCatPartARRevision
+ID=MassCalcNeededCatalog;scope=object;CRITERIA=CONDITION;CHECK=root:C:ItemRevision:ListMaterialRev§not allowed§ &&empty~prior check necessary if a material is assigned with Mat1UsesMaterial relation
+ID=MassCalcNeededCatalog;scope=object;CRITERIA=AND;CHECK=root:C:ItemRevision:sr5AdjustedWeight§allowed§ ||empty||0.0~no need of mass calculation
+
+
+ID=MassCalcNeededCatalog2;scope=object;CRITERIA=CONDITION;CHECK=root:C:ItemRevision:DB_IR_type§allowed§SR5EleCatPartRevision||SR5GenCatPartRevision||SR5MechCatPartRevision||SR5CatalogPartRevision||SR5GenCatPartARRevision
+ID=MassCalcNeededCatalog2;scope=object;CRITERIA=AND;CHECK=root:C:ItemRevision:ListMaterialRev§not allowed§ &&empty&&0.0~no material is assigned with Mat1UsesMaterial relation - no need of mass calculation
+

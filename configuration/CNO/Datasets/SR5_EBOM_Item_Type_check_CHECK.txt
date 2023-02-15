@@ -1,0 +1,14 @@
+############################################################################################################
+#  CNO Check Definition File
+############################################################################################################
+# Version History
+#
+# Version    Date           Name               Description of Change
+# 1.0        09-02-2022     testu     Initial
+############################################################################################################
+
+#Check Type=C:ItemRevision Property=?object_type
+#root:C:ItemRevision:Item Type§allowed§SR5NonERPArticleRevision~do not exist
+#C:ItemRevision:Item Type§exist§SR5NonERPArticleRevision~do not exist
+#SR5ColorDefRevision||
+root:C:ItemRevision:Item Type§allowed§SR5NonERPArticleRevision||SR5EngArticleARRevision~non erp or Alt. Rep. of Eng. Art. do not exist

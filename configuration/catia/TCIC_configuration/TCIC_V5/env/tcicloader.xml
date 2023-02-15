@@ -1,0 +1,253 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!--=================================================================================================
+
+                                             HEADER
+
+====================================================================================================
+File description:
+
+            Filename: tcicloader.xml
+
+            Teamcenter Manager for CATIA V5 loader customization XML File.
+====================================================================================================
+Quick help:
+
+==================================================================================================-->
+<UIApplication class="com.ebsolutions.loader.ui.LoaderApplication"
+             nameRef="Teamcenter Loader"
+             image="/com/ebsolutions/uimanager/modules/images/loader/loader_icon.png"
+             sizex="420" sizey="810" lang="">
+
+  <!-- Loader Application toolbar -->
+  <LoaderToolBar nameRef="LOADER_APPLICATION_TB" identifier="loader_application_tb"
+      class="com.ebsolutions.loader.ui.LoaderApplicationToolBar">
+    <DisplayElement
+        menu="edit"
+        identifier="copy"
+        class="com.ebsolutions.loader.ui.LoaderMenuItem"
+        action="com.ebsolutions.loader.actions.Copy"
+        image="/com/ebsolutions/uimanager/modules/images/loader/copy_16.png"/>
+    <DisplayElement
+        menu="edit"
+        identifier="paste"
+        class="com.ebsolutions.loader.ui.LoaderMenuItem"
+        action="com.ebsolutions.loader.actions.Paste"
+        image="/com/ebsolutions/uimanager/modules/images/loader/paste_16.png"/>
+    <DisplayElement
+        menu="edit"
+        identifier="copy_in_folder"
+        class="com.ebsolutions.loader.ui.LoaderMenuItem"
+        action="com.ebsolutions.loader.actions.CopyInFolder"/>
+    <DisplayElement
+        menu="edit"
+        identifier="remove_from_folder"
+        class="com.ebsolutions.loader.ui.LoaderMenuItem"
+        action="com.ebsolutions.loader.actions.RemoveFromFolder"/> 
+    <DisplayElement
+        menu="edit"
+        identifier="user_settings"
+        class="com.ebsolutions.loader.ui.LoaderMenuItem"
+        action="com.ebsolutions.loader.actions.raclessactions.UserSettings"
+        image="/com/ebsolutions/uimanager/modules/images/loader/usersetting_32.png"/>
+        
+    <DisplayElement
+        menu="edit"
+        identifier="menu_options"
+        class="com.ebsolutions.loader.ui.LoaderMenuItem"
+        action="com.ebsolutions.loader.actions.options.LoaderOptionsAction"
+        image="/com/ebsolutions/uimanager/modules/images/loader/loader_options_16.png"/>
+        
+    <DisplayElement
+        menu="view"
+        identifier="refresh_selection"
+        class="com.ebsolutions.loader.ui.LoaderMenuItem"
+        action="com.ebsolutions.loader.actions.RefreshSelection"/>
+    <DisplayElement
+        menu="view"
+        identifier="refresh_window"
+        class="com.ebsolutions.loader.ui.LoaderMenuItem"
+        action="com.ebsolutions.loader.actions.RefreshWindow"/>
+  </LoaderToolBar>
+
+
+  <!-- LOADER MODULE -->
+  <Module nameRef="Loader Module"
+      name="loader_module"
+      moduleHandler="com.ebsolutions.uimanager.handlers.LoaderModuleHandler"
+      image="/com/ebsolutions/uimanager/modules/images/loader/loader_icon.png"
+      class="com.ebsolutions.loader.ui.LoaderModule">
+
+    <!-- LOADER MODULE options toolbar -->
+    <ToolBar nameRef="OPTIONS_TB"
+        identifier="options_tb"
+        class="com.ebsolutions.loader.ui.LoaderModuleToolBar">
+      <DisplayElement
+          showTitle="false"
+          identifier="activate_shape"
+          image="/com/ebsolutions/uimanager/modules/images/loader/activateshapes.png"
+          class="com.ebsolutions.loader.ui.LoaderModuleToolBarToggleButton"
+          action="com.ebsolutions.loader.actions.options.ActivateLatestActiveShapes"/>        
+      <DisplayElement
+          showTitle="false"
+          identifier="export_active_shapes"
+          image="/com/ebsolutions/uimanager/modules/images/loader/export_activateshapes_files.png"
+          class="com.ebsolutions.loader.ui.LoaderModuleToolBarToggleButton"
+          action="com.ebsolutions.loader.actions.options.ExportOnlyActiveShapes"/>
+      <DisplayElement
+          showTitle="false"
+          identifier="load_as_cgr"
+          image="/com/ebsolutions/uimanager/modules/images/loader/load_as_cgr.png"
+          class="com.ebsolutions.loader.ui.LoaderModuleToolBarToggleButton"
+          action="com.ebsolutions.loader.actions.options.LoadAsCgr"/>
+    </ToolBar>
+    
+    <!-- LOADER MODULE Load toolbar -->
+    <ToolBar nameRef="LOAD_TB"
+        identifier="load_tb"
+        class="com.ebsolutions.loader.ui.LoaderModuleToolBar">
+      <DisplayElement
+          showTitle="false"
+          identifier="load"
+          image="/com/ebsolutions/uimanager/modules/images/loader/export_32.png"
+          class="com.ebsolutions.loader.ui.LoaderModuleToolBarButton"
+          action="com.ebsolutions.loader.actions.raclessactions.Load"/>        
+    </ToolBar>
+    
+    <!-- LOADER MODULE database toolbar -->
+    <ToolBar nameRef="ACTIONS_TB"
+        identifier="actions_tb"
+        class="com.ebsolutions.loader.ui.LoaderModuleToolBar">
+      <DisplayElement
+          showTitle="false"
+          identifier="check_out"
+          image="/com/ebsolutions/uimanager/modules/images/checkout.png"
+          class="com.ebsolutions.loader.ui.LoaderModuleToolBarButton"
+          action="com.ebsolutions.loader.actions.raclessactions.CheckOut"/> 
+      <DisplayElement
+          showTitle="false"
+          identifier="check_in"
+          image="/com/ebsolutions/uimanager/modules/images/checkin.png"
+          class="com.ebsolutions.loader.ui.LoaderModuleToolBarButton"
+          action="com.ebsolutions.loader.actions.raclessactions.CheckIn"/>
+    </ToolBar>
+    
+    <!-- LOADER MODULE search toolbar -->
+    <ToolBar nameRef="TOOLS_TB"
+        identifier="tools_tb"
+        class="com.ebsolutions.loader.ui.LoaderModuleToolBar">
+      <DisplayElement
+          showTitle="false"
+          identifier="search"
+          image="/com/ebsolutions/uimanager/modules/images/loader/queryoptions_32.png"
+          class="com.ebsolutions.loader.ui.LoaderModuleToolBarButton"
+          action="com.ebsolutions.loader.actions.Search"/>   
+    </ToolBar>
+    
+    <!-- LOADER MODULE CATIA toolbar -->
+    <ToolBar nameRef="CATIA_TB"
+        identifier="catia_tb"
+        class="com.ebsolutions.loader.ui.LoaderModuleToolBar">
+      <DisplayElement
+          showTitle="false"
+          identifier="return_to_catia"
+          image="/com/ebsolutions/uimanager/modules/images/loader/return_to_catia_22.png"
+          class="com.ebsolutions.loader.ui.LoaderModuleToolBarButton"
+          action="com.ebsolutions.loader.actions.raclessactions.ReturnToCATIA"/>
+      <DisplayElement
+          showTitle="false"
+          identifier="start_tc"
+          image="/com/ebsolutions/uimanager/modules/images/loader/defaultapplication_32.png"
+          class="com.ebsolutions.loader.ui.LoaderModuleToolBarButton"
+          action="com.ebsolutions.loader.actions.raclessactions.StartTeamcenter"/>
+    </ToolBar>
+    
+    <!-- LOADER search History -->
+    <History identifier="search_results">
+    </History>
+    
+    <!-- LOADER contextual commands -->
+    <Command name="paste" image="/com/ebsolutions/uimanager/modules/images/loader/paste_16.png"/>
+    <Command name="create_folder"/>
+    <Command name="remove_folder"/>
+    
+    <Command name="load" image="/com/ebsolutions/uimanager/modules/images/loader/export_32.png"/>
+    <Command name="open_dataset" image="/com/ebsolutions/uimanager/modules/images/loader/open_16.png"/>
+    <Command name="load_compare" image="/com/ebsolutions/uimanager/modules/images/loader/export_comp_16.png"/>
+    <Command name="load_consulting" image="/com/ebsolutions/uimanager/modules/images/loader/export_consult_16.png"/>
+    <Command name="lus_options" image="/com/ebsolutions/uimanager/modules/images/userpreferences_16.png"/>
+    <Command name="lus" image="/com/ebsolutions/uimanager/modules/images/loader/lus_16.png"/>
+    <Command name="create_exp_spreadsheet" image="/com/ebsolutions/uimanager/modules/images/loader/create_spreadsheet_16.png"/>
+    <Command name="export" image="/com/ebsolutions/uimanager/modules/images/loader/file_export_16.png"/>
+    <Command name="load_as_ref" image="/com/ebsolutions/uimanager/modules/images/loader/export_ref_16.png"/>
+    <Command name="export_as_ref" image="/com/ebsolutions/uimanager/modules/images/loader/file_export_ref_16.png"/>
+    <Command name="display_impact" image="/com/ebsolutions/uimanager/modules/images/loader/impactanalysis_16.png"/>
+    <Command name="display_properties" image="/com/ebsolutions/uimanager/modules/images/loader/properties_32.png"/>
+    <Command name="display_ir_properties" image="/com/ebsolutions/uimanager/modules/images/loader/properties_32.png"/>
+    <Command name="display_structure" image="/com/ebsolutions/uimanager/modules/images/loader/bomview_32.png"/>
+    <Command name="load_selection"/>
+    <Command name="highlight" image="/com/ebsolutions/uimanager/modules/images/loader/highlight_selected_16.png"/>
+    <Command name="show_in_teamcenter" image="/com/ebsolutions/uimanager/modules/images/loader/sendto_16.png"/>
+    <Command name="bmml" image="/com/ebsolutions/uimanager/modules/images/loader/bmml_16.png"/>
+    <Command name="save_assy_config" image="/com/ebsolutions/uimanager/modules/images/save_assy_config_icon.png"/>
+    <Command name="display_visu" image="/com/ebsolutions/uimanager/modules/images/loader/thumbnail_3d_16.png"/>
+    <Command name="export_to_directory" image="/com/ebsolutions/uimanager/modules/images/exporttodir_16.png"/>
+    <Command name="add_to_favorites" image="/com/ebsolutions/uimanager/modules/images/loader/favorite_16.png"/>
+    
+    <Command name="close_tab" image="/com/ebsolutions/uimanager/modules/images/loader/icon_remove.png"/>
+    <Command name="close_other_tabs"/>
+    <Command name="close_all_tabs" image="/com/ebsolutions/uimanager/modules/images/loader/icon_db_terminate_all.png"/>
+    <Frame name="preview" visible="true" display="false" sizey="240"/>
+
+    <Frame name="search_bomlines">
+      <Column name="and_or"/>
+      <Column name="prop_name"/>
+      <Column name="operator"/>
+      <Column name="value"/>
+    </Frame>
+    
+    <Frame name="structure">
+        <Viewer/>
+    </Frame>  
+    
+    <Frame name="impact_analysis">
+      <Table name="itemrevision" position="1.1"> 
+        <Column name="TC object_string" />
+        <Column name="type" width="45" />
+        <Column name="TC last_mod_date" />
+        <Column name="TC owning_user" />
+        <Column name="is_latest_rev" />
+      </Table>
+      <Table name="parents" position="2.1"> 
+        <Column name="TC object_string" />  
+        <Column name="type" width="45" />
+        <Column name="TC last_mod_date" />
+        <Column name="TC owning_user" />
+      </Table>
+      <Table name="3d_links" position="3.1"> 
+        <Column name="TC object_string" /> 
+        <Column name="type" width="45" />
+        <Column name="TC last_mod_date" />
+        <Column name="TC owning_user" />
+        <Column name="link_type" />
+        <Column name="source_target" width="45" />
+      </Table>
+      <Table name="2d_links" position="4.1"> 
+        <Column name="TC object_string" /> 
+        <Column name="type" width="45" />
+        <Column name="TC last_mod_date" />
+        <Column name="TC owning_user" />
+        <Column name="link_type" />
+        <Column name="source_target" width="45" />
+      </Table>
+      <Table name="other_links" position="5.1"> 
+        <Column name="TC object_string" /> 
+        <Column name="type" width="45" />
+        <Column name="TC last_mod_date" />
+        <Column name="TC owning_user" />
+        <Column name="link_type" />
+        <Column name="source_target" width="45" />
+      </Table>
+    </Frame>
+
+  </Module>
+</UIApplication>

@@ -1,0 +1,26 @@
+############################################################################################################
+#  CNO Expansion Definition File
+############################################################################################################
+# Version History
+#
+# Version    Date           Name               Description of Change
+# 1.0        11-Nov-2022    testu              Initial
+############################################################################################################
+
+SR5EleCatPartRevision>IMAN_specification>CATPart
+SR5GenCatPartRevision>IMAN_specification>CATPart
+SR5MechCatPartRevision>IMAN_specification>CATPart
+SR5CatalogPartRevision>IMAN_specification>CATPart
+SR5GenCatPartARRevision>IMAN_specification>CATPart
+
+SR5EleCatPartRevision>IMAN_specification>CATProduct
+SR5GenCatPartRevision>IMAN_specification>CATProduct
+SR5MechCatPartRevision>IMAN_specification>CATProduct
+SR5CatalogPartRevision>IMAN_specification>CATProduct
+SR5GenCatPartARRevision>IMAN_specification>CATProduct
+
+SR5EleCatPartRevision>IMAN_specification>CATDrawing
+SR5GenCatPartRevision>IMAN_specification>CATDrawing
+SR5MechCatPartRevision>IMAN_specification>CATDrawing
+SR5CatalogPartRevision>IMAN_specification>CATDrawing
+SR5GenCatPartARRevision>IMAN_specification>CATDrawing

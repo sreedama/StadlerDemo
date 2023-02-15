@@ -1,0 +1,14 @@
+############################################################################################################
+#  CNO JOB Definition File
+############################################################################################################
+# Version History
+#
+# Version    Date           Name               Description of Change
+# 1.0        15-03-2022     testu     Initial
+############################################################################################################
+
+QUERY=CNO_VFW_QUERY
+EXPANSION=CNO_VFW_STB_FreezeElecAssy_EXPANSION
+PROPERTY=CNO_VFW_STB_FreezeElecAssy_PROPERTY
+CHECK=CNO_VFW_STB_FreezeElecAssy_CHECK
+TASK=CNO_VFW_STB_FreezeElecAssy_TASK

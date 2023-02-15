@@ -1,0 +1,50 @@
+############################################################################################################
+#  CNO Query Definition File
+#
+# NOTE: Please note the WSOM_find_list_separator preference and use the same separator for multiple values.
+#
+############################################################################################################
+# Version History
+#
+# Version   Date         Name            Description of Change
+# 1.00     16.10.2016   Yalcintepe       Initial
+############################################################################################################
+
+# ------------------------------------------------------------------
+# get all Item Revisions
+# , default value
+# ------------------------------------------------------------------
+Item Revision...
+Item ID=$ItemId,*
+Revision=$RevisionId,*
+#Type=$RevisionType,ItemRevision
+#Created After=$CreatedAfter,2014-01-01 00:00:00
+#Created Before=$CreatedBefore,2014-07-31 00:00:00
+#Owning Group=$OwningGroup,
+#Release Status=$ReleaseStatus,
+
+# ------------------------------------------------------------------
+# SUB-QUERY to filter Item Revisions ex. by creation_date
+# ------------------------------------------------------------------
+~FILTER_Rev
+# Saved Query name
+Item Revision...
+Type=*
+
+# ------------------------------------------------------------------
+# SUB-QUERY to filter EPMTask with specific name and "*" as default
+# ------------------------------------------------------------------
+~FILTER_EPMTASK
+General...
+Type=EPMTask
+Name=$Taskname,*
+
+# ------------------------------------------------------------------
+# Sub-filtering for active Groupmember Expansion
+# ------------------------------------------------------------------
+~FILTER_GROUPMEMBER
+__ACTIVE_group_members
+Status=0
+#Group=*
+#Role=*
+#User=*

@@ -1,0 +1,63 @@
+############################################################################################################
+#  CNO Task Definition File
+############################################################################################################
+# Version History
+#
+# Version    Date           Name               Description of Change
+# 1.0        15-03-2022     testu     Initial
+############################################################################################################
+
+[TASK_LIST]
+ID=Notification if 4-eyes principle is not respected
+TYPE_LIST=C:ItemRevision
+#TYPE_LIST=Signoff
+VALIDATION_STATUS=FAILED
+ACTION_OBJECT=ROOT
+#ACTION_OBJECT=RELATED
+CHK_ID_LIST=2
+ACTION_ID_LIST=sending
+
+ID=Notification if 4-eyes principle is not respected for Docu
+TYPE_LIST=SR5TechDocumentRevision
+VALIDATION_STATUS=FAILED
+ACTION_OBJECT=ROOT
+CHK_ID_LIST=4
+ACTION_ID_LIST=sendingDocu
+
+[ACTION_LIST]
+ID=sending
+TYPE=MAIL
+SUBJECT=4-eyes principle was not respected: Norm checker decision of Workflow-40-EBOM has been made by the owner of the Revision. 
+#RECEIVER=Signoff:owning_user
+RECEIVER=C:ItemRevision:sr5ReviewedBy
+BODY={
+4-eyes principle was not respected on Workflow-40-EBOM:
+- Norm checker decision has been made by you and you are the owner of the Revision
+- Only another member of the Resource pool should act on this action.
+As result, the norm checker will be reassign to the ressource pool.
+Concerned Object:
+ TASK:TARGET
+
+This is an automated e-mail from workflow 40 EBOM.
+
+Link to: [C:ItemRevision:object_string]
+[C:ItemRevision:url_target]
+}
+
+ID=sendingDocu
+TYPE=MAIL
+SUBJECT=4-eyes principle was not respected
+RECEIVER=C:ItemRevision:sr5ReviewedBy
+BODY={
+4-eyes principle was not respected on Workflow of Document: [C:ItemRevision:process_stage_list]
+- Reviewer checker decision has been made by you and you are the owner of the Revision
+- Only another member of the Resource pool should act on this action.
+As result, the reviewer checker will be reassign to the ressource pool.
+Concerned Object:
+ TASK:TARGET
+
+This is an automated e-mail from workflow : [C:ItemRevision:process_stage_list]
+
+Link to: [C:ItemRevision:object_string]
+[C:ItemRevision:url_target]
+}

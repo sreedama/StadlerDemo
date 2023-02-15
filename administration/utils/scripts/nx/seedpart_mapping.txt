@@ -1,0 +1,18 @@
+!******************************************************************************
+!* mapping file mapping.txt                                                   *
+!******************************************************************************
+ 
+[DEFAULTS]
+      existing_data=$OVERWRITE_EXISTING
+
+[model-plain-1-mm-template.prt]
+import_folder="h4_templates"
+db_part_no="001317"
+db_part_rev="001"
+db_part_name="model-plain-1-mm-template"
+
+[assembly-mm-template.prt]
+import_folder="h4_templates"
+db_part_no="001318"
+db_part_rev="001"
+db_part_name="assembly-mm-template"

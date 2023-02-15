@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<TCXML xmlns="http://www.tcxml.org/Schemas/TCXMLSchema" format="high_level">
+<ClosureRule clauses="CLASS.ItemRevision:TYPE.CATProduct:PROPERTY.IMAN_specification:TRAVERSE_AND_PROCESS:,TYPE.CATProduct:CLASS.ImanFile:ATTRIBUTE.ref_list:TRAVERSE_AND_PROCESS:,CLASS.ItemRevision:TYPE.CATPart:PROPERTY.IMAN_specification:TRAVERSE_AND_PROCESS:,TYPE.CATPart:CLASS.ImanFile:ATTRIBUTE.ref_list:TRAVERSE_AND_PROCESS:" description="" elemId="id6" name="SR5_ConfiguredDataExportDefault" owning_site="#id2" schema_format="0" scope="0" transient_island_id="1">
+
+  <GSIdentity elemId="id5" label="AlCAAIXZJ1DyLA"/>
+
+</ClosureRule>
+<Group elemId="id9" list_of_role="#id7 #id8" name="dba" owning_site="#id2" transient_island_id="3">
+
+  <GSIdentity elemId="id4" label="AkCAAAA4J1DyLA"/>
+
+</Group>
+<POM_imc elemId="id10" name="IMC--1798075216" owning_site="#id2" site_id="-1798075216" transient_island_id="0">
+
+  <GSIdentity elemId="id2" label="gSCAAAAEJ1DyLA"/>
+
+</POM_imc>
+<TransferMode action_list="" closure_rules="#id5" config_objs="" context_string="SR5_CATProductFilename" direction="0" elemId="id11" filters="" fnd0RevisionId="" gov_classification="" incremental="N" ip_classification="" license_list="" multi_site="N" object_desc="" object_name="SR5_CATProductFilename" owning_site="#id2" project_list="" prop_sets="" schema_format="0" transient_island_id="1">
+
+  <GSIdentity elemId="id1" label="AlHAAMD9J1DyLA"/>
+
+</TransferMode>
+<User elemId="id12" owning_site="#id2" transient_island_id="2" user_id="infodba">
+
+  <GSIdentity elemId="id3" label="QACAAAA4J1DyLA"/>
+
+</User>
+<Role elemId="id13" owning_site="#id2" role_name="DBA" transient_island_id="0">
+
+  <GSIdentity elemId="id7" label="AYIAAAA4J1DyLA"/>
+
+</Role>
+<Role elemId="id14" owning_site="#id2" role_name="Designer" transient_island_id="0">
+
+  <GSIdentity elemId="id8" label="AdNAAAA4J1DyLA"/>
+
+</Role>
+<Header author="infodba" date="2022-03-30" elemId="id15" originatingSite="-1798075216" targetSite="" time="11:06:07" version="Teamcenter V13000.2.0.20210518.00">
+
+  <TransferFormula elemId="id16">
+    <SessionOptions elemId="id17">
+      <Option elemId="id18" name="is_scope_rules_export" value="yes"/>
+      <Option elemId="id19" name="transactionID" value="Wed Mar 30 11:06:07 2022"/>
+      <Option elemId="id20" name="tcxmlArrayDataDelimiter" value=","/>
+      <Option elemId="id21" name="rootObjs" value="AlHAAMD9J1DyLA"/>
+    </SessionOptions>
+    <TransferMode elemId="id22" fnd0RevisionId="" gov_classification="" ip_classification="" license_list="" object_name="PLMXMLAdminDataExport" owning_site="id2" project_list=""/>
+    <Reason elemId="id23"></Reason>
+  </TransferFormula>
+
+  <TraverseRootRefs>#id1</TraverseRootRefs>
+
+</Header></TCXML>

@@ -1,0 +1,13 @@
+############################################################################################################
+#  CNO Expansion Definition File
+############################################################################################################
+# Version History
+#
+# Version    Date           Name               Description of Change
+# 1.0        21-03-2022     testu     Initial
+############################################################################################################
+
+C:ItemRevision>>process_stage_list>C:EPMTask
+C:EPMTask>root_target_attachments>ChangeNoticeRevision
+C:EPMTask>root_target_attachments>SR5MfgCNRevision
+C:EPMTask>root_target_attachments>ChangeRequestRevision

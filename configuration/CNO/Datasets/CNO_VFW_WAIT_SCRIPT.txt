@@ -1,0 +1,15 @@
+############################################################################################################
+#  CNO Script Definition File
+#
+# Please notice that syntax errors in one script can cause issues in all scripts in the same file.
+############################################################################################################
+# Version History
+#
+# Version   Date         Name            Description of Change
+# 1.00     26.05.2018   Yalcintepe       Initial
+############################################################################################################
+
+#IMPORTANT: external scripting
+interpreter=external
+[call_cno_sleep_pdf]
+C:\splm\tc13\perl\bin\perl.exe C:\splm\tc13\bin\tc_sle_cno_sleep_pl.pl

@@ -1,0 +1,18 @@
+############################################################################################################
+#  CNO Objects Expansion Definition File
+############################################################################################################
+# Version History
+#
+# Version   Date         Name            Description of Change
+# 1.00     30.07.2014   Yalcintepe       Initial   
+# 1.10     07.11.2014   Yalcintepe       Added Recursive BOM Support
+# 1.20     18.11.2014   Yalcintepe       Added Classification sample 
+# 1.30     22.11.2014   Yalcintepe       Added Successor Revision sample
+# 1.40     27.01.2015   Yalcintepe       Added extract only BOM Line attributes sample
+# 1.50     10.07.2015   Yalcintepe       Only expand classifciation of root objects
+# 1.60     10.07.2015   Yalcintepe       Added BOM substitute sample
+# 1.70     04.10.2017   Yalcintepe       Added GroupMember
+############################################################################################################
+
+#Material
+C:SR5GenEngObjRevision>Mat1UsesMaterial>C:Mat1MaterialRevision

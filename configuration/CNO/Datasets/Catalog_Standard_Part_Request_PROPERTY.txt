@@ -1,0 +1,13 @@
+############################################################################################################
+#  CNO Object Property Definition File
+############################################################################################################
+# Version History
+#
+# Version    Date           Name               Description of Change
+# 1.0        21-Nov-2022    testu              Initial
+############################################################################################################
+
+#Qchecker: temporary solution until deployment of real solution
+CATPart:sr5QCheckEvaluation~sr5QCheckEvaluation
+CATProduct:sr5QCheckEvaluation~sr5QCheckEvaluation
+CATDrawing:sr5QCheckEvaluation~sr5QCheckEvaluation

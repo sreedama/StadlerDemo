@@ -1,0 +1,14 @@
+############################################################################################################
+#  CNO JOB Definition File
+############################################################################################################
+# Version History
+#
+# Version    Date           Name               Description of Change
+# 1.0        21-Nov-2022    testu              Initial
+############################################################################################################
+
+QUERY=CNO_VFW_STB_QUERY
+EXPANSION=Catalog_Standard_Part_Request_EXPANSION
+PROPERTY=Catalog_Standard_Part_Request_PROPERTY
+CHECK=Catalog_Standard_Part_Request_CHECK
+TASK=Catalog_Standard_Part_Request_TASK

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="ISO-8859-1" standalone="yes"?>
+<!--
+@<COPYRIGHT>@
+================================================================================
+Copyright 2021.
+Siemens Product Lifecycle Management Software Inc.
+All Rights Reserved.
+================================================================================
+@<COPYRIGHT>@
+
+File description:
+    File Name: tc_xrt_text_locale.xml
+
+    This file contains all the keys related to stylesheet usage.
+===============================================================================
+-->
+<textsrv filename="strxrt_text_locale.xml">
+    <key id="strxrt_specifyingdocuments">Spezifizierende Dokumente</key>
+    <key id="strxrt_referencingdocuments">Referenzierende Dokumente</key>
+    <key id="strxrt_requirementsdocuments">Anforderungsdokumente</key>
+    <key id="k_uom_each">Stück</key>
+	<key id="tc_xrt_ChangeContributors">Beitragsleister zur Änderung</key>
+    <key id="strxrt_CATIAReferencedBy">Eingehende CATIA Verlinkungen</key>
+    <key id="strxrt_CATIAReferenceTo">Ausgehende CATIA Verlinkungen</key>
+    <key id="strxrt_Datasheets">Datenblätter</key>
+    <key id="strxrt_coatingspecification">Beschichtungsspezifikation</key>
+    <key id="strxrt_coatingstructures">Beschichtungsaufbauten</key>
+    <key id="strxrt_colordefinitions">Farbdefinitionen</key>
+    <key id="strxrt_coatingandfinish">Beschichtung und Oberfläche</key>
+    <key id="strxrt_name_definition">Namensdefinition</key>
+    <key id="strxrt_name_definition_csp">Vorgeschlagene Namensdefinition</key>
+    <key id="strxrt_proposed_csp_properties">Vorgeschlagene CSP Eigenschaften</key>
+    <key id="strxrt_material_request_properties">Werkstoffanforderung Eigenschaften</key>
+    <key id="strxrt_created_material">Erstellter Werkstoff</key>
+</textsrv>

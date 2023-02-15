@@ -1,0 +1,30 @@
+############################################################################################################
+#  CNO Object Property Definition File
+############################################################################################################
+# Version History
+#
+# Version    Date           Name               Description of Change
+# 1.0        08-02-2022     testu     Initial
+############################################################################################################
+
+#Signoff:owning_group
+Signoff:owning_user
+#Signoff:fnd0AssigneeGroupRole
+
+#C:EPMTask:owning_user
+
+EPMSelectSignoffTask:object_name
+
+#CATDrawing:owning_user
+
+C:ItemRevision:owning_user
+
+C:ItemRevision:object_string
+C:ItemRevision§url_target§|AW_URL|
+
+SR5TechDocumentRevision§EC§|:sr5DocumentContent^L^2|
+SR5TechDocumentRevision:process_stage_list
+
+
+C:ItemRevision:object_string
+C:ItemRevision§url_target§|AW_URL|

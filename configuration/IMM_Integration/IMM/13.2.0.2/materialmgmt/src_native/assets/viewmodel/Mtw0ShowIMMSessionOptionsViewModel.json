@@ -1,0 +1,168 @@
+{
+    "schemaVersion": "1.0.0",
+    "imports": [
+        "js/aw-link-with-popup-menu.directive",
+        "js/aw-property-label.directive",
+        "js/visible-when.directive"
+    ],
+    "data": {
+        "cm0GlobalChangeContext": {
+            "displayName": "{{i18n.noChangeContext}}",
+            "type": "STRING",
+            "isRequired": "true",
+            "dbValue": "",
+            "uiValue": ""
+        },
+        "cm0GlobalChangeContextLabel": {
+            "displayName": "{{i18n.globalChangeContextLabel}}",
+            "type": "STRING",
+            "dbValue": ""
+        }
+    },
+    "dataProviders": {
+        "changeContextLinkLOV": {
+            "dataProviderType": "TcLOV",
+            "action": "Mtw0getSessionUnits",
+            "response": "{{data.listofEcns}}",
+            "totalFound": "{{data.listofEcns.length}}"
+        }
+    },
+    "actions": {
+        "Mtw0GetSelectedSessionUnitAction": {
+            "actionType": "TcSoaService",
+            "serviceName": "Core-2007-01-Session",
+            "method": "getPreferences",
+            "inputData": {
+                "requestedPrefs": [ {
+                    "scope": "User",
+                    "names": [ "IMM_ACTIVE_SESSIONUNITS" ]
+                } ]
+
+            },
+            "outputData": {
+                "cm0GlobalChangeContext": "{{function:Mtw0GetSelectedSessionUnitY}}"
+            },
+            "events": {},
+            "deps": "js/Mtw0ShowIMMSessionOptions"
+        },
+        "Mtw0getSessionUnits": {
+            "actionType": "TcSoaService",
+            "serviceName": "Query-2007-06-Finder",
+            "method": "findWorkspaceObjects",
+            "deps": "js/Mtw0ShowIMMSessionOptions",
+            "inputData": {
+                "findList": [ {
+                    "criterias": [ {
+                        "objectType": "Mat1SessionUnits",
+                        "objectName": "",
+                        "scope": "WSO_scope_All",
+                        "owner": "",
+                        "group": "",
+                        "createdBefore": "",
+                        "modifiedBefore": "",
+                        "releasedBefore": "",
+                        "createdAfter": "",
+                        "modifiedAfter": "",
+                        "releasedAfter": ""
+                    } ]
+                } ]
+            },
+            "policy": {
+                "types": [ {
+                    "name": "Mat1SessionUnits",
+                    "properties": [ {
+                            "name": "object_string"
+                        },
+                        {
+                            "name": "object_type"
+                        },
+                        {
+                            "name": "object_name"
+                        }
+                    ]
+                } ]
+            },
+            "outputData": {
+                "SessionUnits": "{{function:Mtw0UpdateSessionUnitsLOV}}"
+            }
+        },
+        "Mtw0UpdateSessionUnitsPreference": {
+            "actionType": "TcSoaService",
+            "serviceName": "Core-2006-03-Session",
+            "method": "setPreferences",
+            "deps": "js/Mtw0ShowIMMSessionOptions",
+            "inputData": {
+                "settings": [ {
+                    "prefScope": "user",
+                    "prefName": "IMM_ACTIVE_SESSIONUNITS",
+                    "prefValues": "{{function:Mtw0GetSelectedSessionUnitX}}"
+                } ]
+            },
+            "events": {
+                "success": [ {
+                    "name": "awsidenav.openClose"
+                } ]
+            }
+        }
+    },
+    "functions": {
+        
+        "Mtw0GetSelectedSessionUnitY": {
+            "functionName": "Mtw0GetSelectedSessionUnitY",
+            "parameters": [
+                "{{data}}"
+            ]
+        },
+        "Mtw0UpdateSessionUnitsLOV": {
+            "functionName": "Mtw0UpdateSessionUnitsLOV",
+            "parameters": [
+                "{{data}}"
+            ]
+        },
+        "Mtw0GetSelectedSessionUnitX": {
+            "functionName": "Mtw0GetSelectedSessionUnitX",
+            "parameters": [
+                "{{data}}",
+                "{{data.eventData}}"
+            ]
+        }
+    },
+    "onEvent": [ 
+        {
+            "eventId": "Mtw0ShowIMMSessionOptions.contentLoaded",
+            "action": "Mtw0GetSelectedSessionUnitAction"
+        },
+        {
+            "eventId": "awPanel.reveal",
+            "criteria": {
+                "panelId": "Mtw0ShowIMMSessionOptions"
+            },
+            "action": "Mtw0GetSelectedSessionUnitAction"
+        },
+        {
+            "eventId": "awlinkPopup.selected",
+            "cacheEventData": true,
+            "action": "Mtw0UpdateSessionUnitsPreference"
+        },
+        {
+            "eventId": "cm.changeContextChangedInUserSession",
+            "action": "updateSessionProperties"
+        }
+    ],
+    "conditions": {
+        "isChangeContextSelected": {
+            "expression": "property.propertyName === 'cm0GlobalChangeContext'"
+        },
+        "isChangeContextEnabled": {
+            "expression": true
+        }
+    },
+    "i18n": {
+        "noChangeContext": [
+            "MaterialMgmtMessages"
+        ],
+        "globalChangeContextLabel": [
+            "MaterialMgmtMessages"
+        ]
+    }
+}

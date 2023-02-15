@@ -1,0 +1,6 @@
+
+QUERY=CNO_VFW_QUERY
+EXPANSION=SR5_Document_Pre-release_Check_EXPANSION
+PROPERTY=SR5_Document_Pre-release_Check_PROPERTY
+CHECK=SR5_Document_Pre-release_Check_CHECK
+TASK=SR5_Document_Pre-release_Check_TASK

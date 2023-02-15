@@ -1,0 +1,1285 @@
+{
+  "TransferType": "PIPELINE_ENGINE",
+  "TransferAction": "TRANSFER",
+  "TransferMode": "JOB",
+  "Logging": true,
+  "Monitoring": true,
+  "ExecuteSynchronous": false,
+  "ExecuteAsynchronous": false,
+  "IsTemplate": false,
+  "Name": "PVKeyReservation",
+  "BusinessObject": "ProductVersionKeyReservation",
+  "Direction": "TC2SAP",
+  "Description": "PVKeyReservation",
+  "SchemaVersion": 22106,
+  "Steps": [
+    {
+      "ID": "9aa44513ede2a6a659de9e94896dd736",
+      "StepType": "MapStep",
+      "Description": "Allows mappings of fields from one data element to another. \nIt can map between fields in simple data elements or fields in table data elements (loop field mapping).  Transformations can be applied to field mappings by using functions.",
+      "Name": "Map Step (Map Input Type)",
+      "Procedure": "::PLBD::MAPPER::STEPS::apply_mapping",
+      "Group": "Mapping Steps",
+      "Critical": true,
+      "Resistant": false,
+      "ExecuteWhen": [],
+      "InputSchemaGenerationParameters": {},
+      "OutputSchemaGenerationParameters": {},
+      "MappingDefinition": [
+        {
+          "SourceType": "FX",
+          "Comments": "",
+          "FX": [
+            {
+              "FxName": "::PLBD::FUNCTIONS::switchWithDefault",
+              "DisplayName": "Switch with Default",
+              "Description": "Map values depending on input. This function compares the common value with all provided cases (using the operator and the case-specific value) and returns the target value of the first matching case or the default target value.",
+              "FxType": "FX2.0",
+              "Namespace": "AIG.siemens.com",
+              "FixedParameter": [
+                {
+                  "Name": "operand",
+                  "DisplayName": "operand",
+                  "Description": "Common actual Value (identical for all cases)",
+                  "StaticAllowed": true,
+                  "DynamicAllowed": true,
+                  "SelectColumn": false,
+                  "Value": {
+                    "Name": "TCObjectType",
+                    "Type": "string",
+                    "Nullable": true,
+                    "DisplayName": "TCObjectType",
+                    "Description": "TC object type",
+                    "ParentKey": "KeyReservationInput",
+                    "IsStatic": false
+                  }
+                },
+                {
+                  "Name": "defaultValue",
+                  "DisplayName": "defaultValue",
+                  "Description": "Default target value",
+                  "StaticAllowed": true,
+                  "DynamicAllowed": true,
+                  "SelectColumn": false,
+                  "Value": {
+                    "IsStatic": true,
+                    "Name": "ZCOM",
+                    "DisplayName": "ZCOM",
+                    "ParentKey": "Static Values"
+                  }
+                }
+              ],
+              "VariableParameter": [
+                {
+                  "Name": "expression",
+                  "DisplayName": "expression",
+                  "Description": "Case-specific comparison operator",
+                  "StaticAllowed": true,
+                  "DynamicAllowed": false,
+                  "SelectColumn": false,
+                  "ValueList": [
+                    {
+                      "IsStatic": true,
+                      "Name": "==",
+                      "DisplayName": "==",
+                      "ParentKey": "Static Values"
+                    },
+                    {
+                      "IsStatic": true,
+                      "Name": "==",
+                      "DisplayName": "==",
+                      "ParentKey": "Static Values"
+                    },
+                    {
+                      "IsStatic": true,
+                      "Name": "==",
+                      "DisplayName": "==",
+                      "ParentKey": "Static Values"
+                    },
+                    {
+                      "IsStatic": true,
+                      "Name": "==",
+                      "DisplayName": "==",
+                      "ParentKey": "Static Values"
+                    },
+                    {
+                      "IsStatic": true,
+                      "Name": "==",
+                      "DisplayName": "==",
+                      "ParentKey": "Static Values"
+                    },
+                    {
+                      "IsStatic": true,
+                      "Name": "==",
+                      "DisplayName": "==",
+                      "ParentKey": "Static Values"
+                    },
+                    {
+                      "IsStatic": true,
+                      "Name": "==",
+                      "DisplayName": "==",
+                      "ParentKey": "Static Values"
+                    },
+                    {
+                      "IsStatic": true,
+                      "Name": "==",
+                      "DisplayName": "==",
+                      "ParentKey": "Static Values"
+                    },
+                    {
+                      "IsStatic": true,
+                      "Name": "==",
+                      "DisplayName": "==",
+                      "ParentKey": "Static Values"
+                    }
+                  ]
+                },
+                {
+                  "Name": "mapValue",
+                  "DisplayName": "mapValue",
+                  "Description": "Case-specific value to compare with",
+                  "StaticAllowed": true,
+                  "DynamicAllowed": true,
+                  "SelectColumn": false,
+                  "ValueList": [
+                    {
+                      "IsStatic": true,
+                      "Name": "SR5MfgEndItem",
+                      "DisplayName": "SR5MfgEndItem",
+                      "ParentKey": "Static Values"
+                    },
+                    {
+                      "IsStatic": true,
+                      "Name": "SR5EngEndItem",
+                      "DisplayName": "SR5EngEndItem",
+                      "ParentKey": "Static Values"
+                    },
+                    {
+                      "IsStatic": true,
+                      "Name": "SR5LLEndItem",
+                      "DisplayName": "SR5LLEndItem",
+                      "ParentKey": "Static Values"
+                    },
+                    {
+                      "IsStatic": true,
+                      "Name": "SR5MfgMajorAssy",
+                      "DisplayName": "SR5MfgMajorAssy",
+                      "ParentKey": "Static Values"
+                    },
+                    {
+                      "IsStatic": true,
+                      "Name": "SR5EngMajorAssy",
+                      "DisplayName": "SR5EngMajorAssy",
+                      "ParentKey": "Static Values"
+                    },
+                    {
+                      "IsStatic": true,
+                      "Name": "SR5LLMajorAssy",
+                      "DisplayName": "SR5LLMajorAssy",
+                      "ParentKey": "Static Values"
+                    },
+                    {
+                      "IsStatic": true,
+                      "Name": "SR5MfgInstallKit",
+                      "DisplayName": "SR5MfgInstallKit",
+                      "ParentKey": "Static Values"
+                    },
+                    {
+                      "IsStatic": true,
+                      "Name": "SR5SRVMajorAssy",
+                      "DisplayName": "SR5SRVMajorAssy",
+                      "ParentKey": "Static Values"
+                    },
+                    {
+                      "IsStatic": true,
+                      "Name": "SR5SRVEndItem",
+                      "DisplayName": "SR5SRVEndItem",
+                      "ParentKey": "Static Values"
+                    }
+                  ]
+                },
+                {
+                  "Name": "targetValue",
+                  "DisplayName": "targetValue",
+                  "Description": "Case-specific target value",
+                  "StaticAllowed": true,
+                  "DynamicAllowed": true,
+                  "SelectColumn": false,
+                  "ValueList": [
+                    {
+                      "IsStatic": true,
+                      "Name": "EITM",
+                      "DisplayName": "EITM",
+                      "ParentKey": "Static Values"
+                    },
+                    {
+                      "IsStatic": true,
+                      "Name": "EITM",
+                      "DisplayName": "EITM",
+                      "ParentKey": "Static Values"
+                    },
+                    {
+                      "IsStatic": true,
+                      "Name": "EITM",
+                      "DisplayName": "EITM",
+                      "ParentKey": "Static Values"
+                    },
+                    {
+                      "IsStatic": true,
+                      "Name": "MASS",
+                      "DisplayName": "MASS",
+                      "ParentKey": "Static Values"
+                    },
+                    {
+                      "IsStatic": true,
+                      "Name": "MASS",
+                      "DisplayName": "MASS",
+                      "ParentKey": "Static Values"
+                    },
+                    {
+                      "IsStatic": true,
+                      "Name": "MASS",
+                      "DisplayName": "MASS",
+                      "ParentKey": "Static Values"
+                    },
+                    {
+                      "IsStatic": true,
+                      "Name": "IKIT",
+                      "DisplayName": "IKIT",
+                      "ParentKey": "Static Values"
+                    },
+                    {
+                      "IsStatic": true,
+                      "Name": "MASS",
+                      "DisplayName": "MASS",
+                      "ParentKey": "Static Values"
+                    },
+                    {
+                      "IsStatic": true,
+                      "Name": "EITM",
+                      "DisplayName": "EITM",
+                      "ParentKey": "Static Values"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "SourceAttribute": {
+            "IsStatic": true,
+            "Name": "",
+            "DisplayName": "",
+            "ParentKey": "Static Values"
+          },
+          "TargetAttribute": {
+            "Name": "type:string",
+            "Type": "string",
+            "Nullable": false,
+            "DisplayName": "type",
+            "Description": "",
+            "ParentKey": "ServicePayload->ProductVersionKeyReservation:dict->key:dict",
+            "IsStatic": false
+          }
+        }
+      ]
+    },
+    {
+      "ID": "4632c319c95e52d4c966961d3b43142e",
+      "StepType": "FunctionalStep",
+      "Description": "Calls the T4ST ProductVersion key reservation service",
+      "Name": "Call ProductVersion Key Reservation Service",
+      "Procedure": "::T4ST::PRODUCTVERSION::SERVICES::STEP::callProductVersionKeyReservationService",
+      "Group": "T4ST Steps",
+      "Critical": true,
+      "Resistant": false,
+      "ExecuteWhen": [],
+      "InputSchemaGenerationParameters": {},
+      "OutputSchemaGenerationParameters": {},
+      "Input": {
+        "DataSource": "Generic",
+        "RootDataElement": {
+          "Key": "ServicePayload",
+          "IsTable": false,
+          "DisplayName": "ServicePayload",
+          "Name": "ServicePayload",
+          "ParentKey": "",
+          "Description": "",
+          "Items": [
+            {
+              "Name": "CommunicationChannel",
+              "Type": "string",
+              "Nullable": true,
+              "DisplayName": "CommunicationChannel",
+              "Description": "",
+              "ParentKey": "ServicePayload",
+              "IsStatic": false
+            },
+            {
+              "Key": "ProductVersionKeyReservation:dict",
+              "IsTable": false,
+              "DisplayName": "ProductVersionKeyReservation",
+              "Name": "ProductVersionKeyReservation:dict",
+              "ParentKey": "ServicePayload",
+              "Description": "",
+              "Items": [
+                {
+                  "Key": "key:dict",
+                  "IsTable": false,
+                  "DisplayName": "key",
+                  "Name": "key:dict",
+                  "ParentKey": "ServicePayload->ProductVersionKeyReservation:dict",
+                  "Description": "",
+                  "Items": [
+                    {
+                      "Name": "id:string",
+                      "Type": "string",
+                      "Nullable": true,
+                      "DisplayName": "id",
+                      "Description": "",
+                      "ParentKey": "ServicePayload->ProductVersionKeyReservation:dict->key:dict",
+                      "IsStatic": false
+                    },
+                    {
+                      "Name": "tempPLMId:string",
+                      "Type": "string",
+                      "Nullable": true,
+                      "DisplayName": "tempPLMId",
+                      "Description": "",
+                      "ParentKey": "ServicePayload->ProductVersionKeyReservation:dict->key:dict",
+                      "IsStatic": false
+                    },
+                    {
+                      "Name": "tempERPId:string",
+                      "Type": "string",
+                      "Nullable": true,
+                      "DisplayName": "tempERPId",
+                      "Description": "",
+                      "ParentKey": "ServicePayload->ProductVersionKeyReservation:dict->key:dict",
+                      "IsStatic": false
+                    },
+                    {
+                      "Name": "type:string",
+                      "Type": "string",
+                      "Nullable": false,
+                      "DisplayName": "type",
+                      "Description": "",
+                      "ParentKey": "ServicePayload->ProductVersionKeyReservation:dict->key:dict",
+                      "IsStatic": false
+                    },
+                    {
+                      "Name": "version:string",
+                      "Type": "string",
+                      "Nullable": true,
+                      "DisplayName": "version",
+                      "Description": "",
+                      "ParentKey": "ServicePayload->ProductVersionKeyReservation:dict->key:dict",
+                      "IsStatic": false
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "Key": "RequestHeaderAttributes",
+              "IsTable": false,
+              "DisplayName": "RequestHeaderAttributes",
+              "Name": "RequestHeaderAttributes",
+              "ParentKey": "ServicePayload",
+              "Description": "",
+              "Items": [
+                {
+                  "Name": "application:string",
+                  "Type": "string",
+                  "Nullable": true,
+                  "DisplayName": "application:string",
+                  "Description": "",
+                  "ParentKey": "ServicePayload->RequestHeaderAttributes",
+                  "IsStatic": false
+                },
+                {
+                  "Name": "logicalInstance:string",
+                  "Type": "string",
+                  "Nullable": true,
+                  "DisplayName": "logicalInstance:string",
+                  "Description": "",
+                  "ParentKey": "ServicePayload->RequestHeaderAttributes",
+                  "IsStatic": false
+                },
+                {
+                  "Name": "configuration:string",
+                  "Type": "string",
+                  "Nullable": true,
+                  "DisplayName": "configuration:string",
+                  "Description": "",
+                  "ParentKey": "ServicePayload->RequestHeaderAttributes",
+                  "IsStatic": false
+                },
+                {
+                  "Name": "configurationVersion:num",
+                  "Type": "number",
+                  "Nullable": true,
+                  "DisplayName": "configurationVersion:num",
+                  "Description": "",
+                  "ParentKey": "ServicePayload->RequestHeaderAttributes",
+                  "IsStatic": false
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "Output": {
+        "DataSource": "Generic",
+        "RootDataElement": {
+          "Key": "ServicePayload",
+          "IsTable": false,
+          "DisplayName": "ServicePayload",
+          "Name": "ServicePayload",
+          "ParentKey": "",
+          "Description": "",
+          "Items": [
+            {
+              "Key": "ProductVersionKeyReservationData",
+              "IsTable": false,
+              "DisplayName": "ProductVersionKeyReservationData",
+              "Name": "ProductVersionKeyReservationData",
+              "ParentKey": "ServicePayload",
+              "Description": "",
+              "Items": [
+                {
+                  "Name": "messageId",
+                  "Type": "string",
+                  "Nullable": false,
+                  "DisplayName": "messageId",
+                  "Description": "",
+                  "ParentKey": "ServicePayload->ProductVersionKeyReservationData",
+                  "IsStatic": false
+                },
+                {
+                  "Key": "MessageHeader",
+                  "IsTable": false,
+                  "DisplayName": "MessageHeader",
+                  "Name": "MessageHeader",
+                  "ParentKey": "ServicePayload->ProductVersionKeyReservationData",
+                  "Description": "",
+                  "Items": [
+                    {
+                      "Name": "sentDateUTC",
+                      "Type": "string",
+                      "Nullable": false,
+                      "DisplayName": "sentDateUTC",
+                      "Description": "",
+                      "ParentKey": "ServicePayload->ProductVersionKeyReservationData->MessageHeader",
+                      "IsStatic": false
+                    },
+                    {
+                      "Name": "componentVersion",
+                      "Type": "string",
+                      "Nullable": false,
+                      "DisplayName": "componentVersion",
+                      "Description": "",
+                      "ParentKey": "ServicePayload->ProductVersionKeyReservationData->MessageHeader",
+                      "IsStatic": false
+                    },
+                    {
+                      "Name": "APIVersion",
+                      "Type": "num",
+                      "Nullable": false,
+                      "DisplayName": "APIVersion",
+                      "Description": "",
+                      "ParentKey": "ServicePayload->ProductVersionKeyReservationData->MessageHeader",
+                      "IsStatic": false
+                    },
+                    {
+                      "Name": "application",
+                      "Type": "string",
+                      "Nullable": false,
+                      "DisplayName": "application",
+                      "Description": "",
+                      "ParentKey": "ServicePayload->ProductVersionKeyReservationData->MessageHeader",
+                      "IsStatic": false
+                    },
+                    {
+                      "Name": "logicalInstance",
+                      "Type": "string",
+                      "Nullable": false,
+                      "DisplayName": "logicalInstance",
+                      "Description": "",
+                      "ParentKey": "ServicePayload->ProductVersionKeyReservationData->MessageHeader",
+                      "IsStatic": false
+                    },
+                    {
+                      "Name": "configuration",
+                      "Type": "string",
+                      "Nullable": false,
+                      "DisplayName": "configuration",
+                      "Description": "",
+                      "ParentKey": "ServicePayload->ProductVersionKeyReservationData->MessageHeader",
+                      "IsStatic": false
+                    },
+                    {
+                      "Name": "configurationVersion",
+                      "Type": "num",
+                      "Nullable": false,
+                      "DisplayName": "configurationVersion",
+                      "Description": "",
+                      "ParentKey": "ServicePayload->ProductVersionKeyReservationData->MessageHeader",
+                      "IsStatic": false
+                    }
+                  ]
+                },
+                {
+                  "Key": "ProductVersionKeys",
+                  "IsTable": true,
+                  "DisplayName": "ProductVersionKeys",
+                  "Name": "ProductVersionKeys",
+                  "ParentKey": "ServicePayload->ProductVersionKeyReservationData",
+                  "Description": "",
+                  "Items": [
+                    {
+                      "Key": "key",
+                      "IsTable": false,
+                      "DisplayName": "key",
+                      "Name": "key",
+                      "ParentKey": "ServicePayload->ProductVersionKeyReservationData->ProductVersionKeys",
+                      "Description": "",
+                      "Items": [
+                        {
+                          "Name": "id",
+                          "Type": "string",
+                          "Nullable": true,
+                          "DisplayName": "id",
+                          "Description": "",
+                          "ParentKey": "ServicePayload->ProductVersionKeyReservationData->ProductVersionKeys->key",
+                          "IsStatic": false
+                        },
+                        {
+                          "Name": "tempPLMId",
+                          "Type": "string",
+                          "Nullable": true,
+                          "DisplayName": "tempPLMId",
+                          "Description": "",
+                          "ParentKey": "ServicePayload->ProductVersionKeyReservationData->ProductVersionKeys->key",
+                          "IsStatic": false
+                        },
+                        {
+                          "Name": "tempERPId",
+                          "Type": "string",
+                          "Nullable": true,
+                          "DisplayName": "tempERPId",
+                          "Description": "",
+                          "ParentKey": "ServicePayload->ProductVersionKeyReservationData->ProductVersionKeys->key",
+                          "IsStatic": false
+                        },
+                        {
+                          "Name": "type",
+                          "Type": "string",
+                          "Nullable": false,
+                          "DisplayName": "type",
+                          "Description": "",
+                          "ParentKey": "ServicePayload->ProductVersionKeyReservationData->ProductVersionKeys->key",
+                          "IsStatic": false
+                        },
+                        {
+                          "Name": "version",
+                          "Type": "string",
+                          "Nullable": true,
+                          "DisplayName": "version",
+                          "Description": "",
+                          "ParentKey": "ServicePayload->ProductVersionKeyReservationData->ProductVersionKeys->key",
+                          "IsStatic": false
+                        }
+                      ]
+                    },
+                    {
+                      "Key": "response",
+                      "IsTable": false,
+                      "DisplayName": "response",
+                      "Name": "response",
+                      "ParentKey": "ServicePayload->ProductVersionKeyReservationData->ProductVersionKeys",
+                      "Description": "",
+                      "Items": [
+                        {
+                          "Name": "status",
+                          "Type": "string",
+                          "Nullable": false,
+                          "DisplayName": "status",
+                          "Description": "",
+                          "ParentKey": "ServicePayload->ProductVersionKeyReservationData->ProductVersionKeys->response",
+                          "IsStatic": false
+                        },
+                        {
+                          "Key": "messages",
+                          "IsTable": true,
+                          "DisplayName": "messages",
+                          "Name": "messages",
+                          "ParentKey": "ServicePayload->ProductVersionKeyReservationData->ProductVersionKeys->response",
+                          "Description": "",
+                          "Items": [
+                            {
+                              "Name": "type",
+                              "Type": "string",
+                              "Nullable": false,
+                              "DisplayName": "type",
+                              "Description": "",
+                              "ParentKey": "ServicePayload->ProductVersionKeyReservationData->ProductVersionKeys->response->messages",
+                              "IsStatic": false
+                            },
+                            {
+                              "Name": "text",
+                              "Type": "string",
+                              "Nullable": false,
+                              "DisplayName": "text",
+                              "Description": "",
+                              "ParentKey": "ServicePayload->ProductVersionKeyReservationData->ProductVersionKeys->response->messages",
+                              "IsStatic": false
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "ID": "7a5886056461490c6926404e2324435c",
+      "StepType": "MapStep",
+      "Description": "Allows mappings of fields from one data element to another. \nIt can map between fields in simple data elements or fields in table data elements (loop field mapping).  Transformations can be applied to field mappings by using functions.",
+      "Name": "Map Step (Init Ouput Status and Message)",
+      "Procedure": "::PLBD::MAPPER::STEPS::apply_mapping",
+      "Group": "Mapping Steps",
+      "Critical": true,
+      "Resistant": false,
+      "ExecuteWhen": [],
+      "InputSchemaGenerationParameters": {},
+      "OutputSchemaGenerationParameters": {},
+      "MappingDefinition": [
+        {
+          "SourceType": "Attribute",
+          "Comments": "",
+          "FX": [],
+          "SourceAttribute": {
+            "IsStatic": true,
+            "Name": "Success",
+            "DisplayName": "Success",
+            "ParentKey": "Static Values"
+          },
+          "TargetAttribute": {
+            "Name": "Status",
+            "Type": "string",
+            "Nullable": false,
+            "DisplayName": "Status",
+            "Description": "",
+            "ParentKey": "KeyReservationOutput",
+            "IsStatic": false
+          }
+        },
+        {
+          "SourceType": "Attribute",
+          "Comments": "",
+          "FX": [],
+          "SourceAttribute": {
+            "IsStatic": true,
+            "Name": "",
+            "DisplayName": "",
+            "ParentKey": "Static Values"
+          },
+          "TargetAttribute": {
+            "Name": "Message",
+            "Type": "string",
+            "Nullable": true,
+            "DisplayName": "Message",
+            "Description": "",
+            "ParentKey": "KeyReservationOutput",
+            "IsStatic": false
+          }
+        }
+      ]
+    },
+    {
+      "ID": "1ee6a5e86e2d37bbb77a3668a72ddb32",
+      "StepType": "Loop",
+      "Name": "KeyReservations",
+      "Description": "KeyReservations",
+      "SourceTables": [
+        "ServicePayload->ProductVersionKeyReservationData->ProductVersionKeys"
+      ],
+      "IteratorName": "KeyReservations",
+      "IteratorAttributesMode": "ALL",
+      "ExecuteWhen": [],
+      "ExecuteIterationWhen": [],
+      "LoopBodySteps": [
+        {
+          "ID": "8a3c404d7aa5a6b6a4aa1b4455b70ae8",
+          "StepType": "MapStep",
+          "Description": "Allows mappings of fields from one data element to another. \nIt can map between fields in simple data elements or fields in table data elements (loop field mapping).  Transformations can be applied to field mappings by using functions.",
+          "Name": "Map Step (Reserved Number)",
+          "Procedure": "::PLBD::MAPPER::STEPS::apply_mapping",
+          "Group": "Mapping Steps",
+          "Critical": true,
+          "Resistant": false,
+          "ExecuteWhen": [],
+          "InputSchemaGenerationParameters": {},
+          "OutputSchemaGenerationParameters": {},
+          "MappingDefinition": [
+            {
+              "SourceType": "Attribute",
+              "Comments": "",
+              "FX": [],
+              "SourceAttribute": {
+                "Name": "id",
+                "Type": "string",
+                "Nullable": true,
+                "DisplayName": "id",
+                "Description": "",
+                "ParentKey": "KeyReservations->key",
+                "IsStatic": false
+              },
+              "TargetAttribute": {
+                "Name": "ReservedNumber",
+                "Type": "string",
+                "Nullable": false,
+                "DisplayName": "ReservedNumber",
+                "Description": "",
+                "ParentKey": "KeyReservationOutput",
+                "IsStatic": false
+              }
+            }
+          ]
+        },
+        {
+          "ID": "0501e55211456ed618456b9b50833d19",
+          "StepType": "MapStep",
+          "Description": "Allows mappings of fields from one data element to another. \nIt can map between fields in simple data elements or fields in table data elements (loop field mapping).  Transformations can be applied to field mappings by using functions.",
+          "Name": "Map Step (Status)",
+          "Procedure": "::PLBD::MAPPER::STEPS::apply_mapping",
+          "Group": "Mapping Steps",
+          "Critical": true,
+          "Resistant": false,
+          "ExecuteWhen": [
+            {
+              "FxName": "AnyTrue",
+              "FxType": "ComplexBooleanExpressionFunction",
+              "Comments": "",
+              "Operands": [
+                {
+                  "FxName": "booleanExpressionFunction",
+                  "FxType": "BooleanExpressionFunction",
+                  "Comments": "",
+                  "Operand1": {
+                    "Name": "status",
+                    "Type": "string",
+                    "Nullable": false,
+                    "DisplayName": "status",
+                    "Description": "",
+                    "ParentKey": "KeyReservations->response",
+                    "IsStatic": false
+                  },
+                  "exprOperator": {
+                    "IsStatic": true,
+                    "Name": "==",
+                    "DisplayName": "==",
+                    "ParentKey": "Static Values"
+                  },
+                  "Operand2": {
+                    "IsStatic": true,
+                    "Name": "Error",
+                    "DisplayName": "Error",
+                    "ParentKey": "Static Values"
+                  }
+                },
+                {
+                  "FxName": "booleanExpressionFunction",
+                  "FxType": "BooleanExpressionFunction",
+                  "Comments": "",
+                  "Operand1": {
+                    "Name": "status",
+                    "Type": "string",
+                    "Nullable": false,
+                    "DisplayName": "status",
+                    "Description": "",
+                    "ParentKey": "KeyReservations->response",
+                    "IsStatic": false
+                  },
+                  "exprOperator": {
+                    "IsStatic": true,
+                    "Name": "==",
+                    "DisplayName": "==",
+                    "ParentKey": "Static Values"
+                  },
+                  "Operand2": {
+                    "IsStatic": true,
+                    "Name": "error",
+                    "DisplayName": "error",
+                    "ParentKey": "Static Values"
+                  }
+                }
+              ]
+            }
+          ],
+          "InputSchemaGenerationParameters": {},
+          "OutputSchemaGenerationParameters": {},
+          "MappingDefinition": [
+            {
+              "SourceType": "Attribute",
+              "Comments": "",
+              "FX": [],
+              "SourceAttribute": {
+                "IsStatic": true,
+                "Name": "Error",
+                "DisplayName": "Error",
+                "ParentKey": "Static Values"
+              },
+              "TargetAttribute": {
+                "Name": "Status",
+                "Type": "string",
+                "Nullable": false,
+                "DisplayName": "Status",
+                "Description": "",
+                "ParentKey": "KeyReservationOutput",
+                "IsStatic": false
+              }
+            }
+          ]
+        },
+        {
+          "ID": "ec825eecde14e5220c7282e46ec7d46b",
+          "StepType": "Loop",
+          "Name": "KeyReservationMessages",
+          "Description": "KeyReservationMessages",
+          "SourceTables": [
+            "KeyReservations->response->messages"
+          ],
+          "IteratorName": "KeyReservationMessages",
+          "IteratorAttributesMode": "ALL",
+          "ExecuteWhen": [],
+          "ExecuteIterationWhen": [],
+          "LoopBodySteps": [
+            {
+              "ID": "1ceae319caa1e977cd75139960347c61",
+              "StepType": "MapStep",
+              "Description": "Allows mappings of fields from one data element to another. \nIt can map between fields in simple data elements or fields in table data elements (loop field mapping).  Transformations can be applied to field mappings by using functions.",
+              "Name": "Map Step (Messages 2-n)",
+              "Procedure": "::PLBD::MAPPER::STEPS::apply_mapping",
+              "Group": "Mapping Steps",
+              "Critical": true,
+              "Resistant": false,
+              "ExecuteWhen": [
+                {
+                  "FxName": "booleanExpressionFunction",
+                  "FxType": "BooleanExpressionFunction",
+                  "Comments": "",
+                  "Operand1": {
+                    "Name": "Message",
+                    "Type": "string",
+                    "Nullable": true,
+                    "DisplayName": "Message",
+                    "Description": "",
+                    "ParentKey": "KeyReservationOutput",
+                    "IsStatic": false
+                  },
+                  "exprOperator": {
+                    "IsStatic": true,
+                    "Name": "!=",
+                    "DisplayName": "!=",
+                    "ParentKey": "Static Values"
+                  },
+                  "Operand2": {
+                    "IsStatic": true,
+                    "Name": "",
+                    "DisplayName": "",
+                    "ParentKey": "Static Values"
+                  }
+                }
+              ],
+              "InputSchemaGenerationParameters": {},
+              "OutputSchemaGenerationParameters": {},
+              "MappingDefinition": [
+                {
+                  "SourceType": "FX",
+                  "Comments": "",
+                  "FX": [
+                    {
+                      "FxName": "::PLBD::FUNCTIONS::concat",
+                      "DisplayName": "Concat",
+                      "Description": "Concat multiple strings",
+                      "FxType": "FX2.0",
+                      "Namespace": "AIG.siemens.com",
+                      "FixedParameter": [
+                        {
+                          "Name": "firstString",
+                          "DisplayName": "firstString",
+                          "Description": "First string to add",
+                          "StaticAllowed": true,
+                          "DynamicAllowed": true,
+                          "SelectColumn": false,
+                          "Value": {
+                            "Name": "type",
+                            "Type": "string",
+                            "Nullable": false,
+                            "DisplayName": "type",
+                            "Description": "",
+                            "ParentKey": "KeyReservationMessages",
+                            "IsStatic": false
+                          }
+                        },
+                        {
+                          "Name": "delimiter",
+                          "DisplayName": "delimiter",
+                          "Description": "The delimiter string",
+                          "StaticAllowed": true,
+                          "DynamicAllowed": true,
+                          "SelectColumn": false,
+                          "Value": {
+                            "IsStatic": true,
+                            "Name": " - ",
+                            "DisplayName": " - ",
+                            "ParentKey": "Static Values",
+                            "ValueBuilder": {
+                              "UnpaddedValue": "-",
+                              "PaddingCharacter": "SPACE",
+                              "LeftPaddingAmount": 1,
+                              "RightPaddingAmount": 1
+                            }
+                          }
+                        }
+                      ],
+                      "VariableParameter": [
+                        {
+                          "Name": "stringToAppend",
+                          "DisplayName": "stringToAppend",
+                          "Description": "String to append",
+                          "StaticAllowed": true,
+                          "DynamicAllowed": true,
+                          "SelectColumn": false,
+                          "ValueList": [
+                            {
+                              "Name": "text",
+                              "Type": "string",
+                              "Nullable": false,
+                              "DisplayName": "text",
+                              "Description": "",
+                              "ParentKey": "KeyReservationMessages",
+                              "IsStatic": false
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "FxName": "::PLBD::FUNCTIONS::concat",
+                      "DisplayName": "Concat",
+                      "Description": "Concat multiple strings",
+                      "FxType": "FX2.0",
+                      "Namespace": "AIG.siemens.com",
+                      "FixedParameter": [
+                        {
+                          "Name": "firstString",
+                          "DisplayName": "firstString",
+                          "Description": "First string to add",
+                          "StaticAllowed": true,
+                          "DynamicAllowed": true,
+                          "SelectColumn": false,
+                          "Value": {
+                            "Name": "Message",
+                            "Type": "string",
+                            "Nullable": true,
+                            "DisplayName": "Message",
+                            "Description": "",
+                            "ParentKey": "KeyReservationOutput",
+                            "IsStatic": false
+                          }
+                        },
+                        {
+                          "Name": "delimiter",
+                          "DisplayName": "delimiter",
+                          "Description": "The delimiter string",
+                          "StaticAllowed": true,
+                          "DynamicAllowed": true,
+                          "SelectColumn": false,
+                          "Value": {
+                            "IsStatic": true,
+                            "Name": "\n",
+                            "DisplayName": "\n",
+                            "ParentKey": "Static Values",
+                            "ValueBuilder": {
+                              "UnpaddedValue": "",
+                              "PaddingCharacter": "NEWLINE",
+                              "LeftPaddingAmount": 1,
+                              "RightPaddingAmount": 0
+                            }
+                          }
+                        }
+                      ],
+                      "VariableParameter": [
+                        {
+                          "Name": "stringToAppend",
+                          "DisplayName": "stringToAppend",
+                          "Description": "String to append",
+                          "StaticAllowed": true,
+                          "DynamicAllowed": true,
+                          "SelectColumn": false,
+                          "ValueList": [
+                            {
+                              "IsFXOutput": true
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ],
+                  "SourceAttribute": {
+                    "IsStatic": true,
+                    "Name": "",
+                    "DisplayName": "",
+                    "ParentKey": "Static Values"
+                  },
+                  "TargetAttribute": {
+                    "Name": "Message",
+                    "Type": "string",
+                    "Nullable": true,
+                    "DisplayName": "Message",
+                    "Description": "",
+                    "ParentKey": "KeyReservationOutput",
+                    "IsStatic": false
+                  }
+                }
+              ]
+            },
+            {
+              "ID": "e56125db9be866725b92295a5eb13a9e",
+              "StepType": "MapStep",
+              "Description": "Allows mappings of fields from one data element to another. \nIt can map between fields in simple data elements or fields in table data elements (loop field mapping).  Transformations can be applied to field mappings by using functions.",
+              "Name": "Map Step (Message 1)",
+              "Procedure": "::PLBD::MAPPER::STEPS::apply_mapping",
+              "Group": "Mapping Steps",
+              "Critical": true,
+              "Resistant": false,
+              "ExecuteWhen": [
+                {
+                  "FxName": "booleanExpressionFunction",
+                  "FxType": "BooleanExpressionFunction",
+                  "Comments": "",
+                  "Operand1": {
+                    "Name": "Message",
+                    "Type": "string",
+                    "Nullable": true,
+                    "DisplayName": "Message",
+                    "Description": "",
+                    "ParentKey": "KeyReservationOutput",
+                    "IsStatic": false
+                  },
+                  "exprOperator": {
+                    "IsStatic": true,
+                    "Name": "==",
+                    "DisplayName": "==",
+                    "ParentKey": "Static Values"
+                  },
+                  "Operand2": {
+                    "IsStatic": true,
+                    "Name": "",
+                    "DisplayName": "",
+                    "ParentKey": "Static Values"
+                  }
+                }
+              ],
+              "InputSchemaGenerationParameters": {},
+              "OutputSchemaGenerationParameters": {},
+              "MappingDefinition": [
+                {
+                  "SourceType": "Attribute",
+                  "Comments": "",
+                  "FX": [],
+                  "SourceAttribute": {
+                    "Name": "text",
+                    "Type": "string",
+                    "Nullable": false,
+                    "DisplayName": "text",
+                    "Description": "",
+                    "ParentKey": "KeyReservationMessages",
+                    "IsStatic": false
+                  },
+                  "TargetAttribute": {
+                    "Name": "Message",
+                    "Type": "string",
+                    "Nullable": true,
+                    "DisplayName": "Message",
+                    "Description": "",
+                    "ParentKey": "KeyReservationOutput",
+                    "IsStatic": false
+                  }
+                },
+                {
+                  "SourceType": "FX",
+                  "Comments": "",
+                  "FX": [
+                    {
+                      "FxName": "::PLBD::FUNCTIONS::concat",
+                      "DisplayName": "Concat",
+                      "Description": "Concat multiple strings",
+                      "FxType": "FX2.0",
+                      "Namespace": "AIG.siemens.com",
+                      "FixedParameter": [
+                        {
+                          "Name": "firstString",
+                          "DisplayName": "firstString",
+                          "Description": "First string to add",
+                          "StaticAllowed": true,
+                          "DynamicAllowed": true,
+                          "SelectColumn": false,
+                          "Value": {
+                            "Name": "type",
+                            "Type": "string",
+                            "Nullable": false,
+                            "DisplayName": "type",
+                            "Description": "",
+                            "ParentKey": "KeyReservationMessages",
+                            "IsStatic": false
+                          }
+                        },
+                        {
+                          "Name": "delimiter",
+                          "DisplayName": "delimiter",
+                          "Description": "The delimiter string",
+                          "StaticAllowed": true,
+                          "DynamicAllowed": true,
+                          "SelectColumn": false,
+                          "Value": {
+                            "IsStatic": true,
+                            "Name": " - ",
+                            "DisplayName": " - ",
+                            "ParentKey": "Static Values",
+                            "ValueBuilder": {
+                              "UnpaddedValue": "-",
+                              "PaddingCharacter": "SPACE",
+                              "LeftPaddingAmount": 1,
+                              "RightPaddingAmount": 1
+                            }
+                          }
+                        }
+                      ],
+                      "VariableParameter": [
+                        {
+                          "Name": "stringToAppend",
+                          "DisplayName": "stringToAppend",
+                          "Description": "String to append",
+                          "StaticAllowed": true,
+                          "DynamicAllowed": true,
+                          "SelectColumn": false,
+                          "ValueList": [
+                            {
+                              "Name": "text",
+                              "Type": "string",
+                              "Nullable": false,
+                              "DisplayName": "text",
+                              "Description": "",
+                              "ParentKey": "KeyReservationMessages",
+                              "IsStatic": false
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ],
+                  "SourceAttribute": {
+                    "IsStatic": true,
+                    "Name": "",
+                    "DisplayName": "",
+                    "ParentKey": "Static Values"
+                  },
+                  "TargetAttribute": {
+                    "Name": "Message",
+                    "Type": "string",
+                    "Nullable": true,
+                    "DisplayName": "Message",
+                    "Description": "",
+                    "ParentKey": "KeyReservationOutput",
+                    "IsStatic": false
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "DomainModel": [
+    {
+      "DataSource": "Generic",
+      "IsEditable": true,
+      "RootDataElement": {
+        "Key": "KeyReservationInput",
+        "IsTable": false,
+        "DisplayName": "KeyReservationInput",
+        "Name": "KeyReservationInput",
+        "ParentKey": "",
+        "Description": "Container for data input from TC",
+        "Items": [
+          {
+            "Name": "TCObjectType",
+            "Type": "string",
+            "Nullable": true,
+            "DisplayName": "TCObjectType",
+            "Description": "TC object type",
+            "ParentKey": "KeyReservationInput",
+            "IsStatic": false
+          }
+        ]
+      }
+    },
+    {
+      "DataSource": "Generic",
+      "IsEditable": true,
+      "RootDataElement": {
+        "Key": "KeyReservationOutput",
+        "IsTable": false,
+        "DisplayName": "KeyReservationOutput",
+        "Name": "KeyReservationOutput",
+        "ParentKey": "",
+        "Description": "Container for data output to TC",
+        "Items": [
+          {
+            "Name": "ReservedNumber",
+            "Type": "string",
+            "Nullable": true,
+            "DisplayName": "ReservedNumber",
+            "Description": "The external/reserved number",
+            "ParentKey": "KeyReservationOutput",
+            "IsStatic": false
+          },
+          {
+            "Name": "Status",
+            "Type": "string",
+            "Nullable": true,
+            "DisplayName": "Status",
+            "Description": "Success or Error",
+            "ParentKey": "KeyReservationOutput",
+            "IsStatic": false
+          },
+          {
+            "Name": "Message",
+            "Type": "string",
+            "Nullable": true,
+            "DisplayName": "Message",
+            "Description": "Message in case of an error",
+            "ParentKey": "KeyReservationOutput",
+            "IsStatic": false
+          }
+        ]
+      }
+    }
+  ],
+  "Types": [],
+  "PipelineInputs": [
+    "KeyReservationInput"
+  ],
+  "PipelineOutputs": [
+    "KeyReservationOutput"
+  ]
+}

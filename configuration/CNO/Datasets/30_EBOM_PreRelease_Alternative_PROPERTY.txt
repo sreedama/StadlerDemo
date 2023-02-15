@@ -1,0 +1,116 @@
+############################################################################################################
+#  CNO Object Property Definition File
+############################################################################################################
+# Version History
+#
+# Version    Date           Name               Description of Change
+# 1.0        02-05-2022     testu     Initial
+############################################################################################################
+
+#Process
+C:EPMTask:object_name~object_name
+C:EPMTask:num_targets~num_targets
+
+#Status of select object
+C:ItemRevision:last_release_status~last_release_status
+
+
+#running process of selected object
+C:ItemRevision:fnd0InProcess~fnd0InProcess
+
+#status of children
+C:ItemRevision>view:bl_rev_last_release_status~bl_rev_last_release_status
+C:ItemRevision>view:bl_rev_object_string~bl_rev_object_string
+C:ItemRevision>view:bl_level_starting_0~level
+#new expansion => Status of select object
+#reused because of alternative WF-30
+#new need for catalog without status inside a BOM: (allowed for the root)
+C:ItemRevision>view:?bl_rev_object_type~DB_bl_rev_object_type
+C:ItemRevision>view:bl_rev_object_type~bl_rev_object_type
+
+C:ItemRevision§IR_ID_REV§|:item_id|_|:item_revision_id|
+C:ItemRevision>view§BL_ID_REV§|bl_rev_item_id|_|bl_rev_item_revision_id|
+
+#Qchecker: temporary solution until deployment of rela solution
+CATPart:sr5QCheckEvaluation~sr5QCheckEvaluation
+CATProduct:sr5QCheckEvaluation~sr5QCheckEvaluation
+CATDrawing:sr5QCheckEvaluation~sr5QCheckEvaluation
+#Qchecker of CATIA file from desired ccp
+CCPRevisionCVAssy:sr5QCheckEvaluation~sr5QCheckEvaluation
+CCPRevisionCVPart:sr5QCheckEvaluation~sr5QCheckEvaluation
+CCPRevisionCVDraw:sr5QCheckEvaluation~sr5QCheckEvaluation
+
+#Type of selected object
+C:ItemRevision:?object_type~DB_Type
+
+#position = BOM sequence
+#bug discover with VFW6.1.0 if formatted parent name is ending/containing with/a ) => count function is closed with it count([C:ItemRevision>view:position_rec_levBylev]_*) => leading to wrong result only
+C:ItemRevision>view:bl_rev_last_release_status~bl_rev_last_release_status
+#C:ItemRevision>view§position_rec_levBylev§|bl_formatted_parent_name|#|bl_sequence_no|
+#C:ItemRevision>view§position_ID_rec_levBylev§|bl_formatted_parent_name|#|bl_sequence_no|_|bl_item_item_id|
+C:ItemRevision>view§position_rec_levBylev§|bl_formatted_parent_name^D^)|#|bl_sequence_no|
+C:ItemRevision>view§position_ID_rec_levBylev§|bl_formatted_parent_name^D^)|#|bl_sequence_no|_|bl_item_item_id|
+
+
+#Group member for Catalog Part => because of error on BMIDE have a look on expansion
+#GroupMember:group
+#GroupMember:role
+#GroupMember§rolegroup§|:role|___|:group|
+#SR5EleCatPartRevision§Current Group Name§|SESSION_ACTIVE_GROUP|
+#SR5MechCatPartRevision§Current Group Name§|SESSION_ACTIVE_GROUP|
+#SR5GenCatPartRevision§Current Group Name§|SESSION_ACTIVE_GROUP|
+
+SR5EngArticleRevision§Current Group Name§|SESSION_ACTIVE_GROUP|
+SR5EngArticleRevision§Current Role Name§|SESSION_ACTIVE_ROLE|
+
+#SAP
+SR5EngArticleRevision:object_desc
+#SR5EleCatPartRevision:object_desc
+#SR5MechCatPartRevision:object_desc
+#SR5GenCatPartRevision:object_desc
+
+SR5EngArticle:sr5SAPMaterialType
+#SR5EleCatPart:sr5SAPMaterialType
+#SR5MechCatPart:sr5SAPMaterialType
+#SR5GenCatPart:sr5SAPMaterialType
+
+SR5EngArticle:sr5SAPMaterialGroup
+#SR5EleCatPart:sr5SAPMaterialGroup
+#SR5MechCatPart:sr5SAPMaterialGroup
+#SR5GenCatPart:sr5SAPMaterialGroup
+
+SR5EngArticle:uom_tag
+SR5EngArticleAR:uom_tag
+#SR5EleCatPart:uom_tag
+#SR5MechCatPart:uom_tag
+#SR5GenCatPart:uom_tag
+
+#Status of previous rev: one back or full list of rev
+#C:ItemRevision>previous_rev:release_status_list~PREV_REV_release_status_list
+SR5EngArticleRevision:release_status_list~release_status_list
+#SAPRevisionStatus50:release_status_list~release_status_list
+
+#Catalog Part: first revision only => because of error on BMIDE have a look on expansion
+#SR5EleCatPartRevision:item_revision_id~Rev
+#SR5MechCatPartRevision:item_revision_id~Rev
+#SR5GenCatPartRevision:item_revision_id~Rev
+#SR5EleCatPartRevision§Rev_List§|:revision_list^B^-|#|:revision_list^A^/||:revision_list^B^#|
+#SR5MechCatPartRevision§Rev_List§|:revision_list^B^-|#|:revision_list^A^/||:revision_list^B^#|
+#SR5GenCatPartRevision§Rev_List§|:revision_list^B^-|#|:revision_list^A^/||:revision_list^B^#|
+
+#checked-out
+C:Dataset:?checked_out~checked_out
+C:Dataset:object_type
+C:Dataset:last_release_status~last_release_status
+C:Form:?checked_out~checked_out
+C:Form:object_type
+C:Form:last_release_status~last_release_status
+C:SR5GenEngObjRevision:?checked_out~checked_out
+C:PSBOMViewRevision:?checked_out~checked_out
+C:PSBOMViewRevision:object_type
+C:PSBOMViewRevision:last_release_status~last_release_status
+
+#ccp
+
+#contextual link management
+CATPart:catiaV5_MMLAssy

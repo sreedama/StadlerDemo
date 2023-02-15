@@ -1,0 +1,6 @@
+{
+    "calculateWeightCmdTitle": "Calculate Weight",
+    "calculateWeightCmdDesc": "Perform weight calculation for the selected object",
+    "calculateWeightSuccess": "Updated calculated weight of {0}kg for {1}",
+    "calculateWeightFailed": "The weight calculation failed (Error code: {0})\n{1}"
+}

@@ -1,0 +1,10 @@
+{
+    "name": "sr5EasyPlanObjectInfo",
+    "level": 7,
+    "kitDeps": [
+        "tc-aw-solution"
+    ],
+    "modules": [
+        "sr5EasyPlanObjectInfo"
+    ]
+}

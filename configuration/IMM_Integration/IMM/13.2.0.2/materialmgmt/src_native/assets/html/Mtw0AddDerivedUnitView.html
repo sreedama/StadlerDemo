@@ -1,0 +1,14 @@
+<aw-command-panel caption="i18n.Mtw0AddDerivedUnit" anchor="data.addEventPanelPinCommands" context="data">
+    <aw-form name="addDerivedUnitTableForm">
+        <aw-panel-body>
+            <aw-panel-section>
+                <aw-xrt type="CREATE" object-type="Mat1DerivedUnit"></aw-xrt>
+            </aw-panel-section>
+        </aw-panel-body>
+    </aw-form>
+    <aw-panel-footer>
+        <aw-button action="createDerivedUnit" visible-when="addDerivedUnitTableForm.$valid">
+            <aw-i18n>i18n.Create</aw-i18n>
+        </aw-button>
+    </aw-panel-footer>
+</aw-command-panel>

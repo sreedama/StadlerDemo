@@ -1,0 +1,41 @@
+{
+    "$schema": "http://json-schema.org/draft-06/schema#",
+    "description": "This is the schema the declarative site  definition (in JSON format) must adhere to. The Apollo audit check validates all site JSON files against this schema. For explanation of the keywords of this schema, please visit https://ajv.js.org/keywords.html",
+
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {
+        "kits": {
+            "type": "array",
+            "description": "Array of the kits depend on the current site solution",
+            "items": {
+                "type": "string"
+            },
+            "minItems": 1,
+            "uniqueItems": true
+        },
+        "name": {
+            "type": "string",
+            "description": "Site name"
+        },
+        "solutionName": {
+            "type": "string",
+            "description": "Solution name "
+        },
+        "assetsDir": {
+            "type": "string",
+            "description": "path of the assets directory"
+        },
+        "link": {
+            "type": "boolean",
+            "description": "Set to false to skip setting symlink in out directory. Defaults to true."
+        },
+        "ignoreMissingKits": {
+            "type": "boolean",
+            "description": "Set to true to ignore any referenced kits that are missing."
+        }
+    },
+    "required": [
+        "name"
+    ]
+}

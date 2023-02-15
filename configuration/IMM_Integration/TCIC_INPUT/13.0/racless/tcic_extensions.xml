@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<extensions>
+     <entry
+       id="com.ebsolutions.soacore.extensions.ICatiaUserExit"
+       filename="CatiaUserExit4ImmImpl.jar"
+       handler="com.teamcenter.rac.imm.catiman.extension.CatiaUserExit4ImmImpl">
+     </entry>
+</extensions>

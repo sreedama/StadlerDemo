@@ -1,0 +1,8 @@
+
+
+12:31 12/06/22
+
+run and install the GLI_KILL_INSTALLER.exe
+
+then run the FixTeamcenter.bat file which can be anywhere installed...
+

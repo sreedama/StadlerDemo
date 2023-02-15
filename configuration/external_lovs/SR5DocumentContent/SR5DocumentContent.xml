@@ -1,0 +1,327 @@
+<?xml version="1.0" encoding="UTF-8"?>
+  <TcBusinessData xmlns="http://teamcenter.com/BusinessModel/TcBusinessData" batchXSDVersion="1.0" Date="Fri Dec 02 10:08:31 AM 2022">
+    <Add>
+      <TcLOVValueSubLOVAttach conditionName="isTrue" subLOVName="SR5DocumentContent_AA" targetLOVName="SR5DocumentContent" targetValue="AA"/>
+      <TcLOVValueSubLOVAttach conditionName="isTrue" subLOVName="SR5DocumentContent_AB" targetLOVName="SR5DocumentContent" targetValue="AB"/>
+      <TcLOVValueSubLOVAttach conditionName="isTrue" subLOVName="SR5DocumentContent_AC" targetLOVName="SR5DocumentContent" targetValue="AC"/>
+      <TcLOVValueSubLOVAttach conditionName="isTrue" subLOVName="SR5DocumentContent_BA" targetLOVName="SR5DocumentContent" targetValue="BA"/>
+      <TcLOVValueSubLOVAttach conditionName="isTrue" subLOVName="SR5DocumentContent_BB" targetLOVName="SR5DocumentContent" targetValue="BB"/>
+      <TcLOVValueSubLOVAttach conditionName="isTrue" subLOVName="SR5DocumentContent_BC" targetLOVName="SR5DocumentContent" targetValue="BC"/>
+      <TcLOVValueSubLOVAttach conditionName="isTrue" subLOVName="SR5DocumentContent_BD" targetLOVName="SR5DocumentContent" targetValue="BD"/>
+      <TcLOVValueSubLOVAttach conditionName="isTrue" subLOVName="SR5DocumentContent_BE" targetLOVName="SR5DocumentContent" targetValue="BE"/>
+      <TcLOVValueSubLOVAttach conditionName="isTrue" subLOVName="SR5DocumentContent_BG" targetLOVName="SR5DocumentContent" targetValue="BG"/>
+      <TcLOVValueSubLOVAttach conditionName="isTrue" subLOVName="SR5DocumentContent_BH" targetLOVName="SR5DocumentContent" targetValue="BH"/>
+      <TcLOVValueSubLOVAttach conditionName="isTrue" subLOVName="SR5DocumentContent_BT" targetLOVName="SR5DocumentContent" targetValue="BT"/>
+      <TcLOVValueSubLOVAttach conditionName="isTrue" subLOVName="SR5DocumentContent_CA" targetLOVName="SR5DocumentContent" targetValue="CA"/>
+      <TcLOVValueSubLOVAttach conditionName="isTrue" subLOVName="SR5DocumentContent_CB" targetLOVName="SR5DocumentContent" targetValue="CB"/>
+      <TcLOVValueSubLOVAttach conditionName="isTrue" subLOVName="SR5DocumentContent_CF" targetLOVName="SR5DocumentContent" targetValue="CF"/>
+      <TcLOVValueSubLOVAttach conditionName="isTrue" subLOVName="SR5DocumentContent_CG" targetLOVName="SR5DocumentContent" targetValue="CG"/>
+      <TcLOVValueSubLOVAttach conditionName="isTrue" subLOVName="SR5DocumentContent_CH" targetLOVName="SR5DocumentContent" targetValue="CH"/>
+      <TcLOVValueSubLOVAttach conditionName="isTrue" subLOVName="SR5DocumentContent_DA" targetLOVName="SR5DocumentContent" targetValue="DA"/>
+      <TcLOVValueSubLOVAttach conditionName="isTrue" subLOVName="SR5DocumentContent_DB" targetLOVName="SR5DocumentContent" targetValue="DB"/>
+      <TcLOVValueSubLOVAttach conditionName="isTrue" subLOVName="SR5DocumentContent_DC" targetLOVName="SR5DocumentContent" targetValue="DC"/>
+      <TcLOVValueSubLOVAttach conditionName="isTrue" subLOVName="SR5DocumentContent_DD" targetLOVName="SR5DocumentContent" targetValue="DD"/>
+      <TcLOVValueSubLOVAttach conditionName="isTrue" subLOVName="SR5DocumentContent_EA" targetLOVName="SR5DocumentContent" targetValue="EA"/>
+      <TcLOVValueSubLOVAttach conditionName="isTrue" subLOVName="SR5DocumentContent_EB" targetLOVName="SR5DocumentContent" targetValue="EB"/>
+      <TcLOVValueSubLOVAttach conditionName="isTrue" subLOVName="SR5DocumentContent_EC" targetLOVName="SR5DocumentContent" targetValue="EC"/>
+      <TcLOVValueSubLOVAttach conditionName="isTrue" subLOVName="SR5DocumentContent_ED" targetLOVName="SR5DocumentContent" targetValue="ED"/>
+      <TcLOVValueSubLOVAttach conditionName="isTrue" subLOVName="SR5DocumentContent_FA" targetLOVName="SR5DocumentContent" targetValue="FA"/>
+      <TcLOVValueSubLOVAttach conditionName="isTrue" subLOVName="SR5DocumentContent_FC" targetLOVName="SR5DocumentContent" targetValue="FC"/>
+      <TcLOVValueSubLOVAttach conditionName="isTrue" subLOVName="SR5DocumentContent_FE" targetLOVName="SR5DocumentContent" targetValue="FE"/>
+      <TcLOVValueSubLOVAttach conditionName="isTrue" subLOVName="SR5DocumentContent_FF" targetLOVName="SR5DocumentContent" targetValue="FF"/>
+      <TcLOVValueSubLOVAttach conditionName="isTrue" subLOVName="SR5DocumentContent_FP" targetLOVName="SR5DocumentContent" targetValue="FP"/>
+      <TcLOVValueSubLOVAttach conditionName="isTrue" subLOVName="SR5DocumentContent_FQ" targetLOVName="SR5DocumentContent" targetValue="FQ"/>
+      <TcLOVValueSubLOVAttach conditionName="isTrue" subLOVName="SR5DocumentContent_FS" targetLOVName="SR5DocumentContent" targetValue="FS"/>
+      <TcLOVValueSubLOVAttach conditionName="isTrue" subLOVName="SR5DocumentContent_FT" targetLOVName="SR5DocumentContent" targetValue="FT"/>
+      <TcLOVValueSubLOVAttach conditionName="isTrue" subLOVName="SR5DocumentContent_MA" targetLOVName="SR5DocumentContent" targetValue="MA"/>
+      <TcLOVValueSubLOVAttach conditionName="isTrue" subLOVName="SR5DocumentContent_MB" targetLOVName="SR5DocumentContent" targetValue="MB"/>
+      <TcLOVValueSubLOVAttach conditionName="isTrue" subLOVName="SR5DocumentContent_PA" targetLOVName="SR5DocumentContent" targetValue="PA"/>
+      <TcLOVValueSubLOVAttach conditionName="isTrue" subLOVName="SR5DocumentContent_PB" targetLOVName="SR5DocumentContent" targetValue="PB"/>
+      <TcLOVValueSubLOVAttach conditionName="isTrue" subLOVName="SR5DocumentContent_PC" targetLOVName="SR5DocumentContent" targetValue="PC"/>
+      <TcLOVValueSubLOVAttach conditionName="isTrue" subLOVName="SR5DocumentContent_PD" targetLOVName="SR5DocumentContent" targetValue="PD"/>
+      <TcLOVValueSubLOVAttach conditionName="isTrue" subLOVName="SR5DocumentContent_PF" targetLOVName="SR5DocumentContent" targetValue="PF"/>
+      <TcLOVValueSubLOVAttach conditionName="isTrue" subLOVName="SR5DocumentContent_PL" targetLOVName="SR5DocumentContent" targetValue="PL"/>
+      <TcLOVValueSubLOVAttach conditionName="isTrue" subLOVName="SR5DocumentContent_QA" targetLOVName="SR5DocumentContent" targetValue="QA"/>
+      <TcLOVValueSubLOVAttach conditionName="isTrue" subLOVName="SR5DocumentContent_QB" targetLOVName="SR5DocumentContent" targetValue="QB"/>
+      <TcLOVValueSubLOVAttach conditionName="isTrue" subLOVName="SR5DocumentContent_QC" targetLOVName="SR5DocumentContent" targetValue="QC"/>
+      <TcLOVValueSubLOVAttach conditionName="isTrue" subLOVName="SR5DocumentContent_QZ" targetLOVName="SR5DocumentContent" targetValue="QZ"/>
+      <TcLOVValueSubLOVAttach conditionName="isTrue" subLOVName="SR5DocumentContent_TA" targetLOVName="SR5DocumentContent" targetValue="TA"/>
+      <TcLOVValueSubLOVAttach conditionName="isTrue" subLOVName="SR5DocumentContent_TB" targetLOVName="SR5DocumentContent" targetValue="TB"/>
+      <TcLOVValueSubLOVAttach conditionName="isTrue" subLOVName="SR5DocumentContent_TC" targetLOVName="SR5DocumentContent" targetValue="TC"/>
+      <TcLOVValueSubLOVAttach conditionName="isTrue" subLOVName="SR5DocumentContent_WA" targetLOVName="SR5DocumentContent" targetValue="WA"/>
+      <TcLOVValueSubLOVAttach conditionName="isTrue" subLOVName="SR5DocumentContent_WT" targetLOVName="SR5DocumentContent" targetValue="WT"/>
+    </Add>
+    <Change>
+      <TcLOV name="SR5DocumentContent" lovType="ListOfValuesString" usage="Exhaustive" description="" isManagedExternally="true">
+        <TcLOVValue value="AA" description="" conditionName="isTrue"/>
+        <TcLOVValue value="AB" description="" conditionName="isTrue"/>
+        <TcLOVValue value="AC" description="" conditionName="isTrue"/>
+        <TcLOVValue value="BA" description="" conditionName="isTrue"/>
+        <TcLOVValue value="BB" description="" conditionName="isTrue"/>
+        <TcLOVValue value="BC" description="" conditionName="isTrue"/>
+        <TcLOVValue value="BD" description="" conditionName="isTrue"/>
+        <TcLOVValue value="BE" description="" conditionName="isTrue"/>
+        <TcLOVValue value="BG" description="" conditionName="isTrue"/>
+        <TcLOVValue value="BH" description="" conditionName="isTrue"/>
+        <TcLOVValue value="BT" description="" conditionName="isTrue"/>
+        <TcLOVValue value="CA" description="" conditionName="isTrue"/>
+        <TcLOVValue value="CB" description="" conditionName="isTrue"/>
+        <TcLOVValue value="CF" description="" conditionName="isTrue"/>
+        <TcLOVValue value="CG" description="" conditionName="isTrue"/>
+        <TcLOVValue value="CH" description="" conditionName="isTrue"/>
+        <TcLOVValue value="DA" description="" conditionName="isTrue"/>
+        <TcLOVValue value="DB" description="" conditionName="isTrue"/>
+        <TcLOVValue value="DC" description="" conditionName="isTrue"/>
+        <TcLOVValue value="DD" description="" conditionName="isTrue"/>
+        <TcLOVValue value="EA" description="" conditionName="isTrue"/>
+        <TcLOVValue value="EB" description="" conditionName="isTrue"/>
+        <TcLOVValue value="EC" description="" conditionName="isTrue"/>
+        <TcLOVValue value="ED" description="" conditionName="isTrue"/>
+        <TcLOVValue value="FA" description="" conditionName="isTrue"/>
+        <TcLOVValue value="FC" description="" conditionName="isTrue"/>
+        <TcLOVValue value="FE" description="" conditionName="isTrue"/>
+        <TcLOVValue value="FF" description="" conditionName="isTrue"/>
+        <TcLOVValue value="FP" description="" conditionName="isTrue"/>
+        <TcLOVValue value="FQ" description="" conditionName="isTrue"/>
+        <TcLOVValue value="FS" description="" conditionName="isTrue"/>
+        <TcLOVValue value="FT" description="" conditionName="isTrue"/>
+        <TcLOVValue value="MA" description="" conditionName="isTrue"/>
+        <TcLOVValue value="MB" description="" conditionName="isTrue"/>
+        <TcLOVValue value="PA" description="" conditionName="isTrue"/>
+        <TcLOVValue value="PB" description="" conditionName="isTrue"/>
+        <TcLOVValue value="PC" description="" conditionName="isTrue"/>
+        <TcLOVValue value="PD" description="" conditionName="isTrue"/>
+        <TcLOVValue value="PF" description="" conditionName="isTrue"/>
+        <TcLOVValue value="PL" description="" conditionName="isTrue"/>
+        <TcLOVValue value="QA" description="" conditionName="isTrue"/>
+        <TcLOVValue value="QB" description="" conditionName="isTrue"/>
+        <TcLOVValue value="QC" description="" conditionName="isTrue"/>
+        <TcLOVValue value="QZ" description="" conditionName="isTrue"/>
+        <TcLOVValue value="TA" description="" conditionName="isTrue"/>
+        <TcLOVValue value="TB" description="" conditionName="isTrue"/>
+        <TcLOVValue value="TC" description="" conditionName="isTrue"/>
+        <TcLOVValue value="WA" description="" conditionName="isTrue"/>
+        <TcLOVValue value="WT" description="" conditionName="isTrue"/>
+      </TcLOV>
+      <TcLOV name="SR5DocumentContent_AA" lovType="ListOfValuesString" usage="Exhaustive" description="" isManagedExternally="true">
+        <TcLOVValue value="AA0000" description="" conditionName="isTrue"/>
+      </TcLOV>
+      <TcLOV name="SR5DocumentContent_AB" lovType="ListOfValuesString" usage="Exhaustive" description="" isManagedExternally="true">
+        <TcLOVValue value="AB0000" description="" conditionName="isTrue"/>
+      </TcLOV>
+      <TcLOV name="SR5DocumentContent_AC" lovType="ListOfValuesString" usage="Exhaustive" description="" isManagedExternally="true">
+        <TcLOVValue value="AC0000" description="" conditionName="isTrue"/>
+      </TcLOV>
+      <TcLOV name="SR5DocumentContent_BA" lovType="ListOfValuesString" usage="Exhaustive" description="" isManagedExternally="true">
+        <TcLOVValue value="BA0000" description="" conditionName="isTrue"/>
+      </TcLOV>
+      <TcLOV name="SR5DocumentContent_BB" lovType="ListOfValuesString" usage="Exhaustive" description="" isManagedExternally="true">
+        <TcLOVValue value="BB0000" description="" conditionName="isTrue"/>
+      </TcLOV>
+      <TcLOV name="SR5DocumentContent_BC" lovType="ListOfValuesString" usage="Exhaustive" description="" isManagedExternally="true">
+        <TcLOVValue value="BC0000" description="" conditionName="isTrue"/>
+      </TcLOV>
+      <TcLOV name="SR5DocumentContent_BD" lovType="ListOfValuesString" usage="Exhaustive" description="" isManagedExternally="true">
+        <TcLOVValue value="BD0000" description="" conditionName="isTrue"/>
+      </TcLOV>
+      <TcLOV name="SR5DocumentContent_BE" lovType="ListOfValuesString" usage="Exhaustive" description="" isManagedExternally="true">
+        <TcLOVValue value="BE0000" description="" conditionName="isTrue"/>
+      </TcLOV>
+      <TcLOV name="SR5DocumentContent_BF" lovType="ListOfValuesString" usage="Exhaustive" description="" isManagedExternally="true">
+        <TcLOVValue value="BF0000" description="" conditionName="isTrue"/>
+      </TcLOV>
+      <TcLOV name="SR5DocumentContent_BG" lovType="ListOfValuesString" usage="Exhaustive" description="" isManagedExternally="true">
+        <TcLOVValue value="BG0000" description="" conditionName="isTrue"/>
+      </TcLOV>
+      <TcLOV name="SR5DocumentContent_BH" lovType="ListOfValuesString" usage="Exhaustive" description="" isManagedExternally="true">
+        <TcLOVValue value="BH0000" description="" conditionName="isTrue"/>
+      </TcLOV>
+      <TcLOV name="SR5DocumentContent_BT" lovType="ListOfValuesString" usage="Exhaustive" description="" isManagedExternally="true">
+        <TcLOVValue value="BT0000" description="" conditionName="isTrue"/>
+        <TcLOVValue value="BT0001" description="" conditionName="isTrue"/>
+      </TcLOV>
+      <TcLOV name="SR5DocumentContent_CA" lovType="ListOfValuesString" usage="Exhaustive" description="" isManagedExternally="true">
+        <TcLOVValue value="CA0000" description="" conditionName="isTrue"/>
+      </TcLOV>
+      <TcLOV name="SR5DocumentContent_CB" lovType="ListOfValuesString" usage="Exhaustive" description="" isManagedExternally="true">
+        <TcLOVValue value="CB0000" description="" conditionName="isTrue"/>
+      </TcLOV>
+      <TcLOV name="SR5DocumentContent_CC" lovType="ListOfValuesString" usage="Exhaustive" description="" isManagedExternally="true">
+        <TcLOVValue value="CC0000" description="" conditionName="isTrue"/>
+      </TcLOV>
+      <TcLOV name="SR5DocumentContent_CD" lovType="ListOfValuesString" usage="Exhaustive" description="" isManagedExternally="true">
+        <TcLOVValue value="CD0000" description="" conditionName="isTrue"/>
+      </TcLOV>
+      <TcLOV name="SR5DocumentContent_CE" lovType="ListOfValuesString" usage="Exhaustive" description="" isManagedExternally="true">
+        <TcLOVValue value="CE0000" description="" conditionName="isTrue"/>
+      </TcLOV>
+      <TcLOV name="SR5DocumentContent_CF" lovType="ListOfValuesString" usage="Exhaustive" description="" isManagedExternally="true">
+        <TcLOVValue value="CF0000" description="" conditionName="isTrue"/>
+      </TcLOV>
+      <TcLOV name="SR5DocumentContent_CG" lovType="ListOfValuesString" usage="Exhaustive" description="" isManagedExternally="true">
+        <TcLOVValue value="CG0000" description="" conditionName="isTrue"/>
+      </TcLOV>
+      <TcLOV name="SR5DocumentContent_CH" lovType="ListOfValuesString" usage="Exhaustive" description="" isManagedExternally="true">
+        <TcLOVValue value="CH0000" description="" conditionName="isTrue"/>
+      </TcLOV>
+      <TcLOV name="SR5DocumentContent_DA" lovType="ListOfValuesString" usage="Exhaustive" description="" isManagedExternally="true">
+        <TcLOVValue value="DA0000" description="" conditionName="isTrue"/>
+        <TcLOVValue value="DA0001" description="" conditionName="isTrue"/>
+      </TcLOV>
+      <TcLOV name="SR5DocumentContent_DB" lovType="ListOfValuesString" usage="Exhaustive" description="" isManagedExternally="true">
+        <TcLOVValue value="DB0000" description="" conditionName="isTrue"/>
+      </TcLOV>
+      <TcLOV name="SR5DocumentContent_DC" lovType="ListOfValuesString" usage="Exhaustive" description="" isManagedExternally="true">
+        <TcLOVValue value="DC0000" description="" conditionName="isTrue"/>
+        <TcLOVValue value="DC0001" description="" conditionName="isTrue"/>
+        <TcLOVValue value="DC0002" description="" conditionName="isTrue"/>
+        <TcLOVValue value="DC0003" description="" conditionName="isTrue"/>
+        <TcLOVValue value="DC0004" description="" conditionName="isTrue"/>
+        <TcLOVValue value="DC0005" description="" conditionName="isTrue"/>
+        <TcLOVValue value="DC0006" description="" conditionName="isTrue"/>
+      </TcLOV>
+      <TcLOV name="SR5DocumentContent_DD" lovType="ListOfValuesString" usage="Exhaustive" description="" isManagedExternally="true">
+        <TcLOVValue value="DD0000" description="" conditionName="isTrue"/>
+      </TcLOV>
+      <TcLOV name="SR5DocumentContent_EA" lovType="ListOfValuesString" usage="Exhaustive" description="" isManagedExternally="true">
+        <TcLOVValue value="EA0000" description="" conditionName="isTrue"/>
+      </TcLOV>
+      <TcLOV name="SR5DocumentContent_EB" lovType="ListOfValuesString" usage="Exhaustive" description="" isManagedExternally="true">
+        <TcLOVValue value="EB0000" description="" conditionName="isTrue"/>
+      </TcLOV>
+      <TcLOV name="SR5DocumentContent_EC" lovType="ListOfValuesString" usage="Exhaustive" description="" isManagedExternally="true">
+        <TcLOVValue value="EC0000" description="" conditionName="isTrue"/>
+        <TcLOVValue value="EC0001" description="" conditionName="isTrue"/>
+        <TcLOVValue value="EC0002" description="" conditionName="isTrue"/>
+      </TcLOV>
+      <TcLOV name="SR5DocumentContent_ED" lovType="ListOfValuesString" usage="Exhaustive" description="" isManagedExternally="true">
+        <TcLOVValue value="ED0000" description="" conditionName="isTrue"/>
+      </TcLOV>
+      <TcLOV name="SR5DocumentContent_FA" lovType="ListOfValuesString" usage="Exhaustive" description="" isManagedExternally="true">
+        <TcLOVValue value="FA0000" description="" conditionName="isTrue"/>
+      </TcLOV>
+      <TcLOV name="SR5DocumentContent_FC" lovType="ListOfValuesString" usage="Exhaustive" description="" isManagedExternally="true">
+        <TcLOVValue value="FC0000" description="" conditionName="isTrue"/>
+        <TcLOVValue value="FC0001" description="" conditionName="isTrue"/>
+      </TcLOV>
+      <TcLOV name="SR5DocumentContent_FE" lovType="ListOfValuesString" usage="Exhaustive" description="" isManagedExternally="true">
+        <TcLOVValue value="FE0000" description="" conditionName="isTrue"/>
+        <TcLOVValue value="FE0001" description="" conditionName="isTrue"/>
+      </TcLOV>
+      <TcLOV name="SR5DocumentContent_FF" lovType="ListOfValuesString" usage="Exhaustive" description="" isManagedExternally="true">
+        <TcLOVValue value="FF0000" description="" conditionName="isTrue"/>
+        <TcLOVValue value="FF0001" description="" conditionName="isTrue"/>
+      </TcLOV>
+      <TcLOV name="SR5DocumentContent_FP" lovType="ListOfValuesString" usage="Exhaustive" description="" isManagedExternally="true">
+        <TcLOVValue value="FP0000" description="" conditionName="isTrue"/>
+        <TcLOVValue value="FP0001" description="" conditionName="isTrue"/>
+      </TcLOV>
+      <TcLOV name="SR5DocumentContent_FQ" lovType="ListOfValuesString" usage="Exhaustive" description="" isManagedExternally="true">
+        <TcLOVValue value="FQ0000" description="" conditionName="isTrue"/>
+        <TcLOVValue value="FQ0001" description="" conditionName="isTrue"/>
+      </TcLOV>
+      <TcLOV name="SR5DocumentContent_FS" lovType="ListOfValuesString" usage="Exhaustive" description="" isManagedExternally="true">
+        <TcLOVValue value="FS0000" description="" conditionName="isTrue"/>
+        <TcLOVValue value="FS0001" description="" conditionName="isTrue"/>
+      </TcLOV>
+      <TcLOV name="SR5DocumentContent_FT" lovType="ListOfValuesString" usage="Exhaustive" description="" isManagedExternally="true">
+        <TcLOVValue value="FT0000" description="" conditionName="isTrue"/>
+        <TcLOVValue value="FT0001" description="" conditionName="isTrue"/>
+        <TcLOVValue value="FT0002" description="" conditionName="isTrue"/>
+        <TcLOVValue value="FT0003" description="" conditionName="isTrue"/>
+        <TcLOVValue value="FT0004" description="" conditionName="isTrue"/>
+      </TcLOV>
+      <TcLOV name="SR5DocumentContent_MA" lovType="ListOfValuesString" usage="Exhaustive" description="" isManagedExternally="true">
+        <TcLOVValue value="MA0000" description="" conditionName="isTrue"/>
+      </TcLOV>
+      <TcLOV name="SR5DocumentContent_MB" lovType="ListOfValuesString" usage="Exhaustive" description="" isManagedExternally="true">
+        <TcLOVValue value="MB0000" description="" conditionName="isTrue"/>
+        <TcLOVValue value="MB0001" description="" conditionName="isTrue"/>
+        <TcLOVValue value="MB0002" description="" conditionName="isTrue"/>
+        <TcLOVValue value="MB0003" description="" conditionName="isTrue"/>
+      </TcLOV>
+      <TcLOV name="SR5DocumentContent_PA" lovType="ListOfValuesString" usage="Exhaustive" description="" isManagedExternally="true">
+        <TcLOVValue value="PA0000" description="" conditionName="isTrue"/>
+        <TcLOVValue value="PA0001" description="" conditionName="isTrue"/>
+      </TcLOV>
+      <TcLOV name="SR5DocumentContent_PB" lovType="ListOfValuesString" usage="Exhaustive" description="" isManagedExternally="true">
+        <TcLOVValue value="PB0000" description="" conditionName="isTrue"/>
+        <TcLOVValue value="PB0001" description="" conditionName="isTrue"/>
+      </TcLOV>
+      <TcLOV name="SR5DocumentContent_PC" lovType="ListOfValuesString" usage="Exhaustive" description="" isManagedExternally="true">
+        <TcLOVValue value="PC0000" description="" conditionName="isTrue"/>
+        <TcLOVValue value="PC0001" description="" conditionName="isTrue"/>
+      </TcLOV>
+      <TcLOV name="SR5DocumentContent_PD" lovType="ListOfValuesString" usage="Exhaustive" description="" isManagedExternally="true">
+        <TcLOVValue value="PD0000" description="" conditionName="isTrue"/>
+        <TcLOVValue value="PD0001" description="" conditionName="isTrue"/>
+        <TcLOVValue value="PD0002" description="" conditionName="isTrue"/>
+      </TcLOV>
+      <TcLOV name="SR5DocumentContent_PF" lovType="ListOfValuesString" usage="Exhaustive" description="" isManagedExternally="true">
+        <TcLOVValue value="PF0000" description="" conditionName="isTrue"/>
+      </TcLOV>
+      <TcLOV name="SR5DocumentContent_PL" lovType="ListOfValuesString" usage="Exhaustive" description="" isManagedExternally="true">
+        <TcLOVValue value="PL0000" description="" conditionName="isTrue"/>
+      </TcLOV>
+      <TcLOV name="SR5DocumentContent_QA" lovType="ListOfValuesString" usage="Exhaustive" description="" isManagedExternally="true">
+        <TcLOVValue value="QA0000" description="" conditionName="isTrue"/>
+        <TcLOVValue value="QA0001" description="" conditionName="isTrue"/>
+        <TcLOVValue value="QA0002" description="" conditionName="isTrue"/>
+        <TcLOVValue value="QA0003" description="" conditionName="isTrue"/>
+      </TcLOV>
+      <TcLOV name="SR5DocumentContent_QB" lovType="ListOfValuesString" usage="Exhaustive" description="" isManagedExternally="true">
+        <TcLOVValue value="QB0000" description="" conditionName="isTrue"/>
+        <TcLOVValue value="QB0001" description="" conditionName="isTrue"/>
+        <TcLOVValue value="QB0002" description="" conditionName="isTrue"/>
+        <TcLOVValue value="QB0003" description="" conditionName="isTrue"/>
+      </TcLOV>
+      <TcLOV name="SR5DocumentContent_QC" lovType="ListOfValuesString" usage="Exhaustive" description="" isManagedExternally="true">
+        <TcLOVValue value="QC0000" description="" conditionName="isTrue"/>
+        <TcLOVValue value="QC0001" description="" conditionName="isTrue"/>
+        <TcLOVValue value="QC0002" description="" conditionName="isTrue"/>
+        <TcLOVValue value="QC0003" description="" conditionName="isTrue"/>
+        <TcLOVValue value="QC0004" description="" conditionName="isTrue"/>
+        <TcLOVValue value="QC0005" description="" conditionName="isTrue"/>
+        <TcLOVValue value="QC0006" description="" conditionName="isTrue"/>
+        <TcLOVValue value="QC0007" description="" conditionName="isTrue"/>
+        <TcLOVValue value="QC0008" description="" conditionName="isTrue"/>
+        <TcLOVValue value="QC0009" description="" conditionName="isTrue"/>
+        <TcLOVValue value="QC0010" description="" conditionName="isTrue"/>
+        <TcLOVValue value="QC0011" description="" conditionName="isTrue"/>
+        <TcLOVValue value="QC0012" description="" conditionName="isTrue"/>
+        <TcLOVValue value="QC0013" description="" conditionName="isTrue"/>
+        <TcLOVValue value="QC0014" description="" conditionName="isTrue"/>
+        <TcLOVValue value="QC0015" description="" conditionName="isTrue"/>
+        <TcLOVValue value="QC0016" description="" conditionName="isTrue"/>
+        <TcLOVValue value="QC0017" description="" conditionName="isTrue"/>
+        <TcLOVValue value="QC0018" description="" conditionName="isTrue"/>
+        <TcLOVValue value="QC0019" description="" conditionName="isTrue"/>
+        <TcLOVValue value="QC0020" description="" conditionName="isTrue"/>
+      </TcLOV>
+      <TcLOV name="SR5DocumentContent_QZ" lovType="ListOfValuesString" usage="Exhaustive" description="" isManagedExternally="true">
+        <TcLOVValue value="QZ0000" description="" conditionName="isTrue"/>
+        <TcLOVValue value="QZ0001" description="" conditionName="isTrue"/>
+        <TcLOVValue value="QZ0002" description="" conditionName="isTrue"/>
+      </TcLOV>
+      <TcLOV name="SR5DocumentContent_TA" lovType="ListOfValuesString" usage="Exhaustive" description="" isManagedExternally="true">
+        <TcLOVValue value="TA0000" description="" conditionName="isTrue"/>
+      </TcLOV>
+      <TcLOV name="SR5DocumentContent_TB" lovType="ListOfValuesString" usage="Exhaustive" description="" isManagedExternally="true">
+        <TcLOVValue value="TB0000" description="" conditionName="isTrue"/>
+        <TcLOVValue value="TB0001" description="" conditionName="isTrue"/>
+        <TcLOVValue value="TB0002" description="" conditionName="isTrue"/>
+        <TcLOVValue value="TB0003" description="" conditionName="isTrue"/>
+        <TcLOVValue value="TB0004" description="" conditionName="isTrue"/>
+      </TcLOV>
+      <TcLOV name="SR5DocumentContent_TC" lovType="ListOfValuesString" usage="Exhaustive" description="" isManagedExternally="true">
+        <TcLOVValue value="TC0000" description="" conditionName="isTrue"/>
+        <TcLOVValue value="TC0001" description="" conditionName="isTrue"/>
+      </TcLOV>
+      <TcLOV name="SR5DocumentContent_WA" lovType="ListOfValuesString" usage="Exhaustive" description="" isManagedExternally="true">
+        <TcLOVValue value="WA0000" description="" conditionName="isTrue"/>
+      </TcLOV>
+      <TcLOV name="SR5DocumentContent_WT" lovType="ListOfValuesString" usage="Exhaustive" description="" isManagedExternally="true">
+        <TcLOVValue value="WT0000" description="" conditionName="isTrue"/>
+      </TcLOV>
+    </Change>
+  </TcBusinessData>

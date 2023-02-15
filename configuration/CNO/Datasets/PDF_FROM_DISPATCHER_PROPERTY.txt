@@ -1,0 +1,18 @@
+############################################################################################################
+#  CNO Object Property Definition File
+############################################################################################################
+# Version History
+#
+# Version    Date           Name               Description of Change
+# 1.0        24-08-2022     testu     Initial
+############################################################################################################
+
+C:ItemRevision:object_type
+C:ItemRevision:item_id
+C:ItemRevision§need_a_pdf§1
+
+PDF:ref_list~NamedReference
+PDF:ref_types~FileType
+PDF:object_type
+
+ImanFile:byte_size~ByteSize

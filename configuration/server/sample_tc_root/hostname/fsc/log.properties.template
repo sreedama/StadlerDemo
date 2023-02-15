@@ -1,0 +1,61 @@
+#
+#bcprt
+#This software and related documentation are proprietary to UGS Corp.
+#COPYRIGHT 2005 UGS CORP.  ALL RIGHTS RESERVED
+#ecprt
+#
+
+#============================================================================
+# This file contains sample logging configuration Properties  
+# Release Version 1.0
+#
+#============================================================================
+
+#============================================================================
+# Description: 
+#     Name of the Log Volume.
+#============================================================================
+LogVolumeName=LogVol1
+
+#============================================================================
+# Description: 
+#     Log Volume location is the root directory under which all the log files 
+#     have to be created.
+# Note: Use "\\" for File Separator if using backward slash.
+#
+#============================================================================
+LogVolumeLocation=d:/temp/fsc
+
+#============================================================================
+# Description: 
+#     Location of the Logging specific config file.
+#     In the case of log4j it is log4j.xml file
+# Note: Use "\\" for File Separator if using backward slash.
+#
+#============================================================================
+LogConfigLocation=log4j.xml
+
+#============================================================================
+# Description: 
+#     Number of tries to write log MetaData xml file in case the file is locked
+#     by other MetaData Writer threads. The interval for retry is 0.5 seconds.
+#
+#   Default
+#     5
+#============================================================================
+MaxTries=0
+
+#============================================================================
+# Description: 
+#     Write LogWriter debug messages on to the console
+#
+#   Default
+#     false
+#============================================================================
+LogManager.Debug=false
+
+#==============================================================================
+# Advanced properties
+# LogWriter Internal logger implementation class.
+#==============================================================================
+LogSystemClassName=com.teamcenter.infrastructure.logmanager.writer.internal.log4j.Log4jInternalLogger

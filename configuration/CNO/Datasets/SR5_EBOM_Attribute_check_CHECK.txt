@@ -1,0 +1,61 @@
+############################################################################################################
+#  CNO Check Definition File
+############################################################################################################
+# Version History
+#
+# Version    Date           Name               Description of Change
+# 1.0        24-01-2022     Frithjof Streitz     Initial
+############################################################################################################
+
+C:ItemRevision>view:bl_rev_last_release_status§not allowed§empty~should not be empty
+
+C:ItemRevision>view:bl_rev_last_release_status§not allowed§80*~WARNING: INFO: should not contain Part with an Obsolete status
+#C:ItemRevision>view:bl_rev_last_release_status§not allowed§80*&&90*~WARNING: INFO: should not contain Part with an Obsolete status
+C:ItemRevision>view:bl_rev_last_release_status§not allowed§90*~WARNING: INFO: should not contain Part with an Discontinued status
+
+
+
+
+C:ItemRevision>view:bl_rev_last_release_status§not allowed§20*~WARNING: INFO: should not contain Part with an Frozen status
+
+
+
+
+C:ItemRevision>view:bl_rev_last_release_status§not allowed§30*~WARNING: INFO: should not contain Part with an Frozen status
+
+
+
+#SR5EngMajorAssyRevision>view:bl_rev_last_release_status§not allowed§empty~should not be empty
+
+
+
+#SR5EngMajorAssyRevision>view:bl_rev_last_release_status§not allowed§80*~WARNING: INFO: should not contain Part with an Obsolete status
+
+
+
+#SR5EngMajorAssyRevision>view:bl_rev_last_release_status§not allowed§90*~WARNING: INFO: should not contain Part with an Discontinued status
+
+
+
+#SR5EngMajorAssyRevision>view:bl_rev_last_release_status§not allowed§20*~WARNING: INFO: should not contain Part with an Frozen status
+
+
+
+#SR5EngMajorAssyRevision>view:bl_rev_last_release_status§not allowed§30*~WARNING: INFO: should not contain Part with an Frozen status
+#Check Type=C:ItemRevision Property=?object_type
+
+#Check Type=IMAN_specification Property=secondary_object
+#CATProduct:CATProduct or Part or Drawing§exist§*~do not exist
+#CATPart:CATProduct or Part or Drawing§exist§*~do not exist
+#CATDrawing:CATProduct or Part or Drawing§exist§*~do not exist
+#Check Type=C:Dataset Property=?object_type
+#C:Dataset:Dataset Type§exist§CATDrawing~do not exist
+#Check Type=C:Dataset Property=?object_type
+#ID=ID1;CRITERIA=AND;CHECK=C:Dataset:Dataset Type§exist§CATPart~do not exist
+#ID=ID1;CRITERIA=AND;CHECK=C:Dataset:Dataset Type§exist§CATProduct~do not exist
+#ID=ID1;CRITERIA=AND;CHECK=C:Dataset:Dataset Type§exist§CATDrawing~do not exist
+C:Dataset:Dataset Type§exist§CATPart~WARNING: INFO: CATPart does not exist
+C:Dataset:Dataset Type§exist§CATProduct~WARNING: INFO: CATProduct does not exist
+C:Dataset:Dataset Type§exist§CATDrawing~WARNING: INFO: CATDrawing does not exist
+#Check C:Dataset:sr5QCheckEvalulation
+C:Dataset:sr5QCheckEvaluation§eq§IO~WARNING: INFO: value is not valid

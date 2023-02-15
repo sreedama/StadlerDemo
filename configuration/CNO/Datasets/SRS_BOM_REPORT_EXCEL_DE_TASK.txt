@@ -1,0 +1,28 @@
+############################################################################################################
+#  CNO Task Definition File
+############################################################################################################
+# Version History
+#
+# Version    Date           Name               Description of Change
+# 1.0        22-03-2022     user01     Initial
+############################################################################################################
+
+[TASK_LIST]
+ID=attached report inside WF
+TYPE_LIST=C:ItemRevision
+#variant link report to targets:
+#ACTION_OBJECT=ROOT
+#variant link report to workflow references:
+ACTION_OBJECT=WORKFLOW
+ACTION_ID_LIST=SaveReportAction
+
+[ACTION_LIST]
+ID=SaveReportAction
+TYPE=SAVE_REPORT
+SAVE_DATASET_NAME=[item_id]-[item_revision_id]-[sr5ExternalRevision]-BOM-Reports_De - DATE
+SAVE_DATASET_TYPE=PDF
+SAVE_NAMED_REFERENCE=PDF_Reference
+#variant link report to targets:
+#SAVE_RELATION_TYPE=TC_Attaches
+#variant link report to workflow references:
+SAVE_RELATION_TYPE=root_reference_attachments

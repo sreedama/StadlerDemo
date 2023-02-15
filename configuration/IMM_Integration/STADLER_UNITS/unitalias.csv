@@ -1,0 +1,420 @@
+SquareKiloMeter;km²
+SquareKiloMeter;km^2
+SquareKiloMeter;km2
+CubicKiloMeter;km³
+CubicKiloMeter;km^3
+CubicKiloMeter;km3
+Hektar;ha
+Hektar;HA
+Hektar;hA
+Hektar;Ha
+UNITLESS;UNITLESS
+UNITLESS;unitless
+Celsius;°C
+Celsius;degree C
+Celsius;C
+Celsius;Cdeg
+Fahrenheit;°F
+Fahrenheit;degree F
+Fahrenheit;Fdeg
+Kelvin;K
+Kelvin;Kdeg
+Rankine;°Ra
+Hour;h
+Hour;hr
+Minute;min
+Second;s
+Second;sec
+MilliSecond;ms
+Dyne;dyne
+GramForce;gf
+KilogramForce;kgf
+KiloNewton;kN
+MilliNewton;mN
+Newton;Newton
+Newton;N
+OunceForce;ozf
+PoundForce;lbf
+HectoMeter;hm
+KiloMeter;km
+DeciMeter;dm
+DekaMeter;dam
+Meter;m
+CentiMeter;cm
+MilliMeter;mm
+MicroMeter;µm
+Mile;mi
+Furlong;furlong
+Yard;yd
+Foot;ft
+Inch;in
+Mil;mil
+Pars;pc
+League;league
+Lightyear;ly
+NauticalMile;M
+NanoMeter;nm
+SurveyFoot;usFt
+Hektar;ha
+Ar;ar
+SquareMeter;m²
+SquareMeter;m^2
+SquareMeter;m2
+SquareDeziMeter;dm²
+SquareDeziMeter;dm^2
+SquareDeziMeter;dm2
+SquareCentiMeter;cm²
+SquareCentiMeter;cm^2
+SquareCentiMeter;cm2
+SquareMilliMeter;mm²
+SquareMilliMeter;mm^2
+SquareMilliMeter;mm2
+SquareInch;in^2
+SquareInch;in2
+SquareInch;in²
+SquareFoot;ft^2
+SquareFoot;ft2
+SquareFoot;ft²
+SquareYard;yd^2
+SquareYard;yd2
+SquareYard;yd²
+Acren;acre
+SquareMile;mi^2
+SquareMile;mi2
+SquareMile;mi²
+10^-3 km/km;10^-3 km/km
+10^-3 hm/hm;10^-3 hm/hm
+10^-3 dam/dam;10^-3 dam/dam
+10^-3 m/m;10^-3 m/m
+10^-3 dm/dm;10^-3 dm/dm
+10^-3 cm/cm;10^-3 cm/cm
+10^-3 mm/mm;mm/mm
+10^-3 mm/mm;10^-3 mm/mm
+10^-3 µm/µm;10^-3 µm/µm
+10^-3 mi/mi;10^-3 mi/mi
+10^-3 furlong/furlong;10^-3 furlong/furlong
+10^-3 yd/yd;10^-3 yd/yd
+10^-3 ft/ft;10^-3 ft/ft
+10^-3 in./in.;10^-3 in./in.
+10^-3 mil/mil;10^-3 mil/mil
+10^-3 pc/pc;10^-3 pc/pc
+10^-3 ly/ly;10^-3 ly/ly
+10^-3 league/league;10^-3 league/league
+10^-3 M/M;10^-3 M/M
+10^-3 nm/nm;10^-3 nm/nm
+10^-3 usFt/usFt;10^-3 usFt/usFt
+Atmosphere;atm
+Bar;bar
+CentiMetersOfMercury;CentiMetersOfMercury
+DynePerCentiMeterSquared;dyne/cm^2
+InchOfMercury;InchOfMercury
+KilogramPerCentiMeterSquared;kg/cm^2
+KilogramPerCentiMeterSquared;kg/cm2
+KilogramPerCentiMeterSquared;kg/cm²
+KilogramPerMeterSquared;kg/m^2
+KilogramPerMeterSquared;kg/m2
+KilogramPerMeterSquared;kg/m²
+KilogramPerMeterSquared;kg_m2
+MilliNewtonPerSquareMilliMeter;kPa
+Ksi;ksi
+NewtonPerSquareMilliMeter;MPa
+Microbar;microbar
+Millibar;mbar
+MilliMeterOfMercury;MilliMeterOfMercury
+MilliMeterOfMercury;mmHg
+GigaPascal;GPa
+NewtonPerSquareMilliMeter;N/mm²
+NewtonPerSquareMilliMeter;N/mm^2
+NewtonPerSquareMilliMeter;N/mm^2(MPa)
+NewtonPerSquareMilliMeter;N_mm2
+NewtonPerSquareMilliMeter;MPa
+Pascal;Pa
+NewtonPerSquareMeter(Pascal);N/m²(Pa)
+NewtonPerSquareMeter(Pascal);N/m^2(Pa)
+NewtonPerSquareMeter;N/m²
+NewtonPerSquareMeter;N/m2
+NewtonPerSquareMeter;N/m^2
+NewtonPerSquareMeter;N_m2
+PoundPerFootSquared;lbm/ft^2
+PoundPerFootSquared;lbm/ft2
+PoundPerFootSquared;lbm/ft²
+PoundPerFootSquared;lbm_ft2
+PoundPerSquareInch;psi
+PoundalPerInchSquared;pdl/ft^2
+PoundalPerInchSquared;pdl/ft2
+PoundalPerInchSquared;pdl/ft²
+PoundalPerInchSquared;pdl_ft2
+PoundForcePerSquareInch;psi(f)
+TonPerFootSquared;ton/ft^2
+TonPerFootSquared;ton/ft2
+TonPerFootSquared;ton/ft²
+TonPerFootSquared;ton_ft2
+TonPerInchSquared;ton/in^2
+TonPerInchSquared;ton/in2
+TonPerInchSquared;ton/in²
+TonPerInchSquared;ton_in2
+Torr;mmHg
+Ampere;A
+Ampere;Ampere
+MilliAmpere;mA
+MilliAmpere;MilliAmpere
+GramPerCubicCentiMeter;g/cm³
+GramPerCubicCentiMeter;g/cm^3
+GramPerCubicCentiMeter;g/cm3
+GramPerCubicCentiMeter;g_cm3
+GramPerCubicMilliMeter;g/mm³
+GramPerCubicMilliMeter;g/mm^3
+GramPerCubicMilliMeter;g/mm3
+GramPerCubicMilliMeter;g_mm3
+GramPerCubicMeter;g/m³
+GramPerCubicMeter;g/m^3
+GramPerCubicMeter;g/m3
+GramPerCubicMeter;g_m3
+KilogramPerCubicMeter;kg/m³
+KilogramPerCubicMeter;kg/m^3
+KilogramPerCubicMeter;kg/m3
+KilogramPerCubicMeter;kg_m3
+KilogramPerCubicMiliMeter;kg/mm³
+KilogramPerCubicMiliMeter;kg/mm^3
+KilogramPerCubicMiliMeter;kg/mm3
+KilogramPerCubicMiliMeter;kg_mm3
+MilliGramPerCubicMeter;mg/m³
+MilliGramPerCubicMeter;mg/m^3
+MilliGramPerCubicMeter;mg/m3
+MilliGramPerCubicMeter;mg_m3
+OuncePerGallon;oz/gal
+PoundMassperCubicFeet;lbm/ft³
+PoundMassperCubicFeet;lbm/ft^3
+PoundMassperCubicFeet;lbm/ft3
+PoundMassperCubicFeet;lbm_ft3
+PoundMassperCubicInch;lbm/in³
+PoundMassperCubicInch;lbm/in^3
+PoundMassperCubicInch;lbm/in3
+PoundMassperCubicInch;lbm_in3
+TonPerCubicYard;ton/yard³
+TonPerCubicYard;ton/yard^3
+TonPerCubicYard;ton/yard3
+TonPerCubicYard;ton_yard3
+Carat;carat
+Grain;gr
+Gram;g
+Kilogram;kg
+Megagram;Mg
+Microgram;µg
+Milligram;mg
+Ounce;oz
+OunceTroy;ozt
+Pennyweight;dwt
+Pound;lbm
+PoundTroy;lbt
+Stone;st
+LongTon;ltn
+ShortTon;tn
+Tonne;t
+KiloVolt;kV
+Volt;V
+MilliVolt;mV
+MicroVolt;µV
+BTUPerHour;BTU/hr
+BTUPerHour;BTU_hr
+BTUPerMinute;BTU/min
+BTUPerMinute;BTU_min
+BTUPerSecond;BTU/s
+BTUPerSecond;BTU_s
+CaloriePerSecond;cal/s
+CaloriePerSecond;cal_s
+Horsepower;hp
+Kilowatt;kW
+Megawatt;MW
+PoundMassFeetPerMinute;lbm.ft/min
+PoundMassFeetPerSecond;lbm.ft/s
+Watt;W
+Watt;Watt
+Watt;J/s
+Watt;J_s
+Kilomole;kmol
+Micromole;µmol
+Millimole;mmol
+Mole;mol
+Attojoule;aJ
+BritishThermalUnit;BTU
+Calorie;cal
+DyneCentiMeter;dyne.cm
+Electronvolt;eV
+Erg;erg
+Gigajoule;GJ
+GigawattHour;GWh
+GigawattHour;GW.hr
+GramForceCentiMeter;gf.cm
+HorsepowerHour;hp.hr
+Joule;Joule
+Joule;J
+Kilocalorie;kcal
+KiloelectronVolt;keV
+Kilojoule;kJ
+KilowattHour;kWh
+KilowattHour;kW.hr
+MegaelectronVolt;MeV
+Megajoule;MJ
+MegawattHour;MWh
+MegawattHour;MW.hr
+Microjoule;microJ
+Millijoule;mJ
+Nanojoule;nJ
+NewtonMeter;Nm
+NewtonMeter;N.m
+OunceForceInch;ozf.in
+PoundForceFoot;lbf.ft
+PoundForceInch;lbf.in
+PoundalFoot;pdl.ft
+Therm;th
+WattHour;Wh
+WattHour;W.hr
+WattSecond;Ws
+WattSecond;W.s
+Revolution;r
+Radian;rad
+Degree;deg
+Degree;degrees
+Microradian;microRad
+Milliradian;mrad
+BTU/lbm-°F;BTU/lbm-°F
+BTU/lb-°C;BTU/lb-°C
+BTU/lb-°F;BTU/lb-°F
+kcal/kg-°C;kcal/kg-°C
+cal/g-°C;cal/g-°C
+cal/lb-°F;cal/lb-°F
+in^2/s^2-°F;in^2/s^2-°F
+W/(m K);W/(m K)
+W/(m K);W m^-1 K^-1
+W/(m K);W/m-K
+W/(m K);W/m*K
+W/(m K);W_m_Kdeg
+W/(m °C);W/(m °C)
+W/(m °C);W/m-°C
+W/(m °C);W/m-C
+µW/(m °C);µW/(m °C)
+µW/(m °C);µW/m-°C
+µW/(m °C);microW/m-°C
+BTU-in/hr-ft^2-°F;BTU-in/hr-ft^2-°F
+cal.cm/sec-cm^2-°C;cal.cm/sec-cm^2-°C
+ft-lb.in./hr-ft^2-°F;ft-lb.in./hr-ft^2-°F
+J.m/min-m^2-°C;J.m/min-m^2-°C
+kcal/m-hr-°C;kcal/m-hr-°C
+lb/s-°F;lb/s-°F
+cal.cm/sec-cm^2-°C;cal.cm/sec-cm^2-°C
+lbm-in/s^3-°F;lbm-in/s^3-°F
+J/(kg K);J/(kg K)
+J/(kg K);J_kg_Kdeg
+J/(kg K);J kg^-1 K^-1
+J/(kg K);J/kg-K
+kJ/(kg K);kJ/(kg K)
+J/(g K);J/(g K)
+J/(g K);J/g-K
+J/(g °C);J/(g °C)
+J/(g °C);J/g-C
+J/(kg °C);J/(kg °C)
+J/(kg °C);J/kg-C
+µJ/(kg °C);µJ/(kg °C)
+µJ/(kg °C);µJ/kg-°C
+µJ/(kg °C);microJ/kg-C
+Percent;%
+Permil;‰
+CubicMeter;m³
+CubicMeter;m^3
+CubicMeter;m3
+CubicKiloMeter;km³
+CubicKiloMeter;km^3
+CubicKiloMeter;km3
+CubicDeziMeter;dm³
+CubicDeziMeter;dm^3
+CubicDeziMeter;dm3
+CubicCentiMeter;cm³
+CubicCentiMeter;cm^3
+CubicCentiMeter;cm3
+CubicMilliMeter;mm³
+CubicMilliMeter;mm^3
+CubicMilliMeter;mm3
+CubicInch;in³
+CubicInch;in^3
+CubicInch;in3
+CubicFoot;ft³
+CubicFoot;ft3
+CubicFoot;ft^3
+CubicYard;yd³
+CubicYard;yd^3
+CubicYard;yd3
+CubicMile;mi³
+CubicMile;mi^3
+CubicMile;mi3
+Pascalseconds;Pa s
+kg/(m s);kg/(m s)
+kg/(m s);kg m^-1 s^-1
+kg/(m s);kg/m-sec
+kg/(mm s);kg/(mm s)
+kg/(mm s);kg/mm-sec
+dyn s/cm²;dyn s/cm²
+dyn s/cm²;dyn s/cm^2
+dyn s/cm²;dyn s cm^-2
+SquareMeterPerSecond;m²/s
+SquareMeterPerSecond;m-m/s
+SquareMeterPerSecond;m^2/s
+SquareMeterPerSecond;m^2 s^-1
+SquareMeterPerSecond;m2_s
+SquareMillimeterPerSecond;mm²/s
+SquareMillimeterPerSecond;mm^2/s
+SquareFootPerSecond;ft²/s
+SquareFootPerSecond;ft^2/s
+MeterPerSecond;m/s
+MeterPerSecond;m_s
+KilometerPerHour;km/h
+KilometerPerHour;km_h
+MillimeterPerSecond;mm/s
+MillimeterPerSecond;mm_s
+1/K;1/K
+10^-6 /K;10^-6 /K
+10^-6 /K;10^-6/K
+10^-6 /K;10-6/K
+10^-6 /K;10-6 /K
+1/K;_Kdeg
+1/°C;1/°C
+1/°C;_Cdeg
+1/°C;1/C
+KilogramPerMole;kg/mol
+KilogramPerMole;kg_mol
+GramPerMole;g/mol
+GramPerMole;g_mol
+Poundmole;lb-mol
+abampere;aA
+Centipoise;cP
+Poise;P
+PoundPerInchSecond;lbm/in-sec
+KiloAmpere;kA
+MicroAmpere;µA
+NanoAmpere;nA
+foot-pound force;ft lbs
+SquareCentermeterPerSecond;cm²/s
+1/F;1/F
+InchPerSecond;in/s
+SiemensPerMeter;S/m
+SiemensPerCentiMeter;S/cm
+SiemensPerMilliMeter;S/mm
+OhmMeter;Ohm m
+OhmMeter;Ω m
+OhmCentiMeter;Ohm cm
+OhmCentiMeter;ohm-cm
+OhmCentiMeter;Ω cm
+OhmMilliMeter;Ohm mm
+OhmMilliMeter;Ω mm
+JoulePerSquareMeter;J/m²
+JoulePerSquareMeter;J_m2
+JoulePerSquareMeter;J/m2
+JoulePerSquareCentiMeter;J/cm²
+JoulePerSquareCentiMeter;J/cm2
+JoulePerSquareCentiMeter;J_cm2
+JoulePerSquareMilliMeter;J/mm²
+JoulePerSquareMilliMeter;J/mm2
+JoulePerSquareMilliMeter;J_mm2
+kWh/kg;kWh/kg
+Wh/kg;Wh/kg
+kWh/g;kWh/g

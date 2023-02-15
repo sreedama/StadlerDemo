@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<TcBusinessDataIncludes currentTemplateVersion="13.0_0" displayName="Stadler Rail Base Template SR5" enableOpsDataDeploy="true" guid="03AF295AA7927D3DA7F510C152B87D5E" isDescriptionMandatory="false" name="sr5stadlerrailbase" optional="true" prefixes="SR5" teamcenterTemplate="false">
+    <include file="foundation_template.xml"/>
+    <include file="aws2_template.xml"/>
+    <include file="cm_template.xml"/>
+    <include file="integration4catia_template.xml"/>
+    <include file="materialmgmt_template.xml"/>
+    <include file="vendormanagement_template.xml"/>
+    <include file="activeworkspacebom_template.xml"/>
+    <include file="epa0easyplanawinfra_template.xml"/>
+    <include file="Cm1cmaws_template.xml"/>
+    <include file="mbc0mfgbvrcore_template.xml"/>
+    <include file="epc0mfgbvrmaturity_template.xml"/>
+    <include file="dma1docmgmtaw_template.xml"/>
+</TcBusinessDataIncludes>

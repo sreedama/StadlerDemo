@@ -1,0 +1,8 @@
+############################################################################################################
+#  CNO JOB Definition File
+############################################################################################################
+query=CNO_VFW_QUERY
+expansion=CNO_VFW_EXAMPLE_E-PartEXPANSION
+property=CNO_VFW_EXAMPLE_E-PartPROPERTY
+check=CNO_VFW_EXAMPLE_E-PartCHECK
+task=CNO_VFW_EXAMPLE_E-PartTASK

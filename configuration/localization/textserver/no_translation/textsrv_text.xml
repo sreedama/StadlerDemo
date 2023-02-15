@@ -1,0 +1,326 @@
+<?xml version="1.0" encoding="us-ascii" standalone="yes"?>
+<!--
+===============================================================================
+                Copyright (c) 2008 Siemens PLM Software
+                   Unpublished - All Rights Reserved
+===============================================================================
+File description:
+
+            Module: TextServer
+
+            XML File defining ___ module text/error messages.
+            This was previously done in UIH/UIL/VIL format.
+ -->
+<!-- There is no need to translate this file since it contains resources that are untranslatable -->
+<textsrv filename="textsrv_text.xml" xmlns:xi="http://www.w3.org/2001/XInclude">
+
+    <!-- File with translatable resources -->
+    <xi:include href="textsrv_text_locale.xml" parse="xml"/>
+
+    <!-- ************************ -->
+    <!-- UNTRANSLATABLE RESOURCES -->
+    <!-- ************************ -->
+
+    <!-- SECTION MAP JAVAEE, .NET, W3C STANDARDS TO TEAMCENTER STANDARD                                      -->
+    <!-- ONLY FOR COMPATIBILITY WITH PREVIOUS CODE VERSIONS => DO NOT MODIFY THIS SECTION                    -->
+    <!-- When creating a custom locale, add a key to define the mapping between the JavaEE, .Net and W3C     -->
+    <!-- standardized locale name to the Teamcenter standardized locale name (i.e. the name of the directory -->
+    <!-- where the customized resources are located).                                                        -->
+    <!-- For JavaEE and .Net, a key is added if being given language_COUNTRY, COUNTRY is not the Teamcenter  -->
+    <!-- standard.                                                                                           -->
+    <!-- For W3C, a key is added if the W3C standard is not the Teamcenter standard, or if there can be more -->
+    <!-- than one W3C standard.                                                                              -->
+    <key id="textsrv_associatedDefaultJavaLocale_br">pt_BR</key>
+    <key id="textsrv_associatedDefaultJavaLocale_cs">cs_CZ</key>
+    <key id="textsrv_associatedDefaultJavaLocale_cn">zh_CN</key>
+    <key id="textsrv_associatedDefaultJavaLocale_de">de_DE</key>
+    <key id="textsrv_associatedDefaultJavaLocale_en">en_US</key>
+    <key id="textsrv_associatedDefaultJavaLocale_es">es_ES</key>
+    <key id="textsrv_associatedDefaultJavaLocale_fr">fr_FR</key>
+    <key id="textsrv_associatedDefaultJavaLocale_it">it_IT</key>
+    <key id="textsrv_associatedDefaultJavaLocale_ja">ja_JP</key>
+    <key id="textsrv_associatedDefaultJavaLocale_jp">ja_JP</key>
+    <key id="textsrv_associatedDefaultJavaLocale_ko">ko_KR</key>
+    <key id="textsrv_associatedDefaultJavaLocale_kr">ko_KR</key>
+    <key id="textsrv_associatedDefaultJavaLocale_pl">pl_PL</key>
+    <key id="textsrv_associatedDefaultJavaLocale_pt">pt_BR</key>
+    <key id="textsrv_associatedDefaultJavaLocale_ru">ru_RU</key>
+    <key id="textsrv_associatedDefaultJavaLocale_tw">zh_TW</key>
+    <key id="textsrv_locale_cs">cz</key>
+    <key id="textsrv_locale_zh">cn</key>
+
+    <!--SECTION MAP JAVA STANDARD TO W3C STANDARD                                                        -->
+    <!--The code already transforms uv_YZ into uv-yz if the key for this locale is not defined.          -->
+    <!--When creating a custom locale, add a key to define the mapping between the Java standardized     -->
+    <!--locale name (i.e. the name of the directory where the customized resources are located), and the -->
+    <!--W3C standard. -->
+    <!--Only mismatches between Java and W3C standards have been added. -->
+    <!-- Key is textsrv_locale_fromJavaToW3C_en_US for instance, and the result is en-us -->
+
+
+    <!-- SECTION DATABASE ENCODING                                                                      -->
+    <!-- When creating a custom locale, add the Java standard code for this locale in the sections      -->
+    <!-- sections corresponding to the matching database encoding (there can be more than one location. -->
+    <!-- This is also the name of the directory where the customized resources are located.             -->
+    <!-- The Java standard for locales is the 2-letter lowercase language code (ISO-639-1), followed by -->
+    <!-- the character _, followed by the 2-letter uppercase country code (ISO-3166) (e.g. da_DK).      -->
+
+    <!-- English only -->
+    <key id="textsrv_dbEncodingName_ASCII">ASCII</key>
+    <key id="textsrv_xmlEncodingName_ASCII">us-ascii</key>
+    <key id="textsrv_encodingLocales_ASCII">en_US</key>    
+
+    <!-- English,
+         Basque (eu_ES),       Catalan (ca_ES),         Danish (da_DK),      Dutch (nl_NL),
+         Faeroese (fo_FO),     Finnish (fi_FI),         French,              German,
+         Icelandic (is_IS),    Irish Gaelic (ga_ie),    Italian,             Norwegian (no_NO),
+         Portuguese (pt_PT),   Scottish Gaelic (gd_GB), Spanish,             Swedish (sv_SE)
+    -->
+    <key id="textsrv_dbEncodingName_ISO8859_1">ISO8859-1</key>
+    <key id="textsrv_xmlEncodingName_ISO8859_1">iso-8859-1</key>
+    <key id="textsrv_encodingLocales_ISO8859_1">en_US;fr_FR;de_DE;it_IT;es_ES;pt_BR</key>
+
+    <!-- English,
+         German,               Albanian(sq_AL),         Croatian (hr_HR),    Czech,
+         Hungarian (hu_HU),    Polish (pl_PL),          Roumanian (ro_RO),   Slovak (sk_SK),
+         Slovene (sl_SI)
+    -->
+    <key id="textsrv_dbEncodingName_ISO8859_2">ISO8859-2</key>
+    <key id="textsrv_xmlEncodingName_ISO8859_2">iso-8859-2</key>
+    <key id="textsrv_encodingLocales_ISO8859_2">en_US;de_DE;cs_CZ;pl_PL</key>
+
+    <!-- English,
+         German,               Danish (da_DK),          Finnish (fi_FI),     Norwegian (no_NO),
+         Swedish (sv_SE),      Estonian (et_EE),        Latvian (lv_LV),     Lithuanian(lt_LT),
+         Greenlandic (kl_GL),  Sami (Lapp) (se_FI)
+    -->
+    <key id="textsrv_dbEncodingName_ISO8859_4">ISO8859-4</key>
+    <key id="textsrv_xmlEncodingName_ISO8859_4">iso-8859-4</key>
+    <key id="textsrv_encodingLocales_ISO8859_4">en_US;de_DE</key>
+
+    <!-- English,
+         Bulgarian (bg_BG),    Byelorussian (Belarusian) (be_BY),     Macedonian (mk_MK),
+         Russian,              Serbian (sr_RS),                       Ukrainian (uk_UA) -->
+    <key id="textsrv_dbEncodingName_ISO8859_5">ISO8859-5</key>
+    <key id="textsrv_xmlEncodingName_ISO8859_5">iso-8859-5</key>
+    <key id="textsrv_encodingLocales_ISO8859_5">en_US;ru_RU</key>
+
+    <!-- English, Arabic (ar_XXXXX, where XXXXX corresponds to your country) -->
+    <key id="textsrv_dbEncodingName_ISO8859_6">ISO8859-6</key>
+    <key id="textsrv_xmlEncodingName_ISO8859_6">iso-8859-6</key>
+    <key id="textsrv_encodingLocales_ISO8859_6">en_US</key>
+
+    <!-- English, Greek (el_GR) -->
+    <key id="textsrv_dbEncodingName_ISO8859_7">ISO8859-7</key>
+    <key id="textsrv_xmlEncodingName_ISO8859_7">iso-8859-7</key>
+    <key id="textsrv_encodingLocales_ISO8859_7">en_US</key>
+
+    <!-- English, Hebrew (he_IL)-->
+    <key id="textsrv_dbEncodingName_ISO8859_8">ISO8859-8</key>
+    <key id="textsrv_xmlEncodingName_ISO8859_8">iso-8859-8</key>
+    <key id="textsrv_encodingLocales_ISO8859_8">en_US</key>
+
+    <!-- English,
+         Basque (eu_ES),       Catalan (ca_ES),         Danish (da_DK),      Dutch (nl_NL),
+         Faeroese (fo_FO),     Finnish (fi_FI),         French,              German,
+         Icelandic (is_IS),    Irish Gaelic (ga_ie),    Italian,             Norwegian (no_NO),
+         Portuguese (pt_PT),   Scottish Gaelic (gd_GB), Spanish,             Swedish (sv_SE)
+    -->
+    <key id="textsrv_dbEncodingName_ISO8859_15">ISO8859-15</key>
+    <key id="textsrv_xmlEncodingName_ISO8859_15">iso-8859-15</key>
+    <key id="textsrv_encodingLocales_ISO8859_15">en_US;fr_FR;de_DE;it_IT;es_ES;pt_BR</key>
+
+    <!-- Japanese EUC -->
+    <!--
+    
+    -->
+    <key id="textsrv_dbEncodingName_EUC">EUC</key>
+    <key id="textsrv_xmlEncodingName_EUC">euc-jp</key>
+    <key id="textsrv_encodingLocales_EUC">en_US;ja_JP</key>
+
+    <!-- Japanese -->
+    <key id="textsrv_dbEncodingName_SJIS">SJIS</key>
+    <key id="textsrv_xmlEncodingName_SJIS">shift_jis</key>
+    <key id="textsrv_encodingLocales_SJIS">en_US;ja_JP</key>
+
+    <!-- Traditional Chinese -->
+    <key id="textsrv_dbEncodingName_BIG5">BIG5</key>
+    <key id="textsrv_xmlEncodingName_BIG5">big5</key>
+    <key id="textsrv_encodingLocales_BIG5">en_US;zh_TW</key>
+
+    <!-- Korean -->
+    <key id="textsrv_dbEncodingName_KSC5601">KSC5601</key>
+    <key id="textsrv_xmlEncodingName_KSC5601">ksc_5601</key>
+    <key id="textsrv_encodingLocales_KSC5601">en_US;ko_KR</key>
+
+    <!-- Simplified Chinese -->
+    <key id="textsrv_dbEncodingName_GB2312">GB2312</key>
+    <key id="textsrv_xmlEncodingName_GB2312">gb18030</key> <!-- Putting GB18030 instead of GB2312 because NX Text layer does not differentiate between the two externally, though internally deals with the encoding as they are -->
+    <key id="textsrv_encodingLocales_GB2312">en_US;zh_CN</key>
+
+    <!-- Eastern European Latin-Alphabet languages such as
+    Polish, Romanian, Bosnian, Croatian, Hungarian, Czech or Slovak. -->
+    <key id="textsrv_dbEncodingName_NT_852">NT-852</key>
+    <key id="textsrv_xmlEncodingName_NT_852">cp852</key>
+    <key id="textsrv_encodingLocales_NT_852">en_US;cs_CZ;pl_PL</key>
+
+    <!-- Hebrew (he_IL) -->
+    <key id="textsrv_dbEncodingName_NT_862">NT-862</key>
+    <key id="textsrv_xmlEncodingName_NT_862">cp862</key>
+    <key id="textsrv_encodingLocales_NT_862">en_US</key>
+
+    <!-- Russian and certain other languages written in the Cyrillic alphabet -->
+    <key id="textsrv_dbEncodingName_NT_866">NT-866</key>
+    <key id="textsrv_xmlEncodingName_NT_866">cp866</key>
+    <key id="textsrv_encodingLocales_NT_866">en_US;ru_RU</key>
+
+    <!-- Eastern European Latin-Alphabet languages such as
+    Polish, Czech, Slovak, Hungarian, Slovene, Bosnian, Croatian, Serbian (Latin script), 
+    Romanian and Albanian. It can also be used for German.  -->
+    <key id="textsrv_dbEncodingName_NT_1250">NT-1250</key>
+    <key id="textsrv_xmlEncodingName_NT_1250">windows-1250</key>
+    <key id="textsrv_encodingLocales_NT_1250">en_US;cs_CZ;de_DE;pl_PL</key>
+
+    <!-- Russian and certain other languages written in the Cyrillic alphabet 
+    such as Russian, Bulgarian, Serbian Cyrillic and other languages. 
+    It is the most widely used for encoding the Bulgarian, Serbian and Macedonian languages. -->
+    <key id="textsrv_dbEncodingName_NT_1251">NT-1251</key>
+    <key id="textsrv_xmlEncodingName_NT_1251">windows-1251</key>
+    <key id="textsrv_encodingLocales_NT_1251">en_US;ru_RU</key>
+
+    <!-- Western European languages -->
+    <key id="textsrv_dbEncodingName_NT_1252">NT-1252</key>
+    <key id="textsrv_xmlEncodingName_NT_1252">windows-1252</key>
+    <key id="textsrv_encodingLocales_NT_1252">en_US;fr_FR;de_DE;it_IT;es_ES;pt_BR</key>
+
+    <!-- Greek (el_GR) -->
+    <key id="textsrv_dbEncodingName_NT_1253">NT-1253</key>
+    <key id="textsrv_xmlEncodingName_NT_1253">windows-1253</key>
+    <key id="textsrv_encodingLocales_NT_1253">en_US</key>
+
+    <!-- English,              Turkish (tr_TR),
+         Basque (eu_ES),       Catalan (ca_ES),         Danish (da_DK),      Dutch (nl_NL),
+         Faeroese (fo_FO),     Finnish (fi_FI),         French,              German,
+         Icelandic (is_IS),    Irish Gaelic (ga_ie),    Italian,             Norwegian (no_NO),
+         Portuguese (pt_PT),   Scottish Gaelic (gd_GB), Spanish,             Swedish (sv_SE)
+    -->
+    <key id="textsrv_dbEncodingName_NT_1254">NT-1254</key>
+    <key id="textsrv_xmlEncodingName_NT_1254">windows-1254</key>
+    <key id="textsrv_encodingLocales_NT_1254">en_US;fr_FR;de_DE;it_IT;es_ES;pt_BR</key>
+
+    <!-- Hebrew (he_IL) -->
+    <key id="textsrv_dbEncodingName_NT_1255">NT-1255</key>
+    <key id="textsrv_xmlEncodingName_NT_1255">windows-1255</key>
+    <key id="textsrv_encodingLocales_NT_1255">en_US</key>
+
+    <!-- Arabic (ar_XXXXX, where XXXXX corresponds to your country) -->
+    <key id="textsrv_dbEncodingName_NT_1256">NT-1256</key>
+    <key id="textsrv_xmlEncodingName_NT_1256">windows-1256</key>
+    <key id="textsrv_encodingLocales_NT_1256">en_US</key>
+
+    <!-- Baltic languages:
+    Estonian, Latvian and Lithuanian. It is also possible to write Polish and German -->
+    <key id="textsrv_dbEncodingName_NT_1257">NT-1257</key>
+    <key id="textsrv_xmlEncodingName_NT_1257">windows-1257</key>
+    <key id="textsrv_encodingLocales_NT_1257">en_US;de_DE;pl_PL</key>
+
+    <!-- UTF-8 => all locales are supported -->
+    <key id="textsrv_dbEncodingName_UTF8">UTF-8</key>
+    <key id="textsrv_xmlEncodingName_UTF8">utf-8</key>
+    <key id="textsrv_encodingLocales_UTF8">cs_CZ;de_DE;en_US;es_ES;fr_FR;it_IT;ja_JP;ko_KR;pl_PL;pt_BR;ru_RU;zh_CN;zh_TW</key>
+
+    <!-- Internal "Ghost" status for VLAAdapter -->
+    <key id="textsrv_TranslationStatus_Name_G"></key>
+    <key id="textsrv_TranslationStatus_Description_G"></key> 
+    
+    <!--This section is used to map locale and autonomy language
+      First read the map numbers,the autonomy_utils will read all mappings to locale_lang_maps
+      user can add more mappings.
+       for example:
+       set "autonomy_locale_lang_map_nums" to 22
+       
+       add  
+       <key id="autonomy_locale_lang_map_locale_22">example</key>
+       <key id="autonomy_locale_lang_map_langua_22">exampleUTF8</key>
+       
+       note: the value of autonomy_locale_lang_map_locale is Teamcenter standardized locale name
+             the value of autonomy_locale_lang_map_langua should be supported  by autonomy       
+             the whole list is:
+       
+        afrikaansUTF8   albanianUTF8    arabicUTF8      armenianUTF8        azeriUTF8  
+        basqueUTF8      belorussianUTF8 bengaliUTF8     bosnianUTF8         bretonUTF8   
+        bulgarianUTF8   burmeseUTF8     catalanUTF8     chineseUTF8         croatianUTF8
+        czechUTF8       danishUTF8      dutchUTF8       englishUTF8         esperantoUTF8 
+        estonianUTF8    ethiopicUTF8    faroeseUTF8     finnishUTF8         frenchUTF8
+        gaelicUTF8      galicianUTF8    georgianUTF8    germanUTF8          greekUTF8
+        gujaratiUTF8    hausaUTF8       hebrewUTF8      hindiUTF8           hungarianUTF8
+        icelandicUTF8   indonesianUTF8  italianUTF8     japaneseUTF8        kannadaUTF8
+        kazakhUTF8      khmerUTF8       koreanUTF8      kurdishUTF8         laoUTF8
+        latinUTF8       latvianUTF8     lithuanianUTF8  luxembourgishUTF8   macedonianUTF8
+        malayUTF8       malayalamUTF8   maoriUTF8       mongolianUTF8       nepaliUTF8
+        norwegianUTF8   riyaUTF8        panjabiUTF8     persianUTF8         polishUTF8
+        portugueseUTF8  pushtoUTF8      romanianUTF8    russianUTF8         serbianUTF8
+        singhaleseUTF8  slovakUTF8      slovenianUTF8   somaliUTF8          spanishUTF8
+        swahiliUTF8     swedishUTF8     tagalogUTF8     tajikUTF8           tamilUTF8
+        tatarUTF8       teluguUTF8      thaiUTF8        tibetanUTF8         turkishUTF8
+        ukrainianUTF8   urduUTF8        uzbekUTF8       vietnameseUTF8      welshUTF8
+        xhosaUTF8       yiddishUTF8     zuluUTF8  
+    -->
+
+    <key id="autonomy_locale_lang_map_nums">13</key>
+
+    <key id="autonomy_locale_lang_map_locale_1">cs_CZ</key>
+    <key id="autonomy_locale_lang_map_langua_1">czechUTF8</key>
+
+    <key id="autonomy_locale_lang_map_locale_2">de_DE</key>
+    <key id="autonomy_locale_lang_map_langua_2">germanUTF8</key>
+
+    <key id="autonomy_locale_lang_map_locale_3">en_US</key>
+    <key id="autonomy_locale_lang_map_langua_3">englishUTF8</key>
+
+    <key id="autonomy_locale_lang_map_locale_4">es_ES</key>
+    <key id="autonomy_locale_lang_map_langua_4">spanishUTF8</key>
+
+    <key id="autonomy_locale_lang_map_locale_5">fr_FR</key>
+    <key id="autonomy_locale_lang_map_langua_5">frenchUTF8</key>
+
+    <key id="autonomy_locale_lang_map_locale_6">it_IT</key>
+    <key id="autonomy_locale_lang_map_langua_6">italianUTF8</key>
+
+    <key id="autonomy_locale_lang_map_locale_7">ja_JP</key>
+    <key id="autonomy_locale_lang_map_langua_7">japaneseUTF8</key>
+
+    <key id="autonomy_locale_lang_map_locale_8">ko_KR</key>
+    <key id="autonomy_locale_lang_map_langua_8">koreanUTF8</key>
+
+    <key id="autonomy_locale_lang_map_locale_9">pl_PL</key>
+    <key id="autonomy_locale_lang_map_langua_9">polishUTF8</key>
+
+    <key id="autonomy_locale_lang_map_locale_10">pt_BR</key>
+    <key id="autonomy_locale_lang_map_langua_10">portugueseUTF8</key>
+
+    <key id="autonomy_locale_lang_map_locale_11">ru_RU</key>
+    <key id="autonomy_locale_lang_map_langua_11">russianUTF8</key>
+
+    <key id="autonomy_locale_lang_map_locale_12">zh_TW</key>
+    <key id="autonomy_locale_lang_map_langua_12">chineseUTF8</key>
+
+    <key id="autonomy_locale_lang_map_locale_13">zh_CN</key>
+    <key id="autonomy_locale_lang_map_langua_13">chineseUTF8</key>
+	
+	<!-- SECTION DEFINING THE SMALLEST OR CUSTOM ENCODING FOR EACH LOCALE:THIS IS USED FOR BMIDE LOCALIZATION VALIDATION -->
+    <key id="locale_validation_encoding_en_US">UTF-8</key>
+    <key id="locale_validation_encoding_cs_CZ">iso-8859-2</key>
+    <key id="locale_validation_encoding_pl_PL">iso-8859-2</key>
+    <key id="locale_validation_encoding_de_DE">iso-8859-1;iso-8859-2</key>
+    <key id="locale_validation_encoding_es_ES">iso-8859-1</key>
+    <key id="locale_validation_encoding_fr_FR">iso-8859-1</key>
+    <key id="locale_validation_encoding_it_IT">iso-8859-1</key>
+    <key id="locale_validation_encoding_pt_BR">iso-8859-1</key>
+    <key id="locale_validation_encoding_ja_JP">shift_jis</key>
+    <key id="locale_validation_encoding_ko_KR">euc_kr</key>
+    <key id="locale_validation_encoding_ru_RU">iso-8859-5</key>
+    <key id="locale_validation_encoding_zh_CN">gb2312</key>
+    <key id="locale_validation_encoding_zh_TW">big5</key> 
+  
+</textsrv>

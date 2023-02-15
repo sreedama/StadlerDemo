@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<preferences version="10.0">
+  <category name="SAP Gateway">
+    <category_description>No description available for this category.</category_description>
+   
+    <preference name="T4ST_PropertyListMode4ImanFile" type="Integer" array="false" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>No description available for this preference</preference_description>
+      <context name="Teamcenter">
+        <value>2</value>
+      </context>
+    </preference>
+    <preference name="T4ST_Property2ProcessList4ImanFile" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>No description available for this preference</preference_description>
+      <context name="Teamcenter">
+        <value>file_name</value>
+        <value>mime_type</value>
+        <value>original_file_name</value>
+      </context>
+    </preference>
+
+  </category>
+</preferences>

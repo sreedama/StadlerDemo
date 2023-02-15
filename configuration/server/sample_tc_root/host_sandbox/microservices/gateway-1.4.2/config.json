@@ -1,0 +1,91 @@
+{
+    "port": 3000,
+    "index": "tc.html",
+    "keyPath": "",
+    "certPath": "",
+    "tlsOptions": {
+        "minVersion": "TLSv1.2"
+    },
+    "maxAge": 15552000,
+    "urlPrefix": "/",
+    "routes": {
+        "tc": {
+            "path": "/tc",
+            "target": "http://localhost:8080/tc"
+        },
+        "vis": {
+            "path": "/VisProxyServlet",
+            "target": "http://localhost:8089/VisProxyServlet"
+        },
+        "easyplan": {
+            "path": "/EasyPlan",
+            "target": "/EasyPlan"
+        },
+        "ngp": {
+            "path": "/ngp",
+            "target": "/ngp"
+        }
+    },
+    "customRoutes": "",
+    "serviceDispatcher": {
+        "alias": {
+            "filerepo": "filerepo",
+            "afx-darsi": "afx-darsi",
+            "tcgql": "tcgql"
+        }
+    },
+    "sso": {
+        "tcSSOAppID": "Teamcenter",
+        "tcSSOURL": "",
+        "tcSSORedirectMethod": "",
+        "tcSSOLogoutURL": "",
+        "proxyServerUrl": "",
+        "queryParams": ""
+    },
+    "fms": {
+        "bootstrapFSCURLs": [  ],
+        "bootstrapClientIP": "",
+        "assignedFSCURLs": [ "http://localhost:4544" ]
+    },
+    "logger": {
+        "logPath": "gateway.log",
+        "level": "info"
+    },
+    "security": {
+        "helmet": {
+            "dnsPrefetchControl": {},
+            "frameguard": false,
+            "hidePoweredBy": {},
+            "hsts": {},
+            "ieNoOpen": {},
+            "noSniff": false,
+            "xssFilter": {}
+        },
+        "cors": {
+        },
+        "csurf": {
+            "cookie": true
+        },
+        "csurfExclusions": [
+            "/AWSSOLogin",
+            "/graphql"
+        ],
+        "userAgentWhiteList": [
+            "Apache-HttpClient",
+            "JavaClient",
+            "JazzHttpClient",
+            "Wink Client"
+        ]
+    },
+    "compression": {},
+    "mime": {
+        "mp4": "video/mp4",
+        "oai": "application/msword",
+        "prt": "application/ug",
+        "svg": "image/svg+xml",
+        "svgz": "image/svg+xml",
+        "vvi": "application/x-visnetwork",
+        "xlsm": "application/vnd.ms-excel.sheet.macroEnabled"
+    },
+    "pingEnabled": true
+}

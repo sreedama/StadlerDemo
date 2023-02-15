@@ -1,0 +1,192 @@
+############################################################################################################
+#  CNO Script Definition File
+#
+# Please notice that syntax errors in one script can cause issues in all scripts in the same file.
+############################################################################################################
+# Version History
+#
+# Version   Date         Name            Description of Change
+# 1.00     26.05.2018   Yalcintepe       Initial
+############################################################################################################
+
+#IMPORTANT: internal scripting
+interpreter=internal
+	
+//extract slice 25
+function extractslice25(attr) {
+    return attr.slice(25,50);
+}
+//extract slice 50
+function extractslice50(attr) {
+    return attr.slice(50,75);
+}
+//extract slice 75
+function extractslice75(attr) {
+    return attr.slice(75,100);
+}
+//extract slice 18
+function extractslice18(attr) {
+    return attr.slice(18,36);
+}
+//extract slce 36
+function extractslice36(attr) {
+    return attr.slice(36,54);
+}
+//extract slice 54
+function extractslice54(attr) {
+    return attr.slice(54,72);
+}
+
+//find Revision
+function Revision(attribut01, attribut02, attribut03) {
+    var returnValue=false;
+    if (attribut02.length<1) {
+        returnValue=attribut03;
+    } else {
+        if(attribut01.indexOf("SR5EngArticle")!=-1 || attribut01.indexOf("SR5CatDefArticle")!=-1 || attribut01.indexOf("SR5GenCatPart")!=-1 || attribut01.indexOf("SR5EleCatPart")!=-1 || attribut01.indexOf("SR5MechCatPart")!=-1 || attribut01.indexOf("SR5CoatingStruct")!=-1 || attribut01.indexOf("SR5TechDocument")!=-1) {
+            returnValue=attribut02.concat("/", attribut03); 
+        }
+    }
+    return returnValue;  
+}
+
+//find Uom
+function Uom(attribut03, type) {
+    var returnValue=false;
+    returnValue=attribut03;
+    if(attribut03.indexOf("piece")!=-1 || attribut03.indexOf("each")!=-1 || attribut03.indexOf("St")!=-1 || attribut03.indexOf("jede")!=-1) {
+        returnValue="STK";
+    }
+    if(type.indexOf("Color Definition")!=-1 || type.indexOf("Farbe")!=-1) {
+        returnValue=" ";
+    }
+    return returnValue;  
+}
+
+//find Quantity
+function Quantity(attribut02, attribut03, type) {
+    var returnValue=false;
+    returnValue=attribut02.slice(0, 5);
+    if (attribut02.length<1) {
+        if(attribut03.indexOf("piece")!=-1 || attribut03.indexOf("each")!=-1 || attribut03.indexOf("St")!=-1 || attribut03.indexOf("jede")!=-1) {
+            returnValue="1";
+        } else {
+            returnValue=" ";
+        }
+    }
+    if(type.indexOf("Color Definition")!=-1 || type.indexOf("Farbe")!=-1) {
+        returnValue=" ";
+    }
+    return returnValue;  
+}
+
+//find Weight
+function Weight(attribut13) {
+    if(attribut13.indexOf("NaN")!=-1 || attribut13.length<1) {
+        attribut13="0";
+    }
+    var pointNum = parseFloat(attribut13);
+#    return Math.round(pointNum*1000)/1000;
+    var returnValue = Math.round(pointNum*1000)/1000;
+    var returnValueBis = returnValue.toString();
+    return returnValueBis.slice(0,7);
+}
+
+//find PartNumber
+function PartNumber(FSFClass, attribut05, attribut06, attribut07, attribut08, type, attribut06SemiFin) {
+    var returnValue=false;
+    if (attribut05.length<1) {
+        attribut05=" ";
+    } else {
+        attribut05=attribut05.slice(0,25);
+    }
+    if(type.indexOf("Engineering Article")!=-1 && attribut06SemiFin.length>0) {
+        attribut06=attribut06SemiFin;
+    }
+    if (attribut06.length<1) {
+        attribut06=" ";
+    } else {
+        attribut06=attribut06.slice(0,25);
+    }
+    attribut07=attribut07.slice(0,23);
+    if (attribut08.length<1) {
+        attribut08=" ";
+    }
+    if(FSFClass.indexOf("1 -")!=-1) {
+        returnValue=" ";
+        returnValue=returnValue.concat("###", " ", "###", attribut07, "###", attribut08, "###", "1");
+    }
+    if(FSFClass.indexOf("2 -")!=-1 || FSFClass.indexOf("3 -")!=-1 || FSFClass.indexOf("4 -")!=-1) {
+        returnValue=attribut05.concat("###", attribut06, "###", attribut07, "###", " ", "###", FSFClass.slice(0,1));
+    }
+    if(FSFClass.indexOf("5 -")!=-1 || FSFClass.indexOf("6 -")!=-1) {
+        returnValue=" ";
+        returnValue=returnValue.concat("###", attribut06, "###", attribut07, "###", " ", "###", FSFClass.slice(0,1));
+    }
+    if(FSFClass.indexOf("7 -")!=-1) {
+        returnValue=attribut05.concat("###", " ", "###", attribut07, "###", attribut08, "###", "7");
+    }
+    if(FSFClass.indexOf("Document")!=-1 || FSFClass.indexOf("Dokument")!=-1) {
+        returnValue=attribut05.concat("###", " ", "###", " ", "###", " ", "###", " ");
+    }
+    if(FSFClass.length<1) {
+        returnValue=attribut05.concat("###", attribut06, "###", attribut07, "###", " ", "###", " ");
+    }
+    if(type.indexOf("Color Definition")!=-1 || type.indexOf("Farbe")!=-1) {
+        returnValue=" ";
+        returnValue=returnValue.concat("###", " ", "###", attribut07, "###", " ", "###", " ");
+    }
+    return returnValue;  
+}
+  
+//find BasicMaterialQuality
+function BasicMaterialQuality(FSFClass, attribut09, attribut10, attribut12, type) {
+    var returnValue=false;
+    if (attribut09.length<1) {
+        attribut09=" ";
+    } else {
+        var arrayOriginal = attribut09.split(",");
+        attribut09=arrayOriginal[0].slice(arrayOriginal[0].indexOf("-")+1);
+        attribut09=attribut09.slice(0,25);
+    }
+    if(FSFClass.indexOf("5 -")!=-1) {
+        if(attribut09.indexOf("Replacement Material")!=-1 || attribut09.indexOf("Ersatzmaterial")!=-1) {
+            attribut09=" ";
+            attribut10=" ";
+        }
+    }
+    if (attribut10.length<1) {
+        attribut10=" ";
+    } else {
+        attribut10=attribut10.slice(0,25);
+    }
+    if (attribut12.length<1) {
+        attribut12=" ";
+    } else {
+        attribut12=attribut12.slice(0,25);
+    }
+    if(FSFClass.indexOf("1 -")!=-1) {
+        returnValue=" ";
+        returnValue=returnValue.concat("###", " ", "###", " ", "###", "nicht zutreffend");
+    }
+    if(FSFClass.indexOf("2 -")!=-1 || FSFClass.indexOf("3 -")!=-1) {
+        returnValue=attribut09.concat("###", attribut10, "###", " ", "###", "nicht zutreffend");
+    }
+    if(FSFClass.indexOf("4 -")!=-1 || FSFClass.indexOf("5 -")!=-1 || FSFClass.indexOf("6 -")!=-1) {
+        returnValue=attribut09.concat("###", " ", "###", " ", "###", "nicht zutreffend");
+    }
+    if(FSFClass.indexOf("7 -")!=-1) {
+         returnValue=attribut09.concat("###", attribut10, "###", " ", "###", " ");
+    }
+    if(FSFClass.indexOf("Document")!=-1 || FSFClass.indexOf("Dokument")!=-1) {
+        returnValue=attribut09.concat("###", " ", "###", " ", "###", " ");
+    }
+    if(FSFClass.length<1) {
+        returnValue=attribut09.concat("###", attribut10, "###", " ", "###", "nicht zutreffend");
+    }
+    if(type.indexOf("Color Definition")!=-1 || type.indexOf("Farbe")!=-1) {
+        returnValue=" ";
+        returnValue=returnValue.concat("###", " ", "###", " ", "###", "nicht zutreffend");
+    }
+    return returnValue;  
+}

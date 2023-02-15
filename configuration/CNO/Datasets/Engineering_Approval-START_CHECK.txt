@@ -1,0 +1,181 @@
+############################################################################################################
+#  CNO Check Definition File
+############################################################################################################
+# Version History
+#
+# Version    Date           Name               Description of Change
+# 1.0        22-03-2022     user01     Initial
+############################################################################################################
+
+#Process and unclear behavior of Teamcenter's customization
+C:EPMTask:num_targets§eq§1~Workflow can be start with only one target, [VAL_OBJECT:num_targets] found~1 target
+#not good for at strat of workflow because workflow is starting
+#C:ItemRevision:fnd0InProcess§not allowed§regex(^[Tt]rue$)~Object is already inside a workflow~no active Workflow is running
+# count eq 0 or previous for the validation via UI
+# count eq 1 for at start of WF
+C:EPMTask:num_targets§count lt 2§*~Object is already inside another workflow, list: [C:EPMTask:object_name]~no active Workflow is running
+
+
+#status of EngArt
+#C:ItemRevision:last_release_status§allowed§empty~Status is already set: [VAL_OBJECT:last_release_status]~In work object
+C:SR5GenEngObjRevision:last_release_status§allowed§empty||20*||30*~Status is already set to: [VAL_OBJECT:last_release_status]~In work object or with status 20 or 30
+
+
+#history: not needed anymore
+#C:Item:object_name§count eq 0§*~do not start WF on Item~do not start on Item
+
+
+#Status of children
+#obsolete because of SRS-2207, Catalog and Standard might be 70 -> Warning only
+#C:ItemRevision>view:bl_rev_last_release_status§not allowed§70*&&80*&&90*~occurences [VAL_OBJECT:bl_rev_object_string] with status 70 and higher, must be replaced~status on level one is accepted: In Work, 20, 30, 40 or 50. -exception on Catalog-
+#new need for catalog without status inside a BOM: (scope=occurence;)
+#or color or coating or semi-finnished product or they AltRep
+ID=40Child3;CRITERIA=CONDITION;CHECK=C:ItemRevision>view:DB_bl_rev_object_type§allowed§SR5GenCatPartRevision||SR5CatalogPartRevision||SR5EleCatPartRevision||SR5MechCatPartRevision||SR5ColorDefRevision||SR5CoatingStructRevision||SR5CatDefArticleRevision||SR5CatDefArtARRevision||SR5GenCatPartARRevision||SR5EngRawArticleRevision
+ID=40Child3;CRITERIA=AND;CHECK=C:ItemRevision>view:bl_rev_last_release_status§not allowed§empty&&20*&&30*~[VAL_OBJECT:bl_rev_object_type] occurences [VAL_OBJECT:bl_rev_object_string] with smaller status than 40 is not allowed~status of [VAL_OBJECT:bl_rev_object_type] on level [VAL_OBJECT:level] is 40 and higher
+
+#ID=40Child31
+C:ItemRevision>view:bl_rev_last_release_status§not allowed§80*&&90*~occurences [VAL_OBJECT:bl_rev_object_string] with status 80 and higher, must be replaced~status on level one is accepted: In Work, 20, 30, 40 or 50. -exception on Catalog-
+
+ID=40Child32;CRITERIA=CONDITION;CHECK=C:ItemRevision>view:DB_bl_rev_object_type§allowed§SR5GenCatPartRevision||SR5CatalogPartRevision||SR5EleCatPartRevision||SR5MechCatPartRevision||SR5CatDefArticleRevision||SR5CatDefArtARRevision||SR5GenCatPartARRevision||SR5ColorDefRevision||SR5CoatingStructRevision
+ID=40Child32;CRITERIA=AND;CHECK=C:ItemRevision>view:bl_rev_last_release_status§not allowed§70*~WARNING: [VAL_OBJECT:bl_rev_object_type] occurences [VAL_OBJECT:bl_rev_object_string] with status 70 might be replaced~status of [VAL_OBJECT:bl_rev_object_type] is not 70
+
+ID=40Child33;CRITERIA=CONDITION;CHECK=C:ItemRevision>view:DB_bl_rev_object_type§not allowed§SR5GenCatPartRevision&&SR5CatalogPartRevision&&SR5EleCatPartRevision&&SR5MechCatPartRevision&&SR5CatDefArticleRevision&&SR5CatDefArtARRevision&&SR5GenCatPartARRevision&&SR5ColorDefRevision&&SR5CoatingStructRevision&&SR5EngRawArticleRevision
+ID=40Child33;CRITERIA=AND;CHECK=C:ItemRevision>view:bl_rev_last_release_status§not allowed§70*~[VAL_OBJECT:bl_rev_object_type] occurences [VAL_OBJECT:bl_rev_object_string] with status 70 must be replaced~status of [VAL_OBJECT:bl_rev_object_type] is not 70
+
+
+#Status of related Doc
+SR5TechDocumentRevision:last_release_status§allowed§50*~Doc with required relation / specifying relation must have Status 50 ~Doc with required relation / specifying relation have Status 50 
+
+
+#position = BOM sequence
+C:ItemRevision>view:position_ID§eq§count([C:ItemRevision>view:position]_*)~Position and ItemID combination is not valid~position and ItemID are unique combination
+
+
+#Q-Checker
+CATPart:sr5QCheckEvaluation§not allowed§empty&&KO~Q-Checker Check is missing or KO~Q-Checker Check ok
+CATProduct:sr5QCheckEvaluation§not allowed§empty&&KO~Q-Checker Check is missing or KO~Q-Checker Check ok
+CATDrawing:sr5QCheckEvaluation§not allowed§empty&&KO~Q-Checker Check is missing or KO~Q-Checker Check ok
+
+
+#seleted object
+#root:C:ItemRevision:DB_Type§allowed§SR5EngEndItemRevision||SR5EngMajorAssyRevision||SR5EngArticleRevision||SR5NonERPArticleRevision||SR5GenCatPartRevision||SR5CatalogPartRevision||SR5EleCatPartRevision||SR5MechCatPartRevision~only Eng Article or Eng End or Eng Major or non ERP Article or Catalog Part are accepted, [VAL_OBJECT:DB_Type] not accepted~Eng Article or Eng End or Eng Major or non ERP Article or Catalog Part is accepted
+#root:C:ItemRevision:DB_Type§allowed§SR5EngEndItemRevision||SR5EngMajorAssyRevision||SR5EngArticleRevision||SR5NonERPArticleRevision~only Eng Article or Eng End or Eng Major or non ERP Article are accepted, [VAL_OBJECT:DB_Type] not accepted~Eng Article or Eng End or Eng Major or non ERP Article is accepted
+#SR5ColorDefRevision||
+#SR5EngArticleARRevision
+root:C:ItemRevision:DB_Type§allowed§SR5EngEndItemRevision||SR5EngMajorAssyRevision||SR5EngArticleRevision||SR5NonERPArticleRevision||SR5EngArticleARRevision||SR5EngInstallLocRevision~only Eng Article or Eng End or Eng Major or non ERP Article or Alt. Rep. of Eng Article or Eng. Install. Loc. are accepted, [VAL_OBJECT:DB_Type] not accepted~[VAL_OBJECT:DB_Type] is accepted
+
+
+
+#Group Member
+##catalog Part
+#ID=40Group1;CRITERIA=CONDITION;CHECK=root:C:SR5GenEngObjRevision:DB_Type§allowed§SR5CatalogPartRevision||SR5GenCatPartRevision||SR5EleCatPartRevision||SR5MechCatPartRevision
+#ID=40Group1;CRITERIA=AND;CHECK=GroupMember:group§count gt 0§MDM.Global.Stadler~Only members of MDM group are allowed to set status on Catalog Part~User belongs to MDM Group
+#
+#ID=40Group2;CRITERIA=CONDITION;CHECK=root:C:SR5GenEngObjRevision:DB_Type§allowed§SR5CatalogPartRevision||SR5GenCatPartRevision||SR5EleCatPartRevision||SR5MechCatPartRevision
+#ID=40Group2;CRITERIA=AND;CHECK=C:SR5GenEngObjRevision:Current Group Name§allowed§MDM.Global.Stadler~WARNING: INFO: you are not logged with MDM~Logged in with MDM group
+
+#MCAD.Engineering.*.Stadler / Designer , Approver
+ID=40Group3;scope=object;CRITERIA=CONDITION;CHECK=root:C:SR5GenEngObjRevision:DB_Type§allowed§SR5EngEndItemRevision||SR5EngMajorAssyRevision||SR5EngArticleRevision||SR5NonERPArticleRevision||SR5EngArticleARRevision||SR5EngInstallLocRevision
+#ID=40Group3;scope=object;CRITERIA=AND;CHECK=root:C:SR5GenEngObjRevision:Current Group Name§allowed§regex(^MCAD\.(Engineering|Konstruktion)\.STA.\.Stadler$)~WARNING: INFO: you are not logged with MCAD.Engineering.*.Stadler~Logged in with MCAD.Engineering.*.Stadler group
+ID=40Group3;scope=object;CRITERIA=AND;CHECK=root:C:SR5GenEngObjRevision:Current Group Name§allowed§regex(^MCAD\.(Engineering|Konstruktion)\.Internal\.Stadler$)~WARNING: INFO: you are not logged with MCAD.Engineering.Internal.Stadler~Logged in with MCAD.Engineering.Internal.Stadler group
+#ID=40Group3;scope=object;CRITERIA=AND;CHECK=root:C:SR5GenEngObjRevision:Current Role Name§allowed§Designer||Konstrukteur||Approver~you are not logged with MCAD.Engineering.*.Stadler / Designer , Approver~Logged in with MCAD.Engineering.*.Stadler / Designer , Approver
+
+#if does not need to be "logged with" but only "belongings to" then change  the expansion and use the following:
+ID=40Group4;CRITERIA=CONDITION;CHECK=root:C:SR5GenEngObjRevision:DB_Type§allowed§SR5EngEndItemRevision||SR5EngMajorAssyRevision||SR5EngArticleRevision||SR5NonERPArticleRevision||SR5EngArticleARRevision||SR5EngInstallLocRevision
+#ID=40Group4;CRITERIA=AND;CHECK=GroupMember:group§count gt 0§regex(^MCAD\.(Engineering|Konstruktion)\.STA.\.Stadler$)~Only members of MCAD.Engineering.*.Stadler group are allowed to set status~User belongs to MCAD.Engineering.*.Stadler Group
+ID=40Group4;CRITERIA=AND;CHECK=GroupMember:group§count gt 0§regex(^MCAD\.(Engineering|Konstruktion)\.Internal\.Stadler$)~Only members of MCAD.Engineering.Internal.Stadler group are allowed to set status~User belongs to MCAD.Engineering.Internal.Stadler Group
+
+
+#SAP
+#ID=40Child2;scope=object;CRITERIA=CONDITION;CHECK=C:SR5GenEngObjRevision:DB_Type§not allowed§SR5NonERPArticleRevision&&SR5CatDefArticleRevision&&SR5CatDefArtARRevision
+#ID=40Child2;scope=object;CRITERIA=AND;CHECK=C:SR5GenEngObjRevision:object_desc§allowed§empty||regex(^.{1,30}$)~WARNING: INFO: for SAP compatibility purpose the description must be shorter than 30, if longer only the first 30 charaters will be transfer~lenght of description is compatible with SAP limitation
+
+#ID=40Item1;scope=object;CRITERIA=CONDITION;CHECK=C:SR5GenEngObj:DB_Type§not allowed§SR5NonERPArticle&&SR5CatDefArticle&&SR5CatDefArtAR
+#ID=40Item1;scope=object;CRITERIA=AND;CHECK=C:Item:sr5SAPMaterialType§not allowed§empty~Material Type must be filled~Material Type is not empty
+SR5EngArticle:sr5SAPMaterialType§not allowed§empty~Material Type must be filled~Material Type is not empty
+
+#ID=40Item2;scope=object;CRITERIA=CONDITION;CHECK=C:SR5GenEngObj:DB_Type§not allowed§SR5NonERPArticle&&SR5CatDefArticle&&SR5CatDefArtAR
+#ID=40Item2;scope=object;CRITERIA=AND;CHECK=C:Item:sr5SAPMaterialGroup§not allowed§empty~Material Group must be filled~Material Group is not empty
+SR5EngArticle:sr5SAPMaterialGroup§not allowed§empty~Material Group must be filled~Material Group is not empty
+
+#uom
+#ID=40Item3;scope=object;CRITERIA=CONDITION;CHECK=C:SR5GenEngObj:DB_Type§not allowed§SR5NonERPArticle&&SR5CatDefArticle&&SR5CatDefArtAR
+#ID=40Item3;scope=object;CRITERIA=AND;CHECK=C:Item:uom_tag§not allowed§empty&& ~unit of measure cannot be empty~unit of measure defined
+#SR5EngArticle:uom_tag§not allowed§empty&& ~unit of measure cannot be empty~unit of measure defined
+ID=40Item3;scope=object;CRITERIA=CONDITION;CHECK=C:SR5GenEngObj:DB_Type§allowed§SR5EngArticle||SR5EngEndItem||SR5EngMajorAssy||SR5EngArticleAR
+#||SR5EngInstallLoc
+ID=40Item3;scope=object;CRITERIA=AND;CHECK=C:Item:uom_tag§not allowed§empty&& ~unit of measure cannot be empty~unit of measure defined
+
+
+#first rev of Catalog Part
+#ID=40Root3;scope=object;CRITERIA=CONDITION;CHECK=root:C:SR5GenEngObjRevision:DB_Type§allowed§SR5CatalogPartRevision||SR5GenCatPartRevision||SR5EleCatPartRevision||SR5MechCatPartRevision
+#ID=40Root3;scope=object;CRITERIA=AND;CHECK=C:SR5GenEngObjRevision:Rev§eq§[VAL_OBJECT:Rev_List]~WARNING: INFO: this is not the first revision of this catalog part~first rev of catalog part
+
+
+#checked-out
+C:Dataset:checked_out§not allowed§Y~Object [VAL_OBJECT:object_type] is checked-out~Object [VAL_OBJECT:object_type] is checked_in
+C:Form:checked_out§not allowed§Y~Object [VAL_OBJECT:object_type] is checked-out~Object [VAL_OBJECT:object_type] is checked_in
+C:SR5GenEngObjRevision:checked_out§not allowed§Y~Object [VAL_OBJECT:DB_Type] is checked-out~Object [VAL_OBJECT:DB_Type] is checked_in
+C:PSBOMViewRevision:checked_out§not allowed§Y~Object [VAL_OBJECT:object_type] is checked-out~Object [VAL_OBJECT:object_type] is checked_in
+
+# ccp linkage
+#not implemented here (only in UI check with warnings)
+
+#taking some specific ccp link as target of same WF requested additional checks
+# => same discipline is required
+#cannot be working on child of product structure with [root:C:SR5GenEngObjRevision:DB_sr5...ApprovalFlag]
+#root:
+C:SR5GenEngObjRevision>IMAN_specification>CATDrawing>catiaV5_DWGLink>DWGRevision:DB_sr5ScrewApprovalFlag§eq§[VAL_OBJECT:DB_sr5ScrewApprovalFlag]~ccp DWG link must have the same static flag (-link zu 3D- or -link zu 3D 2 Artkelnummern- or -piegelbildiches Teil-)~static flag is consistent
+C:SR5GenEngObjRevision>IMAN_specification>CATDrawing>catiaV5_DWGLink>DWGRevision:DB_sr5GlueApprovalFlag§eq§[VAL_OBJECT:DB_sr5GlueApprovalFlag]~ccp DWG link must have the same gluw flag (-link zu 3D- or -link zu 3D 2 Artkelnummern- or -piegelbildiches Teil-)~glue flag is consistent
+C:SR5GenEngObjRevision>IMAN_specification>CATDrawing>catiaV5_DWGLink>DWGRevision:DB_sr5WeldApprovalFlag§eq§[VAL_OBJECT:DB_sr5WeldApprovalFlag]~ccp DWG link must have the same weld flag (-link zu 3D- or -link zu 3D 2 Artkelnummern- or -piegelbildiches Teil-)~weld flag is consistent
+
+
+
+#obsolete drawing link
+ID=40ObsoleteDRW;scope=object;CRITERIA=CONDITION;CHECK=DWGRevision:item_id§eq§[SR5EngArticleRevision:item_id]
+ID=40ObsoleteDRW;scope=object;CRITERIA=AND;CHECK=DWGRevision:COMBI_item_Rev§eq§[SR5EngArticleRevision:COMBI_item_Rev]~DWG Link not to the same revision, might be not actualized - [VAL_OBJECT:COMBI_item_Rev] - replaced link to 3d by [VAL_VALUE]~DWG Link to the same revision
+#SRS-1481 + SRS-1371
+#ID=40ObsoleteDRW;scope=object;CRITERIA=CONDITION;CHECK=DWGRevision:item_id§eq§[SR5EngArticleRevision:item_id]
+#ID=40ObsoleteDRW;scope=object;CRITERIA=CONDITION;CHECK=DWGRevision:COMBI_item_Rev§eq§[SR5EngArticleRevision:COMBI_item_PreviousRev]
+#ID=40ObsoleteDRW;scope=object;CRITERIA=AND;CHECK=DWGRevision:COMBI_item_Rev§eq§[SR5EngArticleRevision:COMBI_item_Rev]~WARNING: INFO: DWG Link not to the same revision, might be not actualized - [VAL_OBJECT:COMBI_item_Rev] - replaced link to 3d by [VAL_VALUE]~DWG Link to the same revision
+#
+#ID=40PreviousDRW;scope=object;CRITERIA=CONDITION;CHECK=DWGRevision:item_id§eq§[SR5EngArticleRevision:item_id]
+#ID=40PreviousDRW;scope=object;CRITERIA=AND;CHECK=DWGRevision:COMBI_item_Rev§allowed§[SR5EngArticleRevision:COMBI_item_Rev]||[SR5EngArticleRevision:COMBI_item_PreviousRev]~DWG Link not to the same revision or the previous one~DWG Link to the same revision or the previous one
+
+
+
+#must be connected to change
+#not first rev
+#ID=40NoChange;scope=object;CRITERIA=CONDITION;CHECK=C:SR5GenEngObjRevision:DB_Type§allowed§SR5EngEndItemRevision||SR5EngMajorAssyRevision||SR5EngArticleRevision||SR5NonERPArticleRevision||SR5EngArticleARRevision||SR5EngInstallLocRevision
+##ID=40NoChange;scope=object;CRITERIA=CONDITION;CHECK=C:SR5GenEngObjRevision:last_release_status§allowed§empty||20*||30*||TCM*
+#ID=40NoChange;scope=object;CRITERIA=CONDITION;CHECK=C:SR5GenEngObjRevision:last_release_status§allowed§empty||20*||30*||Engineering Approved
+##ID=40NoChange;scope=object;CRITERIA=CONDITION;CHECK=C:SR5GenEngObjRevision:Rev§not eq§00&&A&&000&&AA&&0000~according to BMIDE: several variants have been defined 
+##ID=40NoChange;scope=object;CRITERIA=CONDITION;CHECK=C:SR5GenEngObjRevision:ObjectString§not eq§[VAL_OBJECT:RevisionList]
+#ID=40NoChange;scope=object;CRITERIA=CONDITION;CHECK=C:SR5GenEngObjRevision:Current_Rev_Prev§not eq§[VAL_OBJECT:Rev]###~
+#ID=40NoChange;scope=object;CRITERIA=AND;CHECK=C:SR5GenEngObjRevision:Changes§not allowed§empty&& ~article cannot be Eng-released without being linked to a change object~article linked to a change object
+##first rev
+#ID=40NoChange1st;scope=object;CRITERIA=CONDITION;CHECK=C:SR5GenEngObjRevision:DB_Type§allowed§SR5EngEndItemRevision||SR5EngMajorAssyRevision||SR5EngArticleRevision||SR5NonERPArticleRevision||SR5EngArticleARRevision
+##ID=40NoChange1st;scope=object;CRITERIA=CONDITION;CHECK=C:SR5GenEngObjRevision:last_release_status§allowed§empty||20*||30*||TCM*
+#ID=40NoChange1st;scope=object;CRITERIA=CONDITION;CHECK=C:SR5GenEngObjRevision:last_release_status§allowed§empty||20*||30*||Engineering Approved
+##customer is changing of logic of revision index frequently
+##ID=40NoChange1st;scope=object;CRITERIA=CONDITION;CHECK=C:SR5GenEngObjRevision:Rev§eq§00||A||000||AA||0000~according to BMIDE: several variants have been defined 
+##object_string can lead to issue in case of specific characters, revision_list can become problematic in case of 665 external rev index + 1000 internal rev index
+##ID=40NoChange1st;scope=object;CRITERIA=CONDITION;CHECK=C:SR5GenEngObjRevision:ObjectString§eq§[VAL_OBJECT:RevisionList]*~
+#ID=40NoChange1st;scope=object;CRITERIA=CONDITION;CHECK=C:SR5GenEngObjRevision:Current_Rev_Prev§eq§[VAL_OBJECT:Rev]###~
+#ID=40NoChange1st;scope=object;CRITERIA=AND;CHECK=C:SR5GenEngObjRevision:Changes§not allowed§empty&& ~WARNING: INFO: first rev of article should not be Eng-released without being linked to a change object~first rev article linked to a change object
+#all rev
+ID=40NoChange;scope=object;CRITERIA=CONDITION;CHECK=C:SR5GenEngObjRevision:DB_Type§allowed§SR5EngEndItemRevision||SR5EngMajorAssyRevision||SR5EngArticleRevision||SR5NonERPArticleRevision||SR5EngArticleARRevision||SR5EngInstallLocRevision
+ID=40NoChange;scope=object;CRITERIA=CONDITION;CHECK=C:SR5GenEngObjRevision:last_release_status§allowed§empty||20*||30*||Engineering Approved
+ID=40NoChange;scope=object;CRITERIA=AND;CHECK=C:SR5GenEngObjRevision:Changes§not allowed§empty&& ~article cannot be Eng-released without being linked to a change object~article linked to a change object
+
+
+
+#Env.
+
+
+
+#AltRep
+SR5EngArticleAR>sr5AltRepList>MasterOfAltRepRev:last_release_status§not allowed§70*&&80*&&90*&&30*&&20*&&empty~Master of Alt. Rep. objects with status 70 and higher, must be replaced - Master of Alt. Rep. objects with status lower than 40, must be released~status of Master of Alt. Rep. objects is accepted:  40 or 50
+
+
+#

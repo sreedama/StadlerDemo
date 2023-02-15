@@ -1,0 +1,23 @@
+{
+    "materialSearchApplicationTitle": "Material Search",
+    "MaterialSearchPWADefaultMessage": "Enter your criteria in the Material Search panel to view results",
+    "Mtw0MatCatlogueLabel": "Catalogs",
+    "Mtw0MatParameterLabel": "Parameters",
+    "minParamValue": "min",
+    "maxParamValue": "max",
+    "uomDispValue": "Unit",
+    "AutoUpdate": "Auto-update",
+    "ApplyAll": "Apply All",
+    "RemoveAll": "Remove all",
+    "ClearAll": "Clear all",
+    "remove": "Remove",
+    "search": "Search",
+    "general": "General",
+    "objectType": "Object Type",
+    "name": "Name",
+    "description": "Description",
+    "status": "Status",
+    "customizedSearchAttr": "Customized Search",
+    "materialGlobalClasses": "Material Global Classes",
+    "materialCatalogClasses": "Material Catalog Classes"
+}

@@ -1,0 +1,19 @@
+<!--
+// @<COPYRIGHT>@
+// ==================================================
+// Copyright 2015.
+// Siemens Product Lifecycle Management Software Inc.
+// All Rights Reserved.
+// ==================================================
+// @<COPYRIGHT>@
+-->
+<rendering xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="XMLRenderingStylesheet_Schema.xsd">
+    <page titleKey="tc_xrt_Summary" visibleWhen="sr5IsTransferredToSAP == false">
+        <property name="sr5SAPMaterialType" modifiable="true"/>
+        <property name="sr5SAPMaterialGroup" modifiable="true"/>
+    </page>
+    <page titleKey="tc_xrt_Summary" visibleWhen="sr5IsTransferredToSAP == true">
+        <property name="sr5SAPMaterialType" modifiable="false"/>
+        <property name="sr5SAPMaterialGroup" modifiable="false"/>
+    </page>
+</rendering>

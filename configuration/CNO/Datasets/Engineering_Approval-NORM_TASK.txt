@@ -1,0 +1,24 @@
+############################################################################################################
+#  CNO Task Definition File
+############################################################################################################
+# Version History
+#
+# Version    Date           Name               Description of Change
+# 1.0        22-03-2022     user01     Initial
+############################################################################################################
+
+[TASK_LIST]
+ID=attached report inside WF
+TYPE_LIST=C:ItemRevision
+VALIDATION_STATUS=FAILED
+ACTION_OBJECT=WORKFLOW
+ACTION_ID_LIST=SaveResultAction
+
+[ACTION_LIST]
+ID=SaveResultAction
+TYPE=SAVE_RESULT
+#SAVE_DATASET_NAME=Result of validation CNO_VFW_JOB_NAME for OBJECT_NAME on DATETIME
+SAVE_DATASET_NAME=Result of validation on DATETIME
+SAVE_DATASET_TYPE=Text
+SAVE_NAMED_REFERENCE=Text
+SAVE_RELATION_TYPE=root_reference_attachments

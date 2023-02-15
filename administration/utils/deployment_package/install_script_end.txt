@@ -1,0 +1,8 @@
+goto :EOF
+
+:ENV_MISSING
+echo You need to run this script in a Teamcenter environment
+echo TC_ROOT = %TC_ROOT%
+echo TC_DATA = %TC_DATA%
+endlocal
+goto :EOF

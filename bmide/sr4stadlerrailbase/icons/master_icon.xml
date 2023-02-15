@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<TcBusinessDataIncludes>
+    <include iconfile="SR4MfgPart.png"/>
+    <include iconfile="SR4EngPartRevision.png"/>
+    <include iconfile="SR4EngPart.png"/>
+    <include iconfile="SR4MfgPartRevision.png"/>
+</TcBusinessDataIncludes>

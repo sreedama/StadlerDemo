@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+===============================================================================
+07.04.2017	Gabriel Langenbacher	Initial Version
+===============================================================================
+
+    Filename: Custom_Project_Team_Information.xml
+
+    PFF Report Template 
+
+-->
+<ReportDesigns>
+    <ReportDesign>
+        <DesignName>Custom Project Team Information</DesignName>
+        <DesignDesc>PFF filter for saved query Projects... to show project members for the selected project ID.</DesignDesc>
+        <Query>
+            <QueryName>Projects...</QueryName>
+            <QueryDesc>Find projects by project id, project name, object name etc</QueryDesc>
+            <QueryClass>TC_Project</QueryClass>
+            <QueryClause>SELECT qid FROM TC_Project WHERE &quot;project_id&quot; = &quot;${ProjectID = }&quot; AND &quot;project_name&quot; = &quot;${ProjectName = }&quot; AND &quot;project_desc&quot; = &quot;${ProjectDescription = }&quot; AND &quot;is_active&quot; = &quot;${Active = }&quot; AND &quot;owning_user.user_id&quot; = &quot;${ProjectOwningUser = $USERID}&quot; AND &quot;owning_group.name&quot; = &quot;${ProjectOwningGroup = $GROUP}&quot; AND &quot;WorkspaceObject&lt;-project_list.object_name&quot; = &quot;${Name = }&quot; AND &quot;WorkspaceObject&lt;-project_list.object_desc&quot; = &quot;${Description = }&quot; AND &quot;WorkspaceObject&lt;-project_list.object_type&quot; = &quot;${Type = }&quot; AND &quot;WorkspaceObject&lt;-project_list.owning_user.user_id&quot; = &quot;${OwningUser = }&quot; AND &quot;WorkspaceObject&lt;-project_list.owning_group.name&quot; = &quot;${OwningGroup = }&quot;
+            </QueryClause>
+            <DomainFlag>QRY_DOMAIN_LOCAL</DomainFlag>
+        </Query>
+        <Pff>
+            <PffName>Custom Project Team Information</PffName>
+            <PffDesc>PFF filter for saved query Projects... to show project members for the selected project ID.</PffDesc>
+            <PffClass>TC_Project</PffClass>
+            <PffClause>
+        TC_Project.project_id;Project ID,
+        TC_Project.project_name;Project Name,
+        TC_Project.project_team.project_members.user.user_id;User ID,
+        TC_Project.project_team.project_members.user.user_name;User Name,
+        TC_Project.project_team.project_members.role.role_name;Role in Project
+            </PffClause>
+        </Pff>
+        <Formatter>
+            <Filename>default_xml_template.xsl</Filename>
+            <Datasettype>XMLReportFormatter</Datasettype>
+        </Formatter>
+        <Formatter>
+            <Filename>default_excel_template.xlt</Filename>
+            <Datasettype>ExcelReportFormatter</Datasettype>
+        </Formatter>
+    </ReportDesign>
+</ReportDesigns>

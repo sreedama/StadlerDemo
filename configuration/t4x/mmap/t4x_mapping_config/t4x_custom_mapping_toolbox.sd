@@ -1,0 +1,420 @@
+#===================================================
+# \copyright     2014-2019
+#                Siemens Product Lifecycle Management Software Inc.
+#                All Rights Reserved.
+#===================================================
+# Project:        T4X
+# \file           t4x_custom_mapping_toolbox.sd
+# \brief          repeatedly called code - summed in procedures to simplify the mapping code
+
+namespace eval ::T4X::CUSTOM::MAPPING::TOOLBOX {
+  namespace export selectTC_Object
+  namespace export selectTC_ScheduleObject
+  namespace export createTC_Object
+  namespace export createTC_Object2
+  namespace export saveItemWithUnlock
+  namespace export importNamedReference
+  
+  # ---------------------------------------------------------------------
+  ##
+  # Method:         ::T4X::CUSTOM::MAPPING::TOOLBOX::selectTC_Object
+  # \brief          Customer specific select function to identify the corresponding target item revision.
+  #
+  # \author         JK., 20120820
+  #
+  # \param          ItemRevisionId LATEST-get the latest working / ITEM-get itemTag not itemRevTag / <revisionId>-get the specified itemRevTag
+  # \param          args list of additional attribute name and value pairs like: item_id "122" object_name "test"
+  # \return         list of Status and ItemRevisionTag or HexErrorMessage
+  #
+  #
+  proc selectTC_Object {ItemRevisionId args} {
+    #
+    set FunctionName "[lindex [info level 0] 0]"
+    set Status  "NOT_FOUND"
+    #
+    tpwrite -logchannel [::PL4X::CORE::getSessionLogChannel] -mtype INTERN "$FunctionName starts with $ItemRevisionId $args"
+    #
+    if {$ItemRevisionId eq "LATEST" || $ItemRevisionId eq "ITEM"} {
+      #
+      set ItemStatus [::ITK::ITEM_find_items_by_key_attributes {*}$args]
+      tpwrite -logchannel [::PL4X::CORE::getSessionLogChannel] -mtype INTERN "$FunctionName -> ItemStatus $ItemStatus"
+      #
+      if {[lindex $ItemStatus 0] == 0 && [lindex $ItemStatus 1] == 1} {
+        #
+        set ItemTag [lindex [lindex $ItemStatus 2] 0]
+        #
+        if {$ItemRevisionId eq "ITEM"} {
+          set Status OK
+          lappend Status $ItemTag
+        } else {
+          #
+          # get lasest working
+          #
+          set ItemRevStatus [::ITK::ITEM_ask_latest_rev $ItemTag]
+          #
+          tpwrite -logchannel [::PL4X::CORE::getSessionLogChannel] -mtype INTERN "$FunctionName -> ItemRevStatus $ItemRevStatus"
+          #
+          if {[llength $ItemRevStatus] == 2 && [lindex $ItemRevStatus 0] == 0} {
+            set Status OK
+          }
+          #
+          # if Status OK contains itemrevtag, else its hexed error message
+          #
+          lappend Status [lindex $ItemRevStatus 1]
+        }
+      } elseif {[lindex $ItemStatus 0] == 0 && [lindex $ItemStatus 1] > 1} {
+        #
+        tpwrite -logchannel [::PL4X::CORE::getSessionLogChannel] -mtype ERROR "$FunctionName -> ERROR: more then 1 matching item found!"
+        set Status MORE_THEN_1_MATCHING_ITEM
+        #
+      } else {
+        #
+        # Item Revs not found
+        #
+        tpwrite -logchannel [::PL4X::CORE::getSessionLogChannel] -mtype INTERN "$FunctionName -> Object not found!"
+        set Status NOT_FOUND
+      }
+    } else {
+      #
+      # get the specified revision
+      #
+      set ItemRevStatus [eval "::ITK::ITEM_find_item_revs_by_key_attributes {$ItemRevisionId} $args"]
+      tpwrite -logchannel [::PL4X::CORE::getSessionLogChannel] -mtype INTERN "$FunctionName -> ItemRevStatus $ItemRevStatus"
+      #
+      if {[lindex $ItemRevStatus 0] == 0 && [lindex $ItemRevStatus 1] == 1} {
+        #
+        tpwrite -logchannel [::PL4X::CORE::getSessionLogChannel] -mtype INTERN "$FunctionName -> [llength [lindex $ItemRevStatus 1]] ItemRevisionId's found"
+        #
+        # Item Rev found
+        #
+        set Status OK
+        lappend Status [lindex [lindex $ItemRevStatus 2] 0]
+        #
+      } elseif {[lindex $ItemRevStatus 0] == 0 && [lindex $ItemRevStatus 1] > 1} {
+        set Status MORE_THEN_1_MATCHING_ITEMREV
+      } elseif {[lindex $ItemRevStatus 0] == 0 && [lindex $ItemRevStatus 1] eq 0} {
+        set Status NOT_FOUND
+      } elseif {[lindex $ItemRevStatus 0] != 0 && [llength $ItemRevStatus] == 2} {
+        lappend Status [lindex $ItemRevStatus 1]
+      } else {
+        set Status UNKNOWN_ERROR
+      }
+    }
+    #
+    tpwrite -logchannel [::PL4X::CORE::getSessionLogChannel] -mtype [::PL4X::CORE::getLogLineMessageType4rc $Status] "$FunctionName returns $Status"
+    #
+    return $Status
+  }
+  
+  # ---------------------------------------------------------------------
+  ##
+  # Method:         ::T4X::CUSTOM::MAPPING::TOOLBOX::selectTC_ScheduleObject
+  # \brief          Customer specific select function to identify the corresponding target ScheduleTargetObject.
+  #
+  # \author         JS., 20120820
+  #
+  # \param          ObjectType 
+  # \param          ItemId
+  #
+  # \return         list of Status and ObjectTag or HexErrorMessage
+  #
+  #
+  proc selectTC_ScheduleObject {ObjectType ItemId args} {
+    #
+    set FunctionName [lindex [info level 0] 0]
+    set Status  "NOT_FOUND"
+    #
+    tpwrite -logchannel [::PL4X::CORE::getSessionLogChannel] -mtype INTERN "$FunctionName starts with $ItemId $args"
+    #
+    set ItkStatus [::ITK::POM_create_enquiry_on_string_by_name $ObjectType item_id POM_is_equal_to $ItemId]
+    if { [lindex $ItkStatus 0] == 0 } {
+      set EnqId [lindex $ItkStatus 1]
+      set ItkStatus [::ITK::POM_execute_enquiry $EnqId]
+      if { [lindex $ItkStatus 0] == 0 &&  [llength [lindex $ItkStatus 1]] == 1} {
+        set Status OK
+        lappend Status [lindex [lindex $ItkStatus 1] 0]
+      } elseif { [lindex $ItkStatus 0] == 0 &&  [llength [lindex $ItkStatus 1]] > 1} {
+        tpwrite -logchannel [::PL4X::CORE::getSessionLogChannel] -mtype ERROR "$FunctionName -> ERROR: more then 1 matching Schedule Object found!"
+        set Status MORE_THEN_1_MATCHING_OBJECT       
+      } elseif {[lindex $ItkStatus 0] == 0} {
+        # Schedule Object not found
+        tpwrite -logchannel [::PL4X::CORE::getSessionLogChannel] -mtype INTERN "$FunctionName ->Schedule Object not found!"
+        set Status NOT_FOUND
+      } else {
+        set Status UNKNOWN_ERROR 
+      }
+      #
+      # cleanup
+      #
+      set ItkStatus [::ITK::POM_delete_enquiries_via_list $EnqId]
+    }
+    #
+    tpwrite -logchannel [::PL4X::CORE::getSessionLogChannel] "$FunctionName returns $Status"
+    #
+    return $Status
+  }
+
+  # ---------------------------------------------------------------------
+  ##
+  # Method:         ::T4X::CUSTOM::MAPPING::TOOLBOX::createTC_Object
+  # \brief          Customer specific function for the creation of a Tc item
+  #
+  # \author         JK., 20120820
+  # \param          ItemId if the ItemId equals "" the next free id will be created automatically
+  # \param          ItemName
+  # \param          ItemRevisionId
+  # \param          ItemType
+  # \param          args list of additional attribute name and value pairs like: object_desc "description" object_name "test"
+  # \return         list of Status and ItemRevisionTag or HexErrorMessage
+  #
+  #
+  proc createTC_Object {ItemId ItemName ItemRevisionId ItemType args} {
+    #
+    set FunctionName "[lindex [info level 0] 0]"
+    set Status "ERROR"
+    #
+    tpwrite -logchannel [::PL4X::CORE::getSessionLogChannel] -mtype INTERN "$FunctionName starts with >$ItemId< >$ItemName< >$ItemRevisionId< >$ItemType< >$args<"
+    #
+    set Status [createTC_Object2 $ItemId $ItemName $ItemRevisionId $ItemType $args ""]
+    #
+    tpwrite -logchannel [::PL4X::CORE::getSessionLogChannel] -mtype [::PL4X::CORE::getLogLineMessageType4rc $Status] "$FunctionName returns $Status"
+    #
+    return $Status
+  }
+  
+  # ---------------------------------------------------------------------
+  ##
+  # Method:         ::T4X::CUSTOM::MAPPING::TOOLBOX::createTC_Object2
+  # \brief          Customer specific function for the creation of a Tc item
+  #
+  # \author         kh, 20151203
+  # \param          ItemId if the ItemId equals "" the next free id will be created automatically
+  # \param          ItemName
+  # \param          ItemRevisionId
+  # \param          ItemType
+  # \param          ItemArgs list of additional attribute name and value pairs for the Item like: object_desc "description" object_name "test"
+  # \param          RevArgs list of additional attribute name and value pairs for the Item Revision like: object_desc "description" object_name "test"
+  # \return         list of Status and ItemRevisionTag or HexErrorMessage
+  #
+  #
+  proc createTC_Object2 {ItemId ItemName ItemRevisionId ItemType ItemArgs RevArgs args} {
+    #
+    set FunctionName "[lindex [info level 0] 0]"
+    set Status "ERROR"
+    #
+    tpwrite -logchannel [::PL4X::CORE::getSessionLogChannel] -mtype INTERN "$FunctionName starts with >$ItemId< >$ItemName< >$ItemRevisionId< >$ItemType< >$ItemArgs< >$RevArgs<"
+    #
+    set ItkStatus [::ITK::CONSTANTS_get_type_constant_value "ItemRevision" $ItemType]
+    #
+    if {[lindex $ItkStatus 0] == 0 && [lindex $ItkStatus 1] != ""} {
+      #
+      tpwrite -logchannel [::PL4X::CORE::getSessionLogChannel] -mtype INTERN "$FunctionName -> CONSTANTS_get_type_constant_value $ItkStatus"
+      #
+      set ItemRevType [tpco_formatHEX16 [lindex $ItkStatus 1]]
+      set ItkStatus [::ITK::TCTYPE_find_type $ItemRevType]
+      #
+      if {[lindex $ItkStatus 0] == 0 && [lindex $ItkStatus 1] != ""} {
+        #
+        tpwrite -logchannel [::PL4X::CORE::getSessionLogChannel] -mtype INTERN "$FunctionName -> TCTYPE_find_type IR $ItkStatus"
+        #
+        set ItemRevTypeTag [lindex $ItkStatus 1]
+        #
+        if {[string trim $ItemRevisionId] ne ""} {
+          lappend RevArgs "item_revision_id" $ItemRevisionId
+        }
+        if {[string trim $ItemName] ne ""} {
+          lappend RevArgs "object_name" $ItemName
+        }
+        #
+        set ItkStatus [::ITK::TCTYPE_construct_create_input $ItemRevTypeTag {*}$RevArgs]
+        #
+        if {[lindex $ItkStatus 0] == 0 && [lindex $ItkStatus 1] != ""} {
+          #
+          tpwrite -logchannel [::PL4X::CORE::getSessionLogChannel] -mtype INTERN "$FunctionName -> TCTYPE_construct_create_input ir $ItkStatus"
+          set ItemRevConstructTag [lindex $ItkStatus 1]
+          #
+          if {[string trim $ItemId] ne ""} {
+            lappend ItemArgs "item_id" $ItemId
+          }
+          if {[string trim $ItemName] ne ""} {
+            lappend ItemArgs "object_name" $ItemName
+          }
+          #
+          set NewItemInfo [::ITK::TCTYPE_simplified_create_object2 $ItemType "revision" $ItemRevConstructTag {*}$ItemArgs]
+          #
+          if {[lindex $NewItemInfo 0] == 0 && [lindex $NewItemInfo 1] != ""} {
+            #
+            tpwrite -logchannel [::PL4X::CORE::getSessionLogChannel] -mtype INTERN "$FunctionName -> TCTYPE_create_object $NewItemInfo"
+            #
+            set ItemTag [lindex $NewItemInfo 1]
+            #
+            set SaveStatus [::ITK::AOM_save_with_extensions $ItemTag]
+            tpwrite -logchannel [::PL4X::CORE::getSessionLogChannel] -mtype INTERN "$FunctionName -> SaveStatus $SaveStatus"
+            #
+            set ItemRevStatus [::ITK::ITEM_ask_latest_rev $ItemTag]
+            #
+            if {[lindex $ItemRevStatus 0] == 0 && [lindex $ItemRevStatus 1] != ""} {
+              tpwrite -logchannel [::PL4X::CORE::getSessionLogChannel] -mtype INTERN "$FunctionName -> ITEM_ask_latest_rev $ItemRevStatus"
+              set Status OK
+              lappend Status [lindex $ItemRevStatus 1]
+            } else {
+              tpwrite -logchannel [::PL4X::CORE::getSessionLogChannel] -mtype ERROR "$FunctionName -> ERROR: latest revision not found $ItemRevStatus!"
+              set Status GET_LATEST_REV_ERROR
+            }
+          } else {
+            tpwrite -logchannel [::PL4X::CORE::getSessionLogChannel] -mtype ERROR "$FunctionName -> ERROR: create object error $NewItemInfo!"
+            set Status CREATE_OBJECT_ERROR
+          }
+        } else {
+          tpwrite -logchannel [::PL4X::CORE::getSessionLogChannel] -mtype ERROR "$FunctionName -> ERROR: create ir constructor error $ItkStatus!"
+          set Status CREATE_IR_CONTRUCTOR_ERROR
+        }
+      } else {
+        tpwrite -logchannel [::PL4X::CORE::getSessionLogChannel] -mtype ERROR "$FunctionName -> ERROR: item rev type not found $ItkStatus!"
+        set Status REV_TYPE_NOT_FOUND
+      }
+    } else {
+      tpwrite -logchannel [::PL4X::CORE::getSessionLogChannel] -mtype ERROR "$FunctionName -> ERROR: item type not found $ItkStatus!"
+      set Status READ_CONST_VAR_ERROR
+    }
+    #
+    tpwrite -logchannel [::PL4X::CORE::getSessionLogChannel] -mtype [::PL4X::CORE::getLogLineMessageType4rc $Status] "$FunctionName returns $Status"
+    #
+    return $Status
+  }
+  
+  # ---------------------------------------------------------------------
+  ##
+  # Method:         ::T4X::CUSTOM::MAPPING::TOOLBOX::saveItemWithUnlock
+  # \brief          This function will save a TC item using ITEM_save_item
+  #                 including the corresponding AOM_unlock.
+  #
+  # \author         kh, 20170116
+  #
+  # \param          TcItemTag Teamcenter item tag in the Tcl string format
+  #
+  # \return         OK or Error with message as TCL list
+  #
+  #
+  proc saveItemWithUnlock { TcItemTag args } {
+    #
+    set FunctionName "[lindex [info level 0] 0]"
+    set rc "OK"
+    #
+    tpwrite -logchannel [::PL4X::CORE::getSessionLogChannel] -mtype INTERN "$FunctionName starts with TcItemTag = >$TcItemTag<"
+    #
+    set rc_func [::ITK::ITEM_save_item $TcItemTag]
+    #
+    if {[lindex $rc_func 0] != 0} {
+      set rc [list ERROR [tpco_formatHEX16 [lindex $rc_func 1]]]
+    } else {
+      #
+      set rc_func [::ITK::AOM_unlock $TcItemTag]
+      #
+      if {[lindex $rc_func 0] != 0} {
+        set rc [list ERROR [tpco_formatHEX16 [lindex $rc_func 1]]]
+      }
+    }
+    #
+    tpwrite -logchannel [::PL4X::CORE::getSessionLogChannel] -mtype [::PL4X::CORE::getLogLineMessageType4rc $rc] "$FunctionName finished with >$rc<"
+    #
+    return $rc
+  }
+  
+  # ---------------------------------------------------------------------
+  ##
+  # Method:         ::T4X::CUSTOM::MAPPING::TOOLBOX::importNamedReference
+  # \brief          Customer specific function for the creation of a Tc item
+  #
+  # \author         JK., 20120820
+  # \param          ItemRevisionTag
+  # \param          RelationName relation between item revision and dataset
+  # \param          DatasetType
+  # \param          DatasetName
+  # \param          ReferenceName
+  # \param          OriginalFileName only file name with extension
+  # \param          FileName file name with extension and path
+  # \return         Status OK / ERROR
+  #
+  #
+  proc importNamedReference  {ItemRevisionTag RelationName DatasetType DatasetName ReferenceName OriginalFileName FileName args} {
+    #
+    set FunctionName "[lindex [info level 0] 0]"
+    set Status "ERROR"
+    #
+    tpwrite -logchannel [::PL4X::CORE::getSessionLogChannel] -mtype INTERN "$FunctionName starts with >$RelationName< >$DatasetType< >$DatasetName< >$ReferenceName< >$OriginalFileName< >$FileName< >$args<"
+    #
+    set ItkStatus [::ITK::GRM_list_secondary_objects_only_by_name $ItemRevisionTag $RelationName]
+    #
+    tpwrite -logchannel [::PL4X::CORE::getSessionLogChannel] -mtype INTERN "$FunctionName GRM_list_secondary_objects_only_by_name - $ItkStatus"
+    #
+    if {[llength $ItkStatus] > 1 && [lindex $ItkStatus 0] == 0} {
+      #
+      tpwrite -logchannel [::PL4X::CORE::getSessionLogChannel] -mtype INTERN "$FunctionName dataset found by relation $RelationName"
+      #
+      set DSTag [lindex [lindex $ItkStatus 1] 0]
+      set Status  OK
+      #
+    } else {
+      #
+      tpwrite -logchannel [::PL4X::CORE::getSessionLogChannel] -mtype INTERN "$FunctionName no dataset found by relation $RelationName - create new"
+      #
+      set ItkStatus [::ITK::TCTYPE_simplified_create_object2 $DatasetType "object_name" $DatasetName]
+      tpwrite -logchannel [::PL4X::CORE::getSessionLogChannel] -mtype INTERN "$FunctionName TCTYPE_simplified_create_object2 - $ItkStatus"
+      #
+      if {[lindex $ItkStatus 0] == 0 && [lindex $ItkStatus 1] != ""} {
+        #
+        tpwrite -logchannel [::PL4X::CORE::getSessionLogChannel] -mtype INTERN "$FunctionName TCTYPE_simplified_create_object2 - dataset created"
+        #
+        set DSTag [lindex $ItkStatus 1]
+        set ItkStatus [::ITK::AOM_save $DSTag]
+        if {[lindex $ItkStatus 0] == 0} {
+          set ItkStatus [list 0 $DSTag] 
+        } else {
+          tpwrite -logchannel [::PL4X::CORE::getSessionLogChannel] -mtype ERROR "$FunctionName -> ERROR: dataset not saved!"
+          set Status ERROR_SAVING_DATASET
+        }
+      }
+      if {[lindex $ItkStatus 0] == 0 && [lindex $ItkStatus 1] != ""} {
+        #
+        # create the relation
+        #
+        set ItkStatus [::ITK::GRM_create_relation_only_by_name $ItemRevisionTag $DSTag $RelationName]
+        #
+        tpwrite -logchannel [::PL4X::CORE::getSessionLogChannel] -mtype INTERN "$FunctionName GRM_create_relation_only_by_name - $ItkStatus"
+        #
+        if {[llength $ItkStatus] == 2 && [lindex $ItkStatus 0] == 0} {
+          #
+          ::ITK::AOM_refresh_lock   "[lindex $ItkStatus 1]"
+          ::ITK::AOM_save           "[lindex $ItkStatus 1]"
+          ::ITK::AOM_refresh_unlock "[lindex $ItkStatus 1]"
+          #
+          set Status  OK
+          #
+        } else {
+          tpwrite -logchannel [::PL4X::CORE::getSessionLogChannel] -mtype ERROR "$FunctionName -> ERROR: relation not created!"
+          set Status ERROR_CREATING_RELATION
+        }
+      } else {
+        tpwrite -logchannel [::PL4X::CORE::getSessionLogChannel] -mtype ERROR "$FunctionName -> ERROR: dataset not created!"
+        set Status ERROR_CREATING_DATASET
+      }
+    }
+    #
+    if {$Status eq "OK"} {
+      #
+      set ItkStatus [::ITK::DATASET_importNamedReference $DSTag $ReferenceName $OriginalFileName $FileName]
+      tpwrite -logchannel [::PL4X::CORE::getSessionLogChannel] -mtype INTERN "$FunctionName DATASET_importNamedReference - $ItkStatus"
+      #
+      if {$ItkStatus ne "0"} {
+        tpwrite -logchannel [::PL4X::CORE::getSessionLogChannel] -mtype ERROR "$FunctionName -> ERROR: import of named reference failed!"
+        set Status "ERROR_IMPORT_NAMEDREF"
+      }
+    }
+    #
+    tpwrite -logchannel [::PL4X::CORE::getSessionLogChannel] -mtype [::PL4X::CORE::getLogLineMessageType4rc $Status] "$FunctionName returns $Status"
+    #
+    return $Status
+  }
+  
+}

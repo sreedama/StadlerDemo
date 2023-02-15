@@ -1,0 +1,15 @@
+############################################################################################################
+#  CNO Expansion Definition File
+############################################################################################################
+# Version History
+#
+# Version    Date           Name               Description of Change
+# 1.0        21-02-2022     user01     Initial
+############################################################################################################
+
+
+
+C:ItemRevision>>view;3p:Latest Working>C:ItemRevision;0
+
+C:ItemRevision>>process_stage_list>C:EPMTask
+C:EPMTask>root_target_attachments>C:ItemRevision

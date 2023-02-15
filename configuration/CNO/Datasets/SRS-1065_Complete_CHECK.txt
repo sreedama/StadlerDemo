@@ -1,0 +1,52 @@
+############################################################################################################
+#  CNO Check Definition File
+############################################################################################################
+# Version History
+#
+# Version    Date           Name               Description of Change
+# 1.0        23-03-2022     testu     Initial
+############################################################################################################
+
+############################################################################################################
+# only MCN as selected object
+#ID with type and condition to limit the number of error message
+root:C:ChangeItemRevision:DB_IR_Type§allowed§SR5MfgCNRevision||Epc0MfgCNRevision~Please select only MCN for Validation, ECN and ECR will be automatically add as target of WF~ECN and ECR will be automatically add as target of WF
+#ID=2;scope=object;CRIETRIA=CONDITION;CHECK=root:C:ChangeItemRevision:DB_IR_Type§allowed§ChangeRequestRevision||ChangeNoticeRevision~condition
+#ID=2;scope=object;CRIETRIA=AND;CHECK=root:C:ChangeItemRevision:DB_IR_Type§allowed§SR5MfgCNRevision||Epc0MfgCNRevision
+
+############################################################################################################
+# only one MCN as selected object
+#ID with type and condition to limit the number of error message
+#root:SR5MfgCNRevision:ID_REV§eq§[ALL_ROOT:SR5MfgCNRevision:ID_REV]~Please select only one and only one MCN for Validation, other MCNs will be automatically add as target of WF~other MCNs will be automatically add as target of WF
+#ID=3;scope=object;CRIETRIA=CONDITION;CHECK=root:C:ChangeItemRevision:DB_IR_Type§allowed§SR5MfgCNRevision||Epc0MfgCNRevision~condition
+#ID=3;scope=object;CRIETRIA=AND;CHECK=root:C:ChangeNoticeRevision:ID_REV§eq§[ALL_ROOT:SR5MfgCNRevision:ID_REV]||[ALL_ROOT:Epc0MfgCNRevision:ID_REV]~Please select only one and only one MCN for Validation, other MCNs will be automatically add as target of WF~other MCNs will be automatically add as target of WF
+#root:SR5MfgCNRevision:ID_REV§eq§[ALL_ROOT:SR5MfgCNRevision:ID_REV]||[ALL_ROOT:Epc0MfgCNRevision:ID_REV]~Please select only one and only one MCN for Validation, other MCNs will be automatically add as target of WF~other MCNs will be automatically add as target of WF
+#root:Epc0MfgCNRevision:ID_REV§eq§[ALL_ROOT:SR5MfgCNRevision:ID_REV]||[ALL_ROOT:Epc0MfgCNRevision:ID_REV]~Please select only one and only one MCN for Validation, other MCNs will be automatically add as target of WF~other MCNs will be automatically add as target of WF
+root:C:ChangeItemRevision:ID_REV§eq§[ALL_ROOT:C:ChangeItemRevision:ID_REV]~Please select only one and only one MCN for Validation, other objects will be automatically add as target of WF~one and only one object selected, other objects will be automatically add as target of WF
+
+############################################################################################################
+# proper role
+root:C:ChangeItemRevision:Current Role Name§allowed§Change Manager~must be logged with Change Manager~your are logged with Change Manager
+
+
+############################################################################################################
+# CMMaturity
+ChangeRequestRevision:CMMaturity§eq§Executing~ECR Maturity must be Executing in order to be closed~ECR Maturity is Executing
+ChangeNoticeRevision:CMMaturity§eq§Complete~ECN Maturity must be Complete in order to be closed~ECN Maturity is Complete
+
+#parent class of these two type unfortunatly is the ChangeNoticeREv
+SR5MfgCNRevision:CMMaturity§eq§Complete~MCN Maturity must be Complete in order to be closed~MCN Maturity is Complete
+Epc0MfgCNRevision:CMMaturity§eq§Complete~MCN Maturity must be Complete in order to be closed~MCN Maturity is Complete
+#ID=1;scope=object;CRIETRIA=CONDITION;CHECK=C:ChangeItemRevision:DB_IR_Type§allowed§SR5MfgCNRevision||Epc0MfgCNRevision~condition
+#ID=1;scope=object;CRIETRIA=AND;CHECK=C:ChangeItemRevision:CMMaturity§eq§Complete
+
+############################################################################################################
+# CMClosure
+C:ChangeItemRevision:CMClosure§eq§Open~Closure must be Open in order to be closed~Closure is Open
+
+############################################################################################################
+# CMDisposition
+#ChangeRequestRevision:CMDisposition§eq§Approved
+#ChangeNoticeRevision:CMDisposition§eq§Complete
+#SR5MfgCNRevision:CMDisposition§eq§Complete
+C:ChangeItemRevision:CMDisposition§eq§Approved~Disposition must be Approved in order to be closed~Disposition is Approved

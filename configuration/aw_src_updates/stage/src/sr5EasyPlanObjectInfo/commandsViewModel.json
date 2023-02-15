@@ -1,0 +1,54 @@
+{
+    "commands": {
+        "Awp0ObjectInfoEp": {
+            "iconId": "cmdShowInfoPanel",
+            "isGroup": false,
+            "title": "{{i18n.objectInfoLabel}}",
+            "description": "{{i18n.Awp0ObjectInfoDesc}}",
+            "isToggle": false
+        }
+    },
+    "commandHandlers": {
+        "Awp0ObjectInfoEpHandlerAllowedInInlineAuthoringMode": {
+            "id": "Awp0ObjectInfoEp",
+            "activeWhen": {
+                "condition": "conditions.isObjectInfoCmdAllowedInInlineAuthoringMode"
+            },
+            "visibleWhen": false
+        },
+        "Awp0ObjectInfoEpHandlerAnalysisModeEnabled": {
+            "id": "Awp0ObjectInfoEp",
+            "activeWhen": {
+                "condition": "conditions.isImpactAnalysisModeEnabled"
+            },
+            "visibleWhen": false
+        },
+        "Awp0ObjectInfoEpHandlerObjectInfoActive": {
+            "id": "Awp0ObjectInfoEp",
+            "action": "Awp0ObjectInfoCommandAction",
+            "activeWhen": true,
+            "enableWhen": {
+                "condition": "conditions.cmdObjectInfoActive"
+            },
+            "visibleWhen": true
+        },
+        "Awp0ObjectInfoEpHandlerViewerAdminSublocation": {
+            "id": "Awp0ObjectInfoEp",
+            "activeWhen": {
+                "condition": "conditions.isInViewerAdminSublocation"
+            },
+            "visibleWhen": false
+        }
+    },
+    "commandPlacements": {
+        "Awp0ObjectInfoEpPlacement": {
+            "id": "Awp0ObjectInfoEp",
+            "uiAnchor": "mbm_primWorkArea_right",
+            "priority": 10
+        }
+    },
+    "actions": {},
+    "functions": {},
+    "conditions": {},
+    "i18n": {}
+}

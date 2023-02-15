@@ -1,0 +1,35 @@
+<subRendering>
+    <content visibleWhen="ActiveWorkspace:SubLocation == com.siemens.splm.client.occmgmt:OccurrenceManagementSubLocation and REF(awb0UnderlyingObject,SR5GenEngObjRevision).REF(items_tag,SR5GenEngObj).sr5AltRepList!=null">    
+        <section titleKey="Alternate Representations" initialstate="collapsed">
+			<objectSet source="REF(awb0UnderlyingObject,SR5GenEngObjRevision).REF(items_tag,SR5GenEngObj).sr5AltRepList" sortdirection="ascending" sortby="object_string" defaultdisplay="tableDisplay">
+				<listDisplay/>
+				<tableDisplay>
+					<property name="object_string"/>
+					<property name="object_type"/>
+				</tableDisplay>
+			</objectSet>
+        </section>
+    </content>
+    <content visibleWhen="ActiveWorkspace:SubLocation == multiBOMManager:taskPageSubLocation and REF(awb0UnderlyingObject,SR5GenEngObjRevision).REF(items_tag,SR5GenEngObj).sr5AltRepList!=null">    
+        <section titleKey="Alternate Representations" initialstate="collapsed">
+			<objectSet source="REF(awb0UnderlyingObject,SR5GenEngObjRevision).REF(items_tag,SR5GenEngObj).sr5AltRepList" sortdirection="ascending" sortby="object_string" defaultdisplay="tableDisplay">
+				<listDisplay/>
+				<tableDisplay>
+					<property name="object_string"/>
+					<property name="object_type"/>
+				</tableDisplay>
+			</objectSet>
+        </section>
+    </content>
+    <content visibleWhen="ActiveWorkspace:SubLocation != com.siemens.splm.client.occmgmt:OccurrenceManagementSubLocation and ActiveWorkspace:SubLocation != multiBOMManager:taskPageSubLocation and REF(items_tag,SR5GenEngObj).sr5AltRepList!=null">    
+        <section titleKey="Alternate Representations" initialstate="collapsed">
+			<objectSet source="REF(items_tag,SR5GenEngObj).sr5AltRepList" sortdirection="ascending" sortby="object_string" defaultdisplay="tableDisplay">
+				<listDisplay/>
+				<tableDisplay>
+					<property name="object_string"/>
+					<property name="object_type"/>
+				</tableDisplay>
+			</objectSet>
+        </section>
+    </content>    
+</subRendering>

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<TcBusinessDataIncludes currentTemplateVersion="13.0_0" displayName="stadlerrailsoa" enableOpsDataDeploy="true" guid="696491230900761C2EA758F2A24CE28B" isDescriptionMandatory="false" name="sr5stadlerrailsoa" optional="true" prefixes="SR5" teamcenterTemplate="false">
+    <include file="foundation_template.xml"/>
+</TcBusinessDataIncludes>

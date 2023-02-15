@@ -1,0 +1,18 @@
+############################################################################################################
+#  CNO JOB Definition File
+############################################################################################################
+# Version History
+#
+# Version    Date           Name               Description of Change
+# 1.0        28-03-2022     testu     Initial
+############################################################################################################
+
+#Help text for user interface
+HELP=[en_US={CNO_LOGO}<br><h4>{TC_USERNAME}, Please follow these steps for Frozen operation:</h4><ul><li>Start the validation for 20-Frozen on a single object (no child and no ccp linkage)</li><li>Check the result report and eventually perform the needed correction</li><li>If allowed, start the predefined worklfow 20 Post Action</li><li>Children and ccp linkages without status will be automatically added</li></ul>]###[de_DE={CNO_LOGO}<br><h4>{TC_USERNAME}, Bitte f&uuml;hren Sie folgende Schritte f&uuml;r die Frozenoperation durch:</h4><ul><li>Starten Sie den Validierungsprozess f&uuml;r 20-Release auf ein einzigen Objekt (keine Komponenten und keine ccp Verkn&uuml;pfungen)</li><li>Pr&uuml;fen Sie den Ergebnisreport und beheben Sie den Fehler</li><li>Wenn m&ouml;glich, Starten Sie die definierte Prozess-20-Postaktion</li><li>die Komponenten und ccp Verkn&uuml;fungen ohne Status werden automatisch mitgenommen</li></ul>]###
+
+
+QUERY=CNO_VFW_STB_QUERY
+EXPANSION=20_EBOM_Frozen_EXPANSION
+PROPERTY=20_EBOM_Frozen_PROPERTY
+CHECK=20_EBOM_Frozen_CHECK
+TASK=20_EBOM_Frozen_TASK

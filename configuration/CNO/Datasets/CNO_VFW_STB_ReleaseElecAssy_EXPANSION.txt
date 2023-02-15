@@ -1,0 +1,30 @@
+############################################################################################################
+#  CNO Expansion Definition File
+############################################################################################################
+# Version History
+#
+# Version    Date           Name               Description of Change
+# 1.0        15-03-2022     testu     Initial
+############################################################################################################
+
+# ------------------------------------------------------------------
+# Expand to bom objects
+# ------------------------------------------------------------------
+SR5ElectricAssyRevision>>structure_revisions>C:PSBOMViewRevision
+
+# ------------------------------------------------------------------
+# get the BOM occurences
+# ------------------------------------------------------------------
+C:ItemRevision>>view;p:Latest Working>C:ItemRevision;0
+
+# ------------------------------------------------------------------
+# get required Datasets
+# ------------------------------------------------------------------
+SR5ElectricAssyRevision>>IMAN_specification>PDF
+SR5ElectricAssyRevision>>IMAN_specification>SR5E3S
+SR5ElectricAssyRevision>>IMAN_specification>MSExcelX
+
+# ------------------------------------------------------------------
+# Expand to running process
+# ------------------------------------------------------------------
+SR5ElectricAssyRevision>>process_stage_list>C:EPMTask

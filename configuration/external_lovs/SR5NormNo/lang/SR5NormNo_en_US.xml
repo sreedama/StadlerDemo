@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TcBusinessDataLocalization xmlns="http://teamcenter.com/BusinessModel/TcBusinessDataLocalization"
+    batchXSDVersion="1.0" Date="Mon Jan 17 05:41:00 PM 2022">
+  <Add>
+    <key locale="en_US" id="LOVValue{::}SR5NormNo{::}Aluminium" status="Approved">Aluminium</key>
+    <key locale="en_US" id="LOVValue{::}SR5NormNo{::}Steel" status="Approved">Steel</key>
+    <key locale="en_US" id="LOVValue{::}SR5NormNo{::}Heat Treatable Steel" status="Approved">Heat Treatable Steel</key>
+    <key locale="en_US" id="LOVValue{::}SR5NormNo{::}Stainless Steel" status="Approved">Stainless Steel</key>
+    <key locale="en_US" id="LOVValue{::}SR5NormNo{::}Copper" status="Approved">Copper</key>
+    <key locale="en_US" id="LOVValue{::}SR5NormNo{::}Wood" status="Approved">Wood</key>
+    <key locale="en_US" id="LOVValue{::}SR5NormNo{::}Plastic" status="Approved">Plastic</key>
+  </Add>
+</TcBusinessDataLocalization>

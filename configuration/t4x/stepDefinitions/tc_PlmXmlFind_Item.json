@@ -1,0 +1,21 @@
+{
+  "Key": "PLMXML-Info",
+  "IsTable": false,
+  "DisplayName": "PLMXML-Info",
+  "Items": [
+    {
+      "Key": "Item",
+      "Items": [
+        {
+          "Name": "object_type"
+        },
+        {
+          "Name": "item_id"
+        },
+        {
+          "Name": "object_name"
+        }
+      ]
+    }
+  ]
+}

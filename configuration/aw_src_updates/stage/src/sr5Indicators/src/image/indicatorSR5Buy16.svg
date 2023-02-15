@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="16"
+   height="16"
+   viewBox="0 0 4.2333332 4.2333335"
+   version="1.1"
+   id="svg5"
+   inkscape:version="1.1 (c68e22c387, 2021-05-23)"
+   sodipodi:docname="indicatorSR5Buy16.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview7"
+     pagecolor="#505050"
+     bordercolor="#eeeeee"
+     borderopacity="1"
+     inkscape:pageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="0"
+     inkscape:document-units="mm"
+     showgrid="false"
+     units="px"
+     inkscape:zoom="24.886869"
+     inkscape:cx="2.4109099"
+     inkscape:cy="6.1880022"
+     inkscape:window-width="3440"
+     inkscape:window-height="1360"
+     inkscape:window-x="-11"
+     inkscape:window-y="-11"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="g7281-7" />
+  <defs
+     id="defs2">
+    <linearGradient
+       id="SVGID_4_"
+       gradientUnits="userSpaceOnUse"
+       x1="27.0147"
+       y1="27.0147"
+       x2="43.985298"
+       y2="43.985298"
+       gradientTransform="matrix(0.127,0,0,0.127,-2.9209998,-2.9209998)">
+      <stop
+         offset="0"
+         style="stop-color:#d2ff61;stop-opacity:1"
+         id="stop5781" />
+      <stop
+         offset="0.2214"
+         style="stop-color:#bdff19;stop-opacity:1"
+         id="stop5783" />
+      <stop
+         offset="0.5415"
+         style="stop-color:#a0e100;stop-opacity:1"
+         id="stop5785" />
+      <stop
+         offset="0.92"
+         style="stop-color:#7bac00;stop-opacity:1"
+         id="stop5787" />
+      <stop
+         offset="1"
+         style="stop-color:#7bac00;stop-opacity:1"
+         id="stop5789" />
+    </linearGradient>
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#SVGID_4_"
+       id="linearGradient6968"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(0.64,0,0,0.63999996,-3.0094136,-0.82274825)"
+       x1="27.0147"
+       y1="27.0147"
+       x2="43.985298"
+       y2="43.985298" />
+  </defs>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <g
+       id="g11325"
+       transform="matrix(0.26458333,0,0,0.26458333,0.59348329,-2.2522383)">
+      <g
+         id="g7281-7"
+         transform="translate(-13.953671,-5.384856)">
+        <ellipse
+           fill="url(#SVGID_4_)"
+           stroke="#464646"
+           stroke-miterlimit="10"
+           cx="19.710585"
+           cy="21.897253"
+           id="circle5792-0"
+           style="fill:url(#linearGradient6968);stroke-width:0.64"
+           rx="7.6799998"
+           ry="7.6800003" />
+        <text
+           xml:space="preserve"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.0927px;line-height:1.25;font-family:'Segoe UI';-inkscape-font-specification:'Segoe UI';fill:#464646;fill-opacity:1;stroke:none;stroke-width:0.880794"
+           x="15.829587"
+           y="26.831074"
+           id="text1392-2-1"><tspan
+             sodipodi:role="line"
+             id="tspan1390-7-2"
+             x="15.829587"
+             y="26.831074"
+             style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:14.0927px;font-family:'Segoe UI';-inkscape-font-specification:'Segoe UI Semi-Bold';fill:#464646;fill-opacity:1;stroke-width:0.880794">F</tspan></text>
+      </g>
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="ISO-8859-1" standalone="yes"?>
+<!--
+===============================================================================
+                Copyright (c) 2012 Siemens Industry Software
+                   Unpublished - All Rights Reserved
+===============================================================================
+File description:
+
+            Filename:   materialmgmt_text_locale.xml
+            Module:     materialmgmt
+
+            XML File defining Material Management module text messages.
+@<DEL>@
+===============================================================================
+   Date      Name                    Description of Change
+06-Mar-2012  Chaitanya Godbole       Initial Implementation
+$HISTORY$
+===============================================================================
+@<DEL>@ -->
+<textsrv filename="materialmgmt_text_locale.xml">
+<key id="k_materialmgmt_item_revisions">Materialverwaltung - Elementänderungsstände...</key>
+<key id="k_materialmgmt_item_revisions_desc">Elementänderungsstände nach Materialverwaltungs-Attributen suchen</key>
+<key id="k_materialmgmt_materialrevs">Materialverwaltung - Materialänderungsstände...</key>
+<key id="k_materialmgmt_materialrevs_desc">Nach Materialänderungsständen suchen</key>
+<key id="k_materialmgmt_substabces">Materialverwaltung - Substanzen...</key>
+<key id="k_materialmgmt_substabces_desc">Substanzen suchen</key>
+<key id="k_materialmgmt_substance_name">Substanz-Name</key>
+<key id="k_materialmgmt_materialid">Material-ID</key>
+<key id="k_materialmgmt_materialexternalid">Material - Externe ID</key>
+<key id="k_materialmgmt_materialname">Materialname</key>
+<key id="k_materialmgmt_materialteamcenterid">Material - Teamcenter-UID</key>
+<key id="k_materialmgmt_materialcas_number">Material - CAS-Nummer</key>
+<key id="k_materialmgmt_substancecas_number">Substanz-CAS-Nummer</key>
+<key id="k_materialmgmt_substanceteamcenterid">Substanz - Teamcenter-UID</key>
+<key id="k_materialmgmt_substanceexternalid">Substanz - Externe ID</key>
+<key id="k_materialmgmt_approvalstatus">Genehmigungsstatus</key>
+<key id="k_materialmgmt_teamcenterid">Teamcenter-UID</key>
+<key id="k_materialmgmt_externalid">Externe Kennung</key>
+<key id="k_materialmgmt_cas_number">CAS-Nummer</key>
+<key id="k_materialmgmt_isthenonlibrary">Ist die Nicht-Materialbibliothek</key>
+<key id="k_materialmgmt_substancesk_materialmgmt_substances">Substanzen</key>
+<key id="k_materialmgmt_alternatematerials">Alternative Materialien</key>
+<key id="k_materialmgmt_materialclasses">Materialklassen</key>
+<key id="k_materialmgmt_smarttableparameters">Tabellenparameter</key>
+</textsrv>

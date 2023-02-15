@@ -1,0 +1,77 @@
+{
+  "name": "sr5SupplierPart",
+  "description": "This is the sr5SupplierPart module",
+  "skipTest": true,
+  "typeIconsRegistry": [
+    {
+      "type": {
+        "names": ["SR5GenEngObj"],
+        "prop": {
+          "names": ["sr5IsSupplierPart"],
+          "iconFileName": "typeSR5EngArticleSupplier48",
+          "conditions": {
+            "sr5IsSupplierPart": {
+              "$eq": true
+            }
+          }
+        }
+      },
+      "priority": 100
+    },
+    {
+      "type": {
+        "names": ["SR5GenEngObjRevision"],
+        "prop": {
+          "names": ["sr5IsSupplierPart"],
+          "iconFileName": "typeSR5EngArticleRevisionSupplier48",
+          "conditions": {
+            "sr5IsSupplierPart": {
+              "$eq": true
+            }
+          }
+        }
+      },
+      "priority": 100
+    },
+    {
+      "type": {
+        "names": ["Awb0ConditionalElement"],
+        "prop": {
+          "names": ["sr5IsSupplierPart"],
+          "iconFileName": "typeSR5EngArticleRevisionSupplier48",
+          "conditions": {
+            "sr5IsSupplierPart": {
+              "$eq": true
+            }
+          }
+        }
+      },
+      "priority": 100
+    }
+  ],
+  "typeProperties": {
+    "typeProperties": {
+      "SR5EngArticle": {
+        "additionalProperties": [
+          {
+            "name": "sr5IsSupplierPart"
+          }
+        ]
+      },
+      "SR5EngArticleRevision": {
+        "additionalProperties": [
+          {
+            "name": "sr5IsSupplierPart"
+          }
+        ]
+      },
+      "Awb0ConditionalElement": {
+        "additionalProperties": [
+          {
+            "name": "sr5IsSupplierPart"
+          }
+        ]
+      }
+    }
+  }
+}

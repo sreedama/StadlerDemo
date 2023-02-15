@@ -1,0 +1,166 @@
+
+##### Admin #############################################################################################
+[VFW_CONFIG]
+display=Admin: checking text datasets of VFW
+job=CNO_VFW_CONFIG_DATASET_JOB
+WorkspaceObject:?object_type=Text
+
+
+##### ElecAssy #############################################################################################
+[CNO_VFW_STB_FreezeElecAssy]
+display=Validation before freezing Electrical Assembly
+job=CNO_VFW_STB_FreezeElecAssy_JOB
+ItemRevision:?object_type=SR5ElectricAssyRevision
+ItemRevision:?last_release_status=empty
+ItemRevision:?fnd0InProcess!=TRUE
+ItemRevision:?checked_out!=Y
+
+[CNO_VFW_STB_ReleaseElecAssy]
+display=Validation before releasing Electrical Assembly
+job=CNO_VFW_STB_ReleaseElecAssy_JOB
+ItemRevision:?object_type=SR5ElectricAssyRevision
+ItemRevision:?last_release_status=SR5Status20,SR5Status30
+ItemRevision:?fnd0InProcess!=TRUE
+ItemRevision:?checked_out!=Y
+
+[CNO_VFW_STB_ReleaseElecAssy]
+display=Validation before releasing Electrical Assembly
+job=CNO_VFW_STB_ReleaseElecAssy_JOB
+ItemRevision:?object_type=SR5ElectricAssyRevision
+ItemRevision:?last_release_status=empty
+ItemRevision:?fnd0InProcess!=TRUE
+ItemRevision:?checked_out!=Y
+
+
+##### Change Close MCN######################################################################################
+[SRS-1065_Complete]
+display=Close_Change
+job=SRS-1065_Complete_JOB
+ItemRevision:?object_type=SR5MfgCNRevision,Epc0MfgCNRevision
+ItemRevision:?fnd0InProcess!=TRUE
+ItemRevision:?checked_out!=Y
+
+
+##### EBOM 20#####################################################################################################
+[20_EBOM_Frozen]
+display=20_EBOM_Frozen
+job=20_EBOM_Frozen_JOB
+ItemRevision:?object_type=SR5EngEndItemRevision,SR5EngMajorAssyRevision,SR5EngArticleRevision,SR5NonERPArticleRevision,SR5EngArticleARRevision
+ItemRevision:last_release_status=empty
+ItemRevision:?fnd0InProcess!=TRUE
+ItemRevision:?checked_out!=Y
+
+
+##### EBOM 30 New concept ########################################################################################
+[30_EBOM_PreRelease_Alternative]
+display=30_EBOM_PreRelease
+job=30_EBOM_PreRelease_Alternative_JOB
+ItemRevision:?object_type=SR5EngArticleRevision
+#,SR5GenCatPartRevision,SR5CatalogPartRevision,SR5EleCatPartRevision,SR5MechCatPartRevision
+ItemRevision:last_release_status=empty
+ItemRevision:?fnd0InProcess!=TRUE
+ItemRevision:?checked_out!=Y
+
+[30_EBOM_PreRelease_Alternative]
+display=30_EBOM_PreRelease
+job=30_EBOM_PreRelease_Alternative_JOB
+ItemRevision:?object_type=SR5EngArticleRevision
+#,SR5GenCatPartRevision,SR5CatalogPartRevision,SR5EleCatPartRevision,SR5MechCatPartRevision
+ItemRevision:?last_release_status=SR5Status20
+ItemRevision:?fnd0InProcess!=TRUE
+ItemRevision:?checked_out!=Y
+
+
+##### Engineering Approval###########################################################################################
+[Engineering_Approval-START]
+display=E-BOM-Engineering Approved
+job=Engineering_Approval_JOB
+#ItemRevision:?object_type=SR5EngEndItemRevision,SR5EngMajorAssyRevision,SR5EngArticleRevision,SR5NonERPArticleRevision,SR5GenCatPartRevision,SR5CatalogPartRevision,SR5EleCatPartRevision,SR5MechCatPartRevision
+ItemRevision:?object_type=SR5EngEndItemRevision,SR5EngMajorAssyRevision,SR5EngArticleRevision,SR5NonERPArticleRevision,SR5EngArticleARRevision,SR5EngInstallLocRevision
+ItemRevision:last_release_status=empty
+ItemRevision:?fnd0InProcess!=TRUE
+ItemRevision:?checked_out!=Y
+
+[Engineering_Approval-START]
+display=E-BOM-Engineering Approved
+job=Engineering_Approval_JOB
+#ItemRevision:?object_type=SR5EngEndItemRevision,SR5EngMajorAssyRevision,SR5EngArticleRevision,SR5NonERPArticleRevision,SR5GenCatPartRevision,SR5CatalogPartRevision,SR5EleCatPartRevision,SR5MechCatPartRevision
+ItemRevision:?object_type=SR5EngEndItemRevision,SR5EngMajorAssyRevision,SR5EngArticleRevision,SR5NonERPArticleRevision,SR5EngArticleARRevision,SR5EngInstallLocRevision
+ItemRevision:?last_release_status=SR5Status20,SR5Status30
+ItemRevision:?fnd0InProcess!=TRUE
+ItemRevision:?checked_out!=Y
+
+##### EBOM 40#####################################################################################################
+#[SRS-1018-START]
+#display=40_EBOM_Release
+#job=40_EBOM_Release_JOB
+##ItemRevision:?object_type=SR5EngEndItemRevision,SR5EngMajorAssyRevision,SR5EngArticleRevision,SR5NonERPArticleRevision,SR5GenCatPartRevision,SR5CatalogPartRevision,SR5EleCatPartRevision,SR5MechCatPartRevision
+#ItemRevision:?object_type=SR5EngEndItemRevision,SR5EngMajorAssyRevision,SR5EngArticleRevision,SR5NonERPArticleRevision
+#ItemRevision:last_release_status=empty
+#ItemRevision:?fnd0InProcess!=TRUE
+#ItemRevision:?checked_out!=Y
+#
+#[SRS-1018-START]
+#display=40_EBOM_Release
+#job=40_EBOM_Release_JOB
+##ItemRevision:?object_type=SR5EngEndItemRevision,SR5EngMajorAssyRevision,SR5EngArticleRevision,SR5NonERPArticleRevision,SR5GenCatPartRevision,SR5CatalogPartRevision,SR5EleCatPartRevision,SR5MechCatPartRevision
+#ItemRevision:?object_type=SR5EngEndItemRevision,SR5EngMajorAssyRevision,SR5EngArticleRevision,SR5NonERPArticleRevision
+#ItemRevision:?last_release_status=SR5Status20,SR5Status30,TCM Released
+#ItemRevision:?fnd0InProcess!=TRUE
+#ItemRevision:?checked_out!=Y
+
+
+##### DOCU #####################################################################################################
+#20
+[SR5_Document_Frozen]
+display=20_Document_Frozen
+job=SR5_Document_Frozen_JOB
+ItemRevision:?object_type=SR5TechDocumentRevision
+ItemRevision:last_release_status=empty
+ItemRevision:?fnd0InProcess!=TRUE
+ItemRevision:?checked_out!=Y
+
+#30
+#[SR5_Document_PreRelease]
+#display=30_Document_PreRelease
+#job=SR5_Document_PreRelease_JOB
+#ItemRevision:?object_type=SR5TechDocumentRevision
+#ItemRevision:last_release_status=empty
+#ItemRevision:?fnd0InProcess!=TRUE
+#ItemRevision:?checked_out!=Y
+#
+#[SR5_Document_PreRelease]
+#display=30_Document_PreRelease
+#job=SR5_Document_PreRelease_JOB
+#ItemRevision:?object_type=SR5TechDocumentRevision
+#ItemRevision:?last_release_status=SR5Status20
+#ItemRevision:?fnd0InProcess!=TRUE
+#ItemRevision:?checked_out!=Y
+
+#50
+[SR5_Document_Release]
+display=50_Document_Release
+job=SR5_Document_Release_JOB
+ItemRevision:?object_type=SR5TechDocumentRevision,SR5CoatingStructRevision
+ItemRevision:last_release_status=empty
+ItemRevision:?fnd0InProcess!=TRUE
+ItemRevision:?checked_out!=Y
+
+[SR5_Document_Release]
+display=50_Document_Release
+job=SR5_Document_Release_JOB
+ItemRevision:?object_type=SR5TechDocumentRevision,SR5CoatingStructRevision
+ItemRevision:?last_release_status=SR5Status20,SR5Status30
+ItemRevision:?fnd0InProcess!=TRUE
+ItemRevision:?checked_out!=Y
+
+
+##### TEST #####################################################################################################																										
+#[SandBox_SLE]
+#display=SandBox_SLE - blocking reccursivity of ccp link expansion
+#job=SandBox_SLE_JOB
+#type=C:ItemRevision
+
+
+
+

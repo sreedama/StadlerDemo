@@ -1,0 +1,13 @@
+############################################################################################################
+#  CNO Check Definition File
+############################################################################################################
+# Version History
+#
+# Version    Date           Name               Description of Change
+# 1.0        07-03-2022     testu     Initial
+############################################################################################################
+
+ID=screw;scope=object;CRITERIA=CONDITION;CHECK=root:C:ItemRevision:DB_IR_type§eq§SR5EngArticleRevision||SR5NonERPArticleRevision||SR5EleCatPartRevision||SR5ElectricAssyRevision||SR5EngArticleARRevision||SR5EngEndItemRevision||SR5EngEnvRevision||SR5EngInstallLocRevision||SR5EngMajorAssyRevision||SR5GenCatPartRevision||SR5GenEngObjRevision||SR5MechCatPartRevision||SR5ToolRevision||SR5ToolRevision
+# not working on QUAL???
+#ID=screw;scope=object;CRITERIA=CONDITION;CHECK=SR5EngArticleRevision:String§eq§[VAL_OBJECT>process_stage_list>C:EPMTask:first_target]
+ID=screw;scope=object;CRITERIA=AND;CHECK=root:C:ItemRevision:DB_sr5ScrewApprovalFlag§eq§regex(^[Tt][Rr][Uu][Ee]$)~value is not valid

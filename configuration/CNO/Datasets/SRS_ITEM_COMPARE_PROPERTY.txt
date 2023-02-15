@@ -1,0 +1,138 @@
+﻿############################################################################################################
+#  CNO Objects Property Definition File for Item and Bom Compare
+############################################################################################################
+# Version History
+#
+# Version   Date         Name            Description of Change
+# 1.00     	21.11.2019   Porada       	 Initial   
+############################################################################################################
+
+
+# ------------------------------------------------------------------
+# ItemRevision Properties
+# ------------------------------------------------------------------
+#C:ItemRevision§CNO_UNIQUE_ID§|:item_id|_|:object_type|
+#for combining both comparison with alias on child because the following properties should be compared only on root assembly
+SR5EngArticleRevision§CNO_UNIQUE_ID§|:item_id|_|:object_type|
+SR5CatDefArticleRevision§CNO_UNIQUE_ID§|:item_id|_|:object_type|
+SR5GenCatPartRevision§CNO_UNIQUE_ID§|:item_id|_|:object_type|
+SR5EleCatPartRevision§CNO_UNIQUE_ID§|:item_id|_|:object_type|
+SR5MechCatPartRevision§CNO_UNIQUE_ID§|:item_id|_|:object_type|
+SR5CoatingStructRevision§CNO_UNIQUE_ID§|:item_id|_|:object_type|
+SR5TechDocumentRevision§CNO_UNIQUE_ID§|:item_id|_|:object_type|
+SR5ElectricAssyRevision§CNO_UNIQUE_ID§|:item_id|_|:object_type|
+SR5EngEndItemRevision§CNO_UNIQUE_ID§|:item_id|_|:object_type|
+SR5EngMajorAssyRevision§CNO_UNIQUE_ID§|:item_id|_|:object_type|
+SR5NonERPArticleRevision§CNO_UNIQUE_ID§|:item_id|_|:object_type|
+SR5EngEnvRevision§CNO_UNIQUE_ID§|:item_id|_|:object_type|
+SR5EngInstallLocRevision§CNO_UNIQUE_ID§|:item_id|_|:object_type|
+SR5SoftwareRevision§CNO_UNIQUE_ID§|:item_id|_|:object_type|
+SR5ToolRevision§CNO_UNIQUE_ID§|:item_id|_|:object_type|
+SR5ColorDefRevision§CNO_UNIQUE_ID§|:item_id|_|:object_type|
+
+#01 - Revision (will always be different but we need to know which revision we are comparing)
+SR5EngArticleRevision§REV§|:sr5ExternalRevision|/|:item_revision_id|
+#SR5EngArticleRevision§REV§|:object_desc|/|:item_revision_id|
+SR5CatDefArticleRevision§REV§|:sr5ExternalRevision|/|:item_revision_id|
+SR5GenCatPartRevision§REV§|:sr5ExternalRevision|/|:item_revision_id|
+#SR5CatalogPartRevision§REV§|:sr5ExternalRevision|/|:item_revision_id|
+SR5EleCatPartRevision§REV§|:sr5ExternalRevision|/|:item_revision_id|
+SR5MechCatPartRevision§REV§|:sr5ExternalRevision|/|:item_revision_id|
+C:SR5GenDocumentRevision§REV§|:sr5ExternalRevision|/|:item_revision_id|
+SR5ColorDefRevision§REV§|:sr5ExternalRevision|/|:item_revision_id|
+
+SR5ElectricAssyRevision:item_revision_id~REV
+SR5EngEndItemRevision:item_revision_id~REV
+SR5EngMajorAssyRevision:item_revision_id~REV
+SR5NonERPArticleRevision:item_revision_id~REV
+SR5EngEnvRevision:item_revision_id~REV
+SR5EngInstallLocRevision:item_revision_id~REV
+SR5SoftwareRevision:item_revision_id~REV
+SR5ToolRevision:item_revision_id~REV
+
+#02 - Name
+#C:SR5GenEngObjRevision:object_name~NAME
+SR5EngArticleRevision:object_name~NAME
+SR5CatDefArticleRevision:object_name~NAME
+SR5GenCatPartRevision:object_name~NAME
+SR5EleCatPartRevision:object_name~NAME
+SR5MechCatPartRevision:object_name~NAME
+SR5CoatingStructRevision:object_name~NAME
+SR5TechDocumentRevision:object_name~NAME
+SR5ElectricAssyRevision:object_name~NAME
+SR5EngEndItemRevision:object_name~NAME
+SR5EngMajorAssyRevision:object_name~NAME
+SR5NonERPArticleRevision:object_name~NAME
+SR5EngEnvRevision:object_name~NAME
+SR5EngInstallLocRevision:object_name~NAME
+SR5SoftwareRevision:object_name~NAME
+SR5ToolRevision:object_name~NAME
+SR5ColorDefRevision:object_name~NAME
+
+#03 - Weight (global weight in case of an Assembly)
+#C:SR5GenEngObjRevision:sr5WeightInKG~WEIGHT
+#C:SR5GenEngObjRevision:sr5AdjustedWeight
+#C:SR5GenEngObjRevision:sr5CalculatedWeight
+SR5EngArticleRevision§WEIGHT§|js(Weight(:sr5AdjustedWeight))|
+SR5CatDefArticleRevision§WEIGHT§|js(Weight(:sr5AdjustedWeight))|
+SR5GenCatPartRevision§WEIGHT§|js(Weight(:sr5AdjustedWeight))|
+SR5EleCatPartRevision§WEIGHT§|js(Weight(:sr5AdjustedWeight))|
+SR5MechCatPartRevision§WEIGHT§|js(Weight(:sr5AdjustedWeight))|
+SR5CoatingStructRevision§WEIGHT§|js(Weight(:sr5AdjustedWeight))|
+SR5TechDocumentRevision§WEIGHT§|js(Weight(:sr5AdjustedWeight))|
+SR5ElectricAssyRevision§WEIGHT§|js(Weight(:sr5AdjustedWeight))|
+SR5EngEndItemRevision§WEIGHT§|js(Weight(:sr5AdjustedWeight))|
+SR5EngMajorAssyRevision§WEIGHT§|js(Weight(:sr5AdjustedWeight))|
+SR5NonERPArticleRevision§WEIGHT§|js(Weight(:sr5AdjustedWeight))|
+SR5EngEnvRevision§WEIGHT§|js(Weight(:sr5AdjustedWeight))|
+SR5EngInstallLocRevision§WEIGHT§|js(Weight(:sr5AdjustedWeight))|
+SR5SoftwareRevision§WEIGHT§|js(Weight(:sr5AdjustedWeight))|
+SR5ToolRevision§WEIGHT§|js(Weight(:sr5AdjustedWeight))|
+SR5ColorDefRevision§WEIGHT§|js(Weight(:sr5AdjustedWeight))|
+
+
+
+# ------------------------------------------------------------------
+# Material Properties
+# ------------------------------------------------------------------
+#04 - Material Name
+#C:Mat1MaterialRevision:object_name~MATERIAL
+SR5EngArticleRevision§MATERIAL§|:Mat1UsesMaterial^A^-|
+SR5CatDefArticleRevision§MATERIAL§|:Mat1UsesMaterial^A^-|
+SR5GenCatPartRevision§MATERIAL§|:Mat1UsesMaterial^A^-|
+SR5EleCatPartRevision§MATERIAL§|:Mat1UsesMaterial^A^-|
+SR5MechCatPartRevision§MATERIAL§|:Mat1UsesMaterial^A^-|
+SR5CoatingStructRevision§MATERIAL§|:Mat1UsesMaterial^A^-|
+SR5TechDocumentRevision§MATERIAL§|:Mat1UsesMaterial^A^-|
+SR5ElectricAssyRevision§MATERIAL§|:Mat1UsesMaterial^A^-|
+SR5EngEndItemRevision§MATERIAL§|:Mat1UsesMaterial^A^-|
+SR5EngMajorAssyRevision§MATERIAL§|:Mat1UsesMaterial^A^-|
+SR5NonERPArticleRevision§MATERIAL§|:Mat1UsesMaterial^A^-|
+SR5EngEnvRevision§MATERIAL§|:Mat1UsesMaterial^A^-|
+SR5EngInstallLocRevision§MATERIAL§|:Mat1UsesMaterial^A^-|
+SR5SoftwareRevision§MATERIAL§|:Mat1UsesMaterial^A^-|
+SR5ToolRevision§MATERIAL§|:Mat1UsesMaterial^A^-|
+SR5ColorDefRevision§MATERIAL§|:Mat1UsesMaterial^A^-|
+
+
+
+# ------------------------------------------------------------------
+# Change description
+# ------------------------------------------------------------------
+#to be displayed only - no compare needed
+SR5EngArticleRevision:sr5ChangeDescription~DescOfChange
+SR5CatDefArticleRevision:sr5ChangeDescription~DescOfChange
+SR5GenCatPartRevision:sr5ChangeDescription~DescOfChange
+SR5EleCatPartRevision:sr5ChangeDescription~DescOfChange
+SR5MechCatPartRevision:sr5ChangeDescription~DescOfChange
+SR5CoatingStructRevision:sr5ChangeDescription~DescOfChange
+SR5TechDocumentRevision:sr5ChangeDescription~DescOfChange
+SR5ElectricAssyRevision:sr5ChangeDescription~DescOfChange
+SR5EngEndItemRevision:sr5ChangeDescription~DescOfChange
+SR5EngMajorAssyRevision:sr5ChangeDescription~DescOfChange
+SR5NonERPArticleRevision:sr5ChangeDescription~DescOfChange
+SR5EngEnvRevision:sr5ChangeDescription~DescOfChange
+SR5EngInstallLocRevision:sr5ChangeDescription~DescOfChange
+SR5SoftwareRevision:sr5ChangeDescription~DescOfChange
+SR5ToolRevision:sr5ChangeDescription~DescOfChange
+SR5ColorDefRevision:sr5ChangeDescription~DescOfChange

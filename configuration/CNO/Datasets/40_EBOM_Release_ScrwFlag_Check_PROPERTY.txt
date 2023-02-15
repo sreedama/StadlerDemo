@@ -1,0 +1,34 @@
+﻿############################################################################################################
+#  CNO Object Property Definition File
+############################################################################################################
+# Version History
+#
+# Version    Date           Name               Description of Change
+# 1.0        31-01-2022     testu     Initial
+############################################################################################################
+
+#better with the parent class
+#SR5EngArticleRevision:?sr5ScrewApprovalFlag~sr5ScrewApprovalFlag
+#SR5NonERPArticleRevision:?sr5ScrewApprovalFlag~sr5ScrewApprovalFlag
+#SR5EleCatPartRevision:?sr5ScrewApprovalFlag~sr5ScrewApprovalFlag
+#SR5ElectricAssyRevision:?sr5ScrewApprovalFlag~sr5ScrewApprovalFlag
+#SR5EngArticleARRevision:?sr5ScrewApprovalFlag~sr5ScrewApprovalFlag
+#SR5EngEndItemRevision:?sr5ScrewApprovalFlag~sr5ScrewApprovalFlag
+#SR5EngEnvRevision:?sr5ScrewApprovalFlag~sr5ScrewApprovalFlag
+#SR5EngInstallLocRevision:?sr5ScrewApprovalFlag~sr5ScrewApprovalFlag
+#SR5EngMajorAssyRevision:?sr5ScrewApprovalFlag~sr5ScrewApprovalFlag
+#SR5GenCatPartRevision:?sr5ScrewApprovalFlag~sr5ScrewApprovalFlag
+#SR5GenEngObjRevision:?sr5ScrewApprovalFlag~sr5ScrewApprovalFlag
+#SR5MechCatPartRevision:?sr5ScrewApprovalFlag~sr5ScrewApprovalFlag
+#SR5SoftwareRevision:?sr5ScrewApprovalFlag~sr5ScrewApprovalFlag
+#SR5ToolRevision:?sr5ScrewApprovalFlag~sr5ScrewApprovalFlag
+C:SR5GenEngObjRevision:?sr5ScrewApprovalFlag~DB_sr5ScrewApprovalFlag
+
+#history: can be achieved without since SRS-836
+##C:EPMTask:root_target_attachments
+#C:EPMTask§first_target§|:root_target_attachments^L^6|
+##C:ItemRevision:object_string~object_string
+#C:ItemRevision§String§|:object_string^L^6|
+#
+
+C:ItemRevision:?object_type~DB_IR_type

@@ -1,0 +1,25 @@
+############################################################################################################
+#  CNO Expansion Definition File
+############################################################################################################
+# Version History
+#
+# Version    Date           Name               Description of Change
+# 1.0        23-03-2022     testu     Initial
+############################################################################################################
+
+SR5MfgCNRevision>>CMImplements>ChangeNoticeRevision
+Epc0MfgCNRevision>>CMImplements>ChangeNoticeRevision
+
+ChangeNoticeRevision>>CMImplementedBy>SR5MfgCNRevision
+ChangeNoticeRevision>>CMImplementedBy>Epc0MfgCNRevision
+
+ChangeNoticeRevision>>CMImplements>ChangeRequestRevision
+
+ChangeRequestRevision>>CMImplementedBy>SR5MfgCNRevision
+ChangeRequestRevision>>CMImplementedBy>Epc0MfgCNRevision
+
+
+ChangeRequestRevision>>CMImplementedBy>ChangeNoticeRevision
+
+SR5MfgCNRevision>>CMImplements>ChangeRequestRevision
+Epc0MfgCNRevision>>CMImplements>ChangeRequestRevision

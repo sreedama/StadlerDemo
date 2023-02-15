@@ -1,0 +1,986 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<preferences version="10.0">
+  <category name="SAP Gateway T4ST">
+
+    <preference name="T4ST_ProductVersionTypeList" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>Description not provided during import.</preference_description>
+      <context name="Teamcenter">
+        <value>SR5MfgEndItemRevision</value>
+        <value>SR5MfgMajorAssyRevision</value>
+        <value>SR5MfgInstallKitRevision</value>
+        <value>SR5EngArticleRevision</value>
+        <value>SR5ToolRevision</value>
+        <value>SR5GenCatPartRevision</value>
+        <value>SR5MfgObjectRevision</value>
+        <value>SR5LLEndItemRevision</value>
+        <value>SR5LLMajorAssyRevision</value>
+        <value>SR5SRVEndItemRevision</value>
+        <value>SR5SRVMajorAssyRevision</value>
+      </context>
+    </preference>
+    <!-- <preference name="T4ST_ProductVersionEpartMPartTypeList" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="false"> -->
+      <!-- <preference_description>Description not provided during import.</preference_description> -->
+      <!-- <context name="Teamcenter"> -->
+        <!-- <value>SR5MfgObjectRevision</value> -->
+      <!-- </context> -->
+    <!-- </preference> -->
+    <preference name="T4ST_ProductVersionCondition" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>use a BMIDE condition to skip the transfer. i.e. Ais3_DoProductVersionTransfer or isTrue</preference_description>
+      <context name="Teamcenter">
+        <value>SR5_DoProductVersionTransfer</value>
+      </context>
+    </preference>
+	
+	<!-- to get the CN from the Workflow -->
+    <preference name="T4ST_ProductVersionWorkflowAddObject4Mapping" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>merged by Starter Pacakge - ManufacturingEngineering</preference_description>
+      <context name="Teamcenter">        
+        <value>EPM_target_attachment:ChangeNoticeRevision:#__getAllProperties__#:Properties</value>
+      </context>
+    </preference>
+	
+	<!-- Mapping 4 --> 
+    <preference name="T4ST_ProductVersionMapping4SR5EngArticleRevision" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>No description available for this preference</preference_description>
+      <context name="Teamcenter">
+        <value>items_tag:SR5EngArticle</value>
+        <value>items_tag:SR5EngArticle:#__getAllProperties__#:Properties</value>
+        <value>#__getAllProperties__#:Properties</value>
+        <value>items_tag:SR5EngArticle:uom_tag:UnitOfMeasure</value>
+        <!-- <value>items_tag:SR5EngArticle:SR5HasPlantForm:SR5PlantForm:#__getAllProperties__#:Properties</value> -->
+        <!-- <value>IMAN_reference:SR5TechDocumentRevision:#__getAllProperties__#:Properties</value> -->
+        <!-- <value>IMAN_reference:SR5TechDocumentRevision:TC_Attaches:PDF:#__getAllProperties__#:Properties</value> -->
+        <!-- <value>IMAN_reference:SR5TechDocumentRevision:TC_Derived:PDF:#__getAllProperties__#:Properties</value> -->
+        <!-- <value>IMAN_specification:SR5TechDocumentRevision:#__getAllProperties__#:Properties</value> -->
+        <!-- <value>IMAN_specification:SR5TechDocumentRevision:TC_Attaches:PDF:#__getAllProperties__#:Properties</value> -->
+        <!-- <value>IMAN_specification:SR5TechDocumentRevision:TC_Derived:PDF:#__getAllProperties__#:Properties</value> -->
+        <value>SR5HasRequiredDocument:SR5TechDocument</value>
+		<value>SR5HasRequiredDocument:SR5TechDocument:use_revision_rule=Latest 50; No Working:SR5TechDocumentRevision:#__getAllProperties__#:Properties</value>
+        <!-- <value>SR5HasRequiredDocument:SR5TechDocument:revision_list/#_get_all_#:SR5TechDocumentRevision:#__getAllProperties__#:Properties</value> -->
+        <!-- <value>SR5HasRequiredDocument:SR5TechDocument:revision_list/#_get_all_#:SR5TechDocumentRevision:TC_Attaches:PDF:#__getAllProperties__#:Properties</value> -->
+        <!-- <value>SR5HasRequiredDocument:SR5TechDocument:revision_list/#_get_all_#:SR5TechDocumentRevision:TC_Derived:PDF:#__getAllProperties__#:Properties</value> -->
+        <value>SR5HasSpecificationDocument:SR5TechDocument</value>
+		<value>SR5HasSpecificationDocument:SR5TechDocument:use_revision_rule=Latest 50; No Working:SR5TechDocumentRevision:#__getAllProperties__#:Properties</value>
+        <!-- <value>SR5HasSpecificationDocument:SR5TechDocument:revision_list/#_get_all_#:SR5TechDocumentRevision:#__getAllProperties__#:Properties</value> -->
+        <!-- <value>SR5HasSpecificationDocument:SR5TechDocument:revision_list/#_get_all_#:SR5TechDocumentRevision:TC_Attaches:PDF:#__getAllProperties__#:Properties</value> -->
+        <!-- <value>SR5HasSpecificationDocument:SR5TechDocument:revision_list/#_get_all_#:SR5TechDocumentRevision:TC_Derived:PDF:#__getAllProperties__#:Properties</value> -->
+        <!-- <value>TC_Attaches:PDF</value> -->
+        <!-- <value>TC_Attaches:PDF:#__getAllProperties__#:Properties</value> -->
+        <!-- <value>TC_Attaches:PDF:ref_list/PDF_Reference:ImanFile:#__getAllProperties__#:Properties</value> -->
+        <!-- <value>TC_Attaches:PDF:#__getAllProperties__#:Properties</value> -->
+        <!-- <value>TC_Attaches:PDF:ref_list/PDF_Reference:ImanFile</value> -->
+        <!-- <value>TC_Derived:PDF</value> -->
+        <!-- <value>TC_Derived:PDF:#__getAllProperties__#:Properties</value> -->
+        <!-- <value>TC_Derived:PDF:ref_list/PDF_Reference:ImanFile:#__getAllProperties__#:Properties</value> -->
+        <!-- <value>TC_Derived:PDF:ref_list/PDF_Reference:ImanFile</value> -->
+        <value>Mat1UsesMaterial:Mat1MaterialRevision:#__getAllProperties__#:Properties</value>
+      </context>
+    </preference>
+    <preference name="T4ST_ProductVersionMapping4SR5GenCatPartRevision" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>No description available for this preference</preference_description>
+      <context name="Teamcenter">
+        <value>items_tag:SR5GenCatPart</value>
+        <value>items_tag:SR5GenCatPart:#__getAllProperties__#:Properties</value>
+        <value>#__getAllProperties__#:Properties</value>
+        <value>items_tag:SR5GenCatPart:uom_tag:UnitOfMeasure</value>
+        <!-- <value>IMAN_reference:SR5TechDocumentRevision:#__getAllProperties__#:Properties</value> -->
+        <!-- <value>IMAN_reference:SR5TechDocumentRevision:TC_Attaches:PDF:#__getAllProperties__#:Properties</value> -->
+        <!-- <value>IMAN_reference:SR5TechDocumentRevision:TC_Derived:PDF:#__getAllProperties__#:Properties</value> -->
+        <!-- <value>IMAN_specification:SR5TechDocumentRevision:#__getAllProperties__#:Properties</value> -->
+        <!-- <value>IMAN_specification:SR5TechDocumentRevision:TC_Attaches:PDF:#__getAllProperties__#:Properties</value> -->
+        <!-- <value>IMAN_specification:SR5TechDocumentRevision:TC_Derived:PDF:#__getAllProperties__#:Properties</value> -->
+        <value>SR5HasRequiredDocument:SR5TechDocument</value>
+		<value>SR5HasRequiredDocument:SR5TechDocument:use_revision_rule=Latest 50; No Working:SR5TechDocumentRevision:#__getAllProperties__#:Properties</value>
+        <!-- <value>SR5HasRequiredDocument:SR5TechDocument:revision_list/#_get_all_#:SR5TechDocumentRevision:#__getAllProperties__#:Properties</value> -->
+        <!-- <value>SR5HasRequiredDocument:SR5TechDocument:revision_list/#_get_all_#:SR5TechDocumentRevision:TC_Attaches:PDF:#__getAllProperties__#:Properties</value> -->
+        <!-- <value>SR5HasRequiredDocument:SR5TechDocument:revision_list/#_get_all_#:SR5TechDocumentRevision:TC_Derived:PDF:#__getAllProperties__#:Properties</value> -->
+        <value>SR5HasSpecificationDocument:SR5TechDocument</value>
+		<value>SR5HasSpecificationDocument:SR5TechDocument:use_revision_rule=Latest 50; No Working:SR5TechDocumentRevision:#__getAllProperties__#:Properties</value>
+        <!-- <value>SR5HasSpecificationDocument:SR5TechDocument:revision_list/#_get_all_#:SR5TechDocumentRevision:#__getAllProperties__#:Properties</value> -->
+        <!-- <value>SR5HasSpecificationDocument:SR5TechDocument:revision_list/#_get_all_#:SR5TechDocumentRevision:TC_Attaches:PDF:#__getAllProperties__#:Properties</value> -->
+        <!-- <value>SR5HasSpecificationDocument:SR5TechDocument:revision_list/#_get_all_#:SR5TechDocumentRevision:TC_Derived:PDF:#__getAllProperties__#:Properties</value> -->
+        <!-- <value>TC_Attaches:PDF</value> -->
+        <!-- <value>TC_Attaches:PDF:#__getAllProperties__#:Properties</value> -->
+        <!-- <value>TC_Attaches:PDF:ref_list/PDF_Reference:ImanFile:#__getAllProperties__#:Properties</value> -->
+        <!-- <value>TC_Attaches:PDF:#__getAllProperties__#:Properties</value> -->
+        <!-- <value>TC_Attaches:PDF:ref_list/PDF_Reference:ImanFile</value> -->
+        <!-- <value>TC_Derived:PDF</value> -->
+        <!-- <value>TC_Derived:PDF:#__getAllProperties__#:Properties</value> -->
+        <!-- <value>TC_Derived:PDF:ref_list/PDF_Reference:ImanFile:#__getAllProperties__#:Properties</value> -->
+        <!-- <value>TC_Derived:PDF:ref_list/PDF_Reference:ImanFile</value> -->
+      </context>
+    </preference>
+    <preference name="T4ST_ProductVersionMapping4SR5LLEndItemRevision" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>No description available for this preference</preference_description>
+      <context name="Teamcenter">
+        <value>items_tag:SR5LLEndItem</value>
+        <value>items_tag:SR5LLEndItem:#__getAllProperties__#:Properties</value>
+        <value>#__getAllProperties__#:Properties</value>
+        <value>items_tag:SR5LLEndItem:uom_tag:UnitOfMeasure</value>
+        <!-- <value>IMAN_reference:SR5TechDocumentRevision:#__getAllProperties__#:Properties</value> -->
+        <!-- <value>IMAN_reference:SR5TechDocumentRevision:TC_Attaches:PDF:#__getAllProperties__#:Properties</value> -->
+        <!-- <value>IMAN_reference:SR5TechDocumentRevision:TC_Derived:PDF:#__getAllProperties__#:Properties</value> -->
+        <!-- <value>IMAN_specification:SR5TechDocumentRevision:#__getAllProperties__#:Properties</value> -->
+        <!-- <value>IMAN_specification:SR5TechDocumentRevision:TC_Attaches:PDF:#__getAllProperties__#:Properties</value> -->
+        <!-- <value>IMAN_specification:SR5TechDocumentRevision:TC_Derived:PDF:#__getAllProperties__#:Properties</value> -->
+        <value>SR5HasRequiredDocument:SR5TechDocument</value>
+		<value>SR5HasRequiredDocument:SR5TechDocument:use_revision_rule=Latest 50; No Working:SR5TechDocumentRevision:#__getAllProperties__#:Properties</value>
+        <!-- <value>SR5HasRequiredDocument:SR5TechDocument:revision_list/#_get_all_#:SR5TechDocumentRevision:#__getAllProperties__#:Properties</value> -->
+        <!-- <value>SR5HasRequiredDocument:SR5TechDocument:revision_list/#_get_all_#:SR5TechDocumentRevision:TC_Attaches:PDF:#__getAllProperties__#:Properties</value> -->
+        <!-- <value>SR5HasRequiredDocument:SR5TechDocument:revision_list/#_get_all_#:SR5TechDocumentRevision:TC_Derived:PDF:#__getAllProperties__#:Properties</value> -->
+        <value>SR5HasSpecificationDocument:SR5TechDocument</value>
+		<value>SR5HasSpecificationDocument:SR5TechDocument:use_revision_rule=Latest 50; No Working:SR5TechDocumentRevision:#__getAllProperties__#:Properties</value>
+        <!-- <value>SR5HasSpecificationDocument:SR5TechDocument:revision_list/#_get_all_#:SR5TechDocumentRevision:#__getAllProperties__#:Properties</value> -->
+        <!-- <value>SR5HasSpecificationDocument:SR5TechDocument:revision_list/#_get_all_#:SR5TechDocumentRevision:TC_Attaches:PDF:#__getAllProperties__#:Properties</value> -->
+        <!-- <value>SR5HasSpecificationDocument:SR5TechDocument:revision_list/#_get_all_#:SR5TechDocumentRevision:TC_Derived:PDF:#__getAllProperties__#:Properties</value> -->
+        <!-- <value>TC_Attaches:PDF</value> -->
+        <!-- <value>TC_Attaches:PDF:#__getAllProperties__#:Properties</value> -->
+        <!-- <value>TC_Attaches:PDF:ref_list/PDF_Reference:ImanFile:#__getAllProperties__#:Properties</value> -->
+        <!-- <value>TC_Attaches:PDF:#__getAllProperties__#:Properties</value> -->
+        <!-- <value>TC_Attaches:PDF:ref_list/PDF_Reference:ImanFile</value> -->
+        <!-- <value>TC_Derived:PDF</value> -->
+        <!-- <value>TC_Derived:PDF:#__getAllProperties__#:Properties</value> -->
+        <!-- <value>TC_Derived:PDF:ref_list/PDF_Reference:ImanFile:#__getAllProperties__#:Properties</value> -->
+        <!-- <value>TC_Derived:PDF:ref_list/PDF_Reference:ImanFile</value> -->
+      </context>
+    </preference>
+    <preference name="T4ST_ProductVersionMapping4SR5LLMajorAssyRevision" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>No description available for this preference</preference_description>
+      <context name="Teamcenter">
+        <value>items_tag:SR5LLMajorAssy</value>
+        <value>items_tag:SR5LLMajorAssy:#__getAllProperties__#:Properties</value>
+        <value>#__getAllProperties__#:Properties</value>
+        <value>items_tag:SR5LLMajorAssy:uom_tag:UnitOfMeasure</value>
+        <!-- <value>IMAN_reference:SR5TechDocumentRevision:#__getAllProperties__#:Properties</value> -->
+        <!-- <value>IMAN_reference:SR5TechDocumentRevision:TC_Attaches:PDF:#__getAllProperties__#:Properties</value> -->
+        <!-- <value>IMAN_reference:SR5TechDocumentRevision:TC_Derived:PDF:#__getAllProperties__#:Properties</value> -->
+        <!-- <value>IMAN_specification:SR5TechDocumentRevision:#__getAllProperties__#:Properties</value> -->
+        <!-- <value>IMAN_specification:SR5TechDocumentRevision:TC_Attaches:PDF:#__getAllProperties__#:Properties</value> -->
+        <!-- <value>IMAN_specification:SR5TechDocumentRevision:TC_Derived:PDF:#__getAllProperties__#:Properties</value> -->
+        <value>SR5HasRequiredDocument:SR5TechDocument</value>
+		<value>SR5HasRequiredDocument:SR5TechDocument:use_revision_rule=Latest 50; No Working:SR5TechDocumentRevision:#__getAllProperties__#:Properties</value>
+        <!-- <value>SR5HasRequiredDocument:SR5TechDocument:revision_list/#_get_all_#:SR5TechDocumentRevision:#__getAllProperties__#:Properties</value> -->
+        <!-- <value>SR5HasRequiredDocument:SR5TechDocument:revision_list/#_get_all_#:SR5TechDocumentRevision:TC_Attaches:PDF:#__getAllProperties__#:Properties</value> -->
+        <!-- <value>SR5HasRequiredDocument:SR5TechDocument:revision_list/#_get_all_#:SR5TechDocumentRevision:TC_Derived:PDF:#__getAllProperties__#:Properties</value> -->
+        <value>SR5HasSpecificationDocument:SR5TechDocument</value>
+		<value>SR5HasSpecificationDocument:SR5TechDocument:use_revision_rule=Latest 50; No Working:SR5TechDocumentRevision:#__getAllProperties__#:Properties</value>
+        <!-- <value>SR5HasSpecificationDocument:SR5TechDocument:revision_list/#_get_all_#:SR5TechDocumentRevision:#__getAllProperties__#:Properties</value> -->
+        <!-- <value>SR5HasSpecificationDocument:SR5TechDocument:revision_list/#_get_all_#:SR5TechDocumentRevision:TC_Attaches:PDF:#__getAllProperties__#:Properties</value> -->
+        <!-- <value>SR5HasSpecificationDocument:SR5TechDocument:revision_list/#_get_all_#:SR5TechDocumentRevision:TC_Derived:PDF:#__getAllProperties__#:Properties</value> -->
+        <!-- <value>TC_Attaches:PDF</value> -->
+        <!-- <value>TC_Attaches:PDF:#__getAllProperties__#:Properties</value> -->
+        <!-- <value>TC_Attaches:PDF:ref_list/PDF_Reference:ImanFile:#__getAllProperties__#:Properties</value> -->
+        <!-- <value>TC_Attaches:PDF:#__getAllProperties__#:Properties</value> -->
+        <!-- <value>TC_Attaches:PDF:ref_list/PDF_Reference:ImanFile</value> -->
+        <!-- <value>TC_Derived:PDF</value> -->
+        <!-- <value>TC_Derived:PDF:#__getAllProperties__#:Properties</value> -->
+        <!-- <value>TC_Derived:PDF:ref_list/PDF_Reference:ImanFile:#__getAllProperties__#:Properties</value> -->
+        <!-- <value>TC_Derived:PDF:ref_list/PDF_Reference:ImanFile</value> -->
+      </context>
+    </preference>
+    <preference name="T4ST_ProductVersionMapping4SR5MfgEndItemRevision" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>No description available for this preference</preference_description>
+      <context name="Teamcenter">
+        <value>items_tag:SR5MfgEndItem</value>
+        <value>items_tag:SR5MfgEndItem:#__getAllProperties__#:Properties</value>
+        <value>#__getAllProperties__#:Properties</value>
+        <value>items_tag:SR5MfgEndItem:uom_tag:UnitOfMeasure</value>
+        <!-- <value>IMAN_reference:SR5TechDocumentRevision:#__getAllProperties__#:Properties</value> -->
+        <!-- <value>IMAN_reference:SR5TechDocumentRevision:TC_Attaches:PDF:#__getAllProperties__#:Properties</value> -->
+        <!-- <value>IMAN_reference:SR5TechDocumentRevision:TC_Derived:PDF:#__getAllProperties__#:Properties</value> -->
+        <!-- <value>IMAN_specification:SR5TechDocumentRevision:#__getAllProperties__#:Properties</value> -->
+        <!-- <value>IMAN_specification:SR5TechDocumentRevision:TC_Attaches:PDF:#__getAllProperties__#:Properties</value> -->
+        <!-- <value>IMAN_specification:SR5TechDocumentRevision:TC_Derived:PDF:#__getAllProperties__#:Properties</value> -->
+        <value>SR5HasRequiredDocument:SR5TechDocument</value>
+		<value>SR5HasRequiredDocument:SR5TechDocument:use_revision_rule=Latest 50; No Working:SR5TechDocumentRevision:#__getAllProperties__#:Properties</value>
+        <!-- <value>SR5HasRequiredDocument:SR5TechDocument:revision_list/#_get_all_#:SR5TechDocumentRevision:#__getAllProperties__#:Properties</value> -->
+        <!-- <value>SR5HasRequiredDocument:SR5TechDocument:revision_list/#_get_all_#:SR5TechDocumentRevision:TC_Attaches:PDF:#__getAllProperties__#:Properties</value> -->
+        <!-- <value>SR5HasRequiredDocument:SR5TechDocument:revision_list/#_get_all_#:SR5TechDocumentRevision:TC_Derived:PDF:#__getAllProperties__#:Properties</value> -->
+        <value>SR5HasSpecificationDocument:SR5TechDocument</value>
+		<value>SR5HasSpecificationDocument:SR5TechDocument:use_revision_rule=Latest 50; No Working:SR5TechDocumentRevision:#__getAllProperties__#:Properties</value>
+        <!-- <value>SR5HasSpecificationDocument:SR5TechDocument:revision_list/#_get_all_#:SR5TechDocumentRevision:#__getAllProperties__#:Properties</value> -->
+        <!-- <value>SR5HasSpecificationDocument:SR5TechDocument:revision_list/#_get_all_#:SR5TechDocumentRevision:TC_Attaches:PDF:#__getAllProperties__#:Properties</value> -->
+        <!-- <value>SR5HasSpecificationDocument:SR5TechDocument:revision_list/#_get_all_#:SR5TechDocumentRevision:TC_Derived:PDF:#__getAllProperties__#:Properties</value> -->
+        <!-- <value>TC_Attaches:PDF</value> -->
+        <!-- <value>TC_Attaches:PDF:#__getAllProperties__#:Properties</value> -->
+        <!-- <value>TC_Attaches:PDF:ref_list/PDF_Reference:ImanFile:#__getAllProperties__#:Properties</value> -->
+        <!-- <value>TC_Attaches:PDF:#__getAllProperties__#:Properties</value> -->
+        <!-- <value>TC_Attaches:PDF:ref_list/PDF_Reference:ImanFile</value> -->
+        <!-- <value>TC_Derived:PDF</value> -->
+        <!-- <value>TC_Derived:PDF:#__getAllProperties__#:Properties</value> -->
+        <!-- <value>TC_Derived:PDF:ref_list/PDF_Reference:ImanFile:#__getAllProperties__#:Properties</value> -->
+        <!-- <value>TC_Derived:PDF:ref_list/PDF_Reference:ImanFile</value> -->
+      </context>
+    </preference>
+    <preference name="T4ST_ProductVersionMapping4SR5MfgInstallKitRevision" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>No description available for this preference</preference_description>
+      <context name="Teamcenter">
+        <value>items_tag:SR5MfgInstallKit</value>
+        <value>items_tag:SR5MfgInstallKit:#__getAllProperties__#:Properties</value>
+        <value>#__getAllProperties__#:Properties</value>
+        <value>items_tag:SR5MfgInstallKit:uom_tag:UnitOfMeasure</value>
+        <!-- <value>IMAN_reference:SR5TechDocumentRevision:#__getAllProperties__#:Properties</value> -->
+        <!-- <value>IMAN_reference:SR5TechDocumentRevision:TC_Attaches:PDF:#__getAllProperties__#:Properties</value> -->
+        <!-- <value>IMAN_reference:SR5TechDocumentRevision:TC_Derived:PDF:#__getAllProperties__#:Properties</value> -->
+        <!-- <value>IMAN_specification:SR5TechDocumentRevision:#__getAllProperties__#:Properties</value> -->
+        <!-- <value>IMAN_specification:SR5TechDocumentRevision:TC_Attaches:PDF:#__getAllProperties__#:Properties</value> -->
+        <!-- <value>IMAN_specification:SR5TechDocumentRevision:TC_Derived:PDF:#__getAllProperties__#:Properties</value> -->
+        <value>SR5HasRequiredDocument:SR5TechDocument</value>
+		<value>SR5HasRequiredDocument:SR5TechDocument:use_revision_rule=Latest 50; No Working:SR5TechDocumentRevision:#__getAllProperties__#:Properties</value>
+        <!-- <value>SR5HasRequiredDocument:SR5TechDocument:revision_list/#_get_all_#:SR5TechDocumentRevision:#__getAllProperties__#:Properties</value> -->
+        <!-- <value>SR5HasRequiredDocument:SR5TechDocument:revision_list/#_get_all_#:SR5TechDocumentRevision:TC_Attaches:PDF:#__getAllProperties__#:Properties</value> -->
+        <!-- <value>SR5HasRequiredDocument:SR5TechDocument:revision_list/#_get_all_#:SR5TechDocumentRevision:TC_Derived:PDF:#__getAllProperties__#:Properties</value> -->
+        <value>SR5HasSpecificationDocument:SR5TechDocument</value>
+		<value>SR5HasSpecificationDocument:SR5TechDocument:use_revision_rule=Latest 50; No Working:SR5TechDocumentRevision:#__getAllProperties__#:Properties</value>
+        <!-- <value>SR5HasSpecificationDocument:SR5TechDocument:revision_list/#_get_all_#:SR5TechDocumentRevision:#__getAllProperties__#:Properties</value> -->
+        <!-- <value>SR5HasSpecificationDocument:SR5TechDocument:revision_list/#_get_all_#:SR5TechDocumentRevision:TC_Attaches:PDF:#__getAllProperties__#:Properties</value> -->
+        <!-- <value>SR5HasSpecificationDocument:SR5TechDocument:revision_list/#_get_all_#:SR5TechDocumentRevision:TC_Derived:PDF:#__getAllProperties__#:Properties</value> -->
+        <!-- <value>TC_Attaches:PDF</value> -->
+        <!-- <value>TC_Attaches:PDF:#__getAllProperties__#:Properties</value> -->
+        <!-- <value>TC_Attaches:PDF:ref_list/PDF_Reference:ImanFile:#__getAllProperties__#:Properties</value> -->
+        <!-- <value>TC_Attaches:PDF:#__getAllProperties__#:Properties</value> -->
+        <!-- <value>TC_Attaches:PDF:ref_list/PDF_Reference:ImanFile</value> -->
+        <!-- <value>TC_Derived:PDF</value> -->
+        <!-- <value>TC_Derived:PDF:#__getAllProperties__#:Properties</value> -->
+        <!-- <value>TC_Derived:PDF:ref_list/PDF_Reference:ImanFile:#__getAllProperties__#:Properties</value> -->
+        <!-- <value>TC_Derived:PDF:ref_list/PDF_Reference:ImanFile</value> -->
+      </context>
+    </preference>
+    <preference name="T4ST_ProductVersionMapping4SR5MfgMajorAssyRevision" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>No description available for this preference</preference_description>
+      <context name="Teamcenter">
+        <value>items_tag:SR5MfgMajorAssy</value>
+        <value>items_tag:SR5MfgMajorAssy:#__getAllProperties__#:Properties</value>
+        <value>#__getAllProperties__#:Properties</value>
+        <value>items_tag:SR5MfgMajorAssy:uom_tag:UnitOfMeasure</value>
+        <!-- <value>IMAN_reference:SR5TechDocumentRevision:#__getAllProperties__#:Properties</value> -->
+        <!-- <value>IMAN_reference:SR5TechDocumentRevision:TC_Attaches:PDF:#__getAllProperties__#:Properties</value> -->
+        <!-- <value>IMAN_reference:SR5TechDocumentRevision:TC_Derived:PDF:#__getAllProperties__#:Properties</value> -->
+        <!-- <value>IMAN_specification:SR5TechDocumentRevision:#__getAllProperties__#:Properties</value> -->
+        <!-- <value>IMAN_specification:SR5TechDocumentRevision:TC_Attaches:PDF:#__getAllProperties__#:Properties</value> -->
+        <!-- <value>IMAN_specification:SR5TechDocumentRevision:TC_Derived:PDF:#__getAllProperties__#:Properties</value> -->
+        <value>SR5HasRequiredDocument:SR5TechDocument</value>
+		<value>SR5HasRequiredDocument:SR5TechDocument:use_revision_rule=Latest 50; No Working:SR5TechDocumentRevision:#__getAllProperties__#:Properties</value>
+        <!-- <value>SR5HasRequiredDocument:SR5TechDocument:revision_list/#_get_all_#:SR5TechDocumentRevision:#__getAllProperties__#:Properties</value> -->
+        <!-- <value>SR5HasRequiredDocument:SR5TechDocument:revision_list/#_get_all_#:SR5TechDocumentRevision:TC_Attaches:PDF:#__getAllProperties__#:Properties</value> -->
+        <!-- <value>SR5HasRequiredDocument:SR5TechDocument:revision_list/#_get_all_#:SR5TechDocumentRevision:TC_Derived:PDF:#__getAllProperties__#:Properties</value> -->
+        <value>SR5HasSpecificationDocument:SR5TechDocument</value>
+		<value>SR5HasSpecificationDocument:SR5TechDocument:use_revision_rule=Latest 50; No Working:SR5TechDocumentRevision:#__getAllProperties__#:Properties</value>
+        <!-- <value>SR5HasSpecificationDocument:SR5TechDocument:revision_list/#_get_all_#:SR5TechDocumentRevision:#__getAllProperties__#:Properties</value> -->
+        <!-- <value>SR5HasSpecificationDocument:SR5TechDocument:revision_list/#_get_all_#:SR5TechDocumentRevision:TC_Attaches:PDF:#__getAllProperties__#:Properties</value> -->
+        <!-- <value>SR5HasSpecificationDocument:SR5TechDocument:revision_list/#_get_all_#:SR5TechDocumentRevision:TC_Derived:PDF:#__getAllProperties__#:Properties</value> -->
+        <!-- <value>TC_Attaches:PDF</value> -->
+        <!-- <value>TC_Attaches:PDF:#__getAllProperties__#:Properties</value> -->
+        <!-- <value>TC_Attaches:PDF:ref_list/PDF_Reference:ImanFile:#__getAllProperties__#:Properties</value> -->
+        <!-- <value>TC_Attaches:PDF:#__getAllProperties__#:Properties</value> -->
+        <!-- <value>TC_Attaches:PDF:ref_list/PDF_Reference:ImanFile</value> -->
+        <!-- <value>TC_Derived:PDF</value> -->
+        <!-- <value>TC_Derived:PDF:#__getAllProperties__#:Properties</value> -->
+        <!-- <value>TC_Derived:PDF:ref_list/PDF_Reference:ImanFile:#__getAllProperties__#:Properties</value> -->
+        <!-- <value>TC_Derived:PDF:ref_list/PDF_Reference:ImanFile</value> -->
+      </context>
+    </preference>
+    <preference name="T4ST_ProductVersionMapping4SR5MfgObjectRevision" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>No description available for this preference</preference_description>
+      <context name="Teamcenter">
+        <value>items_tag:SR5MfgObject</value>
+        <value>items_tag:SR5MfgObject:#__getAllProperties__#:Properties</value>
+        <value>#__getAllProperties__#:Properties</value>
+        <!-- <value>items_tag:SR5MfgObject:uom_tag:UnitOfMeasure</value> -->
+		<value>TC_Is_Represented_By/#use_secondary_only#:SR5EngArticleRevision:#__getAllProperties__#:Properties</value>
+		<value>TC_Is_Represented_By/#use_secondary_only#:SR5EngArticleRevision:items_tag:SR5EngArticle:#__getAllProperties__#:Properties</value>
+		<!-- <value>TC_Is_Represented_By/#use_secondary_only#:SR5EngArticleRevision:items_tag:SR5EngArticle:uom_tag:UnitOfMeasure</value> -->
+		<value>TC_Is_Represented_By/#use_secondary_only#:SR5EngArticleRevision:items_tag:SR5EngArticle:uom_tag:UnitOfMeasure:#__getAllProperties__#:Properties</value>
+		<value>TC_Is_Represented_By/#use_secondary_only#:SR5EngArticleRevision:Mat1UsesMaterial:Mat1MaterialRevision:#__getAllProperties__#:Properties</value>
+        <!-- <value>IMAN_reference:SR5TechDocumentRevision:#__getAllProperties__#:Properties</value> -->
+        <!-- <value>IMAN_reference:SR5TechDocumentRevision:TC_Attaches:PDF:#__getAllProperties__#:Properties</value> -->
+        <!-- <value>IMAN_reference:SR5TechDocumentRevision:TC_Derived:PDF:#__getAllProperties__#:Properties</value> -->
+        <!-- <value>IMAN_specification:SR5TechDocumentRevision:#__getAllProperties__#:Properties</value> -->
+        <!-- <value>IMAN_specification:SR5TechDocumentRevision:TC_Attaches:PDF:#__getAllProperties__#:Properties</value> -->
+        <!-- <value>IMAN_specification:SR5TechDocumentRevision:TC_Derived:PDF:#__getAllProperties__#:Properties</value> -->
+        <value>SR5HasRequiredDocument:SR5TechDocument</value>
+		<value>SR5HasRequiredDocument:SR5TechDocument:use_revision_rule=Latest 50; No Working:SR5TechDocumentRevision:#__getAllProperties__#:Properties</value>
+        <!-- <value>SR5HasRequiredDocument:SR5TechDocument:revision_list/#_get_all_#:SR5TechDocumentRevision:#__getAllProperties__#:Properties</value> -->
+        <!-- <value>SR5HasRequiredDocument:SR5TechDocument:revision_list/#_get_all_#:SR5TechDocumentRevision:TC_Attaches:PDF:#__getAllProperties__#:Properties</value> -->
+        <!-- <value>SR5HasRequiredDocument:SR5TechDocument:revision_list/#_get_all_#:SR5TechDocumentRevision:TC_Derived:PDF:#__getAllProperties__#:Properties</value> -->
+        <value>SR5HasSpecificationDocument:SR5TechDocument</value>
+		<value>SR5HasSpecificationDocument:SR5TechDocument:use_revision_rule=Latest 50; No Working:SR5TechDocumentRevision:#__getAllProperties__#:Properties</value>
+        <!-- <value>SR5HasSpecificationDocument:SR5TechDocument:revision_list/#_get_all_#:SR5TechDocumentRevision:#__getAllProperties__#:Properties</value> -->
+        <!-- <value>SR5HasSpecificationDocument:SR5TechDocument:revision_list/#_get_all_#:SR5TechDocumentRevision:TC_Attaches:PDF:#__getAllProperties__#:Properties</value> -->
+        <!-- <value>SR5HasSpecificationDocument:SR5TechDocument:revision_list/#_get_all_#:SR5TechDocumentRevision:TC_Derived:PDF:#__getAllProperties__#:Properties</value> -->
+        <!-- <value>TC_Attaches:PDF</value> -->
+        <!-- <value>TC_Attaches:PDF:#__getAllProperties__#:Properties</value> -->
+        <!-- <value>TC_Attaches:PDF:ref_list/PDF_Reference:ImanFile:#__getAllProperties__#:Properties</value> -->
+        <!-- <value>TC_Attaches:PDF:#__getAllProperties__#:Properties</value> -->
+        <!-- <value>TC_Attaches:PDF:ref_list/PDF_Reference:ImanFile</value> -->
+        <!-- <value>TC_Derived:PDF</value> -->
+        <!-- <value>TC_Derived:PDF:#__getAllProperties__#:Properties</value> -->
+        <!-- <value>TC_Derived:PDF:ref_list/PDF_Reference:ImanFile:#__getAllProperties__#:Properties</value> -->
+        <!-- <value>TC_Derived:PDF:ref_list/PDF_Reference:ImanFile</value> -->
+      </context>
+    </preference>
+    <preference name="T4ST_ProductVersionMapping4SR5SRVEndItemRevision" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>No description available for this preference</preference_description>
+      <context name="Teamcenter">
+        <value>items_tag:SR5SRVEndItem</value>
+        <value>items_tag:SR5SRVEndItem:#__getAllProperties__#:Properties</value>
+        <value>#__getAllProperties__#:Properties</value>
+        <value>items_tag:SR5SRVEndItem:uom_tag:UnitOfMeasure</value>
+        <!-- <value>items_tag:SR5SRVEndItem:SR5HasPlantForm:SR5PlantForm:#__getAllProperties__#:Properties</value> -->
+        <!-- <value>IMAN_reference:SR5TechDocumentRevision:#__getAllProperties__#:Properties</value> -->
+        <!-- <value>IMAN_reference:SR5TechDocumentRevision:TC_Attaches:PDF:#__getAllProperties__#:Properties</value> -->
+        <!-- <value>IMAN_reference:SR5TechDocumentRevision:TC_Derived:PDF:#__getAllProperties__#:Properties</value> -->
+        <!-- <value>IMAN_specification:SR5TechDocumentRevision:#__getAllProperties__#:Properties</value> -->
+        <!-- <value>IMAN_specification:SR5TechDocumentRevision:TC_Attaches:PDF:#__getAllProperties__#:Properties</value> -->
+        <!-- <value>IMAN_specification:SR5TechDocumentRevision:TC_Derived:PDF:#__getAllProperties__#:Properties</value> -->
+        <value>SR5HasRequiredDocument:SR5TechDocument</value>
+		<value>SR5HasRequiredDocument:SR5TechDocument:use_revision_rule=Latest 50; No Working:SR5TechDocumentRevision:#__getAllProperties__#:Properties</value>
+        <!-- <value>SR5HasRequiredDocument:SR5TechDocument:use_revision_rule=Any Status; Working:SR5TechDocumentRevision:#__getAllProperties__#:Properties</value> -->
+        <!-- <value>SR5HasRequiredDocument:SR5TechDocument:use_revision_rule=Any Status; Working:SR5TechDocumentRevision:TC_Attaches:PDF:#__getAllProperties__#:Properties</value> -->
+        <!-- <value>SR5HasRequiredDocument:SR5TechDocument:use_revision_rule=Any Status; Working:SR5TechDocumentRevision:TC_Derived:PDF:#__getAllProperties__#:Properties</value> -->
+		<value>SR5HasSpecificationDocument:SR5TechDocument</value>
+		<value>SR5HasSpecificationDocument:SR5TechDocument:use_revision_rule=Latest 50; No Working:SR5TechDocumentRevision:#__getAllProperties__#:Properties</value>
+        <!-- <value>SR5HasSpecificationDocument:SR5TechDocument:revision_list/#_get_all_#:SR5TechDocumentRevision:#__getAllProperties__#:Properties</value> -->
+        <!-- <value>SR5HasSpecificationDocument:SR5TechDocument:revision_list/#_get_all_#:SR5TechDocumentRevision:TC_Attaches:PDF:#__getAllProperties__#:Properties</value> -->
+        <!-- <value>SR5HasSpecificationDocument:SR5TechDocument:revision_list/#_get_all_#:SR5TechDocumentRevision:TC_Derived:PDF:#__getAllProperties__#:Properties</value> -->
+        <!-- <value>TC_Attaches:PDF</value> -->
+        <!-- <value>TC_Attaches:PDF:#__getAllProperties__#:Properties</value> -->
+        <!-- <value>TC_Attaches:PDF:ref_list/PDF_Reference:ImanFile:#__getAllProperties__#:Properties</value> -->
+        <!-- <value>TC_Attaches:PDF:#__getAllProperties__#:Properties</value> -->
+        <!-- <value>TC_Attaches:PDF:ref_list/PDF_Reference:ImanFile</value> -->
+        <!-- <value>TC_Derived:PDF</value> -->
+        <!-- <value>TC_Derived:PDF:#__getAllProperties__#:Properties</value> -->
+        <!-- <value>TC_Derived:PDF:ref_list/PDF_Reference:ImanFile:#__getAllProperties__#:Properties</value> -->
+        <!-- <value>TC_Derived:PDF:ref_list/PDF_Reference:ImanFile</value> -->
+      </context>
+    </preference>
+    <preference name="T4ST_ProductVersionMapping4SR5SRVMajorAssyRevision" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>No description available for this preference</preference_description>
+      <context name="Teamcenter">
+        <value>items_tag:SR5SRVMajorAssy</value>
+        <value>items_tag:SR5SRVMajorAssy:#__getAllProperties__#:Properties</value>
+        <value>#__getAllProperties__#:Properties</value>
+        <value>items_tag:SR5SRVMajorAssy:uom_tag:UnitOfMeasure</value>
+        <!-- <value>items_tag:SR5SRVMajorAssy:SR5HasPlantForm:SR5PlantForm:#__getAllProperties__#:Properties</value> -->
+        <!-- <value>IMAN_reference:SR5TechDocumentRevision:#__getAllProperties__#:Properties</value> -->
+        <!-- <value>IMAN_reference:SR5TechDocumentRevision:TC_Attaches:PDF:#__getAllProperties__#:Properties</value> -->
+        <!-- <value>IMAN_reference:SR5TechDocumentRevision:TC_Derived:PDF:#__getAllProperties__#:Properties</value> -->
+        <!-- <value>IMAN_specification:SR5TechDocumentRevision:#__getAllProperties__#:Properties</value> -->
+        <!-- <value>IMAN_specification:SR5TechDocumentRevision:TC_Attaches:PDF:#__getAllProperties__#:Properties</value> -->
+        <!-- <value>IMAN_specification:SR5TechDocumentRevision:TC_Derived:PDF:#__getAllProperties__#:Properties</value> -->
+        <value>SR5HasRequiredDocument:SR5TechDocument</value>
+		<value>SR5HasRequiredDocument:SR5TechDocument:use_revision_rule=Latest 50; No Working:SR5TechDocumentRevision:#__getAllProperties__#:Properties</value>
+        <!-- <value>SR5HasRequiredDocument:SR5TechDocument:use_revision_rule=Any Status; Working:SR5TechDocumentRevision:#__getAllProperties__#:Properties</value> -->
+        <!-- <value>SR5HasRequiredDocument:SR5TechDocument:use_revision_rule=Any Status; Working:SR5TechDocumentRevision:TC_Attaches:PDF:#__getAllProperties__#:Properties</value> -->
+        <!-- <value>SR5HasRequiredDocument:SR5TechDocument:use_revision_rule=Any Status; Working:SR5TechDocumentRevision:TC_Derived:PDF:#__getAllProperties__#:Properties</value> -->
+        <value>SR5HasSpecificationDocument:SR5TechDocument</value>
+		<value>SR5HasSpecificationDocument:SR5TechDocument:use_revision_rule=Latest 50; No Working:SR5TechDocumentRevision:#__getAllProperties__#:Properties</value>
+        <!-- <value>SR5HasSpecificationDocument:SR5TechDocument:revision_list/#_get_all_#:SR5TechDocumentRevision:#__getAllProperties__#:Properties</value> -->
+        <!-- <value>SR5HasSpecificationDocument:SR5TechDocument:revision_list/#_get_all_#:SR5TechDocumentRevision:TC_Attaches:PDF:#__getAllProperties__#:Properties</value> -->
+        <!-- <value>SR5HasSpecificationDocument:SR5TechDocument:revision_list/#_get_all_#:SR5TechDocumentRevision:TC_Derived:PDF:#__getAllProperties__#:Properties</value> -->
+        <!-- <value>TC_Attaches:PDF</value> -->
+        <!-- <value>TC_Attaches:PDF:#__getAllProperties__#:Properties</value> -->
+        <!-- <value>TC_Attaches:PDF:ref_list/PDF_Reference:ImanFile:#__getAllProperties__#:Properties</value> -->
+        <!-- <value>TC_Attaches:PDF:#__getAllProperties__#:Properties</value> -->
+        <!-- <value>TC_Attaches:PDF:ref_list/PDF_Reference:ImanFile</value> -->
+        <!-- <value>TC_Derived:PDF</value> -->
+        <!-- <value>TC_Derived:PDF:#__getAllProperties__#:Properties</value> -->
+        <!-- <value>TC_Derived:PDF:ref_list/PDF_Reference:ImanFile:#__getAllProperties__#:Properties</value> -->
+        <!-- <value>TC_Derived:PDF:ref_list/PDF_Reference:ImanFile</value> -->
+      </context>
+    </preference>
+    <preference name="T4ST_ProductVersionMapping4SR5ToolRevision" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>No description available for this preference</preference_description>
+      <context name="Teamcenter">
+        <value>items_tag:SR5Tool</value>
+        <value>items_tag:SR5Tool:#__getAllProperties__#:Properties</value>
+        <value>#__getAllProperties__#:Properties</value>
+        <value>items_tag:SR5Tool:uom_tag:UnitOfMeasure</value>
+        <!-- <value>IMAN_reference:SR5TechDocumentRevision:#__getAllProperties__#:Properties</value> -->
+        <!-- <value>IMAN_reference:SR5TechDocumentRevision:TC_Attaches:PDF:#__getAllProperties__#:Properties</value> -->
+        <!-- <value>IMAN_reference:SR5TechDocumentRevision:TC_Derived:PDF:#__getAllProperties__#:Properties</value> -->
+        <!-- <value>IMAN_specification:SR5TechDocumentRevision:#__getAllProperties__#:Properties</value> -->
+        <!-- <value>IMAN_specification:SR5TechDocumentRevision:TC_Attaches:PDF:#__getAllProperties__#:Properties</value> -->
+        <!-- <value>IMAN_specification:SR5TechDocumentRevision:TC_Derived:PDF:#__getAllProperties__#:Properties</value> -->
+        <value>SR5HasRequiredDocument:SR5TechDocument</value>
+		<value>SR5HasRequiredDocument:SR5TechDocument:use_revision_rule=Latest 50; No Working:SR5TechDocumentRevision:#__getAllProperties__#:Properties</value>
+        <!-- <value>SR5HasRequiredDocument:SR5TechDocument:revision_list/#_get_all_#:SR5TechDocumentRevision:#__getAllProperties__#:Properties</value> -->
+        <!-- <value>SR5HasRequiredDocument:SR5TechDocument:revision_list/#_get_all_#:SR5TechDocumentRevision:TC_Attaches:PDF:#__getAllProperties__#:Properties</value> -->
+        <!-- <value>SR5HasRequiredDocument:SR5TechDocument:revision_list/#_get_all_#:SR5TechDocumentRevision:TC_Derived:PDF:#__getAllProperties__#:Properties</value> -->
+        <value>SR5HasSpecificationDocument:SR5TechDocument</value>
+		<value>SR5HasSpecificationDocument:SR5TechDocument:use_revision_rule=Latest 50; No Working:SR5TechDocumentRevision:#__getAllProperties__#:Properties</value>
+        <!-- <value>SR5HasSpecificationDocument:SR5TechDocument:revision_list/#_get_all_#:SR5TechDocumentRevision:#__getAllProperties__#:Properties</value> -->
+        <!-- <value>SR5HasSpecificationDocument:SR5TechDocument:revision_list/#_get_all_#:SR5TechDocumentRevision:TC_Attaches:PDF:#__getAllProperties__#:Properties</value> -->
+        <!-- <value>SR5HasSpecificationDocument:SR5TechDocument:revision_list/#_get_all_#:SR5TechDocumentRevision:TC_Derived:PDF:#__getAllProperties__#:Properties</value> -->
+        <!-- <value>TC_Attaches:PDF</value> -->
+        <!-- <value>TC_Attaches:PDF:#__getAllProperties__#:Properties</value> -->
+        <!-- <value>TC_Attaches:PDF:ref_list/PDF_Reference:ImanFile:#__getAllProperties__#:Properties</value> -->
+        <!-- <value>TC_Attaches:PDF:#__getAllProperties__#:Properties</value> -->
+        <!-- <value>TC_Attaches:PDF:ref_list/PDF_Reference:ImanFile</value> -->
+        <!-- <value>TC_Derived:PDF</value> -->
+        <!-- <value>TC_Derived:PDF:#__getAllProperties__#:Properties</value> -->
+        <!-- <value>TC_Derived:PDF:ref_list/PDF_Reference:ImanFile:#__getAllProperties__#:Properties</value> -->
+        <!-- <value>TC_Derived:PDF:ref_list/PDF_Reference:ImanFile</value> -->
+      </context>
+    </preference>
+	
+    <preference name="T4ST_ProductVersionPropertyListMode4SR5EngArticle" type="Integer" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>AllowList</preference_description>
+      <context name="Teamcenter">
+        <value>2</value>
+      </context>
+    </preference>
+    <preference name="T4ST_ProductVersionPropertyListMode4SR5EngArticleRevision" type="Integer" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>AllowList</preference_description>
+      <context name="Teamcenter">
+        <value>2</value>
+      </context>
+    </preference>
+    <preference name="T4ST_ProductVersionPropertyListMode4SR5GenCatPart" type="Integer" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>AllowList</preference_description>
+      <context name="Teamcenter">
+        <value>2</value>
+      </context>
+    </preference>
+    <preference name="T4ST_ProductVersionPropertyListMode4SR5GenCatPartRevision" type="Integer" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>AllowList</preference_description>
+      <context name="Teamcenter">
+        <value>2</value>
+      </context>
+    </preference>
+    <preference name="T4ST_ProductVersionPropertyListMode4SR5LLEndItem" type="Integer" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>AllowList</preference_description>
+      <context name="Teamcenter">
+        <value>2</value>
+      </context>
+    </preference>
+    <preference name="T4ST_ProductVersionPropertyListMode4SR5LLEndItemRevision" type="Integer" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>AllowList</preference_description>
+      <context name="Teamcenter">
+        <value>2</value>
+      </context>
+    </preference>
+    <preference name="T4ST_ProductVersionPropertyListMode4SR5LLMajorAssy" type="Integer" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>AllowList</preference_description>
+      <context name="Teamcenter">
+        <value>2</value>
+      </context>
+    </preference>
+    <preference name="T4ST_ProductVersionPropertyListMode4SR5LLMajorAssyRevision" type="Integer" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>AllowList</preference_description>
+      <context name="Teamcenter">
+        <value>2</value>
+      </context>
+    </preference>
+    <preference name="T4ST_ProductVersionPropertyListMode4SR5MfgInstallKit" type="Integer" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>AllowList</preference_description>
+      <context name="Teamcenter">
+        <value>2</value>
+      </context>
+    </preference>
+    <preference name="T4ST_ProductVersionPropertyListMode4SR5MfgInstallKitRevision" type="Integer" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>AllowList</preference_description>
+      <context name="Teamcenter">
+        <value>2</value>
+      </context>
+    </preference>
+    <preference name="T4ST_ProductVersionPropertyListMode4SR5MfgMajorAssy" type="Integer" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>AllowList</preference_description>
+      <context name="Teamcenter">
+        <value>2</value>
+      </context>
+    </preference>
+    <preference name="T4ST_ProductVersionPropertyListMode4SR5MfgMajorAssyRevision" type="Integer" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>AllowList</preference_description>
+      <context name="Teamcenter">
+        <value>2</value>
+      </context>
+    </preference>
+    <preference name="T4ST_ProductVersionPropertyListMode4SR5MfgObject" type="Integer" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>AllowList</preference_description>
+      <context name="Teamcenter">
+        <value>2</value>
+      </context>
+    </preference>
+    <preference name="T4ST_ProductVersionPropertyListMode4SR5MfgObjectRevision" type="Integer" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>AllowList</preference_description>
+      <context name="Teamcenter">
+        <value>2</value>
+      </context>
+    </preference>
+    <preference name="T4ST_ProductVersionPropertyListMode4SR5PlantForm" type="Integer" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>AllowList</preference_description>
+      <context name="Teamcenter">
+        <value>2</value>
+      </context>
+    </preference>
+    <preference name="T4ST_ProductVersionPropertyListMode4SR5MfgEndItem" type="Integer" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>AllowList</preference_description>
+      <context name="Teamcenter">
+        <value>2</value>
+      </context>
+    </preference>
+    <preference name="T4ST_ProductVersionPropertyListMode4SR5MfgEndItemRevision" type="Integer" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>AllowList</preference_description>
+      <context name="Teamcenter">
+        <value>2</value>
+      </context>
+    </preference>
+    <preference name="T4ST_ProductVersionPropertyListMode4SR5Software" type="Integer" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>AllowList</preference_description>
+      <context name="Teamcenter">
+        <value>2</value>
+      </context>
+    </preference>
+    <preference name="T4ST_ProductVersionPropertyListMode4SR5TechDocumentRevision" type="Integer" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>AllowList</preference_description>
+      <context name="Teamcenter">
+        <value>2</value>
+      </context>
+    </preference>
+    <preference name="T4ST_ProductVersionPropertyListMode4SR5Tool" type="Integer" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>AllowList</preference_description>
+      <context name="Teamcenter">
+        <value>2</value>
+      </context>
+    </preference>
+    <preference name="T4ST_ProductVersionPropertyListMode4SR5ToolRevision" type="Integer" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>AllowList</preference_description>
+      <context name="Teamcenter">
+        <value>2</value>
+      </context>
+    </preference>
+    <preference name="T4ST_ProductVersionPropertyListMode4UnitOfMeasure" type="Integer" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>AllowList</preference_description>
+      <context name="Teamcenter">
+        <value>2</value>
+      </context>
+    </preference>
+    <preference name="T4ST_ProductVersionProperty2ProcessList4ImanFile" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>AllowList special attributes - defined during implementation</preference_description>
+      <context name="Teamcenter">
+        <value>file_name</value>
+        <value>mime_type</value>
+        <value>original_file_name</value>
+      </context>
+    </preference>
+    <preference name="T4ST_ProductVersionProperty2ProcessList4PDF" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>AllowList special attributes - defined during implementation</preference_description>
+      <context name="Teamcenter">
+        <value>object_type</value>
+        <value>sr5DocLanguage</value>
+        <value>sr5SAPKey</value>
+        <value>object_name</value>
+        <value>object_desc</value>
+      </context>
+    </preference>
+    <preference name="T4ST_ProductVersionProperty2ProcessList4SR5EngArticle" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>AllowList special attributes - defined during implementation</preference_description>
+      <context name="Teamcenter">
+        <value>item_id</value>
+        <value>object_name</value>
+        <value>sr5SAPMaterialType</value>
+        <value>object_type</value>
+        <value>sr5SAPMaterialGroup</value>
+      </context>
+    </preference>
+    <preference name="T4ST_ProductVersionProperty2ProcessList4SR5EngArticleRevision" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>AllowList special attributes - defined during implementation</preference_description>
+      <context name="Teamcenter">
+        <value>item_revision_id</value>
+        <value>item_id</value>
+        <value>object_name</value>
+        <value>object_desc</value>
+        <value>object_type</value>
+		<value>sr5ExternalRevision</value>
+        <value>sr5SAPID</value>
+        <value>sr5SAPTransStatus</value>
+        <value>sr5SAPTransDate</value>
+      </context>
+    </preference>
+    <preference name="T4ST_ProductVersionProperty2ProcessList4SR5GenCatPart" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>AllowList special attributes - defined during implementation</preference_description>
+      <context name="Teamcenter">
+        <value>item_id</value>
+        <value>object_name</value>
+        <value>sr5SAPMaterialType</value>
+        <value>object_type</value>
+        <value>sr5SAPMaterialGroup</value>
+      </context>
+    </preference>
+    <preference name="T4ST_ProductVersionProperty2ProcessList4SR5GenCatPartRevision" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>AllowList special attributes - defined during implementation</preference_description>
+      <context name="Teamcenter">
+        <value>item_revision_id</value>
+        <value>item_id</value>
+        <value>object_name</value>
+        <value>object_desc</value>
+        <value>object_type</value>
+		<value>sr5ExternalRevision</value>
+        <value>sr5SAPID</value>
+        <value>sr5SAPTransStatus</value>
+        <value>sr5SAPTransDate</value>
+      </context>
+    </preference>
+    <preference name="T4ST_ProductVersionProperty2ProcessList4SR5LLEndItem" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>AllowList special attributes - defined during implementation</preference_description>
+      <context name="Teamcenter">
+        <value>item_id</value>
+        <value>object_name</value>
+        <value>sr5SAPMaterialType</value>
+        <value>object_type</value>
+      </context>
+    </preference>
+    <preference name="T4ST_ProductVersionProperty2ProcessList4SR5LLEndItemRevision" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>AllowList special attributes - defined during implementation</preference_description>
+      <context name="Teamcenter">
+        <value>item_revision_id</value>
+        <value>item_id</value>
+        <value>object_name</value>
+        <value>object_desc</value>
+        <value>object_type</value>
+		<value>sr5ExternalRevision</value>
+        <value>sr5SAPID</value>
+        <value>sr5SAPTransStatus</value>
+        <value>sr5SAPTransDate</value>
+      </context>
+    </preference>
+    <preference name="T4ST_ProductVersionProperty2ProcessList4SR5LLMajorAssy" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>AllowList special attributes - defined during implementation</preference_description>
+      <context name="Teamcenter">
+        <value>item_id</value>
+        <value>object_name</value>
+        <value>sr5SAPMaterialType</value>
+        <value>object_type</value>
+      </context>
+    </preference>
+    <preference name="T4ST_ProductVersionProperty2ProcessList4SR5LLMajorAssyRevision" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>AllowList special attributes - defined during implementation</preference_description>
+      <context name="Teamcenter">
+        <value>item_revision_id</value>
+        <value>item_id</value>
+        <value>object_name</value>
+        <value>object_desc</value>
+        <value>object_type</value>
+		<value>sr5ExternalRevision</value>
+        <value>sr5SAPID</value>
+        <value>sr5SAPTransStatus</value>
+        <value>sr5SAPTransDate</value>
+      </context>
+    </preference>
+    <preference name="T4ST_ProductVersionProperty2ProcessList4SR5MfgEndItem" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>AllowList special attributes - defined during implementation</preference_description>
+      <context name="Teamcenter">
+        <value>item_id</value>
+        <value>object_name</value>
+		<value>object_type</value>
+        <value>sr5SAPMaterialType</value>
+      </context>
+    </preference>
+    <preference name="T4ST_ProductVersionProperty2ProcessList4SR5MfgEndItemRevision" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>AllowList special attributes - defined during implementation</preference_description>
+      <context name="Teamcenter">
+        <value>item_revision_id</value>
+        <value>item_id</value>
+        <value>object_name</value>
+        <value>object_desc</value>
+        <value>object_type</value>
+		<value>sr5ExternalRevision</value>
+        <value>sr5SAPID</value>
+        <value>sr5SAPTransStatus</value>
+        <value>sr5SAPTransDate</value>
+      </context>
+    </preference>
+    <preference name="T4ST_ProductVersionProperty2ProcessList4SR5MfgInstallKit" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>AllowList special attributes - defined during implementation</preference_description>
+      <context name="Teamcenter">
+        <value>item_id</value>
+        <value>object_name</value>
+		<value>object_type</value>
+        <value>sr5SAPMaterialType</value>
+      </context>
+    </preference>
+    <preference name="T4ST_ProductVersionProperty2ProcessList4SR5MfgInstallKitRevision" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>AllowList special attributes - defined during implementation</preference_description>
+      <context name="Teamcenter">
+        <value>item_revision_id</value>
+        <value>item_id</value>
+        <value>object_name</value>
+        <value>object_desc</value>
+        <value>object_type</value>
+		<value>sr5ExternalRevision</value>
+        <value>sr5SAPID</value>
+        <value>sr5SAPTransStatus</value>
+        <value>sr5SAPTransDate</value>
+      </context>
+    </preference>
+    <preference name="T4ST_ProductVersionProperty2ProcessList4SR5MfgMajorAssy" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>AllowList special attributes - defined during implementation</preference_description>
+      <context name="Teamcenter">
+        <value>item_id</value>
+        <value>object_name</value>
+        <value>object_type</value>
+        <value>sr5SAPMaterialType</value>
+      </context>
+    </preference>
+    <preference name="T4ST_ProductVersionProperty2ProcessList4SR5MfgMajorAssyRevision" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>AllowList special attributes - defined during implementation</preference_description>
+      <context name="Teamcenter">
+        <value>item_revision_id</value>
+        <value>item_id</value>
+        <value>object_name</value>
+        <value>object_desc</value>
+        <value>object_type</value>
+		<value>sr5ExternalRevision</value>
+        <value>sr5SAPID</value>
+        <value>sr5SAPTransStatus</value>
+        <value>sr5SAPTransDate</value>
+      </context>
+    </preference>
+    <preference name="T4ST_ProductVersionProperty2ProcessList4SR5MfgObject" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>AllowList special attributes - defined during implementation</preference_description>
+      <context name="Teamcenter">
+        <value>item_id</value>
+        <value>object_name</value>
+        <value>object_type</value>
+		<value>sr5Plant</value>
+      </context>
+    </preference>
+    <preference name="T4ST_ProductVersionProperty2ProcessList4SR5MfgObjectRevision" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>AllowList special attributes - defined during implementation</preference_description>
+      <context name="Teamcenter">
+        <value>item_revision_id</value>
+        <value>item_id</value>
+        <value>object_name</value>
+        <value>object_desc</value>
+        <value>object_type</value>
+		<value>sr5ExternalRevision</value>
+        <value>sr5SAPProcType</value>
+        <value>sr5SAPSpecialProcKey</value>
+        <value>sr5SAPID</value>
+        <value>sr5SAPTransStatus</value>
+        <value>sr5SAPTransDate</value>
+      </context>
+    </preference>
+    <preference name="T4ST_ProductVersionProperty2ProcessList4SR5PlantForm" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>AllowList special attributes - defined during implementation</preference_description>
+      <context name="Teamcenter">
+        <value>object_type</value>
+        <value>sr5MakeBuy</value>
+      </context>
+    </preference>
+    <preference name="T4ST_ProductVersionProperty2ProcessList4SR5Software" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>AllowList special attributes - defined during implementation</preference_description>
+      <context name="Teamcenter">
+        <value>item_id</value>
+        <value>object_name</value>
+		<value>object_type</value>
+        <value>sr5SAPMaterialType</value>
+        <value>sr5SAPMaterialGroup</value>
+      </context>
+    </preference>
+    <preference name="T4ST_ProductVersionProperty2ProcessList4SR5TechDocumentRevision" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>AllowList special attributes - defined during implementation</preference_description>
+      <context name="Teamcenter">
+        <value>item_id</value>
+        <value>item_revision_id</value>
+        <value>object_name</value>
+        <value>object_desc</value>
+		<value>object_type</value>
+        <value>date_released</value>
+		<value>sr5ExternalRevision</value>
+        <value>sr5SAPID</value>
+        <value>sr5SAPTransStatus</value>
+        <value>sr5SAPTransDate</value>
+      </context>
+    </preference>
+    <preference name="T4ST_ProductVersionProperty2ProcessList4SR5Tool" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>AllowList special attributes - defined during implementation</preference_description>
+      <context name="Teamcenter">
+        <value>item_id</value>
+        <value>object_name</value>
+		<value>object_type</value>
+        <value>sr5SAPMaterialType</value>
+        <value>sr5SAPMaterialGroup</value>
+      </context>
+    </preference>
+    <preference name="T4ST_ProductVersionProperty2ProcessList4SR5ToolRevision" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>AllowList special attributes - defined during implementation</preference_description>
+      <context name="Teamcenter">
+        <value>item_revision_id</value>
+        <value>item_id</value>
+        <value>object_name</value>
+        <value>object_desc</value>
+        <value>object_type</value>
+		<value>sr5ExternalRevision</value>
+        <value>sr5SAPID</value>
+        <value>sr5SAPTransStatus</value>
+        <value>sr5SAPTransDate</value>
+      </context>
+    </preference>
+    <preference name="T4ST_ProductVersionProperty2ProcessList4UnitOfMeasure" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>AllowList special attributes - defined during implementation</preference_description>
+      <context name="Teamcenter">
+		<value>symbol</value>
+		<value>unit</value>
+      </context>
+    </preference>
+
+	<!-- Mapping 2 -->
+    <preference name="T4ST_ProductVersionMapping2SR5EngArticleRevision" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>No description available for this preference</preference_description>
+      <context name="Teamcenter">
+        <value>SR5EngArticleRevision</value>
+      </context>
+    </preference>
+    <preference name="T4ST_ProductVersionMapping2SR5GenCatPartRevision" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>No description available for this preference</preference_description>
+      <context name="Teamcenter">
+        <value>SR5GenCatPartRevision</value>
+      </context>
+    </preference>
+    <preference name="T4ST_ProductVersionMapping2SR5LLEndItemRevision" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>No description available for this preference</preference_description>
+      <context name="Teamcenter">
+        <value>SR5LLEndItemRevision</value>
+      </context>
+    </preference>
+    <preference name="T4ST_ProductVersionMapping2SR5LLMajorAssyRevision" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>No description available for this preference</preference_description>
+      <context name="Teamcenter">
+        <value>SR5LLMajorAssyRevision</value>
+      </context>
+    </preference>
+    <preference name="T4ST_ProductVersionMapping2SR5MfgEndItemRevision" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>No description available for this preference</preference_description>
+      <context name="Teamcenter">
+        <value>SR5MfgEndItemRevision</value>
+      </context>
+    </preference>
+    <preference name="T4ST_ProductVersionMapping2SR5MfgInstallKitRevision" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>No description available for this preference</preference_description>
+      <context name="Teamcenter">
+        <value>SR5MfgInstallKitRevision</value>
+      </context>
+    </preference>
+    <preference name="T4ST_ProductVersionMapping2SR5MfgMajorAssyRevision" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>No description available for this preference</preference_description>
+      <context name="Teamcenter">
+        <value>SR5MfgMajorAssyRevision</value>
+      </context>
+    </preference>
+    <preference name="T4ST_ProductVersionMapping2SR5MfgObjectRevision" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>No description available for this preference</preference_description>
+      <context name="Teamcenter">
+        <value>SR5MfgObjectRevision</value>
+      </context>
+    </preference>
+    <preference name="T4ST_ProductVersionMapping2SR5SRVEndItemRevision" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>No description available for this preference</preference_description>
+      <context name="Teamcenter">
+        <value>SR5SRVEndItemRevision</value>
+      </context>
+    </preference>
+    <preference name="T4ST_ProductVersionMapping2SR5SRVMajorAssyRevision" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>No description available for this preference</preference_description>
+      <context name="Teamcenter">
+        <value>SR5SRVMajorAssyRevision</value>
+      </context>
+    </preference>
+    <preference name="T4ST_ProductVersionMapping2SR5ToolRevision" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>No description available for this preference</preference_description>
+      <context name="Teamcenter">
+        <value>SR5ToolRevision</value>
+      </context>
+    </preference>
+    <preference name="T4ST_ProductVersionFieldMapping2SR5EngArticleRevision" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>No description available for this preference</preference_description>
+      <context name="Teamcenter">
+        <value>sr5SAPID</value>
+        <value>sr5SAPTransStatus</value>
+        <value>sr5SAPTransDate</value>
+      </context>
+    </preference>
+    <preference name="T4ST_ProductVersionFieldMapping2SR5GenCatPartRevision" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>No description available for this preference</preference_description>
+      <context name="Teamcenter">
+        <value>sr5SAPID</value>
+        <value>sr5SAPTransStatus</value>
+        <value>sr5SAPTransDate</value>
+      </context>
+    </preference>
+    <preference name="T4ST_ProductVersionFieldMapping2SR5LLEndItemRevision" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>No description available for this preference</preference_description>
+      <context name="Teamcenter">
+        <value>sr5SAPID</value>
+        <value>sr5SAPTransStatus</value>
+        <value>sr5SAPTransDate</value>
+      </context>
+    </preference>
+    <preference name="T4ST_ProductVersionFieldMapping2SR5LLMajorAssyRevision" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>No description available for this preference</preference_description>
+      <context name="Teamcenter">
+        <value>sr5SAPID</value>
+        <value>sr5SAPTransStatus</value>
+        <value>sr5SAPTransDate</value>
+      </context>
+    </preference>
+    <preference name="T4ST_ProductVersionFieldMapping2SR5MfgEndItemRevision" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>No description available for this preference</preference_description>
+      <context name="Teamcenter">
+        <value>sr5SAPID</value>
+        <value>sr5SAPTransStatus</value>
+        <value>sr5SAPTransDate</value>
+      </context>
+    </preference>
+    <preference name="T4ST_ProductVersionFieldMapping2SR5MfgInstallKitRevision" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>No description available for this preference</preference_description>
+      <context name="Teamcenter">
+        <value>sr5SAPID</value>
+        <value>sr5SAPTransStatus</value>
+        <value>sr5SAPTransDate</value>
+      </context>
+    </preference>
+    <preference name="T4ST_ProductVersionFieldMapping2SR5MfgMajorAssyRevision" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>No description available for this preference</preference_description>
+      <context name="Teamcenter">
+        <value>sr5SAPID</value>
+        <value>sr5SAPTransStatus</value>
+        <value>sr5SAPTransDate</value>
+      </context>
+    </preference>
+    <preference name="T4ST_ProductVersionFieldMapping2SR5MfgObjectRevision" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>No description available for this preference</preference_description>
+      <context name="Teamcenter">
+        <value>sr5SAPID</value>
+        <value>sr5SAPTransStatus</value>
+        <value>sr5SAPTransDate</value>
+      </context>
+    </preference>
+    <preference name="T4ST_ProductVersionFieldMapping2SR5SRVEndItemRevision" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>No description available for this preference</preference_description>
+      <context name="Teamcenter">
+        <value>sr5SAPID</value>
+        <value>sr5SAPTransStatus</value>
+        <value>sr5SAPTransDate</value>
+      </context>
+    </preference>
+    <preference name="T4ST_ProductVersionFieldMapping2SR5SRVMajorAssyRevision" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>No description available for this preference</preference_description>
+      <context name="Teamcenter">
+        <value>sr5SAPID</value>
+        <value>sr5SAPTransStatus</value>
+        <value>sr5SAPTransDate</value>
+      </context>
+    </preference>
+    <preference name="T4ST_ProductVersionFieldMapping2SR5ToolRevision" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>No description available for this preference</preference_description>
+      <context name="Teamcenter">
+        <value>sr5SAPID</value>
+        <value>sr5SAPTransStatus</value>
+        <value>sr5SAPTransDate</value>
+      </context>
+    </preference>
+
+  </category>
+</preferences>

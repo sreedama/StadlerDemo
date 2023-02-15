@@ -1,0 +1,22 @@
+<UIApplication class="com.ebsolutions.datasetbrowser.DSBApplication"
+             nameRef="Dataset Browser"
+             image="/com/ebsolutions/uimanager/modules/images/search.png"
+             sizex="600" sizey="250"
+			 lang="">
+  <!-- SAVE MODULE -->
+  <Module nameRef="DB Module"
+      name="dataset_browser_module"
+      moduleHandler="com.ebsolutions.uimanager.handlers.SaveModuleHandler"
+      image="/com/ebsolutions/uimanager/modules/images/save.png"
+      class="com.ebsolutions.datasetbrowser.DSBModule">
+
+    <!-- Columns definition -->
+	<Column name="TC Dst object_string"/>
+	<Column name="TC Dst object_type"/>
+	<Column name="TC Dst object_desc"/>
+	<Column name="TC Dst last_mod_date"/>
+	<Column name="TC Dst checked_out"/>
+	<Column name="TC Dst checked_out_user"/>
+	<Column name="TC Dst is_modifiable"/>
+	</Module>
+</UIApplication>

@@ -1,0 +1,139 @@
+{
+    "schemaVersion": "1.0.0",
+    "imports": [
+        "js/aw-panel-section.directive",
+        "js/aw-command-panel.directive",
+        "js/aw-panel-footer.directive",
+        "js/aw-button.directive",
+        "js/aw-i18n.directive",
+        "js/visible-when.directive",
+        "js/aw-xrt.directive",
+        "js/aw-form.directive",
+        "js/aw-panel-body.directive"
+    ],
+    "actions": {
+        "mtw0UpdateDerivedProperty": {
+            "actionType": "TcSoaService",
+            "serviceName": "Core-2010-09-DataManagement",
+            "method": "setProperties",
+            "inputData": {
+                "info": [
+                    {
+                        "object": "{{data.createdUnitAliasObject}}",
+                        "timestamp": "",
+                        "vecNameVal": [
+                            {
+                                "name": "mat1DerivedUnit",
+                                "values": [
+                                    "{{ctx.selected.uid}}"
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            },
+            "events": {
+                "success": [
+                    {
+                        "name": "cdm.relatedModified",
+                        "eventData": {
+                            "relatedModified": [
+                                "{{ctx.selected}}"
+                            ],
+                            "refreshLocationFlag": true
+                        }
+                    },
+                    {
+                        "name": "treeGrid.plTable.reload"
+                    }
+                  
+                ]
+            }
+        },
+        "createUnitAliasName": {
+            "actionType": "TcSoaService",
+            "serviceName": "Internal-Core-2012-10-DataManagement",
+            "method": "createRelateAndSubmitObjects",
+            "inputData": {
+                "inputs": "{{function:constructCreateInputforUnitAltName}}"
+            },
+            "outputData": {
+                "createdUnitAliasObject": "output[0].objects[0]"
+            },
+            "events": {
+                "success": [
+                    {
+                        "name": "mtw0.mtw0UpdateDerivedProperty"
+                    },
+                    {
+                        "name": "treeGrid.plTable.reload"
+                    },
+                    {
+                        "name": "complete",
+                        "eventData": {
+                            "source": "toolAndInfoPanel"
+                        }
+                    }
+                ],
+                "failure": [
+                    {
+                        "name": "complete",
+                        "eventData": {
+                            "source": "toolAndInfoPanel"
+                        }
+                    }
+                ]
+            },
+            "actionMessages": {
+                "failure": [
+                    {
+                        "condition": "errorCode.code===515106 ",
+                        "message": "createOrUpdateFailedMessage"
+                    }
+                ]
+            },
+            "deps": "js/Mtw0ShowUnitsTreeDataService"
+        }
+    },
+    "messages": {
+        "createOrUpdateFailedMessage": {
+            "messageType": "ERROR",
+            "messageText": "{{i18n.failedToCreateUnitAlias}}",
+            "messageTextParams": [
+                "{{ctx.selected.props.object_name.uiValues[0]}}"
+            ]
+        }
+    },
+    "data": {
+            },
+    "onEvent": [
+        {
+            "eventId": "mtw0.mtw0UpdateDerivedProperty",
+            "action": "mtw0UpdateDerivedProperty"
+        }
+    ],
+    "conditions": {        
+    },
+    "functions": {
+        "constructCreateInputforUnitAltName": {
+            "functionName": "constructCreateInputforUnitAltName",
+            "parameters": [
+                "{{data}}"
+            ]
+        }
+    },
+    "i18n": {
+        "Mtw0AddUnitAliasName": [
+            "MaterialMgmtMessages"
+        ],
+        "Create": [
+            "MaterialMgmtMessages"
+        ],
+        "failedToCreateUnitAlias": [
+            "MaterialMgmtMessages"
+        ],
+        "unitAliasCreateSuccessMessage": [
+            "MaterialMgmtMessages"
+        ]
+    }
+}

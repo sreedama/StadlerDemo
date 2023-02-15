@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE fscconfig SYSTEM "fscconfig.dtd">
+
+<!--
+bcprt
+THIS SOFTWARE AND RELATED DOCUMENTATION ARE PROPRIETARY TO SIEMENS PRODUCT LIFECYCLE MANAGEMENT SOFTWARE INC.
+(c) 2008 SIEMENS PRODUCT LIFECYCLE MANAGEMENT SOFTWARE INC. ALL RIGHTS RESERVED.
+ALL TRADEMARKS BELONG TO THEIR RESPECTIVE HOLDERS.
+ecprt
+-->
+<fscconfig>
+  <fscdefaults>
+    <!-- these are what we expect to be install options -->
+    <property name="FSC_ReadCacheLocation" value="D:/tcvol/fsc/FSCCache_read" overridable="true" />
+    <property name="FSC_WriteCacheLocation" value="D:/tcvol/fsc/FSCCache_write" overridable="true" />
+    <property name="FSC_WholeFileCacheLocation" value="$HOME\FSCCache|/tmp/FSCCache" overridable="true" />
+    <property name="FSC_LogFile" value="" overridable="true" />
+    <!-- these are what we expect to be maintenance options -->
+    <property name="FSC_LogLevel" value="WARN" overridable="true" />
+    <property name="FSC_TraceLevel" value="2" overridable="true" />
+    <!-- segment cache sizing, read cache -->
+    <property name="FSC_MaximumReadCacheFilePages" value="512" overridable="true" />
+    <property name="FSC_MaximumReadCacheSegments" value="623" overridable="true" />
+    <property name="FSC_ReadCacheHashBlockPages" value="32" overridable="true" />
+    <property name="FSC_MaximumReadCacheExtentFiles" value="0" overridable="true" />
+    <property name="FSC_MaximumReadCacheExtentFileSizeMegabytes" value="16" overridable="true" />
+    <!--  segment cache sizing, write cache -->
+    <property name="FSC_MaximumWriteCacheFilePages" value="512" overridable="true" />
+    <property name="FSC_MaximumWriteCacheSegments" value="623" overridable="true" />
+    <property name="FSC_WriteCacheHashBlockPages" value="32" overridable="true" />
+    <property name="FSC_MaximumWriteCacheExtentFiles" value="0" overridable="true" />
+    <property name="FSC_MaximumWriteCacheExtentFileSizeMegabytes" value="16" overridable="true" />
+    <!-- whole file cache sizing -->
+    <property name="FSC_FilesPerWholeFileCacheDir" value="0" overridable="true" />
+    <property name="FSC_DiskPercentFreeGoal" value="30" overridable="true" />
+    <property name="FSC_WholeFilePurgePeriodMinutes" value="240" overridable="true" />
+    <!-- These are all the options -->
+    <!-- read cache parameters  -->
+    <!-- <property name="FSC_ReadCacheLocation" value="$HOME\FSCCache|/tmp/FSCCache" overridable="true"/> -->
+    <!-- <property name="FSC_MaximumReadCacheFilePages" value="40960" overridable="true"/> -->
+    <!-- <property name="FSC_MaximumReadCacheSegments" value="9216" overridable="true"/> -->
+    <!-- <property name="FSC_ReadCacheHashBlockPages" value="2048" overridable="true"/> -->
+    <!-- <property name="FSC_MaximumReadCacheExtentFiles" value="3" overridable="true"/> -->
+    <!-- <property name="FSC_MaximumReadCacheExtentFileSizeMegabytes" value="256" overridable="true"/> -->
+    <!-- <property name="FSC_ReadCachePurgePolicy" value="age" overridable="true"/> -->
+    <!-- write cache parameters  -->
+    <!-- <property name="FSC_WriteCacheLocation" value="$HOME\FSCCache|/tmp/FSCCache" overridable="true"/> -->
+    <!-- <property name="FSC_MaximumWriteCacheFilePages" value="40960" overridable="true"/> -->
+    <!-- <property name="FSC_MaximumWriteCacheSegments" value="9216" overridable="true"/> -->
+    <!-- <property name="FSC_WriteCacheHashBlockPages" value="2048" overridable="true"/> -->
+    <!-- <property name="FSC_MaximumWriteCacheExtentFiles" value="3" overridable="true"/> -->
+    <!-- <property name="FSC_MaximumWriteCacheExtentFileSizeMegabytes" value="256" overridable="true"/> -->
+    <!-- <property name="FSC_WriteCachePurgePolicy" value="age" overridable="true"/> -->
+    <!-- whole file cache parameters  -->
+    <!-- <property name="FSC_WholeFileCacheLocation" value="$HOME\FSCCache\$FSC_ID\wholefile|/tmp/FSCCache/$FSC_ID/wholefile" overridable="true"/> -->
+    <!-- A negative or zero (0) value for FSC_FilesPerWholeFileCacheDir disables the FSC Whole File Cache. -->
+    <!-- <property name="FSC_FilesPerWholeFileCacheDir" value="0" overridable="true"/> -->
+    <!-- <property name="FSC_DiskPercentFreeGoal" value="30" overridable="true"/> -->
+    <!-- <property name="FSC_MaxCacheAgeDays" value="3650" overridable="true"/> -->
+    <!-- A value of -1 for FSC_WholeFilePurgeInitialWaitMinutes disables the FSC Whole File Cache purge. -->
+    <!-- <property name="FSC_WholeFilePurgeInitialWaitMinutes" value="0" overridable="true"/> -->
+    <!-- <property name="FSC_WholeFilePurgePeriodMinutes" value="240" overridable="true"/> -->
+    <!-- server parameters  -->
+    <!-- <property name="FSC_LogFile" value="$HOME\$FSC_ID.log|/tmp/$FSC_ID.log" overridable="true"/> -->
+    <!-- <property name="FSC_LogLevel" value="WARN" overridable="true"/> -->
+    <!-- <property name="FSC_TraceLevel" value="2" overridable="true"/> -->
+    <!-- <property name="FSC_EnableMonitoring" value="true" overridable="true"/> -->
+    <!-- <property name="FSC_UploadTimeoutMs" value="30000" overridable="true"/> -->
+    <!-- <property name="FSC_MinimumThreads" value="5" overridable="true"/> -->
+    <!-- <property name="FSC_MaximumThreads" value="255" overridable="true"/> -->
+    <!-- The FSC_CachePolicy default is used at fscgroup level. it can have 2 values:- CacheIfNotMounted and CacheIfNotInLocalFSCGroup.  -->
+    <!-- <property name="FSC_CachePolicy" value="CacheIfNotMounted" overridable="true"/> -->
+    <!-- <property name="FSC_PeriodicChecks" value="true" overridable="true"/>-->
+    <!-- <property name="FSC_TransferRemoteMetadataFile" value="true" overridable="true"/>-->
+    <!-- <property name="FSC_DefaultNetprobeSize" value="1048576" overridable="true"/>-->
+    <!-- <property name="FSC_PeriodicNetprobeFSCIDs" value="" overridable="true" />-->
+    <!-- <property name="FSC_MaximumThreadIdleTimeMs" value="10000" overridable="true"/> -->
+    <!-- <property name="FSC_DelayedVolumeValidation" value="false" overridable="true"/> -->
+    <!-- <property name="FSC_LocalTempLocation" value="C:/Temp|/tmp" overridable="true"/> -->
+    <!-- idle file handle cache parameters  -->
+    <!-- <property name="FSC_MaximumIdleFileHandles" value="100" overridable="true"/> -->
+    <!-- <property name="FSC_MaximumIdleFileHandlesPerFile" value="5" overridable="true"/> -->
+    <!-- <property name="FSC_MaximumIdleFileHandleAgeMs" value="10000" overridable="true"/> -->
+    <!-- ticket cache parameters  -->
+    <!-- <property name="FSC_MaximumCachedTickets" value="500" overridable="true"/> -->
+    <!-- downloader parameters  -->
+    <!-- <property name="FSC_WebRaidThreshold" value="32K" overridable="true"/> -->
+    <!-- <property name="FSC_DoNotCompressExtensions" value="bin,bz,bz2,cab,deb,docm,docx,ear,gif,gz,jar,jpeg,jpg,jt,lha,lzh,lzo,mp3,mp4,mpg,rar,rpm,sit,tar,taz,tgz,war,xlsm,xlsx,z,zip" overridable="true"/> -->
+    <!-- webraid instance cache parameters -->
+    <!-- <property name="FSC_MaximumIdleWebRaidDownloaders" value="20" overridable="true"/> -->
+    <!-- <property name="FSC_MaximumWebRaidDownloaders" value="30" overridable="true"/> -->
+    <!-- <property name="FSC_MaximumIdleWebRaidDownloaderAgeMs" value="15000" overridable="true"/> -->
+    <!-- webraid downloader parameters -->
+    <!-- <property name="FSC_WebRaidDownloaderConnectTimeoutMs" value="20000" overridable="true"/> -->
+    <!-- <property name="FSC_WebRaidDownloaderSlotRatio" value="3" overridable="true"/> -->
+    <property name="FSC_ReadCachePurgePolicy" value="age" overridable="true" />
+    <property name="FSC_WriteCachePurgePolicy" value="age" overridable="true" />
+  </fscdefaults>
+  <fscmaster serves="true" />
+  <fsc id="FSC_2141as0070PLM01" />
+</fscconfig>
+

@@ -1,0 +1,194 @@
+{
+    "schemaVersion": "1.0.0",
+    "imports": [
+        "js/aw-command-panel.directive",
+        "js/aw-panel-body.directive",
+        "js/aw-default-cell.directive",
+        "js/aw-list-filter.directive",
+        "js/aw-panel-footer.directive",
+        "js/aw-button.directive",
+        "js/aw-i18n.directive"
+    ],
+    "onEvent": [ {
+        "eventId": "gwt.SubLocationContentSelectionChangeEvent",
+        "action": "closePanel"
+    } ],
+    "conditions": {   
+        "canCreateParameter" :{
+            "expression": "((data.dataProviders.performSearch.selectedObjects && data.dataProviders.performSearch.selectedObjects.length > 0))"
+        }    
+    },
+    "data":{
+        "filterBox": {
+            "displayName": "Filter Parameters",
+            "type": "STRING",
+            "dbValue":""
+        }
+    },    
+    "dataProviders": {
+        "performSearch": {
+            "action": "search",
+            "response": "{{data.metaParameterObjectsFound.searchResults}}",
+            "totalFound": "{{data.metaParameterObjectsFound.totalResults}}",
+            "selectionModelMode": "multiple"
+        }
+    },
+    "actions": {
+        "reveal": {
+            "actionType": "dataProvider",
+            "method": "performSearch"
+        },
+        "search": {
+            "actionType": "TcSoaService",
+            "serviceName": "Core-2006-03-DataManagement",
+            "method": "getProperties",
+            "deps": "js/Mtw0ShowAddParameterService",
+            "inputData": 
+            {
+                "objects": [
+                    "{{function:getSelectedObject}}"
+                ],
+                "attributes": 
+                [
+                    "mat1MatCatalogRevisions"
+                ]
+            },
+            "policy":
+            {
+                "types":
+                [
+                    {
+                        "name": "Mat1MatCatalogRevision",
+                        "properties":
+                        [
+                            {
+                                "name": "mat1MetaParameters",
+                                "modifiers":
+                                [
+                                    {
+                                        "name": "withProperties",
+                                        "Value": "true"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Mat1MetaSingleParameter",
+                        "properties":
+                        [
+                            {
+                                "name": "mat1UnitAliasName"
+                            },
+                            {
+                                "name": "mat1DataType"
+                            },
+                            {
+                                "name": "mat1Category"                                
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Mat1MetaSmartTable",
+                        "properties":
+                        [
+                            {
+                                "name": "mat1UnitXAliasName"
+                            },
+                            {
+                                "name": "mat1UnitYAliasName"
+                            },
+                            {
+                                "name": "mat1Category"                                
+                            }
+                        ]
+                    }                                        
+                ]
+            },
+            "outputData": 
+            {
+                "metaParameterObjectsFound" : "{{function:getMetaParametersArray}}"
+            }
+        },
+        "createParameter" : {
+            "actionType": "TcSoaService",
+            "deps": "js/Mtw0ShowAddParameterService",        
+            "serviceName": "IMM-2018-12-AWCMaterialMgmtService",
+            "method": "createParam4MMetaParam4MaterialRev",
+            "inputData": 
+            {
+                "materialRev":
+                {
+                    "type":"{{ctx.selected.type}}",
+                    "uid":"{{ctx.selected.uid}}"
+                },
+                "metaParams" : "{{function:getSelectedMetaParametersArray}}"
+            },
+            "events": 
+            {
+                "success": [
+                    {
+                        "name": "cdm.relatedModified",
+                        "eventData": 
+                        {
+                            "relatedModified": 
+                            [
+                                "{{ctx.selected}}"
+                            ],
+
+                            "refreshLocationFlag": true
+                        }
+                    },                    {
+                        "name": "complete",
+                        "eventData": 
+                        {
+                            "source": "toolAndInfoPanel"
+                        }
+                    }
+                ]
+            }            
+        },
+        "closePanel": 
+        {
+            "actionType": "Event",
+            "method": "Event",
+            "inputData": 
+            {
+                "events": 
+                [
+                    {
+                        "name": "complete",
+                        "eventData": 
+                        {
+                            "source": "toolAndInfoPanel"
+                        }
+                    }
+                ]
+            }
+        }        
+    },
+     "functions": {
+        "getSelectedMetaParametersArray": {
+            "functionName": "getSelectedMetaParametersArray",
+            "parameters": [
+                "{{data}}"
+            ]
+        },
+        "getSelectedObject":{
+            "functionName": "getSelectedObject",
+            "parameters": [
+                "{{ctx.selected}}",
+                "{{data}}"
+            ]
+        }
+    },
+    "i18n": 
+    {
+        "AddParameter": ["MaterialMgmtMessages"],
+        "selectParameter": ["MaterialMgmtMessages"],
+        "PropType": ["MaterialMgmtMessages"],        
+        "SmartTableType": ["MaterialMgmtMessages"],        
+        "Unit": ["MaterialMgmtMessages"],
+        "Category":["MaterialMgmtMessages"]
+    }
+}

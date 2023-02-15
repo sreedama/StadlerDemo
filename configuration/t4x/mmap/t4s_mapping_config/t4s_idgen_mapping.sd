@@ -1,0 +1,335 @@
+##
+#===================================================
+# \copyright     2014-2019
+#                Siemens Product Lifecycle Management Software Inc.
+#                All Rights Reserved.
+#===================================================
+#
+#
+##
+# Project:        T4S
+# @file           t4s_idgen_mapping_template.sd
+#
+##
+
+namespace eval ::T4S::IDGEN::CUSTOM {
+
+
+  # ---------------------------------------------------------------------
+  ##
+  # \brief          Function returns for the given parameters the corresponding next free 
+  #                 material number
+  #
+  # \author         JS., 20121101
+  #
+  # \param          ObjectType used to specify the material type and the industry sector for 
+  #                 material number
+  #
+  # \return         OK:<MatNr> or ERROR
+  #
+  proc getReservedNumber4MaterialNumber {ObjectType args} {
+  
+    tpwrite -logchannel [::PL4X::CORE::getSessionLogChannel] -mtype INTERN "::T4S::IDGEN::CUSTOM::callNewNumberMapping Starts with $ObjectType"
+    set Status "ERROR"
+    #
+    # if {$ObjectType eq "Item"} {
+      # set ::SAPDat(Material:HeadData:IND_SECTOR)        "M" ; # Industry sector
+      # set ::SAPDat(Material:HeadData:MATL_TYPE)         "FERT" ; # Material type
+    # } elseif {$ObjectType eq "SR5MfgEndItem"} {
+      # set ::SAPDat(Material:HeadData:IND_SECTOR)        "M" ; # Industry sector
+			# set ::SAPDat(Material:HeadData:MATL_TYPE)         "EITM" ; # Material type = End Item
+		# } elseif {$ObjectType eq "SR5MfgMajorAssy"} {
+      # set ::SAPDat(Material:HeadData:IND_SECTOR)        "M" ; # Industry sector
+			# set ::SAPDat(Material:HeadData:MATL_TYPE)         "MASS" ; # Material type = Major Assembly
+		# } elseif {$ObjectType eq "SR5MfgInstallKit"} {
+      # set ::SAPDat(Material:HeadData:IND_SECTOR)        "M" ; # Industry sector
+			# set ::SAPDat(Material:HeadData:MATL_TYPE)         "IKIT" ; # Material type = Installation Kit
+		# } else {
+      # set ::SAPDat(Material:HeadData:IND_SECTOR)        "M" ; # Industry sector
+      # set ::SAPDat(Material:HeadData:MATL_TYPE)         "FERT" ; # Material type
+    # }
+		
+		set ::SAPDat(Material:HeadData:IND_SECTOR)	$::T4S_Defaults(Industry) ;# Default value = M
+				
+		# Mapping the Teamcenter object type to the SAP material type
+		switch -exact -- $ObjectType {
+			SR5MfgEndItem			{	set ::SAPDat(Material:HeadData:MATL_TYPE)   "EITM"}
+			SR5EngEndItem			{	set ::SAPDat(Material:HeadData:MATL_TYPE)   "EITM"}
+			SR5LLEndItem			{	set ::SAPDat(Material:HeadData:MATL_TYPE)   "EITM"}
+			SR5MfgMajorAssy		{ set ::SAPDat(Material:HeadData:MATL_TYPE)   "MASS"}
+			SR5EngMajorAssy		{ set ::SAPDat(Material:HeadData:MATL_TYPE)   "MASS"}
+			SR5EngInstallLoc	{ set ::SAPDat(Material:HeadData:MATL_TYPE)   "ZCOM"}
+			SR5LLMajorAssy		{ set ::SAPDat(Material:HeadData:MATL_TYPE)   "MASS"}
+			SR5MfgInstallKit	{	set ::SAPDat(Material:HeadData:MATL_TYPE)   "IKIT"}
+			SR5MfgObject			{ set ::SAPDat(Material:HeadData:MATL_TYPE)   "ZCOM"}
+			SR5EngArticle			{ set ::SAPDat(Material:HeadData:MATL_TYPE)   "ZCOM"}
+			SR5Software				{	set ::SAPDat(Material:HeadData:MATL_TYPE)   "ZCOM"}
+			SR5MechCatPart		{	set ::SAPDat(Material:HeadData:MATL_TYPE)   "ZCOM"}
+			SR5EleCatPart			{	set ::SAPDat(Material:HeadData:MATL_TYPE)   "ZCOM"}
+			SR5GenCatPart			{	set ::SAPDat(Material:HeadData:MATL_TYPE)   "ZCOM"}
+			SR5Tool						{	set ::SAPDat(Material:HeadData:MATL_TYPE)   "ZCOM"}
+			SR5NonERPArticle	{	set ::SAPDat(Material:HeadData:MATL_TYPE)   "ZCOM"}
+			SR5SRVMajorAssy		{	set ::SAPDat(Material:HeadData:MATL_TYPE)   "MASS"}
+			SR5SRVEndItem			{	set ::SAPDat(Material:HeadData:MATL_TYPE)   "EITM"}
+			SR5CatDefArticle	{	set ::SAPDat(Material:HeadData:MATL_TYPE)   "ZCOM"}
+			default {
+				set TcMM(MaterialType)	"ERROR"
+				tpwrite -logchannel [::PL4X::CORE::getSessionLogChannel] -mtype ERROR ":T4S::IDGEN::CUSTOM::callNewNumberMapping -> Item Revision Type unknown "
+				return "ERROR"
+			}
+		}
+		
+    #
+    tpwrite -logchannel [::PL4X::CORE::getSessionLogChannel] -mtype INTERN "Call ::TPSAP::MM::reserveMaterialNumber2 with >$::SAPDat(Material:HeadData:MATL_TYPE)< >$::SAPDat(Material:HeadData:IND_SECTOR)<"
+    set callResultDict [::TPSAP::MM::reserveMaterialNumber2 $::SAPDat(Material:HeadData:MATL_TYPE) $::SAPDat(Material:HeadData:IND_SECTOR)]
+    tpwrite -logchannel [::PL4X::CORE::getSessionLogChannel] -mtype INTERN "::TPSAP::MM::reserveMaterialNumber2  returns >$callResultDict<"
+    
+    if {[dict get $callResultDict Status] eq "OK"} {
+      if {[dict exists $callResultDict MATERIAL]} {
+        set MaterialNumber [dict get $callResultDict MATERIAL]
+        if {[string length $MaterialNumber] > 0} {
+          set Status "OK:[::TPSAP::MM::getExternalMaterialNumber [string trim $MaterialNumber]]"
+        } else {
+          set Status "ERROR"
+        }
+      } else {
+        set Status "ERROR"
+        tpwrite -logchannel [::PL4X::CORE::getSessionLogChannel] -mtype ERROR "::T4S::IDGEN::CUSTOM::callNewNumberMapping: Material number not retrieved"
+      }
+    } else {
+      set Status "ERROR"
+      tpwrite -logchannel [::PL4X::CORE::getSessionLogChannel] -mtype ERROR "::T4S::IDGEN::CUSTOM::callNewNumberMapping: [dict get $callResultDict ErrorMessage]"
+    }
+    #
+    tpwrite -logchannel [::PL4X::CORE::getSessionLogChannel] -mtype INTERN "::T4S::IDGEN::CUSTOM::callNewNumberMapping Returns $Status"
+    return $Status
+  }  
+
+  # ---------------------------------------------------------------------
+  ##
+  # \brief          Function returns for the given parameters the corresponding next free 
+  #                 document number
+  #
+  # \warning        The Document Info Record is already created after the function returns, so 
+  #                 if someone cancels the Item creation, it will still be in SAP.
+  #
+  # \author         JS., 20140430
+  #
+  # \param          ObjectType used to specify the document type 
+  #
+  # \return         OK:<DocumentNo> or ERROR
+  #
+  proc getReservedNumber4DocumentInfoRecord {ObjectType args} {
+  
+    tpwrite -logchannel [::PL4X::CORE::getSessionLogChannel] -mtype INTERN "::T4S::IDGEN::CUSTOM::getReservedNumber4DocumentInfoRecord Starts with $ObjectType"
+    set Status "ERROR"
+    #
+    ::TPSAP::DIR::initSAPDocumentStructure
+    #
+    ::TPSAP::DIR::initSAPDocumentDescription 1
+    #
+    if {$ObjectType eq "Item"} {
+      # Set the Document keys
+      set ::SAPDat(Document:DrawData:DOCUMENTNUMBER)       ""
+      set ::SAPDat(Document:DrawData:DOCUMENTTYPE)         $::T4S_Defaults(DIRType)
+      set ::SAPDat(Document:DrawData:DOCUMENTPART)         $::T4S_Defaults(DIRPart)
+      set ::SAPDat(Document:DrawData:DOCUMENTVERSION)      $::T4S_Defaults(DIRVersion)
+      # Set the CAD indicator
+      set ::SAPDat(Document:DrawData:CADINDICATOR)         "X"
+      set ::SAPDat(Document:DrawData:STATUSINTERN)         ""
+      # Set the DIR description in the currently connected language
+      set ::SAPDat(Document:DrawData:DESCRIPTION)          "Preliminary description, will be updated"
+      ::TPSAP::DIR::setSAPDocumentDescription 1 "" "EN" $::SAPDat(Document:DrawData:DESCRIPTION)
+    } else {
+      # Set the Document keys
+      set ::SAPDat(Document:DrawData:DOCUMENTNUMBER)       ""
+      set ::SAPDat(Document:DrawData:DOCUMENTTYPE)         $::T4S_Defaults(DIRType)
+      set ::SAPDat(Document:DrawData:DOCUMENTPART)         $::T4S_Defaults(DIRPart)
+      set ::SAPDat(Document:DrawData:DOCUMENTVERSION)      $::T4S_Defaults(DIRVersion)
+      # Set the CAD indicator
+      set ::SAPDat(Document:DrawData:CADINDICATOR)         "X"
+      set ::SAPDat(Document:DrawData:STATUSINTERN)         ""
+      # Set the DIR description in the currently connected language
+      set ::SAPDat(Document:DrawData:DESCRIPTION)          "Preliminary description, will be updated"
+      ::TPSAP::DIR::setSAPDocumentDescription 1 "" "EN" $::SAPDat(Document:DrawData:DESCRIPTION)
+    }
+    #
+    set ResultList [::TPSAP::DIR::createDocument [::PL4X::CORE::getSessionLogChannel]]
+    if {[llength $ResultList] == 3} {
+      set Status [lindex $ResultList 0]
+      set DocumentNumber  [lindex [lindex $ResultList 1] 0]
+      if {$Status eq "CREATED"} {
+        set Status "OK:[::TPSAP::DIR::getExternalDocumentNumber [string trim $DocumentNumber]]"
+      }
+    } 
+    tpwrite -logchannel [::PL4X::CORE::getSessionLogChannel] -mtype INTERN "::T4S::IDGEN::CUSTOM::getReservedNumber4DocumentInfoRecord Returns $Status"
+    return $Status
+  }  
+
+  # ---------------------------------------------------------------------
+  ##
+  # \brief          Function returns for the given parameters the corresponding next free 
+  #                 change number
+  #
+  # \warning        The Change Master is already created after the function returns, so 
+  #                 if someone cancels the Item creation, it will still be in SAP.
+  #
+  # \author         JS., 20140430
+  #
+  # \param          ObjectType used to specify the change master 
+  #
+  # \return         OK:<ChangeNo> or ERROR
+  #
+  proc getReservedNumber4ChangeNumber {ObjectType args} {
+  
+    tpwrite -logchannel [::PL4X::CORE::getSessionLogChannel] -mtype INTERN "::T4S::IDGEN::CUSTOM::getReservedNumber4ChangeNumber Starts with $ObjectType"
+    set Status "ERROR"
+    #
+    #
+    # Initialize Ecn Header Info
+    #
+    ::TPSAP::ECM::initSAPChangeMasterStructure
+    #
+    # Set the ECM status and function (see below for correct usage):
+    set ::SAPDat(ChangeMaster:HeadData:STATUS)           "01"
+    #set ::SAPDat(ChangeMaster:HeadData:FUNCTION)        " "
+    # Set the ECM description:
+    set ::SAPDat(ChangeMaster:HeadData:DESCRIPT)         "Preliminary description, will be updated"
+    # Set the authorization group:
+    set ::SAPDat(ChangeMaster:HeadData:AUTH_GROUP)       ""
+    # Set the change reason:
+    set ::SAPDat(ChangeMaster:HeadData:REASON_CHG)       "Preliminary change reason, will be updated"
+    #
+    set ::SAPDat(ChangeMaster:HeadData:VALID_FROM)    [clock format [clock seconds] -format "%d%m%Y"]
+    #
+    set ResultList [::TPSAP::ECM::createChangeMaster [::PL4X::CORE::getSessionLogChannel]]
+    if {[llength $ResultList] == 3} {
+      set Status [lindex $ResultList 0]
+      set ChangeNumber  [lindex $ResultList 1]
+      if {$Status eq "CREATED"} {
+        set Status "OK:ECN-[::TPSAP::ECM::getExternalChangeNumber [string trim $ChangeNumber]]"
+      }
+    } 
+    tpwrite -logchannel [::PL4X::CORE::getSessionLogChannel] -mtype INTERN "::T4S::IDGEN::CUSTOM::getReservedNumber4ChangeNumber Returns $Status"
+    return $Status
+  }  
+
+  # ---------------------------------------------------------------------
+  ##
+  # \brief          Function returns for the given parameters the corresponding next free 
+  #                 object number
+  #
+  # \author         JS., 20121101
+  #
+  # \param          ObjectType used to specfiy the material type and the industry sector for 
+  #                 material number
+  #
+  # \return         OK:<ObjectNr> or ERROR
+  #
+  proc getReservedNumber {ObjectType args} {
+    tpwrite -logchannel [::PL4X::CORE::getSessionLogChannel] -mtype INTERN "::T4S::IDGEN::CUSTOM::getReservedNumber Starts with $ObjectType"
+    set Status "ERROR"
+    #
+    # Define the list of supported item types for the material number
+    #
+    set ListOfObjectTypes4MaterialMaster {}
+    lappend ListOfObjectTypes4MaterialMaster {SAP2_T4S_Item}
+		lappend ListOfObjectTypes4MaterialMaster {Item}
+		lappend ListOfObjectTypes4MaterialMaster {SR5EngEndItem}
+		lappend ListOfObjectTypes4MaterialMaster {SR5MfgEndItem}
+		lappend ListOfObjectTypes4MaterialMaster {SR5LLEndItem}
+		lappend ListOfObjectTypes4MaterialMaster {SR5EngMajorAssy}
+		lappend ListOfObjectTypes4MaterialMaster {SR5MfgMajorAssy}
+		lappend ListOfObjectTypes4MaterialMaster {SR5LLMajorAssy}
+		lappend ListOfObjectTypes4MaterialMaster {SR5MfgInstallKit}
+		lappend ListOfObjectTypes4MaterialMaster {SR5MfgObject}		
+		lappend ListOfObjectTypes4MaterialMaster {SR5EngArticle}
+		lappend ListOfObjectTypes4MaterialMaster {SR5Software}
+		lappend ListOfObjectTypes4MaterialMaster {SR5Tool}
+		lappend ListOfObjectTypes4MaterialMaster {SR5MechCatPart}
+		lappend ListOfObjectTypes4MaterialMaster {SR5EleCatPart}
+		lappend ListOfObjectTypes4MaterialMaster {SR5GenCatPart}
+		lappend ListOfObjectTypes4MaterialMaster {SR5NonERPArticle}
+		lappend ListOfObjectTypes4MaterialMaster {SR5SRVMajorAssy}
+		lappend ListOfObjectTypes4MaterialMaster {SR5SRVEndItem}
+		lappend ListOfObjectTypes4MaterialMaster {SR5CatDefArticle}
+		lappend ListOfObjectTypes4MaterialMaster {SR5EngInstallLoc}
+    #
+    set ListOfObjectTypes4DocumentInfoRecord {}
+    lappend ListOfObjectTypes4DocumentInfoRecord {SR5Document}
+		lappend ListOfObjectTypes4DocumentInfoRecord {SR5TechDocument}
+    #
+    set ListOfObjectTypes4ChangeMaster {}
+    lappend ListOfObjectTypes4ChangeMaster {ChangeNotice}
+    #
+    if {[lsearch -exact $ListOfObjectTypes4MaterialMaster $ObjectType] >= 0} {
+      set Status [::T4S::IDGEN::CUSTOM::getReservedNumber4MaterialNumber $ObjectType];
+    } elseif {[lsearch -exact $ListOfObjectTypes4DocumentInfoRecord $ObjectType] >= 0} {
+      set Status [::T4S::IDGEN::CUSTOM::getReservedNumber4DocumentInfoRecord $ObjectType];
+    } elseif {[lsearch -exact $ListOfObjectTypes4ChangeMaster $ObjectType] >= 0} {
+      set Status [::T4S::IDGEN::CUSTOM::getReservedNumber4ChangeNumber $ObjectType];
+    } else {
+      #
+      # todo for other types
+      #
+    }
+    tpwrite -logchannel [::PL4X::CORE::getSessionLogChannel] -mtype INTERN "::T4S::IDGEN::CUSTOM::getReservedNumber Returns $Status"
+    return $Status
+  }
+  
+  # ---------------------------------------------------------------------
+  ##
+  # \brief          Function checks that for the given parameters (ObjectType and ObjectId)
+  #                 a material master already exists in SAP
+  #
+  # \author         JS., 20121101
+  #
+  # \param          ObjectType used to specfiy the material type and the industry sector for 
+  #                 material number
+  # \param          ObjectId 
+  #
+  # \return         Status OK for found and ERROR for not found
+  #
+  proc checkIfObjectExists4MaterialMaster {ObjectType ObjectId args} {
+    set ::errorInfo ""
+    set Checkstatus "ERROR"
+    #
+    # check the Object existence in SAP
+    #
+    set Checkstatus [::TPSAP::MM::checkMaterialMasterExistence $ObjectId]
+    #
+
+    tpwrite -logchannel [::PL4X::CORE::getSessionLogChannel] -mtype INTERN "::T4S::IDGEN::CUSTOM::checkIfObjectExists4MaterialMaster returns $Checkstatus"
+    return $Checkstatus
+  }
+
+  # ---------------------------------------------------------------------
+  ##
+  # \brief          Function checks that for the given parameters (ObjectType and ObjectId)
+  #                 an object already exists in SAP
+  #
+  # \author         JS., 20121101
+  #
+  # \param          ObjectType used to specfiy the material type and the industry sector for 
+  #                 material number
+  # \param          ObjectId 
+  #
+  # \return         Status OK for found and ERROR for not found
+  #
+  proc checkIfObjectExists {ObjectType ObjectId args} {
+    set ::errorInfo ""
+    set Checkstatus "ERROR"
+    #
+    # check the Object existence in SAP
+    #
+    if {$ObjectType == "Item"} {
+      set Checkstatus [::T4S::IDGEN::CUSTOM::checkIfObjectExists4MaterialMaster $ObjectType $ObjectId]
+    } else {
+      set Checkstatus "UNDEFINED";
+    }
+    #
+    tpwrite -logchannel [::PL4X::CORE::getSessionLogChannel] -mtype INTERN "::T4S::IDGEN::CUSTOM::checkIfObjectExists returns $Checkstatus"
+    return $Checkstatus
+  }
+ 
+}

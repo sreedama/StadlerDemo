@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="ISO-8859-1" standalone="yes"?>
+<textsrv filename="werkstoffmgmt_errors.xml">
+    <errors module="werkstoffmgmt" error_base="108000">
+        <error id="2">Die Initialisierung des Werkstoffverwaltungs-Moduls ist für die Klasse &quot;%1$&quot; fehlgeschlagen. Wenden Sie sich an Ihren Systemadministrator.</error>
+        <error id="4">Objekte vom Typ &quot;%1$&quot; dürfen Stücklistenstrukturen nicht hinzugefügt werden.</error>
+        <error id="6">Die Teilewerkstoffbeziehung darf nicht gelöscht werden, da sie in einem externen Werkzeug aktiv ist.</error>
+        <error id="8">Die eingegebene Komposition ist ungültig.</error>
+        <error id="10">Die max. Komposition ist ungültig.</error>
+        <error id="12">Der min. Kompositions-Gesamtprozentsatz darf nicht mehr als 100 betragen.</error>
+        <error id="14">Die externe Kennung &quot;%1$&quot; ist bereits vorhanden. Die externe Kennung muss eindeutig sein.</error>
+        <error id="16">Die Aktuelle Rolle bzw. Gruppe ist nicht Bestandteil der Werkstoff- und Substanz-Erstellung.</error>
+        <error id="18">Die min. bzw. max. Komposition muss größer als 0, und kleiner oder gleich 100 sein.</error>
+        <error id="20">Entweder fehlt die CAS-Nummer oder die externe ID, oder es wurde ein doppelter Eintrag in MatML-Eingabedatei gefunden.</error>
+        <error id="22">Die Masse des Werkstoffs muss größer als 0 sein.</error>
+        <error id="24">Die Anzahl der Nicht-Bibliothekswerkstoffe, die in Teamcenter erstellt werden, ist auf 1 beschränkt. Das Erstellen von Nicht-Bibliothekswerkstoffen in Teamcenter wird durch den in der Voreinstellung &quot;werkstoffMGMT_allow_only_one_non_library_werkstoff&quot; festgelegten Wert beschränkt.</error>
+        <error id="26">Substanz &quot;%1$&quot; wurde nicht erstellt, da die angegebene Chemical Abstract Service (CAS)-Nummer &quot;%2$&quot; kein gültiges Format hat. Siehe &quot;http://www.cas.org&quot;.</error> 
+        <error id="28">Bei Verbundwerkstoffen können Werkstoffe und Substanzen nicht auf derselben Ebene angehängt werden. Wenn einem Verbundwerkstoff Substanzen angehängt werden müssen, hängen Sie einen neuen Werkstoff an, welches die Substanzen enthält.</error>
+        <error id="30">Die Substanz &quot;%1$&quot; ist bereits als inaktiv gekennzeichnet, und kann daher nicht als aktiv gekennzeichnet werden. Wenn Sie diese Substanz verwenden möchten, erstellen Sie eine Kopie der Substanz.</error>
+        <error id="32">Es wurde eine zyklische Werkstoffbeziehung entdeckt. Der Werkstoff &quot;%1$&quot; ist bereits Teil des Verbunds des Werkstoffs &quot;%2$&quot;.</error>
+        <error id="34">Die Substanz &quot;%1$&quot; ist als inaktiv gekennzeichnet und sollte deshalb kein Teil eines Verbunds für einen Werkstoff sein. Ändern Sie die Voreinstellung &quot;%2$&quot;, wenn inaktive Substanzen an Werkstoffen angehängt werden müssen.</error>
+        <error id="36">Der Werkstoff &quot;%1$&quot; kann nicht an sich selbst angehängt werden mit der Beziehung &quot;%2$&quot;.</error>
+        <error id="38">Werkstoff &quot;%1$&quot; wurde nicht erstellt, da die angegebene Chemical Abstract Service (CAS)-Nummer &quot;%2$&quot; kein gültiges Format hat. Siehe &quot;http://www.cas.org&quot;.</error>
+        <error id="40">Die eindeutige Kennung &quot;%1$&quot; ist bereits vorhanden. Die eindeutige Kennung darf nicht dupliziert werden.</error>
+        <error id="42">CAS &quot;%1$&quot; ist bereits vorhanden. Die CAS-Nummer muss eindeutig sein.</error>
+        <error id="44">Die Substanz &quot;%1$&quot; wurde nicht zum Werkstoff &quot;%2$&quot; hinzugefügt, weil die maximale Zusammensetzung entweder ungültig ist oder beim Kennzeichnen der Zusammensetzung als innerhalb des zulässigen Bereichs nicht angegeben wurde. Beim Hinzufügen der Substanz muss ein gültiger Prozentwert für die maximale Zusammensetzung verwendet werden.</error>
+        <error id="46">Die Zusammensetzung von &quot;%1$&quot; kann nicht geändert werden, weil diese Substanz übernommen wird.</error>
+        <error id="48">Der Werkstoff &quot;%1$&quot; kann nicht Teil der Zusammenstellung eines Elementänderungsstands sein, da es als inaktiv gekennzeichnet wurde. Bitte passen Sie den Wert der Voreinstellung &quot;MaterialMGMT_allow_inactive_werkstoff_use&quot; an, um inaktive Werkstoffe an Revisionen anzuhängen.</error>
+        <error id="49">Der Werkstoff &quot;%1$&quot; besitzt keinen Dichteparameter oder der Parameterdichtename ist nicht konfiguriert. Wenn die Parameterdichte bereits vorhanden ist, fügen Sie diese bitte zur Werteliste der Voreinstellung &quot;IMM_PARAMETER_DENSITY&quot; hinzu.</error>
+        <error id="50">Die Einheitsumwandlung von &quot;%1$&quot; zu &quot;%2$&quot; ist fehlgeschlagen und die Masse wird auf &quot;0.0&quot; festgelegt. Bitte prüfen Sie, ob die IMM-Einheiten vorhanden und eindeutig sind.</error>
+        <error id="51">Die Eingabe verfügt über keine definierten zu exportierenden Werkstoffe.</error>
+        <error id="52">Der für den Import angegebene Importtyp wurde nicht in der Voreinstellung &quot;IMM_IMPORT_FILTERS&quot; gefunden.</error>
+        <error id="53">Der ausgewählte Katalog ist ungültig oder der Katalogname ist leer.</error>
+        <error id="54">Der ausgewählte Werkstofftyp ist ungültig.</error>
+        <error id="55">Der ausgewählte Substanztyp ist ungültig.</error>
+    </errors>
+</textsrv>

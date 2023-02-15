@@ -1,0 +1,19 @@
+############################################################################################################
+#  CNO Object Property Definition File
+############################################################################################################
+# Version History
+#
+# Version    Date           Name               Description of Change
+# 1.0        31-01-2022     testu     Initial
+############################################################################################################
+
+C:SR5GenEngObjRevision:sr5AdjustedWeight~sr5AdjustedWeight
+
+C:ItemRevision:?object_type~DB_IR_type
+
+
+SR5EleCatPartRevision:Mat1UsesMaterial~ListMaterialRev
+SR5GenCatPartRevision:Mat1UsesMaterial~ListMaterialRev
+SR5MechCatPartRevision:Mat1UsesMaterial~ListMaterialRev
+SR5CatalogPartRevision:Mat1UsesMaterial~ListMaterialRev
+SR5GenCatPartARRevision:Mat1UsesMaterial~ListMaterialRev

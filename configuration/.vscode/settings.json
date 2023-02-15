@@ -1,0 +1,56 @@
+{
+  "terminal.integrated.defaultProfile.windows": "AW",
+  "terminal.integrated.profiles.windows": {
+    "AW": {
+      "path": "cmd",
+      "args": [
+        "/k call ./.vscode/init_aw_terminal.cmd"
+      ],
+      "overrideName": true
+    }
+  },
+  "json.schemas": [
+    {
+      "fileMatch": [
+        "/commandsViewModel.json"
+      ],
+      "url": "./.vscode/declarativeCommandsViewModelSchema-1.0.0.json"
+    },
+    {
+      "fileMatch": [
+        "/viewmodel/*ViewModel.json"
+      ],
+      "url": "./.vscode/declarativeViewModelSchema-1.0.0.json"
+    },
+    {
+      "fileMatch": [
+        "/kit.json"
+      ],
+      "url": "./.vscode/declarativeKitSchema-1.0.0.json"
+    },
+    {
+      "fileMatch": [
+        "/module.json"
+      ],
+      "url": "./.vscode/declarativeModuleSchema-1.0.0.json"
+    },
+    {
+      "fileMatch": [
+        "/workspace_*.json"
+      ],
+      "url": "./.vscode/declarativeWorkspaceSchema-1.0.0.json"
+    },
+    {
+      "fileMatch": [
+        "/site_*.json"
+      ],
+      "url": "./.vscode/declarativeSiteSchema-1.0.0.json"
+    },
+    {
+      "fileMatch": [
+        "/build.json"
+      ],
+      "url": "./.vscode/declarativeBuildSchema-1.0.0.json"
+    }
+  ]
+}

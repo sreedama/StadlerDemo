@@ -1,0 +1,935 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TcBusinessData xmlns="http://teamcenter.com/BusinessModel/TcBusinessData" Date="">
+<Add>
+   <TcClass className="SR4CatiaDesign" parentClassName="SR4GenDesign" isExportable="false"
+       isUninstantiable="false" isUninheritable="false" description=""/>
+   <TcClass className="SR4CatiaDesignMasterS" parentClassName="SR4GenDesignMasterS"
+       isExportable="false" isUninstantiable="false" isUninheritable="false" description=""/>
+   <TcClass className="SR4CatiaDesignRevMasterS" parentClassName="SR4GenDesignRevMasterS"
+       isExportable="false" isUninstantiable="false" isUninheritable="false" description=""/>
+   <TcClass className="SR4CatiaDesignRevision" parentClassName="SR4GenDesignRevision"
+       isExportable="false" isUninstantiable="false" isUninheritable="false" description=""/>
+   <TcClass className="SR4EngPart" parentClassName="SR4GenPart" isExportable="false"
+       isUninstantiable="false" isUninheritable="false" description=""/>
+   <TcClass className="SR4EngPartMasterS" parentClassName="SR4GenPartMasterS" isExportable="false"
+       isUninstantiable="false" isUninheritable="false" description=""/>
+   <TcClass className="SR4EngPartRevMasterS" parentClassName="SR4GenPartRevMasterS"
+       isExportable="false" isUninstantiable="false" isUninheritable="false" description=""/>
+   <TcClass className="SR4EngPartRevision" parentClassName="SR4GenPartRevision" isExportable="false"
+       isUninstantiable="false" isUninheritable="false" description=""/>
+   <TcClass className="SR4GenDesign" parentClassName="Design" isExportable="false"
+       isUninstantiable="false" isUninheritable="false" description=""/>
+   <TcClass className="SR4GenDesignMasterS" parentClassName="DesignMaster" isExportable="false"
+       isUninstantiable="false" isUninheritable="false" description=""/>
+   <TcClass className="SR4GenDesignRevMasterS" parentClassName="DesignVerMaster" isExportable="false"
+       isUninstantiable="false" isUninheritable="false" description=""/>
+   <TcClass className="SR4GenDesignRevision" parentClassName="Design_0_Revision_alt"
+       isExportable="false" isUninstantiable="false" isUninheritable="false" description=""/>
+   <TcClass className="SR4GenPart" parentClassName="Part" isExportable="false" isUninstantiable="false"
+       isUninheritable="false" description=""/>
+   <TcClass className="SR4GenPartMasterS" parentClassName="PartMaster" isExportable="false"
+       isUninstantiable="false" isUninheritable="false" description=""/>
+   <TcClass className="SR4GenPartRevMasterS" parentClassName="PartVerMaster" isExportable="false"
+       isUninstantiable="false" isUninheritable="false" description=""/>
+   <TcClass className="SR4GenPartRevision" parentClassName="Part_0_Revision_alt" isExportable="false"
+       isUninstantiable="false" isUninheritable="false" description="">
+     <TcAttribute attributeName="sr4_DIN_Classification" description="" attributeType="POM_string"
+         maxStringLength="10" isArray="false" followOnExport="false" isNullsAllowed="true"
+         isUnique="false" isPublicRead="true" isPublicWrite="true" isCandidateKey="false"
+         isTransient="false" exportAsString="false" noBackpointer="false" initialValue=""
+         lowerBoundValue="" upperBoundValue=""/>
+   </TcClass>
+   <TcClass className="SR4HasEBOM" parentClassName="ImanRelation" isExportable="false"
+       isUninstantiable="false" isUninheritable="false" description=""/>
+   <TcClass className="SR4MfgPart" parentClassName="SR4GenPart" isExportable="false"
+       isUninstantiable="false" isUninheritable="false" description="">
+     <TcAttribute attributeName="sr4Plant" description="" attributeType="POM_string"
+         maxStringLength="4" isArray="false" followOnExport="false" isNullsAllowed="true"
+         isUnique="false" isPublicRead="true" isPublicWrite="true" isCandidateKey="false"
+         isTransient="false" exportAsString="false" noBackpointer="false" lowerBoundValue=""
+         upperBoundValue=""/>
+   </TcClass>
+   <TcClass className="SR4MfgPartMasterS" parentClassName="SR4GenPartMasterS" isExportable="false"
+       isUninstantiable="false" isUninheritable="false" description=""/>
+   <TcClass className="SR4MfgPartRevMasterS" parentClassName="SR4GenPartRevMasterS"
+       isExportable="false" isUninstantiable="false" isUninheritable="false" description=""/>
+   <TcClass className="SR4MfgPartRevision" parentClassName="SR4GenPartRevision" isExportable="false"
+       isUninstantiable="false" isUninheritable="false" description=""/>
+   <TcClass className="SR4WFPlantFormStorage" parentClassName="POM_object" isExportable="false"
+       isUninstantiable="false" isUninheritable="false" description="">
+     <TcAttribute attributeName="sr4Plant" description="" attributeType="POM_string"
+         maxStringLength="4" isArray="false" followOnExport="false" isNullsAllowed="true"
+         isUnique="false" isPublicRead="true" isPublicWrite="true" isCandidateKey="false"
+         isTransient="false" exportAsString="false" noBackpointer="false" lowerBoundValue=""
+         upperBoundValue=""/>
+   </TcClass>
+   <TcAttributeAttach className="ItemRevision">
+     <TcAttribute attributeName="sr4HasCollaborationContexts" description="" attributeType="POM_typed_reference"
+         maxStringLength="0" isArray="true" followOnExport="false" isNullsAllowed="true"
+         isUnique="false" isPublicRead="true" isPublicWrite="true" isCandidateKey="false"
+         arrayLength="-1" isTransient="false" exportAsString="false" noBackpointer="false"
+         typedRefClassName="CCObject"/>
+   </TcAttributeAttach>
+   <OperationInputType typeName="SR4CatiaDesignCreI" parentTypeName="SR4GenDesignCreI"
+       typeClassName="SR4CatiaDesignCreI" description="CreateInput object for &quot;SR4CatiaDesign&quot; business object"
+       isAbstract="false" artifactName="SR4CatiaDesignCreI"/>
+   <OperationInputType typeName="SR4CatiaDesignMasterCreI" parentTypeName="SR4GenDesignMasterCreI"
+       typeClassName="SR4CatiaDesignMasterCreI" description="CreateInput object for &quot;SR4CatiaDesignMaster&quot; business object"
+       isAbstract="false" artifactName="SR4CatiaDesignMasterCreI"/>
+   <OperationInputType typeName="SR4CatiaDesignMasterSCreI" parentTypeName="SR4GenDesignMasterSCreI"
+       typeClassName="SR4CatiaDesignMasterSCreI" description="CreateInput object for &quot;SR4CatiaDesignMasterS&quot; business object"
+       isAbstract="false" artifactName="SR4CatiaDesignMasterSCreI"/>
+   <OperationInputType typeName="SR4CatiaDesignMasterSSvAI" parentTypeName="SR4GenDesignMasterSSvAI"
+       typeClassName="SR4CatiaDesignMasterSSvAI" description="SaveAsInput object for &quot;SR4CatiaDesignMasterS&quot; business object"
+       isAbstract="false" artifactName="SR4CatiaDesignMasterSSvAI"/>
+   <OperationInputType typeName="SR4CatiaDesignMasterSvAI" parentTypeName="SR4GenDesignMasterSvAI"
+       typeClassName="SR4CatiaDesignMasterSvAI" description="SaveAsInput object for &quot;SR4CatiaDesignMaster&quot; business object"
+       isAbstract="false" artifactName="SR4CatiaDesignMasterSvAI"/>
+   <OperationInputType typeName="SR4CatiaDesignRevMasterSCreI" parentTypeName="SR4GenDesignRevMasterSCreI"
+       typeClassName="SR4CatiaDesignRevMasterSCreI" description="CreateInput object for &quot;SR4CatiaDesignRevMasterS&quot; business object"
+       isAbstract="false" artifactName="SR4CatiaDesignRevMasterSCreI"/>
+   <OperationInputType typeName="SR4CatiaDesignRevMasterSSvAI" parentTypeName="SR4GenDesignRevMasterSSvAI"
+       typeClassName="SR4CatiaDesignRevMasterSSvAI" description="SaveAsInput object for &quot;SR4CatiaDesignRevMasterS&quot; business object"
+       isAbstract="false" artifactName="SR4CatiaDesignRevMasterSSvAI"/>
+   <OperationInputType typeName="SR4CatiaDesignRevisionCreI" parentTypeName="SR4GenDesignRevisionCreI"
+       typeClassName="SR4CatiaDesignRevisionCreI" description="CreateInput object for &quot;SR4CatiaDesignRevision&quot; business object"
+       isAbstract="false" artifactName="SR4CatiaDesignRevisionCreI"/>
+   <OperationInputType typeName="SR4CatiaDesignRevisionRevI" parentTypeName="SR4GenDesignRevisionRevI"
+       typeClassName="SR4CatiaDesignRevisionRevI" description="ReviseInput object for &quot;SR4CatiaDesignRevision&quot; business object"
+       isAbstract="false" artifactName="SR4CatiaDesignRevisionRevI"/>
+   <OperationInputType typeName="SR4CatiaDesignRevisionSvAI" parentTypeName="SR4GenDesignRevisionSvAI"
+       typeClassName="SR4CatiaDesignRevisionSvAI" description="SaveAsInput object for &quot;SR4CatiaDesignRevision&quot; business object"
+       isAbstract="false" artifactName="SR4CatiaDesignRevisionSvAI"/>
+   <OperationInputType typeName="SR4CatiaDesignRevision_alt0CreI" parentTypeName="SR4GenDesignRevisionMasterCreI"
+       typeClassName="SR4CatiaDesignRevision_alt0CreI" description="CreateInput object for &quot;SR4CatiaDesignRevisionMaster&quot; business object"
+       isAbstract="false" artifactName="SR4CatiaDesignRevision_alt0CreI"/>
+   <OperationInputType typeName="SR4CatiaDesignRevision_alt0SvAI" parentTypeName="SR4GenDesignRevisionMasterSvAI"
+       typeClassName="SR4CatiaDesignRevision_alt0SvAI" description="SaveAsInput object for &quot;SR4CatiaDesignRevisionMaster&quot; business object"
+       isAbstract="false" artifactName="SR4CatiaDesignRevision_alt0SvAI"/>
+   <OperationInputType typeName="SR4CatiaDesignSvAI" parentTypeName="SR4GenDesignSvAI"
+       typeClassName="SR4CatiaDesignSvAI" description="SaveAsInput object for &quot;SR4CatiaDesign&quot; business object"
+       isAbstract="false" artifactName="SR4CatiaDesignSvAI"/>
+   <OperationInputType typeName="SR4EngPartCreI" parentTypeName="SR4GenPartCreI" typeClassName="SR4EngPartCreI"
+       description="CreateInput object for &quot;SR4EngPart&quot; business object"
+       isAbstract="false" artifactName="SR4EngPartCreI"/>
+   <OperationInputType typeName="SR4EngPartMasterCreI" parentTypeName="SR4GenPartMasterCreI"
+       typeClassName="SR4EngPartMasterCreI" description="CreateInput object for &quot;SR4EngPartMaster&quot; business object"
+       isAbstract="false" artifactName="SR4EngPartMasterCreI"/>
+   <OperationInputType typeName="SR4EngPartMasterSCreI" parentTypeName="SR4GenPartMasterSCreI"
+       typeClassName="SR4EngPartMasterSCreI" description="CreateInput object for &quot;SR4EngPartMasterS&quot; business object"
+       isAbstract="false" artifactName="SR4EngPartMasterSCreI"/>
+   <OperationInputType typeName="SR4EngPartMasterSSvAI" parentTypeName="SR4GenPartMasterSSvAI"
+       typeClassName="SR4EngPartMasterSSvAI" description="SaveAsInput object for &quot;SR4EngPartMasterS&quot; business object"
+       isAbstract="false" artifactName="SR4EngPartMasterSSvAI"/>
+   <OperationInputType typeName="SR4EngPartMasterSvAI" parentTypeName="SR4GenPartMasterSvAI"
+       typeClassName="SR4EngPartMasterSvAI" description="SaveAsInput object for &quot;SR4EngPartMaster&quot; business object"
+       isAbstract="false" artifactName="SR4EngPartMasterSvAI"/>
+   <OperationInputType typeName="SR4EngPartRevMasterSCreI" parentTypeName="SR4GenPartRevMasterSCreI"
+       typeClassName="SR4EngPartRevMasterSCreI" description="CreateInput object for &quot;SR4EngPartRevMasterS&quot; business object"
+       isAbstract="false" artifactName="SR4EngPartRevMasterSCreI"/>
+   <OperationInputType typeName="SR4EngPartRevMasterSSvAI" parentTypeName="SR4GenPartRevMasterSSvAI"
+       typeClassName="SR4EngPartRevMasterSSvAI" description="SaveAsInput object for &quot;SR4EngPartRevMasterS&quot; business object"
+       isAbstract="false" artifactName="SR4EngPartRevMasterSSvAI"/>
+   <OperationInputType typeName="SR4EngPartRevisionCreI" parentTypeName="SR4GenPartRevisionCreI"
+       typeClassName="SR4EngPartRevisionCreI" description="CreateInput object for &quot;SR4EngPartRevision&quot; business object"
+       isAbstract="false" artifactName="SR4EngPartRevisionCreI">
+     <OperationInputProperty propName="sr4SR4HasEBOM" compoundObjectConstant="" srcPropName="SR4HasEBOM"
+         compoundObjectType="" fieldType="SimpleProperty" description="Usage in GRMS2P Compound"/>
+   </OperationInputType>
+   <OperationInputType typeName="SR4EngPartRevisionMasterCreI" parentTypeName="SR4GenPartRevisionMasterCreI"
+       typeClassName="SR4EngPartRevisionMasterCreI" description="CreateInput object for &quot;SR4EngPartRevisionMaster&quot; business object"
+       isAbstract="false" artifactName="SR4EngPartRevisionMasterCreI"/>
+   <OperationInputType typeName="SR4EngPartRevisionMasterSvAI" parentTypeName="SR4GenPartRevisionMasterSvAI"
+       typeClassName="SR4EngPartRevisionMasterSvAI" description="SaveAsInput object for &quot;SR4EngPartRevisionMaster&quot; business object"
+       isAbstract="false" artifactName="SR4EngPartRevisionMasterSvAI"/>
+   <OperationInputType typeName="SR4EngPartRevisionRevI" parentTypeName="SR4GenPartRevisionRevI"
+       typeClassName="SR4EngPartRevisionRevI" description="ReviseInput object for &quot;SR4EngPartRevision&quot; business object"
+       isAbstract="false" artifactName="SR4EngPartRevisionRevI"/>
+   <OperationInputType typeName="SR4EngPartRevisionSvAI" parentTypeName="SR4GenPartRevisionSvAI"
+       typeClassName="SR4EngPartRevisionSvAI" description="SaveAsInput object for &quot;SR4EngPartRevision&quot; business object"
+       isAbstract="false" artifactName="SR4EngPartRevisionSvAI"/>
+   <OperationInputType typeName="SR4EngPartSvAI" parentTypeName="SR4GenPartSvAI" typeClassName="SR4EngPartSvAI"
+       description="SaveAsInput object for &quot;SR4EngPart&quot; business object"
+       isAbstract="false" artifactName="SR4EngPartSvAI"/>
+   <OperationInputType typeName="SR4GenDesignCreI" parentTypeName="DesignCreI" typeClassName="SR4GenDesignCreI"
+       description="CreateInput object for &quot;SR4GenDesign&quot; business object"
+       isAbstract="true" artifactName="SR4GenDesignCreI"/>
+   <OperationInputType typeName="SR4GenDesignMasterCreI" parentTypeName="Design MasterCreI"
+       typeClassName="SR4GenDesignMasterCreI" description="CreateInput object for &quot;SR4GenDesignMaster&quot; business object"
+       isAbstract="false" artifactName="SR4GenDesignMasterCreI"/>
+   <OperationInputType typeName="SR4GenDesignMasterSCreI" parentTypeName="DesignMasterCreI"
+       typeClassName="SR4GenDesignMasterSCreI" description="CreateInput object for &quot;SR4GenDesignMasterS&quot; business object"
+       isAbstract="false" artifactName="SR4GenDesignMasterSCreI"/>
+   <OperationInputType typeName="SR4GenDesignMasterSSvAI" parentTypeName="DesignMasterSvAI"
+       typeClassName="SR4GenDesignMasterSSvAI" description="SaveAsInput object for &quot;SR4GenDesignMasterS&quot; business object"
+       isAbstract="false" artifactName="SR4GenDesignMasterSSvAI"/>
+   <OperationInputType typeName="SR4GenDesignMasterSvAI" parentTypeName="Design MasterSvAI"
+       typeClassName="SR4GenDesignMasterSvAI" description="SaveAsInput object for &quot;SR4GenDesignMaster&quot; business object"
+       isAbstract="false" artifactName="SR4GenDesignMasterSvAI"/>
+   <OperationInputType typeName="SR4GenDesignRevMasterSCreI" parentTypeName="DesignVerMasterCreI"
+       typeClassName="SR4GenDesignRevMasterSCreI" description="CreateInput object for &quot;SR4GenDesignRevMasterS&quot; business object"
+       isAbstract="false" artifactName="SR4GenDesignRevMasterSCreI"/>
+   <OperationInputType typeName="SR4GenDesignRevMasterSSvAI" parentTypeName="DesignVerMasterSvAI"
+       typeClassName="SR4GenDesignRevMasterSSvAI" description="SaveAsInput object for &quot;SR4GenDesignRevMasterS&quot; business object"
+       isAbstract="false" artifactName="SR4GenDesignRevMasterSSvAI"/>
+   <OperationInputType typeName="SR4GenDesignRevisionCreI" parentTypeName="Design RevisionCreI"
+       typeClassName="SR4GenDesignRevisionCreI" description="CreateInput object for &quot;SR4GenDesignRevision&quot; business object"
+       isAbstract="true" artifactName="SR4GenDesignRevisionCreI"/>
+   <OperationInputType typeName="SR4GenDesignRevisionMasterCreI" parentTypeName="Design Revision MasterCreI"
+       typeClassName="SR4GenDesignRevisionMasterCreI" description="CreateInput object for &quot;SR4GenDesignRevisionMaster&quot; business object"
+       isAbstract="false" artifactName="SR4GenDesignRevisionMasterCreI"/>
+   <OperationInputType typeName="SR4GenDesignRevisionMasterSvAI" parentTypeName="Design Revision MasterSvAI"
+       typeClassName="SR4GenDesignRevisionMasterSvAI" description="SaveAsInput object for &quot;SR4GenDesignRevisionMaster&quot; business object"
+       isAbstract="false" artifactName="SR4GenDesignRevisionMasterSvAI"/>
+   <OperationInputType typeName="SR4GenDesignRevisionRevI" parentTypeName="Design RevisionRevI"
+       typeClassName="SR4GenDesignRevisionRevI" description="ReviseInput object for &quot;SR4GenDesignRevision&quot; business object"
+       isAbstract="true" artifactName="SR4GenDesignRevisionRevI"/>
+   <OperationInputType typeName="SR4GenDesignRevisionSvAI" parentTypeName="Design RevisionSvAI"
+       typeClassName="SR4GenDesignRevisionSvAI" description="SaveAsInput object for &quot;SR4GenDesignRevision&quot; business object"
+       isAbstract="true" artifactName="SR4GenDesignRevisionSvAI"/>
+   <OperationInputType typeName="SR4GenDesignSvAI" parentTypeName="DesignSvAI" typeClassName="SR4GenDesignSvAI"
+       description="SaveAsInput object for &quot;SR4GenDesign&quot; business object"
+       isAbstract="true" artifactName="SR4GenDesignSvAI"/>
+   <OperationInputType typeName="SR4GenPartCreI" parentTypeName="PartCreI" typeClassName="SR4GenPartCreI"
+       description="CreateInput object for &quot;SR4GenPart&quot; business object"
+       isAbstract="true" artifactName="SR4GenPartCreI"/>
+   <OperationInputType typeName="SR4GenPartMasterCreI" parentTypeName="Part MasterCreI"
+       typeClassName="SR4GenPartMasterCreI" description="CreateInput object for &quot;SR4GenPartMaster&quot; business object"
+       isAbstract="false" artifactName="SR4GenPartMasterCreI"/>
+   <OperationInputType typeName="SR4GenPartMasterSCreI" parentTypeName="PartMasterCreI"
+       typeClassName="SR4GenPartMasterSCreI" description="CreateInput object for &quot;SR4GenPartMasterS&quot; business object"
+       isAbstract="false" artifactName="SR4GenPartMasterSCreI"/>
+   <OperationInputType typeName="SR4GenPartMasterSSvAI" parentTypeName="PartMasterSvAI"
+       typeClassName="SR4GenPartMasterSSvAI" description="SaveAsInput object for &quot;SR4GenPartMasterS&quot; business object"
+       isAbstract="false" artifactName="SR4GenPartMasterSSvAI"/>
+   <OperationInputType typeName="SR4GenPartMasterSvAI" parentTypeName="Part MasterSvAI"
+       typeClassName="SR4GenPartMasterSvAI" description="SaveAsInput object for &quot;SR4GenPartMaster&quot; business object"
+       isAbstract="false" artifactName="SR4GenPartMasterSvAI"/>
+   <OperationInputType typeName="SR4GenPartRevMasterSCreI" parentTypeName="PartVerMasterCreI"
+       typeClassName="SR4GenPartRevMasterSCreI" description="CreateInput object for &quot;SR4GenPartRevMasterS&quot; business object"
+       isAbstract="false" artifactName="SR4GenPartRevMasterSCreI"/>
+   <OperationInputType typeName="SR4GenPartRevMasterSSvAI" parentTypeName="PartVerMasterSvAI"
+       typeClassName="SR4GenPartRevMasterSSvAI" description="SaveAsInput object for &quot;SR4GenPartRevMasterS&quot; business object"
+       isAbstract="false" artifactName="SR4GenPartRevMasterSSvAI"/>
+   <OperationInputType typeName="SR4GenPartRevisionCreI" parentTypeName="Part RevisionCreI"
+       typeClassName="SR4GenPartRevisionCreI" description="CreateInput object for &quot;SR4GenPartRevision&quot; business object"
+       isAbstract="true" artifactName="SR4GenPartRevisionCreI">
+     <OperationInputProperty propName="sr4_DIN_Classification" compoundObjectConstant=""
+         srcPropName="sr4_DIN_Classification" compoundObjectType="" fieldType="SimpleProperty"
+         description=""/>
+   </OperationInputType>
+   <OperationInputType typeName="SR4GenPartRevisionMasterCreI" parentTypeName="Part Revision MasterCreI"
+       typeClassName="SR4GenPartRevisionMasterCreI" description="CreateInput object for &quot;SR4GenPartRevisionMaster&quot; business object"
+       isAbstract="false" artifactName="SR4GenPartRevisionMasterCreI"/>
+   <OperationInputType typeName="SR4GenPartRevisionMasterSvAI" parentTypeName="Part Revision MasterSvAI"
+       typeClassName="SR4GenPartRevisionMasterSvAI" description="SaveAsInput object for &quot;SR4GenPartRevisionMaster&quot; business object"
+       isAbstract="false" artifactName="SR4GenPartRevisionMasterSvAI"/>
+   <OperationInputType typeName="SR4GenPartRevisionRevI" parentTypeName="Part RevisionRevI"
+       typeClassName="SR4GenPartRevisionRevI" description="ReviseInput object for &quot;SR4GenPartRevision&quot; business object"
+       isAbstract="true" artifactName="SR4GenPartRevisionRevI"/>
+   <OperationInputType typeName="SR4GenPartRevisionSvAI" parentTypeName="Part RevisionSvAI"
+       typeClassName="SR4GenPartRevisionSvAI" description="SaveAsInput object for &quot;SR4GenPartRevision&quot; business object"
+       isAbstract="true" artifactName="SR4GenPartRevisionSvAI"/>
+   <OperationInputType typeName="SR4GenPartSvAI" parentTypeName="PartSvAI" typeClassName="SR4GenPartSvAI"
+       description="SaveAsInput object for &quot;SR4GenPart&quot; business object"
+       isAbstract="true" artifactName="SR4GenPartSvAI"/>
+   <OperationInputType typeName="SR4HasEBOMCreI" parentTypeName="ImanRelationCreI"
+       typeClassName="SR4HasEBOMCreI" description="CreateInput object for &quot;SR4HasEBOM&quot; business object"
+       isAbstract="false" artifactName="SR4HasEBOMCreI"/>
+   <OperationInputType typeName="SR4HasEBOMSvAI" parentTypeName="ImanRelationSvAI"
+       typeClassName="SR4HasEBOMSvAI" description="SaveAsInput object for &quot;SR4HasEBOM&quot; business object"
+       isAbstract="false" artifactName="SR4HasEBOMSvAI"/>
+   <OperationInputType typeName="SR4MfgPartCreI" parentTypeName="SR4GenPartCreI" typeClassName="SR4MfgPartCreI"
+       description="CreateInput object for &quot;SR4MfgPart&quot; business object"
+       isAbstract="false" artifactName="SR4MfgPartCreI">
+     <OperationInputProperty propName="sr4Plant" compoundObjectConstant="" srcPropName="sr4Plant"
+         compoundObjectType="" fieldType="SimpleProperty" description=""/>
+   </OperationInputType>
+   <OperationInputType typeName="SR4MfgPartMasterCreI" parentTypeName="SR4GenPartMasterCreI"
+       typeClassName="SR4MfgPartMasterCreI" description="CreateInput object for &quot;SR4MfgPartMaster&quot; business object"
+       isAbstract="false" artifactName="SR4MfgPartMasterCreI"/>
+   <OperationInputType typeName="SR4MfgPartMasterSCreI" parentTypeName="SR4GenPartMasterSCreI"
+       typeClassName="SR4MfgPartMasterSCreI" description="CreateInput object for &quot;SR4MfgPartMasterS&quot; business object"
+       isAbstract="false" artifactName="SR4MfgPartMasterSCreI"/>
+   <OperationInputType typeName="SR4MfgPartMasterSSvAI" parentTypeName="SR4GenPartMasterSSvAI"
+       typeClassName="SR4MfgPartMasterSSvAI" description="SaveAsInput object for &quot;SR4MfgPartMasterS&quot; business object"
+       isAbstract="false" artifactName="SR4MfgPartMasterSSvAI"/>
+   <OperationInputType typeName="SR4MfgPartMasterSvAI" parentTypeName="SR4GenPartMasterSvAI"
+       typeClassName="SR4MfgPartMasterSvAI" description="SaveAsInput object for &quot;SR4MfgPartMaster&quot; business object"
+       isAbstract="false" artifactName="SR4MfgPartMasterSvAI"/>
+   <OperationInputType typeName="SR4MfgPartRevMasterSCreI" parentTypeName="SR4GenPartRevMasterSCreI"
+       typeClassName="SR4MfgPartRevMasterSCreI" description="CreateInput object for &quot;SR4MfgPartRevMasterS&quot; business object"
+       isAbstract="false" artifactName="SR4MfgPartRevMasterSCreI"/>
+   <OperationInputType typeName="SR4MfgPartRevMasterSSvAI" parentTypeName="SR4GenPartRevMasterSSvAI"
+       typeClassName="SR4MfgPartRevMasterSSvAI" description="SaveAsInput object for &quot;SR4MfgPartRevMasterS&quot; business object"
+       isAbstract="false" artifactName="SR4MfgPartRevMasterSSvAI"/>
+   <OperationInputType typeName="SR4MfgPartRevisionCreI" parentTypeName="SR4GenPartRevisionCreI"
+       typeClassName="SR4MfgPartRevisionCreI" description="CreateInput object for &quot;SR4MfgPartRevision&quot; business object"
+       isAbstract="false" artifactName="SR4MfgPartRevisionCreI">
+     <OperationInputProperty propName="sr4SR4HasEBOM" compoundObjectConstant="" srcPropName="SR4HasEBOM"
+         compoundObjectType="" fieldType="SimpleProperty" description=""/>
+   </OperationInputType>
+   <OperationInputType typeName="SR4MfgPartRevisionMasterCreI" parentTypeName="SR4GenPartRevisionMasterCreI"
+       typeClassName="SR4MfgPartRevisionMasterCreI" description="CreateInput object for &quot;SR4MfgPartRevisionMaster&quot; business object"
+       isAbstract="false" artifactName="SR4MfgPartRevisionMasterCreI"/>
+   <OperationInputType typeName="SR4MfgPartRevisionMasterSvAI" parentTypeName="SR4GenPartRevisionMasterSvAI"
+       typeClassName="SR4MfgPartRevisionMasterSvAI" description="SaveAsInput object for &quot;SR4MfgPartRevisionMaster&quot; business object"
+       isAbstract="false" artifactName="SR4MfgPartRevisionMasterSvAI"/>
+   <OperationInputType typeName="SR4MfgPartRevisionRevI" parentTypeName="SR4GenPartRevisionRevI"
+       typeClassName="SR4MfgPartRevisionRevI" description="ReviseInput object for &quot;SR4MfgPartRevision&quot; business object"
+       isAbstract="false" artifactName="SR4MfgPartRevisionRevI"/>
+   <OperationInputType typeName="SR4MfgPartRevisionSvAI" parentTypeName="SR4GenPartRevisionSvAI"
+       typeClassName="SR4MfgPartRevisionSvAI" description="SaveAsInput object for &quot;SR4MfgPartRevision&quot; business object"
+       isAbstract="false" artifactName="SR4MfgPartRevisionSvAI"/>
+   <OperationInputType typeName="SR4MfgPartSvAI" parentTypeName="SR4GenPartSvAI" typeClassName="SR4MfgPartSvAI"
+       description="SaveAsInput object for &quot;SR4MfgPart&quot; business object"
+       isAbstract="false" artifactName="SR4MfgPartSvAI">
+     <OperationInputProperty propName="sr4Plant" compoundObjectConstant="" srcPropName="sr4Plant"
+         compoundObjectType="" fieldType="SimpleProperty" description=""/>
+   </OperationInputType>
+   <OperationInputType typeName="SR4WFPlantFormCreI" parentTypeName="FormCreI" typeClassName="SR4WFPlantFormCreI"
+       description="CreateInput object for &quot;SR4WFPlantForm&quot; business object"
+       isAbstract="false" artifactName="SR4WFPlantFormCreI"/>
+   <OperationInputType typeName="SR4WFPlantFormStorageCreI" parentTypeName="POM_objectCreI"
+       typeClassName="SR4WFPlantFormStorageCreI" description="CreateInput object for &quot;SR4WFPlantFormStorage&quot; business object"
+       isAbstract="false" artifactName="SR4WFPlantFormStorageCreI"/>
+   <OperationInputType typeName="SR4WFPlantFormStorageSvAI" parentTypeName="POM_objectSvAI"
+       typeClassName="SR4WFPlantFormStorageSvAI" description="SaveAsInput object for &quot;SR4WFPlantFormStorage&quot; business object"
+       isAbstract="false" artifactName="SR4WFPlantFormStorageSvAI"/>
+   <OperationInputType typeName="SR4WFPlantFormSvAI" parentTypeName="FormSvAI" typeClassName="SR4WFPlantFormSvAI"
+       description="SaveAsInput object for &quot;SR4WFPlantForm&quot; business object"
+       isAbstract="false" artifactName="SR4WFPlantFormSvAI"/>
+   <TcForm typeName="SR4CatiaDesignMaster" parentTypeName="SR4GenDesignMaster" typeClassName="Form"
+       description="MasterForm object for &quot;SR4CatiaDesign&quot; business object"
+       isAbstract="false" artifactName="SR4CatiaDesignMaster" formStorageClassName="SR4CatiaDesignMasterS"/>
+   <TcForm typeName="SR4CatiaDesignRevisionMaster" parentTypeName="SR4GenDesignRevisionMaster"
+       typeClassName="Form" description="MasterForm object for &quot;SR4CatiaDesignRevision&quot; business object"
+       isAbstract="false" artifactName="SR4CatiaDesignRevisionMaster" formStorageClassName="SR4CatiaDesignRevMasterS"/>
+   <TcForm typeName="SR4EngPartMaster" parentTypeName="SR4GenPartMaster" typeClassName="Form"
+       description="MasterForm object for &quot;SR4EngPart&quot; business object"
+       isAbstract="false" artifactName="SR4EngPartMaster" formStorageClassName="SR4EngPartMasterS"/>
+   <TcForm typeName="SR4EngPartRevisionMaster" parentTypeName="SR4GenPartRevisionMaster"
+       typeClassName="Form" description="MasterForm object for &quot;SR4EngPartRevision&quot; business object"
+       isAbstract="false" artifactName="SR4EngPartRevisionMaster" formStorageClassName="SR4EngPartRevMasterS"/>
+   <TcForm typeName="SR4GenDesignMaster" parentTypeName="Design Master" typeClassName="Form"
+       description="MasterForm object for &quot;SR4GenDesign&quot; business object"
+       isAbstract="false" artifactName="SR4GenDesignMaster" formStorageClassName="SR4GenDesignMasterS"/>
+   <TcForm typeName="SR4GenDesignRevisionMaster" parentTypeName="Design Revision Master"
+       typeClassName="Form" description="MasterForm object for &quot;SR4GenDesignRevision&quot; business object"
+       isAbstract="false" artifactName="SR4GenDesignRevisionMaster" formStorageClassName="SR4GenDesignRevMasterS"/>
+   <TcForm typeName="SR4GenPartMaster" parentTypeName="Part Master" typeClassName="Form"
+       description="MasterForm object for &quot;SR4GenPart&quot; business object"
+       isAbstract="false" artifactName="SR4GenPartMaster" formStorageClassName="SR4GenPartMasterS"/>
+   <TcForm typeName="SR4GenPartRevisionMaster" parentTypeName="Part Revision Master"
+       typeClassName="Form" description="MasterForm object for &quot;SR4GenPartRevision&quot; business object"
+       isAbstract="false" artifactName="SR4GenPartRevisionMaster" formStorageClassName="SR4GenPartRevMasterS"/>
+   <TcForm typeName="SR4MfgPartMaster" parentTypeName="SR4GenPartMaster" typeClassName="Form"
+       description="MasterForm object for &quot;SR4MfgPart&quot; business object"
+       isAbstract="false" artifactName="SR4MfgPartMaster" formStorageClassName="SR4MfgPartMasterS"/>
+   <TcForm typeName="SR4MfgPartRevisionMaster" parentTypeName="SR4GenPartRevisionMaster"
+       typeClassName="Form" description="MasterForm object for &quot;SR4MfgPartRevision&quot; business object"
+       isAbstract="false" artifactName="SR4MfgPartRevisionMaster" formStorageClassName="SR4MfgPartRevMasterS"/>
+   <TcForm typeName="SR4WFPlantForm" parentTypeName="Form" typeClassName="Form" description=""
+       isAbstract="false" artifactName="SR4WFPlantForm" formStorageClassName="SR4WFPlantFormStorage"/>
+   <TcStandardType typeName="SR4CatiaDesign" parentTypeName="SR4GenDesign" typeClassName="SR4CatiaDesign"
+       description="" isAbstract="false" artifactName="SR4CatiaDesign"/>
+   <TcStandardType typeName="SR4CatiaDesignMasterS" parentTypeName="SR4GenDesignMasterS"
+       typeClassName="SR4CatiaDesignMasterS" description="Form Storage object for &quot;SR4CatiaDesignMaster&quot; business object"
+       isAbstract="false" artifactName="SR4CatiaDesignMasterS"/>
+   <TcStandardType typeName="SR4CatiaDesignRevMasterS" parentTypeName="SR4GenDesignRevMasterS"
+       typeClassName="SR4CatiaDesignRevMasterS" description="Form Storage object for &quot;SR4CatiaDesignRevMaster&quot; business object"
+       isAbstract="false" artifactName="SR4CatiaDesignRevMasterS"/>
+   <TcStandardType typeName="SR4CatiaDesignRevision" parentTypeName="SR4GenDesignRevision"
+       typeClassName="SR4CatiaDesignRevision" description="ItemRevision object for &quot;SR4CatiaDesign&quot;  business object"
+       isAbstract="false" artifactName="SR4CatiaDesignRevision"/>
+   <TcStandardType typeName="SR4EngPart" parentTypeName="SR4GenPart" typeClassName="SR4EngPart"
+       description="" isAbstract="false" artifactName="SR4EngPart"/>
+   <TcStandardType typeName="SR4EngPartMasterS" parentTypeName="SR4GenPartMasterS"
+       typeClassName="SR4EngPartMasterS" description="Form Storage object for &quot;SR4EngPartMaster&quot; business object"
+       isAbstract="false" artifactName="SR4EngPartMasterS"/>
+   <TcStandardType typeName="SR4EngPartRevMasterS" parentTypeName="SR4GenPartRevMasterS"
+       typeClassName="SR4EngPartRevMasterS" description="Form Storage object for &quot;SR4EngPartRevMaster&quot; business object"
+       isAbstract="false" artifactName="SR4EngPartRevMasterS"/>
+   <TcStandardType typeName="SR4EngPartRevision" parentTypeName="SR4GenPartRevision"
+       typeClassName="SR4EngPartRevision" description="ItemRevision object for &quot;SR4EngPart&quot;  business object"
+       isAbstract="false" artifactName="SR4EngPartRevision">
+     <TcProperty propName="SR4HasEBOM" propTypeName="Relation" propValueType="PROP_untyped_relation"
+         propMaxStringLength="0" isArray="true" arrayLength="-1" description="Usage in GRMS2P Compound"
+         referencedTypeConstant="" referencedType=""/>
+   </TcStandardType>
+   <TcStandardType typeName="SR4GenDesign" parentTypeName="Design" typeClassName="SR4GenDesign"
+       description="" isAbstract="true" artifactName="SR4GenDesign"/>
+   <TcStandardType typeName="SR4GenDesignMasterS" parentTypeName="DesignMaster" typeClassName="SR4GenDesignMasterS"
+       description="Form Storage object for &quot;SR4GenDesignMaster&quot; business object"
+       isAbstract="false" artifactName="SR4GenDesignMasterS"/>
+   <TcStandardType typeName="SR4GenDesignRevMasterS" parentTypeName="DesignVerMaster"
+       typeClassName="SR4GenDesignRevMasterS" description="Form Storage object for &quot;SR4GenDesignRevMaster&quot; business object"
+       isAbstract="false" artifactName="SR4GenDesignRevMasterS"/>
+   <TcStandardType typeName="SR4GenDesignRevision" parentTypeName="Design Revision"
+       typeClassName="SR4GenDesignRevision" description="ItemRevision object for &quot;SR4GenDesign&quot;  business object"
+       isAbstract="true" artifactName="SR4GenDesignRevision"/>
+   <TcStandardType typeName="SR4GenPart" parentTypeName="Part" typeClassName="SR4GenPart"
+       description="" isAbstract="true" artifactName="SR4GenPart"/>
+   <TcStandardType typeName="SR4GenPartMasterS" parentTypeName="PartMaster" typeClassName="SR4GenPartMasterS"
+       description="Form Storage object for &quot;SR4GenPartMaster&quot; business object"
+       isAbstract="false" artifactName="SR4GenPartMasterS"/>
+   <TcStandardType typeName="SR4GenPartRevMasterS" parentTypeName="PartVerMaster"
+       typeClassName="SR4GenPartRevMasterS" description="Form Storage object for &quot;SR4GenPartRevMaster&quot; business object"
+       isAbstract="false" artifactName="SR4GenPartRevMasterS"/>
+   <TcStandardType typeName="SR4GenPartRevision" parentTypeName="Part Revision" typeClassName="SR4GenPartRevision"
+       description="ItemRevision object for &quot;SR4GenPart&quot;  business object"
+       isAbstract="true" artifactName="SR4GenPartRevision"/>
+   <TcStandardType typeName="SR4HasEBOM" parentTypeName="ImanRelation" typeClassName="SR4HasEBOM"
+       description="" isAbstract="false" artifactName="SR4HasEBOM"/>
+   <TcStandardType typeName="SR4MfgPart" parentTypeName="SR4GenPart" typeClassName="SR4MfgPart"
+       description="" isAbstract="false" artifactName="SR4MfgPart"/>
+   <TcStandardType typeName="SR4MfgPartMasterS" parentTypeName="SR4GenPartMasterS"
+       typeClassName="SR4MfgPartMasterS" description="Form Storage object for &quot;SR4MfgPartMaster&quot; business object"
+       isAbstract="false" artifactName="SR4MfgPartMasterS"/>
+   <TcStandardType typeName="SR4MfgPartRevMasterS" parentTypeName="SR4GenPartRevMasterS"
+       typeClassName="SR4MfgPartRevMasterS" description="Form Storage object for &quot;SR4MfgPartRevMaster&quot; business object"
+       isAbstract="false" artifactName="SR4MfgPartRevMasterS"/>
+   <TcStandardType typeName="SR4MfgPartRevision" parentTypeName="SR4GenPartRevision"
+       typeClassName="SR4MfgPartRevision" description="ItemRevision object for &quot;SR4MfgPart&quot;  business object"
+       isAbstract="false" artifactName="SR4MfgPartRevision">
+     <TcProperty propName="SR4HasEBOM" propTypeName="Relation" propValueType="PROP_untyped_relation"
+         propMaxStringLength="0" isArray="true" arrayLength="-1" description="" referencedTypeConstant=""
+         referencedType=""/>
+   </TcStandardType>
+   <TcStandardType typeName="SR4WFPlantFormStorage" parentTypeName="POM_object" typeClassName="SR4WFPlantFormStorage"
+       description="Form Storage object for &quot;SR4WFPlantForm&quot; business object"
+       isAbstract="false" artifactName="SR4WFPlantFormStorage"/>
+   <TcPropertyAttach typeName="Awb0Element">
+     <TcProperty propName="sr4DINClassification" propTypeName="Runtime" propValueType="PROP_string"
+         propMaxStringLength="10" isArray="false" arrayLength="0" description="" referencedTypeConstant=""
+         referencedType=""/>
+   </TcPropertyAttach>
+   <TcPropertyAttach typeName="Awb0ConditionalElement">
+     <TcProperty propName="sr4HasCollaborationContexts" propTypeName="Runtime" propValueType="PROP_typed_reference"
+         propMaxStringLength="0" isArray="true" arrayLength="-1" description="" referencedTypeConstant=""
+         referencedType="CCObject"/>
+   </TcPropertyAttach>
+   <TcPropertyAttach typeName="ItemRevisionCreI">
+     <OperationInputProperty propName="sr4HasCollaborationContexts" compoundObjectConstant=""
+         srcPropName="sr4HasCollaborationContexts" compoundObjectType="" fieldType="SimpleProperty"
+         description=""/>
+   </TcPropertyAttach>
+   <TcPropertyAttach typeName="Awb0ElementCreI">
+     <OperationInputProperty propName="sr4DINClassification" compoundObjectConstant=""
+         srcPropName="sr4DINClassification" compoundObjectType="" fieldType="SimpleProperty"
+         description=""/>
+   </TcPropertyAttach>
+   <TcPropertyAttach typeName="Awb0ConditionalElementCreI">
+     <OperationInputProperty propName="sr4HasCollaborationContexts" compoundObjectConstant=""
+         srcPropName="sr4HasCollaborationContexts" compoundObjectType="" fieldType="SimpleProperty"
+         description=""/>
+   </TcPropertyAttach>
+   <Condition name="SR4WF_AdminWorkflows" expression="u.group_name=(&quot;dba&quot;) OR u.group_name=(&quot;Engineering&quot;)"
+       secured="false" description="">
+     <ConditionParameter name="o" parameterTypeName="WorkspaceObject"/>
+     <ConditionParameter name="t" parameterTypeName="ImanType"/>
+     <ConditionParameter name="u" parameterTypeName="UserSession"/>
+   </Condition>
+   <Condition name="SR4WF_BOM_Alignment" expression="(u.group_name=(&quot;dba&quot;) OR u.group_name=(&quot;Engineering&quot;)) AND (((t != NULL) AND t.type_name = &quot;SR4EngPartRevision&quot;) OR (o != NULL AND o.object_type = &quot;SR4EngPartRevision&quot;))"
+       secured="false" description="">
+     <ConditionParameter name="o" parameterTypeName="WorkspaceObject"/>
+     <ConditionParameter name="t" parameterTypeName="ImanType"/>
+     <ConditionParameter name="u" parameterTypeName="UserSession"/>
+   </Condition>
+   <Condition name="SR4WF_CAD_PART_Alignment" expression="(u.group_name=(&quot;dba&quot;) OR u.group_name=(&quot;Engineering&quot;)) AND (((t != NULL) AND t.type_name = &quot;Design Revision&quot;) OR (o != NULL AND o.object_type = &quot;Design Revision&quot;))"
+       secured="false" description="">
+     <ConditionParameter name="o" parameterTypeName="WorkspaceObject"/>
+     <ConditionParameter name="t" parameterTypeName="ImanType"/>
+     <ConditionParameter name="u" parameterTypeName="UserSession"/>
+   </Condition>
+   <Condition name="SR4WF_EBOM_MBOM_Alignment" expression="(u.group_name=(&quot;dba&quot;) OR u.group_name=(&quot;Engineering&quot;)) AND (((t != NULL) AND t.type_name = &quot;SR4EngPartRevision&quot;) OR (o != NULL AND o.object_type = &quot;SR4EngPartRevision&quot;))"
+       secured="false" description="">
+     <ConditionParameter name="o" parameterTypeName="WorkspaceObject"/>
+     <ConditionParameter name="t" parameterTypeName="ImanType"/>
+     <ConditionParameter name="u" parameterTypeName="UserSession"/>
+   </Condition>
+   <TcGlobalConstantAttach constantName="Fnd0BOMLineItemConfigProps" value="">
+     <ConstantValue value="SR4GenPart"/>
+   </TcGlobalConstantAttach>
+   <TcGlobalConstantAttach constantName="Fnd0BOMLineRevConfigProps" value="">
+     <ConstantValue value="SR4GenPartRevision"/>
+   </TcGlobalConstantAttach>
+   <TcGlobalConstantAttach constantName="Fnd0SelectedLocales" value="en_US,de_DE,fr_FR,it_IT,es_ES,ru_RU,pl_PL"/>
+   <TcTypeConstantAttach constantName="CreateInput" typeName="SR4CatiaDesign" value="SR4CatiaDesignCreI"/>
+   <TcTypeConstantAttach constantName="CreateInput" typeName="SR4CatiaDesignMaster"
+       value="SR4CatiaDesignMasterCreI"/>
+   <TcTypeConstantAttach constantName="CreateInput" typeName="SR4CatiaDesignMasterS"
+       value="SR4CatiaDesignMasterSCreI"/>
+   <TcTypeConstantAttach constantName="CreateInput" typeName="SR4CatiaDesignRevision"
+       value="SR4CatiaDesignRevisionCreI"/>
+   <TcTypeConstantAttach constantName="CreateInput" typeName="SR4CatiaDesignRevisionMaster"
+       value="SR4CatiaDesignRevision_alt0CreI"/>
+   <TcTypeConstantAttach constantName="CreateInput" typeName="SR4CatiaDesignRevMasterS"
+       value="SR4CatiaDesignRevMasterSCreI"/>
+   <TcTypeConstantAttach constantName="CreateInput" typeName="SR4EngPart" value="SR4EngPartCreI"/>
+   <TcTypeConstantAttach constantName="CreateInput" typeName="SR4EngPartMaster" value="SR4EngPartMasterCreI"/>
+   <TcTypeConstantAttach constantName="CreateInput" typeName="SR4EngPartMasterS" value="SR4EngPartMasterSCreI"/>
+   <TcTypeConstantAttach constantName="CreateInput" typeName="SR4EngPartRevision"
+       value="SR4EngPartRevisionCreI"/>
+   <TcTypeConstantAttach constantName="CreateInput" typeName="SR4EngPartRevisionMaster"
+       value="SR4EngPartRevisionMasterCreI"/>
+   <TcTypeConstantAttach constantName="CreateInput" typeName="SR4EngPartRevMasterS"
+       value="SR4EngPartRevMasterSCreI"/>
+   <TcTypeConstantAttach constantName="CreateInput" typeName="SR4GenDesign" value="SR4GenDesignCreI"/>
+   <TcTypeConstantAttach constantName="CreateInput" typeName="SR4GenDesignMaster"
+       value="SR4GenDesignMasterCreI"/>
+   <TcTypeConstantAttach constantName="CreateInput" typeName="SR4GenDesignMasterS"
+       value="SR4GenDesignMasterSCreI"/>
+   <TcTypeConstantAttach constantName="CreateInput" typeName="SR4GenDesignRevision"
+       value="SR4GenDesignRevisionCreI"/>
+   <TcTypeConstantAttach constantName="CreateInput" typeName="SR4GenDesignRevisionMaster"
+       value="SR4GenDesignRevisionMasterCreI"/>
+   <TcTypeConstantAttach constantName="CreateInput" typeName="SR4GenDesignRevMasterS"
+       value="SR4GenDesignRevMasterSCreI"/>
+   <TcTypeConstantAttach constantName="CreateInput" typeName="SR4GenPart" value="SR4GenPartCreI"/>
+   <TcTypeConstantAttach constantName="CreateInput" typeName="SR4GenPartMaster" value="SR4GenPartMasterCreI"/>
+   <TcTypeConstantAttach constantName="CreateInput" typeName="SR4GenPartMasterS" value="SR4GenPartMasterSCreI"/>
+   <TcTypeConstantAttach constantName="CreateInput" typeName="SR4GenPartRevision"
+       value="SR4GenPartRevisionCreI"/>
+   <TcTypeConstantAttach constantName="CreateInput" typeName="SR4GenPartRevisionMaster"
+       value="SR4GenPartRevisionMasterCreI"/>
+   <TcTypeConstantAttach constantName="CreateInput" typeName="SR4GenPartRevMasterS"
+       value="SR4GenPartRevMasterSCreI"/>
+   <TcTypeConstantAttach constantName="CreateInput" typeName="SR4HasEBOM" value="SR4HasEBOMCreI"/>
+   <TcTypeConstantAttach constantName="CreateInput" typeName="SR4MfgPart" value="SR4MfgPartCreI"/>
+   <TcTypeConstantAttach constantName="CreateInput" typeName="SR4MfgPartMaster" value="SR4MfgPartMasterCreI"/>
+   <TcTypeConstantAttach constantName="CreateInput" typeName="SR4MfgPartMasterS" value="SR4MfgPartMasterSCreI"/>
+   <TcTypeConstantAttach constantName="CreateInput" typeName="SR4MfgPartRevision"
+       value="SR4MfgPartRevisionCreI"/>
+   <TcTypeConstantAttach constantName="CreateInput" typeName="SR4MfgPartRevisionMaster"
+       value="SR4MfgPartRevisionMasterCreI"/>
+   <TcTypeConstantAttach constantName="CreateInput" typeName="SR4MfgPartRevMasterS"
+       value="SR4MfgPartRevMasterSCreI"/>
+   <TcTypeConstantAttach constantName="CreateInput" typeName="SR4WFPlantForm" value="SR4WFPlantFormCreI"/>
+   <TcTypeConstantAttach constantName="CreateInput" typeName="SR4WFPlantFormStorage"
+       value="SR4WFPlantFormStorageCreI"/>
+   <TcTypeConstantAttach constantName="DisplayName" typeName="SR4MfgPart" value="$item_id+&quot;_&quot;+$sr4Plant+&quot;-&quot;+$object_name"/>
+   <TcTypeConstantAttach constantName="DisplayName" typeName="SR4MfgPartRevision"
+       value="$item_id+&quot;_&quot;+$sr4Plant+&quot;/&quot;+$item_revision_id+&quot;-&quot;+$object_name"/>
+   <TcTypeConstantAttach constantName="Fnd0Icon" typeName="SR4EngPart" value="SR4EngPart.png"/>
+   <TcTypeConstantAttach constantName="Fnd0Icon" typeName="SR4EngPartRevision" value="SR4EngPartRevision.png"/>
+   <TcTypeConstantAttach constantName="Fnd0Icon" typeName="SR4MfgPart" value="SR4MfgPart.png"/>
+   <TcTypeConstantAttach constantName="Fnd0Icon" typeName="SR4MfgPartRevision" value="SR4MfgPartRevision.png"/>
+   <TcTypeConstantAttach constantName="ItemRevision" typeName="SR4CatiaDesign" value="SR4CatiaDesignRevision"/>
+   <TcTypeConstantAttach constantName="ItemRevision" typeName="SR4EngPart" value="SR4EngPartRevision"/>
+   <TcTypeConstantAttach constantName="ItemRevision" typeName="SR4GenDesign" value="SR4GenDesignRevision"/>
+   <TcTypeConstantAttach constantName="ItemRevision" typeName="SR4GenPart" value="SR4GenPartRevision"/>
+   <TcTypeConstantAttach constantName="ItemRevision" typeName="SR4MfgPart" value="SR4MfgPartRevision"/>
+   <TcTypeConstantAttach constantName="MasterForm" typeName="SR4CatiaDesign" value="SR4CatiaDesignMaster"/>
+   <TcTypeConstantAttach constantName="MasterForm" typeName="SR4CatiaDesignRevision"
+       value="SR4CatiaDesignRevisionMaster"/>
+   <TcTypeConstantAttach constantName="MasterForm" typeName="SR4EngPart" value="SR4EngPartMaster"/>
+   <TcTypeConstantAttach constantName="MasterForm" typeName="SR4EngPartRevision" value="SR4EngPartRevisionMaster"/>
+   <TcTypeConstantAttach constantName="MasterForm" typeName="SR4GenDesign" value="SR4GenDesignMaster"/>
+   <TcTypeConstantAttach constantName="MasterForm" typeName="SR4GenDesignRevision"
+       value="SR4GenDesignRevisionMaster"/>
+   <TcTypeConstantAttach constantName="MasterForm" typeName="SR4GenPart" value="SR4GenPartMaster"/>
+   <TcTypeConstantAttach constantName="MasterForm" typeName="SR4GenPartRevision" value="SR4GenPartRevisionMaster"/>
+   <TcTypeConstantAttach constantName="MasterForm" typeName="SR4MfgPart" value="SR4MfgPartMaster"/>
+   <TcTypeConstantAttach constantName="MasterForm" typeName="SR4MfgPartRevision" value="SR4MfgPartRevisionMaster"/>
+   <TcTypeConstantAttach constantName="MultiFieldKey" typeName="SR4MfgPart" value="SR4MfgPart{item_id,sr4Plant}"/>
+   <TcTypeConstantAttach constantName="ReviseInput" typeName="SR4CatiaDesignRevision"
+       value="SR4CatiaDesignRevisionRevI"/>
+   <TcTypeConstantAttach constantName="ReviseInput" typeName="SR4EngPartRevision"
+       value="SR4EngPartRevisionRevI"/>
+   <TcTypeConstantAttach constantName="ReviseInput" typeName="SR4GenDesignRevision"
+       value="SR4GenDesignRevisionRevI"/>
+   <TcTypeConstantAttach constantName="ReviseInput" typeName="SR4GenPartRevision"
+       value="SR4GenPartRevisionRevI"/>
+   <TcTypeConstantAttach constantName="ReviseInput" typeName="SR4MfgPartRevision"
+       value="SR4MfgPartRevisionRevI"/>
+   <TcTypeConstantAttach constantName="SaveAsInput" typeName="SR4CatiaDesign" value="SR4CatiaDesignSvAI"/>
+   <TcTypeConstantAttach constantName="SaveAsInput" typeName="SR4CatiaDesignMaster"
+       value="SR4CatiaDesignMasterSvAI"/>
+   <TcTypeConstantAttach constantName="SaveAsInput" typeName="SR4CatiaDesignMasterS"
+       value="SR4CatiaDesignMasterSSvAI"/>
+   <TcTypeConstantAttach constantName="SaveAsInput" typeName="SR4CatiaDesignRevision"
+       value="SR4CatiaDesignRevisionSvAI"/>
+   <TcTypeConstantAttach constantName="SaveAsInput" typeName="SR4CatiaDesignRevisionMaster"
+       value="SR4CatiaDesignRevision_alt0SvAI"/>
+   <TcTypeConstantAttach constantName="SaveAsInput" typeName="SR4CatiaDesignRevMasterS"
+       value="SR4CatiaDesignRevMasterSSvAI"/>
+   <TcTypeConstantAttach constantName="SaveAsInput" typeName="SR4EngPart" value="SR4EngPartSvAI"/>
+   <TcTypeConstantAttach constantName="SaveAsInput" typeName="SR4EngPartMaster" value="SR4EngPartMasterSvAI"/>
+   <TcTypeConstantAttach constantName="SaveAsInput" typeName="SR4EngPartMasterS" value="SR4EngPartMasterSSvAI"/>
+   <TcTypeConstantAttach constantName="SaveAsInput" typeName="SR4EngPartRevision"
+       value="SR4EngPartRevisionSvAI"/>
+   <TcTypeConstantAttach constantName="SaveAsInput" typeName="SR4EngPartRevisionMaster"
+       value="SR4EngPartRevisionMasterSvAI"/>
+   <TcTypeConstantAttach constantName="SaveAsInput" typeName="SR4EngPartRevMasterS"
+       value="SR4EngPartRevMasterSSvAI"/>
+   <TcTypeConstantAttach constantName="SaveAsInput" typeName="SR4GenDesign" value="SR4GenDesignSvAI"/>
+   <TcTypeConstantAttach constantName="SaveAsInput" typeName="SR4GenDesignMaster"
+       value="SR4GenDesignMasterSvAI"/>
+   <TcTypeConstantAttach constantName="SaveAsInput" typeName="SR4GenDesignMasterS"
+       value="SR4GenDesignMasterSSvAI"/>
+   <TcTypeConstantAttach constantName="SaveAsInput" typeName="SR4GenDesignRevision"
+       value="SR4GenDesignRevisionSvAI"/>
+   <TcTypeConstantAttach constantName="SaveAsInput" typeName="SR4GenDesignRevisionMaster"
+       value="SR4GenDesignRevisionMasterSvAI"/>
+   <TcTypeConstantAttach constantName="SaveAsInput" typeName="SR4GenDesignRevMasterS"
+       value="SR4GenDesignRevMasterSSvAI"/>
+   <TcTypeConstantAttach constantName="SaveAsInput" typeName="SR4GenPart" value="SR4GenPartSvAI"/>
+   <TcTypeConstantAttach constantName="SaveAsInput" typeName="SR4GenPartMaster" value="SR4GenPartMasterSvAI"/>
+   <TcTypeConstantAttach constantName="SaveAsInput" typeName="SR4GenPartMasterS" value="SR4GenPartMasterSSvAI"/>
+   <TcTypeConstantAttach constantName="SaveAsInput" typeName="SR4GenPartRevision"
+       value="SR4GenPartRevisionSvAI"/>
+   <TcTypeConstantAttach constantName="SaveAsInput" typeName="SR4GenPartRevisionMaster"
+       value="SR4GenPartRevisionMasterSvAI"/>
+   <TcTypeConstantAttach constantName="SaveAsInput" typeName="SR4GenPartRevMasterS"
+       value="SR4GenPartRevMasterSSvAI"/>
+   <TcTypeConstantAttach constantName="SaveAsInput" typeName="SR4HasEBOM" value="SR4HasEBOMSvAI"/>
+   <TcTypeConstantAttach constantName="SaveAsInput" typeName="SR4MfgPart" value="SR4MfgPartSvAI"/>
+   <TcTypeConstantAttach constantName="SaveAsInput" typeName="SR4MfgPartMaster" value="SR4MfgPartMasterSvAI"/>
+   <TcTypeConstantAttach constantName="SaveAsInput" typeName="SR4MfgPartMasterS" value="SR4MfgPartMasterSSvAI"/>
+   <TcTypeConstantAttach constantName="SaveAsInput" typeName="SR4MfgPartRevision"
+       value="SR4MfgPartRevisionSvAI"/>
+   <TcTypeConstantAttach constantName="SaveAsInput" typeName="SR4MfgPartRevisionMaster"
+       value="SR4MfgPartRevisionMasterSvAI"/>
+   <TcTypeConstantAttach constantName="SaveAsInput" typeName="SR4MfgPartRevMasterS"
+       value="SR4MfgPartRevMasterSSvAI"/>
+   <TcTypeConstantAttach constantName="SaveAsInput" typeName="SR4WFPlantForm" value="SR4WFPlantFormSvAI"/>
+   <TcTypeConstantAttach constantName="SaveAsInput" typeName="SR4WFPlantFormStorage"
+       value="SR4WFPlantFormStorageSvAI"/>
+   <TcPropertyConstantAttach constantName="Awb0BOMToOccurrence" typeName="Awb0ConditionalElement"
+       propertyName="sr4HasCollaborationContexts" value="sr4RevHasCC"/>
+   <TcPropertyConstantAttach constantName="Awb0BOMToOccurrence" typeName="Awb0Element"
+       propertyName="sr4DINClassification" value="bl_SR4GenPartRevision_sr4_DIN_Classification"/>
+   <TcPropertyConstantAttach constantName="Awp0SearchCanFilter" typeName="SR4GenPartRevision"
+       propertyName="sr4_DIN_Classification" value="true"/>
+   <TcPropertyConstantAttach constantName="Awp0SearchCanFilter" typeName="SR4MfgPart"
+       propertyName="sr4Plant" value="true"/>
+   <TcPropertyConstantAttach constantName="Awp0SearchFilterPriority" typeName="SR4GenPartRevision"
+       propertyName="sr4_DIN_Classification" value="100"/>
+   <TcPropertyConstantAttach constantName="Awp0SearchIsIndexed" typeName="Awb0Element"
+       propertyName="sr4DINClassification" value="true"/>
+   <TcPropertyConstantAttach constantName="Awp0SearchIsIndexed" typeName="SR4GenPartRevision"
+       propertyName="sr4_DIN_Classification" value="true"/>
+   <TcPropertyConstantAttach constantName="Awp0SearchIsIndexed" typeName="SR4MfgPart"
+       propertyName="sr4Plant" value="true"/>
+   <TcPropertyConstantAttach constantName="Awp0SearchIsStored" typeName="SR4GenPartRevision"
+       propertyName="sr4_DIN_Classification" value="false"/>
+   <TcPropertyConstantAttach constantName="CopyFromOriginal" typeName="ItemRevision"
+       propertyName="sr4HasCollaborationContexts" value="false"/>
+   <TcPropertyConstantAttach constantName="Enabled" typeName="Awb0ConditionalElement"
+       propertyName="sr4HasCollaborationContexts" value="true"/>
+   <TcPropertyConstantAttach constantName="Enabled" typeName="Awb0Element" propertyName="sr4DINClassification"
+       value="true"/>
+   <TcPropertyConstantAttach constantName="Enabled" typeName="BOMLine" propertyName="bl_rev_sr4HasCollaborationContexts"
+       value="true"/>
+   <TcPropertyConstantAttach constantName="Enabled" typeName="BOMLine" propertyName="bl_SR4GenPartRevision_sr4_DIN_Classification"
+       value="true"/>
+   <TcPropertyConstantAttach constantName="Enabled" typeName="BOMLine" propertyName="sr4RevHasCC"
+       value="true"/>
+   <TcPropertyConstantAttach constantName="Enabled" typeName="ItemRevision" propertyName="sr4HasCollaborationContexts"
+       value="true"/>
+   <TcPropertyConstantAttach constantName="Enabled" typeName="SR4EngPartRevision"
+       propertyName="SR4HasEBOM" value="true"/>
+   <TcPropertyConstantAttach constantName="Enabled" typeName="SR4EngPartRevision"
+       propertyName="sr4HasMBOM" value="true"/>
+   <TcPropertyConstantAttach constantName="Enabled" typeName="SR4GenPartRevision"
+       propertyName="sr4_DIN_Classification" value="true"/>
+   <TcPropertyConstantAttach constantName="Enabled" typeName="SR4MfgPart" propertyName="sr4Plant"
+       value="true"/>
+   <TcPropertyConstantAttach constantName="Enabled" typeName="SR4MfgPartRevision"
+       propertyName="SR4HasEBOM" value="true"/>
+   <TcPropertyConstantAttach constantName="Enabled" typeName="SR4MfgPartRevision"
+       propertyName="sr4Plant" value="true"/>
+   <TcPropertyConstantAttach constantName="Enabled" typeName="SR4WFPlantForm" propertyName="sr4Plant"
+       value="true"/>
+   <TcPropertyConstantAttach constantName="Modifiable" typeName="Awb0ConditionalElement"
+       propertyName="sr4HasCollaborationContexts" value="Write"/>
+   <TcPropertyConstantAttach constantName="Modifiable" typeName="Awb0Element" propertyName="sr4DINClassification"
+       value="Write"/>
+   <TcPropertyConstantAttach constantName="Modifiable" typeName="BOMLine" propertyName="bl_rev_sr4HasCollaborationContexts"
+       value="Write"/>
+   <TcPropertyConstantAttach constantName="Modifiable" typeName="BOMLine" propertyName="bl_SR4GenPartRevision_sr4_DIN_Classification"
+       value="Write"/>
+   <TcPropertyConstantAttach constantName="Modifiable" typeName="BOMLine" propertyName="sr4RevHasCC"
+       value="Write"/>
+   <TcPropertyConstantAttach constantName="Modifiable" typeName="ItemRevision" propertyName="sr4HasCollaborationContexts"
+       value="Write"/>
+   <TcPropertyConstantAttach constantName="Modifiable" typeName="SR4EngPartRevision"
+       propertyName="SR4HasEBOM" value="Write"/>
+   <TcPropertyConstantAttach constantName="Modifiable" typeName="SR4EngPartRevision"
+       propertyName="sr4HasMBOM" value="Write"/>
+   <TcPropertyConstantAttach constantName="Modifiable" typeName="SR4GenPartRevision"
+       propertyName="sr4_DIN_Classification" value="Write"/>
+   <TcPropertyConstantAttach constantName="Modifiable" typeName="SR4MfgPart" propertyName="sr4Plant"
+       value="Write Only If Null"/>
+   <TcPropertyConstantAttach constantName="Modifiable" typeName="SR4MfgPartRevision"
+       propertyName="SR4HasEBOM" value="Write"/>
+   <TcPropertyConstantAttach constantName="Modifiable" typeName="SR4MfgPartRevision"
+       propertyName="sr4Plant" value="Write"/>
+   <TcPropertyConstantAttach constantName="Modifiable" typeName="SR4WFPlantForm" propertyName="sr4Plant"
+       value="Write"/>
+   <TcPropertyConstantAttach constantName="Required" typeName="SR4MfgPart" propertyName="sr4Plant"
+       value="true"/>
+   <TcCompoundPropertyRule destTypeName="BOMLine" destPropertyName="sr4RevHasCC" sourceTypeName="ItemRevision"
+       sourcePropertyName="sr4HasCollaborationContexts" isReadOnly="false" pathToSource="REF(bl_revision,ItemRevision).sr4HasCollaborationContexts"
+       description=""/>
+   <TcCompoundPropertyRule destTypeName="SR4EngPartRevision" destPropertyName="sr4HasMBOM"
+       sourceTypeName="SR4MfgPartRevisionMaster" sourcePropertyName="item_revision"
+       isReadOnly="true" pathToSource="GRMS2P(SR4HasEBOM,SR4MfgPartRevision).GRM(IMAN_master_form_rev,SR4MfgPartRevisionMaster).item_revision"
+       description=""/>
+   <TcCompoundPropertyRule destTypeName="SR4MfgPartRevision" destPropertyName="sr4Plant"
+       sourceTypeName="SR4MfgPart" sourcePropertyName="sr4Plant" isReadOnly="true"
+       pathToSource="REF(items_tag,SR4MfgPart).sr4Plant" description=""/>
+   <TcDeepCopyRule typeName="SR4MfgPartRevision" relRefPropName="SR4HasEBOM" propertyType="Relation"
+       objectTypeName="WorkspaceObject" conditionName="isTrue" operationName="ITEM_copy_rev"
+       copyType="CopyAsReference" isTargetPrimary="true" secured="true" copyRelationAttributes="true"
+       isRequired="false" description=""/>
+   <TcDeepCopyRule typeName="SR4MfgPartRevision" relRefPropName="SR4HasEBOM" propertyType="Relation"
+       objectTypeName="WorkspaceObject" conditionName="isTrue" operationName="ITEM_create_from_rev"
+       copyType="NoCopy" isTargetPrimary="true" secured="true" copyRelationAttributes="true"
+       isRequired="false" description=""/>
+   <TcGRMRule primaryTypeName="SR4EngPartRevision" secondaryTypeName="WorkspaceObject"
+       relationTypeName="SR4HasEBOM" conditionName="isTrue" primaryCardinality="0"
+       secondaryCardinality="0" secured="false" attachability="WriteAccessReq" changeability="Changeable"
+       detachability="WriteAccessReq" description=""/>
+   <TcGRMRule primaryTypeName="SR4MfgPartRevision" secondaryTypeName="SR4EngPartRevision"
+       relationTypeName="SR4HasEBOM" conditionName="isTrue" primaryCardinality="-1"
+       secondaryCardinality="1" secured="false" attachability="WriteAccessReq" changeability="AddOnly"
+       detachability="WriteAccessReq" description=""/>
+   <TcGRMRule primaryTypeName="SR4MfgPartRevision" secondaryTypeName="WorkspaceObject"
+       relationTypeName="SR4HasEBOM" conditionName="isTrue" primaryCardinality="0"
+       secondaryCardinality="0" secured="false" attachability="WriteAccessReq" changeability="Changeable"
+       detachability="WriteAccessReq" description=""/>
+   <TcTypeDisplayRule hiddenTypeName="SR4CatiaDesign" accessorName="Organization"
+       accessorType="Organization" conditionName="isTrue" description=""/>
+   <TcTypeDisplayRule hiddenTypeName="SR4EngPart" accessorName="Organization" accessorType="Organization"
+       conditionName="isTrue" description=""/>
+   <TcTypeDisplayRule hiddenTypeName="SR4MfgPart" accessorName="Organization" accessorType="Organization"
+       conditionName="isTrue" description=""/>
+   <TcLOV name="SR4_DIN_MPG" lovType="ListOfValuesString" usage="Exhaustive" description="">
+     <TcLOVValue value="B" description="" conditionName="isTrue"/>
+     <TcLOVValue value="C" description="" conditionName="isTrue"/>
+     <TcLOVValue value="D" description="" conditionName="isTrue"/>
+     <TcLOVValue value="E" description="" conditionName="isTrue"/>
+     <TcLOVValue value="F" description="" conditionName="isTrue"/>
+     <TcLOVValue value="G" description="" conditionName="isTrue"/>
+     <TcLOVValue value="H" description="" conditionName="isTrue"/>
+     <TcLOVValue value="J" description="" conditionName="isTrue"/>
+     <TcLOVValue value="K" description="" conditionName="isTrue"/>
+     <TcLOVValue value="L" description="" conditionName="isTrue"/>
+     <TcLOVValue value="M" description="" conditionName="isTrue"/>
+     <TcLOVValue value="N" description="" conditionName="isTrue"/>
+     <TcLOVValue value="P" description="" conditionName="isTrue"/>
+     <TcLOVValue value="Q" description="" conditionName="isTrue"/>
+     <TcLOVValue value="R" description="" conditionName="isTrue"/>
+     <TcLOVValue value="S" description="" conditionName="isTrue"/>
+     <TcLOVValue value="T" description="" conditionName="isTrue"/>
+     <TcLOVValue value="U" description="" conditionName="isTrue"/>
+   </TcLOV>
+   <TcLOV name="SR4_DIN_SPG_B" lovType="ListOfValuesString" usage="Exhaustive" description="">
+     <TcLOVValue value="BA" description="" conditionName="isTrue"/>
+     <TcLOVValue value="BB" description="" conditionName="isTrue"/>
+     <TcLOVValue value="BC" description="" conditionName="isTrue"/>
+     <TcLOVValue value="BD" description="" conditionName="isTrue"/>
+     <TcLOVValue value="BE" description="" conditionName="isTrue"/>
+     <TcLOVValue value="BF" description="" conditionName="isTrue"/>
+     <TcLOVValue value="BG" description="" conditionName="isTrue"/>
+     <TcLOVValue value="BH" description="" conditionName="isTrue"/>
+     <TcLOVValue value="BJ" description="" conditionName="isTrue"/>
+   </TcLOV>
+   <TcLOV name="SR4_DIN_SPG_C" lovType="ListOfValuesString" usage="Exhaustive" description="">
+     <TcLOVValue value="CA" description="" conditionName="isTrue"/>
+     <TcLOVValue value="CB" description="" conditionName="isTrue"/>
+     <TcLOVValue value="CC" description="" conditionName="isTrue"/>
+     <TcLOVValue value="CD" description="" conditionName="isTrue"/>
+     <TcLOVValue value="CE" description="" conditionName="isTrue"/>
+     <TcLOVValue value="CF" description="" conditionName="isTrue"/>
+     <TcLOVValue value="CG" description="" conditionName="isTrue"/>
+     <TcLOVValue value="CH" description="" conditionName="isTrue"/>
+   </TcLOV>
+   <TcLOV name="SR4_DIN_SPG_D" lovType="ListOfValuesString" usage="Exhaustive" description="">
+     <TcLOVValue value="DA" description="" conditionName="isTrue"/>
+     <TcLOVValue value="DB" description="" conditionName="isTrue"/>
+     <TcLOVValue value="DC" description="" conditionName="isTrue"/>
+     <TcLOVValue value="DD" description="" conditionName="isTrue"/>
+     <TcLOVValue value="DE" description="" conditionName="isTrue"/>
+     <TcLOVValue value="DF" description="" conditionName="isTrue"/>
+   </TcLOV>
+   <TcLOV name="SR4_DIN_SPG_E" lovType="ListOfValuesString" usage="Exhaustive" description="">
+     <TcLOVValue value="EA" description="" conditionName="isTrue"/>
+     <TcLOVValue value="EB" description="" conditionName="isTrue"/>
+     <TcLOVValue value="EC" description="" conditionName="isTrue"/>
+     <TcLOVValue value="ED" description="" conditionName="isTrue"/>
+     <TcLOVValue value="EE" description="" conditionName="isTrue"/>
+     <TcLOVValue value="EF" description="" conditionName="isTrue"/>
+     <TcLOVValue value="EG" description="" conditionName="isTrue"/>
+   </TcLOV>
+   <TcLOV name="SR4_DIN_SPG_F" lovType="ListOfValuesString" usage="Exhaustive" description="">
+     <TcLOVValue value="FA" description="" conditionName="isTrue"/>
+     <TcLOVValue value="FB" description="" conditionName="isTrue"/>
+     <TcLOVValue value="FC" description="" conditionName="isTrue"/>
+     <TcLOVValue value="FD" description="" conditionName="isTrue"/>
+     <TcLOVValue value="FE" description="" conditionName="isTrue"/>
+     <TcLOVValue value="FF" description="" conditionName="isTrue"/>
+   </TcLOV>
+   <TcLOV name="SR4_DIN_SPG_G" lovType="ListOfValuesString" usage="Exhaustive" description="">
+     <TcLOVValue value="GA" description="" conditionName="isTrue"/>
+     <TcLOVValue value="GB" description="" conditionName="isTrue"/>
+     <TcLOVValue value="GC" description="" conditionName="isTrue"/>
+     <TcLOVValue value="GD" description="" conditionName="isTrue"/>
+     <TcLOVValue value="GE" description="" conditionName="isTrue"/>
+     <TcLOVValue value="GF" description="" conditionName="isTrue"/>
+   </TcLOV>
+   <TcLOV name="SR4_DIN_SPG_H" lovType="ListOfValuesString" usage="Exhaustive" description="">
+     <TcLOVValue value="HA" description="" conditionName="isTrue"/>
+     <TcLOVValue value="HB" description="" conditionName="isTrue"/>
+     <TcLOVValue value="HC" description="" conditionName="isTrue"/>
+     <TcLOVValue value="HD" description="" conditionName="isTrue"/>
+     <TcLOVValue value="HE" description="" conditionName="isTrue"/>
+     <TcLOVValue value="HF" description="" conditionName="isTrue"/>
+   </TcLOV>
+   <TcLOV name="SR4_DIN_SPG_J" lovType="ListOfValuesString" usage="Exhaustive" description="">
+     <TcLOVValue value="JA" description="" conditionName="isTrue"/>
+     <TcLOVValue value="JB" description="" conditionName="isTrue"/>
+     <TcLOVValue value="JC" description="" conditionName="isTrue"/>
+     <TcLOVValue value="JD" description="" conditionName="isTrue"/>
+     <TcLOVValue value="JE" description="" conditionName="isTrue"/>
+     <TcLOVValue value="JF" description="" conditionName="isTrue"/>
+     <TcLOVValue value="JG" description="" conditionName="isTrue"/>
+   </TcLOV>
+   <TcLOV name="SR4_DIN_SPG_K" lovType="ListOfValuesString" usage="Exhaustive" description="">
+     <TcLOVValue value="KA" description="" conditionName="isTrue"/>
+     <TcLOVValue value="KB" description="" conditionName="isTrue"/>
+     <TcLOVValue value="KC" description="" conditionName="isTrue"/>
+   </TcLOV>
+   <TcLOV name="SR4_DIN_SPG_L" lovType="ListOfValuesString" usage="Exhaustive" description="">
+     <TcLOVValue value="LA" description="" conditionName="isTrue"/>
+     <TcLOVValue value="LB" description="" conditionName="isTrue"/>
+     <TcLOVValue value="LC" description="" conditionName="isTrue"/>
+     <TcLOVValue value="LD" description="" conditionName="isTrue"/>
+     <TcLOVValue value="LE" description="" conditionName="isTrue"/>
+   </TcLOV>
+   <TcLOV name="SR4_DIN_SPG_M" lovType="ListOfValuesString" usage="Exhaustive" description="">
+     <TcLOVValue value="MA" description="" conditionName="isTrue"/>
+     <TcLOVValue value="MB" description="" conditionName="isTrue"/>
+     <TcLOVValue value="MC" description="" conditionName="isTrue"/>
+     <TcLOVValue value="MD" description="" conditionName="isTrue"/>
+     <TcLOVValue value="ME" description="" conditionName="isTrue"/>
+     <TcLOVValue value="MF" description="" conditionName="isTrue"/>
+   </TcLOV>
+   <TcLOV name="SR4_DIN_SPG_N" lovType="ListOfValuesString" usage="Exhaustive" description="">
+     <TcLOVValue value="NA" description="" conditionName="isTrue"/>
+     <TcLOVValue value="NB" description="" conditionName="isTrue"/>
+     <TcLOVValue value="NC" description="" conditionName="isTrue"/>
+     <TcLOVValue value="ND" description="" conditionName="isTrue"/>
+     <TcLOVValue value="NE" description="" conditionName="isTrue"/>
+   </TcLOV>
+   <TcLOV name="SR4_DIN_SPG_P" lovType="ListOfValuesString" usage="Exhaustive" description="">
+     <TcLOVValue value="PA" description="" conditionName="isTrue"/>
+     <TcLOVValue value="PB" description="" conditionName="isTrue"/>
+     <TcLOVValue value="PC" description="" conditionName="isTrue"/>
+     <TcLOVValue value="PD" description="" conditionName="isTrue"/>
+     <TcLOVValue value="PE" description="" conditionName="isTrue"/>
+     <TcLOVValue value="PF" description="" conditionName="isTrue"/>
+   </TcLOV>
+   <TcLOV name="SR4_DIN_SPG_Q" lovType="ListOfValuesString" usage="Exhaustive" description="">
+     <TcLOVValue value="QA" description="" conditionName="isTrue"/>
+     <TcLOVValue value="QB" description="" conditionName="isTrue"/>
+     <TcLOVValue value="QC" description="" conditionName="isTrue"/>
+     <TcLOVValue value="QD" description="" conditionName="isTrue"/>
+     <TcLOVValue value="QE" description="" conditionName="isTrue"/>
+   </TcLOV>
+   <TcLOV name="SR4_DIN_SPG_R" lovType="ListOfValuesString" usage="Exhaustive" description="">
+     <TcLOVValue value="RA" description="" conditionName="isTrue"/>
+     <TcLOVValue value="RB" description="" conditionName="isTrue"/>
+     <TcLOVValue value="RC" description="" conditionName="isTrue"/>
+   </TcLOV>
+   <TcLOV name="SR4_DIN_SPG_S" lovType="ListOfValuesString" usage="Exhaustive" description="">
+     <TcLOVValue value="SA" description="" conditionName="isTrue"/>
+     <TcLOVValue value="SB" description="" conditionName="isTrue"/>
+     <TcLOVValue value="SC" description="" conditionName="isTrue"/>
+     <TcLOVValue value="SD" description="" conditionName="isTrue"/>
+     <TcLOVValue value="SE" description="" conditionName="isTrue"/>
+     <TcLOVValue value="SF" description="" conditionName="isTrue"/>
+     <TcLOVValue value="SG" description="" conditionName="isTrue"/>
+   </TcLOV>
+   <TcLOV name="SR4_DIN_SPG_T" lovType="ListOfValuesString" usage="Exhaustive" description="">
+     <TcLOVValue value="TA" description="" conditionName="isTrue"/>
+     <TcLOVValue value="TB" description="" conditionName="isTrue"/>
+     <TcLOVValue value="TC" description="" conditionName="isTrue"/>
+     <TcLOVValue value="TD" description="" conditionName="isTrue"/>
+     <TcLOVValue value="TE" description="" conditionName="isTrue"/>
+   </TcLOV>
+   <TcLOV name="SR4_DIN_SPG_U" lovType="ListOfValuesString" usage="Exhaustive" description="">
+     <TcLOVValue value="UA" description="" conditionName="isTrue"/>
+     <TcLOVValue value="UB" description="" conditionName="isTrue"/>
+     <TcLOVValue value="UC" description="" conditionName="isTrue"/>
+     <TcLOVValue value="UD" description="" conditionName="isTrue"/>
+     <TcLOVValue value="UE" description="" conditionName="isTrue"/>
+     <TcLOVValue value="UF" description="" conditionName="isTrue"/>
+   </TcLOV>
+   <TcLOV name="SR4_Plant" lovType="ListOfValuesString" usage="Exhaustive" description="">
+     <TcLOVValue value="STAP" description="STAP - Pankow" conditionName="isTrue"/>
+     <TcLOVValue value="STAR" description="STAR - Rheinthal" conditionName="isTrue"/>
+     <TcLOVValue value="STAV" description="STAV - Valencia" conditionName="isTrue"/>
+   </TcLOV>
+   <TcLOVValueSubLOVAttach targetLOVName="SR4_DIN_MPG" targetValue="B" subLOVName="SR4_DIN_SPG_B"
+       conditionName="isTrue"/>
+   <TcLOVValueSubLOVAttach targetLOVName="SR4_DIN_MPG" targetValue="C" subLOVName="SR4_DIN_SPG_C"
+       conditionName="isTrue"/>
+   <TcLOVValueSubLOVAttach targetLOVName="SR4_DIN_MPG" targetValue="D" subLOVName="SR4_DIN_SPG_D"
+       conditionName="isTrue"/>
+   <TcLOVValueSubLOVAttach targetLOVName="SR4_DIN_MPG" targetValue="E" subLOVName="SR4_DIN_SPG_E"
+       conditionName="isTrue"/>
+   <TcLOVValueSubLOVAttach targetLOVName="SR4_DIN_MPG" targetValue="F" subLOVName="SR4_DIN_SPG_F"
+       conditionName="isTrue"/>
+   <TcLOVValueSubLOVAttach targetLOVName="SR4_DIN_MPG" targetValue="G" subLOVName="SR4_DIN_SPG_G"
+       conditionName="isTrue"/>
+   <TcLOVValueSubLOVAttach targetLOVName="SR4_DIN_MPG" targetValue="H" subLOVName="SR4_DIN_SPG_H"
+       conditionName="isTrue"/>
+   <TcLOVValueSubLOVAttach targetLOVName="SR4_DIN_MPG" targetValue="J" subLOVName="SR4_DIN_SPG_J"
+       conditionName="isTrue"/>
+   <TcLOVValueSubLOVAttach targetLOVName="SR4_DIN_MPG" targetValue="K" subLOVName="SR4_DIN_SPG_K"
+       conditionName="isTrue"/>
+   <TcLOVValueSubLOVAttach targetLOVName="SR4_DIN_MPG" targetValue="L" subLOVName="SR4_DIN_SPG_L"
+       conditionName="isTrue"/>
+   <TcLOVValueSubLOVAttach targetLOVName="SR4_DIN_MPG" targetValue="M" subLOVName="SR4_DIN_SPG_M"
+       conditionName="isTrue"/>
+   <TcLOVValueSubLOVAttach targetLOVName="SR4_DIN_MPG" targetValue="N" subLOVName="SR4_DIN_SPG_N"
+       conditionName="isTrue"/>
+   <TcLOVValueSubLOVAttach targetLOVName="SR4_DIN_MPG" targetValue="P" subLOVName="SR4_DIN_SPG_P"
+       conditionName="isTrue"/>
+   <TcLOVValueSubLOVAttach targetLOVName="SR4_DIN_MPG" targetValue="Q" subLOVName="SR4_DIN_SPG_Q"
+       conditionName="isTrue"/>
+   <TcLOVValueSubLOVAttach targetLOVName="SR4_DIN_MPG" targetValue="R" subLOVName="SR4_DIN_SPG_R"
+       conditionName="isTrue"/>
+   <TcLOVValueSubLOVAttach targetLOVName="SR4_DIN_MPG" targetValue="S" subLOVName="SR4_DIN_SPG_S"
+       conditionName="isTrue"/>
+   <TcLOVValueSubLOVAttach targetLOVName="SR4_DIN_MPG" targetValue="T" subLOVName="SR4_DIN_SPG_T"
+       conditionName="isTrue"/>
+   <TcLOVValueSubLOVAttach targetLOVName="SR4_DIN_MPG" targetValue="U" subLOVName="SR4_DIN_SPG_U"
+       conditionName="isTrue"/>
+   <TcLOVAttach lovName="SR4_DIN_MPG" typeName="Awb0Element">
+     <TcLOVAttachPropertyInfo valuePropertyName="sr4DINClassification" conditionName="isTrue"
+         override="false" level="0"/>
+   </TcLOVAttach>
+   <TcLOVAttach lovName="SR4_DIN_MPG" typeName="SR4GenPartRevision">
+     <TcLOVAttachPropertyInfo valuePropertyName="sr4_DIN_Classification" conditionName="isTrue"
+         override="false" level="0"/>
+   </TcLOVAttach>
+   <TcLOVAttach lovName="SR4_Plant" typeName="SR4MfgPart">
+     <TcLOVAttachPropertyInfo valuePropertyName="sr4Plant" conditionName="isTrue"
+         override="false" level="0"/>
+   </TcLOVAttach>
+   <TcLOVAttach lovName="SR4_Plant" typeName="SR4WFPlantForm">
+     <TcLOVAttachPropertyInfo valuePropertyName="sr4Plant" conditionName="isTrue"
+         override="false" level="0"/>
+   </TcLOVAttach>
+   <Functionality name="SR4stadlerrailbase" displayName="Stadler Rail Base Template"
+       enabledForVerificationRules="false" description="Component for the template - sr4stadlerrailbase"/>
+   <TcUnitOfMeasure unitOfMeasureName="SR4KG" unitOfMeasureSymbol="KG" description=""/>
+   <TcUnitOfMeasure unitOfMeasureName="SR4M" unitOfMeasureSymbol="M" description=""/>
+   <TcUnitOfMeasure unitOfMeasureName="SR4M2" unitOfMeasureSymbol="M2" description=""/>
+   <TcUnitOfMeasure unitOfMeasureName="SR4MM" unitOfMeasureSymbol="MM" description=""/>
+</Add>
+</TcBusinessData>

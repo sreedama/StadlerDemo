@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="us-ascii" standalone="yes"?>
+<!--
+@<COPYRIGHT>@
+================================================================================
+Copyright 2012.
+Siemens Product Lifecycle Management Software Inc.
+All Rights Reserved.
+================================================================================
+@<COPYRIGHT>@
+
+ile description:
+
+    File Name: tc_xrt_text.xml
+
+    This file contains all the keys related to stylesheet usage.
+===============================================================================
+-->
+<textsrv filename="strxrt_text.xml" xmlns:xi="http://www.w3.org/2001/XInclude">
+<!-- Teamcenter stylesheet text file included below -->
+<xi:include href="strxrt_text_locale.xml" parse="xml"/>
+</textsrv>

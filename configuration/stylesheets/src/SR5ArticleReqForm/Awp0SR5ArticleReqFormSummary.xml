@@ -1,0 +1,128 @@
+<!--
+// @<COPYRIGHT>@
+// ==================================================
+// Copyright 2015.
+// Siemens Product Lifecycle Management Software Inc.
+// All Rights Reserved.
+// ==================================================
+// @<COPYRIGHT>@
+-->
+<!--
+ Default style sheet for displaying Form properties. type=form displays only properties that are available directly on the form type=property displays all properties
+-->
+<rendering>
+	<page title="General" titleKey="tc_xrt_General">
+		<column width="50%">
+			<section titleKey="tc_xrt_properties">
+				<property name="object_name"/>
+			</section>
+			<section title="Proposed CSP Properties" titleKey="strxrt_proposed_csp_properties" initialstate="expanded">
+				<separator/>
+				<label textKey="strxrt_name_definition_csp" text="Proposed Name Definition" />
+				<property name="sr5ProposedObjectName" modifiable="false" />
+				<property name="sr5ObjectNameTerm1" />
+				<property name="sr5ObjectNameTerm2" />
+				<property name="sr5ObjectNameTerm3" />
+				<separator/>
+				<property name="owning_user" renderingHint="objectlink" modifiable="false" />
+				<property name="object_type"/>
+				<property name="sr5TargetReleaseStatus"/>
+				<property name="sr5ObjectTypeToCreate" />
+				<property name="sr5Project" renderingHint="objectlink" modifiable="false" />
+				<property name="sr5UomTag"/>
+				<break/>
+				<property name="sr5ProposedClassification" />
+				<break/>
+				<property name="sr5Manufacturer2"/>
+				<property name="sr5NewManufacturer" />
+				<property name="sr5ManuType" />
+				<property name="sr5MPN" />
+				<separator/>
+				<property name="sr5Material"/>
+				<property name="sr5HazSubstanceFlag"/>
+				<property name="sr5Dimension"/>
+				<property name="sr5NormNo"/>
+				<separator/>
+				<property name="sr5SAPMaterialGroup"/>
+				<property name="sr5FSFClass"/>
+				<separator/>
+				<property name="sr5e3Relevant" />
+				<property name="sr5AddInfo" />
+			</section>
+		</column>
+		<column width="50%">
+			<section titleKey ="strxrt_Datasheets">
+				<objectSet source="IMAN_specification.Dataset" defaultdisplay="tableDisplay" sortby = "object_string" sortdirection = "ascending">
+					<tableDisplay>
+						<property name="object_string"/>
+						<property name="object_type"/>
+						<property name="release_status_list"/>
+						<property name="date_released"/>
+						<property name="owning_user"/>
+					</tableDisplay>
+					<thumbnailDisplay/>
+					<treeDisplay>
+						<property name="object_string"/>
+						<property name="object_type"/>
+						<property name="release_status_list"/>
+						<property name="date_released"/>
+						<property name="owning_user"/>
+					</treeDisplay>
+					<listDisplay/>
+					<command actionKey="newBusinessObjectContextualAction" commandId="com.teamcenter.rac.common.AddNew" renderingHint="commandbutton"/>
+					<command actionKey="pasteAction" commandId="com.teamcenter.rac.viewer.pastewithContext" renderingHint="commandbutton"/>
+					<command actionKey="cutAction" commandId="org.eclipse.ui.edit.cut" renderingHint="commandbutton">
+						<parameter name="localSelection" value="true"/>
+					</command>
+				</objectSet>
+			</section>
+			<section title ="3D">
+				<objectSet source="IMAN_reference.Dataset" defaultdisplay="tableDisplay" sortby="object_string" sortdirection="ascending">
+					<tableDisplay>
+						<property name="object_string"/>
+						<property name="object_type"/>
+						<property name="release_status_list"/>
+						<property name="date_released"/>
+						<property name="owning_user"/>
+					</tableDisplay>
+					<thumbnailDisplay/>
+					<treeDisplay>
+						<property name="object_string"/>
+						<property name="object_type"/>
+						<property name="release_status_list"/>
+						<property name="date_released"/>
+						<property name="owning_user"/>
+					</treeDisplay>
+					<listDisplay/>
+					<command actionKey="newBusinessObjectContextualAction" commandId="com.teamcenter.rac.common.AddNew" renderingHint="commandbutton"/>
+					<command actionKey="pasteAction" commandId="com.teamcenter.rac.viewer.pastewithContext" renderingHint="commandbutton"/>
+					<command actionKey="cutAction" commandId="org.eclipse.ui.edit.cut" renderingHint="commandbutton">
+						<parameter name="localSelection" value="true"/>
+					</command>
+				</objectSet>
+			</section>
+			<section titleKey="strxrt_csp_created_parts" title="Catalog Parts">
+				<objectSet source="GRMS2P(SR5HasRequestForm,SR5GenCatPartRevision).REF(items_tag,SR5GenCatPart),GRMS2P(SR5HasRequestForm,SR5CatDefArticleRevision).REF(items_tag,SR5CatDefArticle)" showConfiguredRev="true" defaultdisplay="tableDisplay" sortby="object_string" sortdirection="ascending">
+					<tableDisplay>
+						<property name="object_string"/>
+						<property name="object_type"/>
+						<property name="release_status_list"/>
+						<property name="date_released"/>
+						<property name="owning_user"/>
+					</tableDisplay>
+					<thumbnailDisplay/>
+					<treeDisplay>
+						<property name="object_string"/>
+						<property name="object_type"/>
+						<property name="release_status_list"/>
+						<property name="date_released"/>
+						<property name="owning_user"/>
+					</treeDisplay>
+					<listDisplay/>
+				</objectSet>
+			</section>
+		</column>
+
+	</page>
+	<inject type="dataset" src="WorkflowSummary" />
+</rendering>

@@ -1,0 +1,1069 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<preferences version="10.0">
+    <!--
+    <category name="Administration.Access Manager">
+        <category_description></category_description>
+        <preference name="IP_level_list_ordering" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+            <preference_description>Intellectual Property (IP) clearance/classification levels.</preference_description>
+            <context name="Teamcenter">
+                <value>World</value>
+                <value>OwningGroup</value>
+            </context>
+        </preference>
+    </category>
+    -->
+    <category name="ASP.General">
+        <category_description/>
+        <preference name="ASP.General_NOTREALPREF" type="String" array="false" disabled="true" protectionScope="Site" envEnabled="false">
+            <preference_description/>
+            <context name="Teamcenter">
+            </context>
+        </preference> 
+        <preference name="ITEM_first_rev_id" type="String" array="false" disabled="false" protectionScope="Site" envEnabled="false">
+            <preference_description>Enables item revision ID sequencing. This preference is the default site preference that is used for all item types. To apply a different revision sequencing format to a particular item type, a site preference must be defined for the item type.</preference_description>
+            <context name="Teamcenter">
+                <value>01</value>
+            </context>
+        </preference>
+    </category>
+    <category name="ASP.GUI">
+        <category_description/>
+        <preference name="ASP.GUI_NOTREALPREF" type="String" array="false" disabled="true" protectionScope="Site" envEnabled="false">
+            <preference_description/>
+            <context name="Teamcenter">
+            </context>
+        </preference>
+        <preference name="treeDisplayOrder" type="String" array="false" disabled="false" protectionScope="Site" envEnabled="false">
+            <preference_description/>
+            <context name="Teamcenter">
+                <value>ascending</value>
+            </context>
+        </preference>   
+        <!-- PROPERTY STYLESHEET PREFERENCES -->
+        <preference name="Envelope.RENDERING" type="String" array="false" disabled="false" protectionScope="Group" envEnabled="false">
+            <preference_description>To register Envelope Stylesheet.</preference_description>
+            <context name="Teamcenter">
+                <value>EnvelopeProperty</value>
+            </context>
+        </preference>
+        <preference name="EnvelopeProperty.REGISTEREDTO" type="String" array="false" disabled="false" protectionScope="Group" envEnabled="false">
+            <preference_description>To register Envelope Stylesheet.</preference_description>
+            <context name="Teamcenter">
+                <value>Envelope</value>
+            </context>
+        </preference>
+        <!-- SUMMARY STYLESHEET PREFERENCES -->
+        <preference name="Envelope.SUMMARYRENDERING" type="String" array="false" disabled="false" protectionScope="Group" envEnabled="false">
+            <preference_description>To register Envelope summary Stylesheet.</preference_description>
+            <context name="Teamcenter">
+                <value>EnvelopeSummary</value>
+            </context>
+        </preference>
+        <preference name="EnvelopeSummary.SUMMARY_REGISTEREDTO" type="String" array="false" disabled="false" protectionScope="Group" envEnabled="false">
+            <preference_description>To register Envelope summary Stylesheet.</preference_description>
+            <context name="Teamcenter">
+                <value>Envelope</value>
+            </context>
+        </preference>
+        <!-- CREATE WIZARD STYLESHEET PREFERENCES -->
+        
+        <!-- DEFAULT CHILD PROPERTIES / PSEUDO FOLDER CONFIGURATION -->
+        
+        <!-- BOMLINE COLUMN CONFIGURATIONS -->
+    </category>
+    <!--
+    <category name="Cross Probing.Search Mechanism">
+        <category_description></category_description>
+        <preference name="REQ_ExportToExcel_add_level_column" type="Logical" array="false" disabled="false" protectionScope="Site" envEnabled="false">
+            <preference_description>Determines the behavior of structure export to Excel from the Requirement Management application, when a structure exceeds 8 levels (which is the MS Excel outlining feature limit).
+                If the selected structure exceeds that level and that preference is set to true, it is exported as a flat list with the &quot;Level&quot; column added.
+                If the selected structure exceeds that level and that preference is set to false, it is exported as a flat list.</preference_description>
+            <context name="Teamcenter">
+                <value>false</value>
+            </context>
+        </preference>
+    </category>
+    -->
+    <!--
+    <category name="Interface.Rich Client">
+        <category_description>Teamcenter Preferences</category_description>
+        <preference name="Design Revision_DefaultChildProperties" type="String" array="true" disabled="false" protectionScope="User" envEnabled="false">
+            <preference_description>Specifies the list of properties that can be displayed as children of a Design Revision node.</preference_description>
+            <context name="Teamcenter">
+                <value>bom_view_tags</value>
+                <value>IMAN_requirement</value>
+                <value>IMAN_manifestation</value>
+                <value>IMAN_specification</value>
+                <value>IMAN_reference</value>
+                <value>IMAN_external_object_link</value>
+                <value>IMAN_Rendering</value>
+                <value>TC_WorkContext_Relation</value>
+                <value>Fnd0ListsParamReqments</value>
+                <value>Fnd0ListsCustomNotes</value>
+            </context>
+        </preference>
+        <preference name="Design Revision_PseudoFolder" type="String" array="true" disabled="false" protectionScope="User" envEnabled="false">
+            <preference_description>Specifies the list of properties that can be displayed as a pseudo-folder under a node for Design Revision object.</preference_description>
+            <context name="Teamcenter">
+                <value/>
+            </context>
+        </preference>
+        <preference name="WHERE_REFERENCED_RELATIONS_FILTER" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+            <preference_description>Specifies the relations displayed in the &quot;Where-Referenced&quot; relation filter combo box, which is used to select relation filter criteria.
+                This enables showing such relations in the combo box, while preventing them to be displayed in the &quot;Paste As&quot; dialog or in defined as child relations. Vertical industry solutions can leverage this preference by adding relations.
+                Valid value of relations are relation internal names (e.g. CP_Has_Has_Copy_Element, CP_Has_Package_Concept).</preference_description>
+            <context name="Teamcenter">
+                <value>CP_Has_ThemeBoard</value>
+                <value>A4_Data_Exchange_rel</value>
+                <value>A4_Derived_Data_rel</value>
+                <value>A4_Enquiry_rel</value>
+                <value>A4_Gen_Doc_Rel</value>
+                <value>A4_Project_Folder_rel</value>
+                <value>A4_Release_Detail_Rel</value>
+                <value>A4_Tool_Used_rel</value>                
+            </context>
+        </preference>
+    </category>
+    <category name="Configuration.Business Modeler">
+        <category_description/>
+        <preference name="BMF_CUSTOM_IMPLEMENTOR_PATH" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+            <preference_description>Specifies the full directory path to the custom libraries (where any custom methods for the BMF are maintained). This is a site preference only.</preference_description>
+            <context name="Teamcenter">
+                <value>$TC_ROOT/bin</value>
+            </context>
+        </preference>    
+        <preference name="TYPE_DISPLAY_RULES_list_types_of_subclasses" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+            <preference_description>Preferences for Type Display Rules This is a site preference. For all the entries under this preference the  user interface for Type Display Rule shows the types implemented by the subclasses too.</preference_description>
+            <context name="Teamcenter">
+                <value>Identifier</value>
+                <value>CAEItem</value>
+                <value>CAEAnalysis</value>
+                <value>CAEModel</value>
+                <value>CAEGeometry</value>
+                <value>Drawing</value>
+                <value>FND_TraceLink</value>
+                <value>CCObject</value>
+                <value>StructureContext</value>
+                <value>ConfigurationContext</value>
+                <value>MEActivity</value>
+                <value>AppearanceGroup</value>
+                <value>Item</value>
+                <value>Dataset</value>
+            </context>
+        </preference>
+    </category>
+    <category name="Configuration.Data Management">
+        <category_description/>
+        <preference name="Baseline_allowed_baserev_statuses" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+            <preference_description>The list of Status types that an Item Revision can have, to be able to create a baseline. If no status type is mentioned and if the Item revision has a status, then the user would not be able to create a baseline for it.</preference_description>
+            <context name="Teamcenter">
+                <value>NO</value>
+            </context>
+        </preference>
+        <preference name="Baseline_precise_bvr" type="Integer" array="false" disabled="false" protectionScope="User" envEnabled="false">
+            <preference_description>Valid values are 0/1/2.
+                0 - Create an ImPrecise Baseline.
+                1 - Create a Precise Baseline.
+                2 - Do not allow users to choose precise/imprecise and always create precise</preference_description>
+            <context name="Teamcenter">
+                <value>2</value>
+            </context>
+        </preference>
+        <preference name="Baseline_release_procedures" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+            <preference_description>Indicates the list of Baseline Release procedures.</preference_description>
+            <context name="Teamcenter">
+                <value>Default-Baseline</value>
+            </context>
+        </preference>
+        <preference name="baselineDryRun" type="Logical" array="false" disabled="false" protectionScope="User" envEnabled="false">
+            <preference_description>Valid values are 0/1.
+                0 - Do not perform Dry Run of Baseline Creation.
+                1 - Perform Dry Run of Baseline Creation.</preference_description>
+            <context name="Teamcenter">
+                <value>1</value>
+            </context>
+        </preference>
+        <preference name="Baseline_allow_edits" type="Logical" array="false" disabled="false" protectionScope="Site" envEnabled="false">
+            <preference_description>Indicates whether it is allowed to edit the Item ID of Items that are baselined. If this preference is ON, the User will be allowed to edit the Item ID of Items that have been baselined. Once the Item is released, the User will not be allowed to edit the Item ID.</preference_description>
+            <context name="Teamcenter">
+                <value>OFF</value>
+            </context>
+        </preference>
+        <preference name="Baseline_check_all" type="Logical" array="false" disabled="false" protectionScope="Site" envEnabled="false">
+            <preference_description>Allows the baseline operation to check synchronization between NX and BOMViewRevision even when the ItemRevision cannot be baselined. 
+                Valid values are: 
+                false - Do not check synchronization on ItemRevisions that cannot be baselined. This is the default value. 
+                true - Check synchronization on ItemRevisions that cannot be baselined.</preference_description>
+            <context name="Teamcenter">
+                <value>false</value>
+            </context>
+        </preference>
+        <preference name="Baseline_create_snapshot_folder" type="Logical" array="false" disabled="false" protectionScope="Site" envEnabled="false">
+            <preference_description>0 - Do not create the snapshot folder after Baseline Creation.
+                1 - Create snapshot folder after Baseline Creation.</preference_description>
+            <context name="Teamcenter">
+                <value>1</value>
+            </context>
+        </preference>
+        <preference name="Baseline_dryrun_always" type="Logical" array="false" disabled="false" protectionScope="Site" envEnabled="false">
+            <preference_description>0 - Do not perform Dry Run operaton before Baseline Creation.
+                1 - Perform Dry Run operation before Baseline Creation.</preference_description>
+            <context name="Teamcenter">
+                <value>1</value>
+            </context>
+        </preference>
+        <preference name="Baseline_nxmanager_refile" type="Logical" array="false" disabled="false" protectionScope="User" envEnabled="false">
+            <preference_description>Valid values are 0/1.
+                0 - Do not synchronize assembly using ugmanager_refile program.
+                1 - Synchronize assembly using ugmanager_refile program.</preference_description>
+            <context name="Teamcenter">
+                <value>0</value>
+            </context>
+        </preference>
+        <preference name="Baseline_precondition_validation_rule_item_revision" type="String" array="false" disabled="false" protectionScope="Site" envEnabled="false">
+            <preference_description>Validation Rule item revision for baseline preaction handler.</preference_description>
+            <context name="Teamcenter">
+            </context>
+        </preference>
+        <preference name="Baseline_refile_not_required_item_types" type="String" array="true" disabled="true" protectionScope="Site" envEnabled="false">
+            <preference_description>Specifies the list of Item types for which refile would NOT be run during Baseline creation. E.g. Baseline_refile_not_required_item_types=Document.
+                NOTE: This is valid only when the Baseline_nxmanager_refile is set to 1.</preference_description>
+            <context name="Teamcenter">
+            </context>
+        </preference>
+        <preference name="Baseline_refile_required_dstypes" type="String" array="true" disabled="true" protectionScope="Site" envEnabled="false">
+            <preference_description>Specifies the list of the ONLY dataset types which would force a refile to be performed for the Item types that are not listed by Baseline_refile_not_required_item_types. E.g. Baseline_refile_required_dstypes=UGMASTER,UGPART.
+                NOTE: This is valid only when the Baseline_nxmanager_refile is set to 1.</preference_description>
+            <context name="Teamcenter">
+            </context>
+        </preference>
+        <preference name="ITEM_smart_baseline" type="Logical" array="false" disabled="false" protectionScope="Site" envEnabled="false">
+            <preference_description>Valid values are 0/1:
+                0 to create new baselines,
+                1 to allow smart copy between baselines.</preference_description>
+            <context name="Teamcenter">
+                <value>1</value>
+            </context>
+        </preference>
+    </category>
+    <category name="Configuration.DIS Adapter">
+        <category_description/>
+        <preference name="TC_show_open_in_vmu_button" type="Logical" array="false" disabled="false" protectionScope="User" envEnabled="false">
+            <preference_description>Specifies if the &quot;Open in VMU&quot; button should be displayed in the Teamcenter Rich Client. Valid values are true/false.</preference_description>
+            <context name="Teamcenter">
+                <value>true</value>
+            </context>
+        </preference>
+        <preference name="VMU_Datasets" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+            <preference_description>Specifies the list of Datasets that can be directly launched in VisMockup by performing &quot;File-&gt;Open In VMU&quot; in the Teamcenter Rich Client. If a site wishes to open PDF, Tiff etc type of data in VisMockup, then the DatasetTypes used to manage these files, would need to be added to this list. Web Note: In Teamcenter Thin Client, the corresponding syntax is the Dataset&apos;s &quot;View&quot; link.</preference_description>
+            <context name="Teamcenter">
+                <value>DirectModel</value>
+                <value>DirectModelMarkup</value>
+                <value>DirectModelSession</value>
+                <value>DrawingSheet</value>
+                <value>Image</value>
+                <value>Markup</value>
+                <value>DirectModelAssembly</value>
+                <value>DirectModel3DMarkup</value>
+                <value>VSAProcessDoc</value>
+                <value>VSAMeasurementDoc</value>
+                <value>DirectModelFlowChart</value>
+                <value>DirectModelAnimation</value>
+                <value>DirectModelIllustrationBook</value>
+                <value>DirectModelIllustrationSheet</value>
+                <value>VisJackEnvironment</value>
+                <value>VisJackFigure</value>
+                <value>VisJackPsurf</value>
+                <value>VisJackPosture</value>
+                <value>Nastran</value>
+                <value>VisPublishTechnicalPortfolio</value>
+                <value>VisPublishTechnicalIllustration</value>
+                <value>VisPublishGeometryAsset</value>
+                <value>VisPublishVisioTemplate</value>
+                <value>VisPublishVisioStencil</value>
+                <value>PADImage</value>
+                <value>PADReport</value>
+                <value>ClearanceResults</value>
+                <value>ClearanceDBReport</value>
+                <value>ClearanceResultsFilter</value>
+                <value>ClearanceDBConnection</value>
+                <value>Zone</value>
+                <value>VisQualityCluster</value>
+                <value>VisMovieCapture</value>
+                <value>SnapShotViewData</value>
+                <value>JtSimplification</value>
+                <value>PCBFATF</value>
+                <value>SCHFATF</value>
+                <value>PCBMarkup</value>
+                <value>ECADDFX</value>
+                <value>Vis_Session</value>
+                <value>Text</value>
+                <value>DirectModelMotion</value>
+                <value>PortfolioHFT</value>
+                <value>JPEG</value>
+                <value>GIF</value>
+                <value>TIF</value>
+                <value>Bitmap</value>
+                <value>Vis_Snapshot_2D_View_Data</value>
+                <value>DXF</value>
+            </context>
+        </preference>
+        <preference name="VMU_FileSearchOrder" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+            <preference_description>Defines the list of valid named reference types for the VMU datasets.</preference_description>
+            <context name="Teamcenter">
+                <value>Markup</value>
+                <value>Image</value>
+                <value>JTPART</value>
+                <value>JTSESSION</value>
+                <value>Package</value>
+                <value>ConfiguredAssembly</value>
+                <value>3DModel</value>
+                <value>Quickshade-Image</value>
+                <value>PLT</value>
+                <value>BMP</value>
+                <value>CAL</value>
+                <value>TIFF</value>
+                <value>Graphics-Interface</value>
+                <value>Sheet</value>
+                <value>Process</value>
+                <value>Measurement</value>
+                <value>FlowChart</value>
+                <value>Animation</value>
+                <value>IllustrationBook</value>
+                <value>IllustrationSheet</value>
+                <value>Environment</value>
+                <value>Figure</value>
+                <value>Psurf</value>
+                <value>Posture</value>
+                <value>Nastran</value>
+                <value>TechnicalPortfolio</value>
+                <value>TechnicalIllustration</value>
+                <value>GeometryAsset</value>
+                <value>VisioTemplate</value>
+                <value>VisioStencil</value>
+                <value>PDF</value>
+                <value>JPEG</value>
+                <value>TIF</value>
+                <value>Results</value>
+                <value>DBReport</value>
+                <value>Registry</value>
+                <value>DBConnection</value>
+                <value>Zone</value>
+                <value>Cluster</value>
+                <value>Movie</value>
+                <value>BWTStructureFile</value>
+                <value>XFatf</value>
+                <value>XSCH</value>
+                <value>companion</value>
+                <value>markup</value>
+                <value>results</value>
+                <value>rules</value>
+                <value>Session</value>
+                <value>Package</value>
+                <value>DependentFile</value>
+                <value>3DMarkup</value>
+                <value>Motion</value>
+                <value>PortfolioHFT</value>
+                <value>JPEG_Reference</value>
+                <value>TIF_Reference</value>
+                <value>GIF_Reference</value>
+                <value>ALSG</value>
+                <value>ThumbnailImage</value>
+                <value>CompareImage</value>
+                <value>AssetImage</value>
+                <value>MarkupLayers</value>
+                <value>BaseImage</value>
+                <value>Snapshot2DAttributes</value>
+                <value>3DGeoAsset</value>
+                <value>StructureFileBin</value>
+                <value>CSStructureFile</value>
+                <value>ViewFile</value>
+                <value>Text</value>
+                <value>Fnd0TcVisFilterReference</value>
+                <value>Fnd0TcVisConstraintReference</value>
+                <value>DefinitionFile</value>
+                <value>MaterialImage</value>
+                <value>DXF</value>
+            </context>
+        </preference>
+    </category>
+    <category name="Configuration.Language">
+        <category_description>Defines parameters for the session langage.</category_description>      
+        <preference name="TC_language_default" type="String" array="false" disabled="false" protectionScope="System" envEnabled="false">
+            <preference_description>Defines the default language for the Teamcenter server process.
+                The value is the internal Teamcenter representation associated with a given language.
+                Valid values are a 5-letter Java standardized code representing the chosen language.
+                The out-of-the-box values are cs_CZ, de_DE, en_US, es_ES, fr_FR, it_IT, ja_JP, ko_KR, pl_PL, pt_BR, ru_RU, zh_CN and zh_TW.</preference_description>
+            <context name="Teamcenter">
+                <value>en_US</value>
+            </context>
+        </preference>
+        <preference name="TC_language_localization_display" type="Logical" array="false" disabled="false" protectionScope="Site" envEnabled="false">
+            <preference_description>Enables the visualization of translation information as read only for properties that are localizable.
+                Valid values are true or false (default value).</preference_description>
+            <context name="Teamcenter">
+                <value>true</value>
+            </context>
+        </preference>    
+    </category>
+    <category name="Configuration.Mail Gateway">
+        <category_description/>
+        <preference name="Mail_OSMail_activated" type="Logical" array="false" disabled="false" protectionScope="Site" envEnabled="false">
+            <preference_description>Defines if the OS Mail functionality is available.
+                This is a site preference.
+                Valid values are true (default) or false.
+                When the value is false, the value given to preference &quot;Mail_server_name&quot; is not taken into account.</preference_description>
+            <context name="Teamcenter">
+                <value>true</value>
+            </context>
+        </preference>
+        <preference name="Mail_server_port" type="Integer" array="false" disabled="false" protectionScope="Site" envEnabled="false">
+            <preference_description>Sets the port number used by the SMTP mail server to send OS mail.
+                This is a site preference.
+                The default value is 25.</preference_description>
+            <context name="Teamcenter">
+                <value>25</value>
+            </context>
+        </preference>
+        <preference name="Mail_internal_mail_activated" type="Logical" array="false" disabled="false" protectionScope="Site" envEnabled="false">
+            <preference_description>Defines if Teamcenter internal mail functionality is available when using the &quot;notify&quot; Workflow Handler.
+                Valid values are true or false (default).
+                When the value is false, Teamcenter internal mail will not be sent to the user&apos;s Teamcenter mailbox.
+                This is a site preference.</preference_description>
+            <context name="Teamcenter">
+                <value>true</value>
+            </context>
+        </preference>
+        <preference name="Mail_server_charset" type="String" array="false" disabled="false" protectionScope="Site" envEnabled="false">
+            <preference_description>Specifies the Teamcenter mail server character set used to send OS mail.</preference_description>
+            <context name="Teamcenter">
+                <value>UTF-8</value>
+            </context>
+        </preference>
+    </category>   
+    <category name="Configuration.Search">
+        <category_description/>
+        <preference name="Search_result_load_all_limit" type="Integer" array="false" disabled="false" protectionScope="User" envEnabled="false">
+            <preference_description>Determines the maximum number of found objects for &quot;Load All&quot; operation in &quot;Search Result&quot; view.
+                Setting a larger value will have performance impact when clicking &quot;Load All&quot; button in &quot;Search Result&quot; view.</preference_description>
+            <context name="Teamcenter">
+                <value>2000</value>
+            </context>
+        </preference>
+        <preference name="TC_QRY_search_result_display_mode" type="Integer" array="false" disabled="false" protectionScope="Site" envEnabled="false">
+            <preference_description>Specifies the search result display mode.
+                Valid values are:
+                * 1: The total number of found objects is not displayed. This is the default value.
+                * 2: The total number of found objects only accounts for objects for which the user has access privileges.</preference_description>
+            <context name="Teamcenter">
+                <value>2</value>
+            </context>
+        </preference>
+        <preference name="QRYColumnsShownPref" type="String" array="true" disabled="false" protectionScope="User" envEnabled="false">
+            <preference_description>Specifies the list of default (Favorite) saved queries used for both Teamcenter Rich/Thin clients. The values of this preference should be the localized query names.</preference_description>
+            <context name="Teamcenter">
+                <value>General...</value>
+                <value>Item...</value>
+                <value>Item Revision...</value>
+                <value>Remote...</value>
+                <value>Checked-Out Dataset...</value>
+            </context>
+        </preference>
+    </category>
+    -->
+    <category name="General">
+        <category_description/>
+        <!-- project security site preferences -->
+        <!--
+        <preference name="AM_PROJECT_MODE" type="Logical" array="false" disabled="false" protectionScope="Site" envEnabled="false">
+            <preference_description>Determines whether the system evaluates the roles in all the active projects of the logged in user, or just the role of the current project, when processing the Role in Project and Role in Projects of Object accessors. The Teamcenter servers must be restarted after setting this site preference, for the setting to become effective in Access Manager evaluation.</preference_description>
+            <context name="Teamcenter">
+                <value>true</value>
+            </context>
+        </preference>
+        <preference name="TC_project_validate_conditions" type="String" array="false" disabled="false" protectionScope="Site" envEnabled="false">
+            <preference_description>Determines how the ASSIGN_TO_PROJECT and REMOVE_FROM_PROJECT Access Manager privileges are validated in conjunction with privileged membership validation. Valid values are 0, 1, 2, 3. Default is 0 = User has to be a privileged member to assign or remove a project on an object.</preference_description>
+            <context name="Teamcenter">
+                <value>2</value>
+            </context>
+        </preference>
+        <preference name="TC_propagation_security_group_style" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+            <preference_description>Specifies the list of security groups and associated styles.</preference_description>
+            <context name="Teamcenter">
+                <value>Security Group I=Merge</value>
+                <value>Security Group II=Fill</value>
+                <value>Security Group III=Order</value>
+                <value>Security Group IV=Overwrite</value>
+            </context>
+        </preference>
+        -->
+        <preference name="PS_new_seqno_mode" type="String" array="false" disabled="false" protectionScope="Site" envEnabled="false">
+            <preference_description>Controls how the find number is generated for new occurrences.
+                Valid values are:
+                * &quot;new&quot;: new numbers are allocated to each of the occurrences.
+                * &quot;existing&quot;: new numbers are only allocated for occurrences of unique items. 
+                * &quot;none&quot;: no numbers are generated.</preference_description>
+            <context name="Teamcenter">
+                <value>Existing</value>
+            </context>
+        </preference>
+        <preference name="UGMASTER_saveas_pattern" type="String" array="false" disabled="false" protectionScope="Site" envEnabled="false">
+            <preference_description>Defines the pattern string of the name of new UGMASTER dataset object during a &quot;Save As&quot; operation. Value may contain text and also refer to the content of some of the object&apos;s properties using the ${PropertyName} format, with PropertyName being ItemID, RevisionID or UserText. Existing dataset name is expected to match this pattern. If the existing dataset name does not match the pattern, then the new dataset name will not follow this pattern.
+                Example: ${UserText}-${ItemID}/${RevisionID} where the site has decided that the ${UserText} at the beginning is intended to be the name of the dataset, and the minus sign is literal text. Suppose a user is saving item revision 001234/B to item revision 002345/A. If a dataset&apos;s existing name is &quot;master-001234/B&quot; then the name is said to &apos;match&apos; against the pattern. Since the ${UserText} at the start of this pattern matches any string, dataset name &quot;fea-001234/B&quot; would also match against the pattern. However, &quot;master_001234/B&quot; would not match the pattern as the minus sign is required, and &quot;master-001235/B&quot; would not match since the ItemID is incorrect. Once an original dataset name has been matched against the pattern, the new dataset name is generated by replacing the ${ItemID} and ${RevisionID} with the new revision and ItemID in the pattern, and all occurrences of ${UserData} with whatever text they matched against in the original name. This new name can then be used for saving the new dataset. Using the example above, the dataset would be saved as &quot;master-002345/A&quot;.
+                This is a site preference.</preference_description>
+            <context name="Teamcenter">
+                <value>${ItemID}/${RevisionID}</value>
+            </context>
+        </preference>
+        <preference name="TC_ugmaster_name_separator" type="String" array="false" disabled="false" protectionScope="Site" envEnabled="false">
+            <preference_description>Defines the separator used for ugmaster objects names at creation time.
+                This is a site preference.</preference_description>
+            <context name="Teamcenter">
+                <value>/</value>
+            </context>
+        </preference>
+        <preference name="TC_show_open_in_nx_button" type="Logical" array="false" disabled="false" protectionScope="User" envEnabled="false">
+            <preference_description>Specifies if the &quot;Open in NX&quot; button should be displayed in the Teamcenter Rich Client. Valid values are true/false. true - Displays the button. false - Does not display the button.</preference_description>
+            <context name="Teamcenter">
+                <value>true</value>
+            </context>
+        </preference>
+        <!-- UI related site preferences -->
+        <preference name="LOV_value_desc_separator" type="String" array="false" disabled="false" protectionScope="Site" envEnabled="false">
+            <preference_description>Defines the character to separate LOV values from their descriptions</preference_description>
+            <context name="Teamcenter">
+                <value>,</value>
+            </context>
+        </preference>
+        <preference name="EPM_resource_pool_recipients" type="String" array="false" disabled="false" protectionScope="Site" envEnabled="false">
+            <preference_description>This preference is used by notfication handlers for filtering resource pool members. The valid values are &quot;all&quot;,&quot;subscribed&quot;,&quot;none&quot; (without double quotes)</preference_description>
+            <context name="Teamcenter">
+                <value>all</value>
+            </context>
+        </preference>
+        <!--
+        <preference name="Quick_Access_Queries" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+            <preference_description>Defines the quick access queries to be displayed in the left-hand navigator. Valid values are the internal name of queries as defined in the qry_text_locale.xml localization file.</preference_description>
+            <context name="Teamcenter">
+                <value>Item ID</value>
+                <value>Item Name</value>
+                <value>Dataset Name</value>
+            </context>
+        </preference>    
+        <preference name="Default_Quick_Access_Query" type="String" array="false" disabled="false" protectionScope="User" envEnabled="false">
+            <preference_description>Defines the default quick search internal name.</preference_description>
+            <context name="Teamcenter">
+                <value>Item ID</value>
+            </context>
+        </preference>
+        <preference name="Quick_Access_Queries_Attribute" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+            <preference_description>Defines the criteria attribute for quick access queries.
+                Format should be: &quot;&lt;query_internal_name&gt;_SearchAttribute=&lt;L10N_key&gt;&quot;, where:
+                &lt;query_internal_name&gt; is to be replaced by the query internal name,
+                &lt;L10N_key&gt; is to be replaced by the user entry L10N key of the query clause.</preference_description>
+            <context name="Teamcenter">
+                <value>Item ID_SearchAttribute=ItemID</value>
+                <value>Item Name_SearchAttribute=ItemName</value>
+                <value>Dataset Name_SearchAttribute=DatasetName</value>
+            </context>
+        </preference>
+        -->
+        <!-- GENERAL COLUMN CONFIGURATION -->
+        <preference name="GroupMember_ColumnPreferences" type="String" array="true" disabled="false" protectionScope="User" envEnabled="false">
+            <preference_description>Description not provided during import.</preference_description>
+            <context name="Teamcenter">
+                <value>GroupMember.object_string</value>
+                <value>GroupMember.user_name</value>
+                <value>GroupMember.group</value>
+                <value>GroupMember.role</value>
+            </context>
+        </preference>
+        <preference name="GroupMember_ColumnWidthPreferences" type="String" array="true" disabled="false" protectionScope="User" envEnabled="false">
+            <preference_description>Description not provided during import.</preference_description>
+            <context name="Teamcenter">
+                <value>30</value>
+                <value>30</value>
+                <value>25</value>
+                <value>35</value>
+            </context>
+        </preference>
+        <!-- PROCESS HISTORY CONFIGURATION -->
+        <preference name="Fnd0WorkflowAudit_ColumnPreferences" type="String" array="true" disabled="false" protectionScope="User" envEnabled="false">
+            <preference_description>Specifies the list of columns to be displayed on Process History Table for objects of type Fnd0WorkflowAudit.</preference_description>
+            <context name="Teamcenter">
+                <value>Fnd0WorkflowAudit.fnd0ObjectDisplayName</value>
+                <value>Fnd0WorkflowAudit.job_name</value>
+                <value>Fnd0WorkflowAudit.fnd0EventTypeName</value>
+                <value>Fnd0WorkflowAudit.fnd0LoggedDate</value>
+                <value>Fnd0WorkflowAudit.task_result</value>
+                <value>Fnd0WorkflowAudit.fnd0SignoffDecision</value>
+                <value>Fnd0WorkflowAudit.task_state</value>
+                <value>Fnd0WorkflowAudit.fnd0Comments</value>
+                <value>Fnd0WorkflowAudit.fnd0UserId</value>
+                <value>Fnd0WorkflowAudit.fnd0GroupName</value>
+                <value>Fnd0WorkflowAudit.fnd0RoleName</value>
+                <value>Fnd0WorkflowAudit.fnd0SignoffUserID</value>
+                <value>Fnd0WorkflowAudit.fnd0SignoffGroupName</value>
+                <value>Fnd0WorkflowAudit.fnd0SignoffRoleName</value>
+                <value>Fnd0WorkflowAudit.fnd0StartDate</value>
+                <value>Fnd0WorkflowAudit.fnd0EndDate</value>
+                <value>Fnd0WorkflowAudit.fnd0ActualDurationDisplay</value>
+                <value>Fnd0WorkflowAudit.due_date</value>
+                <value>Fnd0WorkflowAudit.late_flag</value>
+                <value>Fnd0WorkflowAudit.responsible_partyDisp</value>
+                <value>Fnd0WorkflowAudit.fnd0TargetAttachmentsSent</value>
+            </context>
+        </preference>
+        <preference name="Fnd0WorkflowAudit_ColumnWidthPreferences" type="Integer" array="true" disabled="false" protectionScope="User" envEnabled="false">
+            <preference_description>Specifies the widths (in pixels) of the columns specified by the preference &quot;Fnd0WorkflowAudit_ColumnPreferences&quot;.</preference_description>
+            <context name="Teamcenter">
+                <value>40</value>
+                <value>15</value>
+                <value>17</value>
+                <value>15</value>
+                <value>15</value>
+                <value>22</value>
+                <value>15</value>
+                <value>20</value>
+                <value>15</value>
+                <value>15</value>
+                <value>15</value>
+                <value>15</value>
+                <value>15</value>
+                <value>15</value>
+                <value>15</value>
+                <value>15</value>
+                <value>15</value>
+                <value>15</value>
+                <value>15</value>
+                <value>15</value>
+                <value>15</value>
+            </context>
+        </preference>
+        <!-- STYLESHEET CONFIGURATION -->
+        <preference name="EPMTask.SUMMARYRENDERING" type="String" array="false" disabled="false" protectionScope="Site" envEnabled="false">
+            <preference_description>Registration of summary stylesheet for EPMTask objects.</preference_description>
+            <context name="Teamcenter">
+                <value>BaseEPMTaskSummary</value>
+            </context>
+        </preference>
+        <preference name="BaseEPMTaskSummary.SUMMARY_REGISTEREDTO" type="String" array="false" disabled="false" protectionScope="Site" envEnabled="false">
+            <preference_description>Indicates the type to which the BaseEPMTaskSummary summary stylesheet can be applied.</preference_description>
+            <context name="Teamcenter">
+                <value>EPMTask</value>
+            </context>
+        </preference>
+        <preference name="Dataset.SUMMARYRENDERING" type="String" array="false" disabled="false" protectionScope="Group" envEnabled="false">
+            <preference_description>Registration of summary stylesheet for Dataset objects.</preference_description>
+            <context name="Teamcenter">
+                <value>DatasetSummary</value>
+            </context>
+        </preference>
+        <preference name="DatasetSummary.SUMMARY_REGISTEREDTO" type="String" array="false" disabled="false" protectionScope="Group" envEnabled="false">
+            <preference_description>Indicates the types to which the Dataset summary stylesheet can be applied.</preference_description>
+            <context name="Teamcenter">
+                <value>Dataset</value>
+            </context>
+        </preference>
+        <preference name="TC_Project.SUMMARYRENDERING" type="String" array="false" disabled="false" protectionScope="Group" envEnabled="false">
+            <preference_description>Registration of summary stylesheet for TC_Project objects.</preference_description>
+            <context name="Teamcenter">
+                <value>ProjectSummary</value>
+            </context>
+        </preference>
+        <preference name="ProjectSummary.SUMMARY_REGISTEREDTO" type="String" array="false" disabled="false" protectionScope="Group" envEnabled="false">
+            <preference_description>Indicates the type to which the TC_Project summary stylesheet can be applied.</preference_description>
+            <context name="Teamcenter">
+                <value>TC_Project</value>
+            </context>
+        </preference>
+        <!-- DEFAULT CHILD PROPERTIES / PSEUDO FOLDER CONFIGURATION -->
+        <preference name="Item_DefaultChildProperties" type="String" array="true" disabled="false" protectionScope="User" envEnabled="false">
+            <preference_description>List of properties that can be used as children for the indicated type i.e. Item. The format of the preference follows: &lt;TypeName&gt;_DefaultChildProperties=my_property. For proxy link integration, add external_apps to this list.</preference_description>
+            <context name="Teamcenter">
+                <value>revision_list</value>
+                <value>IMAN_requirement</value>
+                <value>IMAN_manifestation</value>
+                <value>IMAN_reference</value>
+                <value>IMAN_external_object_link</value>
+                <value>TC_WorkContext_Relation</value>
+                <value>TC_sst_record</value>
+                <value>Fnd0ListsParamReqments</value>
+                <value>Fnd0ListsCustomNotes</value>
+            </context>
+        </preference>
+        <!-- DISPATCHER TRANSLATION CONFIGURATION -->
+        <!--
+        <preference name="TS_inprocess_states" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+            <preference_description>Specifies all the inprocess states in the dispatcher client.</preference_description>
+            <context name="Teamcenter">
+                <value>PREPARING</value>
+                <value>SCHEDULED</value>
+                <value>SUPERSEDING</value>
+                <value>TRANSLATING</value>
+                <value>LOADING</value>
+            </context>
+        </preference> 
+        <preference name="TS_successful_states" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+            <preference_description>Specifies all the successful states in the dispatcher client.</preference_description>
+            <context name="Teamcenter">
+                <value>COMPLETE</value>
+                <value>DUPLICATE</value>
+                <value>DELETE</value>
+                <value>CANCELLED</value>
+                <value>SUPERSEDED</value>
+                <value>NO_TRANS</value>
+            </context>
+        </preference>   
+        <preference name="TS_unsuccessful_states" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+            <preference_description>Specifies all the unsuccessful states in the dispatcher client.</preference_description>
+            <context name="Teamcenter">
+                <value>TERMINAL</value>
+            </context>
+        </preference>   
+        <preference name="ETS_available" type="String" array="false" disabled="false" protectionScope="User" envEnabled="false">
+            <preference_description>This preference lists the availablity of ETS.</preference_description>
+            <context name="Teamcenter">
+                <value>YES</value>
+            </context>
+        </preference>
+        <preference name="ETS_released_status_type_names" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+            <preference_description>The released status types to be copied from the item revision to a visualization dataset whenever ETS creates or modifies a visualization dataset. The specified status type name values are used to filter the setting of the released date and released status types for a visualization dataset. Only in the case that an item revision released status type name matches one of these preference values will the released date and released status be copied to the visualization dataset.</preference_description>
+            <context name="Teamcenter">
+                <value>Released</value>
+            </context>
+        </preference>
+        <preference name="ETS_trans_rqst_referenced_dataset_types" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+            <preference_description>The set of all CAD tool dataset types that an ETS translation request may reference. This preference is used by ETS to cancel translation requests that prevent user deletion of CAD datasets.</preference_description>
+            <context name="Teamcenter">
+                <value>IdeasPart</value>
+                <value>IdeasAssembly</value>
+                <value>IdeasDrawing</value>
+                <value>catia</value>
+                <value>CATPart</value>
+                <value>CATProduct</value>
+                <value>UGPART</value>
+                <value>UGMASTER</value>
+                <value>UGALTREP</value>
+                <value>UGSCENARIO</value>
+                <value>PDF</value>
+                <value>ProPrt</value>
+                <value>MSWord</value>
+                <value>MSExcel</value>
+                <value>MSPowerPoint</value>
+                <value>MSPowerPointX</value>
+                <value>MSWordX</value>
+                <value>MSExcelX</value>
+                <value>Zip</value>
+                <value>TIF</value>
+                <value>IGS</value>
+            </context>
+        </preference>
+        -->
+    </category>
+    <category name="Interface.NX">
+        <category_description/>
+        <preference name="DATASET_saveas_pattern" type="String" array="false" disabled="false" protectionScope="Site" envEnabled="false">
+            <preference_description>Specifies the pattern string consisting of literal text and the following tokens: ${UserText}, ${ItemID} and ${RevisionID}. Existing dataset names are expected to match this pattern, where ${ItemID} and ${RevisionID} match the item id and revision id of the owning item revision respectively, and ${UserText} matches any text in the original name. If the existing dataset names do not match the pattern, then the new dataset names will not follow this pattern.
+                Example: ${UserText}-${ItemID}/${RevisionID} where the site has decided that the ${UserText} at the beginning is intended to be the name of the dataset, and the minus sign is literal text. Suppose a user is saving item revision 001234/B to item revision 002345/A. If a dataset&apos;s existing name is &quot;drawing-001234/B&quot; then the name is said to &apos;match&apos; against the pattern. Since the ${UserText} at the start of this pattern matches any string, dataset name &quot;fea-001234/B&quot; would also match against the pattern. However, &quot;drawing_001234/B&quot; would not match the pattern as the minus sign is required, and &quot;drawing-001235/B&quot; would not match since the ItemID is incorrect. Once an original dataset name has been matched against the pattern, the new dataset name is generated by replacing the ${ItemID} and ${RevisionID} with the new revision and ItemID in the pattern, and all occurrences of ${UserData} with whatever text they matched against in the original name. This new name can then be used for saving the new dataset. Using the example above, the two datasets would be saved as &quot;drawing-002345/A&quot; and &quot;fea-002345/A&quot;.
+                According to preference DATASET_saveas_allow_name_modification, the user may be allowed to modify these generated names. However, if DATASET_saveas_force_name_validation is true, the user-edited name is still required to match the pattern. The preferences DATASET_saveas_pattern, DATASET_saveas_allow_name_modification, DATASET_saveas_force_name_validation, DATASET_saveas_always_copy, DATASET_saveas_never_copy, DATASET_saveas_owner, DATASET_saveas_allow_duplicates are currently only used by USER_copied_datasets_details and USER_copied_dataset_name, and these are only currently called by NXManager Unigraphics.</preference_description>
+            <context name="Teamcenter">
+                <value>${ItemID}/${RevisionID}</value>
+            </context>
+        </preference>
+        <preference name="DirectModel_saveas_pattern" type="String" array="false" disabled="false" protectionScope="Site" envEnabled="false">
+            <preference_description>Specifies the pattern string consisting of literal
+                text and the following tokens: ${UserText}, ${ItemID} and ${RevisionID}. Existi
+                ng dataset names are expected to match this pattern, where ${ItemID} and ${RevisionID} match the item id and revision id of the owning item revision respectively, and ${UserText} matches any text in the original name. Example: ${UserText}-${ItemID}/${RevisionID} where the site has decided that the ${UserText} at the beginning is intended to be the name of the dataset, and the minus sign is literal text. Suppose a user is saving item revision 001234/B to item revision 002345/A. If a dataset's existing name is "drawing-001234/B" then the name is said to 'match' against the pattern.  Since the ${UserText} at the start of this pattern matches any string, dataset name "fea-001234/B" would also match against the pattern.  However, drawing_001234/B would not match the pattern as the minus sign is required, and drawing-001235/B would not match since the ItemID is incorrect. Once an original dataset name has been matched against the pattern, the new dataset name is generated by replacing the ${ItemID} and ${RevisionID} with the new revision and ItemID in the pattern, and all occurrences of ${UserData} with whatever text they matched against in the original name. This new name can then be used for saving the new dataset.  Using the example above, the two datasets would be saved as drawing-002345/A and fea-002345/A. According to preference DATASET_saveas_allow_name_modification, the user may be allowed to modify these generated names. However, if DATASET_saveas_force_name_validation is true, the user-edited name is still required to match the pattern. The preferences DATASET_saveas_pattern, DATASET_saveas_allow_name_modification, DATASET_saveas_force_name_validation, DATASET_saveas_always_copy, DATASET_saveas_never_copy, DATASET_saveas_owner, DATASET_saveas_allow_duplicates are currently only used by USER_copied_datasets_details and USER_copied_dataset_name, and these are only currently called by NXManager Unigraphics.</preference_description>
+            <context name="Teamcenter">
+                <value>${ItemID}/${RevisionID}</value>
+            </context>
+        </preference>        
+        <preference name="TC_NX_Foreign_Datasets" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+            <preference_description>Specifies the non-NX dataset types available to NX when it lists the datasets in an Item Revision.
+                The value format is four keywords (DatasetType, NamedReference, NamedReferenceFormat, NamedReferenceTemplate) and their values (enclosed in double quotation marks).
+                The format informs NX precisely which named references of the dataset contain the CAD data.
+                Valid values for the &quot;NamedReferenceFormat&quot; keyword are &quot;BINARY&quot; or &quot;TEXT&quot;.
+                Valid values for the &quot;NamedReferenceTemplate&quot; keyword are the extension for files of that type.
+                The values are case sensitive, and each value refers to a dataset type.
+                Following are examples for values:
+                DatasetType=&quot;DirectModel&quot; NamedReference=&quot;JTPART&quot; NamedReferenceFormat=&quot;BINARY&quot; NamedReferenceTemplate=&quot;jt&quot;
+                DatasetType=&quot;SE PART&quot; NamedReference=&quot;SE-Part&quot; NamedReferenceFormat=&quot;BINARY&quot; NamedReferenceTemplate=&quot;par&quot;</preference_description>
+            <context name="Teamcenter">
+                <value>DatasetType=&quot;DirectModel&quot; NamedReference=&quot;JTPART&quot; NamedReferenceFormat=&quot;BINARY&quot; NamedReferenceTemplate=&quot;jt&quot;</value>
+            </context>
+        </preference>
+    </category>  
+    <category name="Interface.Rich Client">
+        <category_description/>
+        <preference name="WSOM_find_set_pff_displaydata_limit" type="Integer" array="false" disabled="false" protectionScope="User" envEnabled="false">
+            <preference_description>Limits the number of objects to be loaded when clicking the "Load All" button in the display data of search results view.
+                Giving a higher number (above 1000) significantly slows the system response.</preference_description>
+            <context name="Teamcenter">
+                <value>10000</value>
+            </context>
+        </preference>
+        <preference name="TC_Auto_Checkout" type="Logical" array="false" disabled="false" protectionScope="Site" envEnabled="false">
+            <preference_description>If this preference is ON, non-NX datasets will be automatically Checked-Out when a user opens that dataset. This will prevent another user from gaining write access to this dataset until the first user closes the dataset.</preference_description>
+            <context name="Teamcenter">
+                <value>OFF</value>
+            </context>
+        </preference>
+        <preference name="TC_show_checkedout_icon" type="Logical" array="false" disabled="false" protectionScope="Site" envEnabled="false">
+            <preference_description>Enables the display of the checked-out icon in BOM trees, Attachment trees, Activity trees and Occurrence Group trees.</preference_description>
+            <context name="Teamcenter">
+                <value>TRUE</value>
+            </context>
+        </preference>      
+        <preference name="TC_Project.RENDERING" type="String" array="false" disabled="false" protectionScope="User" envEnabled="false">
+            <preference_description>Registration of stylesheet for TC_Project objects.</preference_description>
+            <context name="Teamcenter">
+                <value>TC_Project</value>
+            </context>
+        </preference>
+        <preference name="TC_Project.REGISTEREDTO" type="String" array="false" disabled="false" protectionScope="User" envEnabled="false">
+            <preference_description>Indicates the types to which the TC_Project stylesheet can be applied.</preference_description>
+            <context name="Teamcenter">
+                <value>TC_Project</value>
+            </context>
+        </preference>
+        <!--
+        <preference name="DRAG_AND_DROP_default_dataset_type" type="String" array="true" disabled="false" protectionScope="User" envEnabled="false">
+            <preference_description>Lists the default dataset types associated to files dropped in Teamcenter.Valid values have the following pattern: &quot;file_extension:dataset_type&quot;, e.g. &quot;doc:MSWord&quot;.</preference_description>
+            <context name="Teamcenter">
+                <value>7z:ZIP</value>
+                <value>bmp:BITMAP</value>
+                <value>cgm:DRAWINGSHEET</value>
+                <value>csv:MSEXCEL</value>
+                <value>doc:MSWORD</value>
+                <value>docm:MSWORD</value>
+                <value>docx:MSWORDX</value>
+                <value>dot:MSWORDTEMPLATE</value>
+                <value>dotm:MSWORDTEMPLATE</value>
+                <value>dotx:MSWORDTEMPLATEX</value>
+                <value>dxf:DXF</value>
+                <value>emf:IMAGE</value>
+                <value>eps:POSTSCRIPT</value>
+                <value>gif:GIF</value>
+                <value>hgl:HPGL</value>
+                <value>hpg:HPGL</value>
+                <value>hpgl:HPGL</value>
+                <value>htm:HTML</value>
+                <value>html:HTML</value>
+                <value>ics:OUTLOOK</value>
+                <value>jpeg:JPEG</value>
+                <value>jpg:JPEG</value>
+                <value>jt:DIRECTMODEL</value>
+                <value>mpd:MSPROJECT</value>
+                <value>mpp:MSPROJECT</value>
+                <value>mpt:MSPROJECT</value>
+                <value>mpx:MSPROJECT</value>
+                <value>msg:OUTLOOK</value>
+                <value>ost:OUTLOOK</value>
+                <value>pdf:PDF</value>
+                <value>pgl:HPGL</value>
+                <value>plmxml:DIRECTMODEL</value>
+                <value>png:IMAGE</value>
+                <value>pot:MSPOWERPOINTTEMPLATE</value>
+                <value>potx:MSPOWERPOINTTEMPLATEX</value>
+                <value>pps:MSPOWERPOINT</value>
+                <value>ppt:MSPOWERPOINT</value>
+                <value>pptx:MSPOWERPOINTX</value>
+                <value>prt:UGMASTER</value>
+                <value>ps:MSPOWERPOINT</value>
+                <value>psd:PHOTOSHOP</value>
+                <value>pst:OUTLOOK</value>
+                <value>rtf:MSWORD</value>
+                <value>stl:STL</value>
+                <value>tif:TIF</value>
+                <value>tiff:TIF</value>
+                <value>tso:DIRECTMODEL</value>
+                <value>txt:TEXT</value>
+                <value>vcf:OUTLOOK</value>
+                <value>wpd:WORDPERFECT</value>
+                <value>xls:MSEXCEL</value>
+                <value>xlsm:MSEXCELX</value>
+                <value>xlsx:MSEXCELX</value>
+                <value>xlt:MSEXCELTEMPLATE</value>
+                <value>xltx:MSEXCELTEMPLATEX</value>
+                <value>zip:ZIP</value>            
+            </context>
+        </preference>
+        -->
+        <preference name="Design Revision_DefaultChildProperties" type="String" array="true" disabled="false" protectionScope="User" envEnabled="false">
+            <preference_description>Specifies the list of properties that can be displayed as children of a Design Revision node.</preference_description>
+            <context name="Teamcenter">
+                <value>bom_view_tags</value>
+                <value>IMAN_requirement</value>
+                <value>IMAN_manifestation</value>
+                <value>IMAN_specification</value>
+                <value>IMAN_reference</value>
+                <value>IMAN_external_object_link</value>
+                <value>IMAN_Rendering</value>
+                <value>TC_WorkContext_Relation</value>
+                <value>Fnd0ListsParamReqments</value>
+                <value>Fnd0ListsCustomNotes</value>
+            </context>
+        </preference>
+        <preference name="Design Revision_PseudoFolder" type="String" array="true" disabled="false" protectionScope="User" envEnabled="false">
+            <preference_description>Specifies the list of properties that can be displayed as a pseudo-folder under a node for Design Revision object.</preference_description>
+            <context name="Teamcenter">
+                <value/>
+            </context>
+        </preference>
+    </category>
+    <category name="Maintenance.Audit Manager">
+        <category_description/>  
+        <preference name="TC_audit_number_of_logs_to_load" type="Integer" array="false" disabled="false" protectionScope="User" envEnabled="false">
+            <preference_description>Specifies the maximum number of audit records to be displayed.</preference_description>
+            <context name="Teamcenter">
+                <value>500</value>
+            </context>
+        </preference>
+    </category>
+    <category name="Maintenance.Log File">
+        <category_description/>
+        <preference name="TC_allow_inherited_group_volume_access" type="String" array="false" disabled="false" protectionScope="Site" envEnabled="false">
+            <preference_description>No description available for this preference.</preference_description>
+            <context name="Teamcenter">
+                <value>1</value>
+            </context>
+        </preference>
+    </category>
+    <category name="Manufacturing">
+        <category_description/>
+        <preference name="TC_show_checkout_objects_on_exit" type="Logical" array="false" disabled="false" protectionScope="Group" envEnabled="false">
+            <preference_description>Indicates if the dialog "Find Checked Out Objects" should be displayed when exiting Teamcenter.
+                Valid values are "TRUE" or "FALSE".</preference_description>
+            <context name="Teamcenter">
+                <value>TRUE</value>
+            </context>
+        </preference>
+    </category>
+    <category name="Product Structure.Product Structure Synchronization">
+        <category_description/>
+        <preference name="BOM_Enable_Ref_Designator_Value_Packing" type="Logical" array="false" disabled="false" protectionScope="Site" envEnabled="false">
+            <preference_description>Turns on and off the packing of Reference Designator values for packed bomlines.
+                If it is turned off, the reference designator value of the master line of the packed lines will be displayed.
+                If it is turned on, all reference designator values of packed lines will be packed.
+                For example, if reference designator values of the packed lines are: C1, C2, C3, C7, C100, C101, the display value of reference designator of the packed line is C1-C3,C7,C100-C101.
+                Valid values are true or false.</preference_description>
+            <context name="Teamcenter">
+                <value>true</value>
+            </context>
+        </preference>
+    </category>
+    <category name="Product Structure.PSE.Behavior">
+        <category_description/>
+        <preference name="TC_BOM_Precision_Preference" type="String" array="false" disabled="false" protectionScope="User" envEnabled="false">
+            <preference_description>Specifies the BOM precision to be used during the creation of new BOMViews/BOMViewRevisions. Valid values are Precise/Imprecise.</preference_description>
+            <context name="Teamcenter">
+                <value>Precise</value>
+            </context>
+        </preference>
+        <preference name="TC_config_rule_name" type="String" array="false" disabled="false" protectionScope="User" envEnabled="false">
+            <preference_description>Indicates the default config rule that will be used when opening/printing Imprecise BOMView or BOMViewRevisions. If this rule does not exist, the system will default to &quot;Latest Working&quot;.</preference_description>
+            <context name="Teamcenter">
+                <value>Precise Only</value>
+            </context>
+        </preference>
+    </category>
+    <category name="Product Structure.PSE.Display">
+        <category_description/>
+        <preference name="PSEAutoPackPref" type="Logical" array="false" disabled="false" protectionScope="User" envEnabled="false">
+            <preference_description>Indicates if the PSE display needs to be packed by default. Valid values are 0/1.
+                0 - Do not pack.
+                1 - Pack PSE by default.</preference_description>
+            <context name="Teamcenter">
+                <value>0</value>
+            </context>
+        </preference>
+        <preference name="PSESubstituteColorPref" type="String" array="false" disabled="false" protectionScope="User" envEnabled="false">
+            <preference_description>Specifies the color to be used when displaying a substitute BOM Line in Structure Manager.
+                The value can be:
+                * a standard supported string: &quot;black&quot;, &quot;white&quot;, &quot;lightGray&quot;, &quot;gray&quot;, &quot;darkGray&quot;, &quot;red&quot;, &quot;pink&quot;, &quot;orange&quot;, &quot;yellow&quot;, &quot;green&quot;, &quot;magenta&quot;, &quot;cyan&quot; and &quot;blue&quot;.
+                * a hexadecimal number (e.g. &quot;#50b080&quot; which represents &quot;Sea Green&quot;).
+                The default value is &quot;#a0b6c0&quot;, which represents &quot;lightGray&quot;.</preference_description>
+            <context name="Teamcenter">
+                <value>lightGray</value>
+            </context>
+        </preference>
+        <preference name="Baseline_consider_all_statuses" type="Logical" array="false" disabled="false" protectionScope="User" envEnabled="false">
+            <preference_description>Activates considering all release statuses attached to Item Revisions, while creating baselines for released Item Revisions.
+                Valid values are:
+                * false: Only the latest release status on Item Revisions is considered.
+                * true: All release statuses present on Item Revisions are considered.</preference_description>
+            <context name="Teamcenter">
+                <value>false</value>
+            </context>
+        </preference>
+    </category>
+    <category name="Workflow">
+        <category_description/>
+        <preference name="CR_allow_alternate_procedures" type="String" array="false" disabled="false" protectionScope="Group" envEnabled="false">
+            <preference_description>Manages the visibility of workflow templates in the &quot;New Process&quot; panel of the Workflow application in the rich client.
+                Valid values are:
+                * any : The &quot;All&quot; option is pre-selected in the &quot;All/Assigned&quot; radio button group, which means that all templates are listed.
+                * Assigned: The &quot;Assigned&quot; option is pre-selected in the &quot;All/Assigned&quot; radio button group, which means that only the templates assigned to the group and selected target object type are listed.
+                * none: The options &quot;All/Assigned&quot; are not visible. Furthermore, only the templates assigned to the group and selected target object type are displayed (behaviour similar to the &quot;Assigned&quot; option). When no templates are assigned for the target group/type, the displayed list is empty. If no object was selected when initiating the workflow, all the templates assigned to the group are listed. This is the default value.
+
+                Process templates assigned to a group and a target object type are defined through the &quot;Process designer-&gt;Edit-&gt;Template Filter&quot; command.</preference_description>
+            <context name="Teamcenter">
+                <value>none</value>
+            </context>
+        </preference>
+        <preference name="EPM_resource_pool_restrict_subscription" type="String" array="false" disabled="false" protectionScope="Site" envEnabled="false">
+            <preference_description>Restricts the resource pools available for subscription based on user membership in the "Resource Pool Subscription" dialog.
+                Valid values are:
+                ON - the user can subscribe only to groups and roles for which he/she is a member.
+                OFF - the users can subscribe to all groups and roles. This is the default value.</preference_description>
+            <context name="Teamcenter">
+                <value>ON</value>
+            </context>
+        </preference>
+        <preference name="SIGNOFF_adhoc_quorum" type="String" array="false" disabled="false" protectionScope="Site" envEnabled="false">
+            <preference_description>Indicates if the task quorum modifiable by Teamcenter user in select-signoff-team can be set lower than that defined by the task template when adhoc signoffs functionality is enabled (EPM_adhoc_signoffs=ON). Valid values are 1/2.
+                1 - User can set signoff quorum value either less than or greater than that set by task template.
+                2 - User can set signoff quorum value only greater that that set by task template.
+
+                NOTE: For setting 2, if the signoff-quorum is set as -1 (ALL), in that case, the user cannot modify the signoff quorum through select-signoff-team task.
+
+                This is a site preference.</preference_description>
+            <context name="Teamcenter">
+                <value>1</value>
+            </context>
+        </preference>
+        <preference name="EPM_multiple_processes_targets" type="Logical" array="false" disabled="false" protectionScope="Site" envEnabled="false">
+            <preference_description>Enables/Disables multiple processes for same objects in the Workflow application.
+                Valid values are:
+                * ON: Enables Multiple processes. This is the default value.
+                * OFF: Disables Multiple processes.</preference_description>
+            <context name="Teamcenter">
+                <value>ON</value>
+            </context>
+        </preference>
+        <preference name="EPM_notify_url_format" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+            <preference_description>Defines the type of client connection for URL generation by notify and CR-notify handlers.
+                The valid values are &quot;rich&quot;, &quot;dhtml&quot;, &quot;activeworkspace&quot; and &quot;none&quot;.</preference_description>
+            <context name="Teamcenter">
+                <value>rich</value>
+            </context>
+        </preference>
+        <preference name="WRKFLW_modify_target_list_access_privilege" type="String" array="false" disabled="false" protectionScope="Site" envEnabled="false">
+            <preference_description>Indicates the access privilege to be used in order to enforce permission on modification of the Workflow target list.
+                Valid values are any access privilege. The default value is the CHANGE access privilege.</preference_description>
+            <context name="Teamcenter">
+                <value>READ</value>
+            </context>
+        </preference>
+        <preference name="WRKFLW_use_legacy_template_filter" type="Logical" array="false" disabled="false" protectionScope="Site" envEnabled="false">
+            <preference_description>Indicates whether to use the legacy Type and Group based Template Filter or the new Condition based Template Filter.
+                Valid values are:
+                * true: Use the legacy Type and Group based Template Filter.
+                * false: Use the new Condition based Template Filter. This is the default value.</preference_description>
+            <context name="Teamcenter">
+                <value>true</value>
+            </context>
+        </preference>
+    </category>
+</preferences>

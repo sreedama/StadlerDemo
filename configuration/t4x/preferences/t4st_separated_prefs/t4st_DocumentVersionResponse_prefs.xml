@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<preferences version="10.0">
+  <category name="SAP Gateway T4ST">
+    <category_description>No description available for this category.</category_description>
+    
+    <preference name="T4ST_DocumentVersionResponseTypeList" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>No description available for this preference</preference_description>
+      <context name="Teamcenter">
+        <value>SR5TechDocumentRevision</value>
+        <value>SR5EngArticleRevision</value>
+      </context>
+    </preference>
+    
+    <preference name="T4ST_DocumentVersionResponseCondition" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>use a BMIDE condition to skip the transfer. i.e. Ais3_DoDocumentVersionResponseTransfer or isTrue</preference_description>
+      <context name="Teamcenter">
+        <value>SR5_DoDocumentVersionTransfer</value>
+      </context>
+    </preference>
+
+	<!-- Mapping 4 -->         
+	<preference name="T4ST_DocumentVersionResponseMapping4$ItemRevision" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>No description available for this preference</preference_description>
+      <context name="Teamcenter">
+        <value>#__getAllProperties__#:Properties</value>     
+      </context>
+    </preference>
+
+    <preference name="T4ST_DocumentVersionResponsePropertyListMode4$ItemRevision" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>No description available for this preference</preference_description>
+      <context name="Teamcenter">
+        <value>2</value>
+      </context>  
+    </preference>    
+    <preference name="T4ST_DocumentVersionResponseProperty2ProcessList4$ItemRevision" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>No description available for this preference</preference_description>
+      <context name="Teamcenter">        
+        <value>sr5SAPID</value>
+        <value>sr5SAPTransStatus</value>
+        <value>sr5SAPTransDate</value>
+	  </context>  
+    </preference>	
+    
+	<!-- Mapping 2 -->
+    <preference name="T4ST_DocumentVersionResponseMapping2$ItemRevision" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>No description available for this preference</preference_description>
+      <context name="Teamcenter">
+        <value>$ItemRevision</value>
+      </context>
+    </preference>   
+	<preference name="T4ST_DocumentVersionResponseFieldMapping2$ItemRevision" type="String" array="true" disabled="false">
+      <preference_description>No description available for this preference</preference_description>
+      <context name="Teamcenter">        
+        <value>sr5SAPID</value>
+        <value>sr5SAPTransStatus</value>
+        <value>sr5SAPTransDate</value>  
+      </context>
+    </preference>
+    
+  </category>
+</preferences>

@@ -1,0 +1,52 @@
+############################################################################################################
+#  CNO Expansion Definition File
+############################################################################################################
+# Version History
+#
+# Version    Date           Name               Description of Change
+# 1.0        22-03-2022     user01     Initial
+############################################################################################################
+
+#process
+C:SR5GenEngObjRevision>>process_stage_list>C:EPMTask
+
+
+#cannot skip empty with this version of VFW
+C:ItemRevision>view;p:Latest Working>C:ItemRevision;0
+
+
+#tech document
+#C:SR5GenEngObjRevision>>SR5HasSpecificationDocument>SR5TechDocumentRevision
+C:SR5GenEngObjRevision>>SR5HasSpecificationDocument>SR5TechDocument
+
+#C:SR5GenEngObjRevision>>SR5HasRequiredDocument>SR5TechDocumentRevision
+C:SR5GenEngObjRevision>>SR5HasRequiredDocument>SR5TechDocument
+
+SR5TechDocument<items_tag:Latest Working<SR5TechDocumentRevision
+
+
+#desired dataset
+C:SR5GenEngObjRevision>>IMAN_specification>CATPart
+C:SR5GenEngObjRevision>>IMAN_specification>CATProduct
+C:SR5GenEngObjRevision>>IMAN_specification>CATDrawing
+C:SR5GenEngObjRevision>>structure_revisions>C:PSBOMViewRevision
+C:SR5GenEngObjRevision>>IMAN_master_form_rev>C:Form
+
+#group
+C:SR5GenEngObjRevision>>active_user>User
+User<user<GroupMember
+
+#SAP properties
+C:SR5GenEngObjRevision>>items_tag>C:Item
+#SR5EngArticleRevision>>items_tag>SR5EngArticle
+
+
+#partial ccp because some of them will be targetted
+CATDrawing>catiaV5_DWGLink/SKIP:Engineering Approved,40 - Engineering Released,50 - Released,70 - Engineering Superseded,80 - Superseded,90 - Discontinued>C:SR5GenEngObjRevision/ALIAS:DWGRevision
+
+
+#Env.
+
+
+#AltRep
+SR5EngArticleAR>sr5AltRepList>SR5EngArticleRevision/ALIAS:MasterOfAltRepRev

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TcBusinessDataLocalization xmlns="http://teamcenter.com/BusinessModel/TcBusinessDataLocalization"
+    batchXSDVersion="1.0" Date="Mon Jan 17 05:41:31 PM 2022">
+  <Add>
+    <key locale="de_DE" id="LOVValue{::}SR5SFSteel{::}DIN EN 10051" status="Approved">DIN EN 10051</key>
+    <key locale="de_DE" id="LOVValueDescription{::}SR5SFSteel{::}DIN EN 10051" status="Approved">Blech s &lt;= 25</key>
+    <key locale="de_DE" id="LOVValue{::}SR5SFSteel{::}DIN EN 10131" status="Approved">DIN EN 10131</key>
+    <key locale="de_DE" id="LOVValueDescription{::}SR5SFSteel{::}DIN EN 10131" status="Approved">Blech 0.35 &gt; s &lt;= 3</key>
+    <key locale="de_DE" id="LOVValue{::}SR5SFSteel{::}DIN EN 10029" status="Approved">DIN EN 10029</key>
+    <key locale="de_DE" id="LOVValueDescription{::}SR5SFSteel{::}DIN EN 10029" status="Approved">Blech 3 &gt; s &lt;= 400</key>
+    <key locale="de_DE" id="LOVValue{::}SR5SFSteel{::}DIN EN 10305-1" status="Approved">DIN EN 10305-1</key>
+    <key locale="de_DE" id="LOVValueDescription{::}SR5SFSteel{::}DIN EN 10305-1" status="Approved">Rohr D &lt;= 380</key>
+    <key locale="de_DE" id="LOVValue{::}SR5SFSteel{::}DIN EN 10059" status="Approved">DIN EN 10059</key>
+    <key locale="de_DE" id="LOVValueDescription{::}SR5SFSteel{::}DIN EN 10059" status="Approved">Vierkantstab</key>
+    <key locale="de_DE" id="LOVValue{::}SR5SFSteel{::}DIN EN 10056-1" status="Approved">DIN EN 10056-1</key>
+    <key locale="de_DE" id="LOVValueDescription{::}SR5SFSteel{::}DIN EN 10056-1" status="Approved">L-Profil gleich- und ungleichschenklig rund</key>
+    <key locale="de_DE" id="LOVValue{::}SR5SFSteel{::}DIN 1022" status="Approved">DIN 1022</key>
+    <key locale="de_DE" id="LOVValueDescription{::}SR5SFSteel{::}DIN 1022" status="Approved">L-Profil, gleichschenklig, scharfkantig 20x3 &gt; axt &lt;= 50x5</key>
+    <key locale="de_DE" id="LOVValue{::}SR5SFSteel{::}DIN EN 10219" status="Approved">DIN EN 10219</key>
+    <key locale="de_DE" id="LOVValueDescription{::}SR5SFSteel{::}DIN EN 10219" status="Approved">kreisfoermiges Hohlprofil dxt &lt;= 2500x40 / quadratisches Hohlprofil Bxt &lt;= 500x40 / rechteckiges Hohlprofil HxBxt &lt;= 500x500x40</key>
+    <key locale="de_DE" id="LOVValue{::}SR5SFSteel{::}DIN EN 10060" status="Approved">DIN EN 10060</key>
+    <key locale="de_DE" id="LOVValueDescription{::}SR5SFSteel{::}DIN EN 10060" status="Approved">Rundstab</key>
+  </Add>
+</TcBusinessDataLocalization>

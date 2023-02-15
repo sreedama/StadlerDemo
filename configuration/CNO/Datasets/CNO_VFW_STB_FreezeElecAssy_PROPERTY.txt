@@ -1,0 +1,17 @@
+############################################################################################################
+#  CNO Object Property Definition File
+############################################################################################################
+# Version History
+#
+# Version    Date           Name               Description of Change
+# 1.0        15-03-2022     testu     Initial
+############################################################################################################
+
+C:PSBOMViewRevision:object_name~PSBOMView_Name
+
+C:ItemRevision:checked_out~checked_out
+
+C:ItemRevision:last_release_status~last_release_status
+
+#C:ItemRevision:fnd0InProcess~fnd0InProcess
+C:EPMTask:object_name~object_name

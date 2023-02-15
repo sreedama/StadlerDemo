@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+=======================================================================
+Copyright 2017.
+Siemens Product Lifecycle Management Software Inc.
+All Rights Reserved.
+=======================================================================
+     Filename: Fnd0FasnGrpAttrFormSummary.xml
+
+    Style sheet rendering for Fastener Group Attribute Form properties.
+=======================================================================
+-->
+
+<rendering>
+
+	<page title="General" titleKey="tc_xrt_General">
+		<section>
+			<property name="object_name"/>
+			<property name="sr5MatReqDescription" />
+		</section>
+		<section titleKey ="strxrt_Datasheets">
+			<objectSet source="IMAN_specification.Dataset" defaultdisplay="tableDisplay" sortby = "object_string" sortdirection = "ascending">
+				<tableDisplay>
+					<property name="object_string"/>
+					<property name="object_type"/>
+					<property name="release_status_list"/>
+					<property name="date_released"/>
+					<property name="owning_user"/>
+				</tableDisplay>
+				<thumbnailDisplay/>
+				<treeDisplay>
+					<property name="object_string"/>
+					<property name="object_type"/>
+					<property name="release_status_list"/>
+					<property name="date_released"/>
+					<property name="owning_user"/>
+				</treeDisplay>
+				<listDisplay/>
+				<command actionKey="newBusinessObjectContextualAction" commandId="com.teamcenter.rac.common.AddNew" renderingHint="commandbutton"/>
+				<command actionKey="pasteAction" commandId="com.teamcenter.rac.viewer.pastewithContext" renderingHint="commandbutton"/>
+				<command actionKey="cutAction" commandId="org.eclipse.ui.edit.cut" renderingHint="commandbutton">
+					<parameter name="localSelection" value="true"/>
+				</command>
+			</objectSet>
+		</section>
+		<section titleKey="strxrt_created_material" title="Created Material">
+			<objectSet source="IMAN_reference.Mat1MaterialRevision" defaultdisplay="tableDisplay" sortby="object_string" sortdirection="ascending">
+				<tableDisplay>
+					<property name="object_string"/>
+					<property name="object_type"/>
+					<property name="release_status_list"/>
+					<property name="date_released"/>
+					<property name="owning_user"/>
+				</tableDisplay>
+				<thumbnailDisplay/>
+				<treeDisplay>
+					<property name="object_string"/>
+					<property name="object_type"/>
+					<property name="release_status_list"/>
+					<property name="date_released"/>
+					<property name="owning_user"/>
+				</treeDisplay>
+				<listDisplay/>
+				<command actionKey="newBusinessObjectContextualAction" commandId="com.teamcenter.rac.common.AddNew" renderingHint="commandbutton"/>
+				<command actionKey="pasteAction" commandId="com.teamcenter.rac.viewer.pastewithContext" renderingHint="commandbutton"/>
+				<command actionKey="cutAction" commandId="org.eclipse.ui.edit.cut" renderingHint="commandbutton">
+					<parameter name="localSelection" value="true"/>
+				</command>
+			</objectSet>
+		</section>
+    </page>
+
+</rendering>

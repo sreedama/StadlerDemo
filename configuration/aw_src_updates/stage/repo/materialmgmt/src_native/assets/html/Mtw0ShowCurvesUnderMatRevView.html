@@ -1,0 +1,35 @@
+<aw-panel>
+    <aw-panel-body>
+        <aw-column width="30%">
+            <aw-panel-section caption="Tables"></aw-panel-section>
+            <aw-scrollpanel>
+                <div>
+                    <aw-command-bar anchor="Mtw0SmartTableAddRemoveCommandAnchor" alignment="HORIZONTAL" class="aw-commands-commandBarHorizontalRight"></aw-command-bar>
+                </div>
+                <aw-list dataprovider="data.dataProviders.Mtw0SmartTablesListDataProvider" show-decorators="true" show-drop-area="true" show-context-menu="true">
+                    <aw-default-cell vmo="item"></aw-default-cell>
+                </aw-list>                
+            </aw-scrollpanel>
+            <aw-panel-section caption="Inherited Tables"></aw-panel-section>
+            <aw-scrollpanel>
+                <aw-list dataprovider="data.dataProviders.Mtw0InheritedTablesListDataProvider" show-decorators="true" show-drop-area="true" show-context-menu="true">
+                    <aw-default-cell vmo="item"></aw-default-cell>
+                </aw-list>
+            </aw-scrollpanel>
+        </aw-column>
+        <aw-splitter direction="vertical" exist-when="data.Mtw0ShowSmartCurveInChart"></aw-splitter>
+        <aw-column width="70%">
+            <aw-panel-section caption="{{data.Mtw0SelectedSmartTableName}}" exist-when="data.Mtw0ShowSmartCurveInChart">
+                <aw-chart chart-provider="data.chartProviders.Mtw0SmartCurvesChartProvider" exist-when="data.Mtw0ShowSmartCurveInChart"></aw-chart>
+            </aw-panel-section>            
+            <aw-splitter direction="horizontal" exist-when="data.Mtw0ShowSmartCurveValuesInTable"></aw-splitter>
+            <aw-panel-section caption="{{data.Mtw0SelectedSmartCurveName}}" exist-when="data.Mtw0ShowSmartCurveValuesInTable">
+                <div>
+                    <aw-command-bar anchor="Mtw0SmartCurveTableEditCommandAnchor" alignment="HORIZONTAL" class="aw-commands-commandBarHorizontalLeft" exist-when="data.Mtw0ShowSmartCurveValuesInTable && !data.Mtw0SelectedInheritedTable"></aw-command-bar>
+                    <aw-command-bar anchor="Mtw0SmartCurveTableAddRemoveDuplicateCommandAnchor" alignment="HORIZONTAL" class="aw-commands-commandBarHorizontalRight" exist-when="data.Mtw0ShowSmartCurveValuesInTable && !data.Mtw0SelectedInheritedTable"></aw-command-bar>
+                </div>
+                <aw-splm-table gridid="Mtw0SmartCurveTable" exist-when="data.Mtw0ShowSmartCurveValuesInTable"></aw-splm-table>
+            </aw-panel-section>
+        </aw-column>
+    </aw-panel-body>
+</aw-panel>

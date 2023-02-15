@@ -1,0 +1,617 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   id="Layer_1"
+   data-name="Layer 1"
+   viewBox="0 0 48 48"
+   version="1.1"
+   sodipodi:docname="typeSR5ColorLibrary48.svg"
+   inkscape:version="1.1 (c68e22c387, 2021-05-23)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs956">
+    <linearGradient
+       inkscape:collect="always"
+       id="linearGradient2578">
+      <stop
+         style="stop-color:#05a6ff;stop-opacity:0.75100404"
+         offset="0"
+         id="stop2574" />
+      <stop
+         style="stop-color:#05a6ff;stop-opacity:1"
+         offset="1"
+         id="stop2576" />
+    </linearGradient>
+    <linearGradient
+       inkscape:collect="always"
+       id="linearGradient2378">
+      <stop
+         style="stop-color:#1e5a9a;stop-opacity:0.75100404"
+         offset="0"
+         id="stop2374" />
+      <stop
+         style="stop-color:#1e5a9a;stop-opacity:1"
+         offset="1"
+         id="stop2376" />
+    </linearGradient>
+    <linearGradient
+       inkscape:collect="always"
+       id="linearGradient1856">
+      <stop
+         style="stop-color:#1e5a9a;stop-opacity:1"
+         offset="0"
+         id="stop1852" />
+      <stop
+         style="stop-color:#1e5a9a;stop-opacity:1"
+         offset="0.52466667"
+         id="stop2022" />
+      <stop
+         style="stop-color:#1e5a9a;stop-opacity:0.74698794"
+         offset="1"
+         id="stop1854" />
+    </linearGradient>
+    <linearGradient
+       id="linearGradient1570"
+       data-name="Dark Blue Grad"
+       x1="22.672001"
+       y1="4.671"
+       x2="28.327999"
+       y2="10.327"
+       gradientUnits="userSpaceOnUse"
+       spreadMethod="pad">
+      <stop
+         offset="0"
+         stop-color="#73b4c8"
+         id="stop1560" />
+      <stop
+         offset="0.175"
+         stop-color="#6aaec3"
+         id="stop1562" />
+      <stop
+         offset="0.457"
+         stop-color="#529eb5"
+         id="stop1564" />
+      <stop
+         offset="0.809"
+         stop-color="#2c839f"
+         id="stop1566"
+         style="stop-color:#153f6d;stop-opacity:1" />
+      <stop
+         offset="1"
+         stop-color="#147391"
+         id="stop1568" />
+    </linearGradient>
+    <linearGradient
+       id="linearGradient1558"
+       data-name="Dark Blue Grad"
+       x1="22.672001"
+       y1="4.671"
+       x2="28.327999"
+       y2="10.327"
+       gradientUnits="userSpaceOnUse"
+       spreadMethod="pad">
+      <stop
+         offset="0"
+         stop-color="#73b4c8"
+         id="stop1548" />
+      <stop
+         offset="0.175"
+         stop-color="#6aaec3"
+         id="stop1550" />
+      <stop
+         offset="0.457"
+         stop-color="#529eb5"
+         id="stop1552" />
+      <stop
+         offset="0.809"
+         stop-color="#2c839f"
+         id="stop1554"
+         style="stop-color:#1e5a9a;stop-opacity:1" />
+      <stop
+         offset="1"
+         stop-color="#147391"
+         id="stop1556" />
+    </linearGradient>
+    <linearGradient
+       id="linearGradient1546"
+       data-name="Dark Blue Grad"
+       x1="22.672001"
+       y1="4.671"
+       x2="28.327999"
+       y2="10.327"
+       gradientUnits="userSpaceOnUse"
+       spreadMethod="pad">
+      <stop
+         offset="0"
+         stop-color="#73b4c8"
+         id="stop1536" />
+      <stop
+         offset="0.175"
+         stop-color="#6aaec3"
+         id="stop1538" />
+      <stop
+         offset="0.457"
+         stop-color="#529eb5"
+         id="stop1540" />
+      <stop
+         offset="0.809"
+         stop-color="#2c839f"
+         id="stop1542"
+         style="stop-color:#1e5a9a;stop-opacity:1" />
+      <stop
+         offset="1"
+         stop-color="#147391"
+         id="stop1544" />
+    </linearGradient>
+    <linearGradient
+       id="linearGradient1534"
+       data-name="Dark Blue Grad"
+       x1="22.672001"
+       y1="4.671"
+       x2="28.327999"
+       y2="10.327"
+       gradientUnits="userSpaceOnUse"
+       spreadMethod="pad">
+      <stop
+         offset="0"
+         stop-color="#73b4c8"
+         id="stop1524" />
+      <stop
+         offset="0.175"
+         stop-color="#6aaec3"
+         id="stop1526" />
+      <stop
+         offset="0.457"
+         stop-color="#529eb5"
+         id="stop1528" />
+      <stop
+         offset="0.809"
+         stop-color="#2c839f"
+         id="stop1530"
+         style="stop-color:#1e5a9a;stop-opacity:1" />
+      <stop
+         offset="1"
+         stop-color="#147391"
+         id="stop1532" />
+    </linearGradient>
+    <linearGradient
+       id="linearGradient1522"
+       data-name="Dark Blue Grad"
+       x1="22.672001"
+       y1="4.671"
+       x2="28.327999"
+       y2="10.327"
+       gradientUnits="userSpaceOnUse"
+       spreadMethod="pad">
+      <stop
+         offset="0"
+         stop-color="#73b4c8"
+         id="stop1512" />
+      <stop
+         offset="0.175"
+         stop-color="#6aaec3"
+         id="stop1514" />
+      <stop
+         offset="0.457"
+         stop-color="#529eb5"
+         id="stop1516" />
+      <stop
+         offset="0.809"
+         stop-color="#2c839f"
+         id="stop1518"
+         style="stop-color:#1e5a9a;stop-opacity:1" />
+      <stop
+         offset="1"
+         stop-color="#147391"
+         id="stop1520" />
+    </linearGradient>
+    <linearGradient
+       id="linearGradient1510"
+       data-name="Dark Blue Grad"
+       x1="22.672001"
+       y1="4.671"
+       x2="28.327999"
+       y2="10.327"
+       gradientUnits="userSpaceOnUse"
+       spreadMethod="pad">
+      <stop
+         offset="0"
+         stop-color="#73b4c8"
+         id="stop1500" />
+      <stop
+         offset="0.175"
+         stop-color="#6aaec3"
+         id="stop1502" />
+      <stop
+         offset="0.457"
+         stop-color="#529eb5"
+         id="stop1504" />
+      <stop
+         offset="0.809"
+         stop-color="#2c839f"
+         id="stop1506"
+         style="stop-color:#1e5a9a;stop-opacity:1" />
+      <stop
+         offset="1"
+         stop-color="#147391"
+         id="stop1508" />
+    </linearGradient>
+    <linearGradient
+       id="linearGradient1498"
+       data-name="Dark Blue Grad"
+       x1="22.672001"
+       y1="4.671"
+       x2="28.327999"
+       y2="10.327"
+       gradientUnits="userSpaceOnUse"
+       spreadMethod="pad">
+      <stop
+         offset="0"
+         stop-color="#73b4c8"
+         id="stop1488" />
+      <stop
+         offset="0.175"
+         stop-color="#6aaec3"
+         id="stop1490" />
+      <stop
+         offset="0.457"
+         stop-color="#529eb5"
+         id="stop1492" />
+      <stop
+         offset="0.809"
+         stop-color="#2c839f"
+         id="stop1494"
+         style="stop-color:#1e5a9a;stop-opacity:1" />
+      <stop
+         offset="1"
+         stop-color="#147391"
+         id="stop1496" />
+    </linearGradient>
+    <linearGradient
+       id="linearGradient1358"
+       data-name="Dark Blue Grad"
+       x1="22.672001"
+       y1="4.671"
+       x2="28.327999"
+       y2="10.327"
+       gradientUnits="userSpaceOnUse"
+       spreadMethod="pad">
+      <stop
+         offset="0"
+         stop-color="#73b4c8"
+         id="stop1348" />
+      <stop
+         offset="0.175"
+         stop-color="#6aaec3"
+         id="stop1350" />
+      <stop
+         offset="0.457"
+         stop-color="#529eb5"
+         id="stop1352"
+         style="stop-color:#007bc0;stop-opacity:1" />
+      <stop
+         offset="0.809"
+         stop-color="#2c839f"
+         id="stop1354" />
+      <stop
+         offset="1"
+         stop-color="#147391"
+         id="stop1356" />
+    </linearGradient>
+    <linearGradient
+       id="linearGradient1218"
+       data-name="Dark Blue Grad"
+       x1="22.672001"
+       y1="4.671"
+       x2="28.327999"
+       y2="10.327"
+       gradientUnits="userSpaceOnUse"
+       spreadMethod="pad">
+      <stop
+         offset="0"
+         stop-color="#73b4c8"
+         id="stop1208" />
+      <stop
+         offset="0.175"
+         stop-color="#6aaec3"
+         id="stop1210"
+         style="stop-color:#007bc0;stop-opacity:1" />
+      <stop
+         offset="0.457"
+         stop-color="#529eb5"
+         id="stop1212" />
+      <stop
+         offset="0.809"
+         stop-color="#2c839f"
+         id="stop1214" />
+      <stop
+         offset="1"
+         stop-color="#147391"
+         id="stop1216" />
+    </linearGradient>
+    <linearGradient
+       id="linearGradient1206"
+       data-name="Dark Blue Grad"
+       x1="22.672"
+       y1="4.671"
+       x2="28.328"
+       y2="10.327"
+       gradientUnits="userSpaceOnUse">
+      <stop
+         offset="0"
+         stop-color="#73b4c8"
+         id="stop1196" />
+      <stop
+         offset="0.175"
+         stop-color="#6aaec3"
+         id="stop1198"
+         style="stop-color:#007bc0;stop-opacity:1" />
+      <stop
+         offset="0.457"
+         stop-color="#529eb5"
+         id="stop1200" />
+      <stop
+         offset="0.809"
+         stop-color="#2c839f"
+         id="stop1202" />
+      <stop
+         offset="1"
+         stop-color="#147391"
+         id="stop1204" />
+    </linearGradient>
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient1856"
+       id="linearGradient1858"
+       x1="25.611723"
+       y1="29.186813"
+       x2="20.043957"
+       y2="23.970695"
+       gradientUnits="userSpaceOnUse" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient2378"
+       id="linearGradient2380"
+       x1="23.032967"
+       y1="5.0989013"
+       x2="27.721611"
+       y2="9.9633703"
+       gradientUnits="userSpaceOnUse" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient2578"
+       id="linearGradient2580"
+       x1="5.860806"
+       y1="19.399267"
+       x2="11.194139"
+       y2="23.677656"
+       gradientUnits="userSpaceOnUse" />
+  </defs>
+  <sodipodi:namedview
+     id="namedview954"
+     pagecolor="#505050"
+     bordercolor="#eeeeee"
+     borderopacity="1"
+     inkscape:pageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="0"
+     showgrid="false"
+     inkscape:zoom="4.265625"
+     inkscape:cx="1.5238095"
+     inkscape:cy="-2.8131868"
+     inkscape:window-width="1920"
+     inkscape:window-height="1028"
+     inkscape:window-x="-6"
+     inkscape:window-y="-6"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="Layer_1" />
+  <linearGradient
+     id="paper_gradient"
+     data-name="paper gradient"
+     x1="8.75"
+     y1="8.864"
+     x2="39.368"
+     y2="39.481"
+     gradientUnits="userSpaceOnUse">
+    <stop
+       offset="0"
+       stop-color="#fff"
+       id="stop891" />
+    <stop
+       offset="0.221"
+       stop-color="#f8f8f8"
+       id="stop893" />
+    <stop
+       offset="0.541"
+       stop-color="#e5e5e5"
+       id="stop895" />
+    <stop
+       offset="0.92"
+       stop-color="#c6c6c6"
+       id="stop897" />
+    <stop
+       offset="1"
+       stop-color="#bebebe"
+       id="stop899" />
+  </linearGradient>
+  <linearGradient
+     id="Dark_Blue_Grad"
+     data-name="Dark Blue Grad"
+     x1="22.672"
+     y1="4.671"
+     x2="28.328"
+     y2="10.327"
+     gradientUnits="userSpaceOnUse"
+     xlink:href="#linearGradient1570">
+    <stop
+       offset="0"
+       stop-color="#73b4c8"
+       id="stop902" />
+    <stop
+       offset="0.175"
+       stop-color="#6aaec3"
+       id="stop904" />
+    <stop
+       offset="0.457"
+       stop-color="#529eb5"
+       id="stop906" />
+    <stop
+       offset="0.809"
+       stop-color="#2c839f"
+       id="stop908" />
+    <stop
+       offset="1"
+       stop-color="#147391"
+       id="stop910" />
+  </linearGradient>
+  <linearGradient
+     id="front_-45"
+     data-name="front -45"
+     x1="12.672"
+     y1="9.672"
+     x2="18.328"
+     y2="15.328"
+     gradientUnits="userSpaceOnUse">
+    <stop
+       offset="0"
+       stop-color="#f2f2f2"
+       id="stop913" />
+    <stop
+       offset="0.5"
+       stop-color="#ccc"
+       id="stop915" />
+    <stop
+       offset="0.63"
+       stop-color="#c7c7c7"
+       id="stop917" />
+    <stop
+       offset="0.779"
+       stop-color="#b9b9b9"
+       id="stop919" />
+    <stop
+       offset="0.938"
+       stop-color="#a2a2a2"
+       id="stop921" />
+    <stop
+       offset="0.99"
+       stop-color="#999"
+       id="stop923" />
+  </linearGradient>
+  <linearGradient
+     id="Light_Blue_Grad"
+     data-name="Light Blue Grad"
+     x1="5.672"
+     y1="18.672"
+     x2="11.328"
+     y2="24.328"
+     gradientUnits="userSpaceOnUse">
+    <stop
+       offset="0"
+       stop-color="#afd7e1"
+       id="stop926" />
+    <stop
+       offset="1"
+       stop-color="#73b4c8"
+       id="stop928" />
+  </linearGradient>
+  <linearGradient
+     id="linear-gradient"
+     x1="6.5"
+     y1="32.5"
+     x2="14.5"
+     y2="32.5"
+     gradientUnits="userSpaceOnUse">
+    <stop
+       offset="0"
+       stop-color="#b1b1b1"
+       id="stop931" />
+    <stop
+       offset="1"
+       stop-color="#7d7d7d"
+       id="stop933" />
+  </linearGradient>
+  <linearGradient
+     id="Dark_Blue_Grad-2"
+     x1="19.06"
+     y1="24.73"
+     x2="24.801"
+     y2="30.471"
+     xlink:href="#Dark_Blue_Grad" />
+  <g
+     id="g20948">
+    <path
+       d="M42.093,8.943c5.481,8.52,3.831,14.858-1.277,19.238C34.3,33.771,27.625,26.936,25.1,33.817,21.84,42.7,35.2,40.493,35.206,40.5,38.9,50.516,2.991,52.336,1.55,28.639S30.136-9.646,42.093,8.943ZM31.229,15.372c-3.246,1.719-4.638,5.409-3.107,8.241s5.4,3.734,8.649,2.015,4.638-5.409,3.107-8.241S34.476,13.653,31.229,15.372Z"
+       stroke="#464646"
+       stroke-linecap="round"
+       stroke-linejoin="round"
+       fill="url(#paper_gradient)"
+       id="path937" />
+    <circle
+       cx="25.5"
+       cy="7.499"
+       r="4"
+       stroke="#147391"
+       stroke-linecap="round"
+       stroke-linejoin="round"
+       fill="url(#Dark_Blue_Grad)"
+       id="circle939"
+       style="fill:url(#linearGradient2380);stroke:#153f6d;fill-opacity:1" />
+    <circle
+       cx="15.5"
+       cy="12.5"
+       r="4"
+       stroke="#6e6e6e"
+       stroke-linecap="round"
+       stroke-linejoin="round"
+       fill="url(#front_-45)"
+       id="circle941" />
+    <circle
+       cx="8.5"
+       cy="21.5"
+       r="4"
+       stroke="#147391"
+       stroke-linecap="round"
+       stroke-linejoin="round"
+       fill="url(#Light_Blue_Grad)"
+       id="circle943"
+       style="fill:url(#linearGradient2580);stroke:#007bc0;fill-opacity:1" />
+    <circle
+       cx="10.5"
+       cy="32.5"
+       r="4"
+       stroke="#464646"
+       stroke-linecap="round"
+       stroke-linejoin="round"
+       fill="url(#linear-gradient)"
+       id="circle945" />
+    <polyline
+       points="28.5 16.5 47.5 1.499 32.5 20.5"
+       fill="#6e6e6e"
+       stroke="#464646"
+       stroke-linecap="round"
+       stroke-linejoin="round"
+       id="polyline947" />
+    <path
+       d="M25,20.952a6.249,6.249,0,0,0-5.522,4.54,14.686,14.686,0,0,1-3.119,6.255s10.582,2.667,11.576-7.859"
+       stroke="#147391"
+       stroke-linecap="round"
+       stroke-linejoin="round"
+       fill="url(#Dark_Blue_Grad-2)"
+       id="path949"
+       style="fill:url(#linearGradient1858);stroke:#153f6d;fill-opacity:1" />
+    <rect
+       x="25.669"
+       y="17.672"
+       width="5.659"
+       height="5.657"
+       transform="translate(-6.154 26.126) rotate(-44.95)"
+       fill="#969696"
+       stroke="#464646"
+       stroke-linecap="round"
+       stroke-linejoin="round"
+       id="rect951" />
+  </g>
+</svg>

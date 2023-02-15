@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TcBusinessData xmlns="http://teamcenter.com/BusinessModel/TcBusinessData" batchXSDVersion="1.0"
+    Date="Mon Jan 17 05:42:13 PM 2022">
+  <Add/>
+  <Change>
+    <TcLOV name="SR5SFCopper" lovType="ListOfValuesString" usage="Exhaustive" description=""
+        isManagedExternally="true">
+      <TcLOVValue value="DIN EN 12449" description="Rundrohr nahtlos 3 &gt; OD &lt;= 450 und 0.3 &gt; t &lt;= 20" conditionName="isTrue"/>
+      <TcLOVValue value="DIN EN 12735-1" description="Rundrohr nahtlos 3 &gt; d &lt;= 133" conditionName="isTrue"/>
+      <TcLOVValue value="DIN EN 12735-2" description="Rundrohr nahtlos 6 &gt; d &lt;= 133" conditionName="isTrue"/>
+    </TcLOV>
+  </Change>
+</TcBusinessData>

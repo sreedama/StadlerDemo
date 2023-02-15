@@ -1,0 +1,550 @@
+# Attribute Synchronisation mapping file for site "IMC--1920848517" (id -1920848517)
+# TC_ROOT = D:\plm\tc112
+# TC_DATA = D:\plmshare\tcdata
+# TC_DB_CONNECT = infodba:XAD49H0dd2oiO1uYgNg/UB/+jGkoReKxDvTjAiDvEUY@DATABASE=tcprd;SERVER=2141db0070PLM01,1433
+# Exported by infodba (infodba) at 2017/06/15 20:01:33
+#
+# Syntax:
+#    <title> : <mapping> [ <qualifiers> ]
+#    where <mapping> is one of:
+#        IM
+#        IRM
+#        CONST( <value> )
+#        PREF( [ <scope> : ] <value> )
+#        <step>.<step>...<property>
+#        where <step> is one of:
+#            <property>
+#            GRM( <relationship-type> [ , <object-type> ] )
+#            NR( <named-reference-type> [ , <form-type> ] )
+#            SIGNOFF( [ <release-level> , ] <role> )
+#            ItemRevision
+#            Item
+#            Job
+#    and <qualifiers> are:
+#        /write_once
+#        /description=<description>
+#        /master=both|cad|iman|none
+#        /freezable
+#
+# Real mappings:
+#
+# NOTE: for item master form the qualifier master=nnn is reassigned to master=iman
+#       where nnn can be cad, both, or none.
+#
+
+# (hard-wired) DB_PART_NO : "Part Number"
+# (hard-wired) DB_PART_REV : "Part Revision"
+# (hard-wired) DB_PART_TYPE : "Part Type"
+# (hard-wired) DB_UNITS : "Part Unit of Measure"
+"DB_PART_NAME" : Item.object_name /master=iman /description="Part Name"
+"DB_PART_DESC" : Item.object_desc /master=iman /description="Part Description"
+
+{ Dataset type="AdobeIllustrator"
+}
+
+{ Dataset type="AdobeInDesign"
+}
+
+{ Dataset type="Bitmap"
+}
+
+{ Dataset type="Bitmap_Thumbnail"
+}
+
+{ Dataset type="Briefcase"
+}
+
+{ Dataset type="CAEAnalysisDS"
+}
+
+{ Dataset type="CAEBC"
+}
+
+{ Dataset type="CAEConn"
+}
+
+{ Dataset type="CAEGeom"
+    "DB_PART_NAME" : Item.object_name /write_once /description="Part Name"
+    "DB_PART_DESC" : Item.object_desc /write_once /description="Part Description"
+
+}
+
+{ Dataset type="CAELoad"
+}
+
+{ Dataset type="CAEMesh"
+    "DB_PART_NAME" : Item.object_name /write_once /description="Part Name"
+    "DB_PART_DESC" : Item.object_desc /write_once /description="Part Description"
+
+}
+
+{ Dataset type="CAEResults"
+}
+
+{ Dataset type="CAESolution"
+    "DB_PART_NAME" : Item.object_name /write_once /description="Part Name"
+    "DB_PART_DESC" : Item.object_desc /write_once /description="Part Description"
+
+}
+
+{ Dataset type="CAESolver"
+}
+
+{ Dataset type="CAEStructureMap"
+}
+
+{ Dataset type="CLIPS"
+}
+
+{ Dataset type="CME_Report"
+}
+
+{ Dataset type="ClearanceDBConnection"
+}
+
+{ Dataset type="ClearanceDBReport"
+}
+
+{ Dataset type="ClearanceResults"
+}
+
+{ Dataset type="ClearanceResultsFilter"
+}
+
+{ Dataset type="CrfExcelStylesheet"
+}
+
+{ Dataset type="CrfHtmlStylesheet"
+}
+
+{ Dataset type="CrfMSWordDocStylesheet"
+}
+
+{ Dataset type="CrfOutputExcel"
+}
+
+{ Dataset type="CrfOutputHtml"
+}
+
+{ Dataset type="CrfOutputMSWord"
+}
+
+{ Dataset type="CrfOutputPdf"
+}
+
+{ Dataset type="CrfOutputText"
+}
+
+{ Dataset type="CrfOutputXml"
+}
+
+{ Dataset type="CrfPdfStylesheet"
+}
+
+{ Dataset type="CrfTextStylesheet"
+}
+
+{ Dataset type="CrfXmlStylesheet"
+}
+
+{ Dataset type="DFA_KF"
+}
+
+{ Dataset type="DXF"
+}
+
+{ Dataset type="DirectModel"
+}
+
+{ Dataset type="DirectModel3DMarkup"
+}
+
+{ Dataset type="DirectModelAnimation"
+}
+
+{ Dataset type="DirectModelAssembly"
+}
+
+{ Dataset type="DirectModelFlowChart"
+}
+
+{ Dataset type="DirectModelIllustrationBook"
+}
+
+{ Dataset type="DirectModelIllustrationSheet"
+}
+
+{ Dataset type="DirectModelMarkup"
+}
+
+{ Dataset type="DirectModelMotion"
+}
+
+{ Dataset type="DirectModelSession"
+}
+
+{ Dataset type="DrawingSheet"
+}
+
+{ Dataset type="ECSnapshot"
+}
+
+{ Dataset type="ExcelReportFormatter"
+}
+
+{ Dataset type="Fnd0BMIDEDeployArchive"
+}
+
+{ Dataset type="Fnd0BMIDEProjectBackup"
+}
+
+{ Dataset type="Fnd0BMIDEResource"
+}
+
+{ Dataset type="Fnd0ContextMenuSuppRuleXML"
+}
+
+{ Dataset type="Fnd0IconResource"
+}
+
+{ Dataset type="Fnd0LaunchPadRendering"
+}
+
+{ Dataset type="Fnd0PropertyMap"
+}
+
+{ Dataset type="Fnd0ReqMarkup"
+}
+
+{ Dataset type="Fnd0SharedMetadataCache"
+}
+
+{ Dataset type="Fnd0SpatialHierarchy"
+}
+
+{ Dataset type="Fnd0TcVisConstraint"
+}
+
+{ Dataset type="Fnd0TcVisFilter"
+}
+
+{ Dataset type="Fnd0Visio"
+}
+
+{ Dataset type="Fnd0VisioTmplDataset"
+}
+
+{ Dataset type="FullText"
+}
+
+{ Dataset type="GIF"
+}
+
+{ Dataset type="HPGL"
+}
+
+{ Dataset type="HTML"
+}
+
+{ Dataset type="ICSClassFiles"
+}
+
+{ Dataset type="IMANReportData"
+}
+
+{ Dataset type="IMANReportDesign"
+}
+
+{ Dataset type="IPAConfig"
+}
+
+{ Dataset type="Image"
+}
+
+{ Dataset type="JPEG"
+}
+
+{ Dataset type="JPEG_Thumbnail"
+}
+
+{ Dataset type="JtSimplification"
+}
+
+{ Dataset type="KRX"
+}
+
+{ Dataset type="MEMachineDriver"
+}
+
+{ Dataset type="MISC"
+}
+
+{ Dataset type="MSExcel"
+}
+
+{ Dataset type="MSExcelTemplate"
+}
+
+{ Dataset type="MSExcelTemplateX"
+}
+
+{ Dataset type="MSExcelX"
+}
+
+{ Dataset type="MSPowerPoint"
+}
+
+{ Dataset type="MSPowerPointTemplate"
+}
+
+{ Dataset type="MSPowerPointTemplateX"
+}
+
+{ Dataset type="MSPowerPointX"
+}
+
+{ Dataset type="MSProject"
+}
+
+{ Dataset type="MSWord"
+}
+
+{ Dataset type="MSWordTemplate"
+}
+
+{ Dataset type="MSWordTemplateX"
+}
+
+{ Dataset type="MSWordX"
+}
+
+{ Dataset type="Markup"
+}
+
+{ Dataset type="Mfg0DMIS"
+}
+
+{ Dataset type="Mfg0ME3DPDFInputs"
+}
+
+{ Dataset type="Mfg0PlantCarpet"
+}
+
+{ Dataset type="NX0ApplicationData"
+}
+
+{ Dataset type="NX0BookletDataset"
+}
+
+{ Dataset type="NX0MotionSim"
+}
+
+{ Dataset type="NX0RoutingPipePartData"
+}
+
+{ Dataset type="NX0RoutingRunData"
+}
+
+{ Dataset type="NX0RoutingSpecData"
+}
+
+{ Dataset type="NXAFEM"
+}
+
+{ Dataset type="NXDerived"
+}
+
+{ Dataset type="NXMotion"
+}
+
+{ Dataset type="NXRouting"
+}
+
+{ Dataset type="NXSimulation"
+}
+
+{ Dataset type="Nastran"
+}
+
+{ Dataset type="NetworkImage"
+}
+
+{ Dataset type="Outlook"
+}
+
+{ Dataset type="PCF"
+}
+
+{ Dataset type="PDF"
+}
+
+{ Dataset type="PDX"
+}
+
+{ Dataset type="PNG_Thumbnail"
+}
+
+{ Dataset type="Photoshop"
+}
+
+{ Dataset type="PortfolioHFT"
+}
+
+{ Dataset type="Postscript"
+}
+
+{ Dataset type="ProgramView"
+}
+
+{ Dataset type="RollupReport"
+}
+
+{ Dataset type="STL"
+}
+
+{ Dataset type="Sheet"
+}
+
+{ Dataset type="SimulationProcessStudio"
+}
+
+{ Dataset type="SnapShotViewData"
+}
+
+{ Dataset type="Spatial_Data"
+}
+
+{ Dataset type="TCPublishingAliases"
+}
+
+{ Dataset type="TCPublishingPage"
+}
+
+{ Dataset type="TCPublishingTechnicalPortfolio"
+}
+
+{ Dataset type="TIF"
+}
+
+{ Dataset type="TechnicalPortfolioXML"
+}
+
+{ Dataset type="TempDirectModelMarkup"
+}
+
+{ Dataset type="TempMarkup"
+}
+
+{ Dataset type="Text"
+}
+
+{ Dataset type="UGALTREP"
+}
+
+{ Dataset type="UGCAMCLSF"
+}
+
+{ Dataset type="UGCAMPTP"
+}
+
+{ Dataset type="UGCAMShopDoc"
+}
+
+{ Dataset type="UGCAMTemplateData"
+}
+
+{ Dataset type="UGENGINEROLL"
+}
+
+{ Dataset type="UGMASTER"
+    # (hard-wired) DB_DATASET_ID : "Part File ID"
+    # (hard-wired) DB_DATASET_REV : "Part File Rev"
+
+}
+
+{ Dataset type="UGPART"
+    # (hard-wired) DB_DATASET_ID : "Part File ID"
+    # (hard-wired) DB_DATASET_REV : "Part File Rev"
+
+}
+
+{ Dataset type="UGSCENARIO"
+}
+
+{ Dataset type="UGTIREOFFSET"
+}
+
+{ Dataset type="UGTIRESPINDLE"
+}
+
+{ Dataset type="VSAMeasurementDoc"
+}
+
+{ Dataset type="VSAProcessDoc"
+}
+
+{ Dataset type="ValidationResultLog"
+}
+
+{ Dataset type="ValidationRuleSet"
+}
+
+{ Dataset type="VisJackEnvironment"
+}
+
+{ Dataset type="VisJackFigure"
+}
+
+{ Dataset type="VisJackPosture"
+}
+
+{ Dataset type="VisJackPsurf"
+}
+
+{ Dataset type="VisMovieCapture"
+}
+
+{ Dataset type="VisPublishGeometryAsset"
+}
+
+{ Dataset type="VisPublishTechnicalIllustration"
+}
+
+{ Dataset type="VisPublishTechnicalPortfolio"
+}
+
+{ Dataset type="VisPublishVisioStencil"
+}
+
+{ Dataset type="VisPublishVisioTemplate"
+}
+
+{ Dataset type="VisQualityCluster"
+}
+
+{ Dataset type="Vis_Session"
+}
+
+{ Dataset type="Vis_Snapshot_2D_View_Data"
+}
+
+{ Dataset type="VisualReportDefinition"
+}
+
+{ Dataset type="WordPerfect"
+}
+
+{ Dataset type="XMLAuditLog"
+}
+
+{ Dataset type="XMLRenderingStylesheet"
+}
+
+{ Dataset type="XMLReportFormatter"
+}
+
+{ Dataset type="Zip"
+}
+
+{ Dataset type="Zone"
+}

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TcBusinessDataLocalization xmlns="http://teamcenter.com/BusinessModel/TcBusinessDataLocalization"
+    batchXSDVersion="1.0" Date="Mon Jan 17 05:41:10 PM 2022">
+  <Add>
+    <key locale="de_DE" id="LOVValue{::}SR5SFStainlessSteel{::}DIN EN ISO 9445-2" status="Approved">DIN EN ISO 9445-2</key>
+    <key locale="de_DE" id="LOVValueDescription{::}SR5SFStainlessSteel{::}DIN EN ISO 9445-2"
+        status="Approved">Blech 0.30 &lt;= t &lt; 8</key>
+    <key locale="de_DE" id="LOVValue{::}SR5SFStainlessSteel{::}DIN EN ISO 18286" status="Approved">DIN EN ISO 18286</key>
+    <key locale="de_DE" id="LOVValueDescription{::}SR5SFStainlessSteel{::}DIN EN ISO 18286"
+        status="Approved">Blech 4 &lt;= t &lt;= 250</key>
+    <key locale="de_DE" id="LOVValue{::}SR5SFStainlessSteel{::}DIN EN ISO 1127" status="Approved">DIN EN ISO 1127</key>
+    <key locale="de_DE" id="LOVValueDescription{::}SR5SFStainlessSteel{::}DIN EN ISO 1127"
+        status="Approved">Rohr</key>
+    <key locale="de_DE" id="LOVValue{::}SR5SFStainlessSteel{::}aehnl. DIN EN ISO 1127" status="Approved">aehnl. DIN EN ISO 1127</key>
+    <key locale="de_DE" id="LOVValueDescription{::}SR5SFStainlessSteel{::}aehnl. DIN EN ISO 1127"
+        status="Approved">Rohr</key>
+    <key locale="de_DE" id="LOVValue{::}SR5SFStainlessSteel{::}DIN EN 10059" status="Approved">DIN EN 10059</key>
+    <key locale="de_DE" id="LOVValueDescription{::}SR5SFStainlessSteel{::}DIN EN 10059"
+        status="Approved">Vierkantstab</key>
+    <key locale="de_DE" id="LOVValue{::}SR5SFStainlessSteel{::}DIN EN 10060" status="Approved">DIN EN 10060</key>
+    <key locale="de_DE" id="LOVValueDescription{::}SR5SFStainlessSteel{::}DIN EN 10060"
+        status="Approved">Rundstab</key>
+  </Add>
+</TcBusinessDataLocalization>

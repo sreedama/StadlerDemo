@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<Import>
+
+  <Workspace id="StadlerAuthor">
+    <WorkspaceMapping group="dba" role="DBA"/>
+  </Workspace>
+
+  <Workspace id="TcRMWorkspace">
+    <WorkspaceMapping group="Engineering" role=""/>
+    <WorkspaceMapping group="dba" role="DBA"/>
+  </Workspace>
+
+  <Workspace id="TcAuthorWorkspace">
+    <WorkspaceMapping group="Engineering" role=""/>
+    <WorkspaceMapping group="dba" role="DBA"/>
+    <WorkspaceMapping default="true" group="TC Admin" role=""/>
+  </Workspace>
+
+  <Workspace id="TcActiveArchitectWorkspace">
+    <WorkspaceMapping group="dba" role="DBA"/>
+  </Workspace>
+
+  <Workspace id="TcActiveAdminWorkspace">
+    <WorkspaceMapping default="true" group="dba" role="DBA"/>
+    <WorkspaceMapping group="TC Admin" role=""/>
+  </Workspace>
+
+  <Workspace id="MbmWorkspace">
+    <WorkspaceMapping group="Engineering" role=""/>
+    <WorkspaceMapping group="dba" role=""/>
+  </Workspace>
+
+  <Workspace id="TcConsumerWorkspace"/>
+
+  <Workspace id="TCAWWorkspace"/>
+
+</Import>

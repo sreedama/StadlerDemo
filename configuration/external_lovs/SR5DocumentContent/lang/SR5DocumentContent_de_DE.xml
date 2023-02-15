@@ -1,0 +1,331 @@
+<?xml version="1.0" encoding="UTF-8"?>
+  <TcBusinessDataLocalization xmlns="http://teamcenter.com/BusinessModel/TcBusinessDataLocalization" batchXSDVersion="1.0" Date="Fri Dec 02 10:08:31 AM 2022">
+    <Add>
+      <key locale="de_DE" id="LOVValue{::}SR5DocumentContent{::}AA" status="Approved">AA - Verwaltungstechnische Doks</key>
+      <key locale="de_DE" id="LOVValueDescription{::}SR5DocumentContent{::}AA" status="Approved"></key>
+      <key locale="de_DE" id="LOVValue{::}SR5DocumentContent{::}AB" status="Approved">AB - Listen</key>
+      <key locale="de_DE" id="LOVValueDescription{::}SR5DocumentContent{::}AB" status="Approved"></key>
+      <key locale="de_DE" id="LOVValue{::}SR5DocumentContent{::}AC" status="Approved">AC - Erläuternde Doks (Dok betref.)</key>
+      <key locale="de_DE" id="LOVValueDescription{::}SR5DocumentContent{::}AC" status="Approved"></key>
+      <key locale="de_DE" id="LOVValue{::}SR5DocumentContent{::}BA" status="Approved">BA - Register</key>
+      <key locale="de_DE" id="LOVValueDescription{::}SR5DocumentContent{::}BA" status="Approved"></key>
+      <key locale="de_DE" id="LOVValue{::}SR5DocumentContent{::}BB" status="Approved">BB - Berichte</key>
+      <key locale="de_DE" id="LOVValueDescription{::}SR5DocumentContent{::}BB" status="Approved"></key>
+      <key locale="de_DE" id="LOVValue{::}SR5DocumentContent{::}BC" status="Approved">BC - Schriftwechsel</key>
+      <key locale="de_DE" id="LOVValueDescription{::}SR5DocumentContent{::}BC" status="Approved"></key>
+      <key locale="de_DE" id="LOVValue{::}SR5DocumentContent{::}BD" status="Approved">BD - Projektleitungsdokumente</key>
+      <key locale="de_DE" id="LOVValueDescription{::}SR5DocumentContent{::}BD" status="Approved"></key>
+      <key locale="de_DE" id="LOVValue{::}SR5DocumentContent{::}BE" status="Approved">BE - Ressourcenplanungsdokumente</key>
+      <key locale="de_DE" id="LOVValueDescription{::}SR5DocumentContent{::}BE" status="Approved"></key>
+      <key locale="de_DE" id="LOVValue{::}SR5DocumentContent{::}BG" status="Approved">BG - Standorteplanung/-organisation</key>
+      <key locale="de_DE" id="LOVValueDescription{::}SR5DocumentContent{::}BG" status="Approved"></key>
+      <key locale="de_DE" id="LOVValue{::}SR5DocumentContent{::}BH" status="Approved">BH - Dokumente zum Änderungswesen</key>
+      <key locale="de_DE" id="LOVValueDescription{::}SR5DocumentContent{::}BH" status="Approved"></key>
+      <key locale="de_DE" id="LOVValue{::}SR5DocumentContent{::}BT" status="Approved">BT - Schulungsdokumente</key>
+      <key locale="de_DE" id="LOVValueDescription{::}SR5DocumentContent{::}BT" status="Approved"></key>
+      <key locale="de_DE" id="LOVValue{::}SR5DocumentContent{::}CA" status="Approved">CA - Vertriebsdokumente</key>
+      <key locale="de_DE" id="LOVValueDescription{::}SR5DocumentContent{::}CA" status="Approved"></key>
+      <key locale="de_DE" id="LOVValue{::}SR5DocumentContent{::}CB" status="Approved">CB - Genehmigungsdokumente</key>
+      <key locale="de_DE" id="LOVValueDescription{::}SR5DocumentContent{::}CB" status="Approved"></key>
+      <key locale="de_DE" id="LOVValue{::}SR5DocumentContent{::}CF" status="Approved">CF - Versicherungsdokumente</key>
+      <key locale="de_DE" id="LOVValueDescription{::}SR5DocumentContent{::}CF" status="Approved"></key>
+      <key locale="de_DE" id="LOVValue{::}SR5DocumentContent{::}CG" status="Approved">CG - Gewährleistungsdokumente</key>
+      <key locale="de_DE" id="LOVValueDescription{::}SR5DocumentContent{::}CG" status="Approved"></key>
+      <key locale="de_DE" id="LOVValue{::}SR5DocumentContent{::}CH" status="Approved">CH - Gutachten</key>
+      <key locale="de_DE" id="LOVValueDescription{::}SR5DocumentContent{::}CH" status="Approved"></key>
+      <key locale="de_DE" id="LOVValue{::}SR5DocumentContent{::}DA" status="Approved">DA - Datenblätter</key>
+      <key locale="de_DE" id="LOVValueDescription{::}SR5DocumentContent{::}DA" status="Approved"></key>
+      <key locale="de_DE" id="LOVValue{::}SR5DocumentContent{::}DB" status="Approved">DB - Erläuternde Dokumente</key>
+      <key locale="de_DE" id="LOVValueDescription{::}SR5DocumentContent{::}DB" status="Approved"></key>
+      <key locale="de_DE" id="LOVValue{::}SR5DocumentContent{::}DC" status="Approved">DC - Anleitungen und Handbücher</key>
+      <key locale="de_DE" id="LOVValueDescription{::}SR5DocumentContent{::}DC" status="Approved"></key>
+      <key locale="de_DE" id="LOVValue{::}SR5DocumentContent{::}DD" status="Approved">DD - Technische Berichte</key>
+      <key locale="de_DE" id="LOVValueDescription{::}SR5DocumentContent{::}DD" status="Approved"></key>
+      <key locale="de_DE" id="LOVValue{::}SR5DocumentContent{::}EA" status="Approved">EA - Dokumente über gesetz.Auflagen</key>
+      <key locale="de_DE" id="LOVValueDescription{::}SR5DocumentContent{::}EA" status="Approved"></key>
+      <key locale="de_DE" id="LOVValue{::}SR5DocumentContent{::}EB" status="Approved">EB - Normen und Richtlinien</key>
+      <key locale="de_DE" id="LOVValueDescription{::}SR5DocumentContent{::}EB" status="Approved"></key>
+      <key locale="de_DE" id="LOVValue{::}SR5DocumentContent{::}EC" status="Approved">EC - Tech Spez. / Anforderungsdoks</key>
+      <key locale="de_DE" id="LOVValueDescription{::}SR5DocumentContent{::}EC" status="Approved"></key>
+      <key locale="de_DE" id="LOVValue{::}SR5DocumentContent{::}ED" status="Approved">ED - Dimensionierungsdokumente</key>
+      <key locale="de_DE" id="LOVValueDescription{::}SR5DocumentContent{::}ED" status="Approved"></key>
+      <key locale="de_DE" id="LOVValue{::}SR5DocumentContent{::}FA" status="Approved">FA - Funktionsübersichtsdokumente</key>
+      <key locale="de_DE" id="LOVValueDescription{::}SR5DocumentContent{::}FA" status="Approved"></key>
+      <key locale="de_DE" id="LOVValue{::}SR5DocumentContent{::}FC" status="Approved">FC - Dokumente der MMS-Gestaltung</key>
+      <key locale="de_DE" id="LOVValueDescription{::}SR5DocumentContent{::}FC" status="Approved"></key>
+      <key locale="de_DE" id="LOVValue{::}SR5DocumentContent{::}FE" status="Approved">FE - Funktionsbeschreibungen</key>
+      <key locale="de_DE" id="LOVValueDescription{::}SR5DocumentContent{::}FE" status="Approved"></key>
+      <key locale="de_DE" id="LOVValue{::}SR5DocumentContent{::}FF" status="Approved">FF - Funktionsschaltpläne</key>
+      <key locale="de_DE" id="LOVValueDescription{::}SR5DocumentContent{::}FF" status="Approved"></key>
+      <key locale="de_DE" id="LOVValue{::}SR5DocumentContent{::}FP" status="Approved">FP - Signalbeschreibungen</key>
+      <key locale="de_DE" id="LOVValueDescription{::}SR5DocumentContent{::}FP" status="Approved"></key>
+      <key locale="de_DE" id="LOVValue{::}SR5DocumentContent{::}FQ" status="Approved">FQ - Einstellwertdokumente (Liste)</key>
+      <key locale="de_DE" id="LOVValueDescription{::}SR5DocumentContent{::}FQ" status="Approved"></key>
+      <key locale="de_DE" id="LOVValue{::}SR5DocumentContent{::}FS" status="Approved">FS - Schaltkreisdokumente</key>
+      <key locale="de_DE" id="LOVValueDescription{::}SR5DocumentContent{::}FS" status="Approved"></key>
+      <key locale="de_DE" id="LOVValue{::}SR5DocumentContent{::}FT" status="Approved">FT - Softwarespezifische Dokumente</key>
+      <key locale="de_DE" id="LOVValueDescription{::}SR5DocumentContent{::}FT" status="Approved"></key>
+      <key locale="de_DE" id="LOVValue{::}SR5DocumentContent{::}MA" status="Approved">MA - Verbindungsbezogene Dokumente</key>
+      <key locale="de_DE" id="LOVValueDescription{::}SR5DocumentContent{::}MA" status="Approved"></key>
+      <key locale="de_DE" id="LOVValue{::}SR5DocumentContent{::}MB" status="Approved">MB - Verkabel- und Rohrleitungsdoks</key>
+      <key locale="de_DE" id="LOVValueDescription{::}SR5DocumentContent{::}MB" status="Approved"></key>
+      <key locale="de_DE" id="LOVValue{::}SR5DocumentContent{::}PA" status="Approved">PA - Materiallisten</key>
+      <key locale="de_DE" id="LOVValueDescription{::}SR5DocumentContent{::}PA" status="Approved"></key>
+      <key locale="de_DE" id="LOVValue{::}SR5DocumentContent{::}PB" status="Approved">PB - Teilelisten</key>
+      <key locale="de_DE" id="LOVValueDescription{::}SR5DocumentContent{::}PB" status="Approved"></key>
+      <key locale="de_DE" id="LOVValue{::}SR5DocumentContent{::}PC" status="Approved">PC - Stücklisten</key>
+      <key locale="de_DE" id="LOVValueDescription{::}SR5DocumentContent{::}PC" status="Approved"></key>
+      <key locale="de_DE" id="LOVValue{::}SR5DocumentContent{::}PD" status="Approved">PD - Produkt und Produkttypenlisten</key>
+      <key locale="de_DE" id="LOVValueDescription{::}SR5DocumentContent{::}PD" status="Approved"></key>
+      <key locale="de_DE" id="LOVValue{::}SR5DocumentContent{::}PF" status="Approved">PF - Funktionslisten</key>
+      <key locale="de_DE" id="LOVValueDescription{::}SR5DocumentContent{::}PF" status="Approved"></key>
+      <key locale="de_DE" id="LOVValue{::}SR5DocumentContent{::}PL" status="Approved">PL - Ortslisten</key>
+      <key locale="de_DE" id="LOVValueDescription{::}SR5DocumentContent{::}PL" status="Approved"></key>
+      <key locale="de_DE" id="LOVValue{::}SR5DocumentContent{::}QA" status="Approved">QA - Qualitätsmanagementdokumente</key>
+      <key locale="de_DE" id="LOVValueDescription{::}SR5DocumentContent{::}QA" status="Approved"></key>
+      <key locale="de_DE" id="LOVValue{::}SR5DocumentContent{::}QB" status="Approved">QB - Sicherheitsbeschreibende Doks</key>
+      <key locale="de_DE" id="LOVValueDescription{::}SR5DocumentContent{::}QB" status="Approved"></key>
+      <key locale="de_DE" id="LOVValue{::}SR5DocumentContent{::}QC" status="Approved">QC - Qualitätsnachweisdokumente</key>
+      <key locale="de_DE" id="LOVValueDescription{::}SR5DocumentContent{::}QC" status="Approved"></key>
+      <key locale="de_DE" id="LOVValue{::}SR5DocumentContent{::}QZ" status="Approved">QZ - Div Nachweise und Spezifikation</key>
+      <key locale="de_DE" id="LOVValueDescription{::}SR5DocumentContent{::}QZ" status="Approved"></key>
+      <key locale="de_DE" id="LOVValue{::}SR5DocumentContent{::}TA" status="Approved">TA - Entwurfszeichnungen</key>
+      <key locale="de_DE" id="LOVValueDescription{::}SR5DocumentContent{::}TA" status="Approved"></key>
+      <key locale="de_DE" id="LOVValue{::}SR5DocumentContent{::}TB" status="Approved">TB - Konstruktionszeichnungen</key>
+      <key locale="de_DE" id="LOVValueDescription{::}SR5DocumentContent{::}TB" status="Approved"></key>
+      <key locale="de_DE" id="LOVValue{::}SR5DocumentContent{::}TC" status="Approved">TC - Fertigungs- und Errichtungs Zchg</key>
+      <key locale="de_DE" id="LOVValueDescription{::}SR5DocumentContent{::}TC" status="Approved"></key>
+      <key locale="de_DE" id="LOVValue{::}SR5DocumentContent{::}WA" status="Approved">WA - Einstellwertdoks Chargenrezept</key>
+      <key locale="de_DE" id="LOVValueDescription{::}SR5DocumentContent{::}WA" status="Approved"></key>
+      <key locale="de_DE" id="LOVValue{::}SR5DocumentContent{::}WT" status="Approved">WT - Logbücher</key>
+      <key locale="de_DE" id="LOVValueDescription{::}SR5DocumentContent{::}WT" status="Approved"></key>
+      <key locale="de_DE" id="LOVValue{::}SR5DocumentContent_AA{::}AA0000" status="Approved">AA0000 - Verwaltungstechnisches Dok</key>
+      <key locale="de_DE" id="LOVValueDescription{::}SR5DocumentContent_AA{::}AA0000" status="Approved"></key>
+      <key locale="de_DE" id="LOVValue{::}SR5DocumentContent_AB{::}AB0000" status="Approved">AB0000 - Liste</key>
+      <key locale="de_DE" id="LOVValueDescription{::}SR5DocumentContent_AB{::}AB0000" status="Approved"></key>
+      <key locale="de_DE" id="LOVValue{::}SR5DocumentContent_AC{::}AC0000" status="Approved">AC0000 - Erläuterndes Dok(Dok betref.)</key>
+      <key locale="de_DE" id="LOVValueDescription{::}SR5DocumentContent_AC{::}AC0000" status="Approved"></key>
+      <key locale="de_DE" id="LOVValue{::}SR5DocumentContent_BA{::}BA0000" status="Approved">BA0000 - Register (generell)</key>
+      <key locale="de_DE" id="LOVValueDescription{::}SR5DocumentContent_BA{::}BA0000" status="Approved"></key>
+      <key locale="de_DE" id="LOVValue{::}SR5DocumentContent_BB{::}BB0000" status="Approved">BB0000 - Bericht</key>
+      <key locale="de_DE" id="LOVValueDescription{::}SR5DocumentContent_BB{::}BB0000" status="Approved"></key>
+      <key locale="de_DE" id="LOVValue{::}SR5DocumentContent_BC{::}BC0000" status="Approved">BC0000 - Schriftwechsel (generell)</key>
+      <key locale="de_DE" id="LOVValueDescription{::}SR5DocumentContent_BC{::}BC0000" status="Approved"></key>
+      <key locale="de_DE" id="LOVValue{::}SR5DocumentContent_BD{::}BD0000" status="Approved">BD0000 - Projektleitungsdokument</key>
+      <key locale="de_DE" id="LOVValueDescription{::}SR5DocumentContent_BD{::}BD0000" status="Approved"></key>
+      <key locale="de_DE" id="LOVValue{::}SR5DocumentContent_BE{::}BE0000" status="Approved">BE0000 - Ressourcenplanungsdokument</key>
+      <key locale="de_DE" id="LOVValueDescription{::}SR5DocumentContent_BE{::}BE0000" status="Approved"></key>
+      <key locale="de_DE" id="LOVValue{::}SR5DocumentContent_BF{::}BF0000" status="Approved">BF0000 - Versand Lager und Transportdok</key>
+      <key locale="de_DE" id="LOVValueDescription{::}SR5DocumentContent_BF{::}BF0000" status="Approved"></key>
+      <key locale="de_DE" id="LOVValue{::}SR5DocumentContent_BG{::}BG0000" status="Approved">BG0000 - Standortplanung/-organisation</key>
+      <key locale="de_DE" id="LOVValueDescription{::}SR5DocumentContent_BG{::}BG0000" status="Approved"></key>
+      <key locale="de_DE" id="LOVValue{::}SR5DocumentContent_BH{::}BH0000" status="Approved">BH0000 - Dokument zum Änderungswesen</key>
+      <key locale="de_DE" id="LOVValueDescription{::}SR5DocumentContent_BH{::}BH0000" status="Approved"></key>
+      <key locale="de_DE" id="LOVValue{::}SR5DocumentContent_BT{::}BT0000" status="Approved">BT0000 - Schulungsdokument</key>
+      <key locale="de_DE" id="LOVValueDescription{::}SR5DocumentContent_BT{::}BT0000" status="Approved"></key>
+      <key locale="de_DE" id="LOVValue{::}SR5DocumentContent_BT{::}BT0001" status="Approved">BT0001 - Schulungsunterlagen Lieferant</key>
+      <key locale="de_DE" id="LOVValueDescription{::}SR5DocumentContent_BT{::}BT0001" status="Approved"></key>
+      <key locale="de_DE" id="LOVValue{::}SR5DocumentContent_CA{::}CA0000" status="Approved">CA0000 - Vertriebsdokument</key>
+      <key locale="de_DE" id="LOVValueDescription{::}SR5DocumentContent_CA{::}CA0000" status="Approved"></key>
+      <key locale="de_DE" id="LOVValue{::}SR5DocumentContent_CB{::}CB0000" status="Approved">CB0000 - Genehmigungsdokument</key>
+      <key locale="de_DE" id="LOVValueDescription{::}SR5DocumentContent_CB{::}CB0000" status="Approved"></key>
+      <key locale="de_DE" id="LOVValue{::}SR5DocumentContent_CC{::}CC0000" status="Approved">CC0000 - Vertragliche Dokument</key>
+      <key locale="de_DE" id="LOVValueDescription{::}SR5DocumentContent_CC{::}CC0000" status="Approved"></key>
+      <key locale="de_DE" id="LOVValue{::}SR5DocumentContent_CD{::}CD0000" status="Approved">CD0000 - Bestell- und Lieferdokument</key>
+      <key locale="de_DE" id="LOVValueDescription{::}SR5DocumentContent_CD{::}CD0000" status="Approved"></key>
+      <key locale="de_DE" id="LOVValue{::}SR5DocumentContent_CE{::}CE0000" status="Approved">CE0000 - Rechnungsdokument</key>
+      <key locale="de_DE" id="LOVValueDescription{::}SR5DocumentContent_CE{::}CE0000" status="Approved"></key>
+      <key locale="de_DE" id="LOVValue{::}SR5DocumentContent_CF{::}CF0000" status="Approved">CF0000 - Versicherungsdokument</key>
+      <key locale="de_DE" id="LOVValueDescription{::}SR5DocumentContent_CF{::}CF0000" status="Approved"></key>
+      <key locale="de_DE" id="LOVValue{::}SR5DocumentContent_CG{::}CG0000" status="Approved">CG0000 - Gewährleistungsdokument</key>
+      <key locale="de_DE" id="LOVValueDescription{::}SR5DocumentContent_CG{::}CG0000" status="Approved"></key>
+      <key locale="de_DE" id="LOVValue{::}SR5DocumentContent_CH{::}CH0000" status="Approved">CH0000 - Gutachten (genell)</key>
+      <key locale="de_DE" id="LOVValueDescription{::}SR5DocumentContent_CH{::}CH0000" status="Approved"></key>
+      <key locale="de_DE" id="LOVValue{::}SR5DocumentContent_DA{::}DA0000" status="Approved">DA0000 - Datenblatt</key>
+      <key locale="de_DE" id="LOVValueDescription{::}SR5DocumentContent_DA{::}DA0000" status="Approved"></key>
+      <key locale="de_DE" id="LOVValue{::}SR5DocumentContent_DA{::}DA0001" status="Approved">DA0001 - LCC/RAM-Datenblatt</key>
+      <key locale="de_DE" id="LOVValueDescription{::}SR5DocumentContent_DA{::}DA0001" status="Approved"></key>
+      <key locale="de_DE" id="LOVValue{::}SR5DocumentContent_DB{::}DB0000" status="Approved">DB0000 - Erläuterndes Dokument</key>
+      <key locale="de_DE" id="LOVValueDescription{::}SR5DocumentContent_DB{::}DB0000" status="Approved"></key>
+      <key locale="de_DE" id="LOVValue{::}SR5DocumentContent_DC{::}DC0000" status="Approved">DC0000 - Anleitung und Handbuch</key>
+      <key locale="de_DE" id="LOVValueDescription{::}SR5DocumentContent_DC{::}DC0000" status="Approved"></key>
+      <key locale="de_DE" id="LOVValue{::}SR5DocumentContent_DC{::}DC0001" status="Approved">DC0001 - Wartungs- und Instandhaltungsdok</key>
+      <key locale="de_DE" id="LOVValueDescription{::}SR5DocumentContent_DC{::}DC0001" status="Approved"></key>
+      <key locale="de_DE" id="LOVValue{::}SR5DocumentContent_DC{::}DC0002" status="Approved">DC0002 - Fehlerdiagnose Handbuch</key>
+      <key locale="de_DE" id="LOVValueDescription{::}SR5DocumentContent_DC{::}DC0002" status="Approved"></key>
+      <key locale="de_DE" id="LOVValue{::}SR5DocumentContent_DC{::}DC0003" status="Approved">DC0003 - Benutzer-/Bedienungsungsdok</key>
+      <key locale="de_DE" id="LOVValueDescription{::}SR5DocumentContent_DC{::}DC0003" status="Approved"></key>
+      <key locale="de_DE" id="LOVValue{::}SR5DocumentContent_DC{::}DC0004" status="Approved">DC0004 - Montage- und Inbetriebnahmeanw.</key>
+      <key locale="de_DE" id="LOVValueDescription{::}SR5DocumentContent_DC{::}DC0004" status="Approved"></key>
+      <key locale="de_DE" id="LOVValue{::}SR5DocumentContent_DC{::}DC0005" status="Approved">DC0005 - Recyclinghandbuch</key>
+      <key locale="de_DE" id="LOVValueDescription{::}SR5DocumentContent_DC{::}DC0005" status="Approved"></key>
+      <key locale="de_DE" id="LOVValue{::}SR5DocumentContent_DC{::}DC0006" status="Approved">DC0006 - Reinigungskonzept</key>
+      <key locale="de_DE" id="LOVValueDescription{::}SR5DocumentContent_DC{::}DC0006" status="Approved"></key>
+      <key locale="de_DE" id="LOVValue{::}SR5DocumentContent_DD{::}DD0000" status="Approved">DD0000 - Technischer Bericht</key>
+      <key locale="de_DE" id="LOVValueDescription{::}SR5DocumentContent_DD{::}DD0000" status="Approved"></key>
+      <key locale="de_DE" id="LOVValue{::}SR5DocumentContent_EA{::}EA0000" status="Approved">EA0000 - Dokumente über gesetz.Auflage </key>
+      <key locale="de_DE" id="LOVValueDescription{::}SR5DocumentContent_EA{::}EA0000" status="Approved"></key>
+      <key locale="de_DE" id="LOVValue{::}SR5DocumentContent_EB{::}EB0000" status="Approved">EB0000 - Normen und Richtlinie</key>
+      <key locale="de_DE" id="LOVValueDescription{::}SR5DocumentContent_EB{::}EB0000" status="Approved"></key>
+      <key locale="de_DE" id="LOVValue{::}SR5DocumentContent_EC{::}EC0000" status="Approved">EC0000 - Tech Spez. / Anforderungsdok</key>
+      <key locale="de_DE" id="LOVValueDescription{::}SR5DocumentContent_EC{::}EC0000" status="Approved"></key>
+      <key locale="de_DE" id="LOVValue{::}SR5DocumentContent_EC{::}EC0001" status="Approved">EC0001 - Tech Spezifikation Lieferant</key>
+      <key locale="de_DE" id="LOVValueDescription{::}SR5DocumentContent_EC{::}EC0001" status="Approved"></key>
+      <key locale="de_DE" id="LOVValue{::}SR5DocumentContent_EC{::}EC0002" status="Approved">EC0002 - RAM/LCC Spezififkation</key>
+      <key locale="de_DE" id="LOVValueDescription{::}SR5DocumentContent_EC{::}EC0002" status="Approved"></key>
+      <key locale="de_DE" id="LOVValue{::}SR5DocumentContent_ED{::}ED0000" status="Approved">ED0000 - Dimensionierungsdokument</key>
+      <key locale="de_DE" id="LOVValueDescription{::}SR5DocumentContent_ED{::}ED0000" status="Approved"></key>
+      <key locale="de_DE" id="LOVValue{::}SR5DocumentContent_FA{::}FA0000" status="Approved">FA0000 - Funktionsübersichtsdokument</key>
+      <key locale="de_DE" id="LOVValueDescription{::}SR5DocumentContent_FA{::}FA0000" status="Approved"></key>
+      <key locale="de_DE" id="LOVValue{::}SR5DocumentContent_FC{::}FC0000" status="Approved">FC0000 - Dokument der MMS-Gestaltung</key>
+      <key locale="de_DE" id="LOVValueDescription{::}SR5DocumentContent_FC{::}FC0000" status="Approved"></key>
+      <key locale="de_DE" id="LOVValue{::}SR5DocumentContent_FC{::}FC0001" status="Approved">FC0001 - Bildschirmlayout</key>
+      <key locale="de_DE" id="LOVValueDescription{::}SR5DocumentContent_FC{::}FC0001" status="Approved"></key>
+      <key locale="de_DE" id="LOVValue{::}SR5DocumentContent_FE{::}FE0000" status="Approved">FE0000 - Funktionsbeschreibung</key>
+      <key locale="de_DE" id="LOVValueDescription{::}SR5DocumentContent_FE{::}FE0000" status="Approved"></key>
+      <key locale="de_DE" id="LOVValue{::}SR5DocumentContent_FE{::}FE0001" status="Approved">FE0001 - Funktionsbeschr. Lieferant</key>
+      <key locale="de_DE" id="LOVValueDescription{::}SR5DocumentContent_FE{::}FE0001" status="Approved"></key>
+      <key locale="de_DE" id="LOVValue{::}SR5DocumentContent_FF{::}FF0000" status="Approved">FF0000 - Funktionsschaltplan</key>
+      <key locale="de_DE" id="LOVValueDescription{::}SR5DocumentContent_FF{::}FF0000" status="Approved"></key>
+      <key locale="de_DE" id="LOVValue{::}SR5DocumentContent_FF{::}FF0001" status="Approved">FF0001 - Funktionsschaltplan Lieferant</key>
+      <key locale="de_DE" id="LOVValueDescription{::}SR5DocumentContent_FF{::}FF0001" status="Approved"></key>
+      <key locale="de_DE" id="LOVValue{::}SR5DocumentContent_FP{::}FP0000" status="Approved">FP0000 - Signalbeschreibung</key>
+      <key locale="de_DE" id="LOVValueDescription{::}SR5DocumentContent_FP{::}FP0000" status="Approved"></key>
+      <key locale="de_DE" id="LOVValue{::}SR5DocumentContent_FP{::}FP0001" status="Approved">FP0001 - Signalliste</key>
+      <key locale="de_DE" id="LOVValueDescription{::}SR5DocumentContent_FP{::}FP0001" status="Approved"></key>
+      <key locale="de_DE" id="LOVValue{::}SR5DocumentContent_FQ{::}FQ0000" status="Approved">FQ0000 - Einstellwertdokument</key>
+      <key locale="de_DE" id="LOVValueDescription{::}SR5DocumentContent_FQ{::}FQ0000" status="Approved"></key>
+      <key locale="de_DE" id="LOVValue{::}SR5DocumentContent_FQ{::}FQ0001" status="Approved">FQ0001 - Einstellwertliste Lieferant</key>
+      <key locale="de_DE" id="LOVValueDescription{::}SR5DocumentContent_FQ{::}FQ0001" status="Approved"></key>
+      <key locale="de_DE" id="LOVValue{::}SR5DocumentContent_FS{::}FS0000" status="Approved">FS0000 - Schaltkreisdokument</key>
+      <key locale="de_DE" id="LOVValueDescription{::}SR5DocumentContent_FS{::}FS0000" status="Approved"></key>
+      <key locale="de_DE" id="LOVValue{::}SR5DocumentContent_FS{::}FS0001" status="Approved">FS0001 - Stromlaufplan</key>
+      <key locale="de_DE" id="LOVValueDescription{::}SR5DocumentContent_FS{::}FS0001" status="Approved"></key>
+      <key locale="de_DE" id="LOVValue{::}SR5DocumentContent_FT{::}FT0000" status="Approved">FT0000 - Softwarespezifisches Dokument</key>
+      <key locale="de_DE" id="LOVValueDescription{::}SR5DocumentContent_FT{::}FT0000" status="Approved"></key>
+      <key locale="de_DE" id="LOVValue{::}SR5DocumentContent_FT{::}FT0001" status="Approved">FT0001 - Software-Dokumentation</key>
+      <key locale="de_DE" id="LOVValueDescription{::}SR5DocumentContent_FT{::}FT0001" status="Approved"></key>
+      <key locale="de_DE" id="LOVValue{::}SR5DocumentContent_FT{::}FT0002" status="Approved">FT0002 - Software-Begutachtungsbericht</key>
+      <key locale="de_DE" id="LOVValueDescription{::}SR5DocumentContent_FT{::}FT0002" status="Approved"></key>
+      <key locale="de_DE" id="LOVValue{::}SR5DocumentContent_FT{::}FT0003" status="Approved">FT0003 - Software-Konfigurationsliste</key>
+      <key locale="de_DE" id="LOVValueDescription{::}SR5DocumentContent_FT{::}FT0003" status="Approved"></key>
+      <key locale="de_DE" id="LOVValue{::}SR5DocumentContent_FT{::}FT0004" status="Approved">FT0004 - Software-Signalliste</key>
+      <key locale="de_DE" id="LOVValueDescription{::}SR5DocumentContent_FT{::}FT0004" status="Approved"></key>
+      <key locale="de_DE" id="LOVValue{::}SR5DocumentContent_MA{::}MA0000" status="Approved">MA0000 - Verbindungsbezogenes Dokument</key>
+      <key locale="de_DE" id="LOVValueDescription{::}SR5DocumentContent_MA{::}MA0000" status="Approved"></key>
+      <key locale="de_DE" id="LOVValue{::}SR5DocumentContent_MB{::}MB0000" status="Approved">MB0000 - Verkabel- und Rohrleitungsdok</key>
+      <key locale="de_DE" id="LOVValueDescription{::}SR5DocumentContent_MB{::}MB0000" status="Approved"></key>
+      <key locale="de_DE" id="LOVValue{::}SR5DocumentContent_MB{::}MB0001" status="Approved">MB0001 - Kabelliste</key>
+      <key locale="de_DE" id="LOVValueDescription{::}SR5DocumentContent_MB{::}MB0001" status="Approved"></key>
+      <key locale="de_DE" id="LOVValue{::}SR5DocumentContent_MB{::}MB0002" status="Approved">MB0002 - Klemmenliste</key>
+      <key locale="de_DE" id="LOVValueDescription{::}SR5DocumentContent_MB{::}MB0002" status="Approved"></key>
+      <key locale="de_DE" id="LOVValue{::}SR5DocumentContent_MB{::}MB0003" status="Approved">MB0003 - Steckerliste</key>
+      <key locale="de_DE" id="LOVValueDescription{::}SR5DocumentContent_MB{::}MB0003" status="Approved"></key>
+      <key locale="de_DE" id="LOVValue{::}SR5DocumentContent_PA{::}PA0000" status="Approved">PA0000 - Materialliste</key>
+      <key locale="de_DE" id="LOVValueDescription{::}SR5DocumentContent_PA{::}PA0000" status="Approved"></key>
+      <key locale="de_DE" id="LOVValue{::}SR5DocumentContent_PA{::}PA0001" status="Approved">PA0001 - Materialliste Lieferant</key>
+      <key locale="de_DE" id="LOVValueDescription{::}SR5DocumentContent_PA{::}PA0001" status="Approved"></key>
+      <key locale="de_DE" id="LOVValue{::}SR5DocumentContent_PB{::}PB0000" status="Approved">PB0000 - Teileliste</key>
+      <key locale="de_DE" id="LOVValueDescription{::}SR5DocumentContent_PB{::}PB0000" status="Approved"></key>
+      <key locale="de_DE" id="LOVValue{::}SR5DocumentContent_PB{::}PB0001" status="Approved">PB0001 - Ersatzteilkatalog</key>
+      <key locale="de_DE" id="LOVValueDescription{::}SR5DocumentContent_PB{::}PB0001" status="Approved"></key>
+      <key locale="de_DE" id="LOVValue{::}SR5DocumentContent_PC{::}PC0000" status="Approved">PC0000 - Stückliste</key>
+      <key locale="de_DE" id="LOVValueDescription{::}SR5DocumentContent_PC{::}PC0000" status="Approved"></key>
+      <key locale="de_DE" id="LOVValue{::}SR5DocumentContent_PC{::}PC0001" status="Approved">PC0001 - Betriebsmittelverzeichnis</key>
+      <key locale="de_DE" id="LOVValueDescription{::}SR5DocumentContent_PC{::}PC0001" status="Approved"></key>
+      <key locale="de_DE" id="LOVValue{::}SR5DocumentContent_PD{::}PD0000" status="Approved">PD0000 - Produkt und Produkttypenliste</key>
+      <key locale="de_DE" id="LOVValueDescription{::}SR5DocumentContent_PD{::}PD0000" status="Approved"></key>
+      <key locale="de_DE" id="LOVValue{::}SR5DocumentContent_PD{::}PD0001" status="Approved">PD0001 - Konfigurationsliste</key>
+      <key locale="de_DE" id="LOVValueDescription{::}SR5DocumentContent_PD{::}PD0001" status="Approved"></key>
+      <key locale="de_DE" id="LOVValue{::}SR5DocumentContent_PD{::}PD0002" status="Approved">PD0002 - Seriennummer</key>
+      <key locale="de_DE" id="LOVValueDescription{::}SR5DocumentContent_PD{::}PD0002" status="Approved"></key>
+      <key locale="de_DE" id="LOVValue{::}SR5DocumentContent_PF{::}PF0000" status="Approved">PF0000 - Funktionsliste</key>
+      <key locale="de_DE" id="LOVValueDescription{::}SR5DocumentContent_PF{::}PF0000" status="Approved"></key>
+      <key locale="de_DE" id="LOVValue{::}SR5DocumentContent_PL{::}PL0000" status="Approved">PL0000 - Ortsliste</key>
+      <key locale="de_DE" id="LOVValueDescription{::}SR5DocumentContent_PL{::}PL0000" status="Approved"></key>
+      <key locale="de_DE" id="LOVValue{::}SR5DocumentContent_QA{::}QA0000" status="Approved">QA0000 - Qualitätsmanagementdokument</key>
+      <key locale="de_DE" id="LOVValueDescription{::}SR5DocumentContent_QA{::}QA0000" status="Approved"></key>
+      <key locale="de_DE" id="LOVValue{::}SR5DocumentContent_QA{::}QA0001" status="Approved">QA0001 - Interoperabilitätskomponenten</key>
+      <key locale="de_DE" id="LOVValueDescription{::}SR5DocumentContent_QA{::}QA0001" status="Approved"></key>
+      <key locale="de_DE" id="LOVValue{::}SR5DocumentContent_QA{::}QA0002" status="Approved">QA0002 - Obsoleszenzmanagement</key>
+      <key locale="de_DE" id="LOVValueDescription{::}SR5DocumentContent_QA{::}QA0002" status="Approved"></key>
+      <key locale="de_DE" id="LOVValue{::}SR5DocumentContent_QA{::}QA0003" status="Approved">QA0003 - Reinigungsmittelbeständigkeit</key>
+      <key locale="de_DE" id="LOVValueDescription{::}SR5DocumentContent_QA{::}QA0003" status="Approved"></key>
+      <key locale="de_DE" id="LOVValue{::}SR5DocumentContent_QB{::}QB0000" status="Approved">QB0000 - Sicherheitsbeschreibende Dok</key>
+      <key locale="de_DE" id="LOVValueDescription{::}SR5DocumentContent_QB{::}QB0000" status="Approved"></key>
+      <key locale="de_DE" id="LOVValue{::}SR5DocumentContent_QB{::}QB0001" status="Approved">QB0001 - Risikobewertung</key>
+      <key locale="de_DE" id="LOVValueDescription{::}SR5DocumentContent_QB{::}QB0001" status="Approved"></key>
+      <key locale="de_DE" id="LOVValue{::}SR5DocumentContent_QB{::}QB0002" status="Approved">QB0002 - Sicherheitsdatenblatt</key>
+      <key locale="de_DE" id="LOVValueDescription{::}SR5DocumentContent_QB{::}QB0002" status="Approved"></key>
+      <key locale="de_DE" id="LOVValue{::}SR5DocumentContent_QB{::}QB0003" status="Approved">QB0003 - FMECA</key>
+      <key locale="de_DE" id="LOVValueDescription{::}SR5DocumentContent_QB{::}QB0003" status="Approved"></key>
+      <key locale="de_DE" id="LOVValue{::}SR5DocumentContent_QC{::}QC0000" status="Approved">QC0000 - Qualitätsnachweisdokument</key>
+      <key locale="de_DE" id="LOVValueDescription{::}SR5DocumentContent_QC{::}QC0000" status="Approved"></key>
+      <key locale="de_DE" id="LOVValue{::}SR5DocumentContent_QC{::}QC0001" status="Approved">QC0001 - TSI-Konformitätserklärung</key>
+      <key locale="de_DE" id="LOVValueDescription{::}SR5DocumentContent_QC{::}QC0001" status="Approved"></key>
+      <key locale="de_DE" id="LOVValue{::}SR5DocumentContent_QC{::}QC0002" status="Approved">QC0002 - Prüfbescheinigung EN 10204</key>
+      <key locale="de_DE" id="LOVValueDescription{::}SR5DocumentContent_QC{::}QC0002" status="Approved"></key>
+      <key locale="de_DE" id="LOVValue{::}SR5DocumentContent_QC{::}QC0003" status="Approved">QC0003 - Brandschutz 49 CFR Para. 238 B</key>
+      <key locale="de_DE" id="LOVValueDescription{::}SR5DocumentContent_QC{::}QC0003" status="Approved"></key>
+      <key locale="de_DE" id="LOVValue{::}SR5DocumentContent_QC{::}QC0004" status="Approved">QC0004 - Brandschutz DIN EN 45545</key>
+      <key locale="de_DE" id="LOVValueDescription{::}SR5DocumentContent_QC{::}QC0004" status="Approved"></key>
+      <key locale="de_DE" id="LOVValue{::}SR5DocumentContent_QC{::}QC0005" status="Approved">QC0005 - Brandschutz NFPA 130</key>
+      <key locale="de_DE" id="LOVValueDescription{::}SR5DocumentContent_QC{::}QC0005" status="Approved"></key>
+      <key locale="de_DE" id="LOVValue{::}SR5DocumentContent_QC{::}QC0006" status="Approved">QC0006 - Schock und Vibration EN 61373</key>
+      <key locale="de_DE" id="LOVValueDescription{::}SR5DocumentContent_QC{::}QC0006" status="Approved"></key>
+      <key locale="de_DE" id="LOVValue{::}SR5DocumentContent_QC{::}QC0007" status="Approved">QC0007 - Festigkeitsnachweis</key>
+      <key locale="de_DE" id="LOVValueDescription{::}SR5DocumentContent_QC{::}QC0007" status="Approved"></key>
+      <key locale="de_DE" id="LOVValue{::}SR5DocumentContent_QC{::}QC0008" status="Approved">QC0008 - EMV-Nachweis</key>
+      <key locale="de_DE" id="LOVValueDescription{::}SR5DocumentContent_QC{::}QC0008" status="Approved"></key>
+      <key locale="de_DE" id="LOVValue{::}SR5DocumentContent_QC{::}QC0009" status="Approved">QC0009 - Erstmusterprüfung</key>
+      <key locale="de_DE" id="LOVValueDescription{::}SR5DocumentContent_QC{::}QC0009" status="Approved"></key>
+      <key locale="de_DE" id="LOVValue{::}SR5DocumentContent_QC{::}QC0010" status="Approved">QC0010 - Werksabnahme</key>
+      <key locale="de_DE" id="LOVValueDescription{::}SR5DocumentContent_QC{::}QC0010" status="Approved"></key>
+      <key locale="de_DE" id="LOVValue{::}SR5DocumentContent_QC{::}QC0011" status="Approved">QC0011 - Erstinbetriebnahme</key>
+      <key locale="de_DE" id="LOVValueDescription{::}SR5DocumentContent_QC{::}QC0011" status="Approved"></key>
+      <key locale="de_DE" id="LOVValue{::}SR5DocumentContent_QC{::}QC0012" status="Approved">QC0012 - Serientest</key>
+      <key locale="de_DE" id="LOVValueDescription{::}SR5DocumentContent_QC{::}QC0012" status="Approved"></key>
+      <key locale="de_DE" id="LOVValue{::}SR5DocumentContent_QC{::}QC0013" status="Approved">QC0013 - Typentest</key>
+      <key locale="de_DE" id="LOVValueDescription{::}SR5DocumentContent_QC{::}QC0013" status="Approved"></key>
+      <key locale="de_DE" id="LOVValue{::}SR5DocumentContent_QC{::}QC0014" status="Approved">QC0014 - Farbmuster</key>
+      <key locale="de_DE" id="LOVValueDescription{::}SR5DocumentContent_QC{::}QC0014" status="Approved"></key>
+      <key locale="de_DE" id="LOVValue{::}SR5DocumentContent_QC{::}QC0015" status="Approved">QC0015 - Klebezulassung</key>
+      <key locale="de_DE" id="LOVValueDescription{::}SR5DocumentContent_QC{::}QC0015" status="Approved"></key>
+      <key locale="de_DE" id="LOVValue{::}SR5DocumentContent_QC{::}QC0016" status="Approved">QC0016 - Klebemuster</key>
+      <key locale="de_DE" id="LOVValueDescription{::}SR5DocumentContent_QC{::}QC0016" status="Approved"></key>
+      <key locale="de_DE" id="LOVValue{::}SR5DocumentContent_QC{::}QC0017" status="Approved">QC0017 - Schweißzulassung</key>
+      <key locale="de_DE" id="LOVValueDescription{::}SR5DocumentContent_QC{::}QC0017" status="Approved"></key>
+      <key locale="de_DE" id="LOVValue{::}SR5DocumentContent_QC{::}QC0018" status="Approved">QC0018 - Schweißabnahme</key>
+      <key locale="de_DE" id="LOVValueDescription{::}SR5DocumentContent_QC{::}QC0018" status="Approved"></key>
+      <key locale="de_DE" id="LOVValue{::}SR5DocumentContent_QC{::}QC0019" status="Approved">QC0019 - Druckbehälterbescheinigung</key>
+      <key locale="de_DE" id="LOVValueDescription{::}SR5DocumentContent_QC{::}QC0019" status="Approved"></key>
+      <key locale="de_DE" id="LOVValue{::}SR5DocumentContent_QC{::}QC0020" status="Approved">QC0020 - Produktverfallsdatum</key>
+      <key locale="de_DE" id="LOVValueDescription{::}SR5DocumentContent_QC{::}QC0020" status="Approved"></key>
+      <key locale="de_DE" id="LOVValue{::}SR5DocumentContent_QZ{::}QZ0000" status="Approved">QZ0000 - Div Nachweis und Spezifikation</key>
+      <key locale="de_DE" id="LOVValueDescription{::}SR5DocumentContent_QZ{::}QZ0000" status="Approved"></key>
+      <key locale="de_DE" id="LOVValue{::}SR5DocumentContent_QZ{::}QZ0001" status="Approved">QZ0001 - DB AG Dokumente</key>
+      <key locale="de_DE" id="LOVValueDescription{::}SR5DocumentContent_QZ{::}QZ0001" status="Approved"></key>
+      <key locale="de_DE" id="LOVValue{::}SR5DocumentContent_QZ{::}QZ0002" status="Approved">QZ0002 - BVG Dokumente</key>
+      <key locale="de_DE" id="LOVValueDescription{::}SR5DocumentContent_QZ{::}QZ0002" status="Approved"></key>
+      <key locale="de_DE" id="LOVValue{::}SR5DocumentContent_TA{::}TA0000" status="Approved">TA0000 - Entwurfszeichnung</key>
+      <key locale="de_DE" id="LOVValueDescription{::}SR5DocumentContent_TA{::}TA0000" status="Approved"></key>
+      <key locale="de_DE" id="LOVValue{::}SR5DocumentContent_TB{::}TB0000" status="Approved">TB0000 - Konstruktionszeichnung</key>
+      <key locale="de_DE" id="LOVValueDescription{::}SR5DocumentContent_TB{::}TB0000" status="Approved"></key>
+      <key locale="de_DE" id="LOVValue{::}SR5DocumentContent_TB{::}TB0001" status="Approved">TB0001 - 2D-Zeichnung</key>
+      <key locale="de_DE" id="LOVValueDescription{::}SR5DocumentContent_TB{::}TB0001" status="Approved"></key>
+      <key locale="de_DE" id="LOVValue{::}SR5DocumentContent_TB{::}TB0002" status="Approved">TB0002 - 3D-Daten</key>
+      <key locale="de_DE" id="LOVValueDescription{::}SR5DocumentContent_TB{::}TB0002" status="Approved"></key>
+      <key locale="de_DE" id="LOVValue{::}SR5DocumentContent_TB{::}TB0003" status="Approved">TB0003 - FEM-Modell</key>
+      <key locale="de_DE" id="LOVValueDescription{::}SR5DocumentContent_TB{::}TB0003" status="Approved"></key>
+      <key locale="de_DE" id="LOVValue{::}SR5DocumentContent_TB{::}TB0004" status="Approved">TB0004 - Ersatzteilzeichnung</key>
+      <key locale="de_DE" id="LOVValueDescription{::}SR5DocumentContent_TB{::}TB0004" status="Approved"></key>
+      <key locale="de_DE" id="LOVValue{::}SR5DocumentContent_TC{::}TC0000" status="Approved">TC0000 - Fertigung- und Errichtung Zchg</key>
+      <key locale="de_DE" id="LOVValueDescription{::}SR5DocumentContent_TC{::}TC0000" status="Approved"></key>
+      <key locale="de_DE" id="LOVValue{::}SR5DocumentContent_TC{::}TC0001" status="Approved">TC0001 - Druckl.- Hydraulik- Medienplan</key>
+      <key locale="de_DE" id="LOVValueDescription{::}SR5DocumentContent_TC{::}TC0001" status="Approved"></key>
+      <key locale="de_DE" id="LOVValue{::}SR5DocumentContent_WA{::}WA0000" status="Approved">WA0000 - Einstellwertdok Chargenrezept</key>
+      <key locale="de_DE" id="LOVValueDescription{::}SR5DocumentContent_WA{::}WA0000" status="Approved"></key>
+      <key locale="de_DE" id="LOVValue{::}SR5DocumentContent_WT{::}WT0000" status="Approved">WT0000 - Logbuch</key>
+      <key locale="de_DE" id="LOVValueDescription{::}SR5DocumentContent_WT{::}WT0000" status="Approved"></key>
+    </Add>
+  </TcBusinessDataLocalization>

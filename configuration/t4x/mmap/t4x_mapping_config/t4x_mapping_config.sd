@@ -1,0 +1,38 @@
+##
+#===================================================
+# \copyright     2016
+#                Siemens Product Lifecycle Management Software Inc.
+#                All Rights Reserved.
+#===================================================
+#
+# \file          t4x_mapping_config.sd
+#
+# \brief         Central configuration file for all needed shared defaults of the Teamcenter Gateway product family
+#
+# \details       The file contains some default settings and determines which other mapping files are active or not
+#                \n The Name of the file t4x_mapping_config.sd is fixed and the file must be present in var/mmap/t4x_mapping_config directory. \n 
+#
+# \author        J.S., 20160323
+#
+# ------------------------------------------------------------------------------------------------------
+
+set ::errorInfo ""
+tpwrite -mtype INTERN "t4x_mapping_config.sd :: START INIT"
+
+#***************************************************************************************************
+#   Here you can define all customer specific default values for the T4S gateway
+#***************************************************************************************************
+
+
+
+#***************************************************************************************************
+#   Source the customer specific mapping functions and all other customer specific
+#   function modules of the configuration (all *.sd files in the var/mmap/t4x_mapping_config directory):
+#***************************************************************************************************
+
+source -relax t4x_custom_mapping_toolbox.sd;  # Mapping file for T4X toolbox
+source -relax t4x_user_exit_template.sd;      # Mapping file for T4X user exit calls
+source -relax t4x_workflow_batchjob_template.sd;      # Customer specific namespace template for the workflow review to specify the email notification
+
+tpwrite -mtype INTERN "t4x_mapping_config.sd :: STOP INIT"
+if {$::errorInfo ne ""} {tpwrite -mtype ERROR "t4x_mapping_config.sd :: ERROR -> $::errorInfo"}

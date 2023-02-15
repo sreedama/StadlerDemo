@@ -1,0 +1,501 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<TcBusinessDataLocalization xmlns="http://teamcenter.com/BusinessModel/TcBusinessDataLocalization" batchXSDVersion="1.0" Date="Mon Sep 28 09:24:15 AM 2015">
+  <Add>
+    <key locale="en_US" id="LOVValue{::}SR5ProposedClassification{::}C10010000" status="Approved">SF - Sheet Metal and plates</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ProposedClassification{::}C10010000" status="Approved">10 Engineering semi-finished product/00 Sheet Metal and plates</key>
+    <key locale="en_US" id="LOVValue{::}SR5ProposedClassification{::}C10020100" status="Approved">SF - Round</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ProposedClassification{::}C10020100" status="Approved">10 Engineering semi-finished product/05 Tubes and Pipes/00 Round</key>
+    <key locale="en_US" id="LOVValue{::}SR5ProposedClassification{::}C10020200" status="Approved">SF - Rectangular</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ProposedClassification{::}C10020200" status="Approved">10 Engineering semi-finished product/05 Tubes and Pipes/05 Rectangular</key>
+    <key locale="en_US" id="LOVValue{::}SR5ProposedClassification{::}C10029900" status="Approved">SF - Other (tubes and pipes)</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ProposedClassification{::}C10029900" status="Approved">10 Engineering semi-finished product/05 Tubes and Pipes/99 Other (tubes and pipes)</key>
+    <key locale="en_US" id="LOVValue{::}SR5ProposedClassification{::}C10030100" status="Approved">SF - Rectangular (incl. flat steel)</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ProposedClassification{::}C10030100" status="Approved">10 Engineering semi-finished product/10 Bars/00 Rectangular (incl. flat steel)</key>
+    <key locale="en_US" id="LOVValue{::}SR5ProposedClassification{::}C10030200" status="Approved">SF - Round</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ProposedClassification{::}C10030200" status="Approved">10 Engineering semi-finished product/10 Bars/05 Round</key>
+    <key locale="en_US" id="LOVValue{::}SR5ProposedClassification{::}C10039900" status="Approved">SF - Other (bars)</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ProposedClassification{::}C10039900" status="Approved">10 Engineering semi-finished product/10 Bars/99 Other (bars)</key>
+    <key locale="en_US" id="LOVValue{::}SR5ProposedClassification{::}C10040100" status="Approved">SF - C-Profile</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ProposedClassification{::}C10040100" status="Approved">10 Engineering semi-finished product/15 Profiles/00 C-Profile</key>
+    <key locale="en_US" id="LOVValue{::}SR5ProposedClassification{::}C10040200" status="Approved">SF - L-Profile</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ProposedClassification{::}C10040200" status="Approved">10 Engineering semi-finished product/15 Profiles/05 L-Profile</key>
+    <key locale="en_US" id="LOVValue{::}SR5ProposedClassification{::}C10040300" status="Approved">SF - T-Profile</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ProposedClassification{::}C10040300" status="Approved">10 Engineering semi-finished product/15 Profiles/10 T-Profile</key>
+    <key locale="en_US" id="LOVValue{::}SR5ProposedClassification{::}C10040400" status="Approved">SF - U-Profile</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ProposedClassification{::}C10040400" status="Approved">10 Engineering semi-finished product/15 Profiles/15 U-Profile</key>
+    <key locale="en_US" id="LOVValue{::}SR5ProposedClassification{::}C10049800" status="Approved">SF - Extruded profiles (Stadler specific)</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ProposedClassification{::}C10049800" status="Approved">10 Engineering semi-finished product/15 Profiles/98 Extruded profiles (Stadler specific)</key>
+    <key locale="en_US" id="LOVValue{::}SR5ProposedClassification{::}C10049900" status="Approved">SF - Other (profiles)</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ProposedClassification{::}C10049900" status="Approved">10 Engineering semi-finished product/15 Profiles/99 Other (profiles)</key>
+    <key locale="en_US" id="LOVValue{::}SR5ProposedClassification{::}C10050000" status="Approved">SF - Cables</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ProposedClassification{::}C10050000" status="Approved">10 Engineering semi-finished product/20 Cables</key>
+    <key locale="en_US" id="LOVValue{::}SR5ProposedClassification{::}C10060000" status="Approved">SF - Hoses</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ProposedClassification{::}C10060000" status="Approved">10 Engineering semi-finished product/25 Hoses</key>
+    <key locale="en_US" id="LOVValue{::}SR5ProposedClassification{::}C10070400" status="Approved">SF - Edge protection</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ProposedClassification{::}C10070400" status="Approved">10 Engineering semi-finished product/30 Seals + Adhesives/15 Edge protection</key>
+    <key locale="en_US" id="LOVValue{::}SR5ProposedClassification{::}C10070500" status="Approved">SF - Clip on profiles</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ProposedClassification{::}C10070500" status="Approved">10 Engineering semi-finished product/30 Seals + Adhesives/20 Clip on profiles</key>
+    <key locale="en_US" id="LOVValue{::}SR5ProposedClassification{::}C10070600" status="Approved">SF - Sealing tape</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ProposedClassification{::}C10070600" status="Approved">10 Engineering semi-finished product/30 Seals + Adhesives/25 Sealing tape</key>
+    <key locale="en_US" id="LOVValue{::}SR5ProposedClassification{::}C10070700" status="Approved">SF - Adhesive tape</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ProposedClassification{::}C10070700" status="Approved">10 Engineering semi-finished product/30 Seals + Adhesives/30 Adhesive tape</key>
+    <key locale="en_US" id="LOVValue{::}SR5ProposedClassification{::}C10079900" status="Approved">SF - Other (seals)</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ProposedClassification{::}C10079900" status="Approved">10 Engineering semi-finished product/30 Seals + Adhesives/99 Other (seals)</key>
+    <key locale="en_US" id="LOVValue{::}SR5ProposedClassification{::}C10080100" status="Approved">SF - Ropes</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ProposedClassification{::}C10080100" status="Approved">10 Engineering semi-finished product/35 Ropes, belts and straps/00 Ropes</key>
+    <key locale="en_US" id="LOVValue{::}SR5ProposedClassification{::}C10080200" status="Approved">SF - Straps</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ProposedClassification{::}C10080200" status="Approved">10 Engineering semi-finished product/35 Ropes, belts and straps/05 Straps</key>
+    <key locale="en_US" id="LOVValue{::}SR5ProposedClassification{::}C10089900" status="Approved">SF - Other (ropes, belts and straps)</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ProposedClassification{::}C10089900" status="Approved">10 Engineering semi-finished product/35 Ropes, belts and straps/99 Other (ropes, belts and straps)</key>
+    <key locale="en_US" id="LOVValue{::}SR5ProposedClassification{::}C10090000" status="Approved">SF - Cable channels</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ProposedClassification{::}C10090000" status="Approved">10 Engineering semi-finished product/40 Cable channels</key>
+    <key locale="en_US" id="LOVValue{::}SR5ProposedClassification{::}C20010100" status="Approved">ME - Screws</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ProposedClassification{::}C20010100" status="Approved">20 Machine elements +/00 Fastening elements/00 Screws</key>
+    <key locale="en_US" id="LOVValue{::}SR5ProposedClassification{::}C20010200" status="Approved">ME - Nuts</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ProposedClassification{::}C20010200" status="Approved">20 Machine elements +/00 Fastening elements/05 Nuts</key>
+    <key locale="en_US" id="LOVValue{::}SR5ProposedClassification{::}C20010300" status="Approved">ME - Washers</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ProposedClassification{::}C20010300" status="Approved">20 Machine elements +/00 Fastening elements/10 Washers</key>
+    <key locale="en_US" id="LOVValue{::}SR5ProposedClassification{::}C20010400" status="Approved">ME - Pins</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ProposedClassification{::}C20010400" status="Approved">20 Machine elements +/00 Fastening elements/15 Pins</key>
+    <key locale="en_US" id="LOVValue{::}SR5ProposedClassification{::}C20010500" status="Approved">ME - Inserts</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ProposedClassification{::}C20010500" status="Approved">20 Machine elements +/00 Fastening elements/20 Inserts</key>
+    <key locale="en_US" id="LOVValue{::}SR5ProposedClassification{::}C20010600" status="Approved">ME - Rivet</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ProposedClassification{::}C20010600" status="Approved">20 Machine elements +/00 Fastening elements/25 Rivet</key>
+    <key locale="en_US" id="LOVValue{::}SR5ProposedClassification{::}C20010700" status="Approved">ME - Rivet nut + stud</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ProposedClassification{::}C20010700" status="Approved">20 Machine elements +/00 Fastening elements/30 Rivet nut + stud</key>
+    <key locale="en_US" id="LOVValue{::}SR5ProposedClassification{::}C20010800" status="Approved">ME - Clip</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ProposedClassification{::}C20010800" status="Approved">20 Machine elements +/00 Fastening elements/35 Clip</key>
+    <key locale="en_US" id="LOVValue{::}SR5ProposedClassification{::}C20010900" status="Approved">ME - Bonding fasteners</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ProposedClassification{::}C20010900" status="Approved">20 Machine elements +/00 Fastening elements/40 Bonding fasteners</key>
+    <key locale="en_US" id="LOVValue{::}SR5ProposedClassification{::}C20019900" status="Approved">ME - Other (fastening elements)</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ProposedClassification{::}C20019900" status="Approved">20 Machine elements +/00 Fastening elements/99 Other (fastening elements)</key>
+    <key locale="en_US" id="LOVValue{::}SR5ProposedClassification{::}C20020100" status="Approved">ME - Compression springs</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ProposedClassification{::}C20020100" status="Approved">20 Machine elements +/05 Springs + dampers/00 Compression springs</key>
+    <key locale="en_US" id="LOVValue{::}SR5ProposedClassification{::}C20020200" status="Approved">ME - Draw springs</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ProposedClassification{::}C20020200" status="Approved">20 Machine elements +/05 Springs + dampers/05 Draw springs</key>
+    <key locale="en_US" id="LOVValue{::}SR5ProposedClassification{::}C20020300" status="Approved">ME - Torison springs</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ProposedClassification{::}C20020300" status="Approved">20 Machine elements +/05 Springs + dampers/10 Torison springs</key>
+    <key locale="en_US" id="LOVValue{::}SR5ProposedClassification{::}C20020400" status="Approved">ME - Gas spring</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ProposedClassification{::}C20020400" status="Approved">20 Machine elements +/05 Springs + dampers/15 Gas spring</key>
+    <key locale="en_US" id="LOVValue{::}SR5ProposedClassification{::}C20020500" status="Approved">ME - Rubber metal elements</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ProposedClassification{::}C20020500" status="Approved">20 Machine elements +/05 Springs + dampers/20 Rubber metal elements</key>
+    <key locale="en_US" id="LOVValue{::}SR5ProposedClassification{::}C20020600" status="Approved">ME - Vibration dampers</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ProposedClassification{::}C20020600" status="Approved">20 Machine elements +/05 Springs + dampers/25 Vibration dampers</key>
+    <key locale="en_US" id="LOVValue{::}SR5ProposedClassification{::}C20020700" status="Approved">ME - Metal mountings</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ProposedClassification{::}C20020700" status="Approved">20 Machine elements +/05 Springs + dampers/30 Metal mountings</key>
+    <key locale="en_US" id="LOVValue{::}SR5ProposedClassification{::}C20029900" status="Approved">ME - Other (spring + dampers)</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ProposedClassification{::}C20029900" status="Approved">20 Machine elements +/05 Springs + dampers/99 Other (spring + dampers)</key>
+    <key locale="en_US" id="LOVValue{::}SR5ProposedClassification{::}C20030000" status="Approved">ME - Shafts + Axis</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ProposedClassification{::}C20030000" status="Approved">20 Machine elements +/10 Shafts + Axis</key>
+    <key locale="en_US" id="LOVValue{::}SR5ProposedClassification{::}C20040100" status="Approved">ME - Rolling bearings</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ProposedClassification{::}C20040100" status="Approved">20 Machine elements +/15 Bearing/00 Rolling bearings</key>
+    <key locale="en_US" id="LOVValue{::}SR5ProposedClassification{::}C20040200" status="Approved">ME - Plain bearings</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ProposedClassification{::}C20040200" status="Approved">20 Machine elements +/15 Bearing/05 Plain bearings</key>
+    <key locale="en_US" id="LOVValue{::}SR5ProposedClassification{::}C20040300" status="Approved">ME - Other (bearing)</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ProposedClassification{::}C20040300" status="Approved">20 Machine elements +/15 Bearing/99 Other (bearing)</key>
+    <key locale="en_US" id="LOVValue{::}SR5ProposedClassification{::}C20050000" status="Approved">ME - Clutch + brakes</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ProposedClassification{::}C20050000" status="Approved">20 Machine elements +/20 Clutch + brakes</key>
+    <key locale="en_US" id="LOVValue{::}SR5ProposedClassification{::}C20060000" status="Approved">ME - Drive</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ProposedClassification{::}C20060000" status="Approved">20 Machine elements +/25 Drive</key>
+    <key locale="en_US" id="LOVValue{::}SR5ProposedClassification{::}C20070000" status="Approved">ME - Gears</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ProposedClassification{::}C20070000" status="Approved">20 Machine elements +/30 Gears</key>
+    <key locale="en_US" id="LOVValue{::}SR5ProposedClassification{::}C20080100" status="Approved">ME - Handle</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ProposedClassification{::}C20080100" status="Approved">20 Machine elements +/35 Functional Elements/00 Handle</key>
+    <key locale="en_US" id="LOVValue{::}SR5ProposedClassification{::}C20080200" status="Approved">ME - Crank</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ProposedClassification{::}C20080200" status="Approved">20 Machine elements +/35 Functional Elements/05 Crank</key>
+    <key locale="en_US" id="LOVValue{::}SR5ProposedClassification{::}C20080300" status="Approved">ME - Hand wheel</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ProposedClassification{::}C20080300" status="Approved">20 Machine elements +/35 Functional Elements/10 Hand wheel</key>
+    <key locale="en_US" id="LOVValue{::}SR5ProposedClassification{::}C20080400" status="Approved">ME - Lever, fork, rod</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ProposedClassification{::}C20080400" status="Approved">20 Machine elements +/35 Functional Elements/15 Lever, fork, rod</key>
+    <key locale="en_US" id="LOVValue{::}SR5ProposedClassification{::}C20080500" status="Approved">ME - Locks</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ProposedClassification{::}C20080500" status="Approved">20 Machine elements +/35 Functional Elements/20 Locks</key>
+    <key locale="en_US" id="LOVValue{::}SR5ProposedClassification{::}C20080600" status="Approved">ME - Latches</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ProposedClassification{::}C20080600" status="Approved">20 Machine elements +/35 Functional Elements/25 Latches</key>
+    <key locale="en_US" id="LOVValue{::}SR5ProposedClassification{::}C20080700" status="Approved">ME - Hinges</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ProposedClassification{::}C20080700" status="Approved">20 Machine elements +/35 Functional Elements/30 Hinges</key>
+    <key locale="en_US" id="LOVValue{::}SR5ProposedClassification{::}C20080800" status="Approved">ME - Joints</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ProposedClassification{::}C20080800" status="Approved">20 Machine elements +/35 Functional Elements/35 Joints</key>
+    <key locale="en_US" id="LOVValue{::}SR5ProposedClassification{::}C20080900" status="Approved">ME - Secure Element</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ProposedClassification{::}C20080900" status="Approved">20 Machine elements +/35 Functional Elements/40 Secure Element</key>
+    <key locale="en_US" id="LOVValue{::}SR5ProposedClassification{::}C20089900" status="Approved">ME - Other (functional elments)</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ProposedClassification{::}C20089900" status="Approved">20 Machine elements +/35 Functional Elements/99 Other (functional elments)</key>
+    <key locale="en_US" id="LOVValue{::}SR5ProposedClassification{::}C20090100" status="Approved">ME - Adhesive</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ProposedClassification{::}C20090100" status="Approved">20 Machine elements +/40 Adhesives/00 Glue / Adhesive</key>
+    <key locale="en_US" id="LOVValue{::}SR5ProposedClassification{::}C20090200" status="Approved">ME - Adhesive tape</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ProposedClassification{::}C20090200" status="Approved">20 Machine elements +/40 Adhesives/05 Adhesive tape</key>
+    <key locale="en_US" id="LOVValue{::}SR5ProposedClassification{::}C20090300" status="Approved">ME - Technical filling compound and surfacer</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ProposedClassification{::}C20090300" status="Approved">20 Machine elements +/40 Adhesives/10 Technical filling compound and surfacer</key>
+    <key locale="en_US" id="LOVValue{::}SR5ProposedClassification{::}C20090400" status="Approved">ME - Adhesive aid (activator, hardener)</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ProposedClassification{::}C20090400" status="Approved">20 Machine elements +/40 Adhesives/15 Adhesive aid (activator, hardener)</key>
+    <key locale="en_US" id="LOVValue{::}SR5ProposedClassification{::}C20090500" status="Approved">ME - Adhesive mount</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ProposedClassification{::}C20090500" status="Approved">20 Machine elements +/40 Adhesives/20 Adhesive mount</key>
+    <key locale="en_US" id="LOVValue{::}SR5ProposedClassification{::}C20099900" status="Approved">ME - Other (adhesivs)</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ProposedClassification{::}C20099900" status="Approved">20 Machine elements +/40 Adhesives/99 Other (adhesivs)</key>
+    <key locale="en_US" id="LOVValue{::}SR5ProposedClassification{::}C20100100" status="Approved">ME - seal</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ProposedClassification{::}C20100100" status="Approved">20 Machine elements +/45 Seals/00 Mechanical seal / Shaft seal</key>
+    <key locale="en_US" id="LOVValue{::}SR5ProposedClassification{::}C20100200" status="Approved">ME - Diaphragm gasket, bellow gasket</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ProposedClassification{::}C20100200" status="Approved">20 Machine elements +/45 Seals/05 Diaphragm gasket, bellow gasket</key>
+    <key locale="en_US" id="LOVValue{::}SR5ProposedClassification{::}C20100300" status="Approved">ME - sheet</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ProposedClassification{::}C20100300" status="Approved">20 Machine elements +/45 Seals/10 Sealant plate/sheet</key>
+    <key locale="en_US" id="LOVValue{::}SR5ProposedClassification{::}C20100400" status="Approved">ME - Flat gasket</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ProposedClassification{::}C20100400" status="Approved">20 Machine elements +/45 Seals/15 Flat gasket</key>
+    <key locale="en_US" id="LOVValue{::}SR5ProposedClassification{::}C20100500" status="Approved">ME - O-ring</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ProposedClassification{::}C20100500" status="Approved">20 Machine elements +/45 Seals/20 O-ring</key>
+    <key locale="en_US" id="LOVValue{::}SR5ProposedClassification{::}C20100600" status="Approved">ME - Stuffing box packing</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ProposedClassification{::}C20100600" status="Approved">20 Machine elements +/45 Seals/25 Stuffing box packing</key>
+    <key locale="en_US" id="LOVValue{::}SR5ProposedClassification{::}C20100700" status="Approved">ME - Translatory sealing</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ProposedClassification{::}C20100700" status="Approved">20 Machine elements +/45 Seals/30 Translatory sealing</key>
+    <key locale="en_US" id="LOVValue{::}SR5ProposedClassification{::}C20100800" status="Approved">ME - Sealing tape</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ProposedClassification{::}C20100800" status="Approved">20 Machine elements +/45 Seals/35 Sealing tape</key>
+    <key locale="en_US" id="LOVValue{::}SR5ProposedClassification{::}C20101000" status="Approved">ME - Sealant</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ProposedClassification{::}C20101000" status="Approved">20 Machine elements +/45 Seals/45 Sealing compound / Sealant</key>
+    <key locale="en_US" id="LOVValue{::}SR5ProposedClassification{::}C20109900" status="Approved">ME - Other (seals)</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ProposedClassification{::}C20109900" status="Approved">20 Machine elements +/45 Seals/99 Other (seals)</key>
+    <key locale="en_US" id="LOVValue{::}SR5ProposedClassification{::}C20110100" status="Approved">ME - Weld seams alu</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ProposedClassification{::}C20110100" status="Approved">20 Machine elements +/50 Stadler specific/00 Weld seams alu</key>
+    <key locale="en_US" id="LOVValue{::}SR5ProposedClassification{::}C20110200" status="Approved">ME - Weld seams steel</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ProposedClassification{::}C20110200" status="Approved">20 Machine elements +/50 Stadler specific/05 Weld seams steel</key>
+    <key locale="en_US" id="LOVValue{::}SR5ProposedClassification{::}C20110300" status="Approved">ME - Weld seams stainless steel</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ProposedClassification{::}C20110300" status="Approved">20 Machine elements +/50 Stadler specific/10 Weld seams stainless steel</key>
+    <key locale="en_US" id="LOVValue{::}SR5ProposedClassification{::}C20110400" status="Approved">ME - Weld seams laser</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ProposedClassification{::}C20110400" status="Approved">20 Machine elements +/50 Stadler specific/15 Weld seams laser</key>
+    <key locale="en_US" id="LOVValue{::}SR5ProposedClassification{::}C20110500" status="Approved">ME - Ground plugs</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ProposedClassification{::}C20110500" status="Approved">20 Machine elements +/50 Stadler specific/20 Ground plugs</key>
+    <key locale="en_US" id="LOVValue{::}SR5ProposedClassification{::}C20110600" status="Approved">ME - Extansion sleeves (Stadler)</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ProposedClassification{::}C20110600" status="Approved">20 Machine elements +/50 Stadler specific/25 Extansion sleeves (Stadler)</key>
+    <key locale="en_US" id="LOVValue{::}SR5ProposedClassification{::}C20110700" status="Approved">ME - Sliding block</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ProposedClassification{::}C20110700" status="Approved">20 Machine elements +/50 Stadler specific/30 Sliding block</key>
+    <key locale="en_US" id="LOVValue{::}SR5ProposedClassification{::}C20110800" status="Approved">ME - C-Rail</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ProposedClassification{::}C20110800" status="Approved">20 Machine elements +/50 Stadler specific/35 C-Rail</key>
+    <key locale="en_US" id="LOVValue{::}SR5ProposedClassification{::}C20120100" status="Approved">ME - Oil</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ProposedClassification{::}C20120100" status="Approved">20 Machine elements +/55 Operating supplies/00 Oil</key>
+    <key locale="en_US" id="LOVValue{::}SR5ProposedClassification{::}C20120200" status="Approved">ME - Coolant</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ProposedClassification{::}C20120200" status="Approved">20 Machine elements +/55 Operating supplies/05 Coolant</key>
+    <key locale="en_US" id="LOVValue{::}SR5ProposedClassification{::}C20120300" status="Approved">ME - Fuel</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ProposedClassification{::}C20120300" status="Approved">20 Machine elements +/55 Operating supplies/10 Fuel</key>
+    <key locale="en_US" id="LOVValue{::}SR5ProposedClassification{::}C20129900" status="Approved">ME - Other (operating supplies)</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ProposedClassification{::}C20129900" status="Approved">20 Machine elements +/55 Operating supplies/15 Other (operating supplies)</key>
+    <key locale="en_US" id="LOVValue{::}SR5ProposedClassification{::}C30010100" status="Approved">FC - Tank</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ProposedClassification{::}C30010100" status="Approved">30 Fluid components +/00 Components/00 Tank</key>
+    <key locale="en_US" id="LOVValue{::}SR5ProposedClassification{::}C30010200" status="Approved">FC - (Reservoir)</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ProposedClassification{::}C30010200" status="Approved">30 Fluid components +/00 Components/05 Accumulators / (Reservoir)</key>
+    <key locale="en_US" id="LOVValue{::}SR5ProposedClassification{::}C30010300" status="Approved">FC - Control unit</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ProposedClassification{::}C30010300" status="Approved">30 Fluid components +/00 Components/10 Control unit</key>
+    <key locale="en_US" id="LOVValue{::}SR5ProposedClassification{::}C30010400" status="Approved">FC - Catalysator</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ProposedClassification{::}C30010400" status="Approved">30 Fluid components +/00 Components/15 Silencers / Mufflers / Catalysator</key>
+    <key locale="en_US" id="LOVValue{::}SR5ProposedClassification{::}C30010500" status="Approved">FC - Manometer (mechanical)</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ProposedClassification{::}C30010500" status="Approved">30 Fluid components +/00 Components/20 Manometer (mechanical)</key>
+    <key locale="en_US" id="LOVValue{::}SR5ProposedClassification{::}C30010600" status="Approved">FC - Horn</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ProposedClassification{::}C30010600" status="Approved">30 Fluid components +/00 Components/25 Typhon / Horn</key>
+    <key locale="en_US" id="LOVValue{::}SR5ProposedClassification{::}C30010700" status="Approved">FC - Valves</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ProposedClassification{::}C30010700" status="Approved">30 Fluid components +/00 Components/30 Valves</key>
+    <key locale="en_US" id="LOVValue{::}SR5ProposedClassification{::}C30010800" status="Approved">FC - Filter</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ProposedClassification{::}C30010800" status="Approved">30 Fluid components +/00 Components/35 Filter</key>
+    <key locale="en_US" id="LOVValue{::}SR5ProposedClassification{::}C30010900" status="Approved">FC - compressor</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ProposedClassification{::}C30010900" status="Approved">30 Fluid components +/00 Components/40 Pump / Motor / compressor</key>
+    <key locale="en_US" id="LOVValue{::}SR5ProposedClassification{::}C30011000" status="Approved">FC - Cooler</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ProposedClassification{::}C30011000" status="Approved">30 Fluid components +/00 Components/45 Radiator / Cooler</key>
+    <key locale="en_US" id="LOVValue{::}SR5ProposedClassification{::}C30019900" status="Approved">FC - Other (components)</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ProposedClassification{::}C30019900" status="Approved">30 Fluid components +/00 Components/99 Other (components)</key>
+    <key locale="en_US" id="LOVValue{::}SR5ProposedClassification{::}C30020100" status="Approved">FC - Pipe fittings</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ProposedClassification{::}C30020100" status="Approved">30 Fluid components +/05 Fittings/00 Pipe fittings</key>
+    <key locale="en_US" id="LOVValue{::}SR5ProposedClassification{::}C30020200" status="Approved">FC - Hose fittings</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ProposedClassification{::}C30020200" status="Approved">30 Fluid components +/05 Fittings/05 Hose fittings</key>
+    <key locale="en_US" id="LOVValue{::}SR5ProposedClassification{::}C30020300" status="Approved">FC - Coupling</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ProposedClassification{::}C30020300" status="Approved">30 Fluid components +/05 Fittings/10 Coupling</key>
+    <key locale="en_US" id="LOVValue{::}SR5ProposedClassification{::}C30029900" status="Approved">FC - Other (fittings)</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ProposedClassification{::}C30029900" status="Approved">30 Fluid components +/05 Fittings/99 Other (fittings)</key>
+    <key locale="en_US" id="LOVValue{::}SR5ProposedClassification{::}C30030100" status="Approved">FC - Hose (finished)</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ProposedClassification{::}C30030100" status="Approved">30 Fluid components +/10 Pipes  / Hoses / Channel/00 Hose (finished)</key>
+    <key locale="en_US" id="LOVValue{::}SR5ProposedClassification{::}C30030200" status="Approved">FC - Pipes (finished)</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ProposedClassification{::}C30030200" status="Approved">30 Fluid components +/10 Pipes  / Hoses / Channel/05 Pipes (finished)</key>
+    <key locale="en_US" id="LOVValue{::}SR5ProposedClassification{::}C30030300" status="Approved">FC - Channel</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ProposedClassification{::}C30030300" status="Approved">30 Fluid components +/10 Pipes  / Hoses / Channel/10 Channel</key>
+    <key locale="en_US" id="LOVValue{::}SR5ProposedClassification{::}C30030400" status="Approved">FC - Hose guards and hose sleeves</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ProposedClassification{::}C30030400" status="Approved">30 Fluid components +/10 Pipes  / Hoses / Channel/15 Hose guards and hose sleeves</key>
+    <key locale="en_US" id="LOVValue{::}SR5ProposedClassification{::}C30030500" status="Approved">FC - Compensator</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ProposedClassification{::}C30030500" status="Approved">30 Fluid components +/10 Pipes  / Hoses / Channel/20 Bellows / Compensator</key>
+    <key locale="en_US" id="LOVValue{::}SR5ProposedClassification{::}C30039900" status="Approved">FC - Other (tubes and hoses)</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ProposedClassification{::}C30039900" status="Approved">30 Fluid components +/10 Pipes  / Hoses / Channel/99 Other (tubes and hoses)</key>
+    <key locale="en_US" id="LOVValue{::}SR5ProposedClassification{::}C30040100" status="Approved">FC - Flange</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ProposedClassification{::}C30040100" status="Approved">30 Fluid components +/15 Flanges/00 Flange</key>
+    <key locale="en_US" id="LOVValue{::}SR5ProposedClassification{::}C30049900" status="Approved">FC - Other (flanges)</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ProposedClassification{::}C30049900" status="Approved">30 Fluid components +/15 Flanges/99 Other (flanges)</key>
+    <key locale="en_US" id="LOVValue{::}SR5ProposedClassification{::}C30050100" status="Approved">FC - Clamps</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ProposedClassification{::}C30050100" status="Approved">30 Fluid components +/20 Clamps/00 Clamps</key>
+    <key locale="en_US" id="LOVValue{::}SR5ProposedClassification{::}C30050200" status="Approved">FC - Clamping bands</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ProposedClassification{::}C30050200" status="Approved">30 Fluid components +/20 Clamps/05 Clamping bands</key>
+    <key locale="en_US" id="LOVValue{::}SR5ProposedClassification{::}C30059900" status="Approved">FC - Other (clamps)</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ProposedClassification{::}C30059900" status="Approved">30 Fluid components +/20 Clamps/99 Other (clamps)</key>
+    <key locale="en_US" id="LOVValue{::}SR5ProposedClassification{::}C40010100" status="Approved">EC - Electric potential (BA)</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ProposedClassification{::}C40010100" status="Approved">40 Electric components /05 Sensing (B)/00 Electric potential (BA)</key>
+    <key locale="en_US" id="LOVValue{::}SR5ProposedClassification{::}C40010200" status="Approved">EC - Resistivity (BB)</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ProposedClassification{::}C40010200" status="Approved">40 Electric components /05 Sensing (B)/04 Resistivity (BB)</key>
+    <key locale="en_US" id="LOVValue{::}SR5ProposedClassification{::}C40010300" status="Approved">EC - Electric current (BC)</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ProposedClassification{::}C40010300" status="Approved">40 Electric components /05 Sensing (B)/08 Electric current (BC)</key>
+    <key locale="en_US" id="LOVValue{::}SR5ProposedClassification{::}C40010400" status="Approved">EC - Density (BD)</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ProposedClassification{::}C40010400" status="Approved">40 Electric components /05 Sensing (B)/12 Density (BD)</key>
+    <key locale="en_US" id="LOVValue{::}SR5ProposedClassification{::}C40010500" status="Approved">EC - Electric field (BE)</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ProposedClassification{::}C40010500" status="Approved">40 Electric components /05 Sensing (B)/16 Electric field (BE)</key>
+    <key locale="en_US" id="LOVValue{::}SR5ProposedClassification{::}C40010600" status="Approved">EC - Flow (BF)</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ProposedClassification{::}C40010600" status="Approved">40 Electric components /05 Sensing (B)/20 Flow (BF)</key>
+    <key locale="en_US" id="LOVValue{::}SR5ProposedClassification{::}C40010700" status="Approved">EC - Physical dimension (BG)</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ProposedClassification{::}C40010700" status="Approved">40 Electric components /05 Sensing (B)/24 Physical dimension (BG)</key>
+    <key locale="en_US" id="LOVValue{::}SR5ProposedClassification{::}C40010800" status="Approved">EC - Energy (BH)</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ProposedClassification{::}C40010800" status="Approved">40 Electric components /05 Sensing (B)/28 Energy (BH)</key>
+    <key locale="en_US" id="LOVValue{::}SR5ProposedClassification{::}C40010900" status="Approved">EC - Power (BJ)</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ProposedClassification{::}C40010900" status="Approved">40 Electric components /05 Sensing (B)/32 Power (BJ)</key>
+    <key locale="en_US" id="LOVValue{::}SR5ProposedClassification{::}C40011000" status="Approved">EC - Time (BK)</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ProposedClassification{::}C40011000" status="Approved">40 Electric components /05 Sensing (B)/36 Time (BK)</key>
+    <key locale="en_US" id="LOVValue{::}SR5ProposedClassification{::}C40011100" status="Approved">EC - Level (BL)</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ProposedClassification{::}C40011100" status="Approved">40 Electric components /05 Sensing (B)/40 Level (BL)</key>
+    <key locale="en_US" id="LOVValue{::}SR5ProposedClassification{::}C40011200" status="Approved">EC - Humidity (BM)</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ProposedClassification{::}C40011200" status="Approved">40 Electric components /05 Sensing (B)/44 Humidity (BM)</key>
+    <key locale="en_US" id="LOVValue{::}SR5ProposedClassification{::}C40011300" status="Approved">EC - Pressure (BP)</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ProposedClassification{::}C40011300" status="Approved">40 Electric components /05 Sensing (B)/48 Pressure (BP)</key>
+    <key locale="en_US" id="LOVValue{::}SR5ProposedClassification{::}C40011400" status="Approved">EC - Concentration(BQ)</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ProposedClassification{::}C40011400" status="Approved">40 Electric components /05 Sensing (B)/52 Concentration(BQ)</key>
+    <key locale="en_US" id="LOVValue{::}SR5ProposedClassification{::}C40011500" status="Approved">EC - Light and radar (BR)</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ProposedClassification{::}C40011500" status="Approved">40 Electric components /05 Sensing (B)/56 Light and radar (BR)</key>
+    <key locale="en_US" id="LOVValue{::}SR5ProposedClassification{::}C40011600" status="Approved">EC - Time rating and speed (BS)</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ProposedClassification{::}C40011600" status="Approved">40 Electric components /05 Sensing (B)/60 Time rating and speed (BS)</key>
+    <key locale="en_US" id="LOVValue{::}SR5ProposedClassification{::}C40011700" status="Approved">EC - Temperature (BT)</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ProposedClassification{::}C40011700" status="Approved">40 Electric components /05 Sensing (B)/64 Temperature (BT)</key>
+    <key locale="en_US" id="LOVValue{::}SR5ProposedClassification{::}C40011800" status="Approved">EC - Multi-quantity (BU)</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ProposedClassification{::}C40011800" status="Approved">40 Electric components /05 Sensing (B)/68 Multi-quantity (BU)</key>
+    <key locale="en_US" id="LOVValue{::}SR5ProposedClassification{::}C40011900" status="Approved">EC - Force (BW)</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ProposedClassification{::}C40011900" status="Approved">40 Electric components /05 Sensing (B)/72 Force (BW)</key>
+    <key locale="en_US" id="LOVValue{::}SR5ProposedClassification{::}C40012000" status="Approved">EC - Audio - Visual (BX)</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ProposedClassification{::}C40012000" status="Approved">40 Electric components /05 Sensing (B)/76 Audio - Visual (BX)</key>
+    <key locale="en_US" id="LOVValue{::}SR5ProposedClassification{::}C40012100" status="Approved">EC - Information (BY)</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ProposedClassification{::}C40012100" status="Approved">40 Electric components /05 Sensing (B)/80 Information (BY)</key>
+    <key locale="en_US" id="LOVValue{::}SR5ProposedClassification{::}C40012200" status="Approved">EC - Incident (BZ)</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ProposedClassification{::}C40012200" status="Approved">40 Electric components /05 Sensing (B)/84 Incident (BZ)</key>
+    <key locale="en_US" id="LOVValue{::}SR5ProposedClassification{::}C40019900" status="Approved">EC - Other (BD, ...)</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ProposedClassification{::}C40019900" status="Approved">40 Electric components /05 Sensing (B)/99 Other (BD, ...)</key>
+    <key locale="en_US" id="LOVValue{::}SR5ProposedClassification{::}C40020100" status="Approved">EC - Capacitive (CA)</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ProposedClassification{::}C40020100" status="Approved">40 Electric components /10 Storing (C)/00 Capacitive (CA)</key>
+    <key locale="en_US" id="LOVValue{::}SR5ProposedClassification{::}C40020200" status="Approved">EC - Inductive (CB )</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ProposedClassification{::}C40020200" status="Approved">40 Electric components /10 Storing (C)/05 Inductive (CB )</key>
+    <key locale="en_US" id="LOVValue{::}SR5ProposedClassification{::}C40020300" status="Approved">EC - Rechargeable battery (CC)</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ProposedClassification{::}C40020300" status="Approved">40 Electric components /10 Storing (C)/10 Rechargeable battery (CC)</key>
+    <key locale="en_US" id="LOVValue{::}SR5ProposedClassification{::}C40020400" status="Approved">EC - Information (CF)</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ProposedClassification{::}C40020400" status="Approved">40 Electric components /10 Storing (C)/15 Information (CF)</key>
+    <key locale="en_US" id="LOVValue{::}SR5ProposedClassification{::}C40030100" status="Approved">EC - Light (EA)</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ProposedClassification{::}C40030100" status="Approved">40 Electric components /15 Emitting (E)/00 Light (EA)</key>
+    <key locale="en_US" id="LOVValue{::}SR5ProposedClassification{::}C40030200" status="Approved">EC - Electric heating (EB)</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ProposedClassification{::}C40030200" status="Approved">40 Electric components /15 Emitting (E)/05 Electric heating (EB)</key>
+    <key locale="en_US" id="LOVValue{::}SR5ProposedClassification{::}C40030300" status="Approved">EC - Electric cooling (EC)</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ProposedClassification{::}C40030300" status="Approved">40 Electric components /15 Emitting (E)/10 Electric cooling (EC)</key>
+    <key locale="en_US" id="LOVValue{::}SR5ProposedClassification{::}C40030400" status="Approved">EC - Wireless power (EE)</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ProposedClassification{::}C40030400" status="Approved">40 Electric components /15 Emitting (E)/15 Wireless power (EE)</key>
+    <key locale="en_US" id="LOVValue{::}SR5ProposedClassification{::}C40030500" status="Approved">EC - Thermal energy transfer (EG)</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ProposedClassification{::}C40030500" status="Approved">40 Electric components /15 Emitting (E)/20 Thermal energy transfer (EG)</key>
+    <key locale="en_US" id="LOVValue{::}SR5ProposedClassification{::}C40030600" status="Approved">EC - Thermal heating (EP)</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ProposedClassification{::}C40030600" status="Approved">40 Electric components /15 Emitting (E)/25 Thermal heating (EP)</key>
+    <key locale="en_US" id="LOVValue{::}SR5ProposedClassification{::}C40030700" status="Approved">EC - Thermal cooling (EQ)</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ProposedClassification{::}C40030700" status="Approved">40 Electric components /15 Emitting (E)/30 Thermal cooling (EQ)</key>
+    <key locale="en_US" id="LOVValue{::}SR5ProposedClassification{::}C40030800" status="Approved">EC - Acoustic wave (EV)</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ProposedClassification{::}C40030800" status="Approved">40 Electric components /15 Emitting (E)/35 Acoustic wave (EV)</key>
+    <key locale="en_US" id="LOVValue{::}SR5ProposedClassification{::}C40039900" status="Approved">EC - Other (EP, EQ, ...)</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ProposedClassification{::}C40039900" status="Approved">40 Electric components /15 Emitting (E)/99 Other (EP, EQ, ...)</key>
+    <key locale="en_US" id="LOVValue{::}SR5ProposedClassification{::}C40040100" status="Approved">EC - Overvoltage (FA)</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ProposedClassification{::}C40040100" status="Approved">40 Electric components /20 Protecting (F)/00 Overvoltage (FA)</key>
+    <key locale="en_US" id="LOVValue{::}SR5ProposedClassification{::}C40040200" status="Approved">EC - Earth fault current (FB)</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ProposedClassification{::}C40040200" status="Approved">40 Electric components /20 Protecting (F)/05 Earth fault current (FB)</key>
+    <key locale="en_US" id="LOVValue{::}SR5ProposedClassification{::}C40040300" status="Approved">EC - Overcurrent (FC)</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ProposedClassification{::}C40040300" status="Approved">40 Electric components /20 Protecting (F)/10 Overcurrent (FC)</key>
+    <key locale="en_US" id="LOVValue{::}SR5ProposedClassification{::}C40040400" status="Approved">EC - Field (FE)</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ProposedClassification{::}C40040400" status="Approved">40 Electric components /20 Protecting (F)/15 Field (FE)</key>
+    <key locale="en_US" id="LOVValue{::}SR5ProposedClassification{::}C40040500" status="Approved">EC - Fire protection (FM)</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ProposedClassification{::}C40040500" status="Approved">40 Electric components /20 Protecting (F)/20 Fire protection (FM)</key>
+    <key locale="en_US" id="LOVValue{::}SR5ProposedClassification{::}C40049900" status="Approved">EC - Other (FM, .)</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ProposedClassification{::}C40049900" status="Approved">40 Electric components /20 Protecting (F)/99 Other (FM, .)</key>
+    <key locale="en_US" id="LOVValue{::}SR5ProposedClassification{::}C40050100" status="Approved">EC - Generator (GA)</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ProposedClassification{::}C40050100" status="Approved">40 Electric components /25 Generating (G)/00 Generator (GA)</key>
+    <key locale="en_US" id="LOVValue{::}SR5ProposedClassification{::}C40050200" status="Approved">EC - Battery + Fuel cell (GB)</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ProposedClassification{::}C40050200" status="Approved">40 Electric components /25 Generating (G)/05 Battery + Fuel cell (GB)</key>
+    <key locale="en_US" id="LOVValue{::}SR5ProposedClassification{::}C40050300" status="Approved">EC - Solar cell (GC)</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ProposedClassification{::}C40050300" status="Approved">40 Electric components /25 Generating (G)/10 Solar cell (GC)</key>
+    <key locale="en_US" id="LOVValue{::}SR5ProposedClassification{::}C40050400" status="Approved">EC - Signal GF</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ProposedClassification{::}C40050400" status="Approved">40 Electric components /25 Generating (G)/15 Signal GF</key>
+    <key locale="en_US" id="LOVValue{::}SR5ProposedClassification{::}C40050500" status="Approved">EC - Continuous transfer (GL)</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ProposedClassification{::}C40050500" status="Approved">40 Electric components /25 Generating (G)/20 Continuous transfer (GL)</key>
+    <key locale="en_US" id="LOVValue{::}SR5ProposedClassification{::}C40050600" status="Approved">EC - Flow (GQ)</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ProposedClassification{::}C40050600" status="Approved">40 Electric components /25 Generating (G)/25 Flow (GQ)</key>
+    <key locale="en_US" id="LOVValue{::}SR5ProposedClassification{::}C40059900" status="Approved">EC - Other (GF, GL, .)</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ProposedClassification{::}C40059900" status="Approved">40 Electric components /25 Generating (G)/99 Other (GF, GL, .)</key>
+    <key locale="en_US" id="LOVValue{::}SR5ProposedClassification{::}C40060100" status="Approved">EC - Surface treatment (HK)</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ProposedClassification{::}C40060100" status="Approved">40 Electric components /30 Matter processing (H)/00 Surface treatment (HK)</key>
+    <key locale="en_US" id="LOVValue{::}SR5ProposedClassification{::}C40070100" status="Approved">EC - Electric signal (KE)</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ProposedClassification{::}C40070100" status="Approved">40 Electric components /35 Information processing (K)/00 Electric signal (KE)</key>
+    <key locale="en_US" id="LOVValue{::}SR5ProposedClassification{::}C40070200" status="Approved">EC - Electic signal relaying (KF)</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ProposedClassification{::}C40070200" status="Approved">40 Electric components /35 Information processing (K)/05 Electic signal relaying (KF)</key>
+    <key locale="en_US" id="LOVValue{::}SR5ProposedClassification{::}C40070300" status="Approved">EC - Optical signalling (KG)</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ProposedClassification{::}C40070300" status="Approved">40 Electric components /35 Information processing (K)/10 Optical signalling (KG)</key>
+    <key locale="en_US" id="LOVValue{::}SR5ProposedClassification{::}C40070400" status="Approved">EC - Fluid signalling (KH)</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ProposedClassification{::}C40070400" status="Approved">40 Electric components /35 Information processing (K)/15 Fluid signalling (KH)</key>
+    <key locale="en_US" id="LOVValue{::}SR5ProposedClassification{::}C40079900" status="Approved">EC - Other (K.)</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ProposedClassification{::}C40079900" status="Approved">40 Electric components /35 Information processing (K)/99 Other (K.)</key>
+    <key locale="en_US" id="LOVValue{::}SR5ProposedClassification{::}C40080100" status="Approved">EC - Electric motor (MA)</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ProposedClassification{::}C40080100" status="Approved">40 Electric components /40 Drive (M)/00 Electric motor (MA)</key>
+    <key locale="en_US" id="LOVValue{::}SR5ProposedClassification{::}C40080200" status="Approved">EC - Electromagnet (MB)</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ProposedClassification{::}C40080200" status="Approved">40 Electric components /40 Drive (M)/05 Electromagnet (MB)</key>
+    <key locale="en_US" id="LOVValue{::}SR5ProposedClassification{::}C40090000" status="Approved">EC - Covering (N)</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ProposedClassification{::}C40090000" status="Approved">40 Electric components /45 Covering (N)</key>
+    <key locale="en_US" id="LOVValue{::}SR5ProposedClassification{::}C40100100" status="Approved">EC - Visible state indicator (PF)</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ProposedClassification{::}C40100100" status="Approved">40 Electric components /50 Presentation (P)/00 Visible state indicator (PF)</key>
+    <key locale="en_US" id="LOVValue{::}SR5ProposedClassification{::}C40100200" status="Approved">EC - Scalar display (PG)</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ProposedClassification{::}C40100200" status="Approved">40 Electric components /50 Presentation (P)/05 Scalar display (PG)</key>
+    <key locale="en_US" id="LOVValue{::}SR5ProposedClassification{::}C40100300" status="Approved">EC - Graphical display (PH)</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ProposedClassification{::}C40100300" status="Approved">40 Electric components /50 Presentation (P)/10 Graphical display (PH)</key>
+    <key locale="en_US" id="LOVValue{::}SR5ProposedClassification{::}C40100400" status="Approved">EC - Accoustic device (PJ)</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ProposedClassification{::}C40100400" status="Approved">40 Electric components /50 Presentation (P)/15 Accoustic device (PJ)</key>
+    <key locale="en_US" id="LOVValue{::}SR5ProposedClassification{::}C40100500" status="Approved">EC - Tactile device (PK)</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ProposedClassification{::}C40100500" status="Approved">40 Electric components /50 Presentation (P)/20 Tactile device (PK)</key>
+    <key locale="en_US" id="LOVValue{::}SR5ProposedClassification{::}C40100600" status="Approved">EC - Multiple form presenting object (PZ)</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ProposedClassification{::}C40100600" status="Approved">40 Electric components /50 Presentation (P)/25 Multiple form presenting object (PZ)</key>
+    <key locale="en_US" id="LOVValue{::}SR5ProposedClassification{::}C40109900" status="Approved">EC - Other (P.)</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ProposedClassification{::}C40109900" status="Approved">40 Electric components /50 Presentation (P)/99 Other (P.)</key>
+    <key locale="en_US" id="LOVValue{::}SR5ProposedClassification{::}C40110100" status="Approved">EC - Controlling (QA)</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ProposedClassification{::}C40110100" status="Approved">40 Electric components /55 Controlling (Q)/00 Controlling (QA)</key>
+    <key locale="en_US" id="LOVValue{::}SR5ProposedClassification{::}C40110200" status="Approved">EC - Seperating (QB)</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ProposedClassification{::}C40110200" status="Approved">40 Electric components /55 Controlling (Q)/05 Seperating (QB)</key>
+    <key locale="en_US" id="LOVValue{::}SR5ProposedClassification{::}C40110300" status="Approved">EC - Earthing (QC)</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ProposedClassification{::}C40110300" status="Approved">40 Electric components /55 Controlling (Q)/10 Earthing (QC)</key>
+    <key locale="en_US" id="LOVValue{::}SR5ProposedClassification{::}C40110400" status="Approved">EC - Multiple measure controlling (QZ)</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ProposedClassification{::}C40110400" status="Approved">40 Electric components /55 Controlling (Q)/15 Multiple measure controlling (QZ)</key>
+    <key locale="en_US" id="LOVValue{::}SR5ProposedClassification{::}C40119900" status="Approved">EC - Other (Q.)</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ProposedClassification{::}C40119900" status="Approved">40 Electric components /55 Controlling (Q)/99 Other (Q.)</key>
+    <key locale="en_US" id="LOVValue{::}SR5ProposedClassification{::}C40120101" status="Approved">EC - Diode (RAA)</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ProposedClassification{::}C40120101" status="Approved">40 Electric components /60 Restricting (R)/00 Electricity restricting (RA)/00 Diode (RAA)</key>
+    <key locale="en_US" id="LOVValue{::}SR5ProposedClassification{::}C40120102" status="Approved">EC - Resistor (RAC)</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ProposedClassification{::}C40120102" status="Approved">40 Electric components /60 Restricting (R)/00 Electricity restricting (RA)/05 Resistor (RAC)</key>
+    <key locale="en_US" id="LOVValue{::}SR5ProposedClassification{::}C40120200" status="Approved">EC - Electricity stabilising (RB)</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ProposedClassification{::}C40120200" status="Approved">40 Electric components /60 Restricting (R)/05 Electricity stabilising (RB)</key>
+    <key locale="en_US" id="LOVValue{::}SR5ProposedClassification{::}C40129900" status="Approved">EC - Other (R.)</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ProposedClassification{::}C40129900" status="Approved">40 Electric components /60 Restricting (R)/99 Other (R.)</key>
+    <key locale="en_US" id="LOVValue{::}SR5ProposedClassification{::}C40130100" status="Approved">EC - Face interaction (SF)</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ProposedClassification{::}C40130100" status="Approved">40 Electric components /65 Human interaction (S)/00 Face interaction (SF)</key>
+    <key locale="en_US" id="LOVValue{::}SR5ProposedClassification{::}C40130200" status="Approved">EC - Hand interaction (SG)</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ProposedClassification{::}C40130200" status="Approved">40 Electric components /65 Human interaction (S)/05 Hand interaction (SG)</key>
+    <key locale="en_US" id="LOVValue{::}SR5ProposedClassification{::}C40130300" status="Approved">EC - Foot interaction (SH)</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ProposedClassification{::}C40130300" status="Approved">40 Electric components /65 Human interaction (S)/10 Foot interaction (SH)</key>
+    <key locale="en_US" id="LOVValue{::}SR5ProposedClassification{::}C40130400" status="Approved">EC - Finger interaction (SJ)</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ProposedClassification{::}C40130400" status="Approved">40 Electric components /65 Human interaction (S)/15 Finger interaction (SJ)</key>
+    <key locale="en_US" id="LOVValue{::}SR5ProposedClassification{::}C40130500" status="Approved">EC - Movement interaction (SK)</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ProposedClassification{::}C40130500" status="Approved">40 Electric components /65 Human interaction (S)/20 Movement interaction (SK)</key>
+    <key locale="en_US" id="LOVValue{::}SR5ProposedClassification{::}C40130600" status="Approved">EC - Multi-interaction device (SZ)</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ProposedClassification{::}C40130600" status="Approved">40 Electric components /65 Human interaction (S)/25 Multi-interaction device (SZ)</key>
+    <key locale="en_US" id="LOVValue{::}SR5ProposedClassification{::}C40139900" status="Approved">EC - Other (S.)</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ProposedClassification{::}C40139900" status="Approved">40 Electric components /65 Human interaction (S)/99 Other (S.)</key>
+    <key locale="en_US" id="LOVValue{::}SR5ProposedClassification{::}C40140100" status="Approved">EC - Energy transforming (TA)</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ProposedClassification{::}C40140100" status="Approved">40 Electric components /70 Transforming (T)/00 Energy transforming (TA)</key>
+    <key locale="en_US" id="LOVValue{::}SR5ProposedClassification{::}C40140200" status="Approved">EC - Energy converting (TB)</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ProposedClassification{::}C40140200" status="Approved">40 Electric components /70 Transforming (T)/05 Energy converting (TB)</key>
+    <key locale="en_US" id="LOVValue{::}SR5ProposedClassification{::}C40140300" status="Approved">EC - Universal power supply (TC)</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ProposedClassification{::}C40140300" status="Approved">40 Electric components /70 Transforming (T)/10 Universal power supply (TC)</key>
+    <key locale="en_US" id="LOVValue{::}SR5ProposedClassification{::}C40140400" status="Approved">EC - Signal converting (TF)</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ProposedClassification{::}C40140400" status="Approved">40 Electric components /70 Transforming (T)/15 Signal converting (TF)</key>
+    <key locale="en_US" id="LOVValue{::}SR5ProposedClassification{::}C40149900" status="Approved">EC - Other (T.)</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ProposedClassification{::}C40149900" status="Approved">40 Electric components /70 Transforming (T)/99 Other (T.)</key>
+    <key locale="en_US" id="LOVValue{::}SR5ProposedClassification{::}C40150101" status="Approved">EC - Insulator (UAA)</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ProposedClassification{::}C40150101" status="Approved">40 Electric components /75 Holding (U)/00 Positioning (UA)/00 Insulator (UAA)</key>
+    <key locale="en_US" id="LOVValue{::}SR5ProposedClassification{::}C40150102" status="Approved">EC - Cable gland (UAB)</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ProposedClassification{::}C40150102" status="Approved">40 Electric components /75 Holding (U)/00 Positioning (UA)/05 Cable gland (UAB)</key>
+    <key locale="en_US" id="LOVValue{::}SR5ProposedClassification{::}C40150199" status="Approved">EC - Other (UA.)</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ProposedClassification{::}C40150199" status="Approved">40 Electric components /75 Holding (U)/00 Positioning (UA)/99 Other (UA.)</key>
+    <key locale="en_US" id="LOVValue{::}SR5ProposedClassification{::}C40150200" status="Approved">EC - Carrying (UB)</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ProposedClassification{::}C40150200" status="Approved">40 Electric components /75 Holding (U)/05 Carrying (UB)</key>
+    <key locale="en_US" id="LOVValue{::}SR5ProposedClassification{::}C40150300" status="Approved">EC - Enclosing (UC)</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ProposedClassification{::}C40150300" status="Approved">40 Electric components /75 Holding (U)/10 Enclosing (UC)</key>
+    <key locale="en_US" id="LOVValue{::}SR5ProposedClassification{::}C40159900" status="Approved">EC - Other (U.)</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ProposedClassification{::}C40159900" status="Approved">40 Electric components /75 Holding (U)/99 Other (U.)</key>
+    <key locale="en_US" id="LOVValue{::}SR5ProposedClassification{::}C40160101" status="Approved">EC - High voltage busbar (WBA)</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ProposedClassification{::}C40160101" status="Approved">40 Electric components /80 Guiding (W)/00 High voltage electric energy (WB)/00 High voltage busbar (WBA)</key>
+    <key locale="en_US" id="LOVValue{::}SR5ProposedClassification{::}C40160102" status="Approved">EC - High voltage cable (WBB)</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ProposedClassification{::}C40160102" status="Approved">40 Electric components /80 Guiding (W)/00 High voltage electric energy (WB)/05 High voltage cable (WBB)</key>
+    <key locale="en_US" id="LOVValue{::}SR5ProposedClassification{::}C40160199" status="Approved">EC - Other (WBC, WBD)</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ProposedClassification{::}C40160199" status="Approved">40 Electric components /80 Guiding (W)/00 High voltage electric energy (WB)/99 Other (WBC, WBD)</key>
+    <key locale="en_US" id="LOVValue{::}SR5ProposedClassification{::}C40160201" status="Approved">EC - Low voltage busbar (WDA)</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ProposedClassification{::}C40160201" status="Approved">40 Electric components /80 Guiding (W)/05 Low voltage electric energy (WD)/00 Low voltage busbar (WDA)</key>
+    <key locale="en_US" id="LOVValue{::}SR5ProposedClassification{::}C40160202" status="Approved">EC - Low voltage cable (WDB)</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ProposedClassification{::}C40160202" status="Approved">40 Electric components /80 Guiding (W)/05 Low voltage electric energy (WD)/05 Low voltage cable (WDB)</key>
+    <key locale="en_US" id="LOVValue{::}SR5ProposedClassification{::}C40160299" status="Approved">EC - Other (WDC, WDD)</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ProposedClassification{::}C40160299" status="Approved">40 Electric components /80 Guiding (W)/05 Low voltage electric energy (WD)/99 Other (WDC, WDD)</key>
+    <key locale="en_US" id="LOVValue{::}SR5ProposedClassification{::}C40160301" status="Approved">EC - Earthing rail (WEA)</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ProposedClassification{::}C40160301" status="Approved">40 Electric components /80 Guiding (W)/10 WE Reference potential (WE)/00 Earthing rail (WEA)</key>
+    <key locale="en_US" id="LOVValue{::}SR5ProposedClassification{::}C40160302" status="Approved">EC - Earthing cable (WEB)</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ProposedClassification{::}C40160302" status="Approved">40 Electric components /80 Guiding (W)/10 WE Reference potential (WE)/05 Earthing cable (WEB)</key>
+    <key locale="en_US" id="LOVValue{::}SR5ProposedClassification{::}C40160303" status="Approved">EC - Equiptential bonding rail (WEC)</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ProposedClassification{::}C40160303" status="Approved">40 Electric components /80 Guiding (W)/10 WE Reference potential (WE)/10 Equiptential bonding rail (WEC)</key>
+    <key locale="en_US" id="LOVValue{::}SR5ProposedClassification{::}C40160304" status="Approved">EC - Equiptential bonding cable (WED)</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ProposedClassification{::}C40160304" status="Approved">40 Electric components /80 Guiding (W)/10 WE Reference potential (WE)/15 Equiptential bonding cable (WED)</key>
+    <key locale="en_US" id="LOVValue{::}SR5ProposedClassification{::}C40160401" status="Approved">EC - Control cable (WGA)</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ProposedClassification{::}C40160401" status="Approved">40 Electric components /80 Guiding (W)/15 Electric signal (WG)/00 Control cable (WGA)</key>
+    <key locale="en_US" id="LOVValue{::}SR5ProposedClassification{::}C40160402" status="Approved">EC - Data cable (WGB)</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ProposedClassification{::}C40160402" status="Approved">40 Electric components /80 Guiding (W)/15 Electric signal (WG)/05 Data cable (WGB)</key>
+    <key locale="en_US" id="LOVValue{::}SR5ProposedClassification{::}C40160403" status="Approved">EC - Signal bushing (WGC)</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ProposedClassification{::}C40160403" status="Approved">40 Electric components /80 Guiding (W)/15 Electric signal (WG)/10 Signal bushing (WGC)</key>
+    <key locale="en_US" id="LOVValue{::}SR5ProposedClassification{::}C40160600" status="Approved">EC - WZ Multiple flow guiding</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ProposedClassification{::}C40160600" status="Approved">40 Electric components /80 Guiding (W)/25 WZ Multiple flow guiding</key>
+    <key locale="en_US" id="LOVValue{::}SR5ProposedClassification{::}C40169900" status="Approved">EC - Other (W.)</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ProposedClassification{::}C40169900" status="Approved">40 Electric components /80 Guiding (W)/99 Other (W.)</key>
+    <key locale="en_US" id="LOVValue{::}SR5ProposedClassification{::}C40170101" status="Approved">EC - High voltage terminal (XBA)</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ProposedClassification{::}C40170101" status="Approved">40 Electric components /85 Interfacing (X)/00 High voltage connecting (XB)/00 High voltage terminal (XBA)</key>
+    <key locale="en_US" id="LOVValue{::}SR5ProposedClassification{::}C40170102" status="Approved">EC - High voltage socket (XBB)</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ProposedClassification{::}C40170102" status="Approved">40 Electric components /85 Interfacing (X)/00 High voltage connecting (XB)/05 High voltage socket (XBB)</key>
+    <key locale="en_US" id="LOVValue{::}SR5ProposedClassification{::}C40170103" status="Approved">EC - High voltage terminal box (XBC)</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ProposedClassification{::}C40170103" status="Approved">40 Electric components /85 Interfacing (X)/00 High voltage connecting (XB)/10 High voltage terminal box (XBC)</key>
+    <key locale="en_US" id="LOVValue{::}SR5ProposedClassification{::}C40170201" status="Approved">EC - Electric terminal (XDA)</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ProposedClassification{::}C40170201" status="Approved">40 Electric components /85 Interfacing (X)/05 Low voltage connecting (XD)/00 Electric terminal (XDA)</key>
+    <key locale="en_US" id="LOVValue{::}SR5ProposedClassification{::}C40170202" status="Approved">EC - Power socket (XDB)</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ProposedClassification{::}C40170202" status="Approved">40 Electric components /85 Interfacing (X)/05 Low voltage connecting (XD)/05 Power socket (XDB)</key>
+    <key locale="en_US" id="LOVValue{::}SR5ProposedClassification{::}C40170203" status="Approved">EC - Terminal box (XDC)</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ProposedClassification{::}C40170203" status="Approved">40 Electric components /85 Interfacing (X)/05 Low voltage connecting (XD)/10 Terminal box (XDC)</key>
+    <key locale="en_US" id="LOVValue{::}SR5ProposedClassification{::}C40170204" status="Approved">EC - Power outlet (XDD)</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ProposedClassification{::}C40170204" status="Approved">40 Electric components /85 Interfacing (X)/05 Low voltage connecting (XD)/15 Power outlet (XDD)</key>
+    <key locale="en_US" id="LOVValue{::}SR5ProposedClassification{::}C40170205" status="Approved">EC - Power distributer (XDE)</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ProposedClassification{::}C40170205" status="Approved">40 Electric components /85 Interfacing (X)/05 Low voltage connecting (XD)/20 Power distributer (XDE)</key>
+    <key locale="en_US" id="LOVValue{::}SR5ProposedClassification{::}C40170301" status="Approved">EC - PE terminal (XEA)</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ProposedClassification{::}C40170301" status="Approved">40 Electric components /85 Interfacing (X)/10 Potential connecting (XE)/00 PE terminal (XEA)</key>
+    <key locale="en_US" id="LOVValue{::}SR5ProposedClassification{::}C40170302" status="Approved">EC - PB terminal (XEB)</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ProposedClassification{::}C40170302" status="Approved">40 Electric components /85 Interfacing (X)/10 Potential connecting (XE)/05 PB terminal (XEB)</key>
+    <key locale="en_US" id="LOVValue{::}SR5ProposedClassification{::}C40170303" status="Approved">EC - FE terminal (XEC)</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ProposedClassification{::}C40170303" status="Approved">40 Electric components /85 Interfacing (X)/10 Potential connecting (XE)/10 FE terminal (XEC)</key>
+    <key locale="en_US" id="LOVValue{::}SR5ProposedClassification{::}C40170304" status="Approved">EC - FB terminal (XED)</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ProposedClassification{::}C40170304" status="Approved">40 Electric components /85 Interfacing (X)/10 Potential connecting (XE)/15 FB terminal (XED)</key>
+    <key locale="en_US" id="LOVValue{::}SR5ProposedClassification{::}C40170305" status="Approved">EC - Earth electrode (XEE)</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ProposedClassification{::}C40170305" status="Approved">40 Electric components /85 Interfacing (X)/10 Potential connecting (XE)/20 Earth electrode (XEE)</key>
+    <key locale="en_US" id="LOVValue{::}SR5ProposedClassification{::}C40170306" status="Approved">EC - Collector (XEF)</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ProposedClassification{::}C40170306" status="Approved">40 Electric components /85 Interfacing (X)/10 Potential connecting (XE)/25 Collector (XEF)</key>
+    <key locale="en_US" id="LOVValue{::}SR5ProposedClassification{::}C40170401" status="Approved">EC - Signal soket (XGA)</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ProposedClassification{::}C40170401" status="Approved">40 Electric components /85 Interfacing (X)/15 Signal connecting (XG)/00 Signal soket (XGA)</key>
+    <key locale="en_US" id="LOVValue{::}SR5ProposedClassification{::}C40170402" status="Approved">EC - Terminal (XGB)</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ProposedClassification{::}C40170402" status="Approved">40 Electric components /85 Interfacing (X)/15 Signal connecting (XG)/05 Terminal (XGB)</key>
+    <key locale="en_US" id="LOVValue{::}SR5ProposedClassification{::}C40170403" status="Approved">EC - Patch panel (XGC)</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ProposedClassification{::}C40170403" status="Approved">40 Electric components /85 Interfacing (X)/15 Signal connecting (XG)/10 Patch panel (XGC)</key>
+    <key locale="en_US" id="LOVValue{::}SR5ProposedClassification{::}C40170404" status="Approved">EC - Signal distributor (XGD)</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ProposedClassification{::}C40170404" status="Approved">40 Electric components /85 Interfacing (X)/15 Signal connecting (XG)/15 Signal distributor (XGD)</key>
+    <key locale="en_US" id="LOVValue{::}SR5ProposedClassification{::}C40179900" status="Approved">EC - Other (X.)</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ProposedClassification{::}C40179900" status="Approved">40 Electric components /85 Interfacing (X)/99 Other (X.)</key>
+    <key locale="en_US" id="LOVValue{::}SR5ProposedClassification{::}C50010000" status="Approved">VC - Interior</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ProposedClassification{::}C50010000" status="Approved">50 Vehicle components +/00 Interior</key>
+    <key locale="en_US" id="LOVValue{::}SR5ProposedClassification{::}C50020000" status="Approved">VC - Exterior</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ProposedClassification{::}C50020000" status="Approved">50 Vehicle components +/10 Exterior</key>
+    <key locale="en_US" id="LOVValue{::}SR5ProposedClassification{::}C50030000" status="Approved">VC - Energy storage</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ProposedClassification{::}C50030000" status="Approved">50 Vehicle components +/20 Energy storage</key>
+    <key locale="en_US" id="LOVValue{::}SR5ProposedClassification{::}C50040000" status="Approved">VC - Engines and systems</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ProposedClassification{::}C50040000" status="Approved">50 Vehicle components +/30 Engines and systems</key>
+    <key locale="en_US" id="LOVValue{::}SR5ProposedClassification{::}C50050000" status="Approved">VC - Cooling</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ProposedClassification{::}C50050000" status="Approved">50 Vehicle components +/40 Air conditioning / Cooling</key>
+    <key locale="en_US" id="LOVValue{::}SR5ProposedClassification{::}C50990000" status="Approved">VC - Other (vehicle components)</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ProposedClassification{::}C50990000" status="Approved">50 Vehicle components +/99 Other (vehicle components)</key>
+    <key locale="en_US" id="LOVValue{::}SR5ProposedClassification{::}C80000000" status="Approved">C - Color</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ProposedClassification{::}C80000000" status="Approved">80 Color</key>
+    <key locale="en_US" id="LOVValue{::}SR5ProposedClassification{::}C80010000" status="Approved">C - Color definition</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ProposedClassification{::}C80010000" status="Approved">80 Color/10 Color definition</key>
+    <key locale="en_US" id="LOVValue{::}SR5ProposedClassification{::}C80020000" status="Approved">C - Coating structure</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ProposedClassification{::}C80020000" status="Approved">80 Color/20 Coating structure</key>
+  </Add>
+</TcBusinessDataLocalization>

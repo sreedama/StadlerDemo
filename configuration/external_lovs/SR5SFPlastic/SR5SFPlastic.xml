@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TcBusinessData xmlns="http://teamcenter.com/BusinessModel/TcBusinessData" batchXSDVersion="1.0"
+    Date="Mon Jan 17 05:41:46 PM 2022">
+  <Add/>
+  <Change>
+    <TcLOV name="SR5SFPlastic" lovType="ListOfValuesString" usage="Exhaustive" description=""
+        isManagedExternally="true">
+      <TcLOVValue value="DIN EN 60893-1" description="Tafel" conditionName="isTrue"/>
+      <TcLOVValue value="DIN EN 438-4" description="HPL-Platte" conditionName="isTrue"/>
+    </TcLOV>
+  </Change>
+</TcBusinessData>

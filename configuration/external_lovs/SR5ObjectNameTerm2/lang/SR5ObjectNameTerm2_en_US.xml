@@ -1,0 +1,825 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<TcBusinessDataLocalization xmlns="http://teamcenter.com/BusinessModel/TcBusinessDataLocalization" batchXSDVersion="1.0" Date="Mon Sep 28 09:24:15 AM 2015">
+  <Add>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}158543" status="Approved">first class</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}158543" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}1539241" status="Approved">1.5kV</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}1539241" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}1551301" status="Approved">10°</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}1551301" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}1551302" status="Approved">100°</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}1551302" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}1551303" status="Approved">10 x</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}1551303" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}1551304" status="Approved">10-pin</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}1551304" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}1551305" status="Approved">110°</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}1551305" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}1551306" status="Approved">11 x</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}1551306" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}1551307" status="Approved">120°</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}1551307" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}1551308" status="Approved">12 x</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}1551308" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}1551309" status="Approved">13 x</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}1551309" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}1551310" status="Approved">15°</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}1551310" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}1539242" status="Approved">15kV</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}1539242" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}1551311" status="Approved">180°</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}1551311" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}1551312" status="Approved">1 x</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}1551312" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}1539243" status="Approved">1kV</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}1539243" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}1551313" status="Approved">1-pin</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}1551313" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}158544" status="Approved">second class</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}158544" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}1551314" status="Approved">20°</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}1551314" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}1539246" status="Approved">25kv</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}1539246" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}1551315" status="Approved">2 x</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}1551315" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}1551316" status="Approved">2-colour</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}1551316" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}1551317" status="Approved">2-ply</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}1551317" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}1551318" status="Approved">2-pin</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}1551318" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}1551319" status="Approved">30°</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}1551319" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}1551320" status="Approved">3 x</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}1551320" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}1539250" status="Approved">3 kv</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}1539250" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}1551321" status="Approved">3-pin</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}1551321" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}1551322" status="Approved">40°</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}1551322" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}1551323" status="Approved">45°</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}1551323" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}1551324" status="Approved">4 x</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}1551324" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}1551325" status="Approved">4-colour</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}1551325" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}1551326" status="Approved">4-ply</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}1551326" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}1551327" status="Approved">4-pin</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}1551327" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}1551328" status="Approved">50°</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}1551328" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}1551329" status="Approved">5 x</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}1551329" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}1551330" status="Approved">5-pin</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}1551330" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}1551331" status="Approved">60°</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}1551331" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}1551332" status="Approved">6 x</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}1551332" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}1551333" status="Approved">6-pin</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}1551333" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}1551334" status="Approved">70°</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}1551334" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}1551335" status="Approved">7 x</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}1551335" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}1551336" status="Approved">7-pin</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}1551336" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}1551337" status="Approved">80°</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}1551337" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}1551338" status="Approved">8 x</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}1551338" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}1551339" status="Approved">8-pin</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}1551339" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}1551340" status="Approved">90°</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}1551340" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}1551341" status="Approved">9 x</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}1551341" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}1551342" status="Approved">9-pin</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}1551342" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}127154" status="Approved">exhaust system</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}127154" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}128587" status="Approved">exhaust after-treatment</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}128587" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}1539255" status="Approved">exhaust system</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}1539255" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}1551343" status="Approved">milled off</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}1551343" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}1551344" status="Approved">issued</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}1551344" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}1551345" status="Approved">angled</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}1551345" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}806166" status="Approved">extract air system</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}806166" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}126514" status="Approved">compartment</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}126514" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}1539266" status="Approved">waste water side</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}1539266" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}155765" status="Approved">alternating current</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}155765" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}1539267" status="Approved">AC/AC</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}1539267" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}1539268" status="Approved">AC/DC</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}1539268" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}1539270" status="Approved">axle end</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}1539270" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}1539274" status="Approved">adhesion brake system</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}1539274" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}163862" status="Approved">analogue</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}163862" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}1551346" status="Approved">adapted</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}1551346" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}1539285" status="Approved">intake side</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}1539285" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}1551347" status="Approved">anthracite</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}1551347" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}125732" status="Approved">drive system</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}125732" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}125117" status="Approved">device room</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}125117" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}1551348" status="Approved">asymmetrical</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}1551348" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}1539308" status="Approved">AT</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}1539308" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}1551349" status="Approved">discharging</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}1551349" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}162637" status="Approved">external</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}162637" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}126526" status="Approved">external additions</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}126526" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}1551350" status="Approved">external serration</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}1551350" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}272050" status="Approved">external doors</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}272050" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}161971" status="Approved">automatic</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}161971" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}1551351" status="Approved">axial</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}1551351" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}164418" status="Approved">balise antenna</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}164418" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}159954" status="Approved">accessibility</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}159954" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}126530" status="Approved">processed</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}126530" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}127505" status="Approved">desk</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}127505" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}158294" status="Approved">gauge</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}158294" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}1551352" status="Approved">heatable</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}1551352" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}162579" status="Approved">both sides</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}162579" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}1551353" status="Approved">Illuminated</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}1551353" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}127207" status="Approved">air intake</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}127207" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}158222" status="Approved">sanding equipment</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}158222" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}1551354" status="Approved">moveable</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}1551354" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}125154" status="Approved">buffet car</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}125154" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}1551355" status="Approved">blind</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}1551355" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}1539346" status="Approved">bnc</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}1539346" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}1539352" status="Approved">on-board log</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}1539352" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}136275" status="Approved">on-board vehicle supply system</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}136275" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}125162" status="Approved">FES</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}125162" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}125163" status="Approved">fire detection system</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}125163" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}126540" status="Approved">fire protection equipment</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}126540" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}125169" status="Approved">wide</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}125169" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}127955" status="Approved">brake unit</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}127955" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}127963" status="Approved">brake system</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}127963" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}127235" status="Approved">combustion engine system</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}127235" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}205454" status="Approved">fuel cell</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}205454" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}1539371" status="Approved">business class</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}1539371" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}125187" status="Approved">business compartment</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}125187" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}1133460" status="Approved">bypass</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}1133460" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}1539376" status="Approved">CH</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}1539376" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}1539381" status="Approved">CO2</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}1539381" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}125194" status="Approved">roof</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}125194" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}155764" status="Approved">DC</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}155764" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}1539402" status="Approved">DC/AC</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}1539402" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}1539403" status="Approved">DC/DC</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}1539403" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}1539404" status="Approved">DE</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}1539404" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}128550" status="Approved">ceiling</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}128550" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}1539405" status="Approved">ceiling system</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}1539405" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}1551356" status="Approved">diagonal</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}1551356" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}1551357" status="Approved">thick-layer</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}1551357" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}1551358" status="Approved">double-sided</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}1551358" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}125216" status="Approved">double-decker carriage</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}125216" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}1551359" status="Approved">dual</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}1551359" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}128552" status="Approved">bogie</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}128552" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}1539444" status="Approved">EC</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}1539444" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}1551360" status="Approved">angular</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}1551360" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}1539443" status="Approved">economy class</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}1539443" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}162647" status="Approved">stainless steel</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}162647" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}163609" status="Approved">pressed-in</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}163609" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}1551361" status="Approved">one-sided</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}1551361" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}162219" status="Approved">adjustable</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}162219" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}1539473" status="Approved">elastomer</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}1539473" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}162106" status="Approved">electrical</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}162106" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}158199" status="Approved">electromagnetic compatibility</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}158199" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}1133426" status="Approved">end</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}1133426" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}1551362" status="Approved">Infinitely vulcanised</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}1551362" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}125908" status="Approved">power system</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}125908" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}128006" status="Approved">power generation</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}128006" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}136266" status="Approved">power storage</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}136266" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}136263" status="Approved">power conversion</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}136263" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}125920" status="Approved">earth connection</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}125920" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}125250" status="Approved">earth system</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}125250" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}125253" status="Approved">generation</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}125253" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}165730" status="Approved">evacuation</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}165730" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}1551363" status="Approved">eccentric</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}1551363" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}125258" status="Approved">PIS</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}125258" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}128254" status="Approved">drive motor</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}128254" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}128696" status="Approved">vehicle end</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}128696" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}155610" status="Approved">head of the vehicle</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}155610" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}1551364" status="Approved">colourless</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}1551364" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}1539505" status="Approved">spring steel</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}1539505" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}1551365" status="Approved">resilient</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}1551365" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}128720" status="Approved">suspension</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}128720" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}1551366" status="Approved">fine corrugated</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}1551366" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}126583" status="Approved">window</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}126583" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}1551367" status="Approved">hot-dip galvanised</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}1551367" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}165556" status="Approved">flame start system</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}165556" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}1551368" status="Approved">flexible</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}1551368" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}1551369" status="Approved">liquid-tight</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}1551369" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}823552" status="Approved">exhaust air system</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}823552" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}127330" status="Approved">external power supply</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}127330" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}125299" status="Approved">vehicle front attachments</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}125299" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}159939" status="Approved">front</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}159939" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}128732" status="Approved">frost protection routine</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}128732" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}1539553" status="Approved">level monitoring</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}1539553" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}1551370" status="Approved">five-way</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}1551370" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}127336" status="Approved">radio system</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}127336" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}1133256" status="Approved">radio remote control</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}1133256" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}125317" status="Approved">functional zone</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}125317" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}1551371" status="Approved">for</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}1551371" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}127708" status="Approved">footwell</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}127708" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}1551372" status="Approved">electro-galvanised</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}1551372" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}161977" status="Approved">pickled</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}161977" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}125325" status="Approved">bent</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}125325" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}1551373" status="Approved">Rotated</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}1551373" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}1551374" status="Approved">printed</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}1551374" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}1539562" status="Approved">intercom system</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}1539562" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}1551375" status="Approved">annealed</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}1551375" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}1551376" status="Approved">hardened</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}1551376" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}125327" status="Approved">bonded</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}125327" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}1551377" status="Approved">yellow-green</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}1551377" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}1551378" status="Approved">perforated</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}1551378" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}125330" status="Approved">riveted</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}125330" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}162558" status="Approved">pressed</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}162558" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}125332" status="Approved">straight</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}125332" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}1551379" status="Approved">ribbed</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}1551379" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}1551380" status="Approved">rolled</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}1551380" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}1551381" status="Approved">slotted</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}1551381" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}1551382" status="Approved">forged</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}1551382" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}1551383" status="Approved">cut</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}1551383" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}125337" status="Approved">welded</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}125337" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}1551384" status="Approved">sintered</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}1551384" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}125338" status="Approved">mirrored</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}125338" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}1539568" status="Approved">gearbox side</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}1539568" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}1551385" status="Approved">gearbox-side</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}1551385" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}1551386" status="Approved">rolled</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}1551386" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}1551387" status="Approved">woven</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}1551387" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}1551388" status="Approved">arched</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}1551388" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}1551389" status="Approved">serrated</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}1551389" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}1551390" status="Approved">drawn</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}1551390" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}1551391" status="Approved">pulled</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}1551391" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}127360" status="Approved">wheel slide and anti-spin protection</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}127360" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}127725" status="Approved">wheel slide protection system</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}127725" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}1551392" status="Approved">grey white</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}1551392" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}125353" status="Approved">primed</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}125353" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}1551393" status="Approved">rubberised</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}1551393" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}1539593" status="Approved">rubber metal</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}1539593" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}1551394" status="Approved">halved</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}1551394" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}1551395" status="Approved">semi-round</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}1551395" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}1551396" status="Approved">halogen-free</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}1551396" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}127377" status="Approved">handbrake unit</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}127377" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}159645" status="Approved">main current</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}159645" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}127401" status="Approved">auxiliary operating equipment</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}127401" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}126751" status="Approved">heating system</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}126751" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}1551397" status="Approved">light grey</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}1551397" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}125368" status="Approved">auxiliary operating equipment</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}125368" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}1133197" status="Approved">high pressure</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}1133197" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}1551398" status="Approved">high temperature</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}1551398" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}125379" status="Approved">horizontal</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}125379" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}125382" status="Approved">hydraulics unit</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}125382" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}1551399" status="Approved">inductive</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}1551399" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}162343" status="Approved">internal</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}162343" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}127410" status="Approved">interior fitting out</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}127410" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}127411" status="Approved">interior fittings</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}127411" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}126689" status="Approved">interior lighting</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}126689" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}1539642" status="Approved">inter-carriage</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}1539642" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}1539643" status="Approved">interface</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}1539643" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}127412" status="Approved">insulation monitoring</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}127412" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}1539652" status="Approved">it</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}1539652" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}163606" status="Approved">cold-rolled</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}163606" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}152580" status="Approved">JTB</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}152580" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}128819" status="Approved">TB</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}128819" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}126762" status="Approved">mother-and-child compartment</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}126762" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}125407" status="Approved">HVAC system</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}125407" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}159315" status="Approved">tread brake unit</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}159315" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}1551400" status="Approved">combined</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}1551400" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}125412" status="Approved">complete</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}125412" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}129371" status="Approved">Compressor system</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}129371" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}1551401" status="Approved">made up</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}1551401" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}125415" status="Approved">conference compartment</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}125415" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}1551402" status="Approved">conical</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}1551402" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}1551403" status="Approved">concentric</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}1551403" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}128793" status="Approved">fuel system</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}128793" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}155782" status="Approved">cooling</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}155782" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}162667" status="Approved">synthetic leather</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}162667" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}162276" status="Approved">plastic</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}162276" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}164366" status="Approved">short</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}164366" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}125428" status="Approved">painted</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}125428" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}125437" status="Approved">light strip</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}125437" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}125438" status="Approved">long</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}125438" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}128823" status="Approved">public address system</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}128823" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}126233" status="Approved">LED</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}126233" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}161948" status="Approved">leather</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}161948" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}128058" status="Approved">driving system</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}128058" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}126777" status="Approved">minimum clearance outline</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}126777" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}1551404" status="Approved">linear</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}1551404" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}125455" status="Approved">left</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}125455" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}1551405" status="Approved">removable</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}1551405" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}127469" status="Approved">ventilation equipment</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}127469" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}1539775" status="Approved">air</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}1539775" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}128831" status="Approved">pneumatic suspension system</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}128831" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}128832" status="Approved">air suspension</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}128832" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}127476" status="Approved">air regulation</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}127476" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}1551406" status="Approved">male</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}1551406" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}125464" status="Approved">machine room</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}125464" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}1551407" status="Approved">matt black</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}1551407" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}162412" status="Approved">multicore</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}162412" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}1551408" status="Approved">multi-part</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}1551408" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}1551409" status="Approved">centre left</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}1551409" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}1551410" status="Approved">centre top</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}1551410" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}1551411" status="Approved">centre right</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}1551411" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}1551412" status="Approved">bottom centre</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}1551412" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}1539808" status="Approved">medium-floor</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}1539808" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}1539810" status="Approved">middle section</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}1539810" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}1551413" status="Approved">modular</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}1551413" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}1551414" status="Approved">assembled</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}1551414" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}1551415" status="Approved">on the motor side</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}1551415" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}1551416" status="Approved">post-processed</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}1551416" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}163619" status="Approved">seamless</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}163619" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}1551417" status="Approved">seamlessly pulled</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}1551417" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}1551418" status="Approved">seamlessly cold-formed</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}1551418" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}1551419" status="Approved">seamlessly hot-formed</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}1551419" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}125470" status="Approved">ancillary operating equipment</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}125470" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}1551420" status="Approved">negative</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}1551420" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}1551421" status="Approved">new</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}1551421" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}1539837" status="Approved">NL</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}1539837" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}125476" status="Approved">emergency lighting</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}125476" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}1551422" status="Approved">zero</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}1551422" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}125478" status="Approved">top</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}125478" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}1551423" status="Approved">top, external</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}1551423" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}1551424" status="Approved">top inside</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}1551424" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}127798" status="Approved">top deck</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}127798" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}1551425" status="Approved">ochre</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}1551425" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}1551426" status="Approved">without</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}1551426" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}1551427" status="Approved">passivated</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}1551427" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}128870" status="Approved">pneumatics</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}128870" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}136308" status="Approved">pneumatics/hydraulics</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}136308" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}1539881" status="Approved">polyamide</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}1539881" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}1551428" status="Approved">positive</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}1551428" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}130108" status="Approved">PowerPack</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}130108" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}129452" status="Approved">persons with disabilities and persons with reduced mobility</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}129452" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}1539892" status="Approved">PTFE</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}1539892" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}128882" status="Approved">desk lighting</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}128882" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}125494" status="Approved">transverse</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}125494" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}1551429" status="Approved">radial</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}1551429" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}128895" status="Approved">wheel bearing</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}128895" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}128902" status="Approved">wheelset bearing</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}128902" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}1551430" status="Approved">wheelset-side</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}1551430" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}128908" status="Approved">wheelsets</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}128908" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}125501" status="Approved">right</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}125501" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}159287" status="Approved">regulation</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}159287" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}1551431" status="Approved">Friction coefficient increasing</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}1551431" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}163118" status="Approved">RFID</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}163118" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}1539446" status="Approved">RJ45</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}1539446" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}162557" status="Approved">untreated</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}162557" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}127823" status="Approved">wheelchair path</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}127823" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}1551432" status="Approved">red-white</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}1551432" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}162607" status="Approved">round</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}162607" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}125523" status="Approved">sanding</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}125523" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}162968" status="Approved">sharp-edged</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}162968" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}128945" status="Approved">windscreen defrosting system</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}128945" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}128946" status="Approved">glass heating system</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}128946" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}128947" status="Approved">windscreen cleaning system</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}128947" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}1539983" status="Approved">sliding step system</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}1539983" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}125537" status="Approved">narrow</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}125537" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}162625" status="Approved">hot-dipped</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}162625" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}127532" status="Approved">lubrication system</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}127532" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}162340" status="Approved">lubrication system</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}162340" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}1151728" status="Approved">lubrication</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}1151728" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}163882" status="Approved">interface</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}163882" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}1551433" status="Approved">heavy</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}1551433" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}1551434" status="Approved">silky matt</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}1551434" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}1294305" status="Approved">side</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}1294305" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}125565" status="Approved">lateral</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}125565" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}213621" status="Approved">secondary</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}213621" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}1551435" status="Approved">self-adjusting</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}1551435" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}163615" status="Approved">self-adhesive</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}163615" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}1551436" status="Approved">self-cutting</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}1551436" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}1551437" status="Approved">vertical</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}1551437" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}213638" status="Approved">vigilance device</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}213638" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}163866" status="Approved">visible area</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}163866" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}1551438" status="Approved">mirrored</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}1551438" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}125576" status="Approved">marker lighting</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}125576" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}1540113" status="Approved">scu</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}1540113" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}1540116" status="Approved">steel</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}1540116" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}125580" status="Approved">standard</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}125580" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}1551439" status="Approved">Heavy</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}1551439" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}1551440" status="Approved">standing</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}1551440" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}125588" status="Approved">cable conduit</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}125588" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}159646" status="Approved">control current</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}159646" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}1540139" status="Approved">nitrogen</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}1540139" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}1551441" status="Approved">end</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}1551441" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}125597" status="Approved">electric circuit</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}125597" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}1540154" status="Approved">power converter cooling system</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}1540154" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}1499765" status="Approved">power supply unit</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}1499765" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}1540160" status="Approved">styropor</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}1540160" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}1551442" status="Approved">superplastic</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}1551442" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}1551443" status="Approved">symmetrical</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}1551443" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}127568" status="Approved">tank system</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}127568" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}125617" status="Approved">WC</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}125617" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}1551444" status="Approved">pot welded</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}1551444" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}128252" status="Approved">carrier system</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}128252" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}1551445" status="Approved">transparent</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}1551445" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}1540201" status="Approved">staircase</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}1540201" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}129028" status="Approved">turbocharger</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}129028" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}127585" status="Approved">transition</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}127585" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}1551446" status="Approved">braided</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}1551446" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}1551447" status="Approved">undefined</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}1551447" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}1551448" status="Approved">universal</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}1551448" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}1551449" status="Approved">universal</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}1551449" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}125644" status="Approved">bottom</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}125644" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}1551450" status="Approved">bottom, external</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}1551450" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}1551451" status="Approved">bottom, inside</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}1551451" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}1551452" status="Approved">bottom left</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}1551452" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}1551453" status="Approved">bottom right</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}1551453" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}205356" status="Approved">underbody</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}205356" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}409116" status="Approved">connection</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}409116" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}162611" status="Approved">crimped</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}162611" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}1551454" status="Approved">twisted</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}1551454" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}1255681" status="Approved">supply</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}1255681" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}1551455" status="Approved">vertical left</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}1551455" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}1551456" status="Approved">vertical right</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}1551456" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}1551457" status="Approved">multiplied</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}1551457" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}161997" status="Approved">galvanised</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}161997" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}125662" status="Approved">video system</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}125662" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}158352" status="Approved">video surveillance system</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}158352" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}1551458" status="Approved">pre-formed</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}1551458" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}162623" status="Approved">pre-assembled</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}162623" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}125666" status="Approved">vestibule</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}125666" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}129045" status="Approved">entrance area roof</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}129045" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}128231" status="Approved">AVD</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}128231" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}129050" status="Approved">inter carriage connection</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}129050" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}165693" status="Approved">recess</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}165693" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}129051" status="Approved">alarm system</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}129051" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}159208" status="Approved">warning lighting</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}159208" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}126677" status="Approved">washroom</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}126677" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}126680" status="Approved">toilet system</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}126680" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}1551459" status="Approved">Female</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}1551459" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}1551460" status="Approved">soft</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}1551460" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}1551461" status="Approved">white / natural</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}1551461" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}1551462" status="Approved">rippled</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}1551462" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}127617" status="Approved">eddy-current brake</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}127617" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}164496" status="Approved">WLAN</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}164496" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}1551463" status="Approved">on the cog wheel side</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}1551463" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}1540320" status="Approved">cellulose rubber</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}1540320" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}129067" status="Approved">train protection</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}129067" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}1551464" status="Approved">cut to size</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}1551464" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}158550" status="Approved">rear of the train</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}158550" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}1540337" status="Approved">supply air system</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}1540337" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}1551465" status="Approved">double-row</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}1551465" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}1551466" status="Approved">two-part</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}1551466" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}1551467" status="Approved">between</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}1551467" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}157785" status="Approved">intermediate deck</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}157785" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm2{::}136248" status="Approved">intermediate ceiling</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm2{::}136248" status="Approved"></key>
+  </Add>
+</TcBusinessDataLocalization>

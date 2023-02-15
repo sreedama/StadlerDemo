@@ -1,0 +1,81 @@
+<aw-command-panel caption="i18n.search">
+    <aw-panel-body>
+        <span class="aw-search-advancedSearchClearAll">
+            <aw-link prop="data.clearAll" action="clearAllAction"></aw-link>
+        </span>
+        <aw-panel-section caption="i18n.general" collapsed="true">
+            <aw-widget prop="data.Mtw0MaterialName" hint="textfield"></aw-widget>
+            <aw-widget prop="data.Mtw0MaterialDescription" hint="textarea"></aw-widget>
+            <aw-widget prop="data.Mtw0MaterialStatus" hint="checkboxoptionlov" ></aw-widget>
+            <aw-listbox prop="data.Mtw0MaterialObjectType" list="data.Mtw0MaterialObjectTypeList"
+                action="setMaterialType" is-select-only="true"></aw-listbox>
+        </aw-panel-section>
+        <aw-panel-section caption="i18n.materialGlobalClasses" collapsed="true">
+			<aw-flex-row height="18f">
+				<aw-scrollpanel>
+					<aw-tree name="'mtw0MaterialGlobalCls'" tree="data.materialclassificationList" style="overflow:auto">
+						{{node.label}}
+					</aw-tree>
+				</aw-scrollpanel>
+			</aw-flex-row>
+            <aw-separator visible-when="data.mat1GlobalClsList.length > 0"></aw-separator>
+            <aw-command-panel-section caption="{{mat1GlobalCls.uiValues[0]}}"
+                aw-repeat="mat1GlobalCls : data.mat1GlobalClsList track by $index"
+                exist-when="data.mat1GlobalClsList.length > 0" anchor="data.mtw0MetaParamAnchor"
+                context="{metaParamList:data.mat1GlobalClsList,index:$index}">
+            </aw-command-panel-section>
+        </aw-panel-section>
+        <aw-panel-section caption="i18n.customizedSearchAttr" collapsed="true"
+            visible-when="data.immPreferences.ImmCustomAttrList.length > 0">
+            <aw-widget prop="customAttr" aw-repeat="customAttr : data.immPreferences.ImmCustomAttrList track by $index">
+            </aw-widget>
+        </aw-panel-section>
+        <aw-panel-section caption="i18n.Mtw0MatCatlogueLabel" collapsed="false">
+            <aw-listbox prop="data.materialCatlog" list="data.materialCatlogList" action="loadMaterialMetaParameters"
+                is-select-only="true"></aw-listbox>
+            <aw-listbox prop="data.materialParameter" list="data.mat1ParamAndCatlogueObj.materialParameterList"
+                action="addToParameterList" is-select-only="false"></aw-listbox>
+            <span class="aw-search-advancedSearchClearAll">
+                <aw-link prop="data.RemoveAll" visible-when="conditions.showRemoveAll" action="RemoveAllAction">
+                </aw-link>
+            </span>
+            <aw-panel-section caption="i18n.materialCatalogClasses" collapsed="true">
+				<aw-flex-row height="18f">
+					<aw-scrollpanel>
+						<aw-tree name="'mtw0MaterialCatalogueCls'" tree="data.mat1ParamAndCatlogueObj.catlogueClsList"
+							style="overflow:auto">
+							{{node.label}}
+						</aw-tree>
+					</aw-scrollpanel>
+				</aw-flex-row>
+				<aw-separator visible-when="data.mat1CatalogueClsList.length > 0"></aw-separator>
+				<aw-command-panel-section caption="{{mat1CatCls.uiValues[0]}}"
+					aw-repeat="mat1CatCls : data.mat1CatalogueClsList track by $index"
+					exist-when="data.mat1CatalogueClsList.length > 0" anchor="data.mtw0MetaParamAnchor"
+					context="{metaParamList:data.mat1CatalogueClsList,index:$index}">
+				</aw-command-panel-section>
+            </aw-panel-section>
+            <aw-command-panel-section caption="{{category['propertyName'].props.object_name.uiValues[0]}}"
+                aw-repeat="category : data.addMetaParamList track by $index"
+                exist-when="data.addMetaParamList.length > 0" collapsed="false" anchor="data.mtw0MetaParamAnchor"
+                context="{metaParamList:data.addMetaParamList,index:$index}">
+
+                <aw-flex-row visible-when="category['propertyName'].props.mat1DataType.dbValues[0] === 'Double'">
+                    <aw-material-filter-category-numeric-range-filter category="category">
+                    </aw-material-filter-category-numeric-range-filter>
+                </aw-flex-row>
+
+                <aw-material-filter-category-string-filter
+                    visible-when="category['propertyName'].props.mat1DataType.dbValues[0] === 'String'"
+                    category="category">
+                </aw-material-filter-category-string-filter>
+            </aw-command-panel-section>
+
+        </aw-panel-section>
+    </aw-panel-body>
+    <aw-panel-footer>
+        <aw-button action="doMaterialSearch">
+            <aw-i18n>i18n.search</aw-i18n>
+        </aw-button>
+    </aw-panel-footer>
+</aw-command-panel>

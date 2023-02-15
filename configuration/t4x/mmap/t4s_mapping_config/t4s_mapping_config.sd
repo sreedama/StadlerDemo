@@ -1,0 +1,173 @@
+#
+#===================================================
+# copyright     2014-2019
+#                Siemens Product Lifecycle Management Software Inc.
+#                All Rights Reserved.
+#===================================================
+##
+# \file          t4s_mapping_config.sd
+#
+# \brief         Central configuration file for all needed defaults of the T4S gateway used with Teamcenter Out Of The Box
+#
+# \details       The file contains some default settings and determines which other mapping files are active.
+#                \n The Name of the file t4s_mapping_config.sd is fixed and the file must be present in var/mmap directory. \n 
+#
+# ------------------------------------------------------------------------------------------------------
+
+set ::errorInfo ""
+tpwrite -mtype INTERN "t4s_mapping_config.sd :: START INIT"
+
+#***************************************************************************************************
+#   SAP connection
+#***************************************************************************************************
+# Define SAP connection
+# Please make sure the needed connection parameters are available
+# with the <connectionID> specified here. <mode> is optional.
+#set State [::T4X::CONNECTION2EA::setCredentialsAlias4UseCase T4S <destination>@<client> <connectionID> <mode>]
+#set State [::T4X::CONNECTION2EA::setCredentialsAlias4UseCase T4S E20@600 <> <>]
+#set State [::T4X::CONNECTION2EA::selectActiveConnection2EA T4S "*" <destination> <client>]
+
+# SR TC for POC (LMtec Cloud)
+if {[string toupper [tpco_gethostname]] eq "EC2AMAZ-DO3AO9T"} {
+  set SapSystem    ES1       
+  set SapClient    403
+	set CredentialsAlias  "$SapSystem@$SapClient"
+}
+
+# SR TC Sandbox (LMtec Cloud)
+if {[string toupper [tpco_gethostname]] eq "EC2AMAZ-DO3AO9T"} {
+  set SapSystem    ES1       
+  set SapClient    400
+	set CredentialsAlias  "$SapSystem@$SapClient"
+}
+
+# SR TC DEV
+if {[string toupper [tpco_gethostname]] eq "SRVCH025034215"} {
+  set SapSystem    S4D       
+  set SapClient    200
+	set CredentialsAlias  "$SapSystem@$SapClient"
+}
+
+# SR TC QUA
+if {[string toupper [tpco_gethostname]] eq "SRVCH025064143T"} {
+  set SapSystem    S4Q       
+  set SapClient    100
+	set CredentialsAlias  "$SapSystem@$SapClient"
+}
+
+# SR TC PRD
+if {[string toupper [tpco_gethostname]] eq "SRVCH025034234"} {
+  set SapSystem    S4P       
+  set SapClient    100
+	set CredentialsAlias  "$SapSystem@$SapClient"
+}
+
+# Login with interface user
+set State [::T4X::CONNECTION2EA::setCredentialsAlias4UseCase T4S "$SapSystem@$SapClient" $CredentialsAlias *]
+set State [::T4X::CONNECTION2EA::setCredentialsAlias4UseCase T4S "$SapSystem@$SapClient" $CredentialsAlias SCRIPTING]
+set State [::T4X::CONNECTION2EA::setCredentialsAlias4UseCase T4S "$SapSystem@$SapClient" $CredentialsAlias BATCH]
+set State [::T4X::CONNECTION2EA::setCredentialsAlias4UseCase T4S "$SapSystem@$SapClient" $CredentialsAlias WORKFLOW]
+set State [::T4X::CONNECTION2EA::setCredentialsAlias4UseCase T4S "$SapSystem@$SapClient" $CredentialsAlias PORTAL]
+set State [::T4X::CONNECTION2EA::setCredentialsAlias4UseCase T4S "$SapSystem@$SapClient" $CredentialsAlias IDGEN]
+set State [::T4X::CONNECTION2EA::selectActiveConnection2EA T4S "*" $SapSystem $SapClient]
+
+#***************************************************************************************************
+#   Teamcenter Connection
+#***************************************************************************************************
+
+# Default Connection
+set State [::ITK::setCredentialsAlias "Default@Teamcenter"] ; # dcproxy
+
+# Batch Job Connection
+# set State [::ITK::MULTI::CONNECT::setCredentialsAlias4Job "Admin@Teamcenter" 0 "*" "*"] ; # infodba
+# set State [::ITK::MULTI::CONNECT::setCredentialsAlias4Job "Default@Teamcenter" 1 "*" "*"] ; # dcproxy
+
+# Workflow Job Connection
+# set State [::ITK::MULTI::CONNECT::setCredentialsAlias4Workflow "dcproxy" "Default@Teamcenter"] ; # dcproxy
+
+#***************************************************************************************************
+#   Activate Wrapper Functions to avoid problems with UCON Blacklist
+#***************************************************************************************************
+
+# ::TPSAP::S4::activateUconBlacklistCallWrappers4System
+# ::TPSAP::S4::activateUconBlacklistCallWrappers4System ""  "1709"
+
+# Activate new Wrapper Functions for BAPI_MATERIAL_GETALL
+# set ::TPSAP::FunctionModule(BAPI_MATERIAL_GETALL)           "/TESISPLM/UCON_MAT_GETALL"
+# set ::TPSAP::FunctionModule(BAPI_MATERIAL_GET_ALL)          "/TESISPLM/UCON_MAT_GET_ALL"
+# set ::TPSAP::FunctionModule(CSAP_MAT_BOM_READ)							"/TESISPLM/UCON_CSAP_MAT_BOM_RE"
+# set ::TPSAP::FunctionModule(CSAP_MAT_BOM_CREATE)						"/TESISPLM/UCON_CSAP_MAT_BOM_CR"
+
+#***************************************************************************************************
+#   Here you can define all customer specific default values for the T4S gateway
+#***************************************************************************************************
+
+# T4S default settings for MM:
+set ::T4S_Defaults(Industry)           "M"
+set ::T4S_Defaults(SAPMaterialType)    "FERT"
+set ::T4S_Defaults(BaseUnit)           "EA"
+
+# T4S default settings for BOM:
+set ::T4S_Defaults(BomApplication)     "PP01"
+set ::T4S_Defaults(BomAlternative)     "1"
+set ::T4S_Defaults(BomAction)          "5"
+set ::T4S_Defaults(BomUsage)           "2"
+set ::T4S_Defaults(BomPositionType)    "L"
+
+# T4S defaults settings for Version BOM:
+set ::T4S_Defaults(VersionBomAlternative)     "01"
+set ::T4S_Defaults(VersionBomUsage)           "V"
+set ::T4S_Defaults(VersionBomDefaultPlant)    "DE10"
+set ::T4S_Defaults(VersionBomDefaultECM)      "500000000000"
+
+# T4S default settings for DIR:
+# set ::T4S_Defaults(DIRType)            "DOC"  ;# Techn. Documentation
+set ::T4S_Defaults(DIRType)            "A00"
+set ::T4S_Defaults(DIRPart)            "000"
+set ::T4S_Defaults(DIRVersion)         "01"
+
+# T4S default settings for Equipment:
+set ::T4S_Defaults(Equi_Category)      "M"    ;# Equipment category
+
+# T4S default settings for Functional Location:
+set ::T4S_Defaults(FuncLoc_Category)   "M"    ;# LOV: I, M, S
+set ::T4S_Defaults(FuncLoc_Struct_Ind) "A"    ;# Functional Location category
+
+# T4S default settings for Vendor:
+set ::T4S_Defaults(VendorCompanyCode)  "0001"
+set ::T4S_Defaults(VendorAccountGroup) "MNFR"
+set ::T4S_Defaults(VendorCountry)      "DE"
+
+
+#***************************************************************************************************
+#   Source the customer specific mapping functions and all other customer specific
+#   function modules of the configuration (all *.sd files in the var/mmap directory):
+#***************************************************************************************************
+
+source -relax t4s_bom_mapping.sd;     # Mapping file for T4S bill of material transfer
+source -relax t4s_dir_mapping.sd;     # Mapping file for T4S document info record transfer
+# source -relax t4s_ecm_mapping.sd;     # Mapping file for T4S engineering change master transfer
+# source -relax t4s_equi_mapping.sd;    # Mapping file for T4S equipment transfer
+# source -relax t4s_funcloc_mapping.sd; # Mapping file for T4S functional location transfer
+# source -relax t4s_mm_item_import.sd;  # Mapping file for T4S material master import
+source -relax t4s_mm_mapping.sd;      # Mapping file for T4S material master transfer
+# source -relax t4s_vendor_mapping.sd;  # Mapping file for T4S vendor transfer
+# source -relax t4s_prop_mapping.sd;    # Mapping file for SAP data view
+# source -relax t4s_query_mapping.sd;   # Mapping file for SAP match code search
+source -relax t4s_idgen_mapping.sd;  		# Mapping file for ID generation
+source -relax t4s_genbom_mapping.sd;  	# Mapping T4S version BOM transfer
+
+#
+# Let's activate the language we want
+#
+set strLanguageCode "en_US" ; # default language (check /var/lang/T4S/ for more language codes)
+#
+if { [info exists ::env(TP_LANGUAGE_CODE)] } {
+  set strLanguageCode $::env(TP_LANGUAGE_CODE)
+}
+#
+::msgcat::mclocale $strLanguageCode
+
+
+tpwrite -mtype INTERN "t4s_mapping_config.sd :: STOP INIT"
+if {$::errorInfo ne ""} {tpwrite -mtype ERROR "t4s_mapping_config.sd :: ERROR -> $::errorInfo"}

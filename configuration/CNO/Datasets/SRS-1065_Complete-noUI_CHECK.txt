@@ -1,0 +1,55 @@
+############################################################################################################
+#  CNO Check Definition File
+############################################################################################################
+# Version History
+#
+# Version    Date           Name               Description of Change
+# 1.0        23-03-2022     testu     Initial
+############################################################################################################
+
+############################################################################################################
+# proper role
+root:C:ChangeItemRevision:Current Role Name§allowed§Change Manager~must be logged with Change Manager~your are logged with Change Manager
+
+############################################################################################################
+# Missing objecs
+#root:SR5MfgCNRevision>CMImplements>ChangeNoticeRevision:ID_REV§allowed§[ALL_ROOT:ChangeNoticeRevision:ID_REV]~ECN is missing [VAL_RELATED_OBJECT:ID_REV]~ECN present as target
+#root:Epc0MfgCNRevision>CMImplements>ChangeNoticeRevision:ID_REV§allowed§[ALL_ROOT:ChangeNoticeRevision:ID_REV]~ECN is missing [VAL_RELATED_OBJECT:ID_REV]~ECN present as target
+#
+##root:ChangeNoticeRevision>CMImplementedBy>SR5MfgCNRevision:ID_REV§allowed§[ALL_ROOT:SR5MfgCNRevision:ID_REV]~further MCN under ECN is missing [VAL_RELATED_OBJECT:ID_REV]~further MCN under ECN  present as target
+##root:ChangeNoticeRevision>CMImplementedBy>Epc0MfgCNRevision:ID_REV§allowed§[ALL_ROOT:Epc0MfgCNRevision:ID_REV]~further MCN under ECN is missing [VAL_RELATED_OBJECT:ID_REV]~further MCN under ECN  present as target
+#root:ChangeNoticeRevision>CMImplementedBy>Epc0MfgCNRevision:ID_REV§allowed§[ALL_ROOT:C:ChangeItemRevision:ID_REV]~further MCN under ECN is missing [VAL_RELATED_OBJECT:ID_REV]~further MCN under ECN  present as target
+#
+#root:ChangeNoticeRevision>CMImplements>ChangeRequestRevision:ID_REV§allowed§[ALL_ROOT:ChangeRequestRevision:ID_REV]~ECR is missing [VAL_RELATED_OBJECT:ID_REV]~ECR present as target
+#
+##root:ChangeRequestRevision>CMImplementedBy>SR5MfgCNRevision:ID_REV§allowed§[ALL_ROOT:SR5MfgCNRevision:ID_REV]~further MCN under ECR is missing [VAL_RELATED_OBJECT:ID_REV]~further MCN under ECR  present as target
+##root:ChangeRequestRevision>CMImplementedBy>Epc0MfgCNRevision:ID_REV§allowed§[ALL_ROOT:Epc0MfgCNRevision:ID_REV]~further MCN under ECR is missing [VAL_RELATED_OBJECT:ID_REV]~further MCN under ECR  present as target
+#root:ChangeRequestRevision>CMImplementedBy>C:ChangeItemRevision:ID_REV§allowed§[ALL_ROOT:C:ChangeItemRevision:ID_REV]~further [VAL_RELATED_OBJECT:object_type] under ECR is missing [VAL_RELATED_OBJECT:ID_REV]~further MCN/ECN under ECR  present as target
+
+#change cause by upgrade to VFW6 looks like the ALL_ROOT is time to time impacted
+#root:
+C:ItemRevision>CMImplementedBy>C:ItemRevision:ID_REV§allowed§[ALL_MAIN:C:ItemRevision:ID_REV]~further [VAL_RELATED_OBJECT:object_type] under [VAL_OBJECT:object_type] is missing [VAL_RELATED_OBJECT:ID_REV]~further objects are present as target
+#root:
+C:ItemRevision>CMImplements>C:ItemRevision:ID_REV§allowed§[ALL_MAIN:C:ItemRevision:ID_REV]~further [VAL_RELATED_OBJECT:object_type] under [VAL_OBJECT:object_type] is missing [VAL_RELATED_OBJECT:ID_REV]~further objects are present as target
+
+############################################################################################################
+# CMMaturity
+root:ChangeRequestRevision:CMMaturity§eq§Executing~ECR Maturity must be Executing in order to be closed~ECR Maturity is Executing
+root:ChangeNoticeRevision:CMMaturity§eq§Complete~ECN Maturity must be Complete in order to be closed~ECN Maturity is Complete
+root:SR5MfgCNRevision:CMMaturity§eq§Complete~MCN Maturity must be Complete in order to be closed~MCN Maturity is Complete
+root:Epc0MfgCNRevision:CMMaturity§eq§Complete~MCN Maturity must be Complete in order to be closed~MCN Maturity is Complete
+
+############################################################################################################
+# CMClosure
+root:C:ChangeItemRevision:CMClosure§eq§Open~Closure must be Open in order to be closed~Closure is Open
+
+############################################################################################################
+# CMDisposition
+root:C:ChangeItemRevision:CMDisposition§eq§Approved~Disposition must be Approved in order to be closed~Disposition is Approved
+
+
+
+
+
+
+

@@ -1,0 +1,10 @@
+{
+    "name": "sr5Indicators",
+    "level": 7,
+    "kitDeps": [
+        "tc-aw-solution"
+    ],
+    "modules": [
+        "sr5Indicators"
+    ]
+}

@@ -1,0 +1,280 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!--
+=======================================================================
+Copyright 2013.
+Siemens Product Lifecycle Management Software Inc.
+All Rights Reserved.
+=======================================================================
+    Filename: PresentationRule.xml
+
+    File defines rules of applying style to graph in relation browser .
+    
+    For each condition, two types of expression are supported
+    
+    "Property": <Property name="owning_user" value="user1" operator="equalsTo" />
+                For propety expression, only "equalsTo" operator is supported
+    "Type": <Type value="Requirement" operator="isTypeOf" />
+                For type expression, two operators are supported:equalsTo, isTypeOf
+                "isTypeOf" means including type specified in "value" and its subtypes
+=======================================================================
+-->
+<Rules>
+  <PresentationRule type="Node" default="true" styleId="DefaultNodeStyle" />
+  <PresentationRule type="Node" styleId="FolderStyle">
+    <Conditions operator="or">
+      <Type value="Folder" operator="isTypeOf" />
+    </Conditions>
+  </PresentationRule>
+  <PresentationRule type="Node" styleId="RequirementStyle">
+    <Conditions operator="or">
+      <Type value="Requirement Revision" operator="isTypeOf" />
+      <Type value="RequirementSpec Revision" operator="isTypeOf" />
+      <Type value="Requirement" operator="isTypeOf" />
+      <Type value="RequirementSpec" operator="isTypeOf" />
+    </Conditions>
+  </PresentationRule>
+  <PresentationRule type="Node" styleId="FunctionalStyle">
+    <Conditions operator="or">
+      <Type value="FunctionalityRevision" operator="isTypeOf" />
+      <Type value="Functionality" operator="isTypeOf" />
+    </Conditions>
+  </PresentationRule>
+  <PresentationRule type="Node" styleId="LogicalStyle">
+    <Conditions operator="or">
+      <Type value="Fnd0LogicalBlockRevision" operator="isTypeOf" />
+      <Type value="Fnd0LogicalBlock" operator="isTypeOf" />
+    </Conditions>
+  </PresentationRule>
+  <PresentationRule type="Node" styleId="PhysicalStyle">
+    <Conditions operator="or">
+      <Type value="Part Revision" operator="isTypeOf" />
+      <Type value="Design Revision" operator="isTypeOf" />
+      <Type value="Part" operator="isTypeOf" />
+      <Type value="Design" operator="isTypeOf" />
+    </Conditions>
+  </PresentationRule>
+  <PresentationRule type="Node" styleId="PlantStyle">
+    <Conditions operator="or">
+      <Type value="MEWorkareaRevision" operator="isTypeOf" />
+      <Type value="MEWorkarea" operator="isTypeOf" />
+    </Conditions>
+  </PresentationRule>
+  <PresentationRule type="Node" styleId="ChangeStyle">
+    <Conditions operator="or">
+      <Type value="ProblemReportRevision" operator="isTypeOf" />
+      <Type value="ChangeRequestRevision" operator="isTypeOf" />
+      <Type value="ChangeNoticeRevision" operator="isTypeOf" />
+      <Type value="ProblemReport" operator="isTypeOf" />
+      <Type value="ChangeRequest" operator="isTypeOf" />
+      <Type value="ChangeNotice" operator="isTypeOf" />
+    </Conditions>
+  </PresentationRule>
+  <PresentationRule type="Node" styleId="DatasetStyle">
+    <Conditions operator="and">
+      <Type value="Dataset" operator="isTypeOf" />
+    </Conditions>
+  </PresentationRule>
+  <PresentationRule type="Node" styleId="ChangeNoticeStyle">
+    <Conditions operator="and">
+      <Type value="ChangeNotice" operator="isTypeOf" />
+      <Type value="ChangeNoticeRevision" operator="isTypeOf" />      
+    </Conditions>
+  </PresentationRule>  
+  <PresentationRule type="Node" styleId="ChangeRequestStyle">
+    <Conditions operator="and">
+      <Type value="ChangeRequest" operator="isTypeOf" />
+      <Type value="ChangeRequestRevision" operator="isTypeOf" />      
+    </Conditions>
+  </PresentationRule> 
+  <PresentationRule type="Node" styleId="ProblemReportStyle">
+    <Conditions operator="and">
+      <Type value="ProblemReport" operator="isTypeOf" />
+      <Type value="ProblemReportRevision" operator="isTypeOf" />      
+    </Conditions>
+  </PresentationRule>   
+  <PresentationRule type="Node" styleId="WorkspaceStyle">
+    <Conditions operator="and">
+      <Type value="WorkspaceObject" operator="isTypeOf" />
+    </Conditions>
+  </PresentationRule>  
+  <PresentationRule type="Edge" styleId="ConcurrentChangeStyle">
+    <Conditions operator="and">
+      <Property name="relationType" value="Concurrent" operator="equalTo"/>
+    </Conditions>
+  </PresentationRule>
+  <PresentationRule type="Edge" styleId="ConcurrentPsi0RelationStyle">
+    <Conditions operator="and">
+        <Property name="relationType" value="ConcurrentRelation" operator="equalTo"/>        
+    </Conditions>
+  </PresentationRule>
+  <PresentationRule type="Edge" styleId="CoordinatedChangeStyle">
+    <Conditions operator="and">
+      <Property name="relationType" value="Coordinated" operator="equalTo"/>
+    </Conditions>
+  </PresentationRule>  
+  <PresentationRule type="Edge" styleId="ImpactStyle">
+    <Conditions operator="and">
+      <Property name="relationType" value="Impact" operator="equalTo"/>
+    </Conditions>      
+  </PresentationRule>  
+  <PresentationRule type="Edge" default="true" styleId="DefaultEdgeStyle" />
+  <PresentationRule type="Edge" styleId="TraceabilityStyle">
+    <Conditions operator="or">
+      <Property name="relationType" value="Traceability" operator="equalTo"/>
+      <Property name="relationType" value="TraceLink" operator="equalTo"/>
+      <Property name="relationType" value="Allocate" operator="equalTo"/>
+      <Property name="relationType" value="Realize" operator="equalTo"/>
+      <Property name="relationType" value="Refine" operator="equalTo"/>
+      <Property name="relationType" value="Satisfy" operator="equalTo"/>
+      <Property name="relationType" value="Derive" operator="equalTo"/>
+      <Property name="relationType" value="Verify" operator="equalTo"/>
+    </Conditions>
+  </PresentationRule>
+  <PresentationRule type="Edge" styleId="DerivedStyle">
+    <Conditions operator="or">
+      <Property name="relationType" value="Derived" operator="equalTo"/>
+    </Conditions>
+  </PresentationRule>
+  <PresentationRule type="Edge" styleId="CatiaV5MMLStyle">
+    <Conditions operator="or">
+      <Property name="relationType" value="CatiaV5_MML" operator="equalTo"/>
+    </Conditions>
+  </PresentationRule>
+  <PresentationRule type="Edge" styleId="CatiaV5_MMLAssyStyle">
+    <Conditions operator="or">
+      <Property name="relationType" value="CatiaV5_MMLAssy" operator="equalTo"/>
+    </Conditions>
+  </PresentationRule>
+  <PresentationRule type="Edge" styleId="CatiaV5_DwgLinkStyle">
+    <Conditions operator="or">
+      <Property name="relationType" value="CatiaV5_DwgLink" operator="equalTo"/>
+    </Conditions>
+  </PresentationRule>
+  <PresentationRule type="Edge" styleId="StructureRelationStyle">
+    <Conditions operator="and">
+      <Property name="relationType" value="Structure" operator="equalTo"/>
+    </Conditions>
+  </PresentationRule>
+    <PresentationRule type="Edge" styleId="WhereUsedStyle">
+    <Conditions operator="and">
+      <Property name="relationType" value="WhereUsed" operator="equalTo"/>
+    </Conditions>
+  </PresentationRule>
+  <PresentationRule type="Edge" styleId="AttachStyle">
+    <Conditions operator="and">
+      <Property name="relationType" value="Attach" operator="equalTo"/>
+    </Conditions>
+  </PresentationRule>
+  <PresentationRule type="Edge" styleId="MasterStyle">
+    <Conditions operator="and">
+      <Property name="relationType" value="Master" operator="equalTo"/>
+    </Conditions>
+  </PresentationRule>
+  <PresentationRule type="Edge" styleId="ImpactStyle">
+    <Conditions operator="and">
+      <Property name="relationType" value="Impact" operator="equalTo"/>
+    </Conditions>
+  </PresentationRule>    
+  <PresentationRule type="Edge" styleId="FolderRelationStyle">
+    <Conditions operator="and">
+      <Property name="relationType" value="Folder" operator="equalTo"/>
+    </Conditions>
+  </PresentationRule>
+  <PresentationRule type="Edge" styleId="ImpactedItemsStyle">
+    <Conditions operator="and">
+      <Property name="relationType" value="ImpactedItems" operator="equalTo"/>
+    </Conditions>
+  </PresentationRule>
+  <PresentationRule type="Edge" styleId="ProblemItemsStyle">
+    <Conditions operator="and">
+      <Property name="relationType" value="ProblemItems" operator="equalTo"/>
+    </Conditions>    
+  </PresentationRule>
+  <PresentationRule type="Edge" styleId="SolutionItemsStyle">
+    <Conditions operator="and">
+      <Property name="relationType" value="SolutionItems" operator="equalTo"/>
+    </Conditions>    
+  </PresentationRule>  
+  <PresentationRule type="Edge" styleId="PlainItemsStyle">
+    <Conditions operator="and">
+      <Property name="relationType" value="PlainItems" operator="equalTo"/>
+    </Conditions>    
+  </PresentationRule> 
+  <PresentationRule type="Edge" styleId="ImplementsbyStyle">
+    <Conditions operator="and">
+      <Property name="relationType" value="Implementsby" operator="equalTo"/>
+    </Conditions>    
+  </PresentationRule> 
+  <PresentationRule type="Edge" styleId="ImplementsStyle">
+    <Conditions operator="and">
+      <Property name="relationType" value="Implements" operator="equalTo"/>
+    </Conditions>    
+  </PresentationRule> 
+  <PresentationRule type="Edge" styleId="LineageStyle">
+    <Conditions operator="and">
+      <Property name="relationType" value="Lineage" operator="equalTo"/>
+    </Conditions>
+  </PresentationRule>
+  <PresentationRule type="Edge" styleId="MaterialStyle">
+    <Conditions operator="and">
+      <Property name="relationType" value="Connectivity" operator="equalTo"/>
+      <Type value="FP4_MaterialRevision" operator="isTypeOf" />
+    </Conditions>
+  </PresentationRule>
+  <PresentationRule type="Edge" styleId="PhysicalConnectionStyle">
+    <Conditions operator="and">
+      <Property name="relationType" value="Connectivity" operator="equalTo"/>
+      <Type value="FP4_PhysicalRevision" operator="isTypeOf" />
+    </Conditions>
+  </PresentationRule>
+  <PresentationRule type="Edge" styleId="InfoConnectionStyle">
+    <Conditions operator="and">
+      <Property name="relationType" value="Connectivity" operator="equalTo"/>
+      <Type value="FP4_InfoRevision" operator="isTypeOf" />
+    </Conditions>
+  </PresentationRule>
+  <PresentationRule type="Edge" styleId="EnergyConnectionStyle">
+    <Conditions operator="and">
+      <Property name="relationType" value="Connectivity" operator="equalTo"/>
+      <Type value="FP4_EnergyRevision" operator="isTypeOf" />
+    </Conditions>
+  </PresentationRule>
+  <PresentationRule type="Edge" styleId="ConnectivityStyle">
+    <Conditions operator="and">
+      <Property name="relationType" value="Connectivity" operator="equalTo"/>
+    </Conditions>
+  </PresentationRule>
+  <PresentationRule type="Port" default="true" styleId="GeneralPortStyle" />
+  <PresentationRule type="Port" styleId="InputPortStyle">
+    <Conditions operator="and">
+      <Property name="direction" value="Input" operator="equalTo"/>
+    </Conditions>
+  </PresentationRule>
+  <PresentationRule type="Port" styleId="OutputPortStyle">
+    <Conditions operator="and">
+      <Property name="direction" value="Output" operator="equalTo"/>
+    </Conditions>
+  </PresentationRule>
+  <PresentationRule type="Port" styleId="BiDirectionalPortStyle">
+    <Conditions operator="and">
+      <Property name="direction" value="Bi-Directional" operator="equalTo"/>
+    </Conditions>
+  </PresentationRule>
+  <PresentationRule type="Node" styleId="SimulationStyle">
+    <Conditions operator="or">
+      <Type value="CAEGeometry" operator="isTypeOf" />
+      <Type value="CAEGeometryRevision" operator="isTypeOf" />
+      <Type value="CAEModel" operator="isTypeOf" />
+      <Type value="CAEModelRevision" operator="isTypeOf" />
+      <Type value="CAEAnalysis" operator="isTypeOf" />
+      <Type value="CAEAnalysisRevision" operator="isTypeOf" />
+      <Type value="CAEResult" operator="isTypeOf" />
+      <Type value="CAEResultRevision" operator="isTypeOf" />
+    </Conditions>
+  </PresentationRule>
+  <PresentationRule type="Edge" styleId="SimulationRelationStyle">
+    <Conditions operator="and">
+      <Property name="relationType" value="SimulationRelation" operator="equalTo"/>
+    </Conditions>
+  </PresentationRule>
+</Rules>

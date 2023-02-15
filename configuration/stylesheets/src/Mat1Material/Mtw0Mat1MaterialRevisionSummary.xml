@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+================================================================================
+Copyright 2015.
+Siemens Product Lifecycle Management Software Inc.
+All Rights Reserved.
+================================================================================
+Filename: Mtw0Mat1MaterialRevisionSummary.xml
+Default activeworkspace style sheet for displaying Material Revision.
+ -->
+<rendering>
+    <header>
+        <image source="type"/>
+        <property name="owning_user"/>
+        <property name="last_mod_date"/>
+        <property name="release_status_list"/>
+        <property name="object_type"/>
+    </header>
+    <page titleKey="tc_xrt_Overview" title="Overview">
+        <column>
+            <section titleKey="tc_xrt_properties" title="Properties">
+                <property name="item_id"/>
+                <property name="object_name"/>
+                <property name="sr5MaterialNorm" modifiable="false"/>
+                <property name="object_desc"/>
+                <property name="object_type"/>
+                <property name="mat1MatCatalogRevisions"/>
+                <inject type="dataset" src="Sci1Mat1MaterialRevisionSummary"/>
+            </section>
+            <content visibleWhen="REF(items_tag, Mat1Material).scp0is_confidential != true">
+                <inject type="dataset" src="Mtw0Mat1UsesSubstance"/>
+            </content>
+             <section titleKey="k_materialmgmt_materialclasses" title="Material Classes">
+                <objectSet source="mat1MatClassifications.Mat1MatClassification" defaultdisplay="tableDisplay" sortby="object_string" sortdirection="ascending">
+	            <tableDisplay>
+	                <property name="object_name"/>
+	                <property name="mat1MatClassPath"/>
+	                <property name="mat1RealName"/>
+	                <property name="mat1MatCatalog"/>
+	                <property name="mat1ParentClassification"/>
+	            </tableDisplay>
+	            <listDisplay/>
+	            <command actionKey="newBusinessObjectContextualAction" commandId="Mtw0ShowAddClasses" >
+	                 <parameter name="localSelection" value="true"/>
+	            </command>
+	            <command actionKey="deleteBusinessObjectContextualAction" commandId="Mtw0CustomCutClass" >
+	                <parameter name="localSelection" value="true"/>
+	            </command>
+                </objectSet>
+             </section> 
+              <section titleKey="k_materialmgmt_alternatematerials" title="Alternate Materials">
+                <objectSet source="Mat1HasAlternateMaterial.Mat1MaterialRevision" defaultdisplay="listDisplay" sortby="object_string" sortdirection="ascending">
+	            <tableDisplay>
+	                <property name="object_string"/>
+	                <property name="release_status_list"/>
+	                <property name="object_desc"/>
+	                <property name="mat1MatClassifications"/>
+	                <property name="mat1ExtendsMaterial"/>
+	            </tableDisplay>
+	            <listDisplay/>
+	            <command actionKey="pasteAction" commandId="com.teamcenter.rac.viewer.pastewithContext" renderingHint="commandbutton"/>
+	            <command actionKey="cutAction" commandId="org.eclipse.ui.edit.cut" renderingHint="commandbutton">
+	                <parameter name="localSelection" value="true"/>
+	            </command>
+                </objectSet>
+                <property name="mat1MatClassifications"/>	
+             </section> 
+        </column>
+    </page>
+    <inject type="dataset" src="Mtw0ParametersTab"/>
+   <!-- <inject type="dataset" src="Scp0MaterialLabReportTab"/>-->
+    <!-- <inject type="dataset" src="Mtw0ParameterSmartTablesTab"/>-->
+    <content  visibleWhen="{pref:SubstanceCompliance_feature_installed}!= true">     
+        <inject type="dataset" src="Awp0AttachmentsTab"/>
+    </content>
+    <content  visibleWhen="{pref:SubstanceCompliance_feature_installed}== true">     
+        <inject type="dataset" src="Scw0AttachmentsTab"/>
+    </content>
+     <!--<inject type="dataset" src="Mtw0EDATab"/> -->
+    <inject type="dataset" src="Awp0WhereUsedTab"/>
+    <inject type="dataset" src="AuditLogForItemRev"/>
+</rendering>

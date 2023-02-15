@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="us-ascii" standalone="yes"?>
+<!--
+===============================================================================
+                Copyright (c) 2003-2005 UGS Corporation
+                   Unpublished - All Rights Reserved
+===============================================================================
+File description:
+
+            Filename:
+            Module:
+
+            XML File defining ___ module text/error messages.
+            This was previously done in UIH/UIL/VIL format.
+@<DEL>@
+===============================================================================
+   Date      Name                    Description of Change
+
+18-Jun-2002  Anupam Tiwari           Updated for phase P8.1.0.1
+12-May-2005  roudebus                Update copyright, strip history
+01-Dec-2009  minsko                  Moved date formats from timelocal.xml
+$HISTORY$
+===============================================================================
+@<DEL>@ -->
+<textsrv filename="timelocal_locale.xml">
+    <key id="SUN">Sun</key>
+    <key id="MON">Mon</key>
+    <key id="TUE">Tue</key>
+    <key id="WED">Wed</key>
+    <key id="THU">Thu</key>
+    <key id="FRI">Fri</key>
+    <key id="SAT">Sat</key>
+    <key id="SUNDAY">Sunday</key>
+    <key id="MONDAY">Monday</key>
+    <key id="TUESDAY">Tuesday</key>
+    <key id="WEDNESDAY">Wednesday</key>
+    <key id="THURSDAY">Thursday</key>
+    <key id="FRIDAY">Friday</key>
+    <key id="SATURDAY">Saturday</key>
+    <key id="JAN">Jan</key>
+    <key id="FEB">Feb</key>
+    <key id="MAR">Mar</key>
+    <key id="APR">Apr</key>
+    <key id="MA">May</key>
+    <key id="JUN">Jun</key>
+    <key id="JUL">Jul</key>
+    <key id="AUG">Aug</key>
+    <key id="SEP">Sep</key>
+    <key id="OCT">Oct</key>
+    <key id="NOV">Nov</key>
+    <key id="DEC">Dec</key>
+    <key id="JANUARY">January</key>
+    <key id="FEBRUARY">February</key>
+    <key id="MARCH">March</key>
+    <key id="APRIL">April</key>
+    <key id="MAY">May</key>
+    <key id="JUNE">June</key>
+    <key id="JULY">July</key>
+    <key id="AUGUST">August</key>
+    <key id="SEPTEMBER">September</key>
+    <key id="OCTOBER">October</key>
+    <key id="NOVEMBER">November</key>
+    <key id="DECEMBER">December</key>
+    <key id="YearString">Year</key>
+    <key id="MonthString">Month</key>
+    <key id="WeekString">Week</key>
+    <key id="DayString">Day</key>
+    <key id="GMT">GMT</key>
+
+    <!-- Internationalization of date/time formatting -->
+    <!--  _________________  -->
+    <!-- ! For Translators ! -->
+    <!-- !_________________! -->
+    <!-- Do not translate the "%?" only the order and separators.                       -->
+    <!-- For example "%m/%d/%Y" (12/25/2009) could be changed to "%d.%m.%Y (25.12.2009 )-->
+    <!--                     -->
+    <!--  _________________  -->
+    <!-- ! For Customers   ! -->
+    <!-- !_________________! -->
+    <!-- Customers may change the date formats below. Remember, however, that the same -->
+    <!-- parameters ought to be provided (it could be in a different order and/or with -->
+    <!-- different separators.                                                         -->
+    <!--                                                                               -->
+    <!-- Meaning of letters:                                                           -->
+    <!--  SUPPORTED ANSI CONVERSION SPECIFIERS:                         -->
+    <!--   %b  abbreviated month name                                   -->
+    <!--   %B  full month name                                          -->
+    <!--   %d  day of the month(0-31)                                   -->
+    <!--   %H  hour(24-hour clock)(00-23)                               -->
+    <!--   %I  hour(12-hour clock)(01-12)                               -->
+    <!--   %m  month(01-12)                                             -->
+    <!--   %M  minute(00-59)                                            -->
+    <!--   %S  second(00-59)                                            -->
+    <!--   %w  weekday(0-6, Sunday is 0)                                -->
+    <!--   %y  year without century (00-99)                             -->
+    <!--   %Y  year with century (1970-2069)                            -->
+    <!--   %z |  year (last 2 digits)                                   -->
+    <!--   %Z |-> time compared to GMT (e.g. '+04:30(GMT)')             -->
+    <!--                                                                -->
+    <!--  UNSUPPORTED ANSI CONVERSION SPECIFIERS:                       -->
+    <!--   %a  abbreviated weekday name                                 -->
+    <!--   %A  full weekday name                                        -->
+    <!--   %p  local equivalent of AM or PM(am/pm)                      -->
+    <!--   %j  day of the year(001-366)                                 -->
+    <!--   %U  week number of the year(Sunday as 1st day of week(00-53) -->
+    <!--   %x  local date representation( "%A, %m/%d/%y")               -->
+    <!--   %X  local time representation( "%I: %M:%S%p")                -->
+    <!--  ____________________________________________________________  -->
+    <!-- Used everywhere in the code -->
+    <key id="DefaultDateFormat">%Y-%m-%d %H:%M:%S</key>  
+
+    <!-- Used for the RAC TcDateFormat, for information within  -->
+    <!-- Requirement messages, for Saved Query time conversion  -->
+    <key id="DownToSecondsDefaultDateFormat">%d-%b-%Y %H:%M:%S</key>
+
+    <!-- Used by Schedule Manager in thin and rich client (Gantt charts, etc.) -->
+    <key id="DefaultDateOnlyFormat">%d-%b-%Y</key>
+
+    <!-- Used by Schedule Manager in rich client (Gantt charts, etc.) -->
+    <key id="DefaultTimeOnlyFormat">%H:%M</key>
+
+    <!-- Used internally -->
+    <key id="LocalDateTimeFormat">%A, %m/%d/%Y %I:%M:%S%p</key>
+
+    <!-- Used internally -->
+    <key id="LocalDateFormat">%A, %m/%d/%Y</key>
+    
+    <!-- Used internally -->
+    <key id="LocalTimeFormat">%I:%M:%S%p</key>
+
+    <!-- Used for TCIF requests, Teamcenter Express ship date in a package review, etc. --> 
+    <key id="DefaultDateTimeFormat">%A, %m/%d/%Y %I:%M:%S%p</key>
+
+    <!-- Used for the RAC TcDateFormat -->
+    <key id="DefaultTimeFormat">%I:%M:%S%p</key>
+
+    <!-- Used by Schedule Manager in rich client (Gantt charts) -->
+    <key id="DefaultShortMonthDayFormat">%m/%d</key>
+
+    <!--!  Added for PR#1398729: used by NXManager for attribute synchronization -->
+    <key id="NXDefaultDateFormat">%d-%b-%Y</key>
+
+    <!-- End of Internationalization of date/time formatting -->
+
+</textsrv>

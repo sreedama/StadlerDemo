@@ -1,0 +1,19 @@
+############################################################################################################
+#  CNO Expansion Definition File
+############################################################################################################
+# Version History
+#
+# Version    Date           Name               Description of Change
+# 1.0        22-03-2022     user01     Initial
+############################################################################################################
+
+#C:ItemRevision>view;99p:Latest Working/CLOSURE_RULE:BOMExpandSkipStatusTCM-50>C:ItemRevision
+#C:ItemRevision>view:bl_SR5GenPartRevision_sr5CPDateReviewed == "01-01-0001"
+# to be set by workflow at start
+C:ItemRevision>view;99p:Latest Working/CLOSURE_RULE:BOMExpandSkipNorm>C:ItemRevision
+
+C:ItemRevision>process_stage_list>C:EPMTask
+
+C:SR5GenEngObjRevision>>IMAN_specification>CATPart/ALIAS:CV5Part
+CV5Part>catiaV5_MMLAssy>C:SR5GenEngObjRevision/ALIAS:ContextualRevision
+ContextualRevision>IMAN_specification>CATPart/ALIAS:CCPRevisionCVPart

@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+// @<COPYRIGHT>@
+// ==================================================
+// Copyright 2016.
+// Siemens Product Lifecycle Management Software Inc.
+// All Rights Reserved.
+// ==================================================
+// @<COPYRIGHT>@
+-->
+<!-- Default style sheet for displaying generic SR5GenEngObj rev summary for Show Object Location. -->
+<rendering>
+    <header>
+        <content visibleWhen="structure_revisions==null">
+            <image source="type" />
+            <property name="owning_user" />
+            <property name="last_mod_date" />
+            <property name="release_status_list" renderingHint="overflow" />
+            <property name="object_type" />
+        </content>
+    </header>
+    <page titleKey="tc_xrt_Overview" visibleWhen="structure_revisions==null and ActiveWorkspace:SubLocation != com.siemens.splm.client.occmgmt:OccurrenceManagementSubLocation">
+        <column width="55%">
+            <section titleKey="tc_xrt_properties">
+                <property name="item_id" style="color:blue;" renderingHint="label" />
+                <property name="item_revision_id" renderingHint="label" />
+                <property name="sr5CPBasedOn" />
+                <property name="based_on" />
+                <break/>
+                <property name="object_name" />
+                <property name="object_desc" />
+                <property name="object_type" />
+                <property name="REF(items_tag,SR5GenEngObj).uom_tag" />
+                <separator/>
+                <property name="REF(items_tag,SR5GenEngObj).sr5DrawingDCC" />
+                <property name="REF(items_tag,SR5GenEngObj).sr5FSFClass"/>
+                <property name="sr5RefTagEN" />
+                <separator />
+				<property name="sr5CalculatedWeight" renderingHint="label"/>
+				<property name="sr5AdjustedWeight"/>
+                <separator/>
+                <property name="owning_user" renderingHint="objectlink" modifiable="false" />
+                <property name="owning_group" renderingHint="objectlink" modifiable="false" />
+                <property name="last_mod_user" />
+                <property name="checked_out_user" />
+            </section>
+            <content visibleWhen="Cls0ClassifiedBy!=null">
+                <inject type="dataset" src="Lbr1LibraryInformation" />
+                <inject type="dataset" src="Fnd0ClassificationSummary" />
+            </content>
+            <content visibleWhen="Cls0ClassifiedBy==null and ics_classified!=null">
+                <inject type="dataset" src="Lbr1LibraryInformation" />
+                <inject type="dataset" src="Fnd0ClassificationSummary" />
+            </content>
+        </column>
+        <column>
+            <inject type="dataset" src="SR5RevisionList" />
+            <section titleKey="Lifecycle" initialstate="collapsed">
+                <property name="REF(item_master_tag,SR5GenPartRevisionMaster).sr5DateEngineeringRelease" renderingHint="label" />
+                <property name="REF(item_master_tag,SR5GenPartRevisionMaster).sr5EngineeringReleasedBy" renderingHint="label" />
+            </section>
+            <inject type="dataset" src="SR5GenEngObjCollaborationContext" />
+            <content visibleWhen="GRM(IMAN_specification,CATDrawing).object_name!=null">
+                <section titleKey="Drawing Data" initialstate="collapsed">
+                    <property name="sr5NoDrawingSheets" />
+                    <property name="REF(items_tag,SR5GenEngObj).sr5DrawingFormat" />
+                </section>
+            </content>
+            <inject type="dataset" src="SR5CATIAReferences" />
+            <inject type="dataset" src="SR5EngEnvironment" />
+            <inject type="dataset" src="SR5AltRepList" />
+            <inject type="dataset" src="SR5GenEngObjSAPData" />
+            <!-- <inject type="dataset" src="SR5PlantSpecificData" /> -->
+        </column>
+    </page>
+    <inject type="dataset" src="Awb0ContentTab" />
+    <content visibleWhen="structure_revisions==null">
+        <!-- <inject type="preference" src="ClassificationStylesheetTab" /> -->
+    </content>
+    <page titleKey="tc_xrt_jt_viewer" visibleWhen="structure_revisions==null and IMAN_Rendering!=null and ActiveWorkspace:SubLocation != com.siemens.splm.client.occmgmt:OccurrenceManagementSubLocation">
+        <image source="preview" />
+    </page>
+    <page titleKey="tc_xrt_jt_viewer" visibleWhen="structure_revisions==null and IMAN_Rendering==null and TC_Primary_Design_Representation!=null and ActiveWorkspace:SubLocation != com.siemens.splm.client.occmgmt:OccurrenceManagementSubLocation">
+        <image source="preview" />
+    </page>
+    <inject type="dataset" src="Smc1JTViewerForPartRevision" />
+    <page titleKey="web_whereused" visibleWhen="structure_revisions==null">
+        <section titleKey="tc_xrt_UsedInStructures">
+            <inject type="dataset" src="UsedInStructures" />
+        </section>
+        <!--
+        // ====================================================================================================
+        // The following column defines the display for when Active Workspace Structure solution is installed.
+        // If you have not installed this option, this column should be removed.
+        // ====================================================================================================
+        -->
+        <!-- <inject type="dataset" src="Awb0Contexts" />
+        <inject type="dataset" src="Awp0RelatedDrawings" /> -->
+        <!--
+        // ====================================================================================================
+        // The following column defines the display for when Active Workspace Structure solution is installed.
+        // If you have not installed this option, this column should be removed.
+        // ====================================================================================================
+        -->
+        <section titleKey="tc_xrt_References">
+            <objectSet source="Awp0ReferencesProvider.WorkspaceObject" sortdirection="ascending" sortby="object_string" defaultdisplay="tableDisplay">
+                <thumbnailDisplay />
+                <tableDisplay>
+                    <property name="object_string" />
+                    <property name="object_type" />
+                    <property name="release_status_list" />
+                    <property name="date_released" />
+                    <property name="owning_user" />
+                </tableDisplay>
+                <listDisplay />
+            </objectSet>
+        </section>
+        <inject type="dataset" src="WhereUsedAnalyses" />
+    </page>
+    <page titleKey="attachments" visibleWhen="structure_revisions==null">
+        <section titleKey="tc_xrt_Files">
+            <objectSet source="catia_cache_link.Dataset,IMAN_specification.Dataset,IMAN_reference.Dataset,IMAN_manifestation.Dataset,IMAN_Rendering.Dataset,TC_Attaches.Dataset,IMAN_UG_altrep.Dataset,IMAN_UG_scenario.Dataset,IMAN_Simulation.Dataset" defaultdisplay="tableDisplay" sortby="object_string" sortdirection="ascending">
+                <tableDisplay>
+                    <property name="object_string" />
+                    <property name="object_type" />
+                    <property name="checked_out" renderingHint="label" />
+                    <property name="sr5DocLanguage" />
+                    <property name="relation" modifiable="true" />
+                    <property name="release_status_list" />
+                    <property name="date_released" />
+                    <property name="owning_user" />
+                    <property name="last_mod_date"/>
+                </tableDisplay>
+                <thumbnailDisplay />
+                <treeDisplay>
+                    <property name="object_string" />
+                    <property name="object_type" />
+                    <property name="checked_out" renderingHint="label" />
+                    <property name="sr5DocLanguage" />
+                    <property name="release_status_list" />
+                    <property name="date_released" />
+                    <property name="owning_user" />
+                </treeDisplay>
+                <listDisplay />
+                <command actionKey="newBusinessObjectContextualAction" commandId="com.teamcenter.rac.common.AddNew" renderingHint="commandbutton" />
+                <command actionKey="pasteAction" commandId="com.teamcenter.rac.viewer.pastewithContext" renderingHint="commandbutton" />
+                <command actionKey="cutAction" commandId="org.eclipse.ui.edit.cut" renderingHint="commandbutton">
+                    <parameter name="localSelection" value="true" />
+                </command>
+            </objectSet>
+        </section>
+        <inject type="dataset" src="SR5SpecificationAndReferenceDocuments"/>
+    </page>
+    <content visibleWhen="structure_revisions==null">
+        <inject type="dataset" src="Cm1ChangeRelationSummary" />
+    </content>
+    <page titleKey="tc_xrt_History" visibleWhen="structure_revisions==null">
+        <section title="revision_list">
+            <objectSet source="revision_list.ItemRevision" sortdirection="descending" sortby="last_mod_date" defaultdisplay="tableDisplay">
+                <tableDisplay>
+                    <property name="object_string" />
+                    <property name="release_status_list" />
+                    <property name="date_released" />
+                    <property name="owning_user" />
+                    <property name="last_mod_date" />
+                    <property name="item_revision_id" hidden="true" />
+                    <property name="sr5ExternalRevision" hidden="true" />
+                </tableDisplay>
+                <thumbnailDisplay />
+                <treeDisplay>
+                    <property name="object_string" />
+                    <property name="release_status_list" />
+                    <property name="date_released" />
+                    <property name="owning_user" />
+                    <property name="last_mod_date" />
+                    <property name="item_revision_id" hidden="true" />
+                    <property name="sr5ExternalRevision" hidden="true" />
+                </treeDisplay>
+                <listDisplay />
+            </objectSet>
+        </section>
+        <inject type="dataset" src="Cm1ChangeHistorySummary" />
+    </page>
+    <inject type="dataset" src="WorkflowSummaryForShowObjectLocation" />
+    <inject type="dataset" src="Relations2Summary" />
+    <content visibleWhen="structure_revisions==null">
+        <inject type="dataset" src="S2clItemRevSummary" />
+    </content>
+    <inject type="dataset" src="Cae1ItemRevSummaryForShowObjectLocation" />
+    <subRendering>
+        <content visibleWhen="structure_revisions==null">
+            <inject type="dataset" src="Awn0ItemRevSummary" />
+        </content>
+    </subRendering>
+    <content visibleWhen="structure_revisions==null">
+        <inject type="dataset" src="Rb0InContextReportsSubLocation" />
+    </content>
+    <content visibleWhen="structure_revisions==null">
+        <inject type="dataset" src="AuditLogForItemRev" />
+    </content>
+    <page titleKey="tc_xrt_Mat1Materials">
+	<content visibleWhen="GRM(IMAN_specification,CATPart).object_name!=null">
+        <section titleKey="tc_xrt_Mat1Materials" title="Materials">
+            <objectSet source="Mat1UsesMaterial.Mat1MaterialRevision" defaultdisplay="tableDisplay" sortby="object_string" sortdirection="ascending">
+                <tableDisplay>
+                    <property name="object_string"/>
+                    <property name="release_status_list"/>
+                    <property name="Mat1UsesMaterial.mat1mass" renderingHint="label"/>
+                    <property name="Mat1UsesMaterial.mat1uom_tag" renderingHint="label"/>
+                    <property name="object_desc"/>
+                    <!--<property name="Mat1UsesMaterial.mat1active_in_external_tool"/>-->
+                    <property name="mat1MatClassifications"/>
+                    <property name="mat1ExtendsMaterial"/>
+                </tableDisplay>
+                <listDisplay/>
+                <command actionKey="newBusinessObjectContextualAction" commandId="Mtw0ShowAddObject" renderingHint="commandbutton"/>
+                <command actionKey="pasteAction" commandId="com.teamcenter.rac.viewer.pastewithContext" renderingHint="commandbutton"/>
+                <command actionKey="cutAction" commandId="org.eclipse.ui.edit.cut" renderingHint="commandbutton">
+                    <parameter name="localSelection" value="true"/>
+                </command>
+            </objectSet>
+        </section>
+		</content>
+	<content visibleWhen="GRM(IMAN_specification,CATPart).object_name==null">
+        <section titleKey="tc_xrt_Mat1Materials" title="Materials">
+            <objectSet source="Mat1UsesMaterial.Mat1MaterialRevision" defaultdisplay="tableDisplay" sortby="object_string" sortdirection="ascending">
+                <tableDisplay>
+                    <property name="object_string"/>
+                    <property name="release_status_list"/>
+                    <property name="Mat1UsesMaterial.mat1mass"/>
+                    <property name="Mat1UsesMaterial.mat1uom_tag"/>
+                    <property name="object_desc"/>
+                    <!--<property name="Mat1UsesMaterial.mat1active_in_external_tool"/>-->
+                    <property name="mat1MatClassifications"/>
+                    <property name="mat1ExtendsMaterial"/>
+                </tableDisplay>
+                <listDisplay/>
+                <command actionKey="newBusinessObjectContextualAction" commandId="Mtw0ShowAddObject" renderingHint="commandbutton"/>
+                <command actionKey="pasteAction" commandId="com.teamcenter.rac.viewer.pastewithContext" renderingHint="commandbutton"/>
+                <command actionKey="cutAction" commandId="org.eclipse.ui.edit.cut" renderingHint="commandbutton">
+                    <parameter name="localSelection" value="true"/>
+                </command>
+            </objectSet>
+        </section>
+		</content>
+        <!--<inject type="dataset" src="Mtw0Mat1UsesMaterialForCoating"/>-->
+    </page>
+    <!--<inject type="dataset" src="Mtw0CompositionTabForItemRevSummary"/>-->
+</rendering>

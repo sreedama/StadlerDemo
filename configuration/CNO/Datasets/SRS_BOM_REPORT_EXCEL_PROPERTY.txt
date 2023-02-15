@@ -1,0 +1,233 @@
+﻿############################################################################################################
+#  CNO Objects Property Definition File for Item and Bom Compare
+############################################################################################################
+# Version History
+#
+# Version   Date         Name            Description of Change
+# 1.00     	21.11.2019   Porada       	 Initial   
+############################################################################################################
+
+
+# ------------------------------------------------------------------
+# ItemRevision Properties
+# ------------------------------------------------------------------
+#01
+#C:SR5GenEngObjRevision:creation_date~CREATED_ON
+C:SR5GenEngObjRevision§CREATED_ON§|:creation_date^B^ |
+
+#02
+#C:SR5GenEngObjRevision:owning_user~CREATOR
+C:SR5GenEngObjRevision§CREATOR§|:owning_user^A^(|#|:owning_user^B^)|
+
+#03
+#C:SR5GenEngObjRevision/sr5DateReviewed~REVIEWED_ON
+C:SR5GenEngObjRevision/sr5DateReviewed^B^ ~REVIEWED_ON
+#C:Form:sr5DateReviewed~REVIEWED_ON
+
+#04
+C:SR5GenEngObjRevision/sr5ReviewedBy~REVIEWED_BY
+#C:Form:sr5ReviewedBy~REVIEWED_BY
+
+#05
+#C:SR5GenEngObjRevision/sr5DateEngineeringRelease~RELEASED_ON
+C:SR5GenEngObjRevision/sr5DateEngineeringRelease^B^ ~RELEASED_ON
+#C:Form:sr5DateEngineeringRelease~RELEASED_ON
+#C:ItemRevision:date_released~RELEASED_ON
+
+#06
+#only on sr4
+#C:SR5GenEngObjRevision/sr5ReleasedBy~RELEASED_BY
+#C:Form:sr5ReleasedBy~RELEASED_BY
+C:SR5GenEngObjRevision/sr5EngineeringReleasedBy~RELEASED_BY
+
+#07
+C:ChangeNoticeRevision:item_id~ECN_NO
+
+#08
+#C:ChangeNoticeRevision:CMClosureDate~ECN_ON
+C:ChangeNoticeRevision§ECN_ON§|:CMClosureDate^B^ |
+
+#09
+C:SR5GenEngObjRevision:object_name~DESC
+
+#10
+C:SR5GenEngObjRevision§CLASSE§MPC
+
+#11
+C:SR5GenEngObjRevision:item_id~NO
+
+#12-13
+#C:SR5GenEngObjRevision:item_revision_id~REV
+
+SR5EngArticleRevision§REV§|:sr5ExternalRevision|/|:item_revision_id|
+#SR5EngArticleRevision§REV§|:object_desc|/|:item_revision_id|
+SR5CatDefArticleRevision§REV§|:sr5ExternalRevision|/|:item_revision_id|
+SR5GenCatPartRevision§REV§|:sr5ExternalRevision|/|:item_revision_id|
+#SR5CatalogPartRevision§REV§|:sr5ExternalRevision|/|:item_revision_id|
+SR5EleCatPartRevision§REV§|:sr5ExternalRevision|/|:item_revision_id|
+SR5MechCatPartRevision§REV§|:sr5ExternalRevision|/|:item_revision_id|
+C:SR5GenDocumentRevision§REV§|:sr5ExternalRevision|/|:item_revision_id|
+
+SR5ElectricAssyRevision:item_revision_id~REV
+SR5EngEndItemRevision:item_revision_id~REV
+SR5EngMajorAssyRevision:item_revision_id~REV
+SR5NonERPArticleRevision:item_revision_id~REV
+SR5EngEnvRevision:item_revision_id~REV
+SR5EngInstallLocRevision:item_revision_id~REV
+SR5SoftwareRevision:item_revision_id~REV
+SR5ToolRevision:item_revision_id~REV
+
+#not sure that it is faster or better with script (some how also limited by function bug with 6.1.X working with 6.1.0 ???)
+#C:SR5GenEngObjRevision§REV3§|js(Revision(:?object_type,:object_desc,:item_revision_id))|
+C:SR5GenEngObjRevision§REV2§|js(Revision(:?object_type,:sr5ExternalRevision,:item_revision_id))|
+
+#14
+C:SR5GenEngObjRevision:fnd0CurrentLocationCode~LANG
+#C:ItemRevision:fnd0OriginalLocationCode~LANG
+
+#15-16
+#not coming from Teamcenter
+
+
+
+# ------------------------------------------------------------------
+# BOM View Properties
+# ------------------------------------------------------------------
+#01: max lenght 4
+#C:ItemRevision>view:bl_sequence_no~POS_NO
+C:ItemRevision>view§POS_NO§|bl_sequence_no^L^4|
+
+#02: max lenght 5
+#C:ItemRevision>view:bl_quantity~QUANTITY
+C:ItemRevision>view§QUANTITY§|js(Quantity(bl_quantity,bl_occ_uom_tag,bl_item_object_type))|
+
+#03: max lenght 3
+#C:ItemRevision>view:bl_occ_uom_tag~OCCURENCE_UOM
+#language of AW is leading to wrong display
+#C:ItemRevision>view:?bl_occ_uom_tag~DB_OCCURENCE_UOM
+#not localized
+#C:ItemRevision>view:bl_occ_uom_tag,en_US~OCCURENCE_UOM_EN
+#C:ItemRevision>view:bl_occ_uom_tag,de_DE~OCCURENCE_UOM_DE
+#C:ItemRevision>view:bl_item_uom_tag~UOM
+C:ItemRevision>view§OCCURENCE_UOM§|js(Uom(bl_occ_uom_tag,bl_item_object_type))|
+#cut after 3 => what about: stueck/piece => St./pc. => STK/PC
+
+#04: max lenght 25
+#C:ItemRevision>view:bl_rev_object_name~NAME
+C:ItemRevision>view§NAME§|bl_rev_object_name^L^25|
+C:ItemRevision>view§NAME2§|js(extractslice25(bl_rev_object_name))|
+C:ItemRevision>view§NAME3§|js(extractslice50(bl_rev_object_name))|
+C:ItemRevision>view§NAME4§|js(extractslice75(bl_rev_object_name))|
+#C:ItemRevision>view§NAME2§|js(extractslice(bl_rev_object_name,25,25))|
+#C:ItemRevision>view§NAME3§|js(extractslice(bl_rev_object_name,50,25))|
+#C:ItemRevision>view§NAME4§|js(extractslice(bl_rev_object_name,75,25))|
+#C:ItemRevision>view§NAME2§|bl_rev_object_name^M^25^25|
+#C:ItemRevision>view§NAME3§|bl_rev_object_name^M^50^25|
+#C:ItemRevision>view§NAME4§|bl_rev_object_name^M^75^25|
+#string 128 => cut after 25 on max 4 lines
+
+#05: max lenght 25
+# move to script because of condition
+#C:ItemRevision>view:bl_SR5GenEngObjRevision_sr5NormNo~NORM_NO
+#string 64 => cut at 25
+
+#06: max lenght 25
+# move to script because of condition
+#C:ItemRevision>view:bl_SR5GenEngObjRevision_sr5Dimension~DIM
+#string 64 => cut at 25
+#C:ItemRevision>view:bl_SR5GenEngObjRevision_sr5FullDimension~DimOfSemiFin.
+
+#07: max lenght 21
+# move to script because of condition
+#C:ItemRevision>view:bl_item_item_id~ITEM_NO
+#string 128 => cut at 25 - 1 for FSF - 1 for a space => 23
+
+#08: max lenght 25
+# move to script because of condition
+#C:ItemRevision>view:bl_SR5GenEngObjRevision_sr5MPN~MFG_NO
+#string 25 => nothing to do already done inside the BMIDE
+
+#09: max lenght 25
+# move to script because of condition
+#object_name of the Mat1MaterialRevision related to the current revision by the relation Mat1UsesMaterial
+##C:ItemRevision>view:bl_rev_Mat1UsesMaterial~bl_rev_Mat1UsesMaterial
+#C:ItemRevision>view§Material§|bl_rev_Mat1UsesMaterial^A^-|
+##C:Mat1MaterialRevision:object_name~Material
+
+#10: max lenght 25
+# move to script because of condition
+#sr5MaterialNorm of the Mat1MaterialRevision related to the current revision by the relation Mat1UsesMaterial
+#C:Mat1MaterialRevision:sr5MaterialNorm~Material_NORM_NO
+
+#11: max lenght 25
+# move to script because of condition
+#object_name of the SR5ColorDefRevision related to the current revision by the relation xxx
+#C:ItemRevision>view:bl_resource_color~COLOR
+#SR5ColorDefRevision:object_name~COLOR_Def
+#SR5ColorDefRevision:sr5ColorSystem~COLOR_System
+#SR5ColorDefRevision:sr5ColorTone~COLOR_Tone
+
+#12: max lenght 25
+# move to script because of condition
+#C:ItemRevision>view§technical delivery condition§not applicable
+
+#13: max lenght 7 (compatibility with max 3 digits after separator)
+#C:ItemRevision>view:bl_SR5GenEngObjRevision_sr5WeightInKG~WeightInKG
+#C:ItemRevision>view§WeightInKG§|js(Weight(bl_SR5GenEngObjRevision_sr5WeightInKG))|
+C:ItemRevision>view§WeightInKG§|js(Weight(bl_SR5GenEngObjRevision_sr5AdjustedWeight))|
+
+#14: max lenght 18
+C:ItemRevision>view:bl_SR5GenEngObjRevision_sr5Manufacturer~Manufacturer
+#string => cut after 18 on max 4 lines
+C:ItemRevision>view§Manufacturer1§|bl_SR5GenEngObjRevision_sr5Manufacturer^L^18|
+C:ItemRevision>view§Manufacturer2§|js(extractslice18(bl_SR5GenEngObjRevision_sr5Manufacturer))|
+C:ItemRevision>view§Manufacturer3§|js(extractslice36(bl_SR5GenEngObjRevision_sr5Manufacturer))|
+C:ItemRevision>view§Manufacturer4§|js(extractslice54(bl_SR5GenEngObjRevision_sr5Manufacturer))|
+#C:ItemRevision>view§Manufacturer2§|js(extractslice(bl_SR5GenEngObjRevision_sr5Manufacturer,18,18))|
+#C:ItemRevision>view§Manufacturer3§|js(extractslice(bl_SR5GenEngObjRevision_sr5Manufacturer,36,18))|
+#C:ItemRevision>view§Manufacturer4§|js(extractslice(bl_SR5GenEngObjRevision_sr5Manufacturer,54,18))|
+#C:ItemRevision>view§Manufacturer2§|bl_SR5GenEngObjRevision_sr5Manufacturer^M^18^18|
+#C:ItemRevision>view§Manufacturer3§|bl_SR5GenEngObjRevision_sr5Manufacturer^M^36^18|
+#C:ItemRevision>view§Manufacturer4§|bl_SR5GenEngObjRevision_sr5Manufacturer^M^54^18|
+
+#15
+# move to script because of condition
+#C:ItemRevision>view§FSFClass§|bl_SR5GenEngObj_sr5FSFClass^L^3|
+#interested by only 1
+
+
+
+#als sperator: ### + empty must be a space, will be easier for the VB in Excel " ### ### ### "
+#05-06-07-08-15                           15                         ,05                               ,06                                  ,07             ,08       
+#C:ItemRevision>view§PartNr§|js(PartNumber(bl_SR5GenEngObj_sr5FSFClass,bl_SR5GenEngObjRevision_sr5NormNo,bl_SR5GenEngObjRevision_sr5Dimension,bl_item_item_id,bl_SR5GenEngObjRevision_sr5MPN))|
+#brainstorming for color object
+#C:ItemRevision>view§PartNr§|js(PartNumber(bl_SR5GenEngObj_sr5FSFClass,bl_SR5GenEngObjRevision_sr5NormNo,bl_SR5GenEngObjRevision_sr5Dimension,bl_item_item_id,bl_SR5GenEngObjRevision_sr5MPN,bl_item_object_type,SR5ColorDefRevision:sr5ColorSystem,SR5ColorDefRevision:sr5ColorTone))|
+#C:ItemRevision>view§PartNr§|js(PartNumber(bl_SR5GenEngObj_sr5FSFClass,bl_SR5GenEngObjRevision_sr5NormNo,bl_SR5GenEngObjRevision_sr5Dimension,bl_item_item_id,bl_SR5GenEngObjRevision_sr5MPN,bl_item_object_type,bl_item_object_string,bl_item_object_name))|
+#C:ItemRevision>view§PartNr§|js(PartNumber(bl_SR5GenEngObj_sr5FSFClass,bl_SR5GenEngObjRevision_sr5NormNo,bl_SR5GenEngObjRevision_sr5Dimension,bl_item_item_id,bl_SR5GenEngObjRevision_sr5MPN,bl_item_object_type))|
+C:ItemRevision>view§PartNr§|js(PartNumber(bl_SR5GenEngObj_sr5FSFClass,bl_SR5GenEngObjRevision_sr5NormNo,bl_SR5GenEngObjRevision_sr5Dimension,bl_item_item_id,bl_SR5GenEngObjRevision_sr5MPN,bl_item_object_type,bl_SR5GenEngObjRevision_sr5FullDimension))|
+
+
+
+#09-10-11-12                                              15                         ,09                     ,10                                    ,11                             ,12
+#C:ItemRevision>view§BasicMtrlQua§|js(BasicMaterialQuality(bl_SR5GenEngObj_sr5FSFClass,bl_rev_Mat1UsesMaterial,C:Mat1MaterialRevision:sr5MaterialNorm,SR5ColorDefRevision:object_name,bl_quantity))|
+#VFW 6.1 needed
+#C:ItemRevision>view§BasicMtrlQua§|js(BasicMaterialQuality(bl_SR5GenEngObj_sr5FSFClass,bl_rev_Mat1UsesMaterial,C:ItemRevision>Mat1UsesMaterial>C:Mat1MaterialRevision:sr5MaterialNorm,C:ItemRevision>*>SR5ColorDefRevision:object_name,bl_quantity))|
+#temp until color link def
+#C:ItemRevision>view§BasicMtrlQua§|js(BasicMaterialQuality(bl_SR5GenEngObj_sr5FSFClass,bl_rev_Mat1UsesMaterial,C:ItemRevision>Mat1UsesMaterial>C:Mat1MaterialRevision:sr5MaterialNorm,C:ItemRevision>IMAN_specification>SR5ColorDefRevision:object_name,bl_quantity))|
+#color is inherited => not needed
+#C:ItemRevision>view§BasicMtrlQua§|js(BasicMaterialQuality(bl_SR5GenEngObj_sr5FSFClass,bl_rev_Mat1UsesMaterial,C:ItemRevision>Mat1UsesMaterial>C:Mat1MaterialRevision:sr5MaterialNorm,bl_quantity))|
+#brainstorming for color object
+C:ItemRevision>view§BasicMtrlQua§|js(BasicMaterialQuality(bl_SR5GenEngObj_sr5FSFClass,bl_rev_Mat1UsesMaterial,C:ItemRevision>Mat1UsesMaterial>C:Mat1MaterialRevision:sr5MaterialNorm,bl_quantity,bl_item_object_type))|
+#SRS-2471
+C:ItemRevision>view§BasicMtrlQua§|js(BasicMaterialQuality(bl_SR5GenEngObj_sr5FSFClass,C:ItemRevision>Mat1UsesMaterial>C:Mat1MaterialRevision:object_name,C:ItemRevision>Mat1UsesMaterial>C:Mat1MaterialRevision:sr5MaterialNorm,bl_quantity,bl_item_object_type))|
+
+#to be displayed only if it is exsting
+#17
+C:ItemRevision>view§DocQuantity§X
+#18
+C:ItemRevision>view§DocName§|C:ItemRevision>SR5HasSpecificationDocument>SR5TechDocument:object_name^L^25|
+#19
+C:ItemRevision>view§DocID§|C:ItemRevision>SR5HasSpecificationDocument>SR5TechDocument:item_id^L^25|
+#10
+#C:ItemRevision>view§DocCode§|C:ItemRevision>SR5HasSpecificationDocument>SR5TechDocument:sr5DocumentContent^B^ |
+C:ItemRevision>view§DocCode§|C:ItemRevision>SR5HasSpecificationDocument>SR5TechDocument:sr5DocumentContent^L^25|

@@ -1,0 +1,402 @@
+{
+    "$schema": "http://json-schema.org/draft-06/schema#",
+    "description": "This is the schema the declarative kit (in JSON format) must adhere to. The Apollo audit check validates all kit JSON files against this schema. For explanation of the keywords of this schema, please visit https://ajv.js.org/keywords.html",
+    "definitions": {
+        "configurationDef": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "output": {
+                    "enum": [ "javascript", "json" ],
+                    "description": "Type of the configuration files"
+                },
+                "format": {
+                    "enum": [ "array", "object" ],
+                    "description": "Format of the contennt of the file"
+                },
+                "definition": {
+                    "enum": [ "module", "kit" ],
+                    "description": "Defination of the file at module level or kit level"
+                },
+                "multiple": {
+                    "type": "boolean",
+                    "description": ""
+                },
+                "uniqueDepth": {
+                    "type": "integer",
+                    "description": ""
+                }
+
+            }
+        }
+    },
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {
+        "name": {
+            "type": "string",
+            "description": "A name of the kit"
+        },
+        "author": {
+            "type": "string",
+            "description": "Name of the authoring organization"
+        },
+        "srcDir": {
+            "type": "string",
+            "description": "A source directory name /path default is src_kit"
+        },
+        "srcModule": {
+            "type": "string",
+            "description": "A name of source war file default is fx-appbase"
+        },
+        "zipFile": {
+            "type": "string",
+            "description": "A staging directory zip file"
+        },
+        "level": {
+            "type": "integer",
+            "description": "A layer number of the kit where it will reside"
+        },
+        "skipSonar": {
+            "type": "boolean",
+            "description": "sonar genaration for the kit. by default value is true and if false it will not generate the sonar report"
+        },
+        "enableWhenToVisibleWhen": {
+            "type": "boolean"
+        },
+        "kitDeps": {
+            "type": "array",
+            "description": "Array of the kits depend on the current kit",
+            "items": {
+                "type": "string"
+            },
+            "minItems": 0,
+            "uniqueItems": true
+        },
+        "kitMap": {
+            "type": "object",
+            "additionalProperties": true,
+            "description": "This is deprecated after the UX refersh work (not release with product)"
+        },
+        "soaDeps": {
+            "type": "array",
+            "description": "Array of the soas depend on the current kit",
+            "items": {
+                "type": "string"
+            },
+            "minItems": 1,
+            "uniqueItems": true
+        },
+        "extraDeps": {
+            "type": "array",
+            "description": "Array of deps to force include in the webpack build",
+            "items": {
+                "type": "string"
+            },
+            "minItems": 1,
+            "uniqueItems": true
+        },
+        "karmaKitDeps": {
+            "type": "array",
+            "description": "Array of the  kits  included which is required for the test of the kit to run",
+            "items": {
+                "type": "string"
+            },
+            "minItems": 1,
+            "uniqueItems": true
+        },
+        "modules": {
+            "type": "array",
+            "description": "Array of the  modules included while building this kit",
+            "items": {
+                "type": "string"
+            },
+            "minItems": 0,
+            "uniqueItems": true
+        },
+        "configuration": {
+            "type": "object",
+            "description": "This is the declarative way of extension module where user can specify the configuration on framework.",
+            "additionalProperties": false,
+            "patternProperties": {
+                "\\b[A-Za-z]+([A-Z]*[a-z]*[0-9]*)*\\b": {
+                    "$ref": "#/definitions/configurationDef"
+                }
+            }
+        },
+
+        "defaultPasteHandlerConfiguration": {
+            "type": "object",
+            "description": "This is the declarative way of extension module where user can specify the image configuration on framework.",
+            "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                    "bestTargetFitFinder": {
+                        "type": "string"
+                    },
+                    "bestSourceFitFinder": {
+                        "type": "string"
+                    },
+                    "pasteHandler": {
+                        "type": "string"
+                    },
+                    "deps": {
+                        "type": "string"
+                    }
+
+                },
+                "required": [
+                    "bestTargetFitFinder",
+                    "bestSourceFitFinder",
+                    "pasteHandler",
+                    "deps"
+                ]
+            }
+        },
+
+        "defaultDragAndDropHandlers": {
+            "type": "object",
+            "description": "This is the declarative configuration point for the default drag and drop handlers.",
+            "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                    "dragHandler": {
+                        "type": "string"
+                    },
+                    "dropHandler": {
+                        "type": "string"
+                    }
+
+                },
+                "required": [
+                    "dragHandler",
+                    "dropHandler"
+                ]
+            }
+        },
+
+        "imageRepositoryConfiguration": {
+            "type": "object",
+            "description": "This is the declarative way of extension module where user can specify the image configuration on framework.",
+            "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                    "actionType": {
+                        "type": "string"
+                    },
+                    "url": {
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "actionType",
+                    "url"
+                ]
+            }
+        },
+        "solutionDef": {
+            "type": "object",
+            "description": "Defination of the solution.",
+            "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                    "solutionId": {
+                        "type": "string",
+                        "description": "A unique name of the solution"
+                    },
+                    "brandName": {
+                        "type": "string",
+                        "description": "Brand name of the solution"
+                    },
+                    "solutionName": {
+                        "type": "string",
+                        "description": "Name of the solution"
+                    },
+                    "solutionVersion": {
+                        "type": "string",
+                        "description": "Version number of the solution."
+                    },
+                    "copyrightText": {
+                        "type": "string",
+                        "description": "Copy right text."
+                    },
+                    "companyName": {
+                        "type": "string",
+                        "description": "Name of the company."
+                    },
+                    "solutionWar": {
+                        "type": "string",
+                        "description": "Unique name of the war file that needs to be generated."
+                    },
+                    "workspaces": {
+                        "type": "array",
+                        "description": "String array of the workspaces defined in the solution."
+                    },
+                    "defaultWorkspace": {
+                        "type": "string",
+                        "description": "default workspace name of the soluion . It should be from the workspaces defined in the war."
+                    },
+                    "clipboard": {
+                        "type": "string",
+                        "description": "clipboard service file for the solution."
+                    },
+                    "authenticator": {
+                        "type": "string",
+                        "description": "Aunthticator service for the solution which will aunthticate the user"
+                    },
+                    "analytics": {
+                        "type": "string",
+                        "description": "AnalyticsService is a service that manages enablement & logging of messages to a backend analytics logging server."
+                    },
+                    "defaultTheme": {
+                        "enum": [ "ui-lightTheme", "ui-darkTheme" ],
+                        "description": "Default theme for the solution."
+                    },
+                    "commandVisibility": {
+                        "type": "string",
+                        "description": "Service name for the command visibility logic."
+                    },
+                    "bundler": {
+                        "type": "object",
+                        "description": "bundler configuration",
+                        "items": {
+                            "type": "object",
+                            "additionalProperties": false,
+                            "properties": {
+                                "chunkMinSize": {
+                                    "type": "integer",
+                                    "description": "Override minimum chunk size for bundles in production mode"
+                                },
+                                "chunkMaxSize": {
+                                    "type": "integer",
+                                    "description": "Override maximum chunk size for bundles in production mode"
+                                },
+                                "entryFiles": {
+                                    "type": "array",
+                                    "description": "Entry file names array",
+                                    "items": {
+                                        "type": "string"
+                                    },
+                                    "uniqueItems": true,
+                                    "minItems": 0
+                                },
+                                "bootstrapFile": {
+                                    "type": "string",
+                                    "description": "The path to the bootstrap file starting from the site dir"
+                                }
+                            }
+                        }
+                    }
+                },
+                "required": [
+                    "solutionId",
+                    "brandName",
+                    "solutionName",
+                    "solutionVersion",
+                    "browserTitle",
+                    "companyName",
+                    "copyrightText"
+                ]
+            }
+        },
+        "viewAndViewModelRepoConfiguration": {
+            "type": "object",
+            "description": "Define HTTP protocol for fetching view and view model",
+            "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                    "actionType": {
+                        "enum": [ "GET", "POST" ],
+                        "description": "HTTP protocol way for calling the methods."
+                    },
+                    "viewUrl": {
+                        "type": "string",
+                        "description": "URL name of the page."
+                    },
+                    "viewModelUrl": {
+                        "type": "string",
+                        "description": "Model  defination URL of the string"
+                    }
+                },
+                "required": [
+                    "actionType",
+                    "viewUrl",
+                    "viewModelUrl"
+                ]
+            }
+        },
+        "dynamicConfigRepoConfiguration": {
+            "type": "object",
+            "description": "Define HTTP protocol for fetching configuration data",
+            "items": {
+                "type": "object",
+                "additionalProperties": true
+            }
+        },
+
+        "bundles": {
+            "type": "object",
+            "description": "Array of the files which should be the part of the bundles. Insted of loading all files , bundles get loaded as and when require",
+            "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                    "include": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "minItems": 1,
+                        "uniqueItems": true
+                    },
+                    "deps": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "minItems": 1,
+                        "uniqueItems": true
+                    },
+                    "exclude": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "minItems": 1,
+                        "uniqueItems": true
+                    },
+                    "optimize": {
+                        "type": "string"
+                    },
+                    "allowSourceOverwrites": {
+                        "type": "boolean"
+                    },
+                    "preserveLicenseComments": {
+                        "type": "boolean"
+                    },
+                    "generateSourceMaps": {
+                        "type": "boolean"
+                    }
+                }
+            }
+        },
+        "ignoreMissingKits": {
+            "type": "boolean",
+            "description": "Set to true to ignore any referenced kits that are missing."
+        },
+        "OOTB": {
+            "type": "boolean",
+            "description": "Set to true to indicate that this is an out-of-the-box Apollo kit."
+        }
+
+    },
+    "required": [
+        "name",
+        "level"
+    ]
+}

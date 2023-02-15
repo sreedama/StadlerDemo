@@ -1,0 +1,92 @@
+@echo off
+
+if not defined TC_ROOT goto ENV_MISSING
+if x%SILENT_MODE%==xTRUE goto START_PROCESS
+
+echo Type in password of "infodba"
+set /P DBAPASS=Password: 
+set DBAPASS_TMP=******
+
+:START_PROCESS
+REM Import users
+echo.
+
+make_user.exe -u=infodba -p=%DBAPASS% -g=dba -person="Oliver Kirsten" -user="u565525" -group="Konstruktion.Engineering.voestalpine" -role="Konstrukteur" -PA9="oliver.kirsten@lmtec.eu"
+make_user.exe -u=infodba -p=%DBAPASS% -g=dba -person="Oliver Kirsten" -user="u565525" -group="dba" -role="DBA" -PA9="oliver.kirsten@lmtec.eu"
+make_user.exe -u=infodba -p=%DBAPASS% -g=dba -person="Gabriel Langenbacher" -user="u566599" -group="dba" -role="DBA" -PA9="gabriel.langenbacher@lmtec.eu"
+make_user.exe -u=infodba -p=%DBAPASS% -g=dba -person="Gabriel Langenbacher" -user="u566599" -group="Konstruktion.Engineering.voestalpine" -role="Konstrukteur" -PA9="gabriel.langenbacher@lmtec.eu"
+make_user.exe -u=infodba -p=%DBAPASS% -g=dba -person="Eugen Schmidt" -user="u103987" -group="Methode.Engineering.voestalpine" -role="Methode" -PA9="Eugen.Schmidt@voestalpine.com"
+make_user.exe -u=infodba -p=%DBAPASS% -g=dba -person="Miao Fang" -user="u142539" -group="Methode.Engineering.voestalpine" -role="Methode" -PA9="Miao.Fang@voestalpine.com"
+make_user.exe -u=infodba -p=%DBAPASS% -g=dba -person="Natalie Mackintosh" -user="u176413" -group="Controlling_RFQ_PM.Projektmanagement.voestalpine" -role="Controller" -PA9="Natalie.Mackintosh@voestalpine.com"
+make_user.exe -u=infodba -p=%DBAPASS% -g=dba -person="Maren Frank" -user="u199803" -group="dba" -role="DBA" -PA9="Maren.Frank@voestalpine.com"
+make_user.exe -u=infodba -p=%DBAPASS% -g=dba -person="Maren Frank" -user="u199803" -group="Projektadministration" -role="Projektadministrator" -PA9="Maren.Frank@voestalpine.com"
+make_user.exe -u=infodba -p=%DBAPASS% -g=dba -person="Maren Frank" -user="u199803" -group="Projektleitung.Projektmanagement.voestalpine" -role="Projektleiter" -PA9="Maren.Frank@voestalpine.com"
+make_user.exe -u=infodba -p=%DBAPASS% -g=dba -person="Maren Frank" -user="u199803" -group="Produktdesign.Engineering.voestalpine" -role="Produktdesigner" -PA9="Maren.Frank@voestalpine.com"
+make_user.exe -u=infodba -p=%DBAPASS% -g=dba -person="Johannes Rohrmus" -user="u294512" -group="Kalkulation.voestalpine" -role="Kalkulator" -PA9="Johannes.Rohrmus@voestalpine.com"
+make_user.exe -u=infodba -p=%DBAPASS% -g=dba -person="Verena Menrad" -user="u350067" -group="Vertrieb.voestalpine" -role="Vertrieb" -PA9="Verena.Menrad@voestalpine.com"
+make_user.exe -u=infodba -p=%DBAPASS% -g=dba -person="Frieder Gruber" -user="u360636" -group="Konstruktion.Engineering.voestalpine" -role="Konstrukteur" -PA9="Frieder.Gruber@voestalpine.com"
+make_user.exe -u=infodba -p=%DBAPASS% -g=dba -person="Vanja Kusworo" -user="u445305" -group="Vertrieb.voestalpine" -role="Vertrieb" -PA9="Vanja.Kusworo@voestalpine.com"
+make_user.exe -u=infodba -p=%DBAPASS% -g=dba -person="Daniel Rupp" -user="u458192" -group="Engineering.Prototypenbau.voestalpine" -role="Engineer" -PA9="Daniel.Rupp@voestalpine.com"
+make_user.exe -u=infodba -p=%DBAPASS% -g=dba -person="Theodor Zoller" -user="u490029" -group="Planung.Assembly.Engineering.voestalpine" -role="Planer" -PA9="Theodor.Zoller@voestalpine.com"
+make_user.exe -u=infodba -p=%DBAPASS% -g=dba -person="Markus Stooss" -user="U501272" -group="Arbeitsvorbereitung.Fertigung.voestalpine" -role="Arbeitsvorbereiter" -PA9="Markus.Stooss@voestalpine.com"
+make_user.exe -u=infodba -p=%DBAPASS% -g=dba -person="Kresimir Kresic" -user="u501280" -group="Methode.Engineering.voestalpine" -role="Methode" -PA9="Kresimir.Kresic@voestalpine.com"
+make_user.exe -u=infodba -p=%DBAPASS% -g=dba -person="Waldemar Gohl" -user="u502329" -group="Produktdesign.Engineering.voestalpine" -role="Produktdesigner" -PA9="Waldemar.Gohl@voestalpine.com"
+make_user.exe -u=infodba -p=%DBAPASS% -g=dba -person="Waldemar Gohl" -user="u502329" -group="Konstruktion.Engineering.voestalpine" -role="Konstrukteur" -PA9="Waldemar.Gohl@voestalpine.com"
+make_user.exe -u=infodba -p=%DBAPASS% -g=dba -person="Viktor Schulz" -user="u503781" -group="Projektierung.Assembly.Engineering.voestalpine" -role="Projektierer" -PA9="Viktor.Schulz@voestalpine.com"
+make_user.exe -u=infodba -p=%DBAPASS% -g=dba -person="Rebekka Friedrich" -user="u508921" -group="Einkauf.voestalpine" -role="Einkauf" -PA9="Rebekka.Friedrich@voestalpine.com"
+make_user.exe -u=infodba -p=%DBAPASS% -g=dba -person="Lucas Kiefel" -user="u517188" -group="Produktdesign.Engineering.voestalpine" -role="Produktdesigner" -PA9="Lucas.Kiefel@voestalpine.com"
+make_user.exe -u=infodba -p=%DBAPASS% -g=dba -person="Lucas Kiefel" -user="u517188" -group="Konstruktion.Engineering.voestalpine" -role="Konstrukteur" -PA9="Lucas.Kiefel@voestalpine.com"
+make_user.exe -u=infodba -p=%DBAPASS% -g=dba -person="Alois Wallesch" -user="u530057" -group="Wirkflaeche.Engineering.voestalpine" -role="Wirkflaeche" -PA9="Alois.Wallesch@voestalpine.com"
+make_user.exe -u=infodba -p=%DBAPASS% -g=dba -person="Marco Hild" -user="u589468" -group="Produktdesign.Engineering.voestalpine" -role="Produktdesigner" -PA9="Marco.Hild@voestalpine.com"
+make_user.exe -u=infodba -p=%DBAPASS% -g=dba -person="Marco Hild" -user="u589468" -group="Konstruktion.Engineering.voestalpine" -role="Konstrukteur" -PA9="Marco.Hild@voestalpine.com"
+make_user.exe -u=infodba -p=%DBAPASS% -g=dba -person="Wolfgang Rieger" -user="u592221" -group="Projektleitung.Projektmanagement.voestalpine" -role="Projektleiter" -PA9="Wolfgang.Rieger@voestalpine.com"
+make_user.exe -u=infodba -p=%DBAPASS% -g=dba -person="Jan Blechschmidt" -user="u601098" -group="Konstruktion.Engineering.voestalpine" -role="Konstrukteur" -PA9="Jan.Bleschmidt@voestalpine.com"
+make_user.exe -u=infodba -p=%DBAPASS% -g=dba -person="Steffen Baun" -user="v108613" -group="Messtechnik.Qualitaetsmanagement.voestalpine" -role="Messtechniker" -PA9="Steffen.Baun@voestalpine.com"
+make_user.exe -u=infodba -p=%DBAPASS% -g=dba -person="Claudio Canalini" -user="v120097" -group="Projektleitung.Prototypenbau.voestalpine" -role="Projektleiter" -PA9="Claudio.Canalini@voestalpine.com"
+make_user.exe -u=infodba -p=%DBAPASS% -g=dba -person="Claudio Canalini" -user="v120097" -group="Projektadministration" -role="Projektadministrator" -PA9="Claudio.Canalini@voestalpine.com"
+make_user.exe -u=infodba -p=%DBAPASS% -g=dba -person="Ivica Cujic" -user="v122019" -group="Projektleitung.Projektmanagement.voestalpine" -role="Projektleiter" -PA9="Ivica.Cujic@voestalpine.com"
+make_user.exe -u=infodba -p=%DBAPASS% -g=dba -person="Ivica Cujic" -user="v122019" -group="Projektadministration" -role="Projektadministrator" -PA9="Ivica.Cujic@voestalpine.com"
+make_user.exe -u=infodba -p=%DBAPASS% -g=dba -person="Clemens Deinert" -user="V123877" -group="Engineering.Prototypenbau.voestalpine" -role="Engineer" -PA9="Clemens.Deinert@voestalpine.com"
+make_user.exe -u=infodba -p=%DBAPASS% -g=dba -person="Karl-Heinz Grankl" -user="v147760" -group="Anzeige.voestalpine" -role="Anzeige_Allgemein" -PA9="Karl-Heinz.Grankl@voestalpine.com"
+make_user.exe -u=infodba -p=%DBAPASS% -g=dba -person="Rene Gross" -user="v149790" -group="dba" -role="DBA" -PA9="Rene.Gross@voestalpine.com"
+make_user.exe -u=infodba -p=%DBAPASS% -g=dba -person="Rene Gross" -user="v149790" -group="Konstruktion.Engineering.voestalpine" -role="Konstrukteur" -PA9="Rene.Gross@voestalpine.com"
+make_user.exe -u=infodba -p=%DBAPASS% -g=dba -person="Rene Gross" -user="v149790" -group="Produktdesign.Engineering.voestalpine" -role="Produktdesigner" -PA9="Rene.Gross@voestalpine.com"
+make_user.exe -u=infodba -p=%DBAPASS% -g=dba -person="Rene Gross" -user="v149790" -group="Anzeige.voestalpine" -role="Anzeige_Allgemein" -PA9="Rene.Gross@voestalpine.com"
+make_user.exe -u=infodba -p=%DBAPASS% -g=dba -person="Rene Gross" -user="v149790" -group="Projektadministration" -role="Projektadministrator" -PA9="Rene.Gross@voestalpine.com"
+make_user.exe -u=infodba -p=%DBAPASS% -g=dba -person="Roland Herzer" -user="v161314" -group="Messtechnik.Qualitaetsmanagement.voestalpine" -role="Messtechniker" -PA9="Roland.Herzer@voestalpine.com"
+make_user.exe -u=infodba -p=%DBAPASS% -g=dba -person="Reiner Kelsch" -user="v179565" -group="Vertrieb.voestalpine" -role="Vertrieb" -PA9="Reiner.Kelsch@voestalpine.com"
+make_user.exe -u=infodba -p=%DBAPASS% -g=dba -person="Dietmar Kiemel" -user="V181073" -group="Arbeitsvorbereitung.Fertigung.voestalpine" -role="Arbeitsvorbereiter" -PA9="Dietmar.Kiemel@voestalpine.com"
+make_user.exe -u=infodba -p=%DBAPASS% -g=dba -person="Guido Krieger" -user="v191105" -group="Kalkulation.voestalpine" -role="Kalkulator" -PA9="Guido.Krieger@voestalpine.com"
+make_user.exe -u=infodba -p=%DBAPASS% -g=dba -person="Armin Meier" -user="v207473" -group="Projektleitung.Prototypenbau.voestalpine" -role="Projektleiter" -PA9="Armin.Meier@voestalpine.com"
+make_user.exe -u=infodba -p=%DBAPASS% -g=dba -person="Armin Meier" -user="v207473" -group="Projektadministration" -role="Projektadministrator" -PA9="Armin.Meier@voestalpine.com"
+make_user.exe -u=infodba -p=%DBAPASS% -g=dba -person="Sascha Nicklich" -user="v215195" -group="Anzeige.voestalpine" -role="Anzeige_Allgemein" -PA9="Sascha.Nicklich@voestalpine.com"
+make_user.exe -u=infodba -p=%DBAPASS% -g=dba -person="Claude Parmentier" -user="v220805" -group="Projektleitung.Projektmanagement.voestalpine" -role="Projektleiter" -PA9="Claude.Parmentier@voestalpine.com"
+make_user.exe -u=infodba -p=%DBAPASS% -g=dba -person="Claude Parmentier" -user="v220805" -group="Projektadministration" -role="Projektadministrator" -PA9="Claude.Parmentier@voestalpine.com"
+make_user.exe -u=infodba -p=%DBAPASS% -g=dba -person="Martin Pfisterer" -user="v223825" -group="Kalkulation.voestalpine" -role="Kalkulator" -PA9="Martin.Pfisterer@voestalpine.com"
+make_user.exe -u=infodba -p=%DBAPASS% -g=dba -person="Florian Veihl" -user="v274977" -group="Arbeitsvorbereitung.Fertigung.voestalpine" -role="Arbeitsvorbereiter" -PA9="Florian.Veihl@voestalpine.com"
+make_user.exe -u=infodba -p=%DBAPASS% -g=dba -person="Josef Vogel" -user="V276642" -group="Engineering.Prototypenbau.voestalpine" -role="Engineer" -PA9="Josef.Vogel@voestalpine.com"
+make_user.exe -u=infodba -p=%DBAPASS% -g=dba -person="Marc von Dahlern" -user="v276949" -group="Methode.Engineering.voestalpine" -role="Methode" -PA9="Marc.vonDahlern@voestalpine.com"
+make_user.exe -u=infodba -p=%DBAPASS% -g=dba -person="Martin Weingaertner " -user="v281039" -group="Projektleitung.Projektmanagement.voestalpine" -role="Projektleiter" -PA9="Martin .Weingaertner@voestalpine.com"
+make_user.exe -u=infodba -p=%DBAPASS% -g=dba -person="Bernhard Wunderli" -user="V288225" -group="Arbeitsvorbereitung.Fertigung.voestalpine" -role="" -PA9="Bernhard.Wunderli@voestalpine.com"
+make_user.exe -u=infodba -p=%DBAPASS% -g=dba -person="Hassan Yildiz" -user="v288960" -group="Kalkulation.voestalpine" -role="Kalkulator" -PA9="Hassan.Yildiz@voestalpine.com"
+make_user.exe -u=infodba -p=%DBAPASS% -g=dba -person="Nico Bender" -user="v363960" -group="Anzeige.voestalpine" -role="Produktion" -PA9="Nico.Bender@voestalpine.com"
+make_user.exe -u=infodba -p=%DBAPASS% -g=dba -person="Jonas Fritz" -user="v364215" -group="Methode.Engineering.voestalpine" -role="Methode" -PA9="Jonas.Fritz@voestalpine.com"
+make_user.exe -u=infodba -p=%DBAPASS% -g=dba -person="Thomas Kurcz" -user="v364299" -group="Engineering.Prototypenbau.voestalpine" -role="Engineer" -PA9="Thomas.Kurcz@voestalpine.com"
+make_user.exe -u=infodba -p=%DBAPASS% -g=dba -person="Thomas Kurcz" -user="v364299" -group="Konstruktion.Engineering.voestalpine" -role="Konstrukteur" -PA9="Thomas.Kurcz@voestalpine.com"
+make_user.exe -u=infodba -p=%DBAPASS% -g=dba -person="Thomas Kurcz" -user="v364299" -group="Projektadministration" -role="Projektadministrator" -PA9="Thomas.Kurcz@voestalpine.com"
+make_user.exe -u=infodba -p=%DBAPASS% -g=dba -person="Thomas Kurcz" -user="v364299" -group="Produktdesign.Engineering.voestalpine" -role="Produktdesigner" -PA9="Thomas.Kurcz@voestalpine.com"
+make_user.exe -u=infodba -p=%DBAPASS% -g=dba -person="Christoph Wassermann" -user="v389057" -group="Konstruktion.Engineering.voestalpine" -role="Konstrukteur" -PA9="Christoph.Wassermann@voestalpine.com"
+make_user.exe -u=infodba -p=%DBAPASS% -g=dba -person="Michael Binder" -user="v454131" -group="Methode.Engineering.voestalpine" -role="Methode" -PA9="Michael.Binder@voestalpine.com"
+make_user.exe -u=infodba -p=%DBAPASS% -g=dba -person="Andreas Neumaier" -user="V499351" -group="Engineering.Prototypenbau.voestalpine" -role="Engineer" -PA9="Andreas.Neumaier@voestalpine.com"
+make_user.exe -u=infodba -p=%DBAPASS% -g=dba -person="Meral Bozkurt" -user="v591206" -group="Vertrieb.voestalpine" -role="Vertrieb" -PA9="Meral.Bozkurt@voestalpine.com"
+make_user.exe -u=infodba -p=%DBAPASS% -g=dba -person="Wolfgang Tobias" -user="v595167" -group="Methode.Engineering.voestalpine" -role="Methode" -PA9="Wolfgang.Tobias@voestalpine.com"
+make_user.exe -u=infodba -p=%DBAPASS% -g=dba -person="Michael Kuebler" -user="v595175" -group="Kalkulation.voestalpine" -role="Kalkulator" -PA9="Michael.Kuebler@voestalpine.com"
+make_user.exe -u=infodba -p=%DBAPASS% -g=dba -person="Sylvia Suntheim" -user="v748724" -group="Vertrieb.voestalpine" -role="Vertrieb" -PA9="Sylvia.Suntheim@voestalpine.com"
+make_user.exe -u=infodba -p=%DBAPASS% -g=dba -person="Sylvia Suntheim" -user="v748724" -group="Projektadministration" -role="Projektadministrator" -PA9="Sylvia.Suntheim@voestalpine.com"
+make_user.exe -u=infodba -p=%DBAPASS% -g=dba -person="Nobert Nosiadek" -user="V992876" -group="Engineering.Prototypenbau.voestalpine" -role="Engineer" -PA9="Nobert.Nosiadek@voestalpine.com"
+make_user.exe -u=infodba -p=%DBAPASS% -g=dba -person="Michael Meier" -user="v992892" -group="Methode.Engineering.voestalpine" -role="Methode" -PA9="Michael.Meier @voestalpine.com"
+
+goto :EOF
+
+:ENV_MISSING
+echo You need to run this script in a Teamcenter environment

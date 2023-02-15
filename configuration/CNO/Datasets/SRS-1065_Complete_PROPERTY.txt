@@ -1,0 +1,24 @@
+############################################################################################################
+#  CNO Object Property Definition File
+############################################################################################################
+# Version History
+#
+# Version    Date           Name               Description of Change
+# 1.0        23-03-2022     testu     Initial
+############################################################################################################
+
+C:ChangeItemRevision:?object_type~DB_IR_Type
+
+C:ChangeItemRevision§ID_REV§|:item_id|_|:item_revision_id|
+
+#C:ChangeItemRevision§Current Group Name§|SESSION_ACTIVE_GROUP|
+C:ChangeItemRevision§Current Role Name§|SESSION_ACTIVE_ROLE|
+
+C:ChangeItemRevision:CMMaturity~CMMaturity
+C:ChangeItemRevision:CMDisposition~CMDisposition
+C:ChangeItemRevision:CMClosure~CMClosure
+
+
+
+
+

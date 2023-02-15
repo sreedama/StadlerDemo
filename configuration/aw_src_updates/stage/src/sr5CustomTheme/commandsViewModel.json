@@ -1,0 +1,32 @@
+{
+    "commands": {
+        "sr5CustomTheme": {
+            "iconId": "cmdSettings",
+            "title": "{{i18n.sr5CustomThemeTitle}}",
+            "description": "{{i18n.sr5CustomThemeDesc}}"
+        }
+    },
+    "commandHandlers": {
+        "sr5CustomThemeHandler": {
+            "id": "sr5CustomTheme",
+            "action": "setsr5CustomTheme",
+            "activeWhen": true,
+            "visibleWhen": true,
+            "selectWhen": true
+        }
+    },
+    "actions": {
+        "setsr5CustomTheme": {
+            "actionType": "JSFunction",
+            "method": "setTheme",
+            "inputData": {
+                "0": "ui-sr5CustomTheme"
+            },
+            "deps": "js/theme.service"
+        }
+    },
+    "i18n": {
+        "sr5CustomThemeTitle": ["sr5CustomThemeMessages"],
+        "sr5CustomThemeDesc": ["sr5CustomThemeMessages"]
+    }
+}

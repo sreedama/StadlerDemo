@@ -1,0 +1,95 @@
+############################################################################################################
+#  CNO Object Property Definition File
+############################################################################################################
+# Version History
+#
+# Version    Date           Name               Description of Change
+# 1.0        22-03-2022     user01     Initial
+############################################################################################################
+
+#Process
+C:EPMTask:object_name~object_name
+C:EPMTask:num_targets~num_targets
+
+#Status of select object
+C:ItemRevision:last_release_status~last_release_status
+
+#running process of selected object
+C:ItemRevision:fnd0InProcess~fnd0InProcess
+
+#history: not needed anymore
+#C:Item:object_name~object_name
+
+#status of children
+C:ItemRevision>view:bl_rev_last_release_status~bl_rev_last_release_status
+C:ItemRevision>view:bl_rev_object_string~bl_rev_object_string
+#new need for catalog without status inside a BOM:
+C:ItemRevision>view:?bl_rev_object_type~DB_bl_rev_object_type
+#improvement for catalog or color type
+C:ItemRevision>view:bl_rev_object_type~bl_rev_object_type
+
+#Qchecker: temporary solution until deployment of rela solution
+CATPart:sr5QCheckEvaluation~sr5QCheckEvaluation
+CATProduct:sr5QCheckEvaluation~sr5QCheckEvaluation
+CATDrawing:sr5QCheckEvaluation~sr5QCheckEvaluation
+
+#Type of selected object
+C:ItemRevision:?object_type~DB_Type
+
+#position = BOM sequence
+C:ItemRevision>view§position§|bl_sequence_no|
+C:ItemRevision>view§position_ID§|bl_sequence_no|_|bl_item_item_id|
+
+#info
+C:ItemRevision>view:bl_level_starting_0~level
+
+#Group member
+GroupMember:group
+C:SR5GenEngObjRevision§Current Group Name§|SESSION_ACTIVE_GROUP|
+C:SR5GenEngObjRevision§Current Role Name§|SESSION_ACTIVE_ROLE|
+
+#SAP
+C:SR5GenEngObjRevision:object_desc
+#C:SR5GenEngObj:sr5SAPMaterialType
+SR5EngArticle:sr5SAPMaterialType
+#C:SR5GenEngObj:sr5SAPMaterialGroup
+SR5EngArticle:sr5SAPMaterialGroup
+C:SR5GenEngObj:uom_tag
+C:SR5GenEngObj:?object_type~DB_Type
+
+#Catalog Part: first revision only => because of error on BMIDE have a look on expansion
+#SR5EleCatPartRevision:item_revision_id~Rev
+#SR5MechCatPartRevision:item_revision_id~Rev
+#SR5GenCatPartRevision:item_revision_id~Rev
+#because of must be connected to a change we can do it on the generic classe
+C:SR5GenEngObjRevision:item_revision_id~Rev
+#SR5EleCatPartRevision§Rev_List§|:revision_list^B^-|#|:revision_list^A^/||:revision_list^B^#|
+#SR5MechCatPartRevision§Rev_List§|:revision_list^B^-|#|:revision_list^A^/||:revision_list^B^#|
+#SR5GenCatPartRevision§Rev_List§|:revision_list^B^-|#|:revision_list^A^/||:revision_list^B^#|
+
+#checked-out
+C:Dataset:?checked_out~checked_out
+C:Dataset:object_type
+C:Form:?checked_out~checked_out
+C:Form:object_type
+C:SR5GenEngObjRevision:?checked_out~checked_out
+C:PSBOMViewRevision:?checked_out~checked_out
+C:PSBOMViewRevision:object_type
+
+#ccp synchro discipline for comon target of WF40 in case of clean CV5 DWGLink (-link zu 3D- or -link zu 3D 2 Artikelnummern- or -spiegelbildliches Teil-) 
+C:SR5GenEngObjRevision:?sr5ScrewApprovalFlag~DB_sr5ScrewApprovalFlag
+C:SR5GenEngObjRevision:?sr5GlueApprovalFlag~DB_sr5GlueApprovalFlag
+C:SR5GenEngObjRevision:?sr5WeldApprovalFlag~DB_sr5WeldApprovalFlag
+
+#obsolete drawing link
+SR5EngArticleRevision:item_id
+DWGRevision:item_id
+C:SR5GenEngObjRevision§COMBI_item_Rev§|:item_id|-|:item_revision_id|
+#SR5EngArticleRevision§COMBI_item_PreviousRev§|:item_id|-|>previous_rev:item_revision_id|
+#DWGRevision§COMBI_item_NextRev§|:item_id|-|>next_rev:item_revision_id|
+
+#must be connected to change
+C:SR5GenEngObjRevision:cm0AuthoringChangeRevision~Changes
+#C:SR5GenEngObjRevision:revision_list~RevisionList
+#C:SR5GenEngObjRevision:object_string~ObjectString
+#C:SR5GenEngObjRevision§Current_Rev_Prev§|:item_revision_id|###|>previous_rev:item_revision_id|

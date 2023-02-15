@@ -1,0 +1,34 @@
+﻿############################################################################################################
+#  CNO Object Property Definition File
+############################################################################################################
+# Version History
+#
+# Version    Date           Name               Description of Change
+# 1.0        31-01-2022     testu     Initial
+############################################################################################################
+
+#better with the parent class
+#SR5EngArticleRevision:?sr5WeldApprovalFlag~sr5WeldApprovalFlag
+#SR5NonERPArticleRevision:?sr5WeldApprovalFlag~sr5WeldApprovalFlag
+#SR5EleCatPartRevision:?sr5WeldApprovalFlag~sr5WeldApprovalFlag
+#SR5ElectricAssyRevision:?sr5WeldApprovalFlag~sr5WeldApprovalFlag
+#SR5EngArticleARRevision:?sr5WeldApprovalFlag~sr5WeldApprovalFlag
+#SR5EngEndItemRevision:?sr5WeldApprovalFlag~sr5WeldApprovalFlag
+#SR5EngEnvRevision:?sr5WeldApprovalFlag~sr5WeldApprovalFlag
+#SR5EngInstallLocRevision:?sr5WeldApprovalFlag~sr5WeldApprovalFlag
+#SR5EngMajorAssyRevision:?sr5WeldApprovalFlag~sr5WeldApprovalFlag
+#SR5GenCatPartRevision:?sr5WeldApprovalFlag~sr5WeldApprovalFlag
+#SR5GenEngObjRevision:?sr5WeldApprovalFlag~sr5WeldApprovalFlag
+#SR5MechCatPartRevision:?sr5WeldApprovalFlag~sr5WeldApprovalFlag
+#SR5SoftwareRevision:?sr5WeldApprovalFlag~sr5WeldApprovalFlag
+#SR5ToolRevision:?sr5WeldApprovalFlag~sr5WeldApprovalFlag
+C:SR5GenEngObjRevision:?sr5WeldApprovalFlag~DB_sr5WeldApprovalFlag
+
+#history: can be achieved without since SRS-836
+##C:EPMTask:root_target_attachments
+#C:EPMTask§first_target§|:root_target_attachments^L^6|
+##C:ItemRevision:object_string~object_string
+#C:ItemRevision§String§|:object_string^L^6|
+#
+
+C:ItemRevision:?object_type~DB_IR_type

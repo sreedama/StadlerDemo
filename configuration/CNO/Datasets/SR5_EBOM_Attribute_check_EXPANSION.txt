@@ -1,0 +1,186 @@
+############################################################################################################
+#  CNO Expansion Definition File
+############################################################################################################
+# Version History
+#
+# Version    Date           Name               Description of Change
+# 1.0        24-01-2022     Frithjof Streitz     Initial
+############################################################################################################
+
+
+
+
+
+# Item Master Form as some attributes are to be checked
+
+
+
+
+
+
+
+# ------------------------------------------------------------------
+
+
+
+
+
+
+
+C:Item>IMAN_master_form>C:Form
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# ------------------------------------------------------------------
+
+
+
+
+
+
+
+# ItemRevision Master Form as some attributes are to be checked
+
+
+
+
+
+
+
+# ------------------------------------------------------------------
+
+
+
+
+
+
+
+C:ItemRevision>IMAN_master_form_rev>C:Form
+
+
+
+
+
+
+
+C:ItemRevision>view;0p:Latest by Creation Date>C:ItemRevision;0
+
+
+
+
+
+
+
+# ------------------------------------------------------------------
+
+
+
+
+
+
+
+# BOM Components (ItemRevision)
+
+
+
+
+
+
+
+# packed BOM: C:ItemRevision>view;p:Latest Working>C:ItemRevision
+
+
+
+
+
+
+
+# recursive packed BOM: C:ItemRevision>view;99p:Latest by Creation Date>C:ItemRevision
+
+
+
+
+
+
+
+# only unpacked BOM (no further expansion) C:ItemRevision>view;u:Any Status>C:ItemRevision
+
+
+
+
+
+
+
+# Extract only BOM Line attributes, no expansion of the BOM via OED: C:ItemRevision>view;p:Latest by Creation Date>C:ItemRevision;0
+
+
+
+
+
+
+
+# >> is used to only expand root objects
+
+
+
+
+
+
+
+# ------------------------------------------------------------------
+
+
+
+
+
+
+
+#C:ItemRevision>>view;p:Latest by Creation Date>C:ItemRevision
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# ------------------------------------------------------------------
+
+
+
+
+
+
+
+# Object type expanding classific
+
+
+
+
+C:ItemRevision>IMAN_specification>CATPart
+C:ItemRevision>IMAN_specification>CATDrawing
+C:ItemRevision>IMAN_specification>CATProduct
+#CATPart<IMAN_specification<SR5EngArticleRevision
+#CATDrawing<IMAN_specification<C:ItemRevision
+#CATProduct<IMAN_specification<C:ItemRevision
+C:ItemRevision>IMAN_specification>C:Dataset
+C:ItemRevision>*>C:Dataset

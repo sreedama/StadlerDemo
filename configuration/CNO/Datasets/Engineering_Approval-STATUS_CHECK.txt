@@ -1,0 +1,32 @@
+############################################################################################################
+#  CNO Check Definition File
+############################################################################################################
+# Version History
+#
+# Version    Date           Name               Description of Change
+# 1.0        22-03-2022     user01     Initial
+############################################################################################################
+
+#C:ItemRevision>view:bl_rev_last_release_status§not allowed§empty~occurence [VAL_OBJECT:bl_rev_object_string] with no status on level [VAL_OBJECT:bl_level_starting_0]~status on occurence is fine
+ID=3;scope=occurrence;CRITERIA=CONDITION;CHECK=C:ItemRevision>view:bl_rev_last_release_status§not allowed§70*&&80*&&90*
+ID=3;scope=occurrence;CRITERIA=AND;CHECK=C:ItemRevision>view:bl_rev_last_release_status§not allowed§empty&&20*&&30*~occurence [VAL_OBJECT:bl_rev_object_string] with no status or status 20 or status 30 on level [VAL_OBJECT:bl_level_starting_0], have a look on associated WF~status on occurence is fine
+
+ID=4;scope=occurrence;CRITERIA=CONDITION;CHECK=C:ItemRevision>view:bl_rev_last_release_status§not allowed§empty&&20*&&30*
+ID=4;scope=occurrence;CRITERIA=AND;CHECK=C:ItemRevision>view:bl_rev_last_release_status§not allowed§70*&&80*&&90*~occurences [VAL_OBJECT:bl_rev_object_string] with status 70 and higher, must be replaced~status on level one is accepted: In Work, 20, 30, 40 or 50
+
+#Check Type=C:EPMTask Property=object_string
+#C:ItemRevision>process_stage_list>C:EPMTask:object_string§not allowed§*~WARNING: INFO: associated Workflow [VAL_RELATED_OBJECT:object_string] for object [VAL_OBJECT:object_string]
+#because of contextual link management
+ID=5;scope=object;CRITERIA=CONDITION;CHECK=C:ItemRevision:last_release_status§allowed§empty||20*||30*
+ID=5;scope=object;CRITERIA=AND;CHECK=C:ItemRevision>process_stage_list>C:EPMTask:object_string§not allowed§*~WARNING: INFO: associated Workflow [VAL_RELATED_OBJECT:object_string] for object [VAL_OBJECT:object_string]
+
+#ID=2;scope=structure;CRITERIA=CONDITION;CHECK=C:ItemRevision:object_string§allowed§*~skip this check for the PSBOMVIEWRev
+#ID=2;scope=structure;CRITERIA=CONDITION;CHECK=C:ItemRevision:last_release_status§allowed§empty||20*||30*
+#ID=2;scope=structure;CRITERIA=AND;CHECK=C:EPMTask:object_string§count eq 1§*~Workflow is missing: might be abort, cancelled, deleted, stopped for object [C:ItemRevision:object_string]~Workflow exist
+#because of contextual link management
+ID=2;scope=object;CRITERIA=CONDITION;CHECK=C:ItemRevision:last_release_status§allowed§empty||20*||30*
+ID=2;scope=object;CRITERIA=AND;CHECK=C:ItemRevision>process_stage_list>C:EPMTask:object_string§count eq 1§*~Workflow is missing: might be abort, cancelled, deleted, stopped for object [VAL_OBJECT:object_string]~Workflow exist
+
+#contextual link management
+#CCPRevisionCVPart:last_release_status§not allowed§empty&&20*&&30*~Contextual link to reference is not released yet, released it first~contextual link to reference yet have status 40 and higher
+ContextualRevision>IMAN_specification>CCPRevisionCVPart:last_release_status§not allowed§empty&&20*&&30*~Contextual link to reference is not released yet, released [VAL_OBJECT:object_string] first~contextual link to reference yet have status 40 and higher

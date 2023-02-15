@@ -1,0 +1,162 @@
+{
+    "schemaVersion": "1.0.0",
+    "imports": [
+        "js/aw-command-panel.directive",
+        "js/aw-panel-body.directive",
+        "js/aw-textbox.directive",
+        "js/aw-listbox.directive",
+        "js/aw-panel-footer.directive",
+        "js/aw-button.directive",
+        "js/aw-i18n.directive"
+    ],
+    "onEvent": [ 
+        {
+            "eventId": "awPanel.reveal",
+            "criteria":
+            {
+                "panelId": "Mtw0ShowAddMetaSingleParameter"
+            },
+
+            "action": "reveal"
+        },
+        {
+            "eventId": "gwt.SubLocationContentSelectionChangeEvent",
+            "action": "closePanel"
+        } 
+    ],
+    "conditions": {
+        "canCreateSingleMetaParam" :{
+                "expression": "(data.category.dbValue && data.proptype.dbValue && data.name.dbValue && data.realName.dbValue && data.dimension.dbValue )"
+            }
+    },
+    "data": {
+        "category": {
+            "displayName": "{{i18n.Category}}",
+            "type": "STRING",
+            "hasLov":"true",
+            "isRequired": "true"
+        },
+        "proptype": {
+            "displayName": "{{i18n.PropType}}",
+            "type": "STRING",
+            "isRequired": "true",
+            "hasLov": "true",
+            "dbValue": "Double",
+            "dispValue": "Double"
+        },
+        "proptypes": {
+            "type": "STRING",
+            "dbValue": [
+                {
+                    "propDisplayValue": "Double",
+                    "propDisplayDescription": "Double",
+                    "dispValue": "Double",
+                    "propInternalValue": "Double"
+                },
+                {
+                    "propDisplayValue": "String",
+                    "propDisplayDescription": "String",
+                    "dispValue": "String",
+                    "propInternalValue": "String"
+                }
+            ]    
+        },
+        "name": {
+            "displayName": "{{i18n.Name}}",
+            "type": "STRING",
+            "isRequired": "true",
+            "isEditable": "true"
+        },
+        "realName": {
+            "displayName": "{{i18n.RealName}}",
+            "type": "STRING",
+            "isRequired": "true",
+            "isEditable": "true"
+        },
+        "dimension": {
+            "displayName": "{{i18n.Dimension}}",
+            "type": "STRING",
+            "isRequired": "true",
+            "hasLov":"true"        
+        }
+    },
+    "actions": {   
+        "reveal": {
+            "actionType": "JSFunction",
+            "method": "populateListBoxes",
+            "inputData": 
+            {
+                "input": "{{data}}"
+            },
+            "deps": "js/Mtw0ShowAddMetaSingleParameterService"
+        }, 
+        "createMetaSingleParameter" : {
+            "actionType": "TcSoaService",
+            "deps": "js/Mtw0ShowAddParameterService",        
+            "serviceName": "IMM-2018-12-AWCMaterialMgmtService",
+            "method": "createParameterDescriptor",
+            "inputData": 
+            {
+                "catalogRevision":
+                {
+                    "type":"{{ctx.selected.type}}",
+                    "uid":"{{ctx.selected.uid}}"
+                },
+                "category":"{{data.category.dbValue}}",
+                "type":"{{data.proptype.dbValue}}",
+                "name":"{{data.name.dbValue}}",
+                "realName":"{{data.realName.dbValue}}",
+                "dimension":"{{data.dimension.dbValue}}"
+            },
+            "events": 
+            {
+                "success": [
+                    {
+                        "name": "cdm.relatedModified",
+                        "eventData": 
+                        {
+                            "relatedModified": 
+                            [
+                                "{{ctx.selected}}"
+                            ],
+
+                            "refreshLocationFlag": true
+                        }
+                    },
+                    {
+                        "name": "complete",
+                        "eventData": 
+                        {
+                            "source": "toolAndInfoPanel"
+                        }
+                    }
+                ]
+            }            
+        }
+    },
+    "functions": {
+        "getSelectedMetaParametersArray": {
+            "functionName": "getSelectedMetaParametersArray",
+            "parameters": [
+                "{{data}}"
+            ]
+        },
+        "getSelectedObject":{
+            "functionName": "getSelectedObject",
+            "parameters": [
+                "{{ctx.selected}}",
+                "{{data}}"
+            ]
+        }
+    },
+    "i18n": 
+    {
+        "AddParameter": ["MaterialMgmtMessages"],
+        "Category": ["MaterialMgmtMessages"],
+        "Name": ["MaterialMgmtMessages"],
+        "RealName": ["MaterialMgmtMessages"],
+        "PropType": ["MaterialMgmtMessages"],
+        "Dimension": ["MaterialMgmtMessages"],
+        "CreateParameterDesriptor": ["MaterialMgmtMessages"]
+    }        
+}

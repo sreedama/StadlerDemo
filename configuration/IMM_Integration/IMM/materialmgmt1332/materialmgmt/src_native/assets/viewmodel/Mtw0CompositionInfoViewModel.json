@@ -1,0 +1,140 @@
+{
+    "schemaVersion": "1.0.0",
+    "imports":
+    [
+       "js/aw-splm-table.directive"
+    ],
+
+    "actions":
+    {
+        "loadCompositionResults":
+        {
+            "actionType": "TcSoaService",
+            "serviceName": "Internal-AWS2-2019-06-Finder",
+            "method": "performSearchViewModel4",
+            "inputData":
+            {
+                "columnConfigInput":
+                {
+                    "clientName": "AWClient",
+                    "clientScopeURI": "{{function:getClientScopeURI}}"
+                },
+
+                "searchInput":
+                {
+                    "maxToLoad": 50,
+                    "maxToReturn": 50,
+                    "providerName": "Mtw0MaterialSubstanceProvider",
+                    "searchCriteria":
+                    {
+                        "parentUid": "{{ctx.selected.uid}}"
+                    },
+
+                    "searchFilterFieldSortType": "Priority",
+                    "startIndex": "{{data.dataProviders.performCompositionInfoSearch.startIndex}}"
+                },
+
+                "inflateProperties": true
+            },
+
+            "outputData":
+            {
+                "totalFound": "totalFound",
+                "searchResults": "{{function:prepareMaterialSubstanceList}}",
+                "dataProviders.performCompositionInfoSearch.columnConfig": "columnConfig"
+            },
+
+            "deps": "js/Mtw0CompositionInfoService",
+            "policy":
+            {
+                "types":
+                [
+                    {
+                        "name": "Mtw0MaterialSubstanceInfo",
+                        "properties":
+                        [
+                            {
+                                "name": "mtw0Part"
+                            },
+
+                            {
+                                "name": "mtw0Material"
+                            },
+
+                            {
+                                "name": "mtw0MaterialMassInGram"
+                            },
+
+                            {
+                                "name": "mtw0MaterialComposition"
+                            },
+
+                            {
+                                "name": "mtw0Substance"
+                            },
+
+                            {
+                                "name": "mtw0CASNumber"
+                            },
+
+                            {
+                                "name": "mtw0SubstanceMassInGram"
+                            },
+
+                            {
+                                "name": "mtw0SubstanceCompInMaterial"
+                            },
+
+                            {
+                                "name": "mtw0SubstanceComposition"
+                            }
+                        ]
+                    }
+                ]
+            }
+        }
+    },
+
+    "functions":
+    {
+        "getClientScopeURI":
+        {
+            "functionName": "getClientScopeURI",
+            "parameters":
+            [
+                "{{data}}"
+            ]
+        }
+    },
+
+    "dataProviders":
+    {
+        "performCompositionInfoSearch":
+        {
+            "action": "loadCompositionResults",
+            "response": "{{data.searchResults}}",
+            "totalFound": "{{data.totalFound}}",
+            "selectionModelMode": "single"
+        }
+    },
+
+    "preferences":
+    [
+        "MATERIALMGMTAW_Display_Legacy_Composition_Tab"
+    ],
+
+    "grids":
+    {
+        "CompositionDashboardView":
+        {
+            "dataProvider": "performCompositionInfoSearch",
+            "columnProvider": "clientScopeUI",
+            "addIconColumn": false,
+            "gridOptions":
+            {
+                "enablePinning": true,
+                "enableSorting": false
+            }
+        }
+    }
+}

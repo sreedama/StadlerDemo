@@ -1,0 +1,137 @@
+############################################################################################################
+#  CNO Object Property Definition File
+############################################################################################################
+# Version History
+#
+# Version    Date           Name               Description of Change
+# 1.0        22-04-2022     testu     Initial
+############################################################################################################
+
+#Process
+C:EPMTask:object_name~object_name
+C:EPMTask:num_targets~num_targets
+
+#Status of select object
+C:ItemRevision:last_release_status~last_release_status
+
+#running process of selected object
+C:ItemRevision:fnd0InProcess~fnd0InProcess
+
+#history: not needed anymore
+#C:Item:object_name~object_name
+
+#status of children
+#C:ItemRevision>view:bl_rev_last_release_status~bl_rev_last_release_status
+#C:ItemRevision>view:bl_rev_object_string~bl_rev_object_string
+#new expansion => Status of select object
+#new need for catalog without status inside a BOM: (allowed for the root)
+C:ItemRevision>view:bl_rev_last_release_status~bl_rev_last_release_status
+#C:ItemRevision>view:?bl_item_object_type~bl_item_object_type
+C:ItemRevision>view:?bl_rev_object_type~DB_bl_rev_object_type
+C:ItemRevision>view:bl_rev_object_string~bl_rev_object_string
+
+#history
+#C:ItemRevision>view:?bl_rev_fnd0InProcess~bl_rev_fnd0InProcess
+#C:ItemRevision>view:?bl_rev_checked_out~bl_rev_checked_out
+#new expansion => Status of select object
+
+#Qchecker: temporary solution until deployment of rela solution
+CATPart:sr5QCheckEvaluation~sr5QCheckEvaluation
+CATProduct:sr5QCheckEvaluation~sr5QCheckEvaluation
+CATDrawing:sr5QCheckEvaluation~sr5QCheckEvaluation
+#Qchecker of CATIA file from desired ccp
+CCPRevisionCVAssy:sr5QCheckEvaluation~sr5QCheckEvaluation
+CCPRevisionCVPart:sr5QCheckEvaluation~sr5QCheckEvaluation
+CCPRevisionCVDraw:sr5QCheckEvaluation~sr5QCheckEvaluation
+#context assy of ccp
+CCPContextRevisionCVAssy:sr5QCheckEvaluation~sr5QCheckEvaluation
+
+
+#Type of selected object
+C:ItemRevision:?object_type~DB_Type
+
+#position = BOM sequence
+#C:ItemRevision>view:bl_formatted_parent_name~bl_formatted_parent_name
+#condition based on: already extracted
+#C:ItemRevision>view:bl_rev_last_release_status~bl_rev_last_release_status
+#C:ItemRevision>view§position_rec_levBylev§|bl_formatted_parent_name|#|bl_sequence_no|
+#C:ItemRevision>view§position_ID_rec_levBylev§|bl_formatted_parent_name|#|bl_sequence_no|_|bl_item_item_id|
+C:ItemRevision>view(Latest Working)§position_rec_levBylev§|bl_formatted_parent_name^D^)|#|bl_sequence_no|
+C:ItemRevision>view(Latest Working)§position_ID_rec_levBylev§|bl_formatted_parent_name^D^)|#|bl_sequence_no|_|bl_item_item_id|
+
+
+#info
+C:ItemRevision>view:bl_level_starting_0~level
+
+#Group member
+GroupMember:group
+C:SR5GenEngObjRevision§Current Group Name§|SESSION_ACTIVE_GROUP|
+C:SR5GenEngObjRevision§Current Role Name§|SESSION_ACTIVE_ROLE|
+
+#SAP
+C:SR5GenEngObjRevision:object_desc
+#C:SR5GenEngObj:sr5SAPMaterialType
+SR5EngArticle:sr5SAPMaterialType
+#C:SR5GenEngObj:sr5SAPMaterialGroup
+SR5EngArticle:sr5SAPMaterialGroup
+C:SR5GenEngObj:uom_tag
+
+#Catalog Part: first revision only => because of error on BMIDE have a look on expansion
+#SR5EleCatPartRevision:item_revision_id~Rev
+#SR5MechCatPartRevision:item_revision_id~Rev
+#SR5GenCatPartRevision:item_revision_id~Rev
+#because of must be connected to a change we can do it on the generic classe
+#C:SR5GenEngObjRevision:item_revision_id~Rev
+#reuse by other checks:
+C:SR5GenEngObjRevision:item_revision_id~Rev
+#SR5EleCatPartRevision§Rev_List§|:revision_list^B^-|#|:revision_list^A^/||:revision_list^B^#|
+#SR5MechCatPartRevision§Rev_List§|:revision_list^B^-|#|:revision_list^A^/||:revision_list^B^#|
+#SR5GenCatPartRevision§Rev_List§|:revision_list^B^-|#|:revision_list^A^/||:revision_list^B^#|
+
+
+#checked-out
+C:Dataset:?checked_out~checked_out
+C:Dataset:object_type
+C:Dataset:last_release_status~last_release_status
+C:Form:?checked_out~checked_out
+C:Form:object_type
+C:Form:last_release_status~last_release_status
+C:SR5GenEngObjRevision:?checked_out~checked_out
+C:PSBOMViewRevision:?checked_out~checked_out
+C:PSBOMViewRevision:object_type
+C:PSBOMViewRevision:last_release_status~last_release_status
+
+#ccp synchro discipline for comon target of WF40 in case of clean CV5 DWGLink (-link zu 3D- or -link zu 3D 2 Artikelnummern- or -spiegelbildliches Teil-) 
+C:SR5GenEngObjRevision:?sr5ScrewApprovalFlag~DB_sr5ScrewApprovalFlag
+C:SR5GenEngObjRevision:?sr5GlueApprovalFlag~DB_sr5GlueApprovalFlag
+C:SR5GenEngObjRevision:?sr5WeldApprovalFlag~DB_sr5WeldApprovalFlag
+
+#obsolete drawing link
+SR5EngArticleRevision:item_id
+DWGRevision:item_id
+C:SR5GenEngObjRevision§COMBI_item_Rev§|:item_id|-|:item_revision_id|
+#SR5EngArticleRevision§COMBI_item_PreviousRev§|:item_id|-|>previous_rev:item_revision_id|
+#DWGRevision§COMBI_item_NextRev§|:item_id|-|>next_rev:item_revision_id|
+
+#must be connected to change
+C:SR5GenEngObjRevision:cm0AuthoringChangeRevision~Changes
+#C:SR5GenEngObjRevision:revision_list~RevisionList
+#C:SR5GenEngObjRevision:object_string~ObjectString
+#C:SR5GenEngObjRevision§Current_Rev_Prev§|:item_revision_id|###|>previous_rev:item_revision_id|
+
+#owning group for pool assignement inside the WF
+C:SR5GenEngObjRevision:owning_group
+
+#contextual link management
+CATPart:catiaV5_MMLAssy
+#C:ItemRevision§IR_ID_REV§|:item_id|_|:item_revision_id|
+
+#Env. + Baseline
+#property on bom line needed for both EBOM + Env. + Baseline
+#C:ItemRevision>view:bl_property
+#property on bom line needed for EBOM only
+#C:ItemRevision>view(Latest Working):bl_property
+#property on bom line needed for Env. + Baseline only
+#C:ItemRevision>view(Latest Working Env):bl_property
+
+#Alt.Rep.

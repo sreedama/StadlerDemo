@@ -1,0 +1,161 @@
+#===================================================
+# \copyright     2020
+#                Siemens Product Lifecycle Management Software Inc.
+#                All Rights Reserved.
+#===================================================
+# Project:       T4ST
+# \file          t4st_mapping_config.sd
+# \brief         Configuration file for all needed defaults of the T4ST gateway
+
+set ::errorInfo ""
+tpwrite -mtype INTERN "t4st_mapping_config.sd :: START INIT"
+
+
+#***************************************************************************************************
+#   Source the customer specific mapping functions and all other customer specific
+#   function modules of the configuration (all *.sd files in the var/mmap directory):
+#***************************************************************************************************
+
+source -relax t4st_prop_mapping.sd
+
+
+#***************************************************************************************************
+#   General configuration
+#***************************************************************************************************
+
+namespace eval ::T4ST::CONFIGURATION {
+  #
+  # Definition of service call timeout in seconds.
+  # This timeout specifies how long T4ST will wait for a response from SAP...
+  #
+  set ::T4ST::CONFIGURATION::serviceCallTimeout                                "60"
+  #
+  # Definition of service call session timeout in seconds.
+  # This timeout specifies how long an already established SAP session can be used
+  # until a new session with a new session id and csrf token will be established.
+  # This timeout has to be "shorter" then the http session timeout on the SAP side.
+  #
+  set ::T4ST::CONFIGURATION::serviceCallSessionTimeout                         "600"
+  #
+  # Definition of message header attributes used for all service calls
+  #
+  set ::T4ST::CONFIGURATION::messageHeaderAttribute(application)               "TEAMCENTER"
+  set ::T4ST::CONFIGURATION::messageHeaderAttribute(logicalInstance)           "TCINST_01"
+  set ::T4ST::CONFIGURATION::messageHeaderAttribute(configuration)             "CONFIG_A"
+  set ::T4ST::CONFIGURATION::messageHeaderAttribute(configurationVersion)      "1"
+  #
+  # Definition of service call endpoints. These endpoints must be specified for each communication channel configured in the GS Admin UI.
+  #
+  #
+  # Definition of service call endpoint for the CSRF token fetch call for a specific communication channel (first part of the array pattern, here T4ST)
+  # This endpoint is specified without the base URL which is already defined by the underlying communication channel.
+  # e.g. https://erp-dev.stadlerrail.com/sap/bc/rest/plmf/plmsi/0001?sap-client=200
+  set ::T4ST::CONFIGURATION::serviceCallEndPoints(S4D:CsrfEndpoint)           "sap/bc/rest/plmf/plmsi/0001/ProductVersionMaintainRequest"
+	set ::T4ST::CONFIGURATION::serviceCallEndPoints(S4Q:CsrfEndpoint)           "sap/bc/rest/plmf/plmsi/0001/ProductVersionMaintainRequest"
+	# set ::T4ST::CONFIGURATION::serviceCallEndPoints(S4T:CsrfEndpoint)           "sap/bc/rest/plmf/plmsi/0001/ProductVersionMaintainRequest"
+	set ::T4ST::CONFIGURATION::serviceCallEndPoints(S4P:CsrfEndpoint)           "sap/bc/rest/plmf/plmsi/0001/ProductVersionMaintainRequest"
+  #
+  # Definition of service call endpoints for each entity for a specific communication channel (first part of the array pattern, here T4ST)
+  # This endpoint is specified without the base URL which is already defined by the underlying communication channel.
+  #
+  set ::T4ST::CONFIGURATION::serviceCallEndPoints(S4D:ProductVersion)               "sap/bc/rest/plmf/plmsi/0001/ProductVersionMaintainRequest"
+  set ::T4ST::CONFIGURATION::serviceCallEndPoints(S4D:ProductVersionRead)           "sap/bc/rest/plmf/plmsi/0001/ProductVersionReadRequest"
+  set ::T4ST::CONFIGURATION::serviceCallEndPoints(S4D:DocumentVersion)              "sap/bc/rest/plmf/plmsi/0001/DocumentVersionMaintainRequest"
+  set ::T4ST::CONFIGURATION::serviceCallEndPoints(S4D:DocumentVersionRead)          "sap/bc/rest/plmf/plmsi/0001/DocumentVersionReadRequest"
+  set ::T4ST::CONFIGURATION::serviceCallEndPoints(S4D:FileUploadConfirmation)       "sap/bc/rest/plmf/plmsi/0001/FileUploadConfirmation"
+  set ::T4ST::CONFIGURATION::serviceCallEndPoints(S4D:StructureVersion)             "sap/bc/rest/plmf/plmsi/0001/StructureVersionMaintainRequest"
+  set ::T4ST::CONFIGURATION::serviceCallEndPoints(S4D:ChangeObject)                 "sap/bc/rest/plmf/plmsi/0001/ChangeObjectMaintainRequest"
+  set ::T4ST::CONFIGURATION::serviceCallEndPoints(S4D:ProductVersionKeyReservation) "sap/bc/rest/plmf/plmsi/0001/ProductVersionKeyReservation"
+	#
+  set ::T4ST::CONFIGURATION::serviceCallEndPoints(S4Q:ProductVersion)               "sap/bc/rest/plmf/plmsi/0001/ProductVersionMaintainRequest"
+  set ::T4ST::CONFIGURATION::serviceCallEndPoints(S4Q:ProductVersionRead)           "sap/bc/rest/plmf/plmsi/0001/ProductVersionReadRequest"
+  set ::T4ST::CONFIGURATION::serviceCallEndPoints(S4Q:DocumentVersion)              "sap/bc/rest/plmf/plmsi/0001/DocumentVersionMaintainRequest"
+  set ::T4ST::CONFIGURATION::serviceCallEndPoints(S4Q:DocumentVersionRead)          "sap/bc/rest/plmf/plmsi/0001/DocumentVersionReadRequest"
+  set ::T4ST::CONFIGURATION::serviceCallEndPoints(S4Q:FileUploadConfirmation)       "sap/bc/rest/plmf/plmsi/0001/FileUploadConfirmation"
+  set ::T4ST::CONFIGURATION::serviceCallEndPoints(S4Q:StructureVersion)             "sap/bc/rest/plmf/plmsi/0001/StructureVersionMaintainRequest"
+  set ::T4ST::CONFIGURATION::serviceCallEndPoints(S4Q:ChangeObject)                 "sap/bc/rest/plmf/plmsi/0001/ChangeObjectMaintainRequest"
+  set ::T4ST::CONFIGURATION::serviceCallEndPoints(S4Q:ProductVersionKeyReservation) "sap/bc/rest/plmf/plmsi/0001/ProductVersionKeyReservation"
+	#
+	# set ::T4ST::CONFIGURATION::serviceCallEndPoints(S4T:ProductVersion)               "sap/bc/rest/plmf/plmsi/0001/ProductVersionMaintainRequest"
+  # set ::T4ST::CONFIGURATION::serviceCallEndPoints(S4T:ProductVersionRead)           "sap/bc/rest/plmf/plmsi/0001/ProductVersionReadRequest"
+  # set ::T4ST::CONFIGURATION::serviceCallEndPoints(S4T:DocumentVersion)              "sap/bc/rest/plmf/plmsi/0001/DocumentVersionMaintainRequest"
+  # set ::T4ST::CONFIGURATION::serviceCallEndPoints(S4T:DocumentVersionRead)          "sap/bc/rest/plmf/plmsi/0001/DocumentVersionReadRequest"
+  # set ::T4ST::CONFIGURATION::serviceCallEndPoints(S4T:FileUploadConfirmation)       "sap/bc/rest/plmf/plmsi/0001/FileUploadConfirmation"
+  # set ::T4ST::CONFIGURATION::serviceCallEndPoints(S4T:StructureVersion)             "sap/bc/rest/plmf/plmsi/0001/StructureVersionMaintainRequest"
+  # set ::T4ST::CONFIGURATION::serviceCallEndPoints(S4T:ChangeObject)                 "sap/bc/rest/plmf/plmsi/0001/ChangeObjectMaintainRequest"
+  # set ::T4ST::CONFIGURATION::serviceCallEndPoints(S4T:ProductVersionKeyReservation) "sap/bc/rest/plmf/plmsi/0001/ProductVersionKeyReservation"
+	#
+	set ::T4ST::CONFIGURATION::serviceCallEndPoints(S4P:ProductVersion)               "sap/bc/rest/plmf/plmsi/0001/ProductVersionMaintainRequest"
+  set ::T4ST::CONFIGURATION::serviceCallEndPoints(S4P:ProductVersionRead)           "sap/bc/rest/plmf/plmsi/0001/ProductVersionReadRequest"
+  set ::T4ST::CONFIGURATION::serviceCallEndPoints(S4P:DocumentVersion)              "sap/bc/rest/plmf/plmsi/0001/DocumentVersionMaintainRequest"
+  set ::T4ST::CONFIGURATION::serviceCallEndPoints(S4P:DocumentVersionRead)          "sap/bc/rest/plmf/plmsi/0001/DocumentVersionReadRequest"
+  set ::T4ST::CONFIGURATION::serviceCallEndPoints(S4P:FileUploadConfirmation)       "sap/bc/rest/plmf/plmsi/0001/FileUploadConfirmation"
+  set ::T4ST::CONFIGURATION::serviceCallEndPoints(S4P:StructureVersion)             "sap/bc/rest/plmf/plmsi/0001/StructureVersionMaintainRequest"
+  set ::T4ST::CONFIGURATION::serviceCallEndPoints(S4P:ChangeObject)                 "sap/bc/rest/plmf/plmsi/0001/ChangeObjectMaintainRequest"
+  set ::T4ST::CONFIGURATION::serviceCallEndPoints(S4P:ProductVersionKeyReservation) "sap/bc/rest/plmf/plmsi/0001/ProductVersionKeyReservation"
+}
+
+
+#***************************************************************************************************
+#   Technical user configuration (SAP Connection)
+#***************************************************************************************************
+
+# Define SAP connection
+# Please make sure the needed connection parameters are available
+# with the <connectionID> specified here. <mode> is optional.
+#::T4X::CONNECTION2EA::setCredentialsAlias4UseCase T4ST <destination>@<client> <connectionID> <mode>
+#::T4X::CONNECTION2EA::selectActiveConnection2EA T4ST "*" <destination> <client>
+
+# SR TC DEV
+if {[string toupper [tpco_gethostname]] eq "SRVCH025034215"} {
+  set SapSystem    S4D       
+  set SapClient    200
+	set CredentialsAlias  "$SapSystem@$SapClient"
+}
+
+# SR TC QUA
+if {[string toupper [tpco_gethostname]] eq "SRVCH025064143T"} {
+  set SapSystem    S4Q       
+  set SapClient    100
+	set CredentialsAlias  "$SapSystem@$SapClient"
+}
+
+# SR TC PRD
+if {[string toupper [tpco_gethostname]] eq "SRVCH025034234"} {
+  set SapSystem    S4P       
+  set SapClient    100
+	set CredentialsAlias  "$SapSystem@$SapClient"
+}
+
+::T4X::CONNECTION2EA::setCredentialsAlias4UseCase T4ST $CredentialsAlias $CredentialsAlias ALL
+::T4X::CONNECTION2EA::selectActiveConnection2EA T4ST "*" $SapSystem $SapClient
+
+
+#***************************************************************************************************
+#   Definition of IDGEN (key reservation) pipeline name
+#***************************************************************************************************
+# The defined pipeline will then be executed for this action. It can either be a generic pipeline name for all TC objects types or it can be defined TC type specific
+#
+# This pipeline will be executed for all TC object types as long as there is no object specific definition found
+set ::T4ST::CONFIGURATION::keyReservationPipelineName()                            "PVKeyReservation"
+
+#***************************************************************************************************
+#   Overriding the Cardinality of References and Relations
+#***************************************************************************************************
+lappend ::T4X::METADATA::ListOfSingleObjectReferences {TC_Is_Represented_By/#use_secondary_only#}
+lappend ::T4X::METADATA::ListOfSingleObjectReferences {TC_Is_Represented_By/#use_secondary_only#:SR5EngArticleRevision:items_tag:SR5EngArticle:uom_tag}
+
+#***************************************************************************************************
+#   Let's activate the language we want to use for internal T4ST error messages
+#***************************************************************************************************
+
+set strLanguageCode "en_US" ; # default language (check /var/lang/T4ST/ for more language codes)
+#
+if { [info exists ::env(TP_LANGUAGE_CODE)] } {
+  set strLanguageCode $::env(TP_LANGUAGE_CODE)
+}
+#
+::msgcat::mclocale $strLanguageCode
+
+tpwrite -mtype INTERN "t4st_mapping_config.sd :: STOP INIT"
+if {$::errorInfo != ""} {tpwrite -mtype ERROR "t4st_mapping_config.sd :: ERROR -> [tpco_clearbinstring2 $::errorInfo]"}

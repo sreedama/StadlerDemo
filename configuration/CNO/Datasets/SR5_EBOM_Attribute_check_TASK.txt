@@ -1,0 +1,50 @@
+############################################################################################################
+#  CNO Task Definition File
+############################################################################################################
+# Version History
+#
+# Version    Date           Name               Description of Change
+# 1.0        20-01-2022     testu     Initial
+############################################################################################################
+
+#ID=40_EBOM_Release
+[TASK_LIST]
+
+
+
+TYPE_LIST=C:ItemRevision,C:Part Revision
+
+
+
+VALIDATION_STATUS=OK
+
+
+
+ACTION_OBJECT=ROOT
+
+
+
+ACTION_ID_LIST=40_EBOM_Release
+
+
+
+OPTION=SKIP_IN_WORKFLOW
+
+
+
+ACTION_LIST]
+
+[ACTION_LIST]
+ID=40_EBOM_Release
+
+
+
+TYPE=WORKFLOW
+
+
+
+TEMPLATE=40_EBOM_Release
+
+
+
+OBJECT_COUNT=99999

@@ -1,0 +1,41 @@
+############################################################################################################
+#  CNO Expansion Definition File
+############################################################################################################
+# Version History
+#
+# Version    Date           Name               Description of Change
+# 1.0        22-03-2022     user01     Initial
+############################################################################################################
+
+#C:ItemRevision>view;99p:Latest Working/CLOSURE_RULE:BOMExpandSkipStatusTCM-50>C:ItemRevision
+
+#C:ItemRevision>process_stage_list>C:EPMTask
+
+#because of contextual link management
+C:ItemRevision>>view;99p:Latest Working/CLOSURE_RULE:BOMExpandSkipStatusTCM-50>C:ItemRevision
+
+#no class because we do not want to do it for the contextual reference/context: /ALIAS:ContextualRevision
+#C:EPMTask will be count in scope structure and must be unique, otherwise expansion of contextual link will lead to more C:EPMTask
+#SR5EngEndItemRevision>process_stage_list>C:EPMTask
+#SR5EngMajorAssyRevision>process_stage_list>C:EPMTask
+#SR5EngArticleRevision>process_stage_list>C:EPMTask
+#SR5NonERPArticleRevision>process_stage_list>C:EPMTask
+#SR5GenCatPartRevision>process_stage_list>C:EPMTask
+#SR5CatalogPartRevision>process_stage_list>C:EPMTask
+#SR5EleCatPartRevision>process_stage_list>C:EPMTask
+#SR5MechCatPartRevision>process_stage_list>C:EPMTask
+#SR5ColorDefRevision>process_stage_list>C:EPMTask
+#SR5CoatingStructRevision>process_stage_list>C:EPMTask
+#SR5CatDefArticleRevision>process_stage_list>C:EPMTask
+#SR5CatDefArtARRevision>process_stage_list>C:EPMTask
+#SR5GenCatPartARRevision>process_stage_list>C:EPMTask
+#or a better checks
+C:ItemRevision>process_stage_list>C:EPMTask
+
+#contextual link management
+#C:SR5GenEngObjRevision>>IMAN_specification>CATPart
+#in order not two check it two time because of CatPart as target of Workflow
+C:SR5GenEngObjRevision>>IMAN_specification>CATPart/ALIAS:CV5Part
+#CATPart>catiaV5_MMLAssy>C:SR5GenEngObjRevision/ALIAS:ContextualRevision
+CV5Part>catiaV5_MMLAssy>C:SR5GenEngObjRevision/ALIAS:ContextualRevision
+ContextualRevision>IMAN_specification>CATPart/ALIAS:CCPRevisionCVPart

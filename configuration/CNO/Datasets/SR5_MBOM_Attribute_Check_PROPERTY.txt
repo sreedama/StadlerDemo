@@ -1,0 +1,35 @@
+############################################################################################################
+#  CNO Object Property Definition File
+############################################################################################################
+# Version History
+#
+# Version    Date           Name               Description of Change
+# 1.0        20-01-2022     testu     Initial
+############################################################################################################
+
+SR5MfgEndItemRevision:sr5Plant~Plant
+SR5EngArticleRevision>view:bl_rev_last_release_status
+SR5MfgMajorAssyRevision:sr5Plant~Plant
+SR5MfgInstallKitRevision:sr5Plant~Plant
+SR5MfgEndItemRevision>view:bl_rev_last_release_status
+
+SR5MfgMajorAssyRevision>view:bl_rev_last_release_status
+
+SR5MfgInstallKitRevision>view:bl_rev_last_release_status
+
+#SR5GenMfgObjRevision:sr5MakeBuy~sr5MakeBuy
+C:ItemRevision>view:bl_rev_last_release_status
+
+#SR5HasPlantForm:secondary_object~Plant Form
+C:Form:?object_type~Dataset Type
+C:ItemRevision>view:sr5MakeBuy~sr5MakeBuy
+SR5EngArticleRevision:last_release_status~Last Release Status
+SR5EngEndItemRevision:last_release_status~Last Release Status
+SR5ElectricAssyRevision:last_release_status~Last Release Status
+SR5EngMajorAssyRevision:last_release_status~Last Release Status
+
+SR5NonERPArticleRevision:last_release_status~Last Release Status
+SR5GenPartRevision:last_release_status~Last Release Status
+SR5TechDocumentRevision:release_status_list~Release Status
+
+SR5PlantForm:sr5MakeBuy

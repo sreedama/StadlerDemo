@@ -1,0 +1,177 @@
+{
+    "schemaVersion": "1.0.0",
+    "imports": [
+        "js/aw-list.directive",
+        "js/aw-default-cell.directive",
+        "js/aw-scrollpanel.directive"
+    ],
+    "actions": {
+        "showData": {
+            "actionType": "dataProvider",
+            "method": "MaterialSearchResultProvider"
+        },
+        "doMaterialSearch": {
+            "deps": "js/Mtw0AdvanceMaterialSearch",
+            "actionType": "JSFunctionAsync",
+            "method": "searchMaterialAsychc",
+            "inputData": {
+                "soaInput": {
+                    "materialInputString": "{{function:getMaterialSearchCriteriaFromCtx}}"
+                },
+                "propertyPolicyOverride": "{{data.loadMaterialSearchPolicy}}"
+            },
+            "outputData": {
+                "searchResults": "{{function:procesMaterialSearchResult}}",
+                "totalFound": "totalFound"
+            },
+            "events": {
+                "success": [
+                    {
+                        "name": "Mtw0MaterialSearchList.selectFirstItem",
+                        "condition": "ctx.materialSearch.totalFound===1 || totalFound>0 && data.dataProviders.MaterialSearchResultProvider.startIndex===0"
+                    }
+                ]
+            }
+        },
+        "selectFirstItem": {
+            "actionType": "JSFunction",
+            "method": "setSelection",
+            "inputData": {
+                "selectionModel": "{{data.dataProviders.MaterialSearchResultProvider.selectionModel}}",
+                "newSelection": "{{data.searchResults.objects[0].uid}}"
+            },
+            "deps": "js/selectionModelFactory"
+        }
+    },
+    "data": {
+        "loadMaterialSearchPolicy": {
+            "types": [
+                {
+                    "name": "BusinessObject",
+                    "properties": [
+                        {
+                            "name": "awp0CellProperties"
+                        },
+                        {
+                            "name": "awp0ThumbnailImageTicket"
+                        },
+                        {
+                            "name": "release_status_list",
+                            "modifiers": [
+						       {
+							       "name": "withProperties",
+							       "Value": "true"
+						       }
+						    ]
+						},
+                        {
+                            "name": "object_name"
+                        },
+                        {
+                            "name": "object_string"
+                        }
+                    ]
+                },
+                {
+                    "name": "ReleaseStatus",
+                    "properties": [
+                        {
+                            "name": "name"
+                        },
+                        {
+                            "name": "object_type"
+                        },
+                        {
+                            "name": "object_name"
+                        },
+                        {
+                            "name": "date_released"
+                        }
+                    ]
+                },
+                {
+                    "name": "Mat1MaterialRevision",
+                    "properties": [
+                        {
+                            "name": "object_type"
+                        },
+                        {
+                            "name": "items_tag",
+                            "modifiers": [
+                                {
+                                    "name": "withProperties",
+                                    "Value": "true"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "Mat1Material",
+                    "properties": [
+                        {
+                            "name": "object_string"
+                        },
+                        {
+                            "name": "object_type"
+                        },
+                        {
+                            "name": "object_name"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "functions": {
+        "getDefaultPageSize": {
+            "functionName": "getDefaultPageSize",
+            "parameters": [
+                "{{data.preferences.AWC_DefaultPageSize}}"
+            ]
+        },
+        "getSearchCriteria": {
+            "functionName": "getSearchCriteria",
+            "parameters": [
+                "{{data.dataProviders.listDataProvider.startIndex}}",
+                "{{ctx.advancedSearch.criteria}}"
+            ]
+        },
+        "getMaterialSearchCriteriaFromCtx": {
+            "functionName": "getMaterialSearchCriteriaFromCtx",
+            "parameters": []
+        },
+        "procesMaterialSearchResult": {
+            "functionName": "procesMaterialSearchResult",
+            "parameters": [
+                "{{data}}"
+            ]
+        }
+    },
+    "dataProviders": {
+        "MaterialSearchResultProvider": {
+            "action": "doMaterialSearch",
+            "response": "{{data.searchResults}}",
+            "totalFound": "{{data.totalFound}}",
+            "selectionModelMode": "multiple",
+            "commandsAnchor": "com.siemens.splm.clientfx.tcui.commands.modelObjectCellListActionCommands"
+        }
+    },
+    "conditions": {},
+    "onEvent": [
+        {
+            "eventId": "Mtw0MaterialSearchList.selectFirstItem",
+            "action": "selectFirstItem"
+        },
+        {
+            "eventId": "Mtw0MaterialSearchList.showData",
+            "action": "showData"
+        }
+    ],
+    "messages": {
+        "loadAdvancedSearchDataFailure": {
+            "messageType": "ERROR",
+            "messageText": "{{errorCode}}"
+        }
+    }
+}

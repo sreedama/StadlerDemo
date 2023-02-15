@@ -1,0 +1,406 @@
+#
+#===================================================
+# copyright     2014-2019
+#                Siemens Product Lifecycle Management Software Inc.
+#                All Rights Reserved.
+#===================================================
+##
+#
+# \brief         Mapping namespace for T4S material master transfer
+#
+# \details       The namespace contains the custom specific part of a T4S material master transfer:
+#                \li Procedure \b TC_Object2SAP_MaterialMaster maps Teamcenter attributes to SAP attributes (so called \c mapping). 
+#                \li Procedure \b SAP_MaterialMaster2TC_Object maps SAP attributes back to Teamcenter attributes (so called \c reverse \c mapping). 
+#
+# \note          For the data exchange between Teamcenter and T4S the internal TCL dictionary \c ::TcData is used.
+#                It contains specific attributes of the Teamcenter object to be transferred 
+#                and additional information about the current transaction. 
+#                For the data exchange between T4S and SAP the internal TCL array \c ::SAPDat is used.\n
+#                Teamcenter attributes can be read from \c ::TcData with function \c ::T4X::TC::MAPPING::FieldMapping.\n
+#                Teamcenter attributes can be written to \c ::TcData with function \c ::T4X::TC::MAPPING::storeReverseMappingAttribute.\n 
+#                SAP attributes can be read from \c ::SAPDat using function \c ::T4S::TC::MAPPING::SAPFieldMapping.\n
+#                SAP attributes can be written to \c ::SAPDat with \c set \c ::SAPDat(<key>) \c value.\n 
+#
+# \pre           For the material master transfer the following preferences are used:
+#                \li \c T4S_MaterialMasterTypeList : list of allowed Teamcenter object types
+#                \li \c T4S_MaterialMasterMapping4<ObjectType> : list of Teamcenter data types to read attributes from
+#                \li \c T4S_MaterialMasterMapping2<ObjectType> : list of Teamcenter data types to write back during reverse mapping
+#                \li \c T4S_MaterialMasterFieldMapping2<DataType> : list of Teamcenter attributes to write back during reverse mapping (optional)
+#
+# ------------------------------------------------------------------------------------------------------ 
+
+namespace eval ::T4S::MM::CUSTOM::MAPPING {
+  namespace export TC_Object2SAP_MaterialMaster
+  namespace export SAP_MaterialMaster2TC_Object
+
+  # ------------------------------------------------------------------------------------------------------
+  # Method:        ::T4S::MM::CUSTOM::MAPPING::TC_Object2SAP_MaterialMaster
+  ##
+  #
+  # \brief         Customer specific mapping function to define the material master to be transferred to SAP 
+  #
+  # \details       The procedure maps the following Teamcenter attributes to SAP attributes:
+  #                \n \c object_name -> \c SAP \c Description
+  #                \n \c user_data_1 -> \c SAP \c Id
+  #                \n \c user_data_1 -> \c SAP \c Old \c material \c number
+  #                \n and some default values defined in \c t4s_mapping_config.sd. 
+  #
+  # \param         TransactionId Unique ID for the transfer transaction
+  # \param         ItemType Teamcenter item type
+  # \param         ItemRevisionType Teamcenter item revision type
+  # \param         args Not used
+  #
+  # \return        Return code used by the following transfer function. 
+  #                The following values are valid:
+  #                \n \c OK                 -> T4S will continue with the next transfer step
+  #                \n \c REVERSEMAPPINGONLY -> T4S will skip the transfer to SAP and will just do the reverse mapping 
+  #                \n \c SKIPPED            -> T4S will skip the transfer to SAP
+  #                \n \c ERROR              -> T4S will stop transfer and raise an error
+  #
+  # ------------------------------------------------------------------------------------------------------
+  
+  proc TC_Object2SAP_MaterialMaster {TransactionId ItemType ItemRevisionType args} {
+	
+	  variable TcMM
+    array unset TcMM
+
+    # Reset some internal variables
+    set ::errorCode "NONE"
+    set ::errorInfo ""
+		
+		::T4X::TRANSLOG::writeCustomMappingLog $TransactionId INFO "--------------------------------"
+		::T4X::TRANSLOG::writeCustomMappingLog $TransactionId INFO " MM MAPPING VERSION: 2021-10-20"
+		::T4X::TRANSLOG::writeCustomMappingLog $TransactionId INFO "--------------------------------"
+  
+    # Define default return code
+    set rc "OK"
+
+    # Store procedure name in variable
+    set FunctionName "[lindex [info level 0] 0]"
+
+    # Write information to session log
+    tpwrite -logchannel [::PL4X::CORE::getSessionLogChannel] -mtype INTERN "$FunctionName starts with $ItemType, $ItemRevisionType"
+  
+    # Define some relation name strings
+    set Item                 			"$ItemRevisionType:items_tag:$ItemType"
+    set ItemRev              			$ItemRevisionType
+		set ItemRevMasterFormType			"$ItemRevisionType"
+		lappend ItemRevMasterFormType	"Master"
+    set ItemRevMaster        			"$ItemRevisionType:IMAN_master_form_rev:$ItemRevMasterFormType"
+      
+		#########################################################################################################################################
+		# Read some attributes from Teamcenter object
+		#########################################################################################################################################
+		set TcMM(ItemId)           	[::T4X::TC::MAPPING::FieldMapping $Item item_id];
+		set TcMM(Plant)     				[::T4X::TC::MAPPING::FieldMapping $Item sr5Plant];							# Plant
+		set TcMM(SAPMaterialType)  	[::T4X::TC::MAPPING::FieldMapping $Item sr5SAPMaterialType];		# SAP Material Type
+		set TcMM(SAPMaterialGroup)  [::T4X::TC::MAPPING::FieldMapping $Item sr5SAPMaterialGroup];		# SAP Sector
+		set TcMM(SAPSector)  				[::T4X::TC::MAPPING::FieldMapping $Item sr5SAPSector];					# SAP Material Group
+		set TcMM(DIN)     					[::T4X::TC::MAPPING::FieldMapping $Item sr5SAPDIN];							# DIN
+		set TcMM(ExtendedDIN)     	[::T4X::TC::MAPPING::FieldMapping $Item sr5SAPExtendedDIN];			# Extended DIN
+		set TcMM(CostDriver)     		[::T4X::TC::MAPPING::FieldMapping $Item sr5SAPCostDriver];			# Cost Driver
+		set TcMM(DangerousGoods)    [::T4X::TC::MAPPING::FieldMapping $Item sr5SAPDangGood];				# Dangerous Goods indicator
+		set TcMM(Hazardous)    			[::T4X::TC::MAPPING::FieldMapping $Item sr5SAPHazGood];					# Hazardous Goods indicator
+    set TcMM(SAPDesc)           [::T4X::TC::MAPPING::FieldMapping $ItemRev object_name];				# object_name is used for description
+		# set TcMM(GrossWeight)       [::T4X::TC::MAPPING::FieldMapping $ItemRev sr4GrossWeight];			# Gross Weight
+		# set TcMM(NetWeight)       	[::T4X::TC::MAPPING::FieldMapping $ItemRev sr4NetWeight];				# Net Weight
+		# set TcMM(WeightUnit)       	[::T4X::TC::MAPPING::FieldMapping $ItemRev sr4WeightUnit];			# Weight Unit
+		# set TcMM(Volume)       			[::T4X::TC::MAPPING::FieldMapping $ItemRev sr4Volume];					# Volume
+		# set TcMM(VolumeUnit)       	[::T4X::TC::MAPPING::FieldMapping $ItemRev sr4VolumeUnit];			# Volume Unit
+    set TcMM(SAPId)             [::T4X::TC::MAPPING::FieldMapping $ItemRev sr5SAPID];						# contains SAP Id if data exist in SAP
+    # set TcMM(SAPOldMatNo)       [::T4X::TC::MAPPING::FieldMapping $ItemRevMaster user_data_2];	# transfer this value as OLD_MAT_NO
+    set TcMM(T4STransferStatus) [::T4X::TC::MAPPING::FieldMapping $ItemRev sr5SAPTransStatus];	# it is empty if item was never transferred before
+		set TcMM(BaseUOM)						[string toupper [::T4X::TC::MAPPING::FieldMapping $Item:uom_tag:UnitOfMeasure "symbol"]];	# Base Unit of Measure
+		
+		#########################################################################################################################################
+		# Check if MM alrady exists in SAP
+		#########################################################################################################################################
+		
+		# Get the SAP internal material number	  
+		set TcMM(InternalMaterialNumber) [::TPSAP::MM::getInternalMaterialNumber $TcMM(ItemId)]
+		
+		# if {$TcMM(SAPId) ne ""} {
+			set MMexistenceCheck [::TPSAP::MM::checkMaterialMasterExistence $TcMM(InternalMaterialNumber)] ;#  returns OK or NOT_FOUND 
+		# } else {
+			# set MMexistenceCheck NOT_FOUND
+		# }
+			
+		# Write some infos into the transaction logfile
+		::T4X::TRANSLOG::writeCustomMappingLog $TransactionId INFO "--> MMexistenceCheck = '$MMexistenceCheck'"
+		::T4X::TRANSLOG::writeCustomMappingLog $TransactionId INFO "--> SAPId = '$TcMM(InternalMaterialNumber)'"
+
+		#########################################################################################################################################
+		# Preparing the values of Teamcenter attributes to match SAP regulations
+		#########################################################################################################################################
+		
+		# Mapping the Teamcenter object type to the SAP material type
+		if {$TcMM(SAPMaterialType) eq ""} {
+			::T4X::TRANSLOG::writeCustomMappingLog $TransactionId WARNING "DEBUG: SAP Material Type (sr5SAPMaterialType) is not set on Teamcenter object '$TcMM(ItemId)' -> Perform mapping according the object type!"
+			switch -exact -- $ItemRevisionType {
+				SR5MfgEndItemRevision			{	set TcMM(SAPMaterialType)   "EITM"}
+				SR5MfgMajorAssyRevision		{ set TcMM(SAPMaterialType)   "MASS"}
+				SR5MfgInstallKitRevision	{	set TcMM(SAPMaterialType)   "IKIT"}
+				SR5EngArticleRevision			{ set TcMM(SAPMaterialType)   "ZCOM"}
+				SR5MechCatPartRevision		{	set TcMM(SAPMaterialType)   "ZCOM"}
+				SR5EleCatPartRevision			{	set TcMM(SAPMaterialType)   "ZCOM"}
+				SR5SoftwareRevision				{	set TcMM(SAPMaterialType)   "ZCOM"}
+				SR5ToolRevision						{	set TcMM(SAPMaterialType)   "ZCOM"}
+				default {
+					set TcMM(SAPMaterialType)	"ERROR"
+					tpwrite -logchannel [::PL4X::CORE::getSessionLogChannel] -mtype ERROR "$FunctionName -> Item Revision Type unknown"
+					return "ERROR"
+				}
+			}
+		}
+		
+		# Mapping the BaseUOM (we use language independent definition BASE_UOM_ISO)
+		if {$TcMM(BaseUOM) eq "" || $TcMM(BaseUOM) eq "EA" || $TcMM(BaseUOM) eq "EACH" || $TcMM(BaseUOM) eq "-" || $TcMM(BaseUOM) eq "PC" || $TcMM(BaseUOM) eq "ST"} {
+			set  TcMM(BaseUOM) "ST"
+			set  TcMM(BaseUOM_ISO) "PCE" ; # ISO UOM for PC (EN) / ST (DE)
+		} elseif {$TcMM(BaseUOM) eq "CM2"} {
+			set  TcMM(BaseUOM_ISO) "CMK" ; # ISO UOM for CM2 (EN) / CM2 (DE)
+		} elseif {$TcMM(BaseUOM) eq "KG"} {
+			set  TcMM(BaseUOM_ISO) "KGM" ; # ISO UOM for KG (EN) / KG (DE)
+		} elseif {$TcMM(BaseUOM) eq "L"} {
+			set  TcMM(BaseUOM_ISO) "LTR" ; # ISO UOM for L (EN) / L (DE)
+		} elseif {$TcMM(BaseUOM) eq "M2"} {
+			set  TcMM(BaseUOM_ISO) "MTK" ; # ISO UOM for M2 (EN) / M2 (DE)
+		} elseif {$TcMM(BaseUOM) eq "M"} {
+			set  TcMM(BaseUOM_ISO) "MTR" ; # ISO UOM for M (EN) / M (DE)
+		} elseif {$TcMM(BaseUOM) eq "MM"} {
+			set  TcMM(BaseUOM_ISO) "MMT" ; # ISO UOM for MM (EN) / MM (DE)
+		}
+		
+		# Mapping the Teamcenter plant to the SAP plant code
+		switch -exact -- $TcMM(Plant) {
+			STAP	{	set TcMM(Plant)   "DE10"}
+			STAV	{ set TcMM(Plant)   "SP10"}
+			default {
+				# set TcMM(Plant)	"ERROR"
+				# tpwrite -logchannel [::PL4X::CORE::getSessionLogChannel] -mtype ERROR "$FunctionName -> Plant not set on object >$TcMM(ItemId)<"
+				# return "ERROR"
+				
+				set TcMM(Plant)	"DE10"
+				::T4X::TRANSLOG::writeCustomMappingLog $TransactionId WARNING "DEBUG: Plant not set on object >$TcMM(ItemId)< -> Set plant to (default) value >$TcMM(Plant)<!"
+			}
+		}
+		
+		# Set default values if TC attributes for required SAP fields are empty
+		# if {$TcMM(SAPMaterialGroup) eq ""} { set TcMM(SAPMaterialGroup) "01" }
+		# if {$TcMM(SAPMaterialGroup) eq "ZRAW"} { set TcMM(SAPMaterialGroup) "01" }
+		set TcMM(SAPMaterialGroup) "01"
+		
+		
+		#########################################################################################################################################
+		# Print TC Data to translog
+		#########################################################################################################################################
+		::T4X::TRANSLOG::writeCustomMappingLog $TransactionId  INFO ""    
+		::T4X::TRANSLOG::writeCustomMappingLog $TransactionId  INFO "##### Print the Teamcenter Data #####"
+		
+		foreach elem [::T4X::CORE::sortIndexedInterfaceTable [array names TcMM *]] {
+			if {$elem eq "documents"} {
+				dict for {key value} $TcMM(documents) {
+					::T4X::TRANSLOG::writeCustomMappingLog $TransactionId  INFO "TcMM Document $key: >$value<"
+				}
+			} else {
+				::T4X::TRANSLOG::writeCustomMappingLog $TransactionId  INFO "TcMM($elem) : $TcMM($elem)"
+			}
+		}
+		::T4X::TRANSLOG::writeCustomMappingLog $TransactionId  INFO "######################################"
+		::T4X::TRANSLOG::writeCustomMappingLog $TransactionId  INFO ""  
+		
+		#########################################################################################################################################	
+    # Store data to the data exchange array ::SAPDat
+    #########################################################################################################################################	
+    set ::SAPDat(Material:HeadData:MATERIAL)      [string trim $TcMM(InternalMaterialNumber)] ;# Use the internal number to avoid issues with with pure numeric material numbers
+    set ::SAPDat(Material:HeadData:IND_SECTOR)    $::T4S_Defaults(Industry) ;# Default value = M
+		# set ::SAPDat(Material:HeadData:IND_SECTOR)    $TcMM(SAPSector)
+    # set ::SAPDat(Material:HeadData:MATL_TYPE)			$::T4S_Defaults(SAPMaterialType) ;# Default value
+		set ::SAPDat(Material:HeadData:MATL_TYPE)     $TcMM(SAPMaterialType)
+    set ::SAPDat(Material:HeadData:BASIC_VIEW)    "X" ;# Basic Data View
+    
+    # set ::SAPDat(Material:MaktData:LANGU_ISO:1)		"EN"
+    # set ::SAPDat(Material:MaktData:MATL_DESC:1)		"EN: $TcMM(SAPDesc)"
+    set ::SAPDat(Material:MaktData:LANGU_ISO:2)		"DE"
+    set ::SAPDat(Material:MaktData:MATL_DESC:2)		"$TcMM(SAPDesc)"
+    # set ::SAPDat(Material:MaktData:LANGU_ISO:3)		"FR"
+    # set ::SAPDat(Material:MaktData:MATL_DESC:3)		"FR: $TcMM(SAPDesc)"
+    
+    set ::SAPDat(Material:MaraData:CAD_ID)				"X" ; # CAD indicator
+    # set ::SAPDat(Material:MaraData:OLD_MAT_NO)		$TcMM(SAPOldMatNo)
+		# set ::SAPDat(Material:MaraData:STD_DESCR)     "Test123"
+		set ::SAPDat(Material:MaraData:MATL_GROUP)		$TcMM(SAPMaterialGroup)
+		
+		set ::SAPDat(Material:MaraData:BASE_UOM)			$TcMM(BaseUOM) ; # UOM
+		set ::SAPDat(Material:MaraData:BASE_UOM_ISO)	$TcMM(BaseUOM_ISO) ; # UOM (ISO)
+		
+		# set ::SAPDat(Material:MaraData:PROD_HIER)			$TcMM(ProductHierarchy) ;	# Product Hierarchy
+		
+		set ::SAPDat(Material:MaraData:PUR_STATUS)		"55" ;	# X-Plant Material Status (Cross-Plant Material Status)
+		
+		set ::SAPDat(Material:MarcData:PLANT)					$TcMM(Plant)
+		set ::SAPDat(Material:MarcData:PUR_STATUS) 		"55" ; # Plant-Specific Material Status
+		
+		# Set the parameter effectivity required flag
+		if {$ItemRevisionType eq "SR5MfgEndItemRevision" || $ItemRevisionType eq "SR5MfgMajorAssyRevision" || $ItemRevisionType eq "SR5MfgInstallKitRevision"} {
+			::T4X::TRANSLOG::writeCustomMappingLog $TransactionId WARNING "DEBUG: Object type >$ItemRevisionType< -> Assign effectivity parameter values / override change numbers!"
+			set ::SAPDat(Material:MaraData:PAR_EFF) "X" ; # Assign effectivity parameter values / override change numbers
+			
+			::T4X::TRANSLOG::writeCustomMappingLog $TransactionId WARNING "DEBUG: Object type >$ItemRevisionType< -> Create Work Scheduling view in SAP!"
+			set ::SAPDat(Material:HeadData:WORK_SCHED_VIEW)					"X" ; # Work Scheduling View
+			
+			if {$ItemRevisionType eq "SR5MfgMajorAssyRevision"} {
+				# ::T4X::TRANSLOG::writeCustomMappingLog $TransactionId WARNING "DEBUG: Object type >$ItemRevisionType< -> Set Production Supervisor in Work Scheduling view to >YB1<!"
+				# set ::SAPDat(Material:MarcData:PRODUCTION_SCHEDULER) 	"YB1" ; # Production scheduler
+				::T4X::TRANSLOG::writeCustomMappingLog $TransactionId WARNING "DEBUG: Object type >$ItemRevisionType< -> Create Material Requirements Planning (MRP) view in SAP!"
+				set ::SAPDat(Material:HeadData:MRP_VIEW) 							"X" ; # Material Requirements Planning (MRP) View
+				::T4X::TRANSLOG::writeCustomMappingLog $TransactionId WARNING "DEBUG: Object type >$ItemRevisionType< -> Set MRP type in MRP view to >ND<!"
+				set ::SAPDat(Material:MarcData:MRP_TYPE) 							"ND" ; # MRP type - MRP must not consider demand for major assemblies because major assemblies are planned using the project system
+				::T4X::TRANSLOG::writeCustomMappingLog $TransactionId WARNING "DEBUG: Object type >$ItemRevisionType< -> Set individual and coll. reqmts in MRP view to >1<!"
+				set ::SAPDat(Material:MarcData:DEP_REQ_ID) 						"1" ; # Dependent requirements ind. for individual and coll. reqmts
+				
+				::T4X::TRANSLOG::writeCustomMappingLog $TransactionId WARNING "DEBUG: Object type >$ItemRevisionType< -> Set Procurement Type in MRP view to >E<!"
+				set ::SAPDat(Material:MarcData:PROC_TYPE)	    				"E"
+			}
+
+			if {$ItemRevisionType eq "SR5MfgInstallKitRevision"} {
+				::T4X::TRANSLOG::writeCustomMappingLog $TransactionId WARNING "DEBUG: Object type >$ItemRevisionType< -> Create Material Requirements Planning (MRP) view in SAP!"
+				set ::SAPDat(Material:HeadData:MRP_VIEW) 							"X" ; # Material Requirements Planning (MRP) View
+				::T4X::TRANSLOG::writeCustomMappingLog $TransactionId WARNING "DEBUG: Object type >$ItemRevisionType< -> Set MRP type in MRP view to >PD<!"
+				set ::SAPDat(Material:MarcData:MRP_TYPE) 							"PD" ; # MRP type - Material is subject to demand-driven planning
+				::T4X::TRANSLOG::writeCustomMappingLog $TransactionId WARNING "DEBUG: Object type >$ItemRevisionType< -> Set MRP Controller in MRP view to >100<!"
+				set ::SAPDat(Material:MarcData:MRP_CTRLER) 						"100" ; # MRP controller
+				::T4X::TRANSLOG::writeCustomMappingLog $TransactionId WARNING "DEBUG: Object type >$ItemRevisionType< -> Set individual and coll. reqmts in MRP view to >1<!"
+				set ::SAPDat(Material:MarcData:DEP_REQ_ID) 						"1" ; # Dependent requirements ind. for individual and coll. reqmts
+				::T4X::TRANSLOG::writeCustomMappingLog $TransactionId WARNING "DEBUG: Object type >$ItemRevisionType< -> Set Lot-sizing procedure in MRP view to >FX<!"
+				set ::SAPDat(Material:MarcData:LOTSIZEKEY) 						"FX" ; # Lot-sizing procedure
+				::T4X::TRANSLOG::writeCustomMappingLog $TransactionId WARNING "DEBUG: Object type >$ItemRevisionType< -> Set Fixed lot size in MRP view to >1<!"
+				set ::SAPDat(Material:MarcData:FIXED_LOT) 						"1" ; # Fixed lot size
+				
+				::T4X::TRANSLOG::writeCustomMappingLog $TransactionId WARNING "DEBUG: Object type >$ItemRevisionType< -> Set Production scheduling profile in Work Scheduling view to >IKIT<!"
+				set ::SAPDat(Material:MarcData:PRODPROF) 							"IKIT" ; # Production scheduling profile
+				::T4X::TRANSLOG::writeCustomMappingLog $TransactionId WARNING "DEBUG: Object type >$ItemRevisionType< -> Set Serial Number Profile in Work Scheduling view to >IKIT<!"
+				set ::SAPDat(Material:MarcData:SERNO_PROF) 						"IKIT" ; # Serial Number Profile
+			
+				::T4X::TRANSLOG::writeCustomMappingLog $TransactionId WARNING "DEBUG: Object type >$ItemRevisionType< -> Set Procurement Type in MRP view to >E<!"
+				set ::SAPDat(Material:MarcData:PROC_TYPE)	    				"E"
+			}
+		} else {
+			set ::SAPDat(Material:HeadData:PURCHASE_VIEW) "X" ; # Create Purchase View
+			set ::SAPDat(Material:HeadData:STORAGE_VIEW)  "X" ; # Storage View
+		}
+       
+    # Write return code to session log
+    tpwrite -logchannel [::PL4X::CORE::getSessionLogChannel] -mtype INTERN "$FunctionName returns $rc"
+    
+    return $rc
+  }
+    
+  # ------------------------------------------------------------------------------------------------------
+  # Method:        ::T4S::MM::CUSTOM::MAPPING::SAP_MaterialMaster2TC_Object
+  ##
+  #
+  # \brief         Customer specific reverse mapping function for the T4S material master transfer
+  #
+  # \details       The procedure maps the following SAP attributes back to Teamcenter attributes: 
+  #                \n \c SAP \c Id -> \c user_data_1
+  #                \n \c SAP \c Old \c material \c number -> \c user_data_2
+  #                \n \c T4S \c transfer \c status -> \c item_comment  
+  #
+  # \param         TransactionId Unique ID for the transfer transaction
+  # \param         Status SAP transfer status. 
+  #                The following values are valid:
+  #                \n \c SKIPPED                   -> the transfer was skipped
+  #                \n \c ERROR                     -> the transfer was stopped by an error
+  #                \n \c UNKNOWN                   -> the transfer was stopped by an unknown error
+  #                \n \c UPDATED_WITH_ERROR        -> the transfer was stopped by an minor error in one of the additional transfer steps
+  #                \n \c CREATED, \c CHANGED, \c UPDATED -> and some other values are used for a successful transfer
+  # \param         ObjectKey SAP Id of material master
+  # \param         args Not used
+  #
+  # \return        Return code used by the following Tc object update function. 
+  #                The following values are valid:
+  #                \n \c OK                 -> T4S will update the Tc object based on the reverse mapping preferences and the reverse mapping buffer
+  #                \n \c SKIPPED            -> T4S will skip the TcData object
+  #                \n \c ERROR              -> T4S will stop transfer and raise an error
+  #
+  # ------------------------------------------------------------------------------------------------------
+  
+  proc SAP_MaterialMaster2TC_Object {TransactionId Status ObjectKey args} {
+
+    # Reset some internal variables
+    set ::errorCode "NONE"
+    set ::errorInfo ""
+  
+    # Define default return code
+    set rc "OK"
+
+    # Store procedure name in variable
+    set FunctionName "[lindex [info level 0] 0]"
+    
+    # Write information to session log
+    tpwrite -logchannel [::PL4X::CORE::getSessionLogChannel] -mtype INTERN "$FunctionName starts with $Status, $ObjectKey"
+
+    # Define some relation name strings
+    set ItemRevisionType     			$::TcData(ItemInfo:TypeName)
+		set ItemRevMasterFormType			"$ItemRevisionType"
+		lappend ItemRevMasterFormType	"Master"
+    set ItemRevMaster        			"$ItemRevisionType:IMAN_master_form_rev:$ItemRevMasterFormType"
+
+    # Return in case of prohibited action
+    foreach data [array names ::SAPDat "CtrlParam:ProhibitedAction"] {
+      set rc "SKIPPED"
+      tpwrite -logchannel [::PL4X::CORE::getSessionLogChannel] -mtype INTERN "$FunctionName returns $rc"
+      return $rc
+    }
+    
+    # Read some attributes from SAP object and define transfer status string
+    # Store data to Teamcenter and write information to session log
+    #
+    # The parameter ObjectKey is always in the internal format that you need for asking SAP for more data.
+    # For storing in TC, the external format is recommended (cut leading zeros...):
+    set SAPExternalId	[::TPSAP::MM::getExternalMaterialNumber $ObjectKey]
+		set SAPInternalId	$ObjectKey
+    # set SAPOldMatNo [::T4S::TC::MAPPING::SAPFieldMapping MaterialMaster $ObjectKey CLIENTDATA:OLD_MAT_NO]
+    set ItemComment [string trim [::T4X::TC::MAPPING::FieldMapping $ItemRevisionType sr5SAPTransStatus]]
+    set listComment [split $ItemComment "\n"]
+    if {[llength $listComment] > 1 && [string length [lindex $listComment 1]] > 0} {
+      set T4STransferStatusMM [lindex $listComment 1]
+    } else {
+      set T4STransferStatusMM ""
+    }
+		
+		# Current time stamp
+		set TimeStamp [clock format [clock seconds] -format "%Y-%m-%d %R"]
+    
+    if {($Status eq "ERROR") || ($Status eq "UNKNOWN") || ($Status eq "SKIPPED")} {
+      set T4STransferStatus "MM transfer $Status - [clock format [clock seconds] -format "%Y-%m-%d %R"]\n$T4STransferStatusMM"
+      #
+      tpwrite -logchannel [::PL4X::CORE::getSessionLogChannel] -mtype INTERN "++++++++++ Reverse mapping value 'sr5SAPTransStatus': '$T4STransferStatus' ++++++++++"  
+      ::T4X::TC::MAPPING::storeReverseMappingAttribute MaterialMaster $ItemRevisionType sr5SAPTransStatus $T4STransferStatus
+    #
+    } else {
+      if {$Status eq "UPDATED_WITH_ERROR"} {
+        set T4STransferStatus "MM transfer $Status - [clock format [clock seconds] -format "%Y-%m-%d %R"]\n$T4STransferStatusMM"
+      } else {
+        # set T4STransferStatus "MM transferred to $::T4S::SapInfo(SapSystem)@$::T4S::SapInfo(SapClient) at [clock format [clock seconds] -format "%Y-%m-%d %R"]\n$T4STransferStatusMM"
+				set T4STransferStatus "MM sent to $::T4S::SapInfo(SapSystem)@$::T4S::SapInfo(SapClient) at [clock format [clock seconds] -format "%Y-%m-%d %R"]\n$T4STransferStatusMM"
+      }
+      #
+      tpwrite -logchannel [::PL4X::CORE::getSessionLogChannel] -mtype INTERN "++++++++++ Reverse mapping value 'sr5SAPID': '$SAPInternalId' ++++++++++"  
+      ::T4X::TC::MAPPING::storeReverseMappingAttribute MaterialMaster $ItemRevisionType sr5SAPID $SAPInternalId
+			tpwrite -logchannel [::PL4X::CORE::getSessionLogChannel] -mtype INTERN "++++++++++ Reverse mapping value 'sr5SAPTransDate': '$TimeStamp' ++++++++++"  
+      ::T4X::TC::MAPPING::storeReverseMappingAttribute MaterialMaster $ItemRevisionType sr5SAPTransDate $TimeStamp
+      # tpwrite -logchannel [::PL4X::CORE::getSessionLogChannel] -mtype INTERN "++++++++++ Reverse mapping value 'user_data_2': '$SAPOldMatNo' ++++++++++"  
+      # ::T4X::TC::MAPPING::storeReverseMappingAttribute MaterialMaster $ItemRevMaster user_data_2 $SAPOldMatNo
+      tpwrite -logchannel [::PL4X::CORE::getSessionLogChannel] -mtype INTERN "++++++++++ Reverse mapping value 'sr5SAPTransStatus': '$T4STransferStatus' ++++++++++"  
+      ::T4X::TC::MAPPING::storeReverseMappingAttribute MaterialMaster $ItemRevisionType sr5SAPTransStatus $T4STransferStatus
+    }
+
+    # Write return code to session log
+    tpwrite -logchannel [::PL4X::CORE::getSessionLogChannel] -mtype INTERN "$FunctionName returns $rc"
+    
+    return $rc
+  }
+  
+}

@@ -1,0 +1,16 @@
+ <aw-command-panel caption="i18n.AddClassPanelTitle">
+    <aw-panel-body >
+        <aw-panel-section caption="i18n.materialGlobalClasses">
+			<aw-flex-row>
+				<aw-scrollpanel>
+					<aw-tree name="'mtw0MaterialGlobalCls'" tree="data.materialclassificationList" style="overflow:auto">
+						{{node.label}}
+					</aw-tree>
+				</aw-scrollpanel>
+			</aw-flex-row>
+        </aw-panel-section>
+    </aw-panel-body>
+    <aw-panel-footer> 
+        <aw-button action="addClass" visible-when="conditions.canAddClass"><aw-i18n>i18n.AddClass</aw-i18n></aw-button>
+    </aw-panel-footer>   
+</aw-command-panel>

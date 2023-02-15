@@ -1,0 +1,31 @@
+{
+  "Repo Change": {
+    "scope": "markdown",
+    "prefix": "change",
+    "body": [
+      "## ${1}",
+      "",
+      "**OOTB Module:** ${2}  ",
+      "**Affected files:** ",
+      "- ${3}",
+      "",
+      "### Description of change",
+      "",
+      "${4}",
+      "",
+      "#### JSON before",
+      "",
+      "```json",
+      "${5}",
+      "```",
+      "",
+      "#### JSON after",
+      "",
+      "```json",
+      "${6}",
+      "```",
+      "",
+      "---"
+    ]
+  }
+}

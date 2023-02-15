@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TcBusinessDataLocalization xmlns="http://teamcenter.com/BusinessModel/TcBusinessDataLocalization"
+    batchXSDVersion="1.0" Date="Mon Jan 17 05:41:19 PM 2022">
+  <Add>
+    <key locale="en_US" id="LOVValue{::}SR5SFHeatTreatableSteel{::}DIN EN 10051" status="Approved">DIN EN 10051</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5SFHeatTreatableSteel{::}DIN EN 10051"
+        status="Approved">Blech s &lt;= 25</key>
+    <key locale="en_US" id="LOVValue{::}SR5SFHeatTreatableSteel{::}DIN EN 10029" status="Approved">DIN EN 10029</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5SFHeatTreatableSteel{::}DIN EN 10029"
+        status="Approved">Blech 3 &gt; s &lt;= 400</key>
+    <key locale="en_US" id="LOVValue{::}SR5SFHeatTreatableSteel{::}DIN EN 10058" status="Approved">DIN EN 10058</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5SFHeatTreatableSteel{::}DIN EN 10058"
+        status="Approved">Flachstab</key>
+  </Add>
+</TcBusinessDataLocalization>

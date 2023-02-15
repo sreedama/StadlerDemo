@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!--
+Copyright 2017 Siemens Product Lifecycle Management Software Inc. All Rights Reserved.
+================================================================================
+Copyright 2017.
+Siemens Product Lifecycle Management Software Inc.
+All Rights Reserved.
+================================================================================
+Copyright 2017 Siemens Product Lifecycle Management Software Inc. All Rights Reserved.
+-->
+<package guid="9D1FDDE62EDECCF9405C301527954139" packageId="sr5stadlerrailbase">
+    <displayName value="${packageId}.displayName"/>
+    <description value="${packageId}.description"/>
+    <contentType value="application"/>
+    <propertyContribution/>
+    <dependencies>
+        <dependency id="aws2" type="requires"/>
+        <dependency id="cm" type="requires"/>
+        <dependency id="vendormanagement" type="requires"/>
+        <dependency id="activeworkspacebom" type="requires"/>
+        <dependency id="Cm1cmaws" type="requires"/>
+    </dependencies>
+    <artifact artifactType="fnd0_dataModelArtifact" guid="03AF295AA7927D3DA7F510C152B87D5E">
+        <deploymentActions>
+            <install>
+                <target description="Perform the file deployment actions including unzip, copy, and delete." name="fileProcessing">
+                    <unzip dest="${Teamcenter_root_path}" src="${Teamcenter_sr5stadlerrailbase_path}/artifacts/sr5stadlerrailbase_template.zip"/>
+                    <unzip dest="${Teamcenter_root_path}" src="${Teamcenter_sr5stadlerrailbase_path}/artifacts/sr5stadlerrailbase_install.zip"/>
+                    <copy file="${Teamcenter_sr5stadlerrailbase_path}/artifacts/sr5stadlerrailbase_icons.zip" todir="${Teamcenter_root_path}/install/sr5stadlerrailbase"/>
+                </target>
+                <target description="Perform the operations that must be completed prior to the database being updated." name="preDatabaseUpdate">
+                    <TemplateDeploy name="sr5stadlerrailbase"/>
+                </target>
+                <target description="Perform the operations that are database dependent." name="databaseUpdate"/>
+                <target description="Perform the operations that must be completed after the database update has occurred." name="postDatabaseUpdate"/>
+            </install>
+            <update>
+                <target description="Perform the file deployment actions including unzip, copy, and delete." name="fileProcessing">
+                    <unzip dest="${Teamcenter_root_path}" src="${Teamcenter_sr5stadlerrailbase_path}/artifacts/sr5stadlerrailbase_template.zip"/>
+                    <unzip dest="${Teamcenter_root_path}" src="${Teamcenter_sr5stadlerrailbase_path}/artifacts/sr5stadlerrailbase_install.zip"/>
+                    <copy file="${Teamcenter_sr5stadlerrailbase_path}/artifacts/sr5stadlerrailbase_icons.zip" force="true" overwrite="true" todir="${Teamcenter_root_path}/install/sr5stadlerrailbase"/>
+                </target>
+                <target description="Perform the operations that must be completed prior to the database being updated." name="preDatabaseUpdate">
+                    <TemplateUpdate name="sr5stadlerrailbase"/>
+                </target>
+                <target description="Perform the operations that are database dependent." name="databaseUpdate"/>
+                <target description="Perform the operations that must be completed after the database update has occurred." name="postDatabaseUpdate"/>
+            </update>
+        </deploymentActions>
+    </artifact>
+</package>

@@ -1,0 +1,476 @@
+{
+	"schemaVersion": "1.0.0",
+	"imports": [
+		"js/aw-command-panel.directive",
+		"js/aw-panel-body.directive",
+		"js/aw-panel-footer.directive",
+		"js/aw-button.directive",
+		"js/aw-i18n.directive",
+		"js/visible-when.directive",
+		"js/aw-property-lov-val.directive",
+		"js/aw-panel-section.directive",
+		"js/aw-command-panel-section.directive",
+		"js/aw-widget.directive",
+		"js/aw-repeat.directive",
+		"js/aw-link.directive",
+		"js/aw-listbox.directive",
+		"js/aw-material-filter-category-numeric-range-filter.directive",
+		"js/aw-material-filter-category-string-filter.directive",
+		"js/aw-flex-row.directive",
+		"js/aw-tree.directive",
+		"js/aw-separator.directive"
+	],
+	"data": {
+		"RemoveAll": {
+			"displayName": "{{i18n.RemoveAll}}",
+			"type": "STRING"
+		},
+		"clearAll": {
+			"displayName": "{{i18n.ClearAll}}",
+			"type": "STRING"
+		},
+		"mtw0MetaParamAnchor": "mtw0CmdPanelMetaParamAnchor",
+		"Mtw0MaterialName": {
+			"displayName": "{{i18n.name}}",
+			"type": "STRING",
+			"isRequired": "false",
+			"dbValue": "",
+			"dispValue": ""
+		},
+		"Mtw0MaterialDescription": {
+			"displayName": "{{i18n.description}}",
+			"type": "STRING",
+			"isRequired": "false",
+			"dbValue": "",
+			"dispValue": ""
+		},
+		"Mtw0MaterialStatus": {
+			"displayName": "{{i18n.status}}",
+			"type": "STRINGARRAY",
+            "isArray": true,
+			"dataProvider": "listMaterialStatusProvider"
+		},
+		"Mtw0MaterialObjectType": {
+			"displayName": "{{i18n.objectType}}",
+			"type": "STRING",
+			"isRequired": "false",
+			"hasLov": "true",
+			"dbValue": "",
+			"dispValue": ""
+		},
+		"materialCatlog": {
+			"displayName": "{{i18n.Mtw0MatCatlogueLabel}}",
+			"type": "STRING",
+			"isRequired": "false",
+			"hasLov": "true",
+			"dbValue": "",
+			"dispValue": ""
+		},
+		"materialParameter": {
+			"displayName": "{{i18n.Mtw0MatParameterLabel}}",
+			"type": "STRING",
+			"isRequired": "false",
+			"hasLov": "true",
+			"dbValue": "",
+			"dispValue": ""
+		},
+		"policy": {
+			"types": [
+				{
+					"name": "Mat1UnitAltName",
+					"properties": [
+						{
+							"name": "object_name"
+						},
+						{
+							"name": "mat1DerivedUnit",
+							"modifiers": [
+								{
+									"name": "withProperties",
+									"Value": "true"
+								}
+							]
+						}
+					]
+				},				
+				{
+					"name": "Mat1DerivedUnit",
+					"properties": [						
+						{
+							"name": "object_name"
+						},
+						{
+							"name": "mat1BaseUnit",
+							"modifiers": [
+								{
+									"name": "withProperties",
+									"Value": "true"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "Mat1MatCatalog",
+					"properties": [
+						{
+							"name": "object_name"
+						},
+						{
+							"name": "mat1MetaParameters",
+							"modifiers": [
+								{
+									"name": "withProperties",
+									"Value": "true"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "Mat1MetaSingleParameter",
+					"properties": [
+						{
+							"name": "object_name"
+						},
+						{
+							"name": "mat1RealName"
+						},
+						{
+							"name": "mat1Category"
+						},
+						{
+							"name": "mat1UnitAliasName"
+						},
+						{
+							"name": "mat1DataType"
+						}
+					]
+				},
+				{
+					"name": "Mat1MatClassification",
+					"properties": [
+						{
+							"name": "object_name"
+						},
+						{
+							"name": "mat1MatCatalog",
+							"modifiers": [
+								{
+									"name": "withProperties",
+									"Value": "true"
+								}
+							]
+						},
+						{
+							"name": "mat1RealName"
+						},
+						{
+							"name": "mat1MatClassPath"
+						},
+						{
+							"name": "mat1ParentClassification"
+						}
+					]
+				}
+			]
+		}
+	},
+	"actions": {
+		"loadMaterialMetaParameters": {
+			"actionType": "JSFunction",
+			"method": "loadMaterialMetaParameters",
+			"inputData": {
+				"data": "{{data}}"
+			},
+			"outputData": {
+				"mat1ParamAndCatlogueObj": ""
+			},
+			"deps": "js/Mtw0AdvanceMaterialSearch"
+		},
+		"addToParameterList": {
+			"actionType": "JSFunction",
+			"method": "addToParameterList",
+			"inputData": {
+				"data": "{{data}}"
+			},
+			"outputData": {
+				"addMetaParamList": ""
+			},
+			"deps": "js/Mtw0AdvanceMaterialSearch"
+		},
+		"setMaterialType": {
+			"actionType": "JSFunction",
+			"method": "setMaterialType",
+			"inputData": {
+				"data": "{{data}}"
+			},
+			"deps": "js/Mtw0AdvanceMaterialSearch"
+		},
+		"getMaterialAndSubTypeAction": {
+			"actionType": "TcSoaService",
+			"serviceName": "Core-2013-05-DataManagement",
+			"method": "getSubTypeNames",
+			"inputData": {
+				"inBOTypeNames": [
+					{
+						"typeName": "Mat1MaterialRevision",
+						"contextName": "subtypes",
+						"exclusionPreference": ""
+					},
+					{
+						"typeName": "Mat1Material",
+						"contextName": "subtypes",
+						"exclusionPreference": ""
+					}
+				]
+			},
+			"outputData": {
+				"Mtw0MaterialObjectTypeList": "{{function:populatedObjectTypeList}}"
+			},
+			"deps": "js/Mtw0AdvanceMaterialSearch"
+		},
+		"populatedObjectTypeList1": {
+			"actionType": "JSFunction",
+			"method": "populatedObjectTypeList1",
+			"inputData": {
+				"data": "{{data}}",
+				"ctx": "{{ctx}}"
+			},
+			"outputData": {
+				"Mtw0MaterialObjectTypeList": ""
+			},
+			"deps": "js/Mtw0AdvanceMaterialSearch"
+		},
+		"processIMMPreferences": {
+			"actionType": "JSFunction",
+			"method": "processIMMPreferences",
+			"inputData": {
+				"data": "{{data}}",
+				"ctx": "{{ctx}}"
+			},
+			"outputData": {
+				"immPreferences": ""
+			},
+			"deps": "js/Mtw0AdvanceMaterialSearch",
+            "events": {
+                "success": [
+                    {
+                        "name": "setInitialStatusSearchParameter"
+                    }
+                ]
+            }
+	},
+	"setInitialStatusSearchParameter": {
+            "actionType": "JSFunction",
+            "method": "setStatusSearchParameter",
+            "inputData": {
+                "selectionModel": "{{data}}"
+            },
+            "deps": "js/Mtw0AdvanceMaterialSearch"
+	},
+	"loadDerivedUnits": {
+			"actionType": "JSFunctionAsync",
+			"method": "getMaterialSearchAttributes",
+			"inputData": {
+				"propertyPolicyOverride": "{{data.policy}}"
+			},
+			"outputData": {
+				"derivedUnitsList": "{{function:processDerivedUnit}}",
+				"materialCatlogList": "{{function:processMaterialCatalogues}}",
+				"materialclassificationList": "{{function:processMaterialClassifiction}}"
+			},
+			"deps": "js/Mtw0AdvanceMaterialSearch"
+		},
+		"doMaterialSearch": {
+			"actionType": "JSFunction",
+			"method": "setMaterialSearchCriteriaToCtx",
+			"inputData": {
+				"data": "{{data}}"
+			},
+			"events": {
+				"success": [
+					{
+						"name": "primaryWorkarea.reset"
+					}
+				]
+			},
+			"deps": "js/Mtw0AdvanceMaterialSearch"
+		},
+		"closeAdvancedPanelNarrow": {
+			"actionType": "JSFunction",
+			"method": "closeAdvancedPanelNarrow",
+			"deps": "js/advancedSearchUtils",
+			"inputData": {
+				"source": "navigationPanel"
+			}
+		},
+		"RemoveAllAction": {
+			"actionType": "JSFunction",
+			"method": "RemoveAllAction",
+			"inputData": {
+				"data": "{{data}}"
+			},
+			"deps": "js/Mtw0AdvanceMaterialSearch"
+		},
+		"clearAllAction": {
+			"actionType": "JSFunction",
+			"method": "clearAllAction",
+			"inputData": {
+				"data": "{{data}}"
+			},
+			"deps": "js/Mtw0AdvanceMaterialSearch"
+		},
+		"setSelectedTreeNode": {
+			"actionType": "JSFunction",
+			"method": "setSelectedTreeNode",
+			"inputData": {
+				"currentNode": "{{parameters.eventData}}"
+			},
+			"outputData": {
+				"mat1GlobalClsList": ""
+			},
+			"deps": "js/Mtw0AdvanceMaterialSearch"
+		},
+		"setSelectedCatalogueTreeNode": {
+			"actionType": "JSFunction",
+			"method": "setSelectedCatalogueTreeNode",
+			"inputData": {
+				"currentNode": "{{parameters.eventData}}"
+			},
+			"outputData": {
+				"mat1CatalogueClsList": ""
+			},
+			"deps": "js/Mtw0AdvanceMaterialSearch"
+		}
+	},
+	"functions": {
+		"setMaterialSearchCriteriaToCtx": {
+			"functionName": "setMaterialSearchCriteriaToCtx",
+			"parameters": [
+				"{{data}}"
+			]
+		},
+		"setMaterialType": {
+			"functionName": "setMaterialType",
+			"parameters": [
+				"{{data}}"
+			]
+		},
+		"getExclusionsForMaterial": {
+			"functionName": "getExclusionsForMaterial",
+			"parameters": []
+		}
+	},
+	"dataProviders": {
+		"Mtw0CatlogueProvider": {
+			"action": "loadDerivedUnits",
+			"response": "{{data.searchResults}}",
+			"totalFound": "{{data.totalFound}}"
+		},
+		"listMaterialStatusProvider":
+                {
+                        "response": "{{data.immPreferences.ImmTcDispStatusList}}",
+			"moreValuesExist": false
+                }
+	},
+	"onEvent": [
+		{
+			"eventId": "checkAdvancedPanelClose",
+			"action": "closeAdvancedPanelNarrow"
+		},
+		{
+			"eventId": "awPanel.reveal",
+			"action": "loadDerivedUnits"
+		},
+		{
+			"eventId": "awPanel.reveal",
+			"action": "processIMMPreferences"
+		},
+        {
+            "eventId": "setInitialStatusSearchParameter",
+            "action": "setInitialStatusSearchParameter"
+        },
+		{
+			"eventId": "awPanel.reveal",
+			"cacheEventData": true,
+			"action": "populatedObjectTypeList1"
+		},
+		{
+			"eventId": "mtw0MaterialGlobalCls.treeNodeSelected",
+			"action": "setSelectedTreeNode",
+			"inputArgs": {
+				"eventData": "{{eventData}}"
+			}
+		},
+		{
+			"eventId": "mtw0MaterialCatalogueCls.treeNodeSelected",
+			"action": "setSelectedCatalogueTreeNode",
+			"inputArgs": {
+				"eventData": "{{eventData}}"
+			}
+		}
+	],
+	"preferences": [
+		"IMM_TC_Display_Statuses",
+		"IMM_SEARCH_MATREV_CUSTOM_ATTR"
+	],
+	"conditions": {
+		"showRemoveAll": {
+			"expression": "data.addMetaParamList.length >0 || data.mat1CatalogueClsList.length >0"
+		},
+		"checkIfMaterialTypeAlreadyLoaded": {
+			"expression": "ctx.advancedSearch.showPreferredSearchSettings"
+		}
+	},
+	"i18n": {
+		"RemoveAll": [
+			"Mtw0MaterialSearchMessages"
+		],
+		"ClearAll": [
+			"Mtw0MaterialSearchMessages"
+		],
+		"Mtw0MatCatlogueLabel": [
+			"Mtw0MaterialSearchMessages"
+		],
+		"Mtw0MatParameterLabel": [
+			"Mtw0MaterialSearchMessages"
+		],
+		"minParamValue": [
+			"Mtw0MaterialSearchMessages"
+		],
+		"maxParamValue": [
+			"Mtw0MaterialSearchMessages"
+		],
+		"search": [
+			"Mtw0MaterialSearchMessages"
+		],
+		"uomDispValue": [
+			"Mtw0MaterialSearchMessages"
+		],
+		"name": [
+			"Mtw0MaterialSearchMessages"
+		],
+		"description": [
+			"Mtw0MaterialSearchMessages"
+		],
+		"status": [
+			"Mtw0MaterialSearchMessages"
+		],
+		"objectType": [
+			"Mtw0MaterialSearchMessages"
+		],
+		"customizedSearchAttr": [
+			"Mtw0MaterialSearchMessages"
+		],
+		"general": [
+			"Mtw0MaterialSearchMessages"
+		],
+		"materialGlobalClasses": [
+			"Mtw0MaterialSearchMessages"
+		],
+		"materialCatalogClasses": [
+			"Mtw0MaterialSearchMessages"
+		]
+	}
+}

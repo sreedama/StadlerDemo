@@ -1,0 +1,154 @@
+{
+	"schemaVersion": "1.0.0",
+	"imports": [
+		"js/aw-command-panel.directive",
+		"js/aw-panel-body.directive",
+		"js/aw-button.directive",
+		"js/aw-i18n.directive",
+		"js/aw-panel-footer.directive",
+		"js/aw-panel-section.directive",
+		"js/aw-default-cell.directive",
+		"js/aw-command-panel-section.directive",
+		"js/aw-xrt.directive",
+		"js/exist-when.directive"
+	],
+	"actions": {
+		"revealSelectedPlantForm": {
+			"actionType": "TcSoaService",
+			"serviceName": "Core-2006-03-DataManagement",
+			"method": "getProperties",
+			"inputData": {
+				"objects": "{{function:getSelectedItem}}",
+				"attributes": [
+					"SR5HasPlantForm"
+				]
+			},
+			"policy": {
+				"types": [
+					{
+						"name": "SR5GenPartRevision",
+						"properties": [
+							{
+								"name": "items_tag",
+								"modifiers": [
+									{
+										"name": "withProperties",
+										"Value": "true"
+									}
+								]
+							}
+						]
+					},
+					{
+						"name": "SR5GenPart",
+						"properties": [
+							{
+								"name": "SR5HasPlantForm",
+								"modifiers": [
+									{
+										"name": "withProperties",
+										"Value": "true"
+									}
+								]
+							}
+						]
+					},
+					{
+						"name": "SR5PlantForm",
+						"properties": [
+							{
+								"name": "object_string",
+								"count": 0
+							},
+							{
+								"name": "object_name",
+								"count": 0
+							},
+							{
+								"name": "object_desc",
+								"count": 0
+							},
+							{
+								"name": "release_status_list",
+								"count": 0
+							},
+							{
+								"name": "item_id",
+								"count": 0
+							}
+						]
+					}
+				]
+			},
+			"outputData": {
+				"selectedBomLine": "{{function:getPlantForm}}"
+			},
+			"deps": "js/displayFormService"
+		},
+		"startEdit": {
+			"actionType": "Event",
+			"method": "Event",
+			"inputData": {
+				"events": [
+					{
+						"name": "objInfo.startEdit"
+					}
+				]
+			}
+		},
+		"save": {
+			"actionType": "JSFunction",
+			"method": "showConfirmationDialog",
+			"deps": "js/displayFormService",
+			"inputData": {
+				"data": "{{data}}",
+				"ctx": "{{ctx}}"
+			},
+			"outputData": {
+				"createdObjects": ""
+			}
+		}
+	},
+	"functions": {
+		"getPlantForm": {
+			"functionName": "getPlantForm"
+		},
+		"getSelectedItem": {
+			"functionName": "getSelectedItem",
+			"parameters": [
+				"{{ctx.selected}}"
+			]
+		}
+	},
+	"conditions": {
+		"IsMasterFormEditButtonVisible": {
+			"expression": "ctx['INFO_PANEL_CONTEXT'] && !ctx['INFO_PANEL_CONTEXT'].editInProgress()"
+		},
+		"IsSaveButtonVisible": {
+			"expression": "ctx['INFO_PANEL_CONTEXT'] && ctx['INFO_PANEL_CONTEXT'].editInProgress()"
+		}
+	},
+	"onEvent": [
+		{
+			"eventId": "primaryWorkArea.selectionChangeEvent",
+			"action": "revealSelectedPlantForm"
+		},
+		{
+			"eventId": "awPanel.reveal",
+			"action": "revealSelectedPlantForm"
+		}
+	],
+	"preferences": [],
+	"messages": {},
+	"i18n": {
+		"objectInformationLabel": [
+			"displayFormMessages"
+		],
+		"startEditButtonText": [
+			"displayFormMessages"
+		],
+		"save": [
+			"displayFormMessages"
+		]
+	}
+}

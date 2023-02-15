@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="ISO-8859-1" standalone="yes"?>
+<!--
+===============================================================================
+                Copyright (c) 2003-2005 UGS Corporation
+                   Unpublished - All Rights Reserved
+===============================================================================
+File description:
+
+            Filename:
+            Module:
+
+            XML File defining ___ module text/error messages.
+            This was previously done in UIH/UIL/VIL format.
+@<DEL>@
+===============================================================================
+   Date      Name                    Description of Change
+
+18-Jun-2002  Anupam Tiwari           Updated for phase P8.1.0.1
+12-May-2005  roudebus                Update copyright, strip history
+$HISTORY$
+===============================================================================
+@<DEL>@ -->
+<textsrv filename="ue_errors.xml">
+<errors module="ue" error_base="919000">
+	
+	<error id="1">USER_EXIT:    Beenden durch Benutzer %1$ fehlgeschlagen</error>
+	
+	<error id="100">Das Hinzufügen eines Parts unter ein Part mit CATPart ist nicht erlaubt, ausgenommen Katalogdefinitionsartikel</error>
+	<error id="101">Inkonsistente Eltern- und Kind-Plant.</error>
+	<error id="102">Ungueltiger Status für MBOM Zuweisung.</error>
+	<error id="103">Das Ausgangsobjekt hat keinen IMM Werkstoff zugewiesen</error>
+	<error id="104">Part mit CATPart Dataset hat bereits ein Kind</error>
+	<error id="105">Die letzte Revision des Originalteils ist nicht freigegeben</error>
+	<error id="106">Zielobjekt muss 3D Modell besitzen</error>
+	<error id="107">Falscher Objekttyp</error>
+
+</errors>
+</textsrv>

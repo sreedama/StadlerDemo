@@ -1,0 +1,294 @@
+{
+    "schemaVersion": "1.0.0",
+    "imports":
+    [
+        "js/aw-command-panel.directive",
+        "js/aw-file-upload.directive",
+        "js/aw-panel-body.directive",
+        "js/aw-panel-footer.directive",
+        "js/aw-form.directive",
+        "js/aw-listbox.directive",
+        "js/aw-textbox.directive",
+        "js/aw-xrt.directive",
+        "js/aw-button.directive",
+        "js/visible-when.directive",
+        "js/exist-when.directive",
+        "js/aw-i18n.directive",
+        "js/aw-break.directive",
+        "js/aw-label.directive",
+        "js/aw-column.directive",
+        "js/aw-row.directive"
+    ],
+    "data":{
+        "catalogName": {
+            "displayName": "{{i18n.Mtw0NewCatalogName}}",
+            "type": "STRING",
+            "isRequired": "false",
+            "dbValue": "",
+            "dispValue": ""
+        },
+        "selectFile": {
+            "displayName": "{{i18n.Mtw0SelectFile}}",
+            "isRequired": "true",
+            "type": "STRING"
+        },
+        "importTypeListBox": {
+            "displayName": "{{i18n.Mtw0ImportTypes}}",
+            "type": "STRING",
+            "hasLov":"true",
+            "isRequired": "true",
+            "dbValue": "",
+            "dispValue": ""
+        },
+        "catalogListBox": {
+            "displayName": "{{i18n.Mtw0Catalog}}",
+            "type": "STRING",
+            "hasLov":"true",
+            "isRequired": "false",
+            "dbValue": "",
+            "dispValue": ""
+        },
+        "materialTypesListBox": {
+            "displayName": "{{i18n.Mtw0MaterialType}}",
+            "type": "STRING",
+            "hasLov":"true",
+            "isRequired": "true"
+        },
+        "substanceTypesListBox": {
+            "displayName": "{{i18n.Mtw0SubstanceType}}",
+            "type": "STRING",
+            "hasLov":"true",
+            "isRequired": "true"
+        }
+    },
+    "actions": {
+        "openSummaryLog": {
+            "actionType": "JSFunction",
+            "method": "openFile",
+            "inputData": {
+                "data": "{{data.fileTicket}}"
+            },
+            "deps": "js/fmsUtils"
+        },    
+      "openMultipleFilesFromTickets": {
+        "actionType": "JSFunction",
+        "method": "openFiles",
+        "deps": "js/fmsUtils",
+        "inputData": {
+          "fileTickets": "{{data.fileNamesAndTickets}}"
+        }
+      },
+        "getFMSFileTicket": {
+            "actionType": "TcSoaService",
+            "serviceName": "Core-2007-01-FileManagement",
+            "method": "getTransientFileTicketsForUpload",
+            "inputData": {
+                "transientFileInfos": [ {
+                    "fileName": "{{data.fileName}}",
+                    "isBinary": true,
+                    "deleteFlag": true
+                } ]
+            },
+
+            "outputData": {
+                "fmsTicket": "transientFileTicketInfos[0].ticket"
+            },
+
+            "events": {
+                "success": [ {
+                    "name": "fmsTicket.update"
+                } ]
+            }
+        },
+        "updateFormData": {
+            "actionType": "JSFunction",
+            "method": "updateFormData",
+            "inputData": {
+                "fileData": {
+                    "key": "fmsTicket",
+                    "value": "{{data.fmsTicket}}"
+                },
+                "data": "{{data}}"
+            },
+            "events": {
+                "success": [ {
+                        "name": "ImportMaterials.gotTransientFileTicket"
+                    } ]
+            },
+            "deps": "js/declUtils"
+        },
+        "uploadFile": {
+            "actionType": "RESTService",
+            "serviceName": "",
+            "method": "POST",
+            "inputData": {
+                "request": {
+                    "method": "POST",
+                    "url": "{{Constants.fmsUrl}}",
+                    "headers": {
+                        "Content-type": "undefined"
+                    },
+
+                    "data": "{{data.formData}}"
+                }
+            },
+            "events": {
+                "success": [ {
+                    "name": "ImportMaterials.importMaterials"
+                } ]
+            }
+        },
+        "importMaterials": {
+            "actionType": "JSFunction",
+            "method": "importMaterials",
+            "inputData": {
+                "data": "{{data}}"
+            },
+            "deps": "js/Mtw0ImportMaterials"
+        },
+        "clearFileSelection": {
+            "actionType": "JSFunction",
+            "method": "clearFileSelection",
+            "inputData": {
+                "data": "{{data}}"
+            },
+            "deps": "js/Mtw0ImportMaterials"
+        },
+        "loadCatalogs": {
+            "actionType": "TcSoaService",
+            "serviceName": "Query-2007-06-Finder",
+            "method": "findWorkspaceObjects",
+            "deps": "js/Mtw0ImportMaterials",
+            "inputData": {
+                "findList": [{
+                        "criterias": [{
+                                "objectType": "Mat1MatCatalog",
+                                "objectName": "",
+                                "scope": "WSO_scope_All",
+                                "owner": "",
+                                "group": "",
+                                "createdBefore": "",
+                                "modifiedBefore": "",
+                                "releasedBefore": "",
+                                "createdAfter": "",
+                                "modifiedAfter": "",
+                                "releasedAfter": ""
+                            }
+                        ]
+                    }
+                ]
+            },
+            "outputData": {
+                "catalogs": "{{function:processMaterialCatalogues}}"
+            },
+            "policy": {
+                "types": [{
+                        "name": "BusinessObject",
+                        "properties": [{
+                                "name": "object_string"
+                            }, {
+                                "name": "object_type"
+                            }, {
+                                "name": "object_name"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Mat1MatCatalog",
+                        "properties": [{
+                                "name": "item_id"
+                            }
+                        ]
+                    }]
+            }
+        },
+        "loadTypesFromPreference": {
+            "actionType": "JSFunction",
+            "method": "loadTypesFromPreference",
+            "inputData": {
+                "input": "{{data}}",
+                "ctx": "{{ctx}}"
+            },
+            "outputData": {
+                "preferences": ""
+            },
+            "deps": "js/Mtw0ImportMaterials"
+        },
+        "setExtension": {
+            "actionType": "JSFunction",
+            "method": "setExtension",
+            "inputData": {
+                "data": "{{data}}"
+            },
+            "outputData": {
+                "preferences.extension": ""
+            },
+            "deps": "js/Mtw0ImportMaterials"
+        },
+        "onCatalogChange": {
+            "actionType": "JSFunction",
+            "method": "onCatalogChange",
+            "outputData": {
+                "catalogName.dbValue": ""
+            },
+            "deps": "js/Mtw0ImportMaterials"
+        }        
+    },
+    "onEvent":
+    [    
+        {
+            "eventId": "awPanel.reveal",
+            "action": "loadCatalogs"
+        },
+        {
+            "eventId": "awPanel.reveal",
+            "action": "loadTypesFromPreference"
+        },
+        {
+            "eventId": "fmsTicket.update",
+            "action": "updateFormData"
+        },
+        {
+            "eventId": "ImportMaterials.gotTransientFileTicket",
+            "action": "uploadFile"
+        },
+        {
+            "eventId": "ImportMaterials.importMaterials",
+            "action": "importMaterials"
+        }        
+    ],
+    "i18n": {
+        "Mtw0ImportMaterials": [
+            "MaterialMgmtMessages"
+        ],
+        "Mtw0Catalog": [
+            "MaterialMgmtMessages"
+        ],
+        "Mtw0NewCatalogName": [
+            "MaterialMgmtMessages"
+        ],
+        "Mtw0SubstanceType": [
+            "MaterialMgmtMessages"
+        ],
+		"Mtw0ImportTypes": [
+            "MaterialMgmtMessages"
+        ],
+        "Mtw0MaterialType": [
+            "MaterialMgmtMessages"
+        ],
+        "AddToTitle": [
+            "MaterialMgmtMessages"
+        ],
+        "Mtw0ShowAddObjectDesc": [
+            "MaterialMgmtMessages"
+        ],
+        "Mtw0SelectFile": [
+            "MaterialMgmtMessages"
+        ]
+    },
+    "preferences": [
+        "IMM_IMPORT_FILTERS",
+        "IMM_IMPORT_WIZARD_OBJECT_TYPES",
+        "IMM_IMPORT_WIZARD_SUBSTANCE_TYPES"
+    ]
+}

@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<preferences version="10.0">
+  <category name="SAP Gateway T4ST">
+    <category_description>No description available for this category.</category_description>
+    
+    <preference name="T4ST_DocumentVersionTypeList" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>No description available for this preference</preference_description>
+      <context name="Teamcenter">
+        <value>SR5TechDocumentRevision</value>
+        <value>SR5EngArticleRevision</value>
+      </context>
+    </preference>
+    
+    <preference name="T4ST_DocumentVersionCondition" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>use a BMIDE condition to skip the transfer. i.e. Ais3_DoDocumentVersionTransfer or isTrue</preference_description>
+      <context name="Teamcenter">
+        <value>SR5_DoDocumentVersionTransfer</value>
+      </context>
+    </preference>
+    
+    <!-- to get the CN from the Workflow -->
+    <preference name="T4ST_DocumentVersionWorkflowAddObject4Mapping" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>No description available for this preference</preference_description>
+      <context name="Teamcenter">        
+        <value>EPM_target_attachment:ChangeNoticeRevision:#__getAllProperties__#:Properties</value>
+      </context>
+    </preference>
+
+	<!-- Mapping 4 -->     
+    <preference name="T4ST_DocumentVersionMapping4$ItemRevision" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>No description available for this preference</preference_description>
+      <context name="Teamcenter">
+        <value>items_tag:SR5TechDocument</value>
+        <value>items_tag:SR5TechDocument:#__getAllProperties__#:Properties</value>
+        <value>#__getAllProperties__#:Properties</value>
+        <value>TC_Attaches:PDF</value>
+        <value>TC_Attaches:PDF:#__getAllProperties__#:Properties</value>
+        <value>TC_Attaches:PDF:ref_list/PDF_Reference:ImanFile:#__getAllProperties__#:Properties</value>
+        <value>TC_Attaches:PDF:#__getAllProperties__#:Properties</value>
+        <value>TC_Attaches:PDF:ref_list/PDF_Reference:ImanFile</value>
+        <value>items_tag:SR5TechDocument:SR5HasSpecificationDocument:SR5EngArticleRevision:items_tag:SR5EngArticle:#__getAllProperties__#:Properties</value>
+        <value>items_tag:SR5TechDocument:SR5HasSpecificationDocument:SR5EngArticleRevision:#__getAllProperties__#:Properties</value>
+		<value>items_tag:SR5TechDocument:SR5HasSpecificationDocument:SR5EngArticleRevision:last_release_status:ReleaseStatus:#__getAllProperties__#:Properties</value>
+        <value>items_tag:SR5TechDocument:SR5HasRequiredDocument:SR5EngArticleRevision:items_tag:SR5EngArticle:#__getAllProperties__#:Properties</value>
+        <value>items_tag:SR5TechDocument:SR5HasRequiredDocument:SR5EngArticleRevision:#__getAllProperties__#:Properties</value>
+		<value>items_tag:SR5TechDocument:SR5HasRequiredDocument:SR5EngArticleRevision:last_release_status:ReleaseStatus:#__getAllProperties__#:Properties</value>  
+      </context>
+    </preference>
+	
+	<preference name="T4ST_DocumentVersionPropertyListMode4$ItemRevision" type="Integer" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>AllowList</preference_description>
+      <context name="Teamcenter">
+        <value>2</value>
+      </context>  
+    </preference>    
+    <preference name="T4ST_DocumentVersionProperty2ProcessList4$ItemRevision" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>No description available for this preference</preference_description>
+      <context name="Teamcenter">        
+        <value>item_revision_id</value>
+        <value>item_id</value>
+        <value>object_type</value>
+        <value>object_desc</value>
+        <value>object_name</value>
+		<value>creation_date</value>
+		<value>owning_user</value>
+		<value>sr5ExternalRevision</value>
+        <value>sr5DocumentContent</value>
+        <value>sr5SAPID</value>
+        <value>sr5SAPTransStatus</value>
+        <value>sr5SAPTransDate</value>
+        <value>sr5SAPDocKey</value>
+		<value>sr5ReqVerDocumentContent</value>
+		<value>sr5ExpiryDate</value>
+		<value>sr5CPDateReviewed</value>
+		<value>sr5CPReviewedBy</value>
+		<value>sr5CPDateReleased</value>
+		<value>sr5CPReleasedBy</value>
+		<value>sr5DocumentFormat</value>
+		<value>sr5NumberOfSheets</value>
+	  </context>  
+    </preference>
+	
+    <!-- Mapping 2 -->
+    <preference name="T4ST_DocumentVersionMapping2$ItemRevision" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>No description available for this preference</preference_description>
+      <context name="Teamcenter">
+        <value>$ItemRevision</value>
+      </context>
+    </preference>   
+	<preference name="T4ST_DocumentVersionFieldMapping2$ItemRevision" type="String" array="true" disabled="false">
+      <preference_description>No description available for this preference</preference_description>
+      <context name="Teamcenter"> 
+        <value>sr5SAPID</value>
+        <value>sr5SAPTransStatus</value>
+        <value>sr5SAPTransDate</value>
+      </context>
+    </preference>   
+    
+  </category>
+</preferences>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+********************************************************************************************
+ This file is created by Accountablity Check settings SOA and is not to be edited manually. 
+********************************************************************************************
+-->
+<AccountabilityCheckSettings version="1">
+    <sourceObjects></sourceObjects>
+    <targetObjects></targetObjects>
+    <sourceContextLine></sourceContextLine>
+    <targetContextLine></targetContextLine>
+    <options>1071122</options>
+    <matchtype>237440</matchtype>
+    <sourceFilteringRule>AccountabilityLinkedAssmOrLeaves</sourceFilteringRule>
+    <targetFilteringRule>AccountabilityLinkedAssmOrLeaves</targetFilteringRule>
+    <sourceDepth>-1</sourceDepth>
+    <targetDepth>-1</targetDepth>
+    <resultName></resultName>
+    <resultDesc></resultDesc>
+<ReportCriteria>
+        <reportName>
+        Accountability Check Report
+        </reportName>
+        <relationName>
+        IMAN_specification
+        </relationName>
+        <datasetType>
+        MSExcel
+        </datasetType>
+</ReportCriteria>
+    <reportMode>1</reportMode>
+    <PartialMatchCriteria>
+        <CriteriaNames>
+            <CriteriaNames>AC_IDIC_BOMBOM</CriteriaNames>
+        </CriteriaNames>
+        <Mfg0connected_parts>
+            <RelationName>Mfg0connected_parts</RelationName>
+        </Mfg0connected_parts>
+    </PartialMatchCriteria>
+    <includeScopeLines>false</includeScopeLines>
+</AccountabilityCheckSettings>

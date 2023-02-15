@@ -1,0 +1,1 @@
+sc stop AIG_GS_QUA

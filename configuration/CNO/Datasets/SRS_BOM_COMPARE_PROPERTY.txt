@@ -1,0 +1,47 @@
+﻿############################################################################################################
+#  CNO Objects Property Definition File for Item and Bom Compare
+############################################################################################################
+# Version History
+#
+# Version   Date         Name            Description of Change
+# 1.00     	21.11.2019   Porada       	 Initial   
+############################################################################################################
+
+
+# ------------------------------------------------------------------
+# BOM View Properties
+# ------------------------------------------------------------------
+#C:ItemRevision>view§CNO_UNIQUE_ID§|bl_item_item_id|_|bl_sequence_no|
+C:ItemRevision>view§CNO_UNIQUE_ID§|bl_sequence_no|
+
+#C:ItemRevision>view:bl_rev_object_type
+#C:ItemRevision>view:bl_rev_object_type,en_US~bl_name
+
+#00
+C:ItemRevision>view:bl_sequence_no~Position number
+
+#01 - ID + Revision
+C:ItemRevision>view§ID ext-int-Revision Index§|bl_item_item_id|/|bl_rev_sr5ExternalRevision|/|bl_rev_item_revision_id|
+#C:ItemRevision>view§ID ext-int-Revision Index§|js(IdRevision(bl_rev_object_type,bl_item_item_id,bl_rev_sr5ExternalRevision,bl_rev_item_revision_id))|
+
+#02 - weight
+#C:ItemRevision>view:bl_SR5GenEngObjRevision_sr5WeightInKG~WeightInKG
+#C:ItemRevision>view§Weight kg§|js(Weight(bl_SR5GenEngObjRevision_sr5WeightInKG))|
+C:ItemRevision>view§Weight kg§|js(Weight(bl_SR5GenEngObjRevision_sr5AdjustedWeight))|
+
+#03 - quantity
+#C:ItemRevision>view:bl_quantity~QUANTITY
+C:ItemRevision>view§Quantity§|js(Quantity(bl_quantity,bl_occ_uom_tag))|
+
+#04 - Color Name (1 position in BOM)
+C:ItemRevision>view§Color Name§|js(ColorName(bl_rev_object_type,bl_rev_object_name))|
+#C:ItemRevision>view:bl_rev_object_name~ColorName
+
+#05 - Coating Structure Name (1 position in BOM)
+C:ItemRevision>view§Coating Name§|js(CoatingName(bl_rev_object_type,bl_rev_object_name))|
+#C:ItemRevision>view:bl_rev_object_name~CoatingName
+
+#06 - Material Name (related object of child ItemRevision)
+#C:ItemRevision>view:bl_rev_Mat1UsesMaterial~BL_MATERIAL
+C:ItemRevision>view§Material Name§|bl_rev_Mat1UsesMaterial^A^-|
+

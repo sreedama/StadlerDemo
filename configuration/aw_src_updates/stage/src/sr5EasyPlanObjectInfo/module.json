@@ -1,0 +1,6 @@
+{
+    "name": "sr5EasyPlanObjectInfo",
+    "description": "This is the sr5EasyPlanObjectInfo module",
+    "skipTest": true,
+    "skipAudit": true
+}

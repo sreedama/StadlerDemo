@@ -1,0 +1,122 @@
+{
+    "schemaVersion": "1.0.0",
+    "imports": [
+        "js/aw-command-panel.directive",
+        "js/aw-panel-body.directive",
+        "js/aw-panel-footer.directive",
+		"js/aw-panel-section.directive",
+		"js/aw-button.directive",
+		"js/visible-when.directive",
+		"js/aw-flex-row.directive",
+		"js/aw-tree.directive",
+		"js/aw-i18n.directive"
+    ],
+    "onEvent": [ 
+        {
+            "eventId": "awPanel.reveal",
+            "action": "loadGlobalClasses"
+        },
+        {
+            "eventId": "gwt.SubLocationContentSelectionChangeEvent",
+            "action": "closePanel"
+        },
+		{
+			"eventId": "mtw0MaterialGlobalCls.treeNodeSelected",
+			"action": "setSelectedTreeNode",
+			"inputArgs": {
+				"eventData": "{{eventData}}"
+			}
+		} 
+    ],
+    "conditions": {
+        "canAddClass" :{
+            "expression": "(ctx.selected) && (data.mat1GlobalClsList.length > 0) && (ctx.selected.modelType.typeHierarchyArray.includes('Mat1MaterialRevision')) && (ctx.selected.props.mat1MatClassifications.dbValue.includes(data.mat1GlobalClsList[0].uid) == false)"
+        }
+    },
+    "data": {
+		"policy": {
+			"types": [
+				{
+					"name": "Mat1MatClassification",
+					"properties": [
+						{
+							"name": "object_name"
+						},
+						{
+							"name": "mat1MatCatalog",
+							"modifiers": [
+								{
+									"name": "withProperties",
+									"Value": "true"
+								}
+							]
+						},
+						{
+							"name": "mat1RealName"
+						},
+						{
+							"name": "mat1MatClassPath"
+						},
+						{
+							"name": "mat1ParentClassification"
+						}
+					]
+				}
+			]
+		}
+    },
+    "actions": {   
+	    "addClass":{
+			"actionType": "JSFunctionAsync",
+			"method": "setMaterialClassification",
+			"inputData": {
+				"data": "{{data}}",
+				"ctx": "{{ctx}}"
+			},
+            "events": {
+                "success": [
+                    {
+                        "name": "cdm.relatedModified",
+                        "eventData": {
+                            "relatedModified": [
+                                "{{ctx.selected}}"
+                            ],
+                            "refreshLocationFlag": true
+                        }
+                    }
+                ]
+            },			
+			"deps": "js/Mtw0ShowAddClassesService"			
+		},
+		"setSelectedTreeNode": {
+			"actionType": "JSFunction",
+			"method": "setSelectedTreeNode",
+			"inputData": {
+				"currentNode": "{{parameters.eventData}}"
+			},
+			"outputData": {
+				"mat1GlobalClsList": ""
+			},
+			"deps": "js/Mtw0ShowAddClassesService"
+		},
+		"loadGlobalClasses": {
+			"actionType": "JSFunctionAsync",
+			"method": "getGlobalClasses",
+			"inputData": {
+				"propertyPolicyOverride": "{{data.policy}}"
+			},
+			"outputData": {
+				"materialclassificationList": "{{function:processMaterialClassification}}"
+			},
+			"deps": "js/Mtw0ShowAddClassesService"
+		}
+    },
+    "i18n": 
+    {
+        "AddClassPanelTitle": ["MaterialMgmtMessages"],
+        "AddClass": ["MaterialMgmtMessages"],
+        "materialGlobalClasses": ["MaterialMgmtMessages"],
+		"Mtw0ClassAlreadyPresent":  ["MaterialMgmtMessages"],
+		"Mtw0MaterialRevisionNotSelected":  ["MaterialMgmtMessages"]
+    }        
+}

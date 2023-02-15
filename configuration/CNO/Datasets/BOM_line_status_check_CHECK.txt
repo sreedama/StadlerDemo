@@ -1,0 +1,13 @@
+#Check Type=SR5EngArticleRevision Property=release_statuses
+
+#SR5EngArticleRevision:release_statuses§not eq§any value~value is not valid
+
+#Check Type=C:ItemRevision>view Property=bl_rev_release_statuses
+
+#C:ItemRevision>view:bl_rev_release_statuses§not eq§any value~value is not valid
+
+#C:SR5EngArticleRevision>view:bl_rev_last_release_status§not allowed§empty
+
+#SR5Status20||SR5Status30||SR5Status40~allowed status 20, 30 and 40
+
+C:ItemRevision>view:ATTR_COMBINATION§eq§count([C:ItemRevision>view:bl_sequence_no]_*)~Position and ItemID combination is not valid~All good

@@ -1,0 +1,41 @@
+{
+  // Column Config
+  
+  "Column Config Client": {
+    "scope": "xml",
+    "prefix": "client",
+    "body": [
+      "<Client abbrevation=\"AWClient\" name=\"AWClient\">",
+      "    ${0}",
+      "</Client>"
+    ]
+  },
+  "Column Config ClientScope": {
+    "scope": "xml",
+    "prefix": "clientscope",
+    "body": [
+      "<ClientScope hostingClientName=\"\" name=\"${1}\" uri=\"${2}\">",
+      "    ${0}",
+      "</ClientScope>"
+    ]
+  },
+  "Column Config ColumnConfig": {
+    "scope": "xml",
+    "prefix": "colConfig",
+    "body": [
+      "<ColumnConfig columnConfigId=\"${1}\" columnConfigName=\"${2}\" sortBy=\"${3}\" sortDirection=\"${4}\">",
+      "    ${0}",
+      "</ColumnConfig>"
+    ]
+  },
+  "Column Config Ref": {
+    "scope": "xml",
+    "prefix": "configRef",
+    "body": "<ColumnConfigRef columnConfigId=\"${1}\" columnConfigName=\"${2}\" />${0}"
+  },
+  "Column Config ColumnDef": {
+    "scope": "xml",
+    "prefix": "colDef",
+    "body": "<ColumnDef columnName=\"${1}\" objectType=\"${2}\" propertyName=\"${3}\" width=\"${4}\" filterable=\"${5|true,false|}\" hidden=\"${6|false,true|}\"/>${0}"
+  }
+}

@@ -1,0 +1,233 @@
+Dimension;Unit;Symbol;Target Unit;Target Symbol;Factor;Offset
+AmountOfSubstance;Mole;mol;Mole;mol;1;0
+AmountOfSubstance;Mole;mol;Kilomole;kmol;1/1000;0
+AmountOfSubstance;Mole;mol;Micromole;µmol;1000000;0
+AmountOfSubstance;Mole;mol;Millimole;mmol;1000;0
+Angle;Radian;rad;Radian;rad;1;0
+Angle;Radian;rad;Revolution;r;0.1591549430919;0
+Angle;Radian;rad;Degree;deg;57.295779513082;0
+Angle;Radian;rad;Milliradian;mrad;1000;0
+Angle;Radian;rad;Microradian;microRad;1000000;0
+Area;SquareMeter;m²;SquareMeter;m²;1;0
+Area;SquareMeter;m²;SquareKiloMeter;km²;1/1000000;0
+Area;SquareMeter;m²;Hektar;ha;1/10000;0
+Area;SquareMeter;m²;Ar;ar;1/100;0
+Area;SquareMeter;m²;SquareDeziMeter;dm²;100;0
+Area;SquareMeter;m²;SquareCentiMeter;cm²;10000;0
+Area;SquareMeter;m²;SquareMilliMeter;mm²;1000000;0
+Area;SquareMeter;m²;SquareInch;in²;1550.003;0
+Area;SquareMeter;m²;SquareFoot;ft²;10.76391;0
+Area;SquareMeter;m²;SquareYard;yd²;1.19599;0
+Area;SquareMeter;m²;Acren;acre;0.000247105;0
+Area;SquareMeter;m²;SquareMile;mi²;3.861021E-7;0
+DynamicViskosity;Pascalseconds;Pa s;Pascalseconds;Pa s;1;0
+DynamicViskosity;Pascalseconds;Pa s;kg/(m s);kg/(m s);1;0
+DynamicViskosity;Pascalseconds;Pa s;kg/(mm s);kg/(mm s);1/1000;0
+DynamicViskosity;Pascalseconds;Pa s;dyn s/cm²;dyn s/cm²;10;0
+ElectricCurrent;Ampere;A;Ampere;A;1;0
+ElectricCurrent;Ampere;A;MilliAmpere;mA;1000;0
+Energy|Work|QuantityOfHeat;Joule;J;Joule;J;1;0
+Energy|Work|QuantityOfHeat;Joule;J;Attojoule;aJ;1e+018;0
+Energy|Work|QuantityOfHeat;Joule;J;BritishThermalUnit;BTU;0.0009478171203;0
+Energy|Work|QuantityOfHeat;Joule;J;Calorie;cal;0.2388458966;0
+Energy|Work|QuantityOfHeat;Joule;J;DyneCentiMeter;dyne.cm;10000000;0
+Energy|Work|QuantityOfHeat;Joule;J;Electronvolt;eV;6.241457006e+018;0
+Energy|Work|QuantityOfHeat;Joule;J;Erg;erg;10000000;0
+Energy|Work|QuantityOfHeat;Joule;J;Gigajoule;GJ;1e-009;0
+Energy|Work|QuantityOfHeat;Joule;J;GigawattHour;GW.hr;1/3600000000000;0
+Energy|Work|QuantityOfHeat;Joule;J;GramForceCentiMeter;gf.cm;10197.16213;0
+Energy|Work|QuantityOfHeat;Joule;J;HorsepowerHour;hp.hr;3.72506136e-007;0
+Energy|Work|QuantityOfHeat;Joule;J;Kilocalorie;kcal;0.0002388458966;0
+Energy|Work|QuantityOfHeat;Joule;J;KiloelectronVolt;keV;6.241457006e+015;0
+Energy|Work|QuantityOfHeat;Joule;J;Kilojoule;kJ;1/1000;0
+Energy|Work|QuantityOfHeat;Joule;J;KilowattHour;kW.hr;1/3600000;0
+Energy|Work|QuantityOfHeat;Joule;J;MegaelectronVolt;MeV;6.241457006e+012;0
+Energy|Work|QuantityOfHeat;Joule;J;Megajoule;MJ;1e-006;0
+Energy|Work|QuantityOfHeat;Joule;J;MegawattHour;MW.hr;1/3600000000;0
+Energy|Work|QuantityOfHeat;Joule;J;Microjoule;microJ;1000000;0
+Energy|Work|QuantityOfHeat;Joule;J;Millijoule;mJ;1000;0
+Energy|Work|QuantityOfHeat;Joule;J;Nanojoule;nJ;1000000000;0
+Energy|Work|QuantityOfHeat;Joule;J;NewtonMeter;N.m;1;0
+Energy|Work|QuantityOfHeat;Joule;J;OunceForceInch;ozf.in;141.6119327;0
+Energy|Work|QuantityOfHeat;Joule;J;PoundForceFoot;lbf.ft;0.7375621493;0
+Energy|Work|QuantityOfHeat;Joule;J;PoundForceInch;lbf.in;8.850745791;0
+Energy|Work|QuantityOfHeat;Joule;J;PoundalFoot;pdl.ft;23.7303604;0
+Energy|Work|QuantityOfHeat;Joule;J;Therm;th;9.478133945e-009;0
+Energy|Work|QuantityOfHeat;Joule;J;WattHour;W.hr;1/3600;0
+Energy|Work|QuantityOfHeat;Joule;J;WattSecond;W.s;1;0
+Force;Newton;N;Newton;N;1;0
+Force;Newton;N;Dyne;dyne;100000;0
+Force;Newton;N;GramForce;gf;101.9716213;0
+Force;Newton;N;KilogramForce;kgf;0.1019716213;0
+Force;Newton;N;KiloNewton;kN;1/1000;0
+Force;Newton;N;MilliNewton;mN;1000;0
+Force;Newton;N;OunceForce;ozf;3.59694309;0
+Force;Newton;N;PoundForce;lbf;0.2248089431;0
+KinematicViskosity;SquareMeterPerSecond;m²/s;SquareMeterPerSecond;m²/s;1;0
+KinematicViskosity;SquareMeterPerSecond;m²/s;mm²/s;mm²/s;1e6;0
+KinematicViskosity;SquareMeterPerSecond;m²/s;cm²/s;cm²/s;1e4;0
+KinematicViskosity;SquareMeterPerSecond;m²/s;ft²/s;ft²/s;10.76391;0
+Length;Meter;m;Meter;m;1;0
+Length;Meter;m;KiloMeter;km;1/1000;0
+Length;Meter;m;HectoMeter;hm;1/100;0
+Length;Meter;m;DekaMeter;dam;1/10;0
+Length;Meter;m;DeciMeter;dm;10;0
+Length;Meter;m;CentiMeter;cm;100;0
+Length;Meter;m;MilliMeter;mm;1000;0
+Length;Meter;m;MicroMeter;µm;1000000;0
+Length;Meter;m;Mile;mi;125/201168;0
+Length;Meter;m;Furlong;furlong;125/25146;0
+Length;Meter;m;Yard;yd;1250/1143;0
+Length;Meter;m;Foot;ft;1250/381;0
+Length;Meter;m;Inch;in;5000/127;0
+Length;Meter;m;Mil;mil;5000000/127;0
+Length;Meter;m;Lightyear;ly;1/9460730472580800;0
+Length;Meter;m;League;league;125/603504;0
+Length;Meter;m;Pars;pc;3.240782847E-17;0
+Length;Meter;m;NauticalMile;M;1/1852;0
+Length;Meter;m;NanoMeter;nm;1000000000;0
+Length;Meter;m;SurveyFoot;usFt;3.2808;0
+Mass;Kilogram;kg;Kilogram;kg;1;0
+Mass;Kilogram;kg;Carat;carat;5000;0
+Mass;Kilogram;kg;Grain;gr;15432.4;0
+Mass;Kilogram;kg;Gram;g;1000;0
+Mass;Kilogram;kg;Megagram;Mg;1/1000;0
+Mass;Kilogram;kg;Microgram;µg;1000000000;0
+Mass;Kilogram;kg;Milligram;mg;1000000;0
+Mass;Kilogram;kg;Ounce;oz;35.27392;0
+Mass;Kilogram;kg;OunceTroy;ozt;32.150502;0
+Mass;Kilogram;kg;Pennyweight;dwt;643.01403;0
+Mass;Kilogram;kg;Pound;lbm;2.20462;0
+Mass;Kilogram;kg;PoundTroy;lbt;2.6792085;0
+Mass;Kilogram;kg;Stone;st;0.1574728;0
+Mass;Kilogram;kg;LongTon;ltn;0.0009842;0
+Mass;Kilogram;kg;ShortTon;tn;0.0011023;0
+Mass;Kilogram;kg;Tonne;t;1/1000;0
+MassDensity;KilogramPerCubicMeter;kg/m³;KilogramPerCubicMeter;kg/m³;1;0
+MassDensity;KilogramPerCubicMeter;kg/m³;GramPerCubicMilliMeter;g/mm³;1E-06;0
+MassDensity;KilogramPerCubicMeter;kg/m³;GramPerCubicCentiMeter;g/cm³;0.001;0
+MassDensity;KilogramPerCubicMeter;kg/m³;GramPerCubicMeter;g/m³;1000;0
+MassDensity;KilogramPerCubicMeter;kg/m³;MilliGramPerCubicMeter;mg/m³;1000000;0
+MassDensity;KilogramPerCubicMeter;kg/m³;OuncePerGallon;oz/gal;0.1335264712;0
+MassDensity;KilogramPerCubicMeter;kg/m³;PoundMassperCubicFeet;lbm/ft³;0.06242796058;0
+MassDensity;KilogramPerCubicMeter;kg/m³;PoundMassperCubicInch;lbm/in³;0.000036127292;0
+MassDensity;KilogramPerCubicMeter;kg/m³;TonPerCubicYard;ton/yard³;0.00075247998;0
+MassDensity;KilogramPerCubicMeter;kg/m³;KilogramPerCubicMiliMeter;kg/mm³;1E-09;0
+MolarMass;KilogramPerMole;kg/mol;KilogramPerMole;kg/mol;1;0
+MolarMass;KilogramPerMole;kg/mol;GramPerMole;g/mol;1000;0
+Percentage;Percent;%;Percent;%;1;0
+Percentage;Percent;%;Permil;‰;0.1;0
+Power|RadiantFlux;Watt;W;Watt;W;1;0
+Power|RadiantFlux;Watt;W;Kilowatt;kW;1/1000;0
+Power|RadiantFlux;Watt;W;Megawatt;MW;1e-006;0
+Power|RadiantFlux;Watt;W;BTUPerHour;BTU/hr;3.415179027;0
+Power|RadiantFlux;Watt;W;BTUPerMinute;BTU/min;0.05691965045;0
+Power|RadiantFlux;Watt;W;BTUPerSecond;BTU/s;0.0009486608408;0
+Power|RadiantFlux;Watt;W;CaloriePerSecond;cal/s;0.2390585106;0
+Power|RadiantFlux;Watt;W;Horsepower;hp;0.00134102209;0
+Power|RadiantFlux;Watt;W;PoundMassFeetPerMinute;lbm.ft/min;44.25372896;0
+Power|RadiantFlux;Watt;W;PoundMassFeetPerSecond;lbm.ft/s;0.7375621493;0
+Pressure|Stress;NewtonPerSquareMeter;N/m²;NewtonPerSquareMeter;N/m²;1;0
+Pressure|Stress;NewtonPerSquareMeter;N/m²;NewtonPerSquareMeter(Pascal);N/m²(Pa);1;0
+Pressure|Stress;NewtonPerSquareMeter;N/m²;Pascal;Pa;1;0
+Pressure|Stress;NewtonPerSquareMeter;N/m²;Atmosphere;atm;9.86923266716E-06;0
+Pressure|Stress;NewtonPerSquareMeter;N/m²;Bar;bar;1/100000;0
+Pressure|Stress;NewtonPerSquareMeter;N/m²;CentiMetersOfMercury;CentiMetersOfMercury;0.000750063755419;0
+Pressure|Stress;NewtonPerSquareMeter;N/m²;DynePerCentiMeterSquared;dyne/cm^2;10;0
+Pressure|Stress;NewtonPerSquareMeter;N/m²;InchOfMercury;InchOfMercury;0.000295300586467;0
+Pressure|Stress;NewtonPerSquareMeter;N/m²;KilogramPerCentiMeterSquared;kg/cm^2;1.01971621298E-05;0
+Pressure|Stress;NewtonPerSquareMeter;N/m²;KilogramPerMeterSquared;kg/m^2;0.101971621298;0
+Pressure|Stress;NewtonPerSquareMeter;N/m²;MilliNewtonPerSquareMilliMeter;kPa;1/1000;0
+Pressure|Stress;NewtonPerSquareMeter;N/m²;Ksi;ksi;0.00000014503773773;0
+Pressure|Stress;NewtonPerSquareMeter;N/m²;NewtonPerSquareMilliMeter;N/mm²;1/1000000;0
+Pressure|Stress;NewtonPerSquareMeter;N/m²;Millibar;mbar;1/100;0
+Pressure|Stress;NewtonPerSquareMeter;N/m²;MilliMeterOfMercury;MilliMeterOfMercury;0.00750063755419;0
+Pressure|Stress;NewtonPerSquareMeter;N/m²;GigaPascal;GPa;1.0E-09;0
+Pressure|Stress;NewtonPerSquareMeter;N/m²;PoundPerFootSquared;lbm/ft^2;0.0208854342331;0
+Pressure|Stress;NewtonPerSquareMeter;N/m²;PoundPerSquareInch;psi;0.00014503773773;0
+Pressure|Stress;NewtonPerSquareMeter;N/m²;PoundalPerInchSquared;pdl/ft^2;0.67196897514;0
+Pressure|Stress;NewtonPerSquareMeter;N/m²;PoundForcePerSquareInch;psi(f);0.00014503773773;0
+Pressure|Stress;NewtonPerSquareMeter;N/m²;TonPerFootSquared;ton/ft^2;1.04427171166E-05;0
+Pressure|Stress;NewtonPerSquareMeter;N/m²;TonPerInchSquared;ton/in^2;7.25188688651E-08;0
+Pressure|Stress;NewtonPerSquareMeter;N/m²;Torr;mmHg;0.00750061682704;0
+SpecificHeat;J/(kg K);J/(kg K);J/(kg K);J/(kg K);1;0
+SpecificHeat;J/(kg K);J/(kg K);J/(g K);J/(g K);1.0E-03;0
+SpecificHeat;J/(kg K);J/(kg K);kJ/(kg K);kJ/(kg K);1/1000;0
+SpecificHeat;J/(kg K);J/(kg K);BTU/lbm-°F;BTU/lbm-°F;2.389E-04;0
+SpecificHeat;J/(kg K);J/(kg K);cal/g-°C;cal/g-°C;2.389E-04;0
+SpecificHeat;J/(kg K);J/(kg K);kcal/kg-°C;kcal/kg-°C;2.389E-04;0
+SpecificHeat;J/(kg K);J/(kg K);J/(g °C);J/(g °C);1.0E-03;0
+SpecificHeat;J/(kg K);J/(kg K);J/(kg °C);J/(kg °C);1;0
+SpecificHeat;J/(kg K);J/(kg K);µJ/(kg °C);µJ/(kg °C);1.0E06;0
+SpecificHeat;J/(kg K);J/(kg K);BTU/lb-°C;BTU/lb-°C;2.389E-04;0
+SpecificHeat;J/(kg K);J/(kg K);BTU/lb-°F;BTU/lb-°F;2.389E-04;0
+Strain;10^-3 km/km;10^-3 km/km;10^-3 km/km;10^-3 km/km;1;0
+Strain;10^-3 km/km;10^-3 km/km;10^-3 hm/hm;10^-3 hm/hm;1;0
+Strain;10^-3 km/km;10^-3 km/km;10^-3 dam/dam;10^-3 dam/dam;1;0
+Strain;10^-3 km/km;10^-3 km/km;10^-3 m/m;10^-3 m/m;1;0
+Strain;10^-3 km/km;10^-3 km/km;10^-3 dm/dm;10^-3 dm/dm;1;0
+Strain;10^-3 km/km;10^-3 km/km;10^-3 cm/cm;10^-3 cm/cm;1;0
+Strain;10^-3 km/km;10^-3 km/km;10^-3 mm/mm;10^-3 mm/mm;1;0
+Strain;10^-3 km/km;10^-3 km/km;10^-3 µm/µm;10^-3 µm/µm;1;0
+Strain;10^-3 km/km;10^-3 km/km;10^-3 mi/mi;10^-3 mi/mi;1;0
+Strain;10^-3 km/km;10^-3 km/km;10^-3 furlong/furlong;10^-3 furlong/furlong;1;0
+Strain;10^-3 km/km;10^-3 km/km;10^-3 yd/yd;10^-3 yd/yd;1;0
+Strain;10^-3 km/km;10^-3 km/km;10^-3 ft/ft;10^-3 ft/ft;1;0
+Strain;10^-3 km/km;10^-3 km/km;10^-3 in./in.;10^-3 in./in.;1;0
+Strain;10^-3 km/km;10^-3 km/km;10^-3 mil/mil;10^-3 mil/mil;1;0
+Strain;10^-3 km/km;10^-3 km/km;10^-3 pc/pc;10^-3 pc/pc;1;0
+Strain;10^-3 km/km;10^-3 km/km;10^-3 ly/ly;10^-3 ly/ly;1;0
+Strain;10^-3 km/km;10^-3 km/km;10^-3 league/league;10^-3 league/league;1;0
+Strain;10^-3 km/km;10^-3 km/km;10^-3 M/M;10^-3 M/M;1;0
+Strain;10^-3 km/km;10^-3 km/km;10^-3 nm/nm;10^-3 nm/nm;1;0
+Strain;10^-3 km/km;10^-3 km/km;10^-3 usFt/usFt;10^-3 usFt/usFt;1;0
+ThermalConductivity;W/(m K);W/(m K);W/(m K);W/(m K);1;0
+ThermalConductivity;W/(m K);W/(m K);BTU-in/hr-ft^2-°F;BTU-in/hr-ft^2-°F;6.94;0
+ThermalConductivity;W/(m K);W/(m K);cal.cm/sec-cm^2-°C;cal.cm/sec-cm^2-°C;0.00239;0
+ThermalConductivity;W/(m K);W/(m K);ft-lb.in./hr-ft^2-°F;ft-lb.in./hr-ft^2-°F;5400;0
+ThermalConductivity;W/(m K);W/(m K);J.m/min-m^2-°C;J.m/min-m^2-°C;60.0;0
+ThermalConductivity;W/(m K);W/(m K);kcal/m-hr-°C;kcal/m-hr-°C;0.860;0
+ThermalConductivity;W/(m K);W/(m K);lb/s-°F;lb/s-°F;0.125;0
+ThermalConductivity;W/(m K);W/(m K);lbm-in/s^3-°F;lbm-in/s^3-°F;48.2;0
+ThermalConductivity;W/(m K);W/(m K);W/(m °C);W/(m °C);1.00;0
+ThermalConductivity;W/(m K);W/(m K);µW/(m °C);µW/(m °C);1e6;0
+ThermalExpansion;1/K;1/K;1/K;1/K;1;0
+ThermalExpansion;1/K;1/K;10^-6 /K;10^-6 /K;1000000;0
+ThermalExpansion;1/K;1/K;1/°C;1/°C;1;0
+ThermodynamicTemperature;Kelvin;K;Kelvin;K;1;0
+ThermodynamicTemperature;Kelvin;K;Rankine;°Ra;9/5;0
+ThermodynamicTemperature;Kelvin;K;Celsius;°C;1;-273.15
+ThermodynamicTemperature;Kelvin;K;Fahrenheit;°F;9/5;-459.67
+Time;Second;s;Second;s;1;0
+Time;Second;s;Hour;hr;1/3600;0
+Time;Second;s;Minute;min;1/60;0
+Time;Second;s;MilliSecond;ms;1000;0
+UNITLESS;UNITLESS;UNITLESS;UNITLESS;UNITLESS;1;0
+Velocity;MeterPerSecond;m/s;MeterPerSecond;m/s;1;0
+Velocity;MeterPerSecond;m/s;KilometerPerHour;km/h;3.6;0
+Velocity;MeterPerSecond;m/s;MillimeterPerSecond;mm/s;1000;0
+Voltage;Volt;V;Volt;V;1;0
+Voltage;Volt;V;MilliVolt;mV;1000;0
+Voltage;Volt;V;MicroVolt;µV;1000000;0
+Voltage;Volt;V;KiloVolt;kV;1/1000;0
+Volume;CubicMeter;m³;CubicMeter;m³;1;0
+Volume;CubicMeter;m³;CubicKiloMeter;km³;1/1000000000;0
+Volume;CubicMeter;m³;CubicDeziMeter;dm³;1000;0
+Volume;CubicMeter;m³;CubicCentiMeter;cm³;1000000;0
+Volume;CubicMeter;m³;CubicMilliMeter;mm³;1000000000;0
+Volume;CubicMeter;m³;CubicInch;in³;61023.7;0
+Volume;CubicMeter;m³;CubicFoot;ft³;35.3147;0
+Volume;CubicMeter;m³;CubicYard;yd³;1.30795062;0
+Volume;CubicMeter;m³;CubicMile;mi³;2.39912759E-10;0
+ElectricalConductivity;SiemensPerMeter;S/m;SiemensPerMeter;S/m;1;0
+ElectricalConductivity;SiemensPerMeter;S/m;SiemensPerCentiMeter;S/cm;1/100;0
+ElectricalConductivity;SiemensPerMeter;S/m;SiemensPerMilliMeter;S/mm;1/1000;0
+ImpactEnergy;JoulePerSquareMeter;J/m²;JoulePerSquareMeter;J/m²;1;0
+ImpactEnergy;JoulePerSquareMeter;J/m²;JoulePerSquareCentiMeter;J/cm²;1/10000;0
+ImpactEnergy;JoulePerSquareMeter;J/m²;JoulePerSquareMilliMeter;J/mm²;1/1000000;0
+CaloricValue;kWh/kg;kWh/kg;kWh/kg;kWh/kg;1;0
+CaloricValue;kWh/kg;kWh/kg;Wh/kg;Wh/kg;1000;0
+CaloricValue;kWh/kg;kWh/kg;kWh/g;kWh/g;1/1000;0
+SpecificElectricalResistance;OhmMeter;Ohm m;OhmMeter;Ohm m;1;0
+SpecificElectricalResistance;OhmMeter;Ohm cm;OhmCentiMeter;Ohm cm;100;0
+SpecificElectricalResistance;OhmMeter;Ohm mm;OhmMilliMeter;Ohm mm;1000;0

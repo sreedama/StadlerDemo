@@ -1,0 +1,21 @@
+<%
+        if( vmo.props && vmo.props[ propName ] )
+        {
+            var makeBuyDecision = vmo.props[ propName ].dbValues[ 0 ];
+            var makeBuyToolTip = vmo.props[ propName ].uiValues[ 0 ];
+            if (makeBuyDecision !== "" && makeBuyDecision !== null) {
+                var imagePath = basePath +'/image/';
+                switch( makeBuyDecision ){
+                    case "E":
+                        imagePath += "indicatorSR5Make16.svg"
+                        break
+                    case "F":
+                        imagePath += "indicatorSR5Buy16.svg"
+                        break
+                    case "X":
+                        imagePath += "indicatorSR5MakeBuy16.svg"
+                        break
+                    }
+                %>
+                <img src ="<%=imagePath%>" title="<%=makeBuyToolTip%>" alt="<%=makeBuyToolTip%>" class="aw-visual-indicator">
+<%      } } %>

@@ -1,0 +1,3 @@
+SR5TechDocumentRevision:owning_group~Gruppen-ID
+SR5TechDocumentRevision:last_release_status~Letzter Freigabestatus
+GroupMember:group~UserGroup

@@ -1,0 +1,73 @@
+############################################################################################################
+#  CNO Object Property Definition File
+############################################################################################################
+# Version History
+#
+# Version    Date           Name               Description of Change
+# 1.0        28-03-2022     testu     Initial
+############################################################################################################
+
+#Process
+C:EPMTask:object_name~object_name
+C:EPMTask:num_targets~num_targets
+
+
+C:ItemRevision>view:bl_rev_checked_out~bl_rev_checked_out
+C:ItemRevision>view:bl_level_starting_0~bl_level_starting_0
+C:ItemRevision>view:bl_rev_object_string~bl_rev_object_string
+C:ItemRevision>view:bl_rev_fnd0InProcess~bl_rev_fnd0InProcess
+C:ItemRevision>view:bl_rev_last_release_status~bl_rev_last_release_status
+C:ItemRevision>view:?bl_rev_object_type~DB_bl_rev_object_type
+C:ItemRevision>view:bl_rev_object_type~bl_rev_object_type
+
+
+#C:ItemRevision:checked_out~checked_out
+C:SR5GenEngObjRevision:?checked_out~checked_out
+C:ItemRevision:fnd0InProcess~fnd0InProcess
+C:ItemRevision:last_release_status~last_release_status
+
+
+C:ItemRevision§IR_ID_REV§|:item_id|_|:item_revision_id|
+C:ItemRevision>view§BL_ID_REV§|bl_rev_item_id|_|bl_rev_item_revision_id|
+
+
+#Qchecker: temporary solution until deployment of rela solution
+CATPart:sr5QCheckEvaluation~sr5QCheckEvaluation
+CATProduct:sr5QCheckEvaluation~sr5QCheckEvaluation
+CATDrawing:sr5QCheckEvaluation~sr5QCheckEvaluation
+
+
+#Type of selected object
+C:ItemRevision:?object_type~DB_Type
+#C:ItemRevision:object_string~String
+C:ItemRevision:object_type~Type
+
+#Group member
+GroupMember:group
+C:SR5GenEngObjRevision§Current Group Name§|SESSION_ACTIVE_GROUP|
+C:SR5GenEngObjRevision§Current Role Name§|SESSION_ACTIVE_ROLE|
+
+
+#SAP
+C:SR5GenEngObjRevision:object_desc
+#C:SR5GenEngObj:sr5SAPMaterialType
+#alias inside expansion only on rev not on I (ContextualRevision:sr5SAPMaterialGroup)
+SR5EngArticle:sr5SAPMaterialType
+#C:SR5GenEngObj:sr5SAPMaterialGroup
+SR5EngArticle:sr5SAPMaterialGroup
+C:SR5GenEngObj:uom_tag
+
+#checked-out
+C:Dataset:?checked_out~checked_out
+C:Dataset:object_type
+C:Dataset:last_release_status~last_release_status
+C:Form:?checked_out~checked_out
+C:Form:object_type
+C:Form:last_release_status~last_release_status
+#C:SR5GenEngObjRevision:?checked_out~checked_out
+C:PSBOMViewRevision:?checked_out~checked_out
+C:PSBOMViewRevision:object_type
+C:PSBOMViewRevision:last_release_status~last_release_status
+
+#contextual link management
+CATPart:catiaV5_MMLAssy

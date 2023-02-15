@@ -1,0 +1,1105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<preferences version="10.0">
+  <category name="Integration.CATIA">
+    <category_description>Teamcenter Preferences</category_description>
+	
+	<!-- Environment -->
+	<preference name="CATIA_CE_EnvList" type="String" array="true" disabled="false" protectionScope="User" envEnabled="false">
+	  <preference_description>Names list of CE associated to environments</preference_description>
+	  <context name="Teamcenter">
+		<value></value>
+	  </context>
+	</preference>
+
+	<preference name="CATIA_check_env" type="String" array="false" disabled="false" protectionScope="User" envEnabled="false">
+	  <preference_description>Manage or not multiple Catia environment
+Pssible values :
+NONE - Multiple CATIA environments and CATIA revisions are not managed
+REV - The CATIA version is only managed. The CATIA version and environment is written to the form during a Save operation. The CATIA version is written to the form during a Load operation. CATIA_CE_EnvList and CATIA_CE_Alias_xxx should be defined
+ENV - The CATIA version and environment are managed. The CATIA version and environment are written to the form during a Save operation. The CATIA version is written to the form during a Load operation. If a CATIA session does not exist, the environment written in the form of the root is used to launch CATIA with the correct environment. CATIA_CE_EnvList and CATIA_CE_Alias_xxx should be defined</preference_description>
+	  <context name="Teamcenter">
+		<value>NONE</value>
+	  </context>
+	</preference>
+	
+	<preference name="CATIA_customize_load_process" type="Integer" array="false" disabled="false" protectionScope="User" envEnabled="false">
+      <preference_description>Determine which type of document (Part or Product) will be loaded in CATIA when an item or an item revision is selected
+0 (or not 1) : the process analyzes the branches of the BOM tree, and stops when a node does not contain a valid CATIA BOM. In this case, cat_USER_has_children returns Answer=FALSE and the item is considered a leaf of the tree(component). 
+1 : the process analyzes the dataset types under the given item revision and checks whether the BOM View revision contains occurrences</preference_description>
+      <context name="Teamcenter">
+        <value>1</value>
+      </context>
+    </preference>
+
+	<preference name="CATIA_credential_sharing_for_racless_connection" type="String" array="false" disabled="false" protectionScope="User" envEnabled="false">
+	  <preference_description>CATIA_credential_sharing_for_racless_connection</preference_description>
+	  <context name="Teamcenter">
+		<value>true</value>
+	  </context>
+    </preference>
+
+	<!-- AWC -->
+    <preference name="AWC_TCIC_OpenSupportedTypes" type="String" array="true" disabled="false" protectionScope="User" envEnabled="false">
+      <preference_description>Specifies for what object types the &quot;Open in &lt;CAD App&gt;&quot; command should be available for your CAD application.</preference_description>
+      <context name="Teamcenter">
+        <value>SR5EngEndItem</value>
+        <value>SR5EngEndItemRevision</value>
+        <value>SR5EngMajorAssy</value>
+        <value>SR5EngMajorAssyRevision</value>
+        <value>SR5EngArticle</value>
+        <value>SR5EngArticleRevision</value>
+        <value>SR5EngArticleAR</value>
+        <value>SR5EngArticleARRevision</value>
+        <value>SR5NonERPArticle</value>
+        <value>SR5NonERPArticleRevision</value>
+        <value>SR5GenCatPart</value>
+        <value>SR5GenCatPartRevision</value>
+        <value>SR5EngEnv</value>
+        <value>SR5EngEnvRevision</value>
+        <value>Awb0SavedBookmark</value>
+        <value>CATAnalysis</value>
+        <value>CATCatalog</value>
+        <value>CATDrawing</value>
+        <value>catia</value>
+        <value>CATPart</value>
+        <value>CATProcess</value>
+        <value>CATProduct</value>
+        <value>CATShape</value>
+        <value>SR5CatDefArticle</value>
+        <value>SR5CatDefArticleRevision</value>
+        <value>SR5CatDefArtAR</value>
+        <value>SR5CatDefArtARRevision</value>
+        <value>SR5EngInstallLoc</value>
+        <value>SR5EngInstallLocRevision</value>
+        <value>SR5ElectricAssy</value>
+        <value>SR5ElectricAssyRevision</value>
+        <value>SR5DrawingDoc</value>
+        <value>SR5DrawingDocRevision</value>
+        <value>SR5EngRawArticle</value>
+        <value>SR5EngRawArticleRevision</value>
+      </context>
+    </preference>
+    <preference name="AWC_TCIC_ShowObjectDatasetTypes" type="String" array="true" disabled="false" protectionScope="User" envEnabled="false">
+      <preference_description>Gives the list of dataset types, for which the default Active Workspace &quot;Open&quot; action should be overridden to open the object in CAD.</preference_description>
+      <context name="Teamcenter">
+        <value>CATAnalysis</value>
+        <value>CATCatalog</value>
+        <value>CATDrawing</value>
+        <value>catia</value>
+        <value>CATPart</value>
+        <value>CATProcess</value>
+        <value>CATProduct</value>
+        <value>CATShape</value>
+      </context>
+    </preference>
+    <preference name="CATIA_show_in_teamcenter_option" type="String" array="false" disabled="false" protectionScope="User" envEnabled="false">
+      <preference_description>Determines which client the &quot;Show in Teamcenter&quot; command should open when  the Teamcenter Integration for CATIA V5 Loader is connected to RACLess application and there is an AW client defined in the client_env file.
+Possible values:
+- AW : Open the selected item in Active Workspace.
+- LOADER: Open the selected item in TcIC Loader
+- DISPLAY : Displays  a panel to select either the Active Workspace or Teamcenter Integration for CATIA Loader to open the selected item in.</preference_description>
+      <context name="Teamcenter">
+        <value>AW</value>
+      </context>
+    </preference>
+	
+	<!-- Master-Model / Object Types -->
+    <preference name="CATIA_auto_attach_to_3d_item" type="Logical" array="false" disabled="false" protectionScope="User" envEnabled="false">
+      <preference_description>Drawing, process, analysis has the same item id and item rev id as the attached element or not</preference_description>
+      <context name="Teamcenter">
+        <value>true</value>
+      </context>
+    </preference>
+
+    <preference name="CATIA_item_type" type="String" array="false" disabled="false" protectionScope="User" envEnabled="false">
+      <preference_description>Define a list of item types to use when saving a part, product, drawing, process, analysis or design table, by setting the following variables within Teamcenter Preferences.
+The default value of the item type is determined as follows:
+If the item type is defined in the CATPART_item_type, CATPRODUCT_item_type, etc. preference, then the item type used is the first listed in the preference list. The Save Manager only displays the available (defined) item types.
+If the item type preference is not defined, a list of all item types available in Teamcenter displays, and the default item type is defined by the CATIA_item_type Teamcenter Preference. If this type is not available then the first item type in Teamcenter list is the default item type.
+When Create New is applied from the Save Manager, the displayed item type is the existing item type. If this type is not available, then default values are used.</preference_description>
+      <context name="Teamcenter">
+        <value>SR5EngArticle</value>
+        <value>SR5EngArticleAR</value>
+        <value>SR5EngEndItem</value>
+        <value>SR5EngMajorAssy</value>
+        <value>SR5EngEnv</value>
+        <value>SR5GenCatPart</value>
+		<value>SR5NonERPArticle</value>
+        <value>SR5CatDefArticle</value>
+        <value>SR5CatDefArtAR</value>
+        <value>SR5EngInstallLoc</value>
+        <value>SR5DrawingDoc</value>
+        <value>SR5EngRawArticle</value>
+	  </context>
+    </preference>
+	<preference name="CATIA_savemanager_unmodifiable_attr_list" type="String" array="true" disabled="false" protectionScope="User" envEnabled="false">
+      <preference_description>This preference defines an attribute list. These attributes will not be modified in the SaveManager.
+The attribute list must adhere to the naming format &quot;keyword.attributename&quot;.
+List of keywords:
+- For item&apos;s attribute = Item.
+- For item revision&apos;s attribute = ItemRev.
+- For item master form&apos;s attribute = ItemMaster.
+- For item revision master form&apos;s attribute = ItemRevMaster.
+- For dataset&apos;s attribute = Dst.
+The attributename should be the attribute real name.
+For example: Item.item_id; ItemRev.item_revision_id; Dst.pubr_object_id; Dst.object_name</preference_description>
+      <context name="Teamcenter">
+        <value>Item.item_id</value>
+        <value>ItemRev.item_revision_id</value>
+      </context>
+    </preference>
+	
+    <preference name="CATPRODUCT_item_type" type="String" array="true" disabled="false" protectionScope="User" envEnabled="false">
+      <preference_description>Define a list of item types to use when saving a part, product, drawing, process, analysis or design table, by setting the following variables within Teamcenter Preferences.
+The default value of the item type is determined as follows:
+If the item type is defined in the CATPART_item_type, CATPRODUCT_item_type, etc. preference, then the item type used is the first listed in the preference list. The Save Manager only displays the available (defined) item types.
+If the item type preference is not defined, a list of all item types available in Teamcenter displays, and the default item type is defined by the CATIA_item_type Teamcenter Preference. If this type is not available then the first item type in Teamcenter list is the default item type.
+When Create New is applied from the Save Manager, the displayed item type is the existing item type. If this type is not available, then default values are used.</preference_description>
+      <context name="Teamcenter">
+        <value>SR5EngArticle</value>
+        <value>SR5EngArticleAR</value>
+        <value>SR5EngMajorAssy</value>
+        <value>SR5EngEndItem</value>
+        <value>SR5EngEnv</value>
+		<value>SR5NonERPArticle</value>
+        <!--<value>SR5CatDefArticle</value>-->
+        <!--<value>SR5CatDefArtAR</value>-->
+        <value>SR5EngInstallLoc</value>
+        <value>SR5DrawingDoc</value>
+      </context>
+    </preference>
+
+    <preference name="CATPART_item_type" type="String" array="true" disabled="false" protectionScope="User" envEnabled="false">
+      <preference_description>Define a list of item types to use when saving a part, product, drawing, process, analysis or design table, by setting the following variables within Teamcenter Preferences.
+The default value of the item type is determined as follows:
+If the item type is defined in the CATPART_item_type, CATPRODUCT_item_type, etc. preference, then the item type used is the first listed in the preference list. The Save Manager only displays the available (defined) item types.
+If the item type preference is not defined, a list of all item types available in Teamcenter displays, and the default item type is defined by the CATIA_item_type Teamcenter Preference. If this type is not available then the first item type in Teamcenter list is the default item type.
+When Create New is applied from the Save Manager, the displayed item type is the existing item type. If this type is not available, then default values are used.</preference_description>
+      <context name="Teamcenter">
+        <value>SR5EngArticle</value>
+        <value>SR5EngArticleAR</value>
+        <value>SR5GenCatPart</value>
+        <value>SR5GenCatPartAR</value>
+        <value>SR5Weld</value>
+		<value>SR5NonERPArticle</value>
+        <value>SR5CatDefArticle</value>
+        <value>SR5CatDefArtAR</value>
+        <value>SR5EngRawArticle</value>
+      </context>
+    </preference>
+
+    <preference name="CATDRAWING_item_type" type="String" array="true" disabled="false" protectionScope="User" envEnabled="false">
+      <preference_description>Define a list of item types to use when saving a part, product, drawing, process, analysis or design table, by setting the following variables within Teamcenter Preferences.
+The default value of the item type is determined as follows:
+If the item type is defined in the CATPART_item_type, CATPRODUCT_item_type, etc. preference, then the item type used is the first listed in the preference list. The Save Manager only displays the available (defined) item types.
+If the item type preference is not defined, a list of all item types available in Teamcenter displays, and the default item type is defined by the CATIA_item_type Teamcenter Preference. If this type is not available then the first item type in Teamcenter list is the default item type.
+When Create New is applied from the Save Manager, the displayed item type is the existing item type. If this type is not available, then default values are used.</preference_description>
+      <context name="Teamcenter">
+        <value>SR5EngArticle</value>
+        <value>SR5EngMajorAssy</value>
+        <value>SR5GenCatPart</value>
+        <value>SR5EngEnv</value>
+		<value>SR5NonERPArticle</value>
+        <value>SR5CatDefArticle</value>
+        <value>SR5CatDefArtAR</value>
+		<value>SR5EngInstallLoc</value>
+        <value>SR5DrawingDoc</value>
+        <value>SR5EngRawArticle</value>
+        <value>SR5Weld</value>
+      </context>
+    </preference>
+	
+	
+    <preference name="CATIA_catalog_item_type" type="String" array="true" disabled="false" protectionScope="User" envEnabled="false">
+      <preference_description>List of item types used when saving a catalog.</preference_description>
+      <context name="Teamcenter">
+        <value>SR5EngArticle</value>
+        <value>SR5GenCatPart</value>
+		<value>SR5NonERPArticle</value>
+        <value>SR5CatDefArticle</value>
+      </context>
+    </preference>
+
+	<!-- TODO: Foreign Types -->
+	
+	<!-- TODO: Seed Parts -->
+    <preference name="CATIA_seed_drawing_id" type="String" array="false" disabled="false" protectionScope="User" envEnabled="false">
+      <preference_description>Define the ID of an item for a seed document drawing</preference_description>
+      <context name="Teamcenter">
+        <value>IMCATIADrawing</value>
+      </context>
+    </preference>
+    <preference name="CATIA_seed_part_id" type="String" array="false" disabled="false" protectionScope="User" envEnabled="false">
+      <preference_description>Define the ID of an item for a seed document part</preference_description>
+      <context name="Teamcenter">
+        <value>IMCATIAPart</value>
+      </context>
+    </preference>
+    <preference name="CATIA_seed_process_id" type="String" array="false" disabled="false" protectionScope="User" envEnabled="false">
+      <preference_description>Define the ID of an item for a seed document process</preference_description>
+      <context name="Teamcenter">
+        <value>IMCATIAProcess</value>
+      </context>
+    </preference>
+    <preference name="CATIA_seed_product_id" type="String" array="false" disabled="false" protectionScope="User" envEnabled="false">
+      <preference_description>Define the ID of an item for a seed document product</preference_description>
+      <context name="Teamcenter">
+        <value>IMCATIAProduct</value>
+      </context>
+    </preference>
+	
+	<!-- CICO / LoadSave-Options -->
+    <preference name="CATIA_LoadUpdateSave_CheckinAfterUpdate" type="Logical" array="false" disabled="false" protectionScope="User" envEnabled="false">
+      <preference_description>At the end of this process, each component saved will be checked into Teamcenter.
+If the variable is set to false, then each item saved will remain checked out at the end of process.
+The default value is true</preference_description>
+      <context name="Teamcenter">
+        <value>true</value>
+      </context>
+    </preference>
+	
+	<preference name="CATIA_activate_latestActiveShapes" type="Integer" array="false" disabled="false" protectionScope="User" envEnabled="false">
+      <preference_description>Customize the activate latest active shapes setting used during the Load process. 
+This value is modified when the Activate Latest Active Shape option in the CATIA (V5) menu is toggled on or off.
+The default value for this setting is 1</preference_description>
+      <context name="Teamcenter">
+        <value>1</value>
+      </context>
+    </preference>
+	
+	<preference name="CATIA_manage_configurations_on_load_from_CATIA" type="String" array="false" disabled="false" protectionScope="User" envEnabled="false">
+      <preference_description>Manage configurations on open BOM windows during the Load from CATIA or Update Status processes.  
+Possible values: 
+- YES: Use Configuration defined in the dat file if it exists; else if Client_0 is running, use the opened BOM window and its corresponding configurations; else create a new BOM window using default configurations.
+- YES_BLOCKER: When Client_0 is running, use Configuration defined in the dat file if it exists; else use the opened BOM window and its corresponding configurations; else stop the process. When Client_0 is no running, use Configuration defined in the dat file if it exists; else create a new BOM window using default configurations.
+- NO: Create a new BOM window using default configurations.
+- NO_CONFIG: Create a new BOM window without any configurations.
+- TC_CONFIG: Use the opened BOM window and its corresponding configurations; else use Configuration defined in the dat file if it exists; else create a new BOM window with default configurations.</preference_description>
+      <context name="Teamcenter">
+        <value>YES</value>
+      </context>
+    </preference>
+	
+	
+    <preference name="CATIA_LoadUpdateSave_DrawingUpdate" type="Logical" array="false" disabled="false" protectionScope="User" envEnabled="false">
+      <preference_description>Each Drawing that is linked to the selected component is also updated. However, if the Load/Update/Save process is performed on a dataset, only the dataset is updated.
+Linked Drawings are not updated when a Load/Update/Save process is performed on a dataset. 
+Please see Rules and Conventions within the Load_Update_Save Process documentation for additional information.
+The default value is false</preference_description>
+      <context name="Teamcenter">
+        <value>false</value>
+      </context>
+    </preference>
+
+    <preference name="CATIA_LoadUpdateSave_modified_file_option" type="String" array="false" disabled="false" protectionScope="User" envEnabled="false">
+      <preference_description>Set the CATIA_LoadUpdateSave_modified_file_option preference to:
+- NONE to save modified files only (default value) or 
+- ALL to save both modified and unmodified files or
+- PARENTS to only save both modified files and their parents hierarchy 
+This preference has an interaction on the Load Update Save option in the CATIA V5 menus.</preference_description>
+      <context name="Teamcenter">
+        <value>NONE</value>
+      </context>
+    </preference>
+	
+    <preference name="CATIA_cico_ask_confirmation_action_from_ui" type="Logical" array="false" disabled="false" protectionScope="User" envEnabled="false">
+      <preference_description>Controls the display of the Check-in/Check-out panel.
+Values:
+True: Display the Check-in / Check-out panel containing the OK button and require user interaction to start the action
+False: Prevents the Check-in/Check-out panel from being displayed and starts the action without user interaction, so users can not define Change ID and comments for a check-out action. The Check-in/Check-out panel displays if errors occur.</preference_description>
+      <context name="Teamcenter">
+        <value>true</value>
+      </context>
+    </preference>
+	
+	<!-- CGR --> 
+   <preference name="CATIA_cache_managed_on_load" type="Logical" array="false" disabled="false" protectionScope="User" envEnabled="false">
+      <preference_description>Manage cache or not during load process</preference_description>
+      <context name="Teamcenter">
+        <value>true</value>
+      </context>
+    </preference>
+    <preference name="CATIA_cache_managed_on_save" type="Logical" array="false" disabled="false" protectionScope="User" envEnabled="false">
+      <preference_description>Manage cache or not during save process</preference_description>
+      <context name="Teamcenter">
+        <value>true</value>
+      </context>
+    </preference>	
+	
+	<!-- Base Mapping -->
+    <preference name="CATIA_create_catia_properties_for_mapping" type="Logical" array="false" disabled="false" protectionScope="User" envEnabled="false">
+      <preference_description>Set the CATIA_create_catia_properties_for_mapping variable to true to create non-standard CATIA properties corresponding to mappings if they are found. 
+Set this variable to false to prevent non-standard CATIA properties corresponding to mappings from being created, even if they are found</preference_description>
+      <context name="Teamcenter">
+        <value>true</value>
+      </context>
+    </preference>
+	
+    <preference name="CATIA_MAP_Property_Nomenclature" type="String" array="true" disabled="false" protectionScope="User" envEnabled="false">
+      <preference_description>Declare two Teamcenter attributes to define the Nomenclature and PartNumber properties in CATIA by setting the following variables within Teamcenter Preferences.
+CATIA_MAP_Property_Nomenclature=
+Dataset.object_name
+CATIA_MAP_Property_PartNumber=
+Item.object_name
+A blank line marks the end of the definition.
+In this example, dataset name (Dataset.object_name) defines a value of the Nomenclature property in CATIA and item name (Item.object_name) defines a value of the PartNumber property in CATIA.
+A list of attributes can be defined for both values to define their properties. Attribute values are separated by the value of theCATIA_reference_product_partnumber Teamcenter Preference.
+The attribute name corresponds to the Teamcenter Property Display Name which depends on Teamcenter localization.</preference_description>
+      <context name="Teamcenter">
+        <value></value>
+      </context>
+    </preference>
+	
+    <preference name="CATIA_MAP_Property_PartNumber" type="String" array="true" disabled="false" protectionScope="User" envEnabled="false">
+      <preference_description>Declare two Teamcenter attributes to define the Nomenclature and PartNumber properties in CATIA by setting the following variables within Teamcenter Preferences.
+CATIA_MAP_Property_Nomenclature=
+Dataset.object_name
+CATIA_MAP_Property_PartNumber=
+Item.object_name
+A blank line marks the end of the definition.
+In this example, dataset name (Dataset.object_name) defines a value of the Nomenclature property in CATIA and item name (Item.object_name) defines a value of the PartNumber property in CATIA.
+A list of attributes can be defined for both values to define their properties. Attribute values are separated by the value of theCATIA_reference_product_partnumber Teamcenter Preference.
+The attribute name corresponds to the Teamcenter Property Display Name which depends on Teamcenter localization.</preference_description>
+      <context name="Teamcenter">
+        <value>Item.item_id</value>
+      </context>
+    </preference>
+	
+	<!-- File Name Format -->
+    <preference name="CATIA_part_file_name_format" type="String" array="false" disabled="false" protectionScope="User" envEnabled="false">
+      <preference_description>File name creation pattern for part and products
+Possible values :
+{0} - item id
+{1} - item rev id
+{2} - item rev name
+{3} - item type
+{4} - item rev description
+{5} - dataset name
+{6} - dataset type
+{7} - dataset description
+{8} - link type
+{9} - dataset uid</preference_description>
+      <context name="Teamcenter">
+        <value>{10}</value>
+      </context>
+    </preference>
+	
+    <preference name="CATIA_drawing_file_name_format" type="String" array="false" disabled="false" protectionScope="User" envEnabled="false">
+      <preference_description>File name creation pattern for drawing
+Possible values :
+{0} - item id
+{1} - item rev id
+{2} - item rev name
+{3} - item type
+{4} - item rev description
+{5} - dataset name
+{6} - dataset type
+{7} - dataset description
+{8} - link type
+{9} - dataset uid</preference_description>
+      <context name="Teamcenter">
+        <value>{10}</value>
+      </context>
+    </preference>
+	
+    <preference name="CATIA_foreignfile_file_name_format" type="String" array="false" disabled="false" protectionScope="User" envEnabled="false">
+      <preference_description>Specifies the filename format of  foreign files
+Possible values :
+{0} - item id
+{1} - item rev id
+{2} - item rev name
+{3} - item type
+{4} - item rev description
+{5} - dataset name
+{6} - dataset type
+{7} - dataset description
+{8} - link type
+{9} - dataset uid</preference_description>
+      <context name="Teamcenter">
+        <value>{0}_{1}</value>
+      </context>
+    </preference>
+	
+	<!-- Save Manager Defaults -->
+    <preference name="SAVEMANAGER_always_displayed_on_save" type="Logical" array="false" disabled="false" protectionScope="User" envEnabled="false">
+      <preference_description>Save Manager is displayed during Save process from CATIA whereas user interaction is not needed (true) or not (false)</preference_description>
+      <context name="Teamcenter">
+        <value>true</value>
+      </context>
+    </preference>
+	
+    <preference name="SAVEMANAGER_use_existing_item_revision" type="String" array="false" disabled="false" protectionScope="User" envEnabled="false">
+      <preference_description>During Save mode USE EXISTING DATASET or USE EXSITING ITEM, latest revision of item has to be searched automatically in database(LATEST) or not (NONE)</preference_description>
+      <context name="Teamcenter">
+        <value>NONE</value>
+      </context>
+    </preference>
+	
+    <preference name="CATIA_checkIn_option" type="Logical" array="false" disabled="false" protectionScope="User" envEnabled="false">
+      <preference_description>Use the following variable within Teamcenter Preferences to customize the toggle buttons of the Save Manager toolbar.
+Use the following variable within Teamcenter Preferences to customize the toggle buttons of the Save Manager toolbar.
+Customize the Compute Mass Properties button.</preference_description>
+      <context name="Teamcenter">
+        <value>true</value>
+      </context>
+    </preference>
+	
+    <preference name="CATIA_savemanager_unmodifiable_assigned_attr_list" type="String" array="true" disabled="false" protectionScope="User" envEnabled="false">
+      <preference_description>This preference defines an attribute list. These attributes will not be modified once they are assigned in the SaveManager.
+The attribute list must adhere to the naming format &quot;keyword.attributename&quot;.
+List of keywords:
+- For item&apos;s attribute = Item.
+- For item revision&apos;s attribute = ItemRev.
+- For item master form&apos;s attribute = ItemMaster.
+- For item revision master form&apos;s attribute = ItemRevMaster.
+- For dataset&apos;s attribute = Dst.
+The attributename should be the attribute real name.
+For example: Item.item_id; ItemRev.item_revision_id</preference_description>
+      <context name="Teamcenter">
+        <value>Item.item_id</value>
+        <value>ItemRev.item_revision_id</value>
+      </context>
+    </preference>
+
+    <preference name="CATIA_createJT_option" type="Logical" array="false" disabled="false" protectionScope="User" envEnabled="false">
+      <preference_description>Use the following variable within Teamcenter Preferences to customize the toggle buttons of the Save Manager toolbar.
+Customize the Create the JT button.</preference_description>
+      <context name="Teamcenter">
+        <value>true</value>
+      </context>
+    </preference>
+	  <preference name="CATIA_do_not_record_user_action" type="Logical" array="false" disabled="false" protectionScope="User" envEnabled="false">
+      <preference_description>When the Create JT option has been changed in the Save Manager, set the CATIA_do_not_record_user_action preference to jt to reset the CATIA_createJT_option to its previous value after each save.  This ensures that subsequent saves do not create a JT unnecessarily and the next save process executes with the value of CATIA_createJT_option.</preference_description>
+      <context name="Teamcenter">
+        <value>jt</value>
+      </context>
+    </preference>
+    <preference name="CATIA_do_not_deactivate_shapes_on_refresh" type="Logical" array="false" disabled="false" protectionScope="User" envEnabled="false">
+      <preference_description>Do not maintain CATPart shapes deactivation on refresh.
+True: do not maintain CATPart shapes deactivation on refresh.
+False: legacy behavior</preference_description>
+      <context name="Teamcenter">
+        <value>false</value>
+      </context>
+    </preference> <preference name="CATIA_double_parameter_unit_conversion" type="Double" array="false" disabled="false" protectionScope="User" envEnabled="false">
+      <preference_description>Coefficient used to convert the units of measure between Teamcenter and CATIA for the values of the Double parameter :
+X value of Teamcenter = Conversion coefficient * X value of CATIA
+The default value, 1, is used when the preference does not exist, if it is empty or incorrect , no unit conversion is done</preference_description>
+      <context name="Teamcenter">
+        <value>1</value>
+      </context>
+    </preference>
+	
+    <preference name="CATIA_savemanager_auto_assign_item_rev_ids" type="Logical" array="false" disabled="false" protectionScope="User" envEnabled="false">
+      <preference_description>true = Manage auto-assign IDs during a Save selection in the Save Manager
+false = Do not manage auto-assign IDs during a Save selection in the Save Manager</preference_description>
+      <context name="Teamcenter">
+        <value>true</value>
+      </context>
+    </preference>
+
+    <preference name="CATIA_savemanager_auto_ids_option" type="Logical" array="false" disabled="false" protectionScope="User" envEnabled="false">
+      <preference_description>True : Auto ids check box is toggled on
+False : Auto ids check box is toggled off  
+By default the value is set to true.</preference_description>
+      <context name="Teamcenter">
+        <value>true</value>
+      </context>
+    </preference>
+	
+    <preference name="CATIA_savemanager_map_ir_item_id" type="String" array="false" disabled="false" protectionScope="User" envEnabled="false">
+      <preference_description>Map item_id attribute diplayed in Item Revision section of Save Manager with any of CATIA property</preference_description>
+      <context name="Teamcenter">
+        <value></value>
+      </context>
+    </preference>
+
+    <preference name="CATIA_savemanager_map_ir_item_revision_id" type="String" array="false" disabled="false" protectionScope="User" envEnabled="false">
+      <preference_description>Map item_revision attribute diplayed in Item Revision section of Save Manager with any of CATIA property</preference_description>
+      <context name="Teamcenter">
+        <value></value>
+      </context>
+    </preference>
+
+    <preference name="CATIA_savemanager_map_ir_object_desc" type="String" array="false" disabled="false" protectionScope="User" envEnabled="false">
+      <preference_description>Map object_desc attribute diplayed in Item Revision section of Save Manager with any of CATIA property</preference_description>
+      <context name="Teamcenter">
+        <value>description</value>
+      </context>
+    </preference>
+
+    <preference name="CATIA_savemanager_map_ir_object_name" type="String" array="false" disabled="false" protectionScope="User" envEnabled="false">
+      <preference_description>Map object_name attribute diplayed in Item Revision section of Save Manager with any of CATIA property</preference_description>
+      <context name="Teamcenter">
+        <value>definition</value>
+      </context>
+    </preference>
+
+    <preference name="CATIA_savemanager_map_ir_object_type" type="String" array="false" disabled="false" protectionScope="User" envEnabled="false">
+      <preference_description>Map object_type attribute diplayed in Item Revision section of Save Manager with any of CATIA property</preference_description>
+      <context name="Teamcenter">
+        <value>ItemType</value>
+      </context>
+    </preference>
+	
+	<!-- Queries -->
+    <preference name="CATIA_ifs_catproduct_query" type="String" array="false" disabled="false" protectionScope="User" envEnabled="false">
+      <preference_description>Customize the product query to define the query name.
+The default value is IFS_CATProduct_query.</preference_description>
+      <context name="Teamcenter">
+        <value>IFS_CATProduct_query</value>
+      </context>
+    </preference>
+	
+    <preference name="CATIA_ifs_catpart_query" type="String" array="false" disabled="false" protectionScope="User" envEnabled="false">
+      <preference_description>Customize the part query to define the query name.
+The default value is IFS_CATPart_query</preference_description>
+      <context name="Teamcenter">
+        <value>IFS_CATPart_query</value>
+      </context>
+    </preference>
+	
+    <preference name="CATIA_ifs_catdrawing_query" type="String" array="false" disabled="false" protectionScope="User" envEnabled="false">
+      <preference_description>Customize the drawing query to define the query name.
+The default value is IFS_CATDrawing_query</preference_description>
+      <context name="Teamcenter">
+        <value>IFS_CATDrawing_query</value>
+      </context>
+    </preference>
+	
+	<!-- JT -->
+    <preference name="CATIA_ETS_catiav5tojtdirect_available" type="Logical" array="false" disabled="false" protectionScope="User" envEnabled="false">
+      <preference_description>Manage JT conversion with ETS or not</preference_description>
+      <context name="Teamcenter">
+        <value>true</value>
+      </context>
+    </preference>
+	
+    <preference name="CATIA_convert_to_jt_with_product" type="String" array="true" disabled="false" protectionScope="User" envEnabled="false">
+      <preference_description>Specifies the list of additional elements managed when a product is converted to a JT. By default, only the product is converted.
+Possible values:
+ASR = convert product with its alternate shape representation.
+CSR = convert product with its component shape representation 
+SP = convert product with its secondary parts and secondary products</preference_description>
+      <context name="Teamcenter">
+        <value></value>
+      </context>
+    </preference>
+	
+	
+    <preference name="CATIA_ETS_translation_services" type="String" array="true" disabled="false" protectionScope="User" envEnabled="false">
+      <preference_description>List of translation services</preference_description>
+      <context name="Teamcenter">
+        <value>CATIA_translation_service_name</value>
+        <value>CATIA_V4_translation_service_name</value>
+      </context>
+    </preference>
+	
+	<!-- CGR -->
+    <preference name="CATIA_load_as_cgr" type="Logical" array="false" disabled="false" protectionScope="User" envEnabled="false">
+      <preference_description>true = Load as Cgr menu option is active
+false = Load as Cgr menu is inactive</preference_description>
+      <context name="Teamcenter">
+        <value>false</value>
+      </context>
+    </preference>
+	
+    <preference name="CATIA_manage_load_as_cgr_with_components" type="Logical" array="false" disabled="false" protectionScope="User" envEnabled="false">
+      <preference_description>Manage component cache during the Load as cgr and Replace Load as cgr processes (true)
+Manage dummy parts during the Load as cgr and Replace Load as cgr processes (false)</preference_description>
+      <context name="Teamcenter">
+        <value>true</value>
+      </context>
+    </preference>
+	
+	<!-- BOM -->
+    <preference name="CATIA_load_bom_traversal_option" type="String" array="false" disabled="false" protectionScope="User" envEnabled="false">
+      <preference_description>Manages the Load level for a selected BOM Line (full depth, selected BOM Line and its direct children, selected BOM Line and its parents).
+Possible Values :
+THROUGH : the complete selected sub-assembly is exported, including all parents and all children. All children components of all sub-assemblies are exported recursively.
+FIRST_LEVEL : all parents and only the first level of its children components are exported. Children components of sub-assemblies are not exported.</preference_description>
+      <context name="Teamcenter">
+        <value>THROUGH</value>
+      </context>
+    </preference>
+
+    <preference name="CATIA_load_unconfigured_displayed_bomlines" type="Logical" array="false" disabled="false" protectionScope="User" envEnabled="false">
+      <preference_description>TRUE : all parts and products with Variant and Effectivity Conditions are loaded, when used in conjunction with the following menu options:
+All parts and products containing Effectivity Conditions are loaded when the Show Unconfigured by Occurrence Effectivity menu option is activated. Parts/products that do not contain Effectivity conditions will not be loaded and display a broken icon. 
+All parts and products containing Variant Conditions are loaded when the Show Unconfigured Variants menu option is activated. Parts/products that do not contain Variant Conditions will not be loaded and display a broken icon. 
+FALSE : parts and products containing Variant and Effectivity Conditions are never loaded and display a broken icon</preference_description>
+      <context name="Teamcenter">
+        <value>false</value>
+      </context>
+    </preference>
+
+	<!-- Drawing -->
+    <preference name="CATIA_update_drawing_before_saving" type="Logical" array="false" disabled="false" protectionScope="User" envEnabled="false">
+      <preference_description>Set the CATIA_update_drawing_before_saving variable to true to update the drawing in CATIA during the Save process. 
+Set this variable to false to prevent drawings from being updated in CATIA during the Save process.</preference_description>
+      <context name="Teamcenter">
+        <value>false</value>
+      </context>
+    </preference>
+	
+    <preference name="CATIA_dwg_save_aux_for_details_sheets" type="Logical" array="false" disabled="false" protectionScope="User" envEnabled="false">
+      <preference_description>Set the CATIA_dwg_save_aux_for_details_sheets variable to true to save auxiliary files corresponding to Detail Sheets to Teamcenter. 
+Set this variable to false to prevent auxiliary files corresponding to Detail Sheets from being saved to Teamcenter.</preference_description>
+      <context name="Teamcenter">
+        <value>false</value>
+      </context>
+    </preference>
+	
+	<!-- SaveAs / Revise PostActions -->
+    <preference name="CATIA_apply_post_action_on_revise" type="Logical" array="false" disabled="false" protectionScope="User" envEnabled="false">
+      <preference_description>Apply or not Teamcenter Revise post action</preference_description>
+      <context name="Teamcenter">
+        <value>true</value>
+      </context>
+    </preference>
+    <preference name="CATIA_apply_post_action_on_saveas" type="Logical" array="false" disabled="false" protectionScope="User" envEnabled="false">
+      <preference_description>Apply or not Teamcenter SaveAs post action</preference_description>
+      <context name="Teamcenter">
+        <value>true</value>
+      </context>
+    </preference>
+    <preference name="CATIA_apply_post_action_during_catia_revise" type="Logical" array="false" disabled="false" protectionScope="User" envEnabled="false">
+      <preference_description>Apply or not Teamcenter Revise post action</preference_description>
+      <context name="Teamcenter">
+        <value>true</value>
+      </context>
+    </preference>
+    <preference name="CATIA_apply_post_action_during_catia_saveas" type="Logical" array="false" disabled="false" protectionScope="User" envEnabled="false">
+      <preference_description>Apply or not Teamcenter Saveas post action</preference_description>
+      <context name="Teamcenter">
+        <value>true</value>
+      </context>
+    </preference>
+    <preference name="CATIA_createJT_option_for_import" type="Logical" array="false" disabled="false" protectionScope="User" envEnabled="false">
+      <preference_description>true = Manage JT conversion during the Import process
+false = Do not manage JT conversion during the Import process</preference_description>
+      <context name="Teamcenter">
+        <value>false</value>
+      </context>
+    </preference>
+	
+    <preference name="CATIA_rename_drawing_dataset_in_post_action" type="Logical" array="false" disabled="false" protectionScope="User" envEnabled="false">
+      <preference_description>Set to true to rename Drawing datasets during the Save As/Revise Post Action, set to false to not rename.</preference_description>
+      <context name="Teamcenter">
+        <value>true</value>
+      </context>
+    </preference>
+	
+    <preference name="CATIA_savemanager_display_item_attr_on_saveas" type="Logical" array="false" disabled="false" protectionScope="User" envEnabled="false">
+      <preference_description>Display only the item revision&apos;s object_name and object_desc attributes in the Save Manager during the Save As mode (false).
+Display both the object_name and object_desc attributes of item and item revision in the Save Manager during the Save As mode (true).</preference_description>
+      <context name="Teamcenter">
+        <value>False</value>
+      </context>
+    </preference>
+    <preference name="CATIA_apply_post_action_on_aux_datasets" type="Logical" array="false" disabled="false" protectionScope="User" envEnabled="false">
+      <preference_description>Compute auxiliary datasets in Revise post action process and in Teamcenter Save As</preference_description>
+      <context name="Teamcenter">
+        <value>false</value>
+      </context>
+    </preference>
+    <preference name="CATIA_apply_post_action_on_import_form" type="Logical" array="false" disabled="false" protectionScope="User" envEnabled="false">
+      <preference_description>Manage Import Form or not in Revise post action process and in Teamcenter Save As.</preference_description>
+      <context name="Teamcenter">
+        <value>true</value>
+      </context>
+    </preference>
+    <preference name="CATIA_apply_post_action_on_jt_datasets" type="Logical" array="false" disabled="false" protectionScope="User" envEnabled="false">
+      <preference_description>Apply post-actions on JT datasets (True)
+Do not apply post-actions on JT datasets (False)</preference_description>
+      <context name="Teamcenter">
+        <value>false</value>
+      </context>
+    </preference>
+	
+	
+    <preference name="CATIA_apply_post_action_on_ext_datasets" type="Logical" array="false" disabled="false" protectionScope="User" envEnabled="false">
+      <preference_description>Apply post-actions on external files (True)
+Do not apply post-actions on external files (False)</preference_description>
+      <context name="Teamcenter">
+        <value>False</value>
+      </context>
+    </preference>
+	
+	<!-- Creation of auxiliary PDF and cgm file while saveas -->
+	<preference name="CATIA_dwg_auxiliary_types" type="String" array="true" disabled="false" protectionScope="User" envEnabled="false">
+      <preference_description>List of drawing auxiliary file types</preference_description>
+      <context name="Teamcenter">
+        <value></value>
+        <!--<value>pdf</value>-->
+      </context>
+    </preference>
+	<preference name="CATIA_dwg_pdf_aux_dataset_type" type="String" array="false" disabled="false" protectionScope="User" envEnabled="false">
+      <preference_description>CUSTOM preference for CATIA drawing PDF</preference_description>
+      <context name="Teamcenter">
+        <value>PDF</value>
+      </context>
+    </preference>
+    <preference name="CATIA_dwg_pdf_aux_link_on_dataset" type="String" array="false" disabled="false" protectionScope="User" envEnabled="false">
+      <preference_description>CUSTOM preference for CATIA drawing PDF</preference_description>
+      <context name="Teamcenter">
+        <value>catia_auxiliaryLink</value>
+      </context>
+    </preference>
+    <preference name="CATIA_dwg_pdf_aux_link_on_item_rev" type="String" array="false" disabled="false" protectionScope="User" envEnabled="false">
+      <preference_description>CUSTOM preference for CATIA drawing pdf</preference_description>
+      <context name="Teamcenter">
+        <value>IMAN_Rendering</value>
+      </context>
+    </preference>
+    <preference name="CATIA_dwg_cgm_aux_dataset_type" type="String" array="true" disabled="false" protectionScope="User" envEnabled="false">
+      <preference_description>ds type for cgm files</preference_description>
+      <context name="Teamcenter">
+        <value>DrawingSheet</value>
+      </context>
+    </preference>
+    <preference name="CATIA_dwg_cgm_aux_link_on_dataset" type="String" array="true" disabled="false" protectionScope="User" envEnabled="false">
+      <preference_description>link type between CATDrawing ds and CGM ds</preference_description>
+      <context name="Teamcenter">
+        <value>catia_auxiliaryLink</value>
+      </context>
+    </preference>
+    <preference name="CATIA_dwg_cgm_aux_link_on_item_rev" type="String" array="true" disabled="false" protectionScope="User" envEnabled="false">
+      <preference_description>link type between ItemRevision and CGM ds</preference_description>
+      <context name="Teamcenter">
+        <value>IMAN_Rendering</value>
+      </context>
+    </preference>
+	
+	<!-- Non-CAD -->
+    <preference name="CATIA_manage_noncad_occurrence" type="String" array="true" disabled="false" protectionScope="User" envEnabled="false">
+      <preference_description>Contains the list of BOM Line attributes real names to define a non-CAD occurrence
+This preference should only contain non-tag type attributes and only attributes that can be displayed in the Structure Manager. Tag attributes are ignored by the process when they are defined in the preference.</preference_description>
+      <context name="Teamcenter">
+        <value></value>
+      </context>
+    </preference>
+
+    <preference name="CATIA_manage_noncad_part" type="Logical" array="false" disabled="false" protectionScope="User" envEnabled="false">
+      <preference_description>Manage or not non-cad leaves of assembly in load process</preference_description>
+      <context name="Teamcenter">
+        <value>true</value>
+      </context>
+    </preference>
+	
+    <preference name="CATIA_manage_noncad_product" type="Logical" array="false" disabled="false" protectionScope="User" envEnabled="false">
+      <preference_description>Manage or not non-cad nodes of assembly in load process</preference_description>
+      <context name="Teamcenter">
+        <value>true</value>
+      </context>
+    </preference>
+	
+	<!-- Other Settings -->
+    <preference name="CATIA_manage_flexibleAssy" type="Logical" array="false" disabled="false" protectionScope="User" envEnabled="false">
+      <preference_description>Manage or not flexibility during load and save</preference_description>
+      <context name="Teamcenter">
+        <value>true</value>
+      </context>
+    </preference>
+	
+	
+    <preference name="CATIA_default_folder_for_import" type="String" array="false" disabled="false" protectionScope="User" envEnabled="false">
+      <preference_description>Defines the documents&apos; import Teamcenter folder. Possible values : none, folder name (master value)</preference_description>
+      <context name="Teamcenter">
+        <value>newstuff</value>
+      </context>
+    </preference>
+	    <preference name="COMMONcatiatojt_CATPart_ets_nr_types" type="String" array="true" disabled="false" protectionScope="User" envEnabled="false">
+      <preference_description>The Catia V5 CATPart dataset named references necessary for translation. All named reference types specified by this preference must exist for a dataset of this type to be translated. If no named reference types are specified, no named reference type validation is performed.</preference_description>
+      <context name="Teamcenter">
+        <value>catpart</value>
+      </context>
+    </preference>
+	 <preference name="COMMONcatiatojt_ets_ds_types" type="String" array="true" disabled="false" protectionScope="User" envEnabled="false">
+      <preference_description>COMMONcatiatojt_ets_ds_types: List of the dataset type names of the CATIA V5 datasets that can be translated into JT. If no dataset types are specified, no dataset type validation is performed. 
+Additional named reference type validation can be configured for the datasets specified by this preference value.</preference_description>
+      <context name="Teamcenter">
+        <value>CATPart</value>
+      </context>
+    </preference>
+	
+	 <preference name="CATIA_display_asynchronized_datasets_on_co" type="String" array="false" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>CATIA_display_asynchronized_datasets_on_co: Gives warning message when a design with out of date visualization is loaded in CATIA and then checked out</preference_description>
+      <context name="Teamcenter">
+        <value>INFORMATION</value>
+      </context>
+    </preference>
+	
+	 <preference name="CATIA_auxiliary_files_printer_name" type="String" array="false" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>CATIA_auxiliary_files_printer_name: Specifies the Printer used for creation of auxiliary files</preference_description>
+      <context name="Teamcenter">
+        <value>StadlerPrinter</value>
+      </context>
+    </preference>
+	
+	<!-- Catia preview -->
+	
+    <preference name="CATIA_ETS_catiav5preview_available" type="Logical" array="false" disabled="false" protectionScope="User" envEnabled="false">
+      <preference_description>Manage thumbnails with ETS or not</preference_description>
+      <context name="Teamcenter">
+        <value>false</value>
+      </context>
+    </preference>
+    <preference name="CATIA_manage_thumbnails_on_save" type="Logical" array="false" disabled="false" protectionScope="User" envEnabled="false">
+      <preference_description>Manage thumbnails with ETS or not</preference_description>
+      <context name="Teamcenter">
+        <value>false</value>
+      </context>
+    </preference>
+    <preference name="CATIA_thumbnails_extraction_filetypes" type="String" array="true" disabled="false" protectionScope="User" envEnabled="false">
+      <preference_description>Extensions list compatible with thumbnails extraction</preference_description>
+      <context name="Teamcenter">
+        <value>CATPart</value>
+        <value>CATProduct</value>
+        <value>CATDrawing</value>
+      </context>
+    </preference>
+    <preference name="CATIA_thumbnails_store_file_in_source_vol" type="Logical" array="false" disabled="false" protectionScope="User" envEnabled="false">
+      <preference_description>Specifies that Thumbnails visualization data files for a source dataset will be
+stored in the same volume as the associated source dataset data files.
+The default value is true. If the value of this property is set to false, visualization data files will be stored in the TS Proxy User
+default volume.
+The TS Proxy User MUST be granted access to all volumes where source dataset data files are stored unless the value of this property is false.
+This property must be specified such that it applies to all Services.</preference_description>
+      <context name="Teamcenter">
+        <value>true</value>
+      </context>
+    </preference>
+	
+	
+	<!-- Display Load Manager-->
+	
+    <preference name="CATIA_awhosted_display_loadmanager_on_open" type="Logical" array="false" disabled="false" protectionScope="User" envEnabled="false">
+      <preference_description>Displays/hides the Load manager at the beginning of an Open  in CATIA command from the Embedded Active Workspace.</preference_description>
+      <context name="Teamcenter">
+        <value>true</value>
+      </context>
+    </preference>
+	
+	<!-- Display units -->
+	
+	<preference name="CATIA_display_unit_of_length" type="String" array="false" disabled="false" protectionScope="User" envEnabled="false">
+      <preference_description>Length unit used for mass properties form display.
+The value must exist within the units.txt file, within the &apos;length&apos; tags. If it does not, the default value is used</preference_description>
+      <context name="Teamcenter">
+        <value>mm</value>
+      </context>
+    </preference>
+	
+	<!-- Dynamic Cross Highlight -->
+    <preference name="CATIA_savemanager_dynamiccrosshighlight_available" type="Logical" array="false" disabled="false" protectionScope="User" envEnabled="false">
+      <preference_description>Enable the Dynamic Cross Highlight in the save process.
+Possible values:
+- TRUE = &quot;Dynamic Cross Highlight&quot; option is available
+- FALSE = The CATIA session is locked during the save process and the dynamic cross highlight is not supported.</preference_description>
+      <context name="Teamcenter">
+        <value>true</value>
+      </context>
+    </preference>
+    <preference name="CATIA_savemanager_dynamiccrosshighlight_option" type="Logical" array="false" disabled="false" protectionScope="User" envEnabled="false">
+      <preference_description>Toggle on/off  the Dynamic Cross Highlight button in the Save Manager panel.
+Possible values:
+- TRUE = &quot;Dynamic Cross Highlight&quot; option is ON.
+- FALSE = &quot;Dynamic Cross Highlight&quot; option is OFF.</preference_description>
+      <context name="Teamcenter">
+        <value>true</value>
+      </context>
+    </preference>
+
+	<!-- HideShow -->
+    <preference name="CATIA_savemanager_hideshow_option" type="Logical" array="false" disabled="false" protectionScope="User" envEnabled="false">
+      <preference_description>Manage Hide/Show assembly attributes outside the scene during the save process (True)
+Do Not manage Hide/Show assembly attributes outside the scene during the save process (False)</preference_description>
+      <context name="Teamcenter">
+        <value>False</value>
+      </context>
+    </preference>
+    <preference name="CATIA_savemanager_hideshow_option_on_import" type="Logical" array="false" disabled="false" protectionScope="User" envEnabled="false">
+      <preference_description>Manage Hide/Show assembly attributes outside the scene during the import process (True)
+Do Not manage Hide/Show assembly attributes outside the scene during the import process (False)</preference_description>
+      <context name="Teamcenter">
+        <value>False</value>
+      </context>
+    </preference>
+	
+	<!-- Workflow Filter -->
+	
+    <preference name="CATIA_savemanager_process_template_filter" type="String" array="false" disabled="false" protectionScope="User" envEnabled="false">
+      <preference_description>Retrieve all process templates (ALL) or retrieve only assigned templates (ASSIGNED)</preference_description>
+      <context name="Teamcenter">
+        <value>ALL</value>
+      </context>
+    </preference>
+    <preference name="CATIA_savemanager_process_template_under_construction" type="Logical" array="false" disabled="false" protectionScope="User" envEnabled="false">
+      <preference_description>Retrieve all process templates (true), or retrieve all except &quot;under construction&quot; Templates (false)</preference_description>
+      <context name="Teamcenter">
+        <value>false</value>
+      </context>
+    </preference>
+	
+	<!-- Mass -->
+	
+    <preference name="CATIA_save_mass_properties" type="Logical" array="false" disabled="false" protectionScope="User" envEnabled="false">
+      <preference_description>Set the CATIA_save_mass_properties variable to true to read Mass Properties during the Save to Teamcenter process. 
+Set this variable to false to prevent Mass Properties from being read during the Save to Teamcenter process.</preference_description>
+      <context name="Teamcenter">
+        <value>true</value>
+      </context>
+    </preference>
+    <preference name="CATIA_display_unit_of_mass" type="String" array="false" disabled="false" protectionScope="User" envEnabled="false">
+      <preference_description>Weight unit used for mass properties form display.
+The value must exist within the units.txt file, within the &apos;mass&apos; tags. If it does not, the default value is used</preference_description>
+      <context name="Teamcenter">
+        <value>kg</value>
+      </context>
+    </preference>
+    <preference name="CATIA_display_unit_precision" type="Integer" array="false" disabled="false" protectionScope="User" envEnabled="false">
+      <preference_description>Number of significant digits for mass properties form display (between 3 and 15)</preference_description>
+      <context name="Teamcenter">
+        <value>3</value>
+      </context>
+    </preference>
+    <preference name="CATIA_computeGeometry_option" type="Logical" array="false" disabled="false" protectionScope="User" envEnabled="false">
+      <preference_description>Use the following variable within Teamcenter Preferences to customize the toggle buttons of the Save Manager toolbar.
+Customize the Compute Mass Properties button.</preference_description>
+      <context name="Teamcenter">
+        <value>true</value>
+      </context>
+    </preference>
+    <preference name="CATIA_int_parameter_unit_conversion" type="Double" array="false" disabled="false" protectionScope="User" envEnabled="false">
+      <preference_description>Coefficient used to convert the units of measure between Teamcenter and CATIA for the values of the Int parameter :
+X value of Teamcenter = Conversion coefficient * X value of CATIA
+The default value, 1, is used when the preference does not exist, if it is empty or incorrect , no unit conversion is done</preference_description>
+      <context name="Teamcenter">
+        <value>1</value>
+      </context>
+    </preference>
+    <preference name="CATIA_ir_property_for_load_improvement" type="String" array="false" disabled="false" protectionScope="User" envEnabled="false">
+      <preference_description>Allow to define property used to cache information</preference_description>
+      <context name="Teamcenter">
+        <value></value>
+      </context>
+    </preference>
+	<!-- Ignore CATProduct Methodology for TCIC 13.1 by EBS -->
+    <preference name="CATIA_ignore_CATProduct_on_load" type="String" array="true" disabled="false" protectionScope="User" envEnabled="false">
+      <preference_description>Defines the attribute (Boolean type) which determines whether the CATProduct dataset
+is exported during the load process (true/1 value of attribute) or if the CATProduct is
+ignored and replaced with a seed Product (false/0 value of attribute or no value).</preference_description>
+      <context name="Teamcenter">
+        <value></value>
+      </context>
+    </preference>
+	<preference name="CATIA_AWcomponent_in_catia" type="String" array="true" disabled="false" protectionScope="User" envEnabled="false">
+      <preference_description>Define the components displayed in the CATIA&apos;s tooltip and corresponding to the highlighted element preselected in CATIA.
+- Summary
+- Workflow</preference_description>
+      <context name="Teamcenter">
+        <value>Summary</value>
+      </context>
+    </preference>
+    <preference name="CATIA_display_AWcomponent_in_catia" type="Logical" array="false" disabled="false" protectionScope="User" envEnabled="false">
+      <preference_description>Define if AW component is displayed in CATIA.
+Possible values:
+- true: Tooltip AW is displayed in CATIA.
+- false: Tooltip AW is not displayed in CATIA.</preference_description>
+      <context name="Teamcenter">
+        <value>true</value>
+      </context>
+    </preference>
+	
+	<!-- BOM Instance mapping to 3D-->
+    <preference name="CATIA_occmapp_tcproperties" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>List all occurrences notes / BOM line attributes to use for mappings on instances.</preference_description>
+      <context name="Teamcenter">
+        <value>bl_ref_designator</value>
+        <value>bl_sequence_no</value>
+      </context>
+    </preference>
+    <preference name="CATIA_occmapp_bl_ref_designator_catiaproperties" type="String" array="false" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>Defines mapping of Occurrence attribute bl_ref_designator to CATIA Instance</preference_description>
+      <context name="Teamcenter">
+        <value>_DescriptionInst;tc</value>
+      </context>
+    </preference>
+    <preference name="CATIA_occmapp_bl_sequence_no_catiaproperties" type="String" array="false" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>Defines mapping of Occurrence attribute bl_sequence_no to CATIA Instance</preference_description>
+      <context name="Teamcenter">
+        <value>Prop1;tc</value>
+      </context>
+    </preference>
+    <preference name="CATIA_force_update_instance_properties_for_occmapp" type="Logical" array="false" disabled="false" protectionScope="User" envEnabled="false">
+      <preference_description>Indicates if CATIA instance properties should be updated for legacy data.
+Values:
+True: CATIA instance properties should be updated for legacy data
+False: CATIA instance properties should not be updated for legacy data</preference_description>
+      <context name="Teamcenter">
+        <value>false</value>
+      </context>
+    </preference>
+    <preference name="CATIA_create_catia_instance_properties_for_occmapp" type="Logical" array="false" disabled="false" protectionScope="User" envEnabled="false">
+      <preference_description>Indicates if CATIA instance property should be created if a mapping is defined on it.
+Values:
+True: CATIA instance property should be created
+False: CATIA instance properties should not be created</preference_description>
+      <context name="Teamcenter">
+        <value>true</value>
+      </context>
+    </preference>
+	<!-- MFK settings for AltReps-->
+    <preference name="CATIA_partnumber_separator" type="String" array="false" disabled="false" protectionScope="User" envEnabled="false">
+      <preference_description>Use the Part Number Separator variable to define the separator used when building the part number; it is also used in CAA for the name of PDF files. 
+This character is used as a separator to build the default reference name, i.e, ItemID_ItemRevID_ItemRevName.</preference_description>
+      <context name="Teamcenter">
+        <value>_</value>
+      </context>
+    </preference>
+	<preference name="CATIA_part_file_name_format" type="String" array="false" disabled="false" protectionScope="User" envEnabled="false">
+      <preference_description>File name creation pattern for part and products
+Possible values :
+{0} - item id
+{1} - item rev id
+{2} - item rev name
+{3} - item type
+{4} - item rev description
+{5} - dataset name
+{6} - dataset type
+{7} - dataset description
+{8} - link type
+{9} - dataset uid
+{10} - 	Multi-field Key</preference_description>
+      <context name="Teamcenter">
+        <value>{10}</value>
+      </context>
+    </preference>
+	<preference name="CATIA_part_cgr_file_name_format" type="String" array="false" disabled="false" protectionScope="User" envEnabled="false">
+      <preference_description>File name creation pattern for auxiliary file cgr</preference_description>
+      <context name="Teamcenter">
+        <value>{10}</value>
+      </context>
+    </preference><preference name="CATIA_part_auxiliary_types" type="String" array="true" disabled="false" protectionScope="User" envEnabled="false">
+      <preference_description>Auxiliary files list managed for parts</preference_description>
+      <context name="Teamcenter">
+        <value>cgr</value>
+      </context>
+    </preference>
+	<!-- preference for migration and legacy parts -->
+    <preference name="CATIA_deactivate_update_reference_properties" type="String" array="true" disabled="false" protectionScope="User" envEnabled="false">
+      <preference_description>Manages reference properties and shape representation updates for documents that do not match criteria defined by this preference.
+By default, reference properties and shape representations are updated for all documents.
+Possible values :
+NONE         = Update reference properties and shape representations for all documents
+READ_ONLY    = Do not update reference properties and shape representations for documents without write access.
+STATUS       = Do not update reference properties and shape representations when the item revisions have a  status.
+STATUS:xxx   = Do not update reference properties and shape representations when the item revisions have a specific status.
+CATALOG_COMP = Do not update reference properties and shape representations for documents referenced in a catalog</preference_description>
+      <context name="Teamcenter">
+        <value></value>
+      </context>
+    </preference>
+  </category>
+</preferences>

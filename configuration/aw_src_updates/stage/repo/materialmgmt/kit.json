@@ -1,0 +1,12 @@
+{
+  "name": "materialmgmt",
+  "description": "",
+  "modules": [
+    "materialmgmt"
+  ],
+  "version": "6.0.0",
+  "OOTB": true,
+  "soaDeps": [
+    "Mat2.Soa.IMM"
+  ]
+}

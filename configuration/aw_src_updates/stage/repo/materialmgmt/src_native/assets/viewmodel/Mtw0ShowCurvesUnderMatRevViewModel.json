@@ -1,0 +1,596 @@
+{
+    "schemaVersion": "1.0.0",
+    "imports": [
+        "js/aw-panel.directive",
+        "js/aw-panel-body.directive",
+        "js/aw-panel-footer.directive",
+        "js/aw-panel-section.directive",        
+        "js/aw-chart.directive",
+        "js/aw-column.directive",
+        "js/aw-default-cell.directive",
+        "js/aw-scrollpanel.directive",
+        "js/aw-list.directive",
+        "js/aw-splm-table.directive",
+        "js/aw-splitter.directive",
+        "js/aw-command-bar.directive"
+    ],
+    "data": {
+        "Mtw0ShowSmartCurveInChart": false,
+        "Mtw0ShowSmartCurveValuesInTable": false,
+        "Mtw0SelectedSmartTableName": "",
+        "Mtw0SelectedSmartCurveName": ""
+    },
+    "chartProviders": {
+        "Mtw0SmartCurvesChartProvider": {
+            "title": "",
+            "chartType": "line",
+            "loadDataAction": "Mtw0LoadSmartCurvesDataAction",
+            "chartConfig": {
+                "isChartZoomable": true,
+                "isYAxisLinearOrLogarithmic": "linear",
+                "xAxisLabel": "{{data.chartProviders.Mtw0SmartCurvesChartProvider.chartConfig.xAxisLabel}}",
+                "yAxisLabel": "{{data.chartProviders.Mtw0SmartCurvesChartProvider.chartConfig.yAxisLabel}}",
+                "isDataLabelOnChartEnabled": false
+            }
+        }
+    },
+    "dataProviders": {
+        "Mtw0SmartTablesListDataProvider": {
+            "action": "Mtw0GetSmartTablesFromMaterialRevisionAction",
+            "response": "{{data.smartTables.smartTableList.existingtables}}",
+            "totalFound": "{{data.smartTables.smartTableList.nbOfTables}}",
+            "selectionModelMode": "single",
+            "commandsAnchor": "Mtw0SmartTableListCommandAnchor",
+            "contextMenuCommandsAnchor": "Mtw0SmartTableListContextMenuCommandAnchor"
+        },
+        "Mtw0InheritedTablesListDataProvider": {
+            "action": "Mtw0GetSmartTablesFromMaterialRevisionAction",
+            "response": "{{data.smartTables.inheritedTableList.existingtables}}",
+            "totalFound": "{{data.smartTables.inheritedTableList.nbOfTables}}",
+            "selectionModelMode": "single"
+        },
+        "Mtw0SmartCurveTableDataProvider": {
+            "action": "Mtw0GetSmartCurveTableDataAction",
+            "response": "{{data.filterResults3}}",
+            "totalFound": "{{data.totalFound}}",
+            "selectionModelMode": "multiple",
+            "editConfig": {
+                "startEditAction": "Mtw0SmartCurveTableStartEditsAction",
+                "saveEditAction": "Mtw0SmartCurveTableSaveEditsAction",
+                "cancelEditAction": "Mtw0SmartCurveTableCancelEditsAction",
+                "cancelEditsAction": "Mtw0SmartCurveTableCancelEditsAction"
+            }
+        }
+    },
+    "grids": {
+        "Mtw0SmartCurveTable": {
+            "dataProvider": "Mtw0SmartCurveTableDataProvider",
+            "columnProvider": "Mtw0SmartCurveTableColumnProvider",
+            "addIconColumn": false,
+            "gridOptions": {
+                "enablePinning": false,
+                "enableSorting": false
+            }
+        }
+    },
+    "columnProviders": {
+        "Mtw0SmartCurveTableColumnProvider": {
+            "loadColumnAction": "Mtw0GetSmartCurveTableColumnsAction",
+            "columns": "{{data.columns}}"
+        }
+    },
+    "actions": {
+        "loadInteritedTables": {
+            "actionType": "dataProvider",
+            "method": "Mtw0InheritedTablesListDataProvider"
+        },
+        "loadSmartTables": {
+            "actionType": "dataProvider",
+            "method": "Mtw0SmartTablesListDataProvider"
+        },
+        "Mtw0SmartCurveTable_StartEditsEventAction": {
+            "actionType": "dataProvider",
+            "method": "Mtw0SmartCurveTableDataProvider",
+            "inputData": {
+                "action": "startEdit"
+            }
+        },
+        "Mtw0SmartCurveTable_CancelEditsEventAction": {
+            "actionType": "dataProvider",
+            "method": "Mtw0SmartCurveTableDataProvider",
+            "inputData": {
+                "action": "cancelEdits"
+            }
+        },
+        "Mtw0SmartCurveTable_SaveEditsEventAction": {
+            "actionType": "dataProvider",
+            "method": "Mtw0SmartCurveTableDataProvider",
+            "inputData": {
+                "action": "saveEdits"
+            }
+        },
+        "Mtw0SmartCurveTable_AddRowEventAction": {
+            "actionType": "JSFunction",
+            "method": "Mtw0SmartCurveTableAddRow",
+            "inputData": {
+                "data": "{{data}}",
+                "eventData": "{{data.eventData}}"
+            },
+            "deps": "js/Mtw0ShowCurvesUnderMatRev"
+        },
+        "Mtw0SmartCurveTable_DuplicateRowsEventAction": {
+            "actionType": "JSFunction",
+            "method": "Mtw0SmartCurveTableDuplicateRows",
+            "inputData": {
+                "data": "{{data}}",
+                "eventData": "{{data.eventData}}"
+            },
+            "deps": "js/Mtw0ShowCurvesUnderMatRev"
+        },
+        "Mtw0SmartCurveTable_RemoveRowsEventAction": {
+            "actionType": "JSFunction",
+            "method": "Mtw0SmartCurveTableRemoveRows",
+            "inputData": {
+                "data": "{{data}}",
+                "eventData": "{{data.eventData}}"
+            },
+            "deps": "js/Mtw0ShowCurvesUnderMatRev"
+        },
+        "Mtw0SmartCurveTableStartEditsAction": {
+            "actionType": "JSFunction",
+            "method": "Mtw0SmartCurveTableStartEdits",
+            "inputData": {
+                "data": "{{data}}",
+                "eventData": "{{data.eventData}}"
+            },
+            "deps": "js/Mtw0ShowCurvesUnderMatRev"
+        },
+        "Mtw0SmartCurveTableSaveEditsAction": {
+            "actionType": "JSFunctionAsync",
+            "method": "Mtw0SmartCurveTableSaveEdits",
+            "inputData": {
+                "data": "{{data}}",
+                "context": "{{ctx}}",
+                "eventData": "{{data.eventData}}",
+                "commandContext": "{{commandContext}}"
+            },
+            "deps": "js/Mtw0ShowCurvesUnderMatRev"
+        },
+        "Mtw0SmartCurveTableCancelEditsAction": {
+            "actionType": "JSFunction",
+            "method": "Mtw0SmartCurveTableCancelEdits",
+            "inputData": {
+                "data": "{{data}}",
+                "context": "{{ctx}}",
+                "eventData": "{{data.eventData}}",
+                "commandContext": "{{commandContext}}"
+            },
+            "deps": "js/Mtw0ShowCurvesUnderMatRev"
+        },
+        "Mtw0SmartCurvesChartProvider_SelectionEventAction": {
+            "actionType": "JSFunction",
+            "method": "Mtw0AddUpdateSmartCurveTable",
+            "inputData": {
+                "data": "{{data}}"
+            },
+            "deps": "js/Mtw0ShowCurvesUnderMatRev"
+        },
+        "Mtw0LoadSmartCurvesDataAction": {
+            "actionType": "JSFunction",
+            "method": "Mtw0LoadSmartCurvesData",
+            "inputData": {
+                "smarttableSelected": "{{data.dataProviders.Mtw0SmartTablesListDataProvider.selectedObjects[0]}}",
+                "Mtw0SmartCurvesChartProvider": "{{data.chartProviders.Mtw0SmartCurvesChartProvider}}",
+                "data": "{{data}}"
+            },
+            "deps": "js/Mtw0ShowCurvesUnderMatRev"
+        },
+        "Mtw0GetInheritedTablesFromMaterialRevisionAction": {
+            "actionType": "TcSoaService",
+            "serviceName": "Core-2006-03-DataManagement",
+            "method": "getProperties",
+            "deps": "js/Mtw0ShowCurvesUnderMatRev",
+            "inputData": {
+                "objects": [
+                    "{{ctx.selected}}"
+                ],
+                "attributes": [
+                    "mat1Parameters",
+                    "mat1InheritedParameters"
+                ]
+            },
+            "policy": {
+                "types": [
+                    {
+                        "name": "BusinessObject",
+                        "properties": [
+                            {
+                                "name": "object_string"
+                            },
+                            {
+                                "name": "object_type"
+                            },
+                            {
+                                "name": "object_name"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Mat1MaterialRevision",
+                        "properties": [
+                            {
+                                "name": "mat1Parameters",
+                                "modifiers": [
+                                    {
+                                        "name": "withProperties",
+                                        "Value": "true"
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "mat1InheritedParameters",
+                                "modifiers": [
+                                    {
+                                        "name": "withProperties",
+                                        "Value": "true"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Mat1SmartCurve",
+                        "properties": [
+                            {
+                                "name": "mat1ValuesX"
+                            },
+                            {
+                                "name": "mat1ValuesY"
+                            },
+                            {
+                                "name": "mat1ListOfRefParameters",
+                                "modifiers": [
+                                    {
+                                        "name": "withProperties",
+                                        "Value": "true"
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "mat1MathFormula"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Mat1ParameterSmartTable",
+                        "properties": [
+                            {
+                                "name": "mat1ListOfCurves",
+                                "modifiers": [
+                                    {
+                                        "name": "withProperties",
+                                        "Value": "true"
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "mat1UnitXAliasName"
+                            },
+                            {
+                                "name": "mat1UnitYAliasName"
+                            },
+                            {
+                                "name": "mat1RealName"
+                            },
+                            {
+                                "name": "mat1Category"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Mat1InheritedParamSmrtTbl",
+                        "properties": [
+                            {
+                                "name": "mat1ListOfCurves",
+                                "modifiers": [
+                                    {
+                                        "name": "withProperties",
+                                        "Value": "true"
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "mat1UnitXAliasName"
+                            },
+                            {
+                                "name": "mat1UnitYAliasName"
+                            },
+                            {
+                                "name": "mat1RealName"
+                            },
+                            {
+                                "name": "mat1Category"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Mat1ParameterDouble",
+                        "properties": [
+                            {
+                                "name": "mat1Value"
+                            },
+                            {
+                                "name": "mat1ValueMax"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Mat1ParameterString",
+                        "properties": [
+                            {
+                                "name": "matexampleTable1Value"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "outputData": {
+                "smartTables": "{{function:Mtw0GetInheritedTablesFromMaterialRevision}}"
+            }
+        },
+        "Mtw0GetSmartTablesFromMaterialRevisionAction": {
+            "actionType": "TcSoaService",
+            "serviceName": "Core-2006-03-DataManagement",
+            "method": "getProperties",
+            "deps": "js/Mtw0ShowCurvesUnderMatRev",
+            "inputData": {
+                "objects": [
+                    "{{ctx.selected}}"
+                ],
+                "attributes": [
+                    "mat1Parameters",
+                    "mat1InheritedParameters"
+                ]
+            },
+            "policy": {
+                "types": [
+                    {
+                        "name": "BusinessObject",
+                        "properties": [
+                            {
+                                "name": "object_string"
+                            },
+                            {
+                                "name": "object_type"
+                            },
+                            {
+                                "name": "object_name"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Mat1MaterialRevision",
+                        "properties": [
+                            {
+                                "name": "mat1Parameters",
+                                "modifiers": [
+                                    {
+                                        "name": "withProperties",
+                                        "Value": "true"
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "mat1InheritedParameters",
+                                "modifiers": [
+                                    {
+                                        "name": "withProperties",
+                                        "Value": "true"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Mat1SmartCurve",
+                        "properties": [
+                            {
+                                "name": "mat1ValuesX"
+                            },
+                            {
+                                "name": "mat1ValuesY"
+                            },
+                            {
+                                "name": "mat1ListOfRefParameters",
+                                "modifiers": [
+                                    {
+                                        "name": "withProperties",
+                                        "Value": "true"
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "mat1MathFormula"
+                            }
+                        ]
+                    },					
+                    {
+                        "name": "Mat1InheritedParamSmrtTbl",
+                        "properties": [
+                            {
+                                "name": "mat1ListOfCurves",
+                                "modifiers": [
+                                    {
+                                        "name": "withProperties",
+                                        "Value": "true"
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "mat1UnitXAliasName"
+                            },
+                            {
+                                "name": "mat1UnitYAliasName"
+                            },
+                            {
+                                "name": "mat1RealName"
+                            },
+                            {
+                                "name": "mat1Category"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Mat1ParameterSmartTable",
+                        "properties": [
+                            {
+                                "name": "mat1ListOfCurves",
+                                "modifiers": [
+                                    {
+                                        "name": "withProperties",
+                                        "Value": "true"
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "mat1UnitXAliasName"
+                            },
+                            {
+                                "name": "mat1UnitYAliasName"
+                            },
+                            {
+                                "name": "mat1RealName"
+                            },
+                            {
+                                "name": "mat1Category"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Mat1ParameterDouble",
+                        "properties": [
+                            {
+                                "name": "mat1Value"
+                            },
+                            {
+                                "name": "mat1ValueMax"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Mat1ParameterString",
+                        "properties": [
+                            {
+                                "name": "matexampleTable1Value"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "outputData": {
+                "smartTables": "{{function:Mtw0GetSmartTablesFromMaterialRevision}}"
+            }
+        },
+        "Mtw0SmartTablesListDataProvider_SelectionChangeEventAction": {
+            "actionType": "JSFunction",
+            "method": "Mtw0AddRemoveSmartCurvesChart",
+            "inputData": {
+                "smarttableSelected": "{{data.dataProviders.Mtw0SmartTablesListDataProvider.selectedObjects[0]}}",
+                "smartCurveSelectedRow": "{{data.dataProviders.Mtw0SmartCurveTableDataProvider.selectedObjects[0]}}",
+                "data": "{{data}}"
+            },
+            "deps": "js/Mtw0ShowCurvesUnderMatRev"
+        },
+        "Mtw0InheritedTablesListDataProvider_SelectionChangeEventAction": {
+            "actionType": "JSFunction",
+            "method": "Mtw0AddRemoveSmartCurvesChart",
+            "inputData": {
+                "smarttableSelected": "{{data.dataProviders.Mtw0InheritedTablesListDataProvider.selectedObjects[0]}}",
+                "smartCurveSelectedRow": "{{data.dataProviders.Mtw0InheritedTablesListDataProvider.selectedObjects[0]}}",
+                "data": "{{data}}"
+            },
+            "deps": "js/Mtw0ShowCurvesUnderMatRev"
+        },
+        "Mtw0GetSmartCurveTableColumnsAction": {
+            "actionType": "JSFunctionAsync",
+            "method": "Mtw0GetSmartCurveTableColumns",
+            "inputData": {
+                "dataProvider": "{{data.dataProviders.Mtw0SmartCurveTableDataProvider}}",
+                "xAxisLabel": "{{data.chartProviders.Mtw0SmartCurvesChartProvider.chartConfig.xAxisLabel}}",
+                "yAxisLabel": "{{data.chartProviders.Mtw0SmartCurvesChartProvider.chartConfig.yAxisLabel}}"
+            },
+            "deps": "js/Mtw0ShowCurvesUnderMatRev"
+        },
+        "Mtw0GetSmartCurveTableDataAction": {
+            "actionType": "JSFunction",
+            "method": "Mtw0GetSmartCurveTableData",
+            "inputData": {
+                "data": "{{data}}",
+                "Mtw0SelectedSmartCurve": "{{data.eventMap['Mtw0SmartCurvesChartProvider.selected']}}"
+            },
+            "deps": "js/Mtw0ShowCurvesUnderMatRev"
+        }
+    },
+    "functions": {
+        "Mtw0GetSmartTablesFromMaterialRevision": {
+            "functionName": "Mtw0GetSmartTablesFromMaterialRevision",
+            "parameters": [
+                "{{data}}"
+            ]
+        }
+    },
+    "onEvent": [
+		{
+			"eventId": "awPanel.reveal",
+			"action": "loadInteritedTables"
+		},
+		{
+			"eventId": "awPanel.reveal",
+			"action": "loadSmartTables"
+		},
+        {
+            "eventId": "Mtw0SmartTablesListDataProvider.selectionChangeEvent",
+            "action": "Mtw0SmartTablesListDataProvider_SelectionChangeEventAction",
+            "cacheEventData": true
+        },
+        {
+            "eventId": "Mtw0InheritedTablesListDataProvider.selectionChangeEvent",
+            "action": "Mtw0InheritedTablesListDataProvider_SelectionChangeEventAction",
+            "cacheEventData": true
+        },
+        {
+            "eventId": "Mtw0SmartCurvesChartProvider.selected",
+            "action": "Mtw0SmartCurvesChartProvider_SelectionEventAction",
+            "cacheEventData": true
+        },
+        {
+            "eventId": "Mtw0.SmartCurveTable.StartEdit",
+            "action": "Mtw0SmartCurveTable_StartEditsEventAction"
+        },
+        {
+            "eventId": "Mtw0.SmartCurveTable.SaveEdits",
+            "action": "Mtw0SmartCurveTable_SaveEditsEventAction"
+        },
+        {
+            "eventId": "Mtw0.SmartCurveTable.CancelEdits",
+            "action": "Mtw0SmartCurveTable_CancelEditsEventAction"
+        },
+        {
+            "eventId": "Mtw0.SmartCurveTable.AddRow",
+            "action": "Mtw0SmartCurveTable_AddRowEventAction",
+            "cacheEventData": true
+        },
+        {
+            "eventId": "Mtw0.SmartCurveTable.DuplicateRows",
+            "action": "Mtw0SmartCurveTable_DuplicateRowsEventAction",
+            "cacheEventData": true
+        },
+        {
+            "eventId": "Mtw0.SmartCurveTable.RemoveRows",
+            "action": "Mtw0SmartCurveTable_RemoveRowsEventAction",
+            "cacheEventData": true
+        }
+    ],
+    "messages": {},
+    "i18n": {}
+}

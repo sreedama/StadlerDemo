@@ -1,0 +1,15 @@
+############################################################################################################
+#  CNO Check Definition File
+############################################################################################################
+# Version History
+#
+# Version    Date           Name               Description of Change
+# 1.0        22-03-2022     user01     Initial
+############################################################################################################
+
+#ID=001;scope=occurrence;CRITERIA=AND;CHECK=C:ItemRevision>view:bl_rev_last_release_status§not allowed§empty~occurences [VAL_OBJECT:bl_rev_object_string] with no status
+ID=001;scope=occurrence;CRITERIA=AND;CHECK=C:ItemRevision>view:bl_rev_last_release_status§not allowed§empty&&20*&&30*~occurences [VAL_OBJECT:bl_rev_object_string] with no status or status 20 or status 30
+
+
+#contextual link management
+CCPRevisionCVPart:last_release_status§not allowed§empty&&20*&&30*~Contextual link to reference is not released yet, released it first~contextual link to reference yet have status 40 and higher

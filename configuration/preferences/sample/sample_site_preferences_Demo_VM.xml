@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<preferences version="10.0">
+    <category name="Active Workspace">
+        <category_description>No description available for this category.</category_description>
+        <preference name="ActiveWorkspaceHosting.URL" type="String" array="false" disabled="false" protectionScope="Site" envEnabled="false">
+            <preference_description>General setting</preference_description>
+            <context name="Teamcenter">
+                <value>http://tc-demo12.lmtec.eu:8080/awc/</value>
+            </context>
+        </preference>
+        <preference name="ActiveWorkspaceHosting.WorkflowEmail.URL" type="String" array="false" disabled="false" protectionScope="Site" envEnabled="false">
+            <preference_description>ActiveWorkspaceHosting.WorkflowEmail.URL</preference_description>
+            <context name="Teamcenter">
+                <value>http://tc-demo12.lmtec.eu:8080/awc/</value>
+            </context>
+        </preference>
+        <preference name="AWS_FullTextSearch_Solr_URL" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+            <preference_description>Contains the list of URLs to the Solr installation for the Active Workspace full text search functionality.</preference_description>
+            <context name="Teamcenter">
+                <value>http://tc-demo12.lmtec.eu:8983/solr</value>
+            </context>
+        </preference>
+        <!--
+        <preference name="AWS_FullTextSearch_Solr_SiteID" type="String" array="false" disabled="false" protectionScope="Site" envEnabled="false">
+            <preference_description>Contains the Site ID of the site used for indexing data in Solr for full text search functionality.</preference_description>
+            <context name="Teamcenter">
+                <value></value>
+            </context>
+        </preference>
+        -->
+    </category>
+    <category name="File Caching">
+        <category_description></category_description>
+        <preference name="Fms_BootStrap_Urls" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="true">
+            <preference_description>Indicates the list of FSC Bootstrap servers. Starting with V10, FMS is being used by Multi-Site to transfer bulk data files between sites which are V10 or greater. During the local import phase when pulling data via a remote import, or during the import phase at this site when it is the target site to which data is being pushed from another site (via the data_sync utility for example), FMS servers will be used to transfer the bulk data files involved. Check with your site admin or FMS installer to get hostname(s) and port number(s) of the appropriate FSC &quot;Bootstrap Servers&quot; for this site. For example, if your nearest FSC server is running on a host named hostabc and listening on port 4447, the value for this preference can be defined as http://hostabc:4447.</preference_description>
+            <context name="Teamcenter">
+                <value>http://tc-demo12.lmtec.eu:4544</value>
+            </context>
+        </preference>  
+    </category>
+    <category name="FMS">
+        <category_description></category_description>
+        <preference name="Default_Transient_Volume_Id" type="String" array="false" disabled="false" protectionScope="Site" envEnabled="true">
+            <preference_description>Defines the transient volume identifier of an FMS transient volume on the Corporate server.
+                This site preference will be set by the installer.</preference_description>
+            <context name="Teamcenter">
+                <value>2034e88d302c341b77b6031f616b66f5</value>
+            </context>
+        </preference>
+        <preference name="Transient_Volume_Installation_Location" type="String" array="false" disabled="false" protectionScope="Site" envEnabled="true">
+            <preference_description>The 4-tier transient Volume can be mounted on all Teamcenter Server hosts at a given location. In such mounted transient volume scenario, the distributed transient volume can be configured using this preference.</preference_description>
+            <context name="Teamcenter">
+                <value>hostname</value>
+            </context>
+        </preference>
+        <preference name="Default_Transient_Server" type="String" array="false" disabled="false" protectionScope="Site" envEnabled="true">
+            <preference_description>FMS uses this preference to set the default transient file server for the site. This is a URL to an FSC, used for the 4-tier transient volumes. This should point to a valid address of a deployed FSC that has access to the transient volume. OS Environment variable settings override the preference.</preference_description>
+            <context name="Teamcenter">
+                <value>http://tc-demo12.lmtec.eu:4544</value>
+            </context>
+        </preference>
+        <preference name="Transient_Volume_RootDir" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="true">
+            <preference_description>This preference is defined as a multivalue preference, to support a Unix and Windows NT heterogeneous site. FMS will use the first value which is valid for the platform, Unix or NT, where the validity check is simply the presence or absence of a backslash \ character. This preference is used with both 2 tier and 4 tier. For 4 tier  you have to additionally configure transient volume FSC process. Also for 4 tier the process owner for transient volume FSC process and tcserver should be the same owner.</preference_description>
+            <context name="Teamcenter">
+                <value>/tmp/transientVolume_infodba</value>
+                <value>D:\temp\transientVolume_infodba</value>
+            </context>
+        </preference>  
+    </category>
+    <category name="Full Text Search">
+        <category_description>No description available for this category.</category_description>
+        <preference name="TC_fts_host" type="String" array="false" disabled="false" protectionScope="Site" envEnabled="false">
+            <preference_description>Specifies the IP address of the host machine running the Autonomy Server.</preference_description>
+            <context name="Teamcenter">
+                <value>hostname</value>
+            </context>
+        </preference>
+        <preference name="TC_fts_fsf_host" type="String" array="false" disabled="false" protectionScope="Site" envEnabled="false">
+            <preference_description>Specifies the IP address of the host machine running the Autonomy File System Fetch (FSF).</preference_description>
+            <context name="Teamcenter">
+                <value>hostname</value>
+            </context>
+        </preference>
+    </category>
+    <category name="General">
+        <category_description></category_description>
+        <preference name="TC_customization_libraries" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+            <preference_description></preference_description>
+            <context name="Teamcenter">
+                <value>libAwb0entcba</value>
+            </context>
+        </preference>
+        <preference name="WhereReferencePOMPref" type="Logical" array="false" disabled="false" protectionScope="User" envEnabled="false">
+            <preference_description>Show additional entry in where referenced drop down to show POM references of a workspace object</preference_description>
+            <context name="Teamcenter">
+                <value>1</value>
+            </context>
+        </preference>
+    </category>
+    <category name="Interface.Rich Client">    
+        <category_description></category_description>
+        <preference name="TC_max_number_of_retries" type="Integer" array="false" disabled="false" protectionScope="User" envEnabled="false">
+            <preference_description>Retry Control. If Teamcenter cannot lock an object, how may times should it try before reporting an error.</preference_description>
+            <context name="Teamcenter">
+                <value>6</value>
+            </context>
+        </preference> 
+        <preference name="TC_retry_time" type="Integer" array="false" disabled="false" protectionScope="User" envEnabled="false">
+            <preference_description>Indicates the number of seconds to pause between each retry of locking an object.</preference_description>
+            <context name="Teamcenter">
+                <value>5</value>
+            </context>
+        </preference>    
+    </category>
+    <category name="Mail">
+        <category_description></category_description>  
+        <preference name="Mail_server_name" type="String" array="false" disabled="false" protectionScope="Site" envEnabled="true">
+            <preference_description>Information about the mail gateway server.
+                This is a site preference.
+                It can be set to either a mail server name or to a numeric IP address.
+                The mail server name should be a machine running a send mail daemon.
+                Leaving it as&quot;your mail server machine&quot; while the&quot;Mail_OSMail_activated&quot; preference is true may give you errors telling you to set this preference if you try to use the&quot;Send&quot; command.</preference_description>
+            <context name="Teamcenter">
+                <value>mailservername</value>
+            </context>
+        </preference>
+        <preference name="Mail_OS_from_address" type="String" array="false" disabled="false" protectionScope="Site" envEnabled="false">
+            <preference_description>Defines a &quot;From&quot; e-mail address for OS notification e-mails.
+                Valid vallues are:
+                * a valid email address: this value appears in the e-mail header &quot;From&quot; line.
+                * an empty value: the &quot;From&quot; email address is taken from the sender&apos;s Person definition. This is the default value.</preference_description>
+            <context name="Teamcenter">
+                <value>noreply.tc@lmtec.eu</value>
+            </context>
+        </preference>
+    </category>
+    <category name="Product Structure.RDV">
+        <category_description>No description available for this category.</category_description>
+        <preference name="EPM_tessellation_servers" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+            <preference_description>Preference setting for Tessellation Server. This should be set to &lt;hostname&gt;:&lt;portno&gt; where hostname corresponds to the machine where the Tessellation Server runs and portno corresponds to the port where it listens to the requests. NONE represents the stand alone mode of Tessellation Server.</preference_description>
+            <context name="Teamcenter">
+                <value>hostname:6666</value>
+            </context>
+        </preference>
+    </category>    
+    <category name="Thin Client">
+        <category_description></category_description>
+        <preference name="WEB_default_site_server" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+            <preference_description>Defines the URL of the default site server used for mail notifications (CR-Notify) and other server oriented tasks.
+                The format is for instance &quot;www.foo.com:8080&quot;.</preference_description>
+            <context name="Teamcenter">
+                <value>hostname:8080</value>
+            </context>
+        </preference>
+        <preference name="WEB_default_site_deployed_app_name" type="String" array="false" disabled="false" protectionScope="Site" envEnabled="false">
+            <preference_description>Defines the name of the deployed application.
+                Application name is chosen at installation time; the default name is &apos;tc&apos;. It appears in Thin Client URLs like this: http://server:port/&lt;app_name&gt;/webclient.</preference_description>
+            <context name="Teamcenter">
+                <value>tc</value>
+            </context>
+        </preference>
+    </category>
+</preferences>

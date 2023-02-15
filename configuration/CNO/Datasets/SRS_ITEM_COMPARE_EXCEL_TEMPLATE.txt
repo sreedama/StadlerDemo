@@ -1,0 +1,15 @@
+############################################################################################################
+#  CNO Compare Template Definition File
+#
+# Please notice that the template execution is done on the application server.
+# It is also recommended to use different files for external scripts.
+############################################################################################################
+# Version History
+#
+# Version   Date         Name            Description of Change
+# 1.00     14.08.2010   Yalcintepe       Initial
+############################################################################################################
+
+ID=ExcelCompare
+TYPE=EXCEL
+DATASET=SRS_ITEM_COMPARE_EXCEL

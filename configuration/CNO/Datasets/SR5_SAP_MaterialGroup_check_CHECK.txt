@@ -1,0 +1,16 @@
+############################################################################################################
+#  CNO Check Definition File
+############################################################################################################
+# Version History
+#
+# Version    Date           Name               Description of Change
+# 1.0        04-03-2022     testu     Initial
+############################################################################################################
+
+#C:ItemRevision>view:bl_SR5GenEngObj_sr5SAPMaterialGroup§not allowed§empty~value requires on child~Attribute is filled on child
+
+ID=MaterialGroup;scope=object;CRITERIA=CONDITION;CHECK=C:Item:DB_IR_type§eq§SR5ElectricAssyMaster||SR5EngArticle||SR5EngArticleARMaster||SR5EngArticleMaster||SR5EngEndItem||SR5EngEndItemMaster||SR5EngEnvMaster||SR5EngInstallLocMaster||SR5EngMajorAssy||SR5EngMajorAssyMaster||SR5GenEngObj||SR5Tool
+ID=MaterialGroup;scope=object;CRITERIA=AND;CHECK=C:Item:sr5SAPMaterialGroup§not allowed§empty~value requires~Attribute is filled
+
+
+

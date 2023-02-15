@@ -1,0 +1,15 @@
+############################################################################################################
+#  CNO JOB Definition File
+############################################################################################################
+# Version History
+#
+# Version    Date           Name               Description of Change
+# 1.0        08-02-2022     testu     Initial
+############################################################################################################
+
+QUERY=CNO_VFW_STB_QUERY
+EXPANSION=SR5_SignOff_Profile_Check_EXPANSION
+PROPERTY=SR5_SignOff_Profile_Check_PROPERTY
+CHECK=SR5_SignOff_Profile_Check_CHECK
+TASK=SR5_SignOff_Profile_Check_TASK
+

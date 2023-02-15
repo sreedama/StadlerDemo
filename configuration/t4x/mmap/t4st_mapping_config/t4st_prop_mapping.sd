@@ -1,0 +1,166 @@
+#
+#===================================================
+# copyright     2021
+#                Siemens Product Lifecycle Management Software Inc.
+#                All Rights Reserved.
+#===================================================
+##
+#
+# \brief         Mapping namespace for SAP data view to show attributes from SAP in the Teamcenter GUI
+#
+# \details       The namespace contains the custom specific part of the SAP data view. \n
+#                Procedures with fixed name \c getExternalDataView4<TargetType> are defined for the following target types: 
+#                \li \c ProductVersion
+#                \li \c StructureVersion 
+#                \li \c DocumentVersion
+#                \li \c ChangeObject
+#
+# ------------------------------------------------------------------------------------------------------ 
+
+namespace eval ::T4ST::PROP::CUSTOM::MAPPING {
+  namespace export getExternalDataView4ProductVersion
+  namespace export getExternalDataView4DocumentVersion
+  namespace export getExternalDataView4StructureVersion
+  namespace export getExternalDataView4ChangeObject
+  
+  # ------------------------------------------------------------------------------------------------------
+  # Method:        ::T4S::PROP::CUSTOM::MAPPING::getExternalDataView4ProductVersion
+  ##
+  #
+  # \brief         Customer specific mapping function to create the XML payload for the SAP data view for a ProductVersion
+  #
+  # \param         SessionId Teamcenter session id
+  # \param         ItemType Teamcenter item type
+  # \param         ItemRevisionType Teamcenter item revision type
+  # \param         ObjectType Teamcenter object type
+  # \param         TCUser Teamcenter user who initiated the data view call
+  # \param         TCLanguage Language which will be used for the data view call
+  # \param         ContainerId Optional parameter which defines the current display container
+  # \param         Parameters Optional parameter which defines the used parameters for the data retrieval
+  #
+  # \return        XML-Payload used to render the data view
+  #
+  # ------------------------------------------------------------------------------------------------------
+  proc getExternalDataView4ProductVersion {SessionId ItemType ItemRevisionType ObjectType TCUser TCLanguage ContainerId Parameters} {
+    #
+    set FunctionName "[lindex [info level 0] 0]"
+    #
+    ::PL4X::LOG::ENTER
+    #
+    set StatusDict [::T4X::PIPELINE::startPipeline4Dataview $SessionId $ObjectType "PVDataview"]
+    #
+    tpwrite -logchannel [::PL4X::CORE::getSessionLogChannel] -mtype INTERN "$FunctionName - startPipeline4Dataview finished with >$StatusDict<"
+    #
+    set doc [dict get $StatusDict Dataview]
+    #
+    ::PL4X::LOG::LEAVE "finished with >$doc<"
+    #
+    return $doc
+  }
+  
+  # ------------------------------------------------------------------------------------------------------
+  # Method:        ::T4S::PROP::CUSTOM::MAPPING::getExternalDataView4DocumentVersion
+  ##
+  #
+  # \brief         Customer specific mapping function to create the XML payload for the SAP data view for a DocumentVersion
+  #
+  # \param         SessionId Teamcenter session id
+  # \param         ItemType Teamcenter item type
+  # \param         ItemRevisionType Teamcenter item revision type
+  # \param         ObjectType Teamcenter object type
+  # \param         TCUser Teamcenter user who initiated the data view call
+  # \param         TCLanguage Language which will be used for the data view call
+  # \param         ContainerId Optional parameter which defines the current display container
+  # \param         Parameters Optional parameter which defines the used parameters for the data retrieval
+  #
+  # \return        XML-Payload used to render the data view
+  #
+  # ------------------------------------------------------------------------------------------------------
+  proc getExternalDataView4DocumentVersion {SessionId ItemType ItemRevisionType ObjectType TCUser TCLanguage ContainerId Parameters} {
+    #
+    set FunctionName "[lindex [info level 0] 0]"
+    #
+    ::PL4X::LOG::ENTER
+    #
+    set StatusDict [::T4X::PIPELINE::startPipeline4Dataview $SessionId $ObjectType "DVDataview"]
+    #
+    tpwrite -logchannel [::PL4X::CORE::getSessionLogChannel] -mtype INTERN "$FunctionName - startPipeline4Dataview finished with >$StatusDict<"
+    #
+    set doc [dict get $StatusDict Dataview]
+    #
+    ::PL4X::LOG::LEAVE "finished with >$doc<"
+    #
+    return $doc
+  }
+
+  # ------------------------------------------------------------------------------------------------------
+  # Method:        ::T4S::PROP::CUSTOM::MAPPING::getExternalDataView4StructureVersion
+  ##
+  #
+  # \brief         Customer specific mapping function to create the XML payload for the SAP data view for a StructureVersion
+  #
+  # \param         SessionId Teamcenter session id
+  # \param         ItemType Teamcenter item type
+  # \param         ItemRevisionType Teamcenter item revision type
+  # \param         ObjectType Teamcenter object type
+  # \param         TCUser Teamcenter user who initiated the data view call
+  # \param         TCLanguage Language which will be used for the data view call
+  # \param         ContainerId Optional parameter which defines the current display container
+  # \param         Parameters Optional parameter which defines the used parameters for the data retrieval
+  #
+  # \return        XML-Payload used to render the data view
+  #
+  # ------------------------------------------------------------------------------------------------------
+  proc getExternalDataView4StructureVersion {SessionId ItemType ItemRevisionType ObjectType TCUser TCLanguage ContainerId Parameters} {
+    #
+    set FunctionName "[lindex [info level 0] 0]"
+    #
+    ::PL4X::LOG::ENTER
+    #
+    set StatusDict [::T4X::PIPELINE::startPipeline4Dataview $SessionId $ObjectType "SVDataview"]
+    #
+    tpwrite -logchannel [::PL4X::CORE::getSessionLogChannel] -mtype INTERN "$FunctionName - startPipeline4Dataview finished with >$StatusDict<"
+    #
+    set doc [dict get $StatusDict Dataview]
+    #
+    ::PL4X::LOG::LEAVE "finished with >$doc<"
+    #
+    return $doc
+  }
+
+  # ------------------------------------------------------------------------------------------------------
+  # Method:        ::T4S::PROP::CUSTOM::MAPPING::getExternalDataView4StructureVersion
+  ##
+  #
+  # \brief         Customer specific mapping function to create the XML payload for the SAP data view for a ChangeObject
+  #
+  # \param         SessionId Teamcenter session id
+  # \param         ItemType Teamcenter item type
+  # \param         ItemRevisionType Teamcenter item revision type
+  # \param         ObjectType Teamcenter object type
+  # \param         TCUser Teamcenter user who initiated the data view call
+  # \param         TCLanguage Language which will be used for the data view call
+  # \param         ContainerId Optional parameter which defines the current display container
+  # \param         Parameters Optional parameter which defines the used parameters for the data retrieval
+  #
+  # \return        XML-Payload used to render the data view
+  #
+  # ------------------------------------------------------------------------------------------------------
+  proc getExternalDataView4ChangeObject {SessionId ItemType ItemRevisionType ObjectType TCUser TCLanguage ContainerId Parameters} {
+    #
+    set FunctionName "[lindex [info level 0] 0]"
+    #
+    ::PL4X::LOG::ENTER
+    #
+    set StatusDict [::T4X::PIPELINE::startPipeline4Dataview $SessionId $ObjectType "CODataview"]
+    #
+    tpwrite -logchannel [::PL4X::CORE::getSessionLogChannel] -mtype INTERN "$FunctionName - startPipeline4Dataview finished with >$StatusDict<"
+    #
+    set doc [dict get $StatusDict Dataview]
+    #
+    ::PL4X::LOG::LEAVE "finished with >$doc<"
+    #
+    return $doc
+  }
+##
+}

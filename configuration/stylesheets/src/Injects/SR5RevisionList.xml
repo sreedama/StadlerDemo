@@ -1,0 +1,53 @@
+<subRendering>
+    <content visibleWhen="ActiveWorkspace:SubLocation == com.siemens.splm.client.occmgmt:OccurrenceManagementSubLocation">    
+        <section titleKey="revision_list">
+            <objectSet source="REF(awb0UnderlyingObject,ItemRevision).REF(revision_list,ItemRevision)" sortdirection="ascending" sortby="item_revision_id" defaultdisplay="tableDisplay">
+                <tableDisplay>
+                    <property name="object_string"/>
+                    <property name="release_status_list"/>
+                    <property name="date_released" hidden="true"/>
+                    <property name="owning_user"/>
+                    <property name="last_mod_date"/>
+                    <property name="item_revision_id" hidden="true" />
+                    <property name="sr5ExternalRevision" hidden="true" />
+                </tableDisplay>
+                <thumbnailDisplay/>
+                <listDisplay/>
+            </objectSet>
+        </section>
+    </content>
+    <content visibleWhen="ActiveWorkspace:SubLocation == multiBOMManager:taskPageSubLocation">    
+        <section titleKey="revision_list">
+            <objectSet source="REF(awb0UnderlyingObject,ItemRevision).REF(revision_list,ItemRevision)" sortdirection="ascending" sortby="item_revision_id" defaultdisplay="tableDisplay">
+                <tableDisplay>
+                    <property name="object_string"/>
+                    <property name="release_status_list"/>
+                    <property name="date_released" hidden="true"/>
+                    <property name="owning_user"/>
+                    <property name="last_mod_date"/>
+                    <property name="item_revision_id" hidden="true" />
+                    <property name="sr5ExternalRevision" hidden="true" />
+                </tableDisplay>
+                <thumbnailDisplay/>
+                <listDisplay/>
+            </objectSet>
+        </section>
+    </content>
+    <content visibleWhen="ActiveWorkspace:SubLocation != com.siemens.splm.client.occmgmt:OccurrenceManagementSubLocation and ActiveWorkspace:SubLocation != multiBOMManager:taskPageSubLocation">    
+        <section titleKey="revision_list">
+            <objectSet source="revision_list.ItemRevision" sortdirection="ascending" sortby="item_revision_id" defaultdisplay="tableDisplay">
+                <tableDisplay>
+                    <property name="object_string"/>
+                    <property name="release_status_list"/>
+                    <property name="date_released" hidden="true"/>
+                    <property name="owning_user"/>
+                    <property name="last_mod_date"/>
+                    <property name="item_revision_id" hidden="true" />
+                    <property name="sr5ExternalRevision" hidden="true" />
+                </tableDisplay>
+                <thumbnailDisplay/>
+                <listDisplay/>
+            </objectSet>
+        </section>
+    </content>    
+</subRendering>

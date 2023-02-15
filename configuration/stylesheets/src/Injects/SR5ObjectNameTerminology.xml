@@ -1,0 +1,23 @@
+<subRendering>
+    <content visibleWhen="ActiveWorkspace:SubLocation == com.siemens.splm.client.occmgmt:OccurrenceManagementSubLocation">
+        <section titleKey="strxrt_name_definition" title="Name Definition" initialstate="collapsed">
+            <property name="REF(awb0UnderlyingObject,ItemRevision).sr5ObjectNameTerm1" />
+            <property name="REF(awb0UnderlyingObject,ItemRevision).sr5ObjectNameTerm2" />
+            <property name="REF(awb0UnderlyingObject,ItemRevision).sr5ObjectNameTerm3" />
+        </section>
+    </content>
+    <content visibleWhen="ActiveWorkspace:SubLocation == multiBOMManager:taskPageSubLocation">
+        <section titleKey="strxrt_name_definition" title="Name Definition" initialstate="collapsed">
+            <property name="REF(awb0UnderlyingObject,ItemRevision).sr5ObjectNameTerm1" />
+            <property name="REF(awb0UnderlyingObject,ItemRevision).sr5ObjectNameTerm2" />
+            <property name="REF(awb0UnderlyingObject,ItemRevision).sr5ObjectNameTerm3" />
+        </section>
+    </content>
+    <content visibleWhen="ActiveWorkspace:SubLocation != com.siemens.splm.client.occmgmt:OccurrenceManagementSubLocation and ActiveWorkspace:SubLocation != multiBOMManager:taskPageSubLocation">
+        <section titleKey="strxrt_name_definition" title="Name Definition" initialstate="collapsed">
+            <property name="sr5ObjectNameTerm1" />
+            <property name="sr5ObjectNameTerm2" />
+            <property name="sr5ObjectNameTerm3" />
+        </section>
+    </content>
+</subRendering>

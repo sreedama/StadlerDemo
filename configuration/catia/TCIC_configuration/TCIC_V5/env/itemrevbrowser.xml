@@ -1,0 +1,22 @@
+<UIApplication class="com.ebsolutions.itemrevbrowser.IRBApplication"
+             nameRef="Item Revision Browser"
+             image="/com/ebsolutions/uimanager/modules/images/search.png"
+             sizex="800" sizey="350"
+			 lang="">
+
+  <!-- IRB MODULE -->
+  <Module nameRef="IRB Module"
+      name="item_rev_browser_module"
+      moduleHandler="com.ebsolutions.uimanager.handlers.SaveModuleHandler"
+      image="/com/ebsolutions/uimanager/modules/images/save.png"
+      class="com.ebsolutions.itemrevbrowser.IRBModule">
+
+      <!-- Columns definition -->
+      <Column name="TC Item item_id"/> 
+      <Column name="TC ItemRev item_revision_id"/>
+      <Column name="TC ItemRev object_name"/>
+      <Column name="TC Item object_type"/>
+      <Column name="TC ItemRev object_desc"/>
+      <Column name="TC ItemRev last_mod_date"/>
+  </Module>
+</UIApplication>

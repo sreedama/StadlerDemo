@@ -1,0 +1,15 @@
+############################################################################################################
+#  CNO JOB Definition File
+############################################################################################################
+# Version History
+#
+# Version    Date           Name               Description of Change
+# 1.0        28-03-2022     testu     Initial
+############################################################################################################
+
+QUERY=CNO_VFW_STB_QUERY
+EXPANSION=CNO_VFW_CONFIG_DATASET_EXPANSION
+PROPERTY=CNO_VFW_CONFIG_DATASET_PROPERTY
+CHECK=CNO_VFW_CONFIG_DATASET_CHECK
+#TASK=..._TASK
+SCRIPT=CNO_VFW_SCRIPT

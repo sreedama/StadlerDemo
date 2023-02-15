@@ -1,0 +1,9 @@
+{
+    "displayMasterFormCmdCmdName": "Edit basic data",
+    "displayMasterFormCmdDesc": "This is to view and edit SAP basic data.",
+    "displayPlantFormCmdCmdName": "Edit plant specific data",
+    "displayPlantFormCmdDesc": "This is to view and edit SAP plant specific data.",
+    "objectInformationLabel": "Information",
+    "startEditButtonText": "Start Edit",
+    "save": "Save"
+}

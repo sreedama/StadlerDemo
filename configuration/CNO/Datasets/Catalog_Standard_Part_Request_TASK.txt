@@ -1,0 +1,22 @@
+############################################################################################################
+#  CNO Task Definition File
+############################################################################################################
+# Version History
+#
+# Version    Date           Name               Description of Change
+# 1.0        21-Nov-2022    testu     Initial
+############################################################################################################
+
+[TASK_LIST]
+ID=Call Q-Checker
+TYPE_LIST=C:ItemRevision
+VALIDATION_STATUS=FAILED
+ACTION_OBJECT=ROOT
+CHK_ID_LIST=CV5PartQc,CV5AssyQc,CV5DrwQ
+ACTION_ID_LIST=1
+
+[ACTION_LIST]
+ID=1
+TYPE=WORKFLOW
+TEMPLATE=SR_SendToQChecker
+OBJECT_COUNT=1

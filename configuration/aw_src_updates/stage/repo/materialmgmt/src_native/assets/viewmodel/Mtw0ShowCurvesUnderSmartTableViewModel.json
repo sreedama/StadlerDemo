@@ -1,0 +1,48 @@
+{
+    "schemaVersion": "1.0.0",
+    "imports": [
+        "js/aw-panel.directive",
+        "js/aw-panel-body.directive",
+        "js/aw-panel-footer.directive",
+        "js/aw-chart.directive"
+    ],
+    "chartProviders": {
+        "chartProvider": {
+            "title": "{{ctx.selected.props.object_name.uiValues[0]}}",
+            "chartType": "line",
+            "loadDataAction": "getChartDataActionForMultipleSeries",
+            "chartConfig": {
+                "isChartZoomable": true,
+                "isYAxisLinearOrLogarithmic": "linear",
+                "xAxisLabel": "{{ctx.selected.props.mat1UnitXAliasName.uiValues[0]}}",
+                "yAxisLabel": "{{ctx.selected.props.mat1UnitYAliasName.uiValues[0]}}",
+                "isDataLabelOnChartEnabled": false
+            }
+        }
+    },
+    "actions": {
+        "getChartDataActionForMultipleSeries": {
+            "actionType": "JSFunction",
+            "method": "createChartFromArrayOfSeries",
+            "inputData": {
+                 "curveObj": "{{ctx.selected}}"
+            },
+            "outputData": {
+                "chartProviders.chartProvider.chartPoints": ""
+            },
+            "deps": "js/Mtw0ShowCurvesUnderSmartTable"
+        }
+    },
+    "onEvent": [
+        {
+            "eventId": "chartProvider.selected",
+            "cacheEventData": true
+        },
+        {
+            "eventId": "chartProvider.unselected",
+            "cacheEventData": true
+        }
+    ],
+    "messages": {},
+    "i18n": {}
+}

@@ -1,0 +1,50 @@
+############################################################################################################
+#  CNO COMPARE RULES Definition File
+#
+#  This config file can be used with the CNO_VALIDATION_COMPARE_RULES preference to define group or role
+#  specific config rules available in Active Workspace or Rich Client
+############################################################################################################
+# Version History
+#
+# Version   Date         Name            Description of Change
+# 1.00     17.08.2019   Yalcintepe       Initial
+############################################################################################################
+
+#[SRS_IR_COMPARE_EXCEL]
+#display=Document Engineering Change on ItemRev
+#job=SRS_ITEM_COMPARE_EXCEL_JOB
+#type=C:ItemRevision
+#ItemRevision:view=empty
+
+
+[SRS_BOM_COMPARE_EXCEL]
+display=Documentation of Engineering Change
+job=SRS_BOM_COMPARE_EXCEL_JOB
+type=C:ItemRevision
+ItemRevision:view!=empty
+
+
+#[BOM_COMPARE_EXCEL]
+#display=Bom Compare via Excel
+#job=CNO_VFW_BOM_COMPARE_EXCEL_JOB
+#type=C:ItemRevision
+##ItemRevision:?last_release_status=Released
+##ItemRevision:object_desc=A*,B*
+##ItemRevision:IMAN_specification!=empty
+#
+#[ITEM_COMPARE_EXCEL]
+#display=Item Compare via Excel
+#job=CNO_VFW_ITEM_COMPARE_EXCEL_JOB
+#type=C:ItemRevision
+##ItemRevision:?last_release_status=Released
+##ItemRevision:object_desc=A*,B*
+##ItemRevision:IMAN_specification!=empty
+#
+#[BOM_COMPARE_XML]
+#display=Bom Compare via XML
+#job=CNO_VFW_BOM_COMPARE_XML_DIFF_JOB
+#type=C:ItemRevision
+##ItemRevision:?last_release_status=Released
+##ItemRevision:object_desc=A*,B*
+##ItemRevision:IMAN_specification!=empty
+

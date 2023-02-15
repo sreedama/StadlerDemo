@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<preferences version="10.0">
+  <category name="SAP Gateway T4ST">
+    <category_description>Teamcenter Preferences</category_description>
+    
+    <!-- Main -->
+    <preference name="T4ST_StructureVersionResponseTypeList" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>No description available for this preference</preference_description>
+      <context name="Teamcenter">
+        <value>view</value>
+      </context>
+    </preference>
+	
+    <preference name="T4ST_StructureVersionResponseMapping4view" type="String" array="false" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>No description available for this preference</preference_description>
+      <context name="Teamcenter">
+        <value>Any Status; Working</value>
+      </context>
+    </preference>
+    
+    <!-- Header -->
+    <preference name="T4ST_StructureVersionResponseHeaderTypeList" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>No description available for this preference</preference_description>
+      <context name="Teamcenter">        
+        <value>SR5SRVEndItemRevision</value>
+        <value>SR5SRVMajorAssyRevision</value>
+		<value>SR5EngArticleRevision</value>
+		<value>SR5GenCatPartRevision</value>    
+      </context>
+    </preference>
+    
+	<preference name="T4ST_StructureVersionResponseCondition" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>No description available for this preference</preference_description>
+      <context name="Teamcenter">
+        <value>isTrue</value>
+        <!-- <value>Ais3_DoStructureVersionTransfer</value> -->
+      </context>
+    </preference>
+    
+	<!-- Mapping 4 - BOM Header -->
+    <preference name="T4ST_StructureVersionResponseHeaderMapping4$ItemRevision" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>No description available for this preference</preference_description>
+      <context name="Teamcenter">        
+        <value>#__getAllProperties__#:Properties</value>        
+      </context>
+    </preference>
+ 
+	<!-- Mapping 4 - BOM Line -->
+	<preference name="T4ST_StructureVersionResponseLineMapping4$ItemRevision" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>No description available for this preference</preference_description>
+      <context name="Teamcenter">
+        <value>#__getAllProperties__#:Properties</value>     
+      </context>
+    </preference>
+ 
+    <preference name="T4ST_StructureVersionResponsePropertyListMode4BOMLine" type="Integer" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>No description available for this preference</preference_description>
+      <context name="Teamcenter">
+        <value>2</value>
+      </context>  
+    </preference>
+    <preference name="T4ST_StructureVersionResponseProperty2ProcessList4BOMLine" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>No description available for this preference</preference_description>
+      <context name="Teamcenter">      
+	  </context>  
+    </preference>
+    <preference name="T4ST_StructureVersionResponsePropertyListMode4$ItemRevision" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>No description available for this preference</preference_description>
+      <context name="Teamcenter">
+        <value>2</value>
+      </context>  
+    </preference>    
+    <preference name="T4ST_StructureVersionResponseProperty2ProcessList4$ItemRevision" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>No description available for this preference</preference_description>
+      <context name="Teamcenter">        
+        <value>sr5SAPID</value>
+        <value>sr5SAPTransStatus</value>
+        <value>sr5SAPTransDate</value>
+	  </context>  
+    </preference>	
+	
+    <preference name="T4ST_StructureVersionResponseSkipCondition4BOMLine" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>No description available for this preference</preference_description>
+      <context name="Teamcenter">
+       <value>isFalse</value>        
+      </context>
+    </preference>
+    
+    <!--- For MultiLevel -->
+	<preference name="T4ST_StructureVersionResponseGetNextLevelCondition" type="String" array="true" disabled="false">
+      <preference_description>No description available for this preference</preference_description>
+      <context name="Teamcenter">
+		<value>isFalse</value>        
+      </context>
+    </preference>
+    
+    <!-- Mapping 2 -->  
+    <preference name="T4ST_StructureVersionResponseMapping2view" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>No description available for this preference</preference_description>
+      <context name="Teamcenter">                       
+        <value>structure_revisions:SR5SRVEndItemRevision</value>
+        <value>structure_revisions:SR5SRVMajorAssyRevision</value>
+		<value>structure_revisions:SR5EngArticleRevision</value>
+		<value>structure_revisions:SR5GenCatPartRevision</value>      
+      </context>
+    </preference>
+	<preference name="T4ST_StructureVersionResponseFieldMapping2structure_revisions:$ItemRevision" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>No description available for this preference</preference_description>
+      <context name="Teamcenter">       
+        <value>sr5SAPID</value>
+        <value>sr5SAPTransStatus</value>
+        <value>sr5SAPTransDate</value>
+        <value>sr5SAPBomKey</value>
+	  </context>
+    </preference>
+
+  </category>
+</preferences>

@@ -1,0 +1,14 @@
+<aw-command-panel caption="i18n.Mtw0AddUnitCategory" anchor="data.addEventPanelPinCommands" context="data">
+    <aw-form name="addUnitCategoryTableForm">
+        <aw-panel-body>
+            <aw-panel-section>
+                <aw-xrt type="CREATE" object-type="Mat1UnitCategory"></aw-xrt>
+            </aw-panel-section>
+        </aw-panel-body>
+    </aw-form>
+    <aw-panel-footer>
+        <aw-button action="createUnitCategory" visible-when="addUnitCategoryTableForm.$valid">
+            <aw-i18n>i18n.Create</aw-i18n>
+        </aw-button>
+    </aw-panel-footer>
+</aw-command-panel>

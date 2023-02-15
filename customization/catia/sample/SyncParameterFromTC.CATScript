@@ -1,0 +1,479 @@
+' -----------------------------------------------------------------------------
+' Script: SyncParameterFromTC.CATScript
+'
+' This scripts updates Parameter within a CATIA Product structure for
+' CATProducts and CATParts based on exiting meta data file created from Teamcenter
+' VOESTALPINE_Stuecklisten_Vorlage.xlsm
+'
+' -----------------------------------------------------------------------------
+' Version:
+' 1.0    01.12.2017    O. Kirsten (LMtec GmbH)           Inital version
+' 1.1    22.02.2018    O. Kirsten (LMtec GmbH)           manage additional attributes (VSD-66, VSD-68)
+' -----------------------------------------------------------------------------
+'
+' -----------------------------------------------------------------------------
+' setting environment
+' -----------------------------------------------------------------------------
+
+' public declarations
+Public oLog As Object                'the log file
+Public sTempDir As String            'temp folder for export
+Public oFileSys As Object
+
+Public oTCArr() As Variant           'array for Teamcenter .csv meta data file
+
+Public iCounter As Integer           'Counter
+Public lmax As Integer               'maximum level of structure object
+Public Start                         'Starting Time
+Dim oErr As Boolean                  'Handling Exit in main sub
+
+Public ReportPath As String
+Public oRootArr(28, 2) As Variant 'Parmeter for A4_DsignToolRoot
+Public oToolArr(28, 2) As Variant 'Parmeter for A4_Design_Tool
+
+' -----------------------------------------------------------------------------
+' Here we go ...
+' -----------------------------------------------------------------------------
+Sub CATMain()
+    
+    ' -------------------------------------
+    ' 1.) Initialize
+    ' -------------------------------------
+    StatusMsg "Initialize ..."
+    Call Initialize
+    If oErr = True Then Exit Sub
+    
+    ' -------------------------------------
+    ' 2.) Read Input File
+    ' -------------------------------------
+    StatusMsg "Reading Input File ..."
+    Call ReadInputFile
+    If oErr = True Then Exit Sub
+    
+    ' -------------------------------------
+    ' 3.) Set Design Mode
+    ' -------------------------------------
+    StatusMsg "Set Design Mode ..."
+    Call SetDesignMode(CATIA.ActiveDocument.Product, 0)
+    If oErr = True Then Exit Sub
+
+    ' -------------------------------------
+    ' 4.) Write Parameter to CATIA Files
+    ' -------------------------------------
+    StatusMsg "Write Parameter to CATIA Files ..."
+    Call WritePara
+    If oErr = True Then Exit Sub
+    
+    InfoBox "Execution of macro succeeded, report has been generated in (duration " & Round(Timer - Start, 2) & " sec)"
+
+End Sub
+
+'----------------------------------------------------------------------------------------------------------------
+' ***********************************  Main Step Functions *********************************
+'----------------------------------------------------------------------------------------------------------------
+
+' -----------------------------------------------------------------------------
+' Function: Initialize
+'           Step 1, Read Input Csv File and store it in the array oTCAttr()
+' -----------------------------------------------------------------------------
+
+Function Initialize()
+
+    Start = Timer
+    Set oFileSys = CreateObject("Scripting.FileSystemObject")
+    oErr = False
+    
+   'oRootArr(n, 0) = Design Tool Root CATIA Parameters
+   'oRootArr(n, 1) = Teamcenter Attributes from Excel Export Column A11-V11 "VOESTALPINE_Stuecklisten_Vorlage.xlsm"
+    oRootArr(0, 0) = "Teilbezeichnung"
+    oRootArr(0, 1) = "a4_part_name"
+    oRootArr(1, 0) = "Teilnummer"
+    oRootArr(1, 1) = "a4_part_number_designed"
+    oRootArr(2, 0) = "Bauteilnummer_SP"
+    oRootArr(2, 1) = "a4_part_number_mirrored"
+    oRootArr(3, 0) = "Kunde"
+    oRootArr(3, 1) = "a4_customer"
+    oRootArr(4, 0) = "Baureihe"
+    oRootArr(4, 1) = "a4_production_series"
+    oRootArr(5, 0) = "WKZG_Nummer_voestalpine"
+    oRootArr(5, 1) = "a4_tool_number_voestalpine"
+    oRootArr(6, 0) = "Sachbenennung_Betriebsmittel"
+    oRootArr(6, 1) = "a4_tool_name"
+    oRootArr(7, 0) = "Aenderungsindex"
+    oRootArr(7, 1) = "a4_change_index"
+    oRootArr(8, 0) = "Sachnummer"
+    oRootArr(8, 1) = "a4_bm_fm_article_code_des"
+    oRootArr(9, 0) = "Bemi-/FM_Sachnummer_SP"
+    oRootArr(9, 1) = "a4_bm_fm_article_code_mir"
+    oRootArr(10, 0) = "OP_Zahl"
+    oRootArr(10, 1) = "a4_op_voestalpine"
+    oRootArr(11, 0) = "Konstrukteur_Buero_extern"
+    oRootArr(11, 1) = "a4_supplier_company_name"
+    oRootArr(12, 0) = "Konstrukteur_Name"
+    oRootArr(12, 1) = "a4_design_engineer_name"
+    oRootArr(13, 0) = "interner_Konstrukteur/Betreuer"
+    oRootArr(13, 1) = "a4_advisor_name_voestalpine"
+    oRootArr(14, 0) = "Tel.:_( Ersteller )"
+    oRootArr(14, 1) = "a4_design_engineer_phone"
+    oRootArr(15, 0) = "Datum_(TT.MM.JJJJ)"
+    oRootArr(15, 1) = "last_mod_date"
+    oRootArr(16, 0) = "NA Catia"
+    oRootArr(16, 1) = "object_name"
+    oRootArr(17, 0) = "Fertigmasse_ges"
+    oRootArr(17, 1) = "a4_weight"
+    oRootArr(18, 0) = "Breite_ges"
+    oRootArr(18, 1) = "a4_width"
+    oRootArr(19, 0) = "Hoehe_ges"
+    oRootArr(19, 1) = "a4_height"
+    oRootArr(20, 0) = "Laenge_ges"
+    oRootArr(20, 1) = "a4_length"
+    oRootArr(21, 0) = "Konstruktionsstand"
+    oRootArr(21, 1) = "a4_design_status"
+    oRootArr(22, 0) = "RAL_Nummer"
+    oRootArr(22, 1) = "a4_ral_number"
+    oRootArr(23, 0) = "Änderungstext"
+    oRootArr(23, 1) = "a4_change_description"
+    oRootArr(24, 0) = "Bauteilversion"
+    oRootArr(24, 1) = "a4_part_version"
+    oRootArr(25, 0) = "OP_Kunde"
+    oRootArr(25, 1) = "a4_op_customer"
+    oRootArr(26, 0) = "Produktionspresse"
+    oRootArr(26, 1) = "a4_production_press"
+    oRootArr(27, 0) = "SAP-Nummer_SP"
+    oRootArr(27, 1) = "a4_sap_number_mirrored"
+    oRootArr(28, 0) = "SAP_Nummer_K"
+    oRootArr(28, 1) = "a4_sap_number_designed"
+
+   'oToolArr(n, 0) = Design Tool CATIA Parameters
+   'oToolArr(n, 1) = Teamcenter Attributes from Excel Export Column A12-T12 "VOESTALPINE_Stuecklisten_Vorlage.xlsm"
+    oToolArr(0, 0) = "Positionsnummer"
+    oToolArr(0, 1) = "bl_A4_Design_ToolRevision_a4_item_number"
+    oToolArr(1, 0) = "NA Catia"
+    oToolArr(1, 1) = "bl_quantity"
+    oToolArr(2, 0) = "Anzahl_spiegelbildlich"
+    oToolArr(2, 1) = "bl_A4_Design_ToolRevision_a4_quantity_mirrored_items"
+    oToolArr(3, 0) = "Produktbezeichnung"
+    oToolArr(3, 1) = "bl_A4_Design_ToolRevision_a4_product_name"
+    oToolArr(4, 0) = "Werkstoff_ID"
+    oToolArr(4, 1) = "bl_A4_Design_ToolRevision_a4_material_id"
+    oToolArr(5, 0) = "DIN_ISO_Norm"
+    oToolArr(5, 1) = "bl_A4_Design_ToolRevision_a4_din_iso_norm"
+    oToolArr(6, 0) = "Rohmass"
+    oToolArr(6, 1) = "bl_A4_Design_ToolRevision_a4_rough_size"
+    oToolArr(7, 0) = "Fertigmass"
+    oToolArr(7, 1) = "bl_A4_Design_ToolRevision_a4_finish_size"
+    oToolArr(8, 0) = "Lieferantenname"
+    oToolArr(8, 1) = "bl_A4_Design_ToolRevision_a4_supplier_name"
+    oToolArr(9, 0) = "Bestellnummer"
+    oToolArr(9, 1) = "bl_A4_Design_ToolRevision_a4_order_number"
+    oToolArr(10, 0) = "Hinweis"
+    oToolArr(10, 1) = "bl_A4_Design_3DRevision_a4_note"
+    oToolArr(11, 0) = "Ersatzteil_k"
+    oToolArr(11, 1) = "bl_A4_Design_ToolRevision_a4_spare_part_qty_shown"
+    oToolArr(12, 0) = "Zusatzinfo"
+    oToolArr(12, 1) = "bl_A4_Design_3DRevision_a4_additional_text"
+    oToolArr(13, 0) = "Identnummer"
+    oToolArr(13, 1) = "bl_A4_Design_3DRevision_a4_ident_number"
+    oToolArr(14, 0) = "Beschaffungsart"
+    oToolArr(14, 1) = "bl_A4_Design_ToolRevision_a4_ordering_type"
+    oToolArr(15, 0) = "Bauvorschrift_bzw_Werks_oder_Norm_Blatt"
+    oToolArr(15, 1) = "bl_A4_Design_ToolRevision_a4_standard_norm_spec"
+    oToolArr(16, 0) = "Waerme_Oberflaechenbehandlung"
+    oToolArr(16, 1) = "bl_A4_Design_ToolRevision_a4_surface_heat_treatment"
+    oToolArr(17, 0) = "Symmetrie"
+    oToolArr(17, 1) = "bl_A4_Design_ToolRevision_a4_symmetry_position"
+    oToolArr(18, 0) = "Langlaeufer"
+    oToolArr(18, 1) = "bl_A4_Design_ToolRevision_a4_long_lead_item"
+    oToolArr(19, 0) = "Aenderungsindex"
+    oToolArr(19, 1) = "a4_change_index"
+    oToolArr(20, 0) = "RAL_Nummer"
+    oToolArr(20, 1) = "bl_A4_Design_3DRevision_a4_ral_number"
+    oToolArr(21, 0) = "NA Catia"
+    oToolArr(21, 1) = "bl_rev_object_name"
+
+    ' Check CATProduct open
+    If CATIA.Documents.Count = 0 Then
+        MsgBox "No CATProduct opened in current CATIA Session", vbExclamation, "Session Document missing - Error"
+        oErr = True
+        Exit Function
+    ElseIf Right(CATIA.ActiveDocument.Name, 10) <> "CATProduct" Then
+        MsgBox "No CATProduct opened in current CATIA Session", vbExclamation, "Session Document missing - Error"
+        oErr = True
+        Exit Function
+    End If
+    
+    ' Get / Set output path
+    ReportPath = CATIA.SystemService.Environ("WORK_DIR") & "\catuii"
+    
+    If ReportPath = Empty Then
+        MsgBox "Error TCIC_V5_tmp Folder could not be found!"
+        oErr = True
+        Exit Function
+    End If
+
+End Function
+
+' -----------------------------------------------------------------------------
+' Function: ReadStrucFile
+'           Step 2, Read Input Csv File and store it in the array oTCAttr()
+' -----------------------------------------------------------------------------
+Function ReadInputFile()
+
+    Dim i As Integer
+    Dim j As Integer
+
+    Dim iFilePath As String
+    Dim bExistCsvFile As Boolean
+
+    Dim oStream As Object
+   
+    ReDim oTCArr(28, 0)
+    
+    iFilePath = CATIA.FileSelectionBox("FileOpen", "*.csv", CatFileSelectionModeOpen)
+    
+    bExistCsvFile = CATIA.FileSystem.FileExists(iFilePath)
+
+    If iFilePath = "" Or iFilePath = "False" Or bExistCsvFile = False Then
+        MsgBox "No CSV file selected or CSV file does not exist", vbExclamation, "Input File Selection - Error"
+        oErr = True
+        Exit Function
+    End If
+    
+    Set oStream = oFileSys.OpenTextFile(iFilePath)
+    
+    i = 0
+    Do Until oStream.AtEndOfStream
+        sLine = oStream.ReadLine
+        oTempArray = Split(sLine, ";")
+        
+        If i = 0 Or i = 1 Or i = 3 Or i = 4 Then
+            'Do Noting -> Header
+        ElseIf i = 2 Then
+            'Values Design Tool Root
+            For j = 0 To UBound(oTempArray)
+                oRootArr(j, 2) = oTempArray(j)
+            Next
+        Else
+            If i > 4 Then ReDim Preserve oTCArr(28, i - 5)
+            
+            For j = 0 To UBound(oTempArray)
+                oTCArr(j, i - 5) = oTempArray(j)
+            Next
+
+        End If
+        
+        i = i + 1
+    Loop
+  
+End Function
+
+' -----------------------------------------------------------------------------
+' Func: SetDesignMode
+'       Step 3, Setting all Parts in Structure to Design Mode
+' Parameters:
+'           oCurrentProduct:   Current CATProduct
+'           iLevel:            Structure level count
+' -----------------------------------------------------------------------------
+Sub SetDesignMode(oCurrentProduct, iLevel As Integer)
+
+    Dim i As Integer               'iterator of child products
+    
+    '###### activate Design mode to read parameter
+    If oCurrentProduct.GetNumberOfShapes <> 0 Then
+        oCurrentProduct.ApplyWorkMode DESIGN_MODE
+    End If
+
+    If iLevel > lmax Then lmax = iLevel    'set lmax to the deepest level
+       
+    If Err.Number = 0 Then
+        ' Main iteration of this recursive function
+        Set oChildProducts = oCurrentProduct.Products
+        i = 0
+        Do While i < oChildProducts.Count
+            i = i + 1
+            SetDesignMode oChildProducts.Item(i), iLevel + 1
+        Loop
+    Else
+        MsgBox "Missing File for: " & oCurrentProduct.Name, vbExclamation, "CATIA Structure - Error"
+        oErr = True
+        Exit Sub
+    End If
+
+End Sub
+
+' -----------------------------------------------------------------------------
+' Func:  WritePara
+'        Step 4, Write Parameters form Array to CATIA Documens (CATProduct or CATPart)
+' Parameters:
+'           oCurrentProduct:   Current CATProduct
+'           iLevel:            Structure level count
+' -----------------------------------------------------------------------------
+Function WritePara()
+
+Dim i As Integer
+Dim j As Integer
+
+Dim oStream As Object
+Dim pStream As Object
+
+Dim oDoc As Document
+
+If CATIA.Documents.Count = 0 Then Exit Function
+
+Set oStream = oFileSys.CreateTextFile(ReportPath & "\" & CATIA.ActiveDocument.Name & "_ParameterBefore_" & GetTimeStampNoSep() & ".log", True)
+Set pStream = oFileSys.CreateTextFile(ReportPath & "\" & CATIA.ActiveDocument.Name & "_ParameterAfter_" & GetTimeStampNoSep() & ".log", True)
+
+For i = 1 To CATIA.Documents.Count
+
+    Set oDoc = CATIA.Documents.Item(i)
+    
+    If Right(oDoc.Name, 7) = "CATPart" Or Right(oDoc.Name, 10) = "CATProduct" Then
+        
+        oStream.Write "########## " & oDoc.Name & Chr(13) & Chr(10)
+        pStream.Write "########## " & oDoc.Name & Chr(13) & Chr(10)
+        
+        'Root Node Handling
+        If CATIA.ActiveDocument.Name = oDoc.Name Then
+     
+            For j = 0 To UBound(oRootArr, 1) + 1 'UBound(oToolArr, 1)+ 2 to make manual input possible
+            
+                On Error Resume Next
+                Set oPara = oDoc.Product.parameters.Item(oDoc.Product.PartNumber & "\Stueckliste\" & oRootArr(j, 0))
+                
+                If Err.Number <> 0 Then
+                    If oRootArr(j, 0) <> "NA Catia" Then
+                        oStream.Write oRootArr(j, 0) & "=PARA NOT EXIST" & Chr(13) & Chr(10)
+                        pStream.Write oRootArr(j, 0) & "=PARA NOT EXIST" & Chr(13) & Chr(10)
+                    End If
+                Else
+                    OldVal = oPara.Value
+                    oPara.Value = oRootArr(j, 2)
+                    
+                    oStream.Write oRootArr(j, 0) & "=" & OldVal & Chr(13) & Chr(10)
+                    pStream.Write oRootArr(j, 0) & "=" & oRootArr(j, 2) & Chr(13) & Chr(10)
+                End If
+        
+                On Error GoTo 0
+        
+                Err.Number = 0
+        
+                Set oPara = Nothing
+
+            Next
+        'Components Handling
+        Else
+            
+            Call GetValue(oDoc.Product.PartNumber)
+            
+            For j = 0 To 21 'UBound(oToolArr, 1)+ 2 to make manual input possible
+        
+                On Error Resume Next
+
+                Set oPara = oDoc.Product.parameters.Item(oDoc.Product.PartNumber & "\Stueckliste\" & oToolArr(j, 0))
+        
+                If Err.Number <> 0 Then
+                    If oToolArr(j, 0) <> "NA Catia" Then
+                        oStream.Write oToolArr(j, 0) & "=PARA NOT EXIST" & Chr(13) & Chr(10)
+                        pStream.Write oToolArr(j, 0) & "=PARA NOT EXIST" & Chr(13) & Chr(10)
+                    End If
+                Else
+                    OldVal = oPara.Value
+                    oPara.Value = oToolArr(j, 2)
+                    
+                    oStream.Write oPara.Name & "=" & OldVal & Chr(13) & Chr(10)
+                    pStream.Write oPara.Name & "=" & oToolArr(j, 2) & Chr(13) & Chr(10)
+                End If
+        
+                On Error GoTo 0
+        
+                Err.Number = 0
+        
+                Set oPara = Nothing
+                    
+            Next
+                    
+        End If
+
+    End If
+
+Next
+
+oStream.Close
+pStream.Close
+
+End Function
+
+' -----------------------------------------------------------------------------
+' Func:  GetValue
+'        Get Parameter value from oTCArr
+' Parameters:
+'             oPartNumber:   Partnumber of current CATIA Document
+' -----------------------------------------------------------------------------
+
+Function GetValue(oPartNumber As String)
+
+Dim i As Integer
+Dim j As Integer
+
+For i = 0 To UBound(oTCArr, 2)
+
+    If oPartNumber = oTCArr(21, i) Then
+        For j = 0 To UBound(oToolArr, 1)
+            oToolArr(j, 2) = oTCArr(j, i)
+        Next
+        Exit Function
+    End If
+
+Next
+
+End Function
+
+'----------------------------------------------------------------------------------------------------------------
+' ***********************************  Help Functions *********************************
+'----------------------------------------------------------------------------------------------------------------
+' -----------------------------------------------------------------------------
+' Function: GetTimeStamp
+'           Return the time stamp in string form
+' -----------------------------------------------------------------------------
+Function GetTimeStamp()
+
+    GetTimeStamp = Right("20" & Year(Now()), 4) & "-" & Right("0" & Month(Now()), 2) & "-" & Right("0" & Day(Now()), 2) & _
+            " " & Right("0" & Hour(Now()), 2) & ":" & Right("0" & Minute(Now()), 2) & ":" & Right("0" & Second(Now()), 2)
+            
+End Function
+
+' -----------------------------------------------------------------------------
+' Function: GetTimeStampNoSep
+'           Return the time stamp in string form without separator
+' -----------------------------------------------------------------------------
+Function GetTimeStampNoSep()
+
+    GetTimeStampNoSep = Right("20" & Year(Now()), 4) & Right("0" & Month(Now()), 2) & Right("0" & Day(Now()), 2) & _
+             Right("0" & Hour(Now()), 2) & Right("0" & Minute(Now()), 2) & Right("0" & Second(Now()), 2)
+            
+End Function
+
+' -----------------------------------------------------------------------------
+' Function: StatusMsg
+'           Show the input messages in CATIA status bar and log them, used for main steps
+' Parameter:
+'       strInput:   String that will be shown in CATIA and write to log file
+' -----------------------------------------------------------------------------
+Function StatusMsg(strInput)
+
+    CATIA.StatusBar = "SyncParameterFromTC: " & strInput
+    
+End Function
+
+' -----------------------------------------------------------------------------
+' Function: InfoBox
+'           Open a dialog to show the info message and log them
+' Parameter:
+'       strInput:   String that will be shown in CATIA and write to log file
+' -----------------------------------------------------------------------------
+Function InfoBox(strInput)
+
+    StatusMsg "INFO - " & strInput
+    MsgBox strInput, vbInformation + vbOKOnly, "SyncParameterFromTC - INFO"
+    
+End Function

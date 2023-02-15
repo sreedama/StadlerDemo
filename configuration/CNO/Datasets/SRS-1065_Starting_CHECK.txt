@@ -1,0 +1,15 @@
+############################################################################################################
+#  CNO Check Definition File
+############################################################################################################
+# Version History
+#
+# Version    Date           Name               Description of Change
+# 1.0        23-03-2022     testu     Initial
+############################################################################################################
+
+#Check SR5MfgCNRevision:CMMaturity
+SR5MfgCNRevision:CMMaturity§allowed§Completion~Only completed MCN can be Target of Workflow~completed MCN is/will be Target of Workflow
+
+
+ChangeNoticeRevision:CMMaturity§count eq 0§*~Workflow only sets selected MCN to closed~no ECN is Target of Workflow
+ChangeRequestRevision:CMMaturity§count eq 0§*~Workflow only sets selected MCN to closed~no ECR is Target of Workflow

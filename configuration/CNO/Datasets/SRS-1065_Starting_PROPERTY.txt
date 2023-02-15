@@ -1,0 +1,13 @@
+############################################################################################################
+#  CNO Object Property Definition File
+############################################################################################################
+# Version History
+#
+# Version    Date           Name               Description of Change
+# 1.0        23-03-2022     testu     Initial
+############################################################################################################
+
+SR5MfgCNRevision:CMMaturity
+
+ChangeNoticeRevision:CMMaturity
+ChangeRequestRevision:CMMaturity

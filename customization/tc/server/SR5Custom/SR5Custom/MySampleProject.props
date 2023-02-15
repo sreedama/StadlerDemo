@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<PropertyGroup>
+<_ProjectFileVersion>10.0.40219.1</_ProjectFileVersion>
+<_PropertySheetDisplayName>itk_general_exits</_PropertySheetDisplayName>
+</PropertyGroup>
+<ItemDefinitionGroup>
+<ClCompile>
+<AdditionalIncludeDirectories>E:\plm\tc112\include;E:\plm\tc112\include_cpp;%(AdditionalIncludeDirectories)
+</AdditionalIncludeDirectories>
+<PreprocessorDefinitions>NT40;POMDLL;CRTAPI1=_cdecl;CRTAPI2=cdecl;_WIN32;WIN32;WIN32_LEAN_AND_MEAN;WNT;BYPASS_FLEX;_INTEL=1;IPLIB=none;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+</ClCompile>
+<Link>
+<AdditionalOptions>/ignore:4099 /ignore:4199 %(AdditionalOptions)</AdditionalOptions>
+<AdditionalDependencies>E:\plm\tc112\lib\*.lib</AdditionalDependencies>
+<AdditionalLibraryDirectories>E:\plm\tc112\lib;</AdditionalLibraryDirectories>
+<DelayLoadDLLs>libtcsso.dll;libict.dll;libae.dll;libappr.dll;libarchive.dll;libbackup.dll;libbom.dll;libcfm.dll;libdmi.dll;libecm.dll;libeint.dll;libepm.dll;libform.dll;libgrm.dll;libtccore.dll;libtctrushape.dll;libinternal_exits.dll;libitk.dll;libvalidation.dll;liblov.dll;libme.dll;libmechatronics.dll;libmgc.dll;libobjio.dll;libproperty.dll;libps.dll;libpublication.dll;libqry.dll;libres.dll;libstep.dll;libsub_mgr.dll;libtccoreext.dll;libnxmgr_im.dll;libpie.dll;libai.dll;%(DelayLoadDLLs)</DelayLoadDLLs>
+<SubSystem>Console</SubSystem>
+<TargetMachine>MachineX86</TargetMachine>
+</Link>
+</ItemDefinitionGroup>
+</Project>

@@ -1,0 +1,14 @@
+############################################################################################################
+#  CNO JOB Definition File
+############################################################################################################
+# Version History
+#
+# Version    Date           Name               Description of Change
+# 1.0        21-02-2022     user01     Initial
+############################################################################################################
+
+QUERY=CNO_VFW_QUERY
+EXPANSION=CNO_VFW_STB_CHILD_JOB_EXPANSION
+PROPERTY=CNO_VFW_STB_CHILD_JOB_PROPERTY
+CHECK=CNO_VFW_STB_CHILD_JOB_CHECK
+#TASK=<Optional: Task Dataset Name>

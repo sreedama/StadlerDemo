@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<preferences version="10.0">
+  <category name="Material Management">
+    <category_description>Teamcenter Preferences for Material Management</category_description>
+
+    <preference name="CATIA_IMM_managed" type="Logical" array="false" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>CATIA_IMM_managed</preference_description>
+      <context name="Teamcenter">
+        <value>true</value>
+      </context>
+    </preference>
+    <preference name="CATIA_compute_geometry_for_main_body" type="Logical" array="false" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>CATIA_compute_geometry_for_main_body</preference_description>
+      <context name="Teamcenter">
+        <value>false</value>
+      </context>
+    </preference>
+    <preference name="CATIA_computeGeometry_option" type="Logical" array="false" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>CATIA_computeGeometry_option</preference_description>
+      <context name="Teamcenter">
+        <value>true</value>
+      </context>
+    </preference>
+	<!--<preference name="IMM_CATIA_SESSION_UNIT_ALIASNAMES" type="String" array="false" disabled="false" protectionScope="User" envEnabled="false">
+      <preference_description>IMM_CATIA_SESSION_UNIT_ALIASNAMES</preference_description>
+      <context name="Teamcenter">
+        <value>J,sec,N_m2,m,J_kg_Kdeg,m3,kg,A,%,C,m2,W,W/m-C,10-3 mm/mm,N,rad,mol,UNITLESS,V,kg_m3,kg_mol</value>
+      </context>
+    </preference>
+    <preference name="IMM_CATIA_SESSION_UNIT_CATEGORIES" type="String" array="false" disabled="false" protectionScope="User" envEnabled="false">
+      <preference_description>IMM_CATIA_SESSION_UNIT_CATEGORIES</preference_description>
+      <context name="Teamcenter">
+        <value>Energy|Work|QuantityOfHeat,Time,Pressure|Stress,Length,SpecificHeat,Volume,Mass,ElectricCurrent,Percentage,ThermodynamicTemperature,Area,Power|RadiantFlux,ThermalConductivity,Strain,Force,Angle,AmountOfSubstance,UNITLESS,Voltage,MassDensity,MolarMass</value>
+      </context>
+    </preference>-->
+  </category>
+</preferences>

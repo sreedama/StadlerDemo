@@ -1,0 +1,144 @@
+{
+    "schemaVersion": "1.0.0",
+    "imports": [
+        "js/aw-command-panel.directive",
+        "js/aw-panel-body.directive",
+        "js/aw-textbox.directive",
+        "js/aw-listbox.directive",
+        "js/aw-panel-footer.directive",
+        "js/aw-button.directive",
+        "js/aw-i18n.directive",
+        "js/aw-row.directive",
+        "js/aw-column.directive"
+        
+    ],
+    "onEvent": [ 
+        {
+            "eventId": "gwt.SubLocationContentSelectionChangeEvent",
+            "action": "closePanel"
+        } 
+    ],
+    "conditions": {
+        "canCreateSmartTableMetaParam" :{
+                "expression": "(data.category.dbValue && data.xname.dbValue && data.yname.dbValue && data.realName.dbValue && data.xdimension.dbValue && data.ydimension.dbValue )"
+            }
+    },
+    "data": {
+        "category": {
+            "displayName": "{{i18n.Category}}",
+            "type": "STRING",
+            "isRequired": "true",
+            "hasLov":"true"    
+        },
+        "xname": {
+            "displayName": "{{i18n.XName}}",
+            "type": "STRING",
+            "isRequired": "true",
+            "isEditable": "true"
+        },
+        "yname": {
+            "displayName": "{{i18n.YName}}",
+            "type": "STRING",
+            "isRequired": "true",
+            "isEditable": "true"
+        },
+        "realName": {
+            "displayName": "{{i18n.RealName}}",
+            "type": "STRING",
+            "isRequired": "true",
+            "isEditable": "true"
+        },
+        "xdimension": {
+            "displayName": "{{i18n.DimensionX}}",
+            "type": "STRING",
+            "isRequired": "true",
+            "hasLov":"true"    
+        },
+        "ydimension": {
+            "displayName": "{{i18n.DimensionX}}",
+            "type": "STRING",
+            "isRequired": "true",
+            "hasLov":"true"    
+        }
+    },
+    "actions": {                    
+        "reveal": {
+            "actionType": "JSFunction",
+            "method": "populateListBoxes",
+            "inputData": 
+            {
+                "input": "{{data}}"
+            },
+            "deps": "js/Mtw0ShowAddMetaParameterService"
+        }, 
+        "createMetaSmartTableParameter" : {
+            "actionType": "TcSoaService",
+            "deps": "js/Mtw0ShowAddParameterService",        
+            "serviceName": "IMM-2018-12-AWCMaterialMgmtService",
+            "method": "createSmartTableParameterDescriptor",
+            "inputData": 
+            {
+                "catalogRevision":
+                {
+                    "type":"{{ctx.selected.type}}",
+                    "uid":"{{ctx.selected.uid}}"
+                },
+                "category":"{{data.category.dbValue}}",
+                "name":"{{data.xname.dbValue}} Vs {{data.yname.dbValue}}",
+                "realName":"{{data.realName.dbValue}}",
+                "dimensionx":"{{data.xdimension.dbValue}}",
+                "dimensiony":"{{data.ydimension.dbValue}}"                
+            },
+            "events": 
+            {
+                "success": [
+                    {
+                        "name": "cdm.relatedModified",
+                        "eventData": 
+                        {
+                            "relatedModified": 
+                            [
+                                "{{ctx.selected}}"
+                            ],
+
+                            "refreshLocationFlag": true
+                        }
+                    },
+                    {
+                        "name": "complete",
+                        "eventData": 
+                        {
+                            "source": "toolAndInfoPanel"
+                        }
+                    }
+                ]
+            }            
+        }
+    },
+    "functions": {
+        "getSelectedMetaParametersArray": {
+            "functionName": "getSelectedMetaParametersArray",
+            "parameters": [
+                "{{data}}"
+            ]
+        },
+        "getSelectedObject":{
+            "functionName": "getSelectedObject",
+            "parameters": [
+                "{{ctx.selected}}",
+                "{{data}}"
+            ]
+        }
+    },
+    "i18n": 
+    {
+        "AddParameter": ["MaterialMgmtMessages"],
+        "Category": ["MaterialMgmtMessages"],
+        "XName": ["MaterialMgmtMessages"],
+        "YName": ["MaterialMgmtMessages"],
+        "RealName": ["MaterialMgmtMessages"],
+        "DimensionX": ["MaterialMgmtMessages"],
+        "DimensionY": ["MaterialMgmtMessages"],
+        "CreateParameterDesriptor": ["MaterialMgmtMessages"]
+    }    
+}

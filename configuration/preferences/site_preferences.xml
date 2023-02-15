@@ -1,0 +1,1901 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<preferences version="10.0">
+
+  <category name="Document Management">
+    <category_description>Document Management.</category_description>
+    <preference name="Fnd0DM_AllowRenderAllReleasedItemsOrSrcDatasets" type="String" array="false" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>Allow render on released Items or Source Datasets. The Source Dataset must be related to the Derived PDF Dataset using  TC_Derived relation.
+  Valid Values (case sensitive):
+  true:  Allow render on released items or source Datasets.  Will override the Derived PDF Dataset if existed.
+  false: This is the default value.</preference_description>
+      <context name="Teamcenter">
+        <value>true</value>
+      </context>
+    </preference>
+    <preference name="Fnd0DM_AllowRenderReleasedItemOrSrcDataset" type="Logical" array="false" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>Allow render on released items or source datasets.
+  Valid Values:
+  true:  Allow render on released items or source datasets when there is no existing rendered datasets.
+  false: This is the default value.</preference_description>
+      <context name="Teamcenter">
+        <value>false</value>
+      </context>
+    </preference>
+    <preference name="Fnd0DM_GeneratePDF_ItemRevToPDF_Relation" type="String" array="false" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>Specify the relation name (e.g. TC_Attaches) to relate the Item Revision to the generated PDF Dataset. String value must be a valid Teamcenter relation. The default (empty) relation is the same relation used between the Item Revision and the Source Dataset (e.g. MSWordX).</preference_description>
+      <context name="Teamcenter">
+      </context>
+    </preference>
+  </category>
+
+  <category name="Active Workspace.Document Management">
+    <category_description>No description available for this category.</category_description>
+    <preference name="Fnd0DM_IsSimpleDocumentEnabled" type="Logical" array="false" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>Enables simple document feature.
+  The default value is true. This value is case-sensitive. When this value is true then the out-of-the-box Item Revision Definition Configuration (IRDC) Dma1DocumentRevisionIRDC will be applied to the created Document Revision business object.</preference_description>
+      <context name="Teamcenter">
+        <value>false</value>
+      </context>
+    </preference>
+  </category>
+
+  <category name="Localization">
+    <category_description>No description available for this category.</category_description>
+
+    <preference name="SR5_object_name_default_locales" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>List of locales available for automatic localization of the object name.</preference_description>
+      <context name="Teamcenter">
+        <value>en_US</value>
+        <value>de_DE</value>
+      </context>
+    </preference>
+    
+  </category>
+
+  <category name="Active Workspace">
+
+    <category_description>No description available for this category.</category_description>
+
+    <preference name="AWS_SearchPreFilter_Property2" type="String" array="true" disabled="false" protectionScope="User" envEnabled="false">
+      <preference_description>Contains the required information needed to display the second pre-filter in the Search panel of the Active Workspace.
+Valid values are in the format:
+* The first value is the type and property internal names in the format &quot;type.property&quot; (e.g. &quot;WorkspaceObject.object_type&quot;).
+* The second value onwards is the internal values for the property (e.g. &quot;ItemRevision&quot;).</preference_description>
+      <context name="Teamcenter">
+        <value>Categorization.category</value>
+        <value>Files</value>
+        <value>Documents</value>
+        <value>Parts</value>
+        <value>Changes</value>
+        <value>Item Revision</value>
+        <value>MECollaborationContext</value>
+        <value>MEProcessRevision</value>
+        <value>Work Packages</value>
+        <value>MDM Objects</value>
+      </context>
+    </preference>
+
+    <preference name="AWC_Default_Workspace" type="String" array="false" disabled="false" protectionScope="System" envEnabled="false">
+      <preference_description>Defines default workspace for Active Workspace Client (AWC). 
+This value is used when a default workspace for a group/role is not explicitly defined.
+Possible Values are TcAuthorWorkspace for Authors, TcConsumerWorkspace for Consumers, TCAWWorkspace for Legacy Default workspace, or any other custom workspace.</preference_description>
+      <context name="Teamcenter">
+        <value>StadlerAuthor</value>
+      </context>
+    </preference>
+
+    <preference name="AWC_defaultViewerConfig.VIEWERCONFIG" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>Defines the default viewer configuration for Active Workspace.
+The format of SEARCHORDER entry should be as follows: SEARCHORDER.&lt;Business_Object_Type&gt;=&lt;GRM1&gt;,&lt;GRM2&gt;,&lt;GRM3&gt;...
+The format of Dataset-Viewer mappings should be as follows: &lt;Dataset_Type&gt;.&lt;Viewer_Name&gt;=&lt;reference_Name&gt;</preference_description>
+      <context name="Teamcenter">
+        <value>SEARCHORDER.DocumentRevision=TC_Attaches,IMAN_manifestation,IMAN_reference,Fnd0DocPageTypeRel</value>
+        <value>SEARCHORDER.Part Revision=TC_Attaches,IMAN_manifestation,IMAN_reference,IMAN_Rendering,IMAN_specification</value>
+        <value>SEARCHORDER.ItemRevision=IMAN_manifestation,SimplifiedRendering,IMAN_specification,IMAN_reference,IMAN_Motion,IMAN_3D_snap_shot,IMAN_Rendering,TC_Attaches,Fnd0DiagramSnapshot</value>
+        <value>SEARCHORDER.Signoff=root_target_attachments</value>
+        <value>SEARCHORDER.EPMTask=root_target_attachments</value>
+        <value>SEARCHORDER.Item=revision_list</value>
+        <value>SEARCHORDER.Folder=contents</value>
+        <value>SEARCHORDER.WorkspaceObject=release_status_list</value>
+        <value>HTML.Awp0HTMLViewer=HTML</value>
+        <value>PDF.Awp0PDFViewer=PDF_Reference</value>
+        <value>Image.Awp0ImageViewer=Image</value>
+        <value>Bitmap.Awp0ImageViewer=Image</value>
+        <value>SnapShotViewData.Awp0ImageViewer=Image</value>
+        <value>JPEG.Awp0ImageViewer=JPEG_Reference</value>
+        <value>DirectModel.Awp0JTViewer=JTPART</value>
+        <value>GIF.Awp0ImageViewer=GIF_Reference</value>
+        <value>UGMASTER.Awp0ImageViewer=UG-QuickAccess-Binary</value>
+        <value>UGPART.Awp0ImageViewer=UG-QuickAccess-Binary</value>
+        <value>Fnd0GraphicsData.Awp02dViewer=Fnd0Graphics</value>
+        <value>Fnd0VideoData.Awp0ImageViewer=Fnd0MP4</value>
+        <value>ProcessSimulateMovie.Awp0ImageViewer=MP4</value>
+        <value>Crf0ScalableVectorGraphics.Awp0ImageViewer=Crf0ScalableVectorGraphics</value>
+        <value>CrfOutputText.Awp0TextViewer=Text</value>
+        <value>CrfOutputHtml.Awp0HTMLViewer=HTML</value>
+        <value>SEARCHORDER.Ase0AssocRelationProxy=ase0EndObject</value>
+        <value>SEARCHORDER.Ase0Diagram=IMAN_Rendering</value>
+        <value>SEARCHORDER.Awb0Element=awb0UnderlyingObject</value>
+        <value>SEARCHORDER.Fnd0Snapshot=Fnd0ISessionCADData</value>
+        <value>Vis_Session.Awp0ImageViewer=Fnd0HDImage</value>
+        <value>Requirement Revision.Arm0RequirementPreview=Requirement Revision</value>
+        <value>Paragraph Revision.Arm0RequirementPreview=Paragraph Revision</value>
+        <value>TIF.Awp02dViewer=TIF_Reference</value>
+        <value>HPGL.Awp02dViewer=HPGL_Reference</value>
+        <value>DXF.Awp02dViewer=DXF</value>
+        <value>Text.Awp0CodeViewer=Text</value>
+        <value>XMLRenderingStylesheet.Awp0CodeViewer=XMLRendering</value>
+        <value>NX0TDP.Awp0PDFViewer=NX0TDP</value>
+        <value>DrawingSheet.Awp02dViewer=Sheet</value>
+      </context>
+    </preference>
+    <preference name="AWC_default_image_resolution" type="String" array="false" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>Specifies the default resolution to use to render images across Active Workspace client.
+Valid values are name of the derived image type as defined in the preference TC__image_compression_types.
+* Low: Indicates low resolution translated version of the source image.
+* Medium: Indicates Medium resolution translated version of the source image.
+* High: Indicates High resolution translated version of the source image.</preference_description>
+      <context name="Teamcenter">
+        <value>Medium</value>
+      </context>
+    </preference>
+
+    <preference name="AWC_DefaultCreateTypes" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>Define the types to be displayed in the &quot;Create&quot; dialog in the Active Workspace Client (AWC).
+Valid values are types internal names.
+All subtypes associated to a provided type will also be displayed.</preference_description>
+      <context name="Teamcenter">
+        <value>SR5TechDocument</value>
+        <value>SR5EngProject</value>
+        <value>SR5ColorDef</value>
+        <value>SR5SRVEndItem</value>
+        <value>SR5SRVMajorAssy</value>
+        <value>SR5LLEndItem</value>
+        <value>SR5LLMajorAssy</value>
+        <value>SR5SpareEndItem</value>
+        <value>SR5SpareMajAssy</value>
+        <value>SR5MfgEndItem</value>
+        <value>SR5MfgMajorAssy</value>
+        <value>SR5MfgInstallKit</value>
+        <value>SR5EngEndItem</value>
+        <value>SR5EngInstallLoc</value>
+        <value>SR5EngMajorAssy</value>
+        <value>SR5MfgObject</value>
+        <value>SR5EngArticle</value>
+        <value>SR5Tool</value>
+        <value>SR5ElectricAssy</value>
+        <value>SR5NonERPArticle</value>
+        <value>Folder</value>
+        <value>SR5Customer</value>
+        <value>SR5Plant</value>
+        <value>SR5ArticleReqForm</value>
+        <value>SR5MatReqForm</value>
+        <value>SR5GenCatPart</value>
+        <value>SR5Manufacturer</value>
+        <value>Mat1Material</value>
+        <value>Mat1Substance</value>
+        <value>Mat1MatCatalog</value>
+        <value>SR5CatDefArticle</value>
+        <value>SR5CoatingStruct</value>
+        <value>SR5Weld</value>
+        <value>SR5BodNode</value>
+        <value>SR5DrawingDoc</value>
+        <value>SR5EngRawArticle</value>
+      </context>
+    </preference>
+
+    <preference name="SR4MfgPart.CellProperties" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>Defines the list of properties that are to be displayed under a cell for objects of type Item in the Active Workspace client.
+Valid values are property internal names.</preference_description>
+      <context name="Teamcenter">
+        <value>object_name</value>
+        <value>item_id</value>
+        <value>sr4Plant</value>
+      </context>
+    </preference>
+
+    <preference name="Mat1MaterialRevision.CellProperties" type="String" array="true" disabled="false" protectionScope="User" envEnabled="false">
+      <preference_description>Desc</preference_description>
+      <context name="Teamcenter">
+        <value>object_name</value>
+        <value>item_id</value>
+        <value>sr5MaterialNorm</value>
+      </context>
+    </preference>
+
+    <preference name="SR4MfgPartRevision.CellProperties" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>Defines the list of properties that are to be displayed under a cell for objects of type ItemRevision in the Active Workspace client.
+Valid values are property internal names.</preference_description>
+      <context name="Teamcenter">
+        <value>object_name</value>
+        <value>item_id</value>
+        <value>sr4Plant</value>
+        <value>item_revision_id</value>
+      </context>
+    </preference>
+
+    <preference name="SR5EngArticleARRevision.CellProperties" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>Defines the list of properties that are to be displayed under a cell for objects of type Item in the Active Workspace client.
+Valid values are property internal names.</preference_description>
+      <context name="Teamcenter">
+        <value>object_name</value>
+        <value>item_id</value>
+        <value>item_revision_id</value>
+        <value>sr5AltRepCounter</value>
+      </context>
+    </preference>
+
+    <preference name="SR5GenCatPartARRevision.CellProperties" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>Defines the list of properties that are to be displayed under a cell for objects of type Item in the Active Workspace client.
+Valid values are property internal names.</preference_description>
+      <context name="Teamcenter">
+        <value>object_name</value>
+        <value>item_id</value>
+        <value>item_revision_id</value>
+        <value>sr5AltRepCounter</value>
+      </context>
+    </preference>
+
+  </category>
+
+  <category name="Active Workspace Search">
+
+    <category_description>Active Workspace Search preferences</category_description>
+
+    <preference name="AWC_search_automatic_wildcard" type="Integer" array="false" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>Controls the automatic addition of wildcard to user search criteria.
+Valid values are:
+- 0: the user search criteria are not altered.
+- 1: the search engine will suffix * to user values (e.g. &quot;part&quot; will be &quot;part*&quot;). This is the default value.
+- 2: the search engine will prefix * to user values (e.g. &quot;part&quot; will be &quot;*part&quot;).
+- 3: the search engine will prefix and suffix * to user values (e.g. &quot;part&quot; would become &quot;*part*&quot;).
+- any other value is considered 0.
+If a user adds a wildcard as part of the search criteria, no additional wildcard will be added in that place. This is the same for both prefix and suffix. (e.g. &quot;part*&quot; will be &quot;part*&quot;).</preference_description>
+      <context name="Teamcenter">
+        <value>3</value>
+      </context>
+    </preference>
+
+    <preference name="AWC_SearchUseUIConfigDefinedDefaultSortInplaceOfRelevance" type="Logical" array="false" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>false: Displays search results in relevance order as determined by the number of times the search string matches an object, the date the object was created or last modified, and other factors. true: Displays search results according to the specified table column configured using the import_uiconfig utility.</preference_description>
+      <context name="Teamcenter">
+        <value>true</value>
+      </context>
+    </preference>
+
+    <preference name="AWC_Global_Search_Suppress_Types_From_Results" type="String" array="true" disabled="false" protectionScope="User" envEnabled="false">
+      <preference_description>Specifies the list of internal names of types which need to be suppressed from global search results.
+For example, consider the dataset type with display name as MS WordX, the user should provide the internal type name i.e., MSWordX.
+Valid values are internal type names as defined in BMIDE.
+If the preference AWS_FullTextSearch_Index_Dataset_File_Content is set to true and dataset types are set as a value to this preference,
+the dataset types are still suppressed from the global search results.
+Out of the box, no values will be there in this multivalued preference.</preference_description>
+      <context name="Teamcenter">
+        <value>Part</value>
+      </context>
+    </preference>
+
+  </category>
+
+  <category name="Active Workspace Viewer">
+
+    <category_description>Active Workspace Viewer-specific preferences.</category_description>
+
+    <preference name="AWC_visAllOn" type="Logical" array="false" disabled="false" protectionScope="User" envEnabled="false">
+      <preference_description>Allows user to set All On behavior for opening 3D model in Active Workspace.
+When set to true, Active Workspace will show 3D model with All On visibility applied.</preference_description>
+      <context name="Teamcenter">
+        <value>false</value>
+      </context>
+    </preference>
+
+    <preference name="TCVIS_SERVER_DISABLE_LAZY_STRUCTURE_LOAD" type="Logical" array="false" disabled="false" protectionScope="User" envEnabled="false">
+      <preference_description>TCVIS_SERVER_DISABLE_LAZY_STRUCTURE_LOAD</preference_description>
+      <context name="Teamcenter">
+        <value>false</value>
+      </context>
+    </preference>
+	
+    <preference name="AWC_3DViewerDisplayUnit" type="Integer" array="false" disabled="false" protectionScope="User" envEnabled="false">
+      <preference_description>Sets the display unit for the 3D viewer.
+The valid values for display unit will be:
+1: Millimeters.
+2: Centimeters.
+3: Meters.
+4: Inches.
+5: Feet.
+6: Yards.
+7: Micrometers.
+8: Decimeters.
+9: Kilometers.
+10: Mils.</preference_description>
+      <context name="Teamcenter">
+        <value>1</value>
+      </context>
+    </preference>	
+
+  </category>
+
+  <category name="Product Structure.CAD BOM Alignment">
+
+    <category_description>No description available for this category.</category_description>
+
+    <preference name="FND0_ENABLE_DESIGN_BOM_ENGINEERING_BOM_ALIGNMENT" type="Logical" array="false" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>Enables Design - Engineering BOM alignment in Teamcenter. By default this is disabled.</preference_description>
+      <context name="Teamcenter">
+        <value>false</value>
+      </context>
+    </preference>
+
+  </category>
+
+  <category name="Product Structure.PSE Assembly">
+
+    <category_description>No description available for this category.</category_description>
+
+    <preference name="PSEShowUnconfigdEffPref" type="Logical" array="false" disabled="false" protectionScope="User" envEnabled="false">
+      <preference_description>Determines whether to display BOM lines containing effectivity data that do not match the current revision rule, by default, when a structure is opened in Structure Manager.This site preference has a corresponding user preference of the same name. Users can set this user preference through the View-&gt;Show Unconfigured By Occurrence Effectivity menu command. The first time a user selects this option, a PSEShowUnconfigdEffPref user preference instance is created and stored in the user&apos;s BLOB file. User preferences take precedence over site preferences.There are some cases where you may want BOM lines to display at your site regardless of whether their variant conditions match the current variant rule, and yet you want to determine whether a given BOM line is configured. To do so, set the following properties in the Properties table as indicated to display an unconfigured BOM line:bl_is_variant is set to Ybl_variant_state is blank
+Valid Values:
+true - BOM lines are displayed regardless of whether their occurrence date effectivity data matches the current revision rule.
+false - BOM lines are hidden if their occurrence date effectivity data does not match the current revision rule.</preference_description>
+      <context name="Teamcenter">
+        <value>true</value>
+      </context>
+    </preference>
+
+  </category>
+
+  <category name="General">
+
+    <category_description>No description available for this category.</category_description>
+
+
+    <!-- Preferences related to Datasets below SR5GenEngObjRevision-->
+
+    <preference name="SR5GenEngObjRevision_CATDrawing_default_relation" type="String" array="false" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>Defines the default paste relation for SR5GenEngObjRevision object with CATDrawing.</preference_description>
+      <context name="Teamcenter">
+        <value>IMAN_specification</value>
+      </context>
+    </preference>
+    <preference name="SR5GenEngObjRevision_CATPart_default_relation" type="String" array="false" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>Defines the default paste relation for SR5GenEngObjRevision object with CATPart.</preference_description>
+      <context name="Teamcenter">
+        <value>IMAN_specification</value>
+      </context>
+    </preference>
+    <preference name="SR5GenEngObjRevision_CATProduct_default_relation" type="String" array="false" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>Defines the default paste relation for SR5GenEngObjRevision object with CATProduct.</preference_description>
+      <context name="Teamcenter">
+        <value>IMAN_specification</value>
+      </context>
+    </preference>
+    <preference name="SR5GenEngObjRevision_CATCache_default_relation" type="String" array="false" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>Defines the default paste relation for SR5GenEngObjRevision object with CATCache.</preference_description>
+      <context name="Teamcenter">
+        <value>catia_cache_link</value>
+      </context>
+    </preference>
+    <preference name="SR5GenEngObjRevision_DrawingSheet_default_relation" type="String" array="false" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>Defines the default paste relation for SR5GenEngObjRevision object with DrawingSheet.</preference_description>
+      <context name="Teamcenter">
+        <value>IMAN_Rendering</value>
+      </context>
+    </preference>
+    <preference name="SR5GenEngObjRevision_DirectModel_default_relation" type="String" array="false" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>Defines the default paste relation for SR5GenEngObjRevision object with DirectModel.</preference_description>
+      <context name="Teamcenter">
+        <value>IMAN_Rendering</value>
+      </context>
+    </preference>
+    <preference name="SR5GenEngObjRevision_DXF_default_relation" type="String" array="false" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>Defines the default paste relation for SR5GenEngObjRevision object with DXF.</preference_description>
+      <context name="Teamcenter">
+        <value>IMAN_Rendering</value>
+      </context>
+    </preference>
+    <preference name="SR5GenEngObjRevision_SR5DWG_default_relation" type="String" array="false" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>Defines the default paste relation for SR5GenEngObjRevision object with SR5DWG.</preference_description>
+      <context name="Teamcenter">
+        <value>IMAN_Rendering</value>
+      </context>
+    </preference>
+    <preference name="SR5GenEngObjRevision_SR5STEP_default_relation" type="String" array="false" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>Defines the default paste relation for SR5GenEngObjRevision object with STEP.</preference_description>
+      <context name="Teamcenter">
+        <value>IMAN_Rendering</value>
+      </context>
+    </preference>
+    <preference name="SR5GenEngObjRevision_PDF_default_relation" type="String" array="false" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>Defines the default paste relation for SR5GenEngObjRevision object with PDF.</preference_description>
+      <context name="Teamcenter">
+        <value>IMAN_Rendering</value>
+      </context>
+    </preference>
+    <preference name="SR5GenEngObjRevision_catia_model_attributes_default_relation" type="String" array="false" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>Defines the default paste relation for SR5GenEngObjRevision object with catia_model_attributes.</preference_description>
+      <context name="Teamcenter">
+        <value>IMAN_specification</value>
+      </context>
+    </preference>
+    <preference name="SR5GenDocumentRevision_PDF_default_relation" type="String" array="false" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>Defines the default paste relation for GenDocumentRevision object with PDF.</preference_description>
+      <context name="Teamcenter">
+        <value>TC_Attaches</value>
+      </context>
+    </preference>
+    <preference name="SR5GenDocumentRevision_MSWord_default_relation" type="String" array="false" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>Defines the default paste relation for GenDocumentRevision object with MSWord.</preference_description>
+      <context name="Teamcenter">
+        <value>TC_Attaches</value>
+      </context>
+    </preference>
+    <preference name="SR5GenDocumentRevision_MSWordX_default_relation" type="String" array="false" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>Defines the default paste relation for GenDocumentRevision object with MSWordX.</preference_description>
+      <context name="Teamcenter">
+        <value>TC_Attaches</value>
+      </context>
+    </preference>
+
+
+    <preference name="Pma0_Part_Design_Type" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>This preference defines the mapping of Part type to its aligned Design type.
+It is used in generation and updation of Part structure from Design structure and vice-versa.
+The syntax has to be in the KEY:VALUE format: PartType:ValidPartType,DesignType:ValidDesignType.
+e.g. PartType:Part,DesignType:Design
+Here PartType, DesignType are keywords to be used to specify the corresponding types.</preference_description>
+      <context name="Teamcenter">
+        <value>PartType:SR4EngPart,DesignType:Design</value>
+      </context>
+    </preference>
+
+    <preference name="PS_new_seqno_mode" type="String" array="false" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>Controls how the find number is generated for new occurrences.
+			Valid values are:
+			* &quot;new&quot;: new numbers are allocated to each of the occurrences.
+			* &quot;existing&quot;: new numbers are only allocated for occurrences of unique items. 
+			* &quot;none&quot;: no numbers are generated.</preference_description>
+      <context name="Teamcenter">
+        <value>Existing</value>
+      </context>
+    </preference>
+
+    <preference name="TCAllowedChildTypes_SR5Tool" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>Allowed types of child lines for current type.</preference_description>
+      <context name="Teamcenter">
+        <value>SR5Tool</value>
+      </context>
+    </preference>
+
+    <preference name="TCAllowedChildTypes_SR5LLEndItem" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>Allowed types of child lines for current type.</preference_description>
+      <context name="Teamcenter">
+        <value>SR5LLMajorAssy</value>
+      </context>
+    </preference>
+
+    <preference name="TCAllowedChildTypes_SR5LLMajorAssy" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>Allowed types of child lines for current type.</preference_description>
+      <context name="Teamcenter">
+        <value>SR5EngArticle</value>
+        <value>SR5EngArticleAR</value>
+        <value>SR5GenCatPart</value>
+        <value>SR5GenCatPartAR</value>
+        <value>SR5CatDefArticle</value>
+        <value>SR5ElectricAssy</value>
+      </context>
+    </preference>
+
+    <preference name="TCAllowedChildTypes_SR5SRVEndItem" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>Allowed types of child lines for current type.</preference_description>
+      <context name="Teamcenter">
+        <value>SR5SRVMajorAssy</value>
+      </context>
+    </preference>
+
+    <preference name="TCAllowedChildTypes_SR5SRVMajorAssy" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>Allowed types of child lines for current type.</preference_description>
+      <context name="Teamcenter">
+        <value>SR5SRVMajorAssy</value>
+        <value>SR5EngArticle</value>
+        <value>SR5EngArticleAR</value>
+        <value>SR5GenCatPart</value>
+        <value>SR5GenCatPartAR</value>
+        <value>SR5CatDefArticle</value>
+        <value>SR5ElectricAssy</value>
+        <value>SR5TechDocument</value>
+        <value>SR5Software</value>
+        <value>SR5DrawingDoc</value>
+      </context>
+    </preference>
+
+    <!-- To be confirmed -->
+    <preference name="TCAllowedChildTypes_SR5SpareEndItem" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>Allowed types of child lines for current type.</preference_description>
+      <context name="Teamcenter">
+        <value>SR5EngArticle</value>
+        <value>SR5EngArticleAR</value>
+        <value>SR5GenCatPart</value>
+        <value>SR5GenCatPartAR</value>
+        <value>SR5CatDefArticle</value>
+        <value>SR5ElectricAssy</value>
+      </context>
+    </preference>
+
+    <preference name="TCAllowedChildTypes_SR5EngProject" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>Allowed types of child lines for current type.</preference_description>
+      <context name="Teamcenter">
+        <value>SR5EngEndItem</value>
+        <value>SR5NonERPArticle</value>
+        <value>SR5BodNode</value>
+      </context>
+    </preference>
+
+    <preference name="TCAllowedChildTypes_SR5ColorLibrary" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>Allowed types of child lines for current type.</preference_description>
+      <context name="Teamcenter">
+        <value>SR5ColorDef</value>
+      </context>
+    </preference>
+
+    <preference name="TCAllowedChildTypes_SR5ColorDef" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>Allowed types of child lines for current type.</preference_description>
+      <context name="Teamcenter">
+      </context>
+    </preference>
+
+    <preference name="TCAllowedChildTypes_SR5EngEndItem" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>Allowed types of child lines for current type.</preference_description>
+      <context name="Teamcenter">
+        <value>SR5EngMajorAssy</value>
+      </context>
+    </preference>
+
+    <preference name="TCAllowedChildTypes_SR5CatDefArticle" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>Allowed types of child lines for current type.</preference_description>
+      <context name="Teamcenter">
+      </context>
+    </preference>
+
+    <preference name="TCAllowedChildTypes_SR5CatDefArtAR" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>Allowed types of child lines for current type.</preference_description>
+      <context name="Teamcenter">
+      </context>
+    </preference>
+
+    <preference name="TCAllowedChildTypes_SR5CoatingStruct" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>Allowed types of child lines for current type.</preference_description>
+      <context name="Teamcenter">
+      </context>
+    </preference>
+
+    <preference name="TCAllowedChildTypes_SR5EngMajorAssy" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>Allowed types of child lines for current type.</preference_description>
+      <context name="Teamcenter">
+        <value>SR5EngMajorAssy</value>
+        <value>SR5EngInstallLoc</value>
+        <value>SR5NonERPArticle</value>
+      </context>
+    </preference>
+
+    <preference name="TCAllowedChildTypes_SR5EngInstallLoc" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>Allowed types of child lines for current type.</preference_description>
+      <context name="Teamcenter">
+        <value>SR5EngArticle</value>
+        <value>SR5EngArticleAR</value>
+        <value>SR5ElectricAssy</value>
+        <value>SR5NonERPArticle</value>
+        <value>SR5GenCatPart</value>
+        <value>SR5GenCatPartAR</value>
+        <value>SR5CatDefArticle</value>
+        <value>SR5Weld</value>
+      </context>
+    </preference>
+
+    <preference name="TCAllowedChildTypes_SR5ElectricAssy" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>Allowed types of child lines for current type.</preference_description>
+      <context name="Teamcenter">
+        <value>SR5ElectricAssy</value>
+        <value>SR5GenCatPart</value>
+        <value>SR5EngArticle</value>
+        <value>SR5EngArticleAR</value>
+        <value>SR5NonERPArticle</value>
+      </context>
+    </preference>
+
+    <preference name="TCAllowedChildTypes_SR5EngArticle" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>Allowed types of child lines for current type.</preference_description>
+      <context name="Teamcenter">
+        <value>SR5EngArticle</value>
+        <value>SR5EngArticleAR</value>
+        <value>SR5Software</value>
+        <value>SR5TechDocument</value>
+        <value>SR5GenCatPart</value>
+        <value>SR5CatDefArticle</value>
+        <value>SR5NonERPArticle</value>
+        <value>SR5ColorDef</value>
+        <value>SR5GenCatPartAR</value>
+        <value>SR5CoatingStruct</value>
+        <value>SR5Weld</value>
+        <value>SR5ElectricAssy</value>
+        <value>SR5DrawingDoc</value>
+        <value>SR5EngRawArticle</value>
+      </context>
+    </preference>
+
+
+    <preference name="TCAllowedChildTypes_SR5EngRawArticle" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>Allowed types of child lines for current type.</preference_description>
+      <context name="Teamcenter">
+      </context>
+    </preference>
+
+    <preference name="TCAllowedChildTypes_SR5NonERPArticle" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>Allowed types of child lines for current type.</preference_description>
+      <context name="Teamcenter">
+        <value>SR5NonERPArticle</value>
+      </context>
+    </preference>
+
+    <preference name="TCAllowedChildTypes_SR5GenCatPart" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>Allowed types of child lines for current type.</preference_description>
+      <context name="Teamcenter">
+        <value>SR5GenCatPart</value>
+        <value>SR5GenCatPartAR</value>
+        <value>SR5EngArticle</value>
+        <value>SR5EngArticleAR</value>
+      </context>
+    </preference>
+
+    <preference name="TCAllowedChildTypes_SR5GenCatPartAR" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>Allowed types of child lines for current type.</preference_description>
+      <context name="Teamcenter">
+        <value>SR5GenCatPart</value>
+        <value>SR5GenCatPartAR</value>
+        <value>SR5EngArticle</value>
+        <value>SR5EngArticleAR</value>
+      </context>
+    </preference>
+
+    <preference name="TCAllowedChildTypes_SR5MechCatPart" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>Allowed types of child lines for current type.</preference_description>
+      <context name="Teamcenter">
+      </context>
+    </preference>
+
+    <preference name="TCAllowedChildTypes_SR5EleCatPart" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>Allowed types of child lines for current type.</preference_description>
+      <context name="Teamcenter">
+      </context>
+    </preference>
+
+    <preference name="TCAllowedChildTypes_SR5Software" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>Allowed types of child lines for current type.</preference_description>
+      <context name="Teamcenter">
+      </context>
+    </preference>
+
+    <preference name="TCAllowedChildTypes_SR5BodNode" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>Allowed types of child lines for current type.</preference_description>
+      <context name="Teamcenter">
+        <value>SR5BodNode</value>
+        <value>SR5TechDocument</value>
+        <value>SR5DrawingDoc</value>
+      </context>
+    </preference>
+
+
+    <preference name="TCAllowedChildTypes_SR5DrawingDoc" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>Allowed types of child lines for current type.</preference_description>
+      <context name="Teamcenter">
+      </context>
+    </preference>
+
+    <preference name="TCAllowedChildTypes_SR5GenDocument" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>Allowed types of child lines for current type.</preference_description>
+      <context name="Teamcenter">
+      </context>
+    </preference>
+
+    <preference name="TCAllowedChildTypes_SR5MfgEndItem" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>Allowed types of child lines for current type.</preference_description>
+      <context name="Teamcenter">
+        <value>SR5MfgMajorAssy</value>
+      </context>
+    </preference>
+
+    <preference name="TCAllowedChildTypes_SR5MfgMajorAssy" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>Allowed types of child lines for current type.</preference_description>
+      <context name="Teamcenter">
+        <value>SR5MfgInstallKit</value>
+      </context>
+    </preference>
+
+    <preference name="TCAllowedChildTypes_SR5MfgInstallKit" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>Allowed types of child lines for current type.</preference_description>
+      <context name="Teamcenter">
+        <value>SR5MfgObject</value>
+        <value>SR5EngArticle</value>
+        <value>SR5EngArticleAR</value>
+        <value>SR5MfgColorAssy</value>
+        <value>SR5ElectricAssy</value>
+        <value>SR5GenCatPart</value>
+        <value>SR5Software</value>
+        <value>SR5TechDocument</value>
+        <value>SR5EngInstallLoc</value>
+      </context>
+    </preference>
+
+    <preference name="TCAllowedChildTypes_SR5MfgColorAssy" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>Allowed types of child lines for current type.</preference_description>
+      <context name="Teamcenter">
+        <value>SR5EngArticle</value>
+        <value>SR5EngArticleAR</value>
+        <value>SR5TechDocument</value>
+        <value>SR5ColorDef</value>
+      </context>
+    </preference>
+
+    <preference name="TCAllowedChildTypes_SR5MfgObject" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>Allowed types of child lines for current type.</preference_description>
+      <context name="Teamcenter">
+        <value>SR5MfgObject</value>
+        <value>SR5EngArticle</value>
+        <value>SR5EngArticleAR</value>
+        <value>SR5MfgColorAssy</value>
+        <value>SR5ElectricAssy</value>
+        <value>SR5GenCatPart</value>
+        <value>SR5Software</value>
+        <value>SR5TechDocument</value>
+      </context>
+    </preference>
+
+    <preference name="TCAllowedChildTypes_SR5ManufactPart" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>Allowed types of child lines for current type.</preference_description>
+      <context name="Teamcenter">
+      </context>
+    </preference>
+
+    <preference name="TCAllowedChildTypes_SR5LLEndItem" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>Allowed types of child lines for current type.</preference_description>
+      <context name="Teamcenter">
+        <value>SR5LLMajorAssy</value>
+      </context>
+    </preference>
+
+    <preference name="TCAllowedChildTypes_SR5LLMajorAssy" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>Allowed types of child lines for current type.</preference_description>
+      <context name="Teamcenter">
+        <value>SR5EngArticle</value>
+        <value>SR5EngArticleAR</value>
+        <value>SR5ElectricAssy</value>
+        <value>SR5GenCatPart</value>
+      </context>
+    </preference>
+
+    <preference name="Displayed_Decimals_for_Qty" type="Integer" array="false" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>Number of digits shown for a BL quantity</preference_description>
+      <context name="Teamcenter">
+        <value>3</value>
+      </context>
+    </preference>
+
+    <preference name="AW_SubLocation_Generic_ViewMode" type="String" array="true" disabled="false" protectionScope="User" envEnabled="false">
+      <preference_description>This is an internal preference.</preference_description>
+      <context name="Teamcenter">
+        <value>TreeSummaryView</value>
+      </context>
+    </preference>
+
+  </category>
+
+  <category name="Rich Client">
+
+    <category_description>No description available for this category.</category_description>
+
+    <preference name="SR4MfgPartRevision_DefaultChildProperties" type="String" array="true" disabled="false" protectionScope="User" envEnabled="false">
+      <preference_description>Specifies the list of properties that can be displayed as children of Part Revision node.</preference_description>
+      <context name="Teamcenter">
+        <value>IMAN_master_form_rev</value>
+        <value>bom_view_tags</value>
+        <value>IMAN_requirement</value>
+        <value>IMAN_manifestation</value>
+        <value>IMAN_reference</value>
+        <value>IMAN_MEView</value>
+        <value>IMAN_vi_sos</value>
+        <value>IMAN_external_object_link</value>
+        <value>IMAN_Rendering</value>
+        <value>IMAN_specification</value>
+        <value>TC_WorkContext_Relation</value>
+        <value>TC_AuditLog</value>
+        <value>TC_Is_Represented_By</value>
+        <value>TC_DrawingOf</value>
+        <value>TC_DrawingUsing</value>
+        <value>Fnd0ListsParamReqments</value>
+        <value>Fnd0ListsCustomNotes</value>
+        <value>Mat1UsesMaterial</value>
+        <value>Mat1UsesMaterialForCoating</value>
+        <value>Seg0BudgetRelation</value>
+        <value>structure_revisions</value>
+        <value>SR4HasEBOM</value>
+        <!--value>SR4HasCollaborationContext</value-->
+      </context>
+    </preference>
+
+    <preference name="SR4MfgPartRevision_SR4EngPartRevision_default_relation" type="String" array="false" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>Defines the default paste relation for Part Revision object with Material Revision.</preference_description>
+      <context name="Teamcenter">
+        <value>SR4HasEBOM</value>
+      </context>
+    </preference>
+
+    <preference name="SR4MfgPartRevision_PseudoFolder" type="String" array="true" disabled="false" protectionScope="User" envEnabled="false">
+      <preference_description>Specifies the list of properties that can be displayed as a pseudo-folder under a node for Part Revision object.</preference_description>
+      <context name="Teamcenter">
+      </context>
+    </preference>
+
+    <preference name="SR4MfgPartRevision_shown_relations" type="String" array="true" disabled="false" protectionScope="User" envEnabled="false">
+      <preference_description>Specifies which Relations to display when expanding the node of a Part Revision object.</preference_description>
+      <context name="Teamcenter">
+        <value>PSBOMViewRevision</value>
+        <value>IMAN_specification</value>
+        <value>IMAN_requirement</value>
+        <value>IMAN_manifestation</value>
+        <value>IMAN_reference</value>
+        <value>IMAN_UG_udf</value>
+        <value>IMAN_UG_altrep</value>
+        <value>IMAN_UG_scenario</value>
+        <value>IMAN_Simulation</value>
+        <value>IMAN_Rendering</value>
+        <value>IMAN_Motion</value>
+        <value>IMAN_MEMfgModel</value>
+        <value>IMAN_snapshot</value>
+        <value>IMAN_3D_snap_shot</value>
+        <value>IMAN_external_object_link</value>
+        <value>IMAN_MEWorkInstruction</value>
+        <value>TC_ProductManual</value>
+        <value>TC_Is_Represented_By</value>
+        <value>TC_DrawingOf</value>
+        <value>TC_DrawingUsing</value>
+        <value>Fnd0ListsParamReqments</value>
+        <value>Fnd0ListsCustomNotes</value>
+        <value>structure_revisions</value>
+        <value>SR4HasEBOM</value>
+        <!--value>SR4HasCollaborationContext</value-->
+      </context>
+    </preference>
+
+    <preference name="SR4EngPartRevision_DefaultChildProperties" type="String" array="true" disabled="false" protectionScope="User" envEnabled="false">
+      <preference_description>Specifies the list of properties that can be displayed as children of Part Revision node.</preference_description>
+      <context name="Teamcenter">
+        <value>IMAN_master_form_rev</value>
+        <value>bom_view_tags</value>
+        <value>IMAN_requirement</value>
+        <value>IMAN_manifestation</value>
+        <value>IMAN_reference</value>
+        <value>IMAN_MEView</value>
+        <value>IMAN_vi_sos</value>
+        <value>IMAN_external_object_link</value>
+        <value>IMAN_Rendering</value>
+        <value>IMAN_specification</value>
+        <value>TC_WorkContext_Relation</value>
+        <value>TC_AuditLog</value>
+        <value>TC_Is_Represented_By</value>
+        <value>TC_DrawingOf</value>
+        <value>TC_DrawingUsing</value>
+        <value>Fnd0ListsParamReqments</value>
+        <value>Fnd0ListsCustomNotes</value>
+        <value>Mat1UsesMaterial</value>
+        <value>Mat1UsesMaterialForCoating</value>
+        <value>Seg0BudgetRelation</value>
+        <value>structure_revisions</value>
+        <value>sr4HasMBOM</value>
+        <!--value>SR4HasCollaborationContext</value-->
+      </context>
+    </preference>
+
+    <preference name="SR4EngPartRevision_PseudoFolder" type="String" array="true" disabled="false" protectionScope="User" envEnabled="false">
+      <preference_description>Specifies the list of properties that can be displayed as a pseudo-folder under a node for Part Revision object.</preference_description>
+      <context name="Teamcenter">
+        <value>TC_Is_Represented_By</value>
+        <value>Mat1UsesMaterial</value>
+        <value>Mat1UsesMaterialForCoating</value>
+        <value>sr4HasMBOM</value>
+      </context>
+    </preference>
+
+    <preference name="SR4EngPartRevision_shown_relations" type="String" array="true" disabled="false" protectionScope="User" envEnabled="false">
+      <preference_description>Specifies which Relations to display when expanding the node of a Part Revision object.</preference_description>
+      <context name="Teamcenter">
+        <value>PSBOMViewRevision</value>
+        <value>IMAN_specification</value>
+        <value>IMAN_requirement</value>
+        <value>IMAN_manifestation</value>
+        <value>IMAN_reference</value>
+        <value>IMAN_UG_udf</value>
+        <value>IMAN_UG_altrep</value>
+        <value>IMAN_UG_scenario</value>
+        <value>IMAN_Simulation</value>
+        <value>IMAN_Rendering</value>
+        <value>IMAN_Motion</value>
+        <value>IMAN_MEMfgModel</value>
+        <value>IMAN_snapshot</value>
+        <value>IMAN_3D_snap_shot</value>
+        <value>IMAN_external_object_link</value>
+        <value>IMAN_MEWorkInstruction</value>
+        <value>TC_ProductManual</value>
+        <value>TC_Is_Represented_By</value>
+        <value>TC_DrawingOf</value>
+        <value>TC_DrawingUsing</value>
+        <value>Fnd0ListsParamReqments</value>
+        <value>Fnd0ListsCustomNotes</value>
+        <value>structure_revisions</value>
+        <value>sr4HasMBOM</value>
+        <!--value>SR4HasCollaborationContext</value-->
+      </context>
+    </preference>
+
+    <preference name="SR5TechDocumentRevision_Dataset_default_relation" type="String" array="false" disabled="false" protectionScope="User" envEnabled="false">
+      <preference_description>Specifies the default relation to use when pasting a Dataset to a SR5TechDocumentRevision.</preference_description>
+      <context name="Teamcenter">
+        <value>TC_Attaches</value>
+      </context>
+    </preference>
+
+  </category>
+
+  <category name="mfgcore">
+
+    <category_description>mbc0mfgbvrcore template preferences</category_description>
+
+    <preference name="EP_SearchSubtypesForEbom" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>List of subtypes to search for when adding an existing Engineering Bill Of Materials (EBOM) to a work package</preference_description>
+      <context name="Teamcenter">
+        <value>SR5EngEndItem</value>
+        <value>SR5EngMajorAssy</value>
+        <value>SR5EngArticleRevision</value>
+      </context>
+    </preference>
+
+    <preference name="EP_SearchSubtypesForMbom" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>List of subtypes to search for when adding an existing Manufacturing Bill Of Materials (MBOM) to a work package</preference_description>
+      <context name="Teamcenter">
+        <value>SR5MfgEndItem</value>
+        <value>SR5MfgMajorAssy</value>
+        <value>SR5MfgInstallKit</value>
+        <value>SR5LLEndItem</value>
+        <value>SR5LLMajorAssy</value>
+        <value>SR5SRVEndItem</value>
+        <value>SR5SRVMajorAssy</value>
+        <value>SR5SpareEndItem</value>
+        <value>SR5SpareMajAssy</value>
+      </context>
+    </preference>
+
+    <preference name="EP_CreateSubtypesForType_Item" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>List of subtypes to show when creating an item</preference_description>
+      <context name="Teamcenter">
+        <value>SR5MfgEndItem</value>
+        <value>SR5MfgMajorAssy</value>
+        <value>SR5LLEndItem</value>
+        <value>SR5LLMajorAssy</value>
+        <value>SR5SRVEndItem</value>
+        <value>SR5SRVMajorAssy</value>
+        <value>SR5SpareEndItem</value>
+        <value>SR5SpareMajAssy</value>
+      </context>
+    </preference>
+
+  </category>
+
+  <category name="Manufacturing">
+
+    <category_description>No description available for this category.</category_description>
+
+    <preference name="MBMAssignmentDomainMBOMTypes" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>This preference is to specify item types from the MBOM structure which can be used to define the assignment domain relation.</preference_description>
+      <context name="Teamcenter">
+        <value>SR5MfgEndItemRevision</value>
+        <value>SR5MfgMajorAssyRevision</value>
+        <value>SR5MfgInstallKitRevision</value>
+        <value>SR5LLEndItemRevision</value>
+        <value>SR5LLMajorAssyRevision</value>
+        <value>SR5SRVEndItemRevision</value>
+        <value>SR5SRVMajorAssyRevision</value>
+        <value>SR5SpareEndItemRevision</value>
+        <value>SR5SpareMajAssyRevision</value>
+      </context>
+    </preference>
+
+    <preference name="MBMCheckoutCheckForFocus" type="Logical" array="false" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>If this preference is set to true, user will have to check out the node before focusing on it. If the selected node is not checked out by the same user, user will not be able to focus on it.</preference_description>
+      <context name="Teamcenter">
+        <value>true</value>
+      </context>
+    </preference>
+
+    <preference name="MBMEnableBOMFiltering" type="Logical" array="false" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>This preference allows to perform alignment between sub-sections of EBOM and MBOM by showing only relevant nodes based on a relation.</preference_description>
+      <context name="Teamcenter">
+        <value>true</value>
+      </context>
+    </preference>
+
+    <preference name="MBMEnableModularMBOM" type="Logical" array="false" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>This preference allows to search and add existing manufacturing representations (mini-MBOM) in higher level product context.</preference_description>
+      <context name="Teamcenter">
+        <value>true</value>
+      </context>
+    </preference>
+
+    <preference name="MBMOnDemandCompare" type="Logical" array="false" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>If this preference is set to true, the user will see a toggle which allows them to decide whether compare will be run on their action.</preference_description>
+      <context name="Teamcenter">
+        <value>true</value>
+      </context>
+    </preference>
+
+    <preference name="MBM_AdditionalRelationForModularMBOM" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>This preference defines additional relations to identify the existing manufacturing representations.</preference_description>
+      <context name="Teamcenter">
+        <value>ItemRevision:TC_Is_Represented_By</value>
+      </context>
+    </preference>
+
+    <preference name="MbmReleaseStatusForModularBom" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>This preference governs the display of &apos;Has Manufacturing Representation&apos; indication on EBOM nodes based on the release status associated with the BOMViewRevision of Mfg representation node. If the preference is empty, the non-released BOMViewRevision will be shown.</preference_description>
+      <context name="Teamcenter">
+        <value></value>
+      </context>
+    </preference>
+
+  </category>
+
+  <category name="Mail">
+
+    <category_description>No description available for this category.</category_description>
+
+    <preference name="Folder_mail_properties" type="String" array="true" disabled="false" protectionScope="User" envEnabled="false">
+      <preference_description>Lists all properties of an object folder that can be sent via Teamcenter mail.
+Valid Values:
+One or more strings as values; each string must be a valid object folder property name.</preference_description>
+      <context name="Teamcenter">
+        <value>object_name</value>
+        <value>owning_user</value>
+        <value>object_desc</value>
+      </context>
+    </preference>
+
+    <preference name="Mail_OSMail_activated" type="Logical" array="false" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>Deteremines whether OS Mail functionality should be used to send e-mail from Teamcenter. When enabled, users can send OS e-mail by clicking Send to Envelope. The default value is true.
+Valid Values:
+* true - OS e-mail can be sent from Teamcenter.
+* false - OS e-mail cannot be sent from Teamcenter. Any value set for the Mail_server_name preference is ignored.</preference_description>
+      <context name="Teamcenter">
+        <value>true</value>
+      </context>
+    </preference>
+
+    <preference name="Mail_OS_from_address" type="String" array="false" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>Defines a &quot;From&quot; e-mail address for OS notification e-mails.
+Valid vallues are:
+* a valid email address: this value appears in the e-mail header &quot;From&quot; line.
+* an empty value: the &quot;From&quot; email address is taken from the sender&apos;s Person definition. This is the default value.</preference_description>
+      <context name="Teamcenter">
+      </context>
+    </preference>
+
+    <preference name="Mail_internal_mail_activated" type="Logical" array="false" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>Specifies whether the Teamcenter internal mail functionality is available when using the notify workflow handler. Default value is false.
+Valid Values:
+* true: The Teamcenter internal mail functionality is available.
+* false: The Teamcenter internal mail functionality is not available.</preference_description>
+      <context name="Teamcenter">
+        <value>false</value>
+      </context>
+    </preference>
+
+    <preference name="Mail_send_file_attachments_activated" type="Logical" array="false" disabled="false" protectionScope="System" envEnabled="false">
+      <preference_description>Activates sending dataset attachments as email file attachments. This takes effect when the envelope functionality sends messages directly to an email address instead of a Teamcenter user. When the mail is sent to a Teamcenter user, this preference has no impact, and the user always receives links to the envelope object.
+Valid Values:
+* true: Activates sending dataset attachments as email file attachments. The external recipient can open the attached files without requiring a Teamcenter logon or privileges. Consider site security guidelines before setting this preference to true.
+* false: Deactivates sending dataset attachments as email file attachments. External recipients of emails receive only Teamcenter client links to the attached datasets and not the actual files.</preference_description>
+      <context name="Teamcenter">
+        <value>true</value>
+      </context>
+    </preference>
+
+    <preference name="Mail_server_charset" type="String" array="false" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>Specifies the Teamcenter mail server character set that is used to send mail.</preference_description>
+      <context name="Teamcenter">
+        <value>UTF-8</value>
+      </context>
+    </preference>
+
+    <preference name="Mail_server_name" type="String" array="false" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>Sets the name of the mail gateway server. The mail server name should be a machine running a sendmail daemon.
+Leaving it as &quot;your mail server machine&quot; while the &quot;Mail_OSMail_activated&quot; preference is true may give you errors telling you to set this preference if you try to use the &quot;Send&quot; command.
+Valid Values:
+Text server name or an numeric IP address.</preference_description>
+      <context name="Teamcenter">
+        <value>casstag.stadlerrail.ch</value>
+      </context>
+    </preference>
+
+    <preference name="Mail_server_port" type="Integer" array="false" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>Specifies the port number used by the SMTP mail server to send OS mail. This preference must be used in conjunction with the Mail_server_name preference.
+Default value is 25.
+Valid Values:
+Must be a valid SMTP port number.</preference_description>
+      <context name="Teamcenter">
+        <value>25</value>
+      </context>
+    </preference>
+
+  </category>
+
+  <category name="Material Management">
+
+    <category_description>Teamcenter Preferences for Material Management</category_description>
+
+    <preference name="IMM_ACTIVATE_CUMULATIVE_MATERIALS_MASS" type="Logical" array="false" disabled="false" protectionScope="User" envEnabled="false">
+      <preference_description>Specifies whether to activate or not the cumulative mass calculation, in gram, of all materials under the ItemRevision.
+Valid values:
+* true: The cumulative mass is calculated.
+* false: The cumulative mass is not calculated.</preference_description>
+      <context name="Teamcenter">
+        <value>true</value>
+      </context>
+    </preference>
+
+    <preference name="MATERIALMGMT_material_creator_groups" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>Specifies the groups that are allowed to create materials.
+Valid Values:
+Valid values are the internal names of the groups allowed to create the material.</preference_description>
+      <context name="Teamcenter">
+        <value>dba</value>
+        <value>Material Management</value>
+      </context>
+    </preference>
+
+    <preference name="MATERIALMGMT_material_creator_roles" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>Indicates the roles allowed to create materials.
+Valid values are the role internal names.</preference_description>
+      <context name="Teamcenter">
+        <value>Material Analyst</value>
+        <value>DBA</value>
+      </context>
+    </preference>
+
+    <preference name="IMM_NX_Display_Statuses" type="String" array="false" disabled="false" protectionScope="Group" envEnabled="false">
+      <preference_description>Specifies the statuses to be displayed in IMM search dialog in NX.</preference_description>
+      <context name="Teamcenter">
+        <value>Approved(Approved);Any(-)</value>
+      </context>
+    </preference>
+
+    <preference name="IMM_TC_Display_Statuses" type="String" array="false" disabled="false" protectionScope="Group" envEnabled="false">
+      <preference_description>Specifies the statuses to be displayed in IMM search view in Teamcenter.</preference_description>
+      <context name="Teamcenter">
+        <value>Approved(Approved);Any(-)</value>
+      </context>
+    </preference>
+
+    <preference name="IMM_SEARCH_MATREV_CUSTOM_ATTR" type="String" array="true" disabled="false" protectionScope="Role" envEnabled="false">
+      <preference_description>Specifies a list of customized material revision persistent attributes to be used in an extended search functionality.
+* Each entry in this list must be the name of a single attribute and its type (double, string, integer, boolean, date) separated by a semi-column (;):  AttributeRealName;string
+* If a classic LOV is attached to the attribute, the entry must be: AttrRealName;lov
+* Each entry in the list can have a display name by concatenating it at the beginning with a hashtag (#) separator: DisplayName#RealNameOfPersistentAttr;string</preference_description>
+      <context name="Teamcenter">
+        <value>Material ID#awp0Item_item_id;string</value>
+        <value>Material Designations#mat1AlternateNames;string</value>
+        <value>Creation Date#creation_date;date</value>
+        <value>Applications#mat1Applications;string</value>
+      </context>
+    </preference>
+
+    <preference name="IMM_CAD_MATERIAL_VIEW_COLUMN_CONFIG" type="String" array="true" disabled="false" protectionScope="Role" envEnabled="false">
+      <preference_description>Specifies a list of customized material revision attributes to be used to add extra columns to the IMM NX UI.
+Each entry in this list must contain the real name of a material revision attribute or a runtime property: AttrRealName 
+Additionally, each entry in this list must concatenate the display name at the beginning with a &apos;#&apos; separator.
+For example, DisplayName#AttrRealName</preference_description>
+      <context name="Teamcenter">
+        <value>Owning user#owning_user</value>
+        <value>Last modified date#last_mod_date</value>
+      </context>
+    </preference>
+
+    <preference name="IMM_WIAM_USED" type="Logical" array="false" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>Controls the activation of the WIAM Search feature.
+Valid values are:
+* true: WIAM feature is enabled. This is the default value.
+* false: WIAM feature is enabled is disable.</preference_description>
+      <context name="Teamcenter">
+        <value>false</value>
+      </context>
+    </preference>
+
+    <!-- IMM CATIA Integration preferences -->
+    <preference name="CATIA_IMM_managed" type="Logical" array="false" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>CATIA_IMM_managed</preference_description>
+      <context name="Teamcenter">
+        <value>true</value>
+      </context>
+    </preference>
+    <preference name="CATIA_compute_geometry_for_main_body" type="Logical" array="false" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>CATIA_compute_geometry_for_main_body</preference_description>
+      <context name="Teamcenter">
+        <value>false</value>
+      </context>
+    </preference>
+    <preference name="CATIA_computeGeometry_option" type="Logical" array="false" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>CATIA_computeGeometry_option</preference_description>
+      <context name="Teamcenter">
+        <value>true</value>
+      </context>
+    </preference>
+    <preference name="IMM_CATIA_unit_of_mass" type="String" array="false" disabled="false" protectionScope="User" envEnabled="false">
+      <preference_description>IMM CATIA unit of measure for the mass as it is set in CATIA, this is required while save of the CATPart back to Teamcenter</preference_description>
+      <context name="Teamcenter">
+        <value>kg</value>
+      </context>
+    </preference>
+  </category>
+
+  <category name="Product Structure.QSearch Configuration">
+
+    <category_description>No description available for this category.</category_description>
+
+    <preference name="QS_SPATIAL_ENABLED" type="Logical" array="false" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>Enables or disables spatial searches (for example, proximity or box searches) within the cacheless search mechanism. If spatial searches are disabled, the user can still make attribute searches.
+Valid Values:
+true - Enables spatial searches.
+false - Disables spatial searches.</preference_description>
+      <context name="Teamcenter">
+        <value>true</value>
+      </context>
+    </preference>
+
+    <preference name="QS_TRUSHAPE_GENERATION_ENABLED" type="Logical" array="false" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>Enables or disables the generation of TruShape data needed by the cacheless spatial search mechanism. This preference is initially set by the Teamcenter Environment
+Manager (TEM) during installation, according to the cacheless search options selected.
+Valid Values:
+true - Enables the generation of TruShape data needed by the cacheless spatial search mechanism.
+false - Disables the generation of TruShape data needed by the cacheless spatial search mechanism.</preference_description>
+      <context name="Teamcenter">
+        <value>true</value>
+      </context>
+    </preference>
+
+    <preference name="QS_BBOX_GENERATION_ENABLED" type="Logical" array="false" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>Indicates whether Bounding Box data generation from JT is enabled or disabled.
+Valid Values:
+true - Enables the generation of bounding box data needed by the cacheless spatial search mechanism.
+false - Disables the generation of bounding box data needed by the cacheless spatial search mechanism.</preference_description>
+      <context name="Teamcenter">
+        <value>true</value>
+      </context>
+    </preference>
+
+    <preference name="QSEARCH_disable_bbox_for_product_scoping" type="Logical" array="false" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>Enables or disables sending translation requests to Dispatcher during spatial indexing when a non-indexable structure is added under an indexable structure.
+The dispatcher requests are used to create bounding box data for cacheless searches.
+NOTE: This preference applies only to product-scoped cacheless search functionality. It does not affect data for which non product-scoped indexing is in effect.
+Valid Values:
+true: Disables Dispatcher requests.
+false: Enables Dispatcher requests. This is the default value.</preference_description>
+      <context name="Teamcenter">
+        <value>false</value>
+      </context>
+    </preference>
+
+    <preference name="QSEARCH_dispatcher_not_available" type="Logical" array="false" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>Activates or deactivates the dispatcher that generates spatial indexes for cacheless searches. For example, you may want to deactivate this dispatcher for debugging purposes. This preference does not affect other dispatcher instances.
+Valid Values:
+False - The dispatcher is configured and cacheless searches are available in Structure Manager or Design Context.
+True - The dispatcher is deactivated and cacheless searches are not available in Structure Manager or Design Context.</preference_description>
+      <context name="Teamcenter">
+        <value>false</value>
+      </context>
+    </preference>
+
+    <preference name="QSEARCH_ignore_bbox_updates_for_non_product_scoped" type="Logical" array="false" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>Disables the generation of Bounding Boxes if the geometry dataset is attached to an ItemRevision or AbsoluteOccurrence that is not within the scope of products to be indexed for cacheless search.
+Valid Values::
+* true: Bounding Boxes are not be generated.
+* false: Bounding Boxes are generated. This is the default value.</preference_description>
+      <context name="Teamcenter">
+        <value>false</value>
+      </context>
+    </preference>
+
+    <preference name="QSEARCH_update_enabled" type="Logical" array="false" disabled="false" protectionScope="User" envEnabled="true">
+      <preference_description>Enables or disables the automatic updating of indexes used by the cacheless spatial search mechanism.This preference can be set using the preference name as an environment variable.
+Valid Values:
+true - Enables automatic updates of spatial search indexes. The spatial index box data needed for spatial searches is generated for modified parts.
+false - Disables automatic updates of spatial search indexes. Spatial index box data is not generated when parts are modified; spatial searches are unavailable due to lack of spatial data.</preference_description>
+      <context name="Teamcenter">
+        <value>false</value>
+      </context>
+    </preference>
+
+  </category>
+
+  <category name="Column Preferences">
+
+    <category_description>No description available for this category.</category_description>
+
+    <preference name="QSEARCH_BBOX_DEBUG_TEXT" type="Integer" array="false" disabled="false" protectionScope="User" envEnabled="false">
+      <preference_description>Specifies the level of debug output details for box zone
+Value of 0 will disable the preference i.e. no logging
+Values from 1 up to and including 4 represent increasing debug detail</preference_description>
+      <context name="Teamcenter">
+        <value>0</value>
+      </context>
+    </preference>
+
+    <preference name="QSEARCH_DEBUG_TEXT" type="Integer" array="false" disabled="false" protectionScope="User" envEnabled="false">
+      <preference_description>Specifies the level of debug output details
+Value of 0 will disable the preference i.e. no logging
+Values from 1 up to and including 4 represent increasing debug detail</preference_description>
+      <context name="Teamcenter">
+        <value>0</value>
+      </context>
+    </preference>
+
+    <preference name="QSEARCH_Organization_Types" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>Defines the list of Item types that are considered as organization types while generating qsearch indexes.
+Valid values are any valid Item types.</preference_description>
+      <context name="Teamcenter">
+      </context>
+    </preference>
+
+  </category>
+
+  <category name="Product Structure.PSE Column">
+
+    <category_description>No description available for this category.</category_description>
+
+    <preference name="QSEARCH_foreground_processing_halted" type="Logical" array="false" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>Specifies whether foreground processing of the cacheless search (QSearch) spatial indexes is enabled or disabled. Siemens PLM Software recommends you set this preference to true when working on a production environment or when the number of changes to the structure each day is very large. The Teamcenter Dispatcher qsearchprocessqueue service must be running to process the indexing requests when this preference is set to true.
+Valid Values:
+true - Disables the processing of spatial indexes in the foreground and creates Dispatcher requests to process the spatial indexes in the background.
+false - Enables spatial index generation in the foreground. If index generation does not complete in the specified time period, it creates a Dispatcher request that generates the spatial indexes in the background.</preference_description>
+      <context name="Teamcenter">
+        <value>false</value>
+      </context>
+    </preference>
+
+  </category>
+
+  <category name="Workflow">
+    <category_description>No description available for this category.</category_description>
+
+    <preference name="SR5ArticleReqForm_default_workflow_template" type="String" array="false" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>Default workflow template assignment for Article Request Form.</preference_description>
+      <context name="Teamcenter">
+        <value>Catalog &amp; Standard Part Request</value>
+      </context>
+    </preference>
+
+    <preference name="EPM_task_execution_mode" type="String" array="false" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>Determines which task execution mode should be used to process a Workflow task.
+Valid Values:
+* FOREGROUND: Processes all tasks in foreground mode. This is the default value.
+* BACKGROUND: Processes all tasks in background mode.
+* CONFIGURABLE: Processes a task according to its task template&apos;s &quot;ExecuteAsync&quot; property setting. If the property is set to &quot;ON&quot;, the task will be processed in background mode. If the property is set to &quot;OFF&quot;, the task will be processed in foreground mode.</preference_description>
+      <context name="Teamcenter">
+        <value>CONFIGURABLE</value>
+      </context>
+    </preference>
+    <preference name="WRKFLW_parent_behavior_on_sub_process_abort" type="Integer" array="false" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>1. Trigger dependent parent task to complete. (default value)
+2. No action on dependent parent task. User will decide what action to take.</preference_description>
+      <context name="Teamcenter">
+        <value>2</value>
+      </context>
+    </preference>
+  </category>
+  <category name="Dispatcher">
+    <category_description></category_description>
+    <preference name="SIEMENSqchecker_on_demand_priority" type="String" array="false" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>The scheduling priority for on-demand translations. The valid values of this preference are 0,1,2,and 3 corresponding to OFF, low, medium, and high priority. If this preference is not specified, no visualization data will be generated for on-demand.</preference_description>
+      <context name="Teamcenter">
+        <value>1</value>
+      </context>
+    </preference>
+    <preference name="SIEMENSqchecker_ets_ds_types" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>The dataset type names of the datasets that can be translated by the translator. If no dataset types are specified, the configuration is invalid and will be reported as an error.</preference_description>
+      <context name="Teamcenter">
+        <value>CATPart</value>
+        <value>CATProduct</value>
+        <value>CATDrawing</value>
+      </context>
+    </preference>
+    <preference name="SIEMENSqchecker_translation_service_name" type="String" array="false" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>The TSTK provider name and service name of the translator to be used for translation. This preference value is specified using the provider and service attribute values from the corresponding translator element in the TSTK Module configuration translator.xml file (e.g. Siemens PLM Software.tozipfile). WARNING: If this preference is not specified, requests for this translations will be ignored.</preference_description>
+      <context name="Teamcenter">
+        <value>SIEMENS.qchecker</value>
+      </context>
+    </preference>
+    <preference name="SIEMENSqchecker_CATPart_ets_dst_ds_type" type="String" array="false" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>The destination dataset type under which the result will be stored. If no destination dataset type is specified, the configuration is invalid and will be reported as an error.</preference_description>
+      <context name="Teamcenter">
+        <value>HTML</value>
+      </context>
+    </preference>
+    <preference name="SIEMENSqchecker_CATPart_ets_dst_nr_type" type="String" array="false" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>The destination named reference type under which the result will be stored. If no destination named reference type is specified, the configuration is invalid and will be reported as an error.</preference_description>
+      <context name="Teamcenter">
+        <value>HTML</value>
+      </context>
+    </preference>
+    <preference name="SIEMENSqchecker_CATPart_ets_dst_relation_to_src" type="String" array="false" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>The relation is to be created between the source dataset and destination dataset.</preference_description>
+      <context name="Teamcenter">
+        <value>false</value>
+      </context>
+    </preference>
+    <preference name="SIEMENSqchecker_CATPart_ets_dst_relation_type" type="String" array="false" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>The relation type of the relation to be created between the source dataset item revision and the destination dataset. If the source and destination dataset types are the same, this preference is ignored. If the source and destination dataset types are different, this preference must be specified; otherwise the configuration is invalid and will be reported as an error.</preference_description>
+      <context name="Teamcenter">
+        <value>IMAN_Rendering</value>
+      </context>
+    </preference>
+    <preference name="SIEMENSqchecker_CATPart_ets_nr_types" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>The source dataset named references necessary for translation. All dataset named reference types specified by this preference must exist to be valid for translation. If no named reference types are specified, the configuration is invalid and will be reported as an error.</preference_description>
+      <context name="Teamcenter">
+        <value>catpart</value>
+      </context>
+    </preference>
+    <preference name="SIEMENSqchecker_CATProduct_ets_dst_ds_type" type="String" array="false" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>The destination dataset type under which the result will be stored. If no destination dataset type is specified, the configuration is invalid and will be reported as an error.</preference_description>
+      <context name="Teamcenter">
+        <value>HTML</value>
+      </context>
+    </preference>
+    <preference name="SIEMENSqchecker_CATProduct_ets_dst_nr_type" type="String" array="false" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>The destination named reference type under which the result will be stored. If no destination named reference type is specified, the configuration is invalid and will be reported as an error.</preference_description>
+      <context name="Teamcenter">
+        <value>HTML</value>
+      </context>
+    </preference>
+    <preference name="SIEMENSqchecker_CATProduct_ets_dst_relation_to_src" type="String" array="false" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>The relation is to be created between the source dataset and destination dataset.</preference_description>
+      <context name="Teamcenter">
+        <value>false</value>
+      </context>
+    </preference>
+    <preference name="SIEMENSqchecker_CATProduct_ets_dst_relation_type" type="String" array="false" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>The relation type of the relation to be created between the source dataset item revision and the destination dataset. If the source and destination dataset types are the same, this preference is ignored. If the source and destination dataset types are different, this preference must be specified; otherwise the configuration is invalid and will be reported as an error.</preference_description>
+      <context name="Teamcenter">
+        <value>IMAN_Rendering</value>
+      </context>
+    </preference>
+    <preference name="SIEMENSqchecker_CATProduct_ets_nr_types" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>The source dataset named references necessary for translation. All dataset named reference types specified by this preference must exist to be valid for translation. If no named reference types are specified, the configuration is invalid and will be reported as an error.</preference_description>
+      <context name="Teamcenter">
+        <value>catproduct</value>
+      </context>
+    </preference>
+    <preference name="SIEMENSqchecker_CATDrawing_ets_dst_ds_type" type="String" array="false" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>The destination dataset type under which the result will be stored. If no destination dataset type is specified, the configuration is invalid and will be reported as an error.</preference_description>
+      <context name="Teamcenter">
+        <value>HTML</value>
+      </context>
+    </preference>
+    <preference name="SIEMENSqchecker_CATDrawing_ets_dst_nr_type" type="String" array="false" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>The destination named reference type under which the result will be stored. If no destination named reference type is specified, the configuration is invalid and will be reported as an error.</preference_description>
+      <context name="Teamcenter">
+        <value>HTML</value>
+      </context>
+    </preference>
+    <preference name="SIEMENSqchecker_CATDrawing_ets_dst_relation_to_src" type="String" array="false" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>The relation is to be created between the source dataset and destination dataset.</preference_description>
+      <context name="Teamcenter">
+        <value>false</value>
+      </context>
+    </preference>
+    <preference name="SIEMENSqchecker_CATDrawing_ets_dst_relation_type" type="String" array="false" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>The relation type of the relation to be created between the source dataset item revision and the destination dataset. If the source and destination dataset types are the same, this preference is ignored. If the source and destination dataset types are different, this preference must be specified; otherwise the configuration is invalid and will be reported as an error.</preference_description>
+      <context name="Teamcenter">
+        <value>IMAN_Rendering</value>
+      </context>
+    </preference>
+    <preference name="SIEMENSqchecker_CATDrawing_ets_nr_types" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>The source dataset named references necessary for translation. All dataset named reference types specified by this preference must exist to be valid for translation. If no named reference types are specified, the configuration is invalid and will be reported as an error.</preference_description>
+      <context name="Teamcenter">
+        <value>catdrawing</value>
+      </context>
+    </preference>
+    <preference name="ETS.DATASETTYPES.SIEMENS.QCHECKER" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>This preference lists the applicable dataset types for the translator. Only the datasets specified in this preference are valid for translation.</preference_description>
+      <context name="Teamcenter">
+        <value>CATPart</value>
+        <value>CATProduct</value>
+        <value>CATDrawing</value>
+      </context>
+    </preference>
+    <preference name="ETS.PRIORITY.SIEMENS.QCHECKER" type="String" array="false" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>This preference specifies the priority to be assigned to a dispatcher request for this translator.</preference_description>
+      <context name="Teamcenter">
+        <value>1</value>
+      </context>
+    </preference>
+    <preference name="ETS.TRANSLATOR_ARGS.SIEMENS.QCHECKER" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>This preference specifies a list of translation arguments to be passed to the translator.</preference_description>
+      <context name="Teamcenter">
+      </context>
+    </preference>
+    <preference name="ETS.REPEATING_UI.SIEMENS.QCHECKER" type="String" array="false" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>Specifies if repeating UI should show up in the Single Selection Dialogue.</preference_description>
+      <context name="Teamcenter">
+        <value>false</value>
+      </context>
+    </preference>
+    <preference name="ETS.VALIDATE.SIEMENS.QCHECKER" type="String" array="false" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>This preference is used to decide if default validation can be done on the selected TcComponent.</preference_description>
+      <context name="Teamcenter">
+        <value>true</value>
+      </context>
+    </preference>
+    <preference name="ETS.DATASETTYPES.SIEMENS.CATIAV5LUS" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>Valid dataset types</preference_description>
+      <context name="Teamcenter">
+        <value>CATDrawing</value>
+      </context>
+    </preference>
+    <preference name="ETS.PRIORITY.SIEMENS.CATIAV5LUS" type="String" array="false" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>Priotity of service</preference_description>
+      <context name="Teamcenter">
+        <value>3</value>
+      </context>
+    </preference>
+    <preference name="ETS.REPEATING_UI.SIEMENS.CATIAV5LUS" type="String" array="false" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>Repeat ETS task</preference_description>
+      <context name="Teamcenter">
+        <value>false</value>
+      </context>
+    </preference>
+    <preference name="ETS.TRANSLATOR_ARGS.SIEMENS.CATIAV5LUS" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>Arguments for CATIA V5 LUS call</preference_description>
+      <context name="Teamcenter">
+      </context>
+    </preference>
+    <preference name="ETS.DATASETTYPES.SIEMENS.CATIAV5TOPDF" type="String" array="true" disabled="false" protectionScope="User" envEnabled="false">
+      <preference_description>Valid dataset types</preference_description>
+      <context name="Teamcenter">
+        <value>CATDrawing</value>
+      </context>
+    </preference>
+    <preference name="ETS.PRIORITY.SIEMENS.CATIAV5TOPDF" type="String" array="false" disabled="false" protectionScope="User" envEnabled="false">
+      <preference_description>Priotity of service</preference_description>
+      <context name="Teamcenter">
+        <value>3</value>
+      </context>
+    </preference>
+    <preference name="ETS.REPEATING_UI.SIEMENS.CATIAV5TOPDF" type="String" array="false" disabled="false" protectionScope="User" envEnabled="false">
+      <preference_description>Repeat ETS task</preference_description>
+      <context name="Teamcenter">
+        <value>false</value>
+      </context>
+    </preference>
+    <preference name="ETS.TRANSLATOR_ARGS.SIEMENS.CATIAV5TOPDF" type="String" array="true" disabled="false" protectionScope="User" envEnabled="false">
+      <preference_description>Arguments for CATIA V5 to PDF converter</preference_description>
+      <context name="Teamcenter">
+      </context>
+    </preference>
+    <preference name="SIEMENScatiav5topdf_CATDrawing_ets_dst_ds_type" type="String" array="false" disabled="false" protectionScope="User" envEnabled="false">
+      <preference_description>SIEMENScatiav5topdf_CATDrawing_ets_dst_ds_type</preference_description>
+      <context name="Teamcenter">
+        <value>PDF</value>
+      </context>
+    </preference>
+    <preference name="SIEMENScatiav5topdf_CATDrawing_ets_dst_nr_type" type="String" array="false" disabled="false" protectionScope="User" envEnabled="false">
+      <preference_description>SIEMENScatiav5topdf_CATDrawing_ets_dst_nr_type</preference_description>
+      <context name="Teamcenter">
+        <value>PDF_Reference</value>
+      </context>
+    </preference>
+    <preference name="SIEMENScatiav5topdf_CATDrawing_ets_dst_relation_to_src" type="String" array="false" disabled="false" protectionScope="User" envEnabled="false">
+      <preference_description>SIEMENScatiav5topdf_CATDrawing_ets_dst_relation_to_src</preference_description>
+      <context name="Teamcenter">
+        <value>false</value>
+      </context>
+    </preference>
+    <preference name="SIEMENScatiav5topdf_CATDrawing_ets_dst_relation_type" type="String" array="false" disabled="false" protectionScope="User" envEnabled="false">
+      <preference_description>SIEMENScatiav5topdf_CATDrawing_ets_dst_relation_type</preference_description>
+      <context name="Teamcenter">
+        <value>IMAN_Rendering</value>
+      </context>
+    </preference>
+    <preference name="SIEMENScatiav5topdf_CATDrawing_ets_nr_types" type="String" array="true" disabled="false" protectionScope="User" envEnabled="false">
+      <preference_description>SIEMENScatiav5topdf_CATDrawing_ets_nr_types</preference_description>
+      <context name="Teamcenter">
+        <value>CATDrawing</value>
+      </context>
+    </preference>
+    <preference name="SIEMENScatiav5topdf_ets_ds_types" type="String" array="true" disabled="false" protectionScope="User" envEnabled="false">
+      <preference_description>SIEMENScatiav5topdf_ets_ds_types</preference_description>
+      <context name="Teamcenter">
+        <value>CATDrawing</value>
+      </context>
+    </preference>
+    <preference name="SIEMENScatpart2step_on_demand_priority" type="String" array="false" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>The scheduling priority for on-demand translations. The valid values of this preference are 0,1,2,and 3 corresponding to OFF, low, medium, and high priority. If this preference is not specified, no visualization data will be generated for on-demand.</preference_description>
+      <context name="Teamcenter">
+        <value>1</value>
+      </context>
+    </preference>
+    <preference name="SIEMENScatpart2step_ets_ds_types" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>The dataset type names of the datasets that can be translated by the translator. If no dataset types are specified, the configuration is invalid and will be reported as an error.</preference_description>
+      <context name="Teamcenter">
+        <value>CATPart</value>
+      </context>
+    </preference>
+    <preference name="SIEMENScatpart2step_translation_service_name" type="String" array="false" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>The TSTK provider name and service name of the translator to be used for translation. This preference value is specified using the provider and service attribute values from the corresponding translator element in the TSTK Module configuration translator.xml file (e.g. Siemens PLM Software.tozipfile). WARNING: If this preference is not specified, requests for this translations will be ignored.</preference_description>
+      <context name="Teamcenter">
+        <value>SIEMENS.catpart2step</value>
+      </context>
+    </preference>
+    <preference name="SIEMENScatpart2step_CATPart_ets_dst_ds_type" type="String" array="false" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>The destination dataset type under which the result will be stored. If no destination dataset type is specified, the configuration is invalid and will be reported as an error.</preference_description>
+      <context name="Teamcenter">
+        <value>SR5STEP</value>
+      </context>
+    </preference>
+    <preference name="SIEMENScatpart2step_CATPart_ets_dst_nr_type" type="String" array="false" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>The destination named reference type under which the result will be stored. If no destination named reference type is specified, the configuration is invalid and will be reported as an error.</preference_description>
+      <context name="Teamcenter">
+        <value>SR5STEP_Reference</value>
+      </context>
+    </preference>
+    <preference name="SIEMENScatpart2step_CATPart_ets_dst_relation_to_src" type="String" array="false" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>The relation is to be created between the source dataset and destination dataset.</preference_description>
+      <context name="Teamcenter">
+        <value>false</value>
+      </context>
+    </preference>
+    <preference name="SIEMENScatpart2step_CATPart_ets_dst_relation_type" type="String" array="false" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>The relation type of the relation to be created between the source dataset item revision and the destination dataset. If the source and destination dataset types are the same, this preference is ignored. If the source and destination dataset types are different, this preference must be specified; otherwise the configuration is invalid and will be reported as an error.</preference_description>
+      <context name="Teamcenter">
+        <value>IMAN_Rendering</value>
+      </context>
+    </preference>
+    <preference name="SIEMENScatpart2step_CATPart_ets_nr_types" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>The source dataset named references necessary for translation. All dataset named reference types specified by this preference must exist to be valid for translation. If no named reference types are specified, the configuration is invalid and will be reported as an error.</preference_description>
+      <context name="Teamcenter">
+        <value>catpart</value>
+      </context>
+    </preference>
+    <preference name="ETS.DATASETTYPES.SIEMENS.CATPART2STEP" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>This preference lists the applicable dataset types for the translator. Only the datasets specified in this preference are valid for translation.</preference_description>
+      <context name="Teamcenter">
+        <value>CATPart</value>
+      </context>
+    </preference>
+    <preference name="ETS.PRIORITY.SIEMENS.CATPART2STEP" type="String" array="false" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>This preference specifies the priority to be assigned to a dispatcher request for this translator.</preference_description>
+      <context name="Teamcenter">
+        <value>1</value>
+      </context>
+    </preference>
+    <preference name="ETS.TRANSLATOR_ARGS.SIEMENS.CATPART2STEP" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>This preference specifies a list of translation arguments to be passed to the translator.</preference_description>
+      <context name="Teamcenter">
+      </context>
+    </preference>
+    <preference name="ETS.REPEATING_UI.SIEMENS.CATPART2STEP" type="String" array="false" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>Specifies if repeating UI should show up in the Single Selection Dialogue.</preference_description>
+      <context name="Teamcenter">
+        <value>false</value>
+      </context>
+    </preference>
+    <preference name="ETS.VALIDATE.SIEMENS.CATPART2STEP" type="String" array="false" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>This preference is used to decide if default validation can be done on the selected TcComponent.</preference_description>
+      <context name="Teamcenter">
+        <value>true</value>
+      </context>
+    </preference>
+    <preference name="SIEMENScatproduct2step_on_demand_priority" type="String" array="false" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>The scheduling priority for on-demand translations. The valid values of this preference are 0,1,2,and 3 corresponding to OFF, low, medium, and high priority. If this preference is not specified, no visualization data will be generated for on-demand.</preference_description>
+      <context name="Teamcenter">
+        <value>1</value>
+      </context>
+    </preference>
+    <preference name="SIEMENScatproduct2step_ets_ds_types" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>The dataset type names of the datasets that can be translated by the translator. If no dataset types are specified, the configuration is invalid and will be reported as an error.</preference_description>
+      <context name="Teamcenter">
+        <value>CATProduct</value>
+      </context>
+    </preference>
+    <preference name="SIEMENScatproduct2step_translation_service_name" type="String" array="false" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>The TSTK provider name and service name of the translator to be used for translation. This preference value is specified using the provider and service attribute values from the corresponding translator element in the TSTK Module configuration translator.xml file (e.g. Siemens PLM Software.tozipfile). WARNING: If this preference is not specified, requests for this translations will be ignored.</preference_description>
+      <context name="Teamcenter">
+        <value>SIEMENS.catproduct2step</value>
+      </context>
+    </preference>
+    <preference name="SIEMENScatproduct2step_CATProduct_ets_dst_ds_type" type="String" array="false" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>The destination dataset type under which the result will be stored. If no destination dataset type is specified, the configuration is invalid and will be reported as an error.</preference_description>
+      <context name="Teamcenter">
+        <value>SR5STEP</value>
+      </context>
+    </preference>
+    <preference name="SIEMENScatproduct2step_CATProduct_ets_dst_nr_type" type="String" array="false" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>The destination named reference type under which the result will be stored. If no destination named reference type is specified, the configuration is invalid and will be reported as an error.</preference_description>
+      <context name="Teamcenter">
+        <value>SR5STEP_Reference</value>
+      </context>
+    </preference>
+    <preference name="SIEMENScatproduct2step_CATProduct_ets_dst_relation_to_src" type="String" array="false" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>The relation is to be created between the source dataset and destination dataset.</preference_description>
+      <context name="Teamcenter">
+        <value>false</value>
+      </context>
+    </preference>
+    <preference name="SIEMENScatproduct2step_CATProduct_ets_dst_relation_type" type="String" array="false" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>The relation type of the relation to be created between the source dataset item revision and the destination dataset. If the source and destination dataset types are the same, this preference is ignored. If the source and destination dataset types are different, this preference must be specified; otherwise the configuration is invalid and will be reported as an error.</preference_description>
+      <context name="Teamcenter">
+        <value>IMAN_Rendering</value>
+      </context>
+    </preference>
+    <preference name="SIEMENScatproduct2step_CATProduct_ets_nr_types" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>The source dataset named references necessary for translation. All dataset named reference types specified by this preference must exist to be valid for translation. If no named reference types are specified, the configuration is invalid and will be reported as an error.</preference_description>
+      <context name="Teamcenter">
+        <value>catproduct</value>
+      </context>
+    </preference>
+    <preference name="ETS.DATASETTYPES.SIEMENS.CATPRODUCT2STEP" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>This preference lists the applicable dataset types for the translator. Only the datasets specified in this preference are valid for translation.</preference_description>
+      <context name="Teamcenter">
+        <value>CATProduct</value>
+      </context>
+    </preference>
+    <preference name="ETS.PRIORITY.SIEMENS.CATPRODUCT2STEP" type="String" array="false" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>This preference specifies the priority to be assigned to a dispatcher request for this translator.</preference_description>
+      <context name="Teamcenter">
+        <value>1</value>
+      </context>
+    </preference>
+    <preference name="ETS.TRANSLATOR_ARGS.SIEMENS.CATPRODUCT2STEP" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>This preference specifies a list of translation arguments to be passed to the translator.</preference_description>
+      <context name="Teamcenter">
+      </context>
+    </preference>
+    <preference name="ETS.REPEATING_UI.SIEMENS.CATPRODUCT2STEP" type="String" array="false" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>Specifies if repeating UI should show up in the Single Selection Dialogue.</preference_description>
+      <context name="Teamcenter">
+        <value>false</value>
+      </context>
+    </preference>
+    <preference name="ETS.VALIDATE.SIEMENS.CATPRODUCT2STEP" type="String" array="false" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>This preference is used to decide if default validation can be done on the selected TcComponent.</preference_description>
+      <context name="Teamcenter">
+        <value>true</value>
+      </context>
+    </preference>
+  </category>
+  <category name="NX">
+    <category_description>No description available for this category.</category_description>
+
+    <preference name="DATASET_saveas_pattern" type="String" array="false" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>Affects the behavior of the Teamcenter SaveAs dialog box as determined by the implementation of the USER_copied_datasets_details and USER_copied_dataset_name user exits.Also affects the behavior of the Teamcenter Integration for NX SaveAs Non-Master Part File 
+dialog box in the same manner.This preference is only read by these two user exits.To access the Integration Toolkit Function Reference, install the Teamcenter developer references when you install Teamcenter online help, or go to the Global Technical Access Center (GTAC):
+https://support.industrysoftware.automation.siemens.com/docs/teamcenter/
+Specifies a pattern used to generate and return the output name of nonmaster items during SaveAs of their master item. The pattern consists of literal text and the following tokens: ${UserText}, ${ItemID} and ${RevisionID}. Existing dataset names are expected to match this pattern, 
+where ${ItemID} and ${RevisionID} match the item ID and revision ID of the owning item revision respectively, and ${UserText} matches any text in the original name. For example, a typical pattern is:
+where the site has decided that the ${UserText} at the beginning is intended to be the name of the dataset, for example: drawing, and the minus sign (-) is literal text. If you are saving item revision 001234/B to item revision 002345/A, and the dataset&apos;s existing name is drawing-001234/B 
+then the name is said to&apos;match against the pattern. Because the ${UserText} at the start of this pattern matches any string, the dataset name fea-001234/B would also match against the pattern. However, drawing_001234/B would not match the pattern as the minus sign is required, and 
+drawing-001235/B would not match since the item ID is incorrect.Once an original dataset name has been matched against the pattern, the new dataset name is generated by replacing the ${ItemID} and ${RevisionID} with the new revision and item ID in the pattern, and all occurrences of 
+${UserData} with whatever text they matched against in the original name. This new name can then be used for saving the new dataset. Using the example above, the two datasets are saved as drawing-002345/A and fea-002345/A.You can modify these generated names using the 
+DATASET_saveas_allow_name_modification preference. However, if the DATASET_saveas_force_name_validation preferences is set to true, the user-edited name is still required to match the pattern.
+Valid Values:
+${UserText} - Dataset names are copied forward to the new revision unchanged.</preference_description>
+      <context name="Teamcenter">
+        <value>${ItemID}/${RevisionID}</value>
+      </context>
+    </preference>
+  </category>
+  <category name="Classification">
+    <category_description>No description available for this category.</category_description>
+    <preference name="ICS_admin_requires_dba" type="Logical" array="false" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>Give NON-DBA users access to the Classification Admin. Application. Valid Values: true/false. true - User requires dba privileges to access Classification Admin. false - User has access to Classification Admin. If you allow non-dba users to log into Classification Admin., please note that the users will have full read/write access! To protect the hierarchy, the dictionary, and the KeyLOVs from unauthorized access, they need to be protected using the AccessControl tab.</preference_description>
+      <context name="Teamcenter">
+        <value>false</value>
+      </context>
+    </preference>
+    <preference name="ICS_classifiable_types" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>Specifies the list of Teamcenter types that can be classified. If you create new child business objects or new business objects and want to be able to classify them, you must add their names to this preference.
+Valid Values:
+Valid Teamcenter types. The two default values, Item and ItemRevision, are considered a set. Therefore, if the item is classified the item revision cannot be classified, but it inherits the classification record from the item. This also works in the reverse; if the item revision is classified, the item cannot be classified, but inherits the classification record.Any types defined for the following preferences should be also defined for this preference: MRMClassifyResource, ICS_classify_new, GCS_classify_type</preference_description>
+      <context name="Teamcenter">
+        <value>Item</value>
+        <value>ItemRevision</value>
+        <value>Mfg0MEResource</value>
+        <value>Mfg0MEResourceRevision</value>
+        <value>Mfg0MEEquipment</value>
+        <value>Mfg0MEEquipmentRevision</value>
+        <value>Mfg0MENCMachine</value>
+        <value>Mfg0MENCMachineRevision</value>
+        <value>Mfg0Conveyor</value>
+        <value>Mfg0ConveyorRevision</value>
+        <value>Mfg0MERobot</value>
+        <value>Mfg0MERobotRevision</value>
+        <value>Mfg0MESensor</value>
+        <value>Mfg0MESensorRevision</value>
+        <value>Mfg0MEPLC</value>
+        <value>Mfg0MEPLCRevision</value>
+        <value>Mfg0MENCTool</value>
+        <value>Mfg0MENCToolRevision</value>
+        <value>Mfg0MEFactoryTool</value>
+        <value>Mfg0MEFactoryToolRevision</value>
+        <value>Mfg0MEFixtureRoot</value>
+        <value>Mfg0MEFixtureRootRevision</value>
+        <value>MENCMachining</value>
+        <value>MENCMachining Revision</value>
+        <value>MEStationRevision</value>
+        <value>CPMarketingBrief</value>
+        <value>CPMarketingBriefRevision</value>
+        <value>CPThemeBoard</value>
+        <value>CPThemeBoardRevision</value>
+        <value>Signal</value>
+        <value>SignalRevision</value>
+        <value>PSSignal</value>
+        <value>PSSignalRevision</value>
+        <value>Message</value>
+        <value>Message Revision</value>
+        <value>Mfg0Cable</value>
+        <value>Mfg0CableRevision</value>
+        <value>PM0CMMProbeAssy</value>
+        <value>PM0CMMProbeAssyRevision</value>
+        <value>PM0CMMProbeComp</value>
+        <value>PM0CMMProbeCompRevision</value>
+        <value>PM0NCToolAssy</value>
+        <value>PM0NCToolAssyRevision</value>
+        <value>PM0NCToolComp</value>
+        <value>PM0NCToolCompRevision</value>
+        <value>PM0AMPrinter</value>
+        <value>PM0AMPrinterRevision</value>
+        <value>PM0Gauge</value>
+        <value>PM0GaugeRevision</value>
+        <value>PM0NCDevice</value>
+        <value>PM0NCDeviceRevision</value>
+        <value>PM0NCFixture</value>
+        <value>PM0NCFixtureRevision</value>
+        <value>CommercialPart</value>
+        <value>CommercialPart Revision</value>
+        <value>ManufacturerPart</value>
+        <value>ManufacturerPart Revision</value>
+        <value>Fsh0Finish</value>
+        <value>Fsh0FinishGroup</value>
+        <value>SR5GenCatPart</value>
+        <value>SR5GenCatPartRevision</value>
+        <value>SR5GenEngObjRevision</value>
+        <value>SR5GenEngObj</value>
+      </context>
+    </preference>
+  </category>
+  <category name="Classification.Administration">
+    <category_description>No description available for this category.</category_description>
+    <preference name="CLS_auto_sync_node_hierarchy" type="String" array="false" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>Allows the system to mirror operations performed on Classification storage class hierarchy onto the Node hierarchy.
+Valid values are:
+* true: The system will mirror Storage class hierarchy operations onto the Node hierarchy.
+* false: No mirroring will take place. This is the default value.</preference_description>
+      <context name="Teamcenter">
+        <value>true</value>
+      </context>
+    </preference>
+    <preference name="CLS_is_presentation_hierarchy_active" type="Logical" array="false" disabled="false" protectionScope="User" envEnabled="false">
+      <preference_description>Preference to enable user to work with presentation classification hierarchy in Active Workspace client.
+Valid values are:
+* true  : Enables the user to work with presentation classification hierarchy.
+* false : Enables the user to work with traditional classification class hierarchy.</preference_description>
+      <context name="Teamcenter">
+        <value>true</value>
+      </context>
+    </preference>
+  </category>
+</preferences>

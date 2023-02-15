@@ -1,0 +1,16 @@
+<aw-command-panel caption="i18n.Mtw0ImportMaterials">
+    <aw-panel-body>
+        <!--aw-listbox prop="data.catalogListBox" list="data.catalogs" action="onCatalogChange"></aw-listbox-->
+        <aw-listbox prop="data.catalogListBox" list="data.catalogs" is-select-only="true"></aw-listbox>
+        <aw-textbox prop="data.catalogName"></aw-textbox>
+        <aw-listbox prop="data.materialTypesListBox" list="data.preferences.materialTypes" is-select-only="true"></aw-listbox>        
+        <aw-listbox prop="data.substanceTypesListBox" list="data.preferences.substanceTypes" is-select-only="true"></aw-listbox>        
+        <aw-listbox prop="data.importTypeListBox" list="data.preferences.importTypes" action="setExtension"></aw-listbox>        
+        <aw-label prop="data.selectFile"></aw-label>
+        <aw-file-upload type-filter="{{data.preferences.extension}}" is-required="true"></aw-file-upload>
+    </aw-panel-body>
+
+    <aw-panel-footer> 
+        <aw-button action="getFMSFileTicket" visible-when="(data.catalogListBox != '' || data.catalogName != '' ) && (data.fileName && data.fileName != '')" ><aw-i18n>i18n.Mtw0ImportMaterials</aw-i18n></aw-button>
+    </aw-panel-footer>   
+</aw-command-panel>

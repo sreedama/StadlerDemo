@@ -1,0 +1,1146 @@
+' -----------------------------------------------------------------------------
+' Script: PrepForImport.CATScript
+'
+' This scripts scans the active structure and create User defined Props
+'
+' -----------------------------------------------------------------------------
+' Version:
+' 1.0    16.06.2017    O. Kirsten (LMtec GmbH)           Inital version for Voestalpine
+' 1.1    24.11.2017    O. Kirsten (LMtec GmbH)           Manage OEM Attributes, automatic OEM selection using ENV
+' 1.2    09.12.2017    O. Kirsten (LMtec GmbH)           Manage OEM Attributes from FileName
+' 1.3    26.02.2018    O. Kirsten (LMtec GmbH)           Change import criteria for OEM Porsche (VSD-82)
+' 1.4    14.03.2018    O. Kirsten (LMtec GmbH)           Adjustment import criteria, options S/P/F, OEM Change Index,
+'                                                        Deactivate Dummy Product, Overwrite PartNumber with Filename
+'                                                        Manage Import Root CATProduct SWAN, KVS, PORTAL (VSD-76)
+' 1.5    16.04.2018    O. Kirsten (LMtec GmbH)           add check opened struc contain all CATProducts/CATParts
+'                                                        from import folder - New Function CheckFiles (VSD-105)
+'
+' -----------------------------------------------------------------------------
+'
+' -----------------------------------------------------------------------------
+' setting environment
+' -----------------------------------------------------------------------------
+
+' public declarations
+Public oFileSys As Object            'File System Object
+Public oLog As Object                'the log file
+
+Public CATEnv As String              'CATIA Environment Name
+Public WORK_DIR As String            'TcIc V5 -> Work Dir -> get from Env Variable
+Public TEMP_DIR As String            'User Temp Folder
+
+Public ProArr() As Variant           'array for structure information
+Public PropValueArr() As Variant     'array for User Defined Properties
+Public PropNameArr() As Variant      'array for Names of User Define Properties Unique
+
+Public iCounter As Integer           'Counter
+Public oRowCount As Integer          'Counter
+Public lmax As Integer               'maximum level of structure object
+Public oExit As Boolean              'Exit of function
+Public oSel As String                'Selection Import Type - Serie, Proto, Filename
+
+' -----------------------------------------------------------------------------
+' Here we go ...
+' -----------------------------------------------------------------------------
+
+Sub CATMain()
+
+    Dim Start                       'script start time, used to measure running time
+    Dim Text As String
+    Dim Sel As String
+    Dim oText As String
+
+    ReDim ProArr(28, 0)
+    ReDim PropValueArr(2, 0)
+    ReDim PropNameArr(0)
+  
+    ' ---------------------------------------------------------
+    ' 0.) Initialize
+    ' ---------------------------------------------------------
+    Start = Timer
+    oRowCount = 0
+   
+    Set oLog = Nothing
+    
+    CATIA.DisplayFileAlerts = False
+    oExit = False
+    
+    CATEnv = CATIA.SystemService.Environ("V5_PRJ")
+    WORK_DIR = CATIA.SystemService.Environ("WORK_DIR")
+    TEMP_DIR = CATIA.SystemService.Environ("TEMP")
+    
+    Set oFileSys = CreateObject("Scripting.FileSystemObject")
+    
+    If oFileSys.FolderExists(WORK_DIR) Then
+        Set oLog = oFileSys.CreateTextFile(WORK_DIR & "\tmp\PrepForImport_" & GetTimeStampNoSep() & ".log", True)
+    Else
+        Set oLog = oFileSys.CreateTextFile(TEMP_DIR & "\PrepForImport_" & GetTimeStampNoSep() & ".log", True)
+    End If
+    
+    LogMsg "CATEnv: " & CATEnv
+    LogMsg "WORK_DIR: " & WORK_DIR
+    LogMsg "TEMP_DIR: " & TEMP_DIR
+   
+    oText = "Please type number of your selection." & Chr(10) & Chr(10)
+    oText = oText & "[S] Serie" & Chr(10)
+    oText = oText & "[P] Proto" & Chr(10)
+    oText = oText & "[F] Filename"
+        
+    oSel = UCase(InputBox(oText, "Selection"))
+   
+    If oSel <> "S" And oSel <> "P" And oSel <> "F" Then
+        MsgBox "No valid selection. Macro will be aborted."
+        Exit Sub
+    End If
+   
+    ' ---------------------------------------------------------
+    ' 1.) Check Case - Run specific prepation function
+    ' ---------------------------------------------------------
+ 
+    StatusMsg "Start Function ImportCase()"
+    ImportCase
+    LogMsg "End Function ImportCase()"
+    
+    ' ---------------------------------------------------------
+    ' 2.) Check Opened Product Structure vs Files in Import Folder
+    ' ---------------------------------------------------------
+ 
+    StatusMsg "Start Function Check Files import folder()"
+    CheckFiles
+    LogMsg "End Function CheckFiles()"
+    
+    ' ---------------------------------------------------------
+    ' 3.) Call TcIc function create All Spreadsheets
+    ' ---------------------------------------------------------
+    
+    'StatusMsg "Start TcIc Function CreateAllSpreadSheets"
+    'CATIA.StartCommand ("Cmd Cat2CreateAllSpreadSheets")
+    'LogMsg "End TcIc Function CreateAllSpreadSheets"
+    LogMsg ("Duration " & Round(Timer - Start, 2) & " sec")
+    oLog.Close
+
+    MsgBox "Prepare Properties finished after " & Round(Timer - Start, 2) & " sec"
+
+End Sub
+
+
+'----------------------------------------------------------------------------------------------------------------
+' ***********************************  Main Step Functions *********************************
+'----------------------------------------------------------------------------------------------------------------
+' -----------------------------------------------------------------------------
+' Sub:  Import Case
+'       Check import case
+' -----------------------------------------------------------------------------
+Function ImportCase()
+
+Dim i  As Integer
+Dim ValArr(2) As Variant 'valid values for InputBox
+Dim FileArr() As Variant
+Dim Text As String
+Dim InPro(0)                  'array for insert function
+Dim oProDoc As Document
+
+
+    '### Check any document opened ###
+    If CATIA.Windows.Count = 0 Then
+       
+        '###### Run for all CATDrawings in import folder
+        Call ManageDrawings
+        
+    '### Case CATDrawing
+    ElseIf InStr(CATIA.ActiveDocument.Name, ".CATDrawing") <> 0 Then
+        
+        StatusMsg "Start Function WriteProps() for CATDrawing: " & CATIA.ActiveDocument.Name
+        Call WriteProps(CATIA.ActiveDocument)
+        LogMsg "End Function WriteProps() for CATDrawing: " & CATIA.ActiveDocument.Name
+    
+    '### Case CATPart / CATProduct
+    ElseIf InStr(CATIA.ActiveDocument.Name, ".CATProduct") <> 0 Or _
+           InStr(CATIA.ActiveDocument.Name, ".CATPart") <> 0 Then
+        
+        StatusMsg "Start Function WriteProps()for: " & CATIA.ActiveDocument.Name
+        AnalyzeStruc CATIA.ActiveDocument.Product, 0, "activated"
+        LogMsg "End Function WriteProps()for: " & CATIA.ActiveDocument.Name
+        
+        '###### Run for all CATDrawings in import folder
+        Call ManageDrawings
+        
+    '### Undefined document type
+    Else
+        ErrBox "Opened document unknown for preparation function! - Exit Function"
+        Exit Function
+    End If
+
+End Function
+
+' -----------------------------------------------------------------------------
+' Func:  CheckFiles
+'        analyzing the structure and compare if all files CATParts / CATProducts
+'        based on the file opened in CATIA
+'
+' -----------------------------------------------------------------------------
+Function CheckFiles()
+
+Dim oFolder As Object
+Dim oFile As Object
+Dim oOpenFile As String
+
+Dim i As Integer
+
+Dim oExist As Boolean
+
+Dim oFiMiArr() As Variant ' (FilesMissing - array to collected files existion ing import folder but not in opened structure
+
+Dim oFileLog  As Object
+
+ReDim oFiMiArr(0)
+
+If oFileSys.FolderExists(WORK_DIR & "\Import") Then
+    Set oFolder = oFileSys.GetFolder(WORK_DIR & "\Import")
+    LogMsg WORK_DIR & "\Import"
+Else
+    oLog = ""
+    WarningBox "Import Folder of Teamcenter CATIA Integration not exist. Function CheckFiles can not be performed."
+    Exit Function
+End If
+
+For Each oFile In oFolder.Files
+    LogMsg "File: " & oFile.Path
+    If Right(oFile.Path, 8) = ".CATPart" Or Right(oFile.Path, 11) = ".CATProduct" Then
+        LogMsg "Check File CATPart/CATProduct: " & oFile.Path
+        oExist = False
+        For i = 0 To UBound(ProArr, 2)
+            If ProArr(4, i) = oFile.Name Then
+                oExist = True
+                Exit For
+            End If
+        Next
+        If oExist = False Then
+            ReDim Preserve oFiMiArr(UBound(oFiMiArr) + 1)
+            oFiMiArr(UBound(oFiMiArr)) = oFile.Name
+        End If
+    End If
+Next
+
+If UBound(oFiMiArr) > 0 Then
+    oFileName = WORK_DIR & "\Import\FilesNotPartOfStruc_" & GetTimeStampNoSep() & ".log"
+    Set oFileLog = oFileSys.CreateTextFile(oFileName, True)
+    oFileLog.Write "######## List Of Files in Import Folder -> not part of Loaded Root Node ########" & Chr(13) & Chr(10)
+    
+    For i = 1 To UBound(oFiMiArr)
+        oFileLog.Write oFiMiArr(i) & Chr(13) & Chr(10)
+    Next
+    
+    WarningBox "Not all CATPart / CATProduct Files of Import Folder are part of opened CATIA Structure" & Chr(13) & Chr(10) & _
+               "File(s) not part of opened CATIA structure are listed in log file:" & Chr(13) & Chr(10) & _
+               oFileName
+    
+    oOpenFile = "notepad.exe " & oFileName
+    CATIA.SystemService.ExecuteProcessus (oOpenFile)
+    
+End If
+
+End Function
+
+' -----------------------------------------------------------------------------
+' Sub:  AnalyzeStruc
+'       analyzing the structure based on the file opened in CATIA
+' Parameters:
+'           oCurrentProduct:   Current CATProduct
+'           iLevel:            Structure level count
+'           sActivStat:        Activation flag
+' -----------------------------------------------------------------------------
+Sub AnalyzeStruc(oCurrentProduct, iLevel As Integer, sActivStat As String)
+
+    Dim i As Integer               'iterator of child products
+    Dim j As Integer
+    Dim transf(11)                 'Transformation matrix of the Product
+    Dim sActiveStatSub As String
+    Dim sublist 'As List
+    Dim parameter As parameter
+    Dim parameters As parameters
+    Dim oChildProducts As Products
+    Dim ADoc As Document
+
+    Dim oFileSys As Object
+    
+    Set parameters = oCurrentProduct.parameters
+    
+    Set oFileSys = CreateObject("Scripting.FileSystemObject")
+    
+    oCurrentProduct.Position.GetComponents transf
+
+    '###### activate Default Mode (Design mode) to read properties
+    If oCurrentProduct.GetNumberOfShapes <> 0 Then
+        oCurrentProduct.ApplyWorkMode DEFAULT_MODE
+    End If
+
+    iCounter = iCounter + 1
+    oRowCount = oRowCount + 1
+    ReDim Preserve ProArr(28, iCounter)
+
+    If iLevel > lmax Then lmax = iLevel    'set lmax to the deepest level
+
+    ProArr(0, iCounter - 1) = oRowCount
+    ProArr(1, iCounter - 1) = iLevel
+    ProArr(2, iCounter - 1) = oCurrentProduct.Name
+    ProArr(3, iCounter - 1) = oCurrentProduct.DescriptionInst
+    
+    LogMsg "Row: " & oRowCount & " Level:" & iLevel & " Instance Name: " & oCurrentProduct.Name
+    
+    On Error Resume Next '#####
+    
+    ProArr(4, iCounter - 1) = oCurrentProduct.ReferenceProduct.Parent.Name
+        
+    If Err.Number = 0 Then  '#####
+        On Error GoTo 0
+        StatusMsg "Analyze File: " & oCurrentProduct.ReferenceProduct.Parent.Name
+        
+        ProArr(5, iCounter - 1) = oFileSys.GetFile(oCurrentProduct.ReferenceProduct.Parent.FullName).Size
+        'ProArr(6, iCounter - 1) later in this code -> ParentFilename
+        ProArr(7, iCounter - 1) = oCurrentProduct.PartNumber
+        ProArr(8, iCounter - 1) = oCurrentProduct.Nomenclature
+        ProArr(9, iCounter - 1) = oCurrentProduct.DescriptionRef
+        ProArr(10, iCounter - 1) = oCurrentProduct.Definition
+        ProArr(11, iCounter - 1) = oCurrentProduct.Revision
+        ProArr(12, iCounter - 1) = oCurrentProduct.Source
+        
+        If oCurrentProduct.GetNumberOfShapes <> 0 Then
+            ProArr(13, iCounter - 1) = oCurrentProduct.GetShapePathName(oCurrentProduct.GetDefaultShapeName)
+        End If
+
+        If iLevel = 0 Then
+            If Right(oCurrentProduct.ReferenceProduct.Parent.Name, 7) = "CATPart" Then
+                ProArr(14, iCounter - 1) = "CATPart"
+            Else
+                ProArr(14, iCounter - 1) = "CATProduct"
+            End If
+        Else
+            If oCurrentProduct.Parent.Parent.ReferenceProduct.Parent.Name = oCurrentProduct.ReferenceProduct.Parent.Name Then
+                ProArr(14, iCounter - 1) = "Component"
+            ElseIf Right(oCurrentProduct.ReferenceProduct.Parent.Name, 7) = "CATPart" Then
+                ProArr(14, iCounter - 1) = "CATPart"
+            Else
+                ProArr(14, iCounter - 1) = "CATProduct"
+            End If
+        
+            ProArr(6, iCounter - 1) = oCurrentProduct.Parent.Parent.ReferenceProduct.Parent.Name
+        
+        End If
+
+        ' Write Trafo info to the array
+        For j = 0 To 11
+            ProArr(j + 16, iCounter - 1) = transf(j)
+        Next
+
+        '##############################################################################################
+        '############# Prepare Import Properties   ####################################################
+        If ProArr(14, iCounter - 1) = "CATPart" Or ProArr(14, iCounter - 1) = "CATProduct" Then
+            Call WriteProps(oCurrentProduct.ReferenceProduct)
+        End If
+        '############# Prepare Import Properties END  #################################################
+        '##############################################################################################
+
+        ' Main iteration of this recursive function
+        Set oChildProducts = oCurrentProduct.Products
+        i = 0
+        Do While i < oChildProducts.Count
+            i = i + 1
+            sActiveStatSub = "activated"
+            ProArr(15, iCounter - 1) = sActiveStatSub
+            Set sublist = parameters.sublist(oChildProducts.Item(i), False)
+            If sublist.Count > 0 Then
+                Set parameter = sublist.Item(1)
+                If parameter.ValueAsString = "false" Then
+                    sActiveStatSub = "deactivated"
+                    ProArr(15, iCounter - 1) = sActiveStatSub
+                End If
+            End If
+            AnalyzeStruc oChildProducts.Item(i), iLevel + 1, sActiveStatSub
+        Loop
+    Else
+        ProArr(4, iCounter - 1) = "Missing File"
+        ErrMsg "Missing File fir Instance: " & oCurrentProduct.Name
+        
+    End If
+
+    On Error GoTo 0
+
+End Sub
+
+' -----------------------------------------------------------------------------
+' Function: Write UserDefined Properties
+' -----------------------------------------------------------------------------
+Function WriteProps(oCurrentObject)
+
+Dim i As Integer
+Dim j As Integer
+Dim oPropArr(15, 3) As Variant   'neu - 3 für Unterscheidung zwischen CATPart, CATProduct, CATDrawing
+Dim CatiaFileName As String
+Dim oDoc As Document
+Dim oPara  As StrParam
+Dim OldVal  As String
+
+'### Cases CATDrawing - CATPart / CATProduct
+If InStr(oCurrentObject.Name, ".CATDrawing") <> 0 Then
+    CatiaFileName = oCurrentObject.Name
+Else
+    CatiaFileName = oCurrentObject.ReferenceProduct.Parent.Name
+End If
+
+CatiaFileNameWE = CatiaFileName
+
+'Remove File extension
+CatiaFileName = Left(CatiaFileName, InStrRev(CatiaFileName, ".") - 1)
+
+'############################################################################################
+'### Cases extract props from CATIA filename depending on input criteria ####################
+'############################################################################################
+
+'### Import Node Kriterium SWAN, KVS, PORTAL
+If InStr(UCase(CatiaFileName), "_SWAN_") <> 0 Or InStr(UCase(CatiaFileName), "_KVS_") <> 0 Or InStr(UCase(CatiaFileName), "_PORTAL_") <> 0 And _
+   CatiaFileName = CATIA.ActiveDocument.Name Then
+
+    oPropArr(0, 0) = "ItemType"
+    oPropArr(0, 1) = "A4_Design_CAD"
+    oPropArr(0, 2) = "A4_Drawing_CAD"
+    
+    oPropArr(1, 0) = "IMP_Criteria_01"
+    
+    If InStr(UCase(CatiaFileName), "_SWAN_") <> 0 Then
+        oPropArr(1, 1) = Left(UCase(CatiaFileName), InStr(CatiaFileName, "_SWAN_") - 1)
+    ElseIf InStr(UCase(CatiaFileName), "_KVS_") <> 0 Then
+        oPropArr(1, 1) = Left(UCase(CatiaFileName), InStr(CatiaFileName, "_KVS_") - 1)
+    ElseIf InStr(UCase(CatiaFileName), "_PORTAL_") <> 0 Then
+        oPropArr(1, 1) = Left(UCase(CatiaFileName), InStr(CatiaFileName, "_PORTAL_") - 1)
+    End If
+   
+    oPropArr(2, 0) = "IMP_Criteria_02"
+    oPropArr(2, 1) = ""
+   
+    oPropArr(3, 0) = "IMP_Criteria_03"
+    oPropArr(3, 1) = ""
+    
+    oPropArr(4, 0) = "IMP_Criteria_04"
+    oPropArr(4, 1) = ""
+    
+    oPropArr(5, 0) = "IMP_Criteria_05"
+    oPropArr(5, 1) = ""
+    
+    oPropArr(6, 0) = "IMP_Criteria_06"
+    oPropArr(6, 1) = ""
+    
+    oPropArr(7, 0) = "IMP_Criteria_07"
+    oPropArr(7, 1) = ""
+    
+    oPropArr(8, 0) = "Import_File_Name"
+    oPropArr(8, 1) = CatiaFileName
+    
+    oPropArr(9, 0) = "OEM_Teilenummer"
+    oPropArr(9, 1) = ""
+    
+    oPropArr(10, 0) = "OEM_Aenderungsindex"
+    oPropArr(10, 1) = ""
+    
+    oPropArr(11, 0) = "OEM_Dokumententeil"
+    oPropArr(11, 1) = ""
+    
+    oPropArr(12, 0) = "OEM_Variante"
+    oPropArr(12, 1) = ""
+    
+    oPropArr(13, 0) = "OEM_CAD_Typ"
+    oPropArr(13, 1) = ""
+    
+    oPropArr(14, 0) = "OEM_Status"
+    oPropArr(14, 1) = ""
+    
+    oPropArr(15, 0) = "OEM_Format"
+    oPropArr(15, 1) = ""
+
+'### Audi, VW Kriterium ### S - Serie ####
+ElseIf InStr(UCase(CATEnv), "AUDI") <> 0 Or InStr(UCase(CATEnv), "VW") <> 0 And oSel = "S" Then
+
+    oPropArr(0, 0) = "ItemType"
+    oPropArr(0, 1) = "A4_Design_CAD"
+    oPropArr(0, 2) = "A4_Drawing_CAD"
+    
+    oPropArr(1, 0) = "IMP_Criteria_01"
+    oPropArr(1, 1) = Left(CatiaFileName, 11)
+    
+    oPropArr(2, 0) = "IMP_Criteria_02"
+    oPropArr(2, 1) = ""
+    
+    oPropArr(3, 0) = "IMP_Criteria_03"
+    oPropArr(3, 1) = ""
+    
+    oPropArr(4, 0) = "IMP_Criteria_04"
+    oPropArr(4, 1) = Mid(CatiaFileName, 16, 3)
+    
+    oPropArr(5, 0) = "IMP_Criteria_05"
+    oPropArr(5, 1) = ""
+    
+    oPropArr(6, 0) = "IMP_Criteria_06"
+    oPropArr(6, 1) = ""
+    
+    oPropArr(7, 0) = "IMP_Criteria_07"
+    oPropArr(7, 1) = ""
+   
+    oPropArr(8, 0) = "Import_File_Name"
+    oPropArr(8, 1) = CatiaFileName
+    
+    oPropArr(9, 0) = "OEM_Teilenummer"
+    oPropArr(9, 1) = Left(CatiaFileName, 11)
+    
+    oPropArr(10, 0) = "OEM_Aenderungsindex"
+    oPropArr(10, 1) = Mid(CatiaFileName, 20, 7)
+    
+    oPropArr(11, 0) = "OEM_Dokumententeil"
+    oPropArr(11, 1) = ""
+    
+    oPropArr(12, 0) = "OEM_Variante"
+    oPropArr(12, 1) = Replace(Mid(CatiaFileName, 13, 2), "_", "")
+    
+    oPropArr(13, 0) = "OEM_CAD_Typ"
+    oPropArr(13, 1) = Mid(CatiaFileName, 16, 3)
+    
+    oPropArr(14, 0) = "OEM_Status"
+    oPropArr(14, 1) = ""
+    
+    oPropArr(15, 0) = "OEM_Format"
+    oPropArr(15, 1) = Replace(Mid(CatiaFileName, 20, 3), "_", "")
+
+'### Audi, VW Kriterium ### P - Proto ####
+ElseIf InStr(UCase(CATEnv), "AUDI") <> 0 Or InStr(UCase(CATEnv), "VW") <> 0 And oSel = "P" Then
+
+    oPropArr(0, 0) = "ItemType"
+    oPropArr(0, 1) = "A4_Design_CAD"
+    oPropArr(0, 2) = "A4_Drawing_CAD"
+    
+    oPropArr(1, 0) = "IMP_Criteria_01"
+    oPropArr(1, 1) = Left(CatiaFileName, 11)
+    
+    oPropArr(2, 0) = "IMP_Criteria_02"
+    oPropArr(2, 1) = ""
+    
+    oPropArr(3, 0) = "IMP_Criteria_03"
+    oPropArr(3, 1) = Replace(Mid(CatiaFileName, 13, 2), "_", "")
+    
+    oPropArr(4, 0) = "IMP_Criteria_04"
+    oPropArr(4, 1) = Mid(CatiaFileName, 16, 3)
+    
+    oPropArr(5, 0) = "IMP_Criteria_05"
+    oPropArr(5, 1) = ""
+    
+    oPropArr(6, 0) = "IMP_Criteria_06"
+    oPropArr(6, 1) = ""
+    
+    oPropArr(7, 0) = "IMP_Criteria_07"
+    oPropArr(7, 1) = ""
+   
+    oPropArr(8, 0) = "Import_File_Name"
+    oPropArr(8, 1) = CatiaFileName
+    
+    oPropArr(9, 0) = "OEM_Teilenummer"
+    oPropArr(9, 1) = Left(CatiaFileName, 11)
+    
+    oPropArr(10, 0) = "OEM_Aenderungsindex"
+    oPropArr(10, 1) = Mid(CatiaFileName, 20, 7)
+    
+    oPropArr(11, 0) = "OEM_Dokumententeil"
+    oPropArr(11, 1) = ""
+    
+    oPropArr(12, 0) = "OEM_Variante"
+    oPropArr(12, 1) = Replace(Mid(CatiaFileName, 13, 2), "_", "")
+    
+    oPropArr(13, 0) = "OEM_CAD_Typ"
+    oPropArr(13, 1) = Mid(CatiaFileName, 16, 3)
+    
+    oPropArr(14, 0) = "OEM_Status"
+    oPropArr(14, 1) = ""
+    
+    oPropArr(15, 0) = "OEM_Format"
+    oPropArr(15, 1) = Replace(Mid(CatiaFileName, 20, 3), "_", "")
+
+'### Audi, VW Kriterium ### F - Filename ####
+ElseIf InStr(UCase(CATEnv), "AUDI") <> 0 Or InStr(UCase(CATEnv), "VW") <> 0 And oSel = "F" Then
+
+    oPropArr(0, 0) = "ItemType"
+    oPropArr(0, 1) = "A4_Design_CAD"
+    oPropArr(0, 2) = "A4_Drawing_CAD"
+    
+    oPropArr(1, 0) = "IMP_Criteria_01"
+    oPropArr(1, 1) = CatiaFileName
+    
+    oPropArr(2, 0) = "IMP_Criteria_02"
+    oPropArr(2, 1) = ""
+    
+    oPropArr(3, 0) = "IMP_Criteria_03"
+    oPropArr(3, 1) = ""
+    
+    oPropArr(4, 0) = "IMP_Criteria_04"
+    oPropArr(4, 1) = ""
+    
+    oPropArr(5, 0) = "IMP_Criteria_05"
+    oPropArr(5, 1) = ""
+    
+    oPropArr(6, 0) = "IMP_Criteria_06"
+    oPropArr(6, 1) = ""
+    
+    oPropArr(7, 0) = "IMP_Criteria_07"
+    oPropArr(7, 1) = ""
+   
+    oPropArr(8, 0) = "Import_File_Name"
+    oPropArr(8, 1) = CatiaFileName
+    
+    oPropArr(9, 0) = "OEM_Teilenummer"
+    oPropArr(9, 1) = Left(CatiaFileName, 11)
+    
+    oPropArr(10, 0) = "OEM_Aenderungsindex"
+    oPropArr(10, 1) = Mid(CatiaFileName, 20, 7)
+    
+    oPropArr(11, 0) = "OEM_Dokumententeil"
+    oPropArr(11, 1) = ""
+    
+    oPropArr(12, 0) = "OEM_Variante"
+    oPropArr(12, 1) = Replace(Mid(CatiaFileName, 13, 2), "_", "")
+    
+    oPropArr(13, 0) = "OEM_CAD_Typ"
+    oPropArr(13, 1) = Mid(CatiaFileName, 16, 3)
+    
+    oPropArr(14, 0) = "OEM_Status"
+    oPropArr(14, 1) = ""
+    
+    oPropArr(15, 0) = "OEM_Format"
+    oPropArr(15, 1) = Replace(Mid(CatiaFileName, 20, 3), "_", "")
+
+'### BMW Kriterium ### S - Serie & P - Proto ####
+ElseIf InStr(UCase(CATEnv), "BMW") <> 0 And oSel <> "F" Then
+
+    oPropArr(0, 0) = "ItemType"
+    oPropArr(0, 1) = "A4_Design_CAD"
+    oPropArr(0, 2) = "A4_Drawing_CAD"
+    
+    oPropArr(1, 0) = "IMP_Criteria_01"
+    oPropArr(1, 1) = Left(CatiaFileName, 7)
+    
+    oPropArr(2, 0) = "IMP_Criteria_02"
+    oPropArr(2, 1) = Replace(Mid(CatiaFileName, 12, 2), "_", "")
+    
+    oPropArr(3, 0) = "IMP_Criteria_03"
+    oPropArr(3, 1) = Mid(CatiaFileName, 15, 1)
+    
+    oPropArr(4, 0) = "IMP_Criteria_04"
+    oPropArr(4, 1) = ""
+    
+    oPropArr(5, 0) = "IMP_Criteria_05"
+    oPropArr(5, 1) = ""
+    
+    oPropArr(6, 0) = "IMP_Criteria_06"
+    oPropArr(6, 1) = ""
+    
+    oPropArr(7, 0) = "IMP_Criteria_07"
+    oPropArr(7, 1) = Mid(CatiaFileName, 17, 2)
+    
+    oPropArr(8, 0) = "Import_File_Name"
+    oPropArr(8, 1) = CatiaFileName
+    
+    oPropArr(9, 0) = "OEM_Teilenummer"
+    oPropArr(9, 1) = Left(CatiaFileName, 7)
+    
+    oPropArr(10, 0) = "OEM_Aenderungsindex"
+    oPropArr(10, 1) = Mid(CatiaFileName, 9, 7)
+    
+    oPropArr(11, 0) = "OEM_Dokumententeil"
+    oPropArr(11, 1) = Replace(Mid(CatiaFileName, 12, 2), "_", "")
+    
+    oPropArr(12, 0) = "OEM_Variante"
+    oPropArr(12, 1) = Mid(CatiaFileName, 15, 1)
+    
+    oPropArr(13, 0) = "OEM_CAD_Typ"
+    oPropArr(13, 1) = Replace(Mid(CatiaFileName, 20, 6), "_", "")
+    
+    oPropArr(14, 0) = "OEM_Status"
+    oPropArr(14, 1) = ""
+    
+    oPropArr(15, 0) = "OEM_Format"
+    oPropArr(15, 1) = Replace(Mid(CatiaFileName, 17, 2), "_", "")
+
+'### BMW Kriterium ### F - Filename ####
+ElseIf InStr(UCase(CATEnv), "BMW") <> 0 And oSel = "F" Then
+
+    oPropArr(0, 0) = "ItemType"
+    oPropArr(0, 1) = "A4_Design_CAD"
+    oPropArr(0, 2) = "A4_Drawing_CAD"
+    
+    oPropArr(1, 0) = "IMP_Criteria_01"
+    oPropArr(1, 1) = CatiaFileName
+    
+    oPropArr(2, 0) = "IMP_Criteria_02"
+    oPropArr(2, 1) = ""
+    
+    oPropArr(3, 0) = "IMP_Criteria_03"
+    oPropArr(3, 1) = ""
+    
+    oPropArr(4, 0) = "IMP_Criteria_04"
+    oPropArr(4, 1) = ""
+    
+    oPropArr(5, 0) = "IMP_Criteria_05"
+    oPropArr(5, 1) = ""
+    
+    oPropArr(6, 0) = "IMP_Criteria_06"
+    oPropArr(6, 1) = ""
+    
+    oPropArr(7, 0) = "IMP_Criteria_07"
+    oPropArr(7, 1) = ""
+    
+    oPropArr(8, 0) = "Import_File_Name"
+    oPropArr(8, 1) = CatiaFileName
+    
+    oPropArr(9, 0) = "OEM_Teilenummer"
+    oPropArr(9, 1) = Left(CatiaFileName, 7)
+    
+    oPropArr(10, 0) = "OEM_Aenderungsindex"
+    oPropArr(10, 1) = Mid(CatiaFileName, 9, 7)
+    
+    oPropArr(11, 0) = "OEM_Dokumententeil"
+    oPropArr(11, 1) = Replace(Mid(CatiaFileName, 12, 2), "_", "")
+    
+    oPropArr(12, 0) = "OEM_Variante"
+    oPropArr(12, 1) = Mid(CatiaFileName, 15, 1)
+    
+    oPropArr(13, 0) = "OEM_CAD_Typ"
+    oPropArr(13, 1) = Replace(Mid(CatiaFileName, 20, 6), "_", "")
+    
+    oPropArr(14, 0) = "OEM_Status"
+    oPropArr(14, 1) = ""
+    
+    oPropArr(15, 0) = "OEM_Format"
+    oPropArr(15, 1) = Replace(Mid(CatiaFileName, 17, 2), "_", "")
+
+'### Ford Kriterium ### S - Serie & P - Proto ####
+ElseIf InStr(UCase(CATEnv), "FORD") <> 0 And oSel <> "F" Then
+
+    oPropArr(0, 0) = "ItemType"
+    oPropArr(0, 1) = "A4_Design_CAD"
+    oPropArr(0, 2) = "A4_Drawing_CAD"
+    
+    oPropArr(1, 0) = "IMP_Criteria_01"
+    oPropArr(1, 1) = Left(CatiaFileName, 12)
+    
+    oPropArr(2, 0) = "IMP_Criteria_02"
+    oPropArr(2, 1) = ""
+    
+    oPropArr(3, 0) = "IMP_Criteria_03"
+    oPropArr(3, 1) = ""
+    
+    oPropArr(4, 0) = "IMP_Criteria_04"
+    oPropArr(4, 1) = ""
+    
+    oPropArr(5, 0) = "IMP_Criteria_05"
+    oPropArr(5, 1) = ""
+    
+    oPropArr(6, 0) = "IMP_Criteria_06"
+    oPropArr(6, 1) = ""
+    
+    oPropArr(7, 0) = "IMP_Criteria_07"
+    oPropArr(7, 1) = ""
+    
+    oPropArr(8, 0) = "Import_File_Name"
+    oPropArr(8, 1) = CatiaFileName
+    
+    oPropArr(9, 0) = "OEM_Teilenummer"
+    oPropArr(9, 1) = ""
+    
+    oPropArr(10, 0) = "OEM_Aenderungsindex"
+    oPropArr(10, 1) = ""
+    
+    oPropArr(11, 0) = "OEM_Dokumententeil"
+    oPropArr(11, 1) = ""
+    
+    oPropArr(12, 0) = "OEM_Variante"
+    oPropArr(12, 1) = ""
+    
+    oPropArr(13, 0) = "OEM_CAD_Typ"
+    oPropArr(13, 1) = ""
+    
+    oPropArr(14, 0) = "OEM_Status"
+    oPropArr(14, 1) = ""
+    
+    oPropArr(15, 0) = "OEM_Format"
+    oPropArr(15, 1) = ""
+    
+'### Ford Kriterium  ### F - Filename ####
+ElseIf InStr(UCase(CATEnv), "FORD") <> 0 And oSel = "F" Then
+
+    oPropArr(0, 0) = "ItemType"
+    oPropArr(0, 1) = "A4_Design_CAD"
+    oPropArr(0, 2) = "A4_Drawing_CAD"
+    
+    oPropArr(1, 0) = "IMP_Criteria_01"
+    oPropArr(1, 1) = CatiaFileName
+    
+    oPropArr(2, 0) = "IMP_Criteria_02"
+    oPropArr(2, 1) = ""
+    
+    oPropArr(3, 0) = "IMP_Criteria_03"
+    oPropArr(3, 1) = ""
+    
+    oPropArr(4, 0) = "IMP_Criteria_04"
+    oPropArr(4, 1) = ""
+    
+    oPropArr(5, 0) = "IMP_Criteria_05"
+    oPropArr(5, 1) = ""
+    
+    oPropArr(6, 0) = "IMP_Criteria_06"
+    oPropArr(6, 1) = ""
+    
+    oPropArr(7, 0) = "IMP_Criteria_07"
+    oPropArr(7, 1) = ""
+    
+    oPropArr(8, 0) = "Import_File_Name"
+    oPropArr(8, 1) = CatiaFileName
+    
+    oPropArr(9, 0) = "OEM_Teilenummer"
+    oPropArr(9, 1) = ""
+    
+    oPropArr(10, 0) = "OEM_Aenderungsindex"
+    oPropArr(10, 1) = ""
+    
+    oPropArr(11, 0) = "OEM_Dokumententeil"
+    oPropArr(11, 1) = ""
+    
+    oPropArr(12, 0) = "OEM_Variante"
+    oPropArr(12, 1) = ""
+    
+    oPropArr(13, 0) = "OEM_CAD_Typ"
+    oPropArr(13, 1) = ""
+    
+    oPropArr(14, 0) = "OEM_Status"
+    oPropArr(14, 1) = ""
+    
+    oPropArr(15, 0) = "OEM_Format"
+    oPropArr(15, 1) = ""
+    
+'### Porsche Kriterium ### S - Serie & P - Proto & F - Filename ####
+ElseIf InStr(UCase(CATEnv), "PAG") <> 0 Then
+
+    oPropArr(0, 0) = "ItemType"
+    oPropArr(0, 1) = "A4_Design_CAD"
+    oPropArr(0, 2) = "A4_Drawing_CAD"
+ 
+    oPropArr(1, 0) = "IMP_Criteria_01"
+    oPropArr(1, 1) = CatiaFileName
+    
+    oPropArr(2, 0) = "IMP_Criteria_02"
+    oPropArr(2, 1) = ""
+    
+    oPropArr(3, 0) = "IMP_Criteria_03"
+    oPropArr(3, 1) = ""
+    
+    oPropArr(4, 0) = "IMP_Criteria_04"
+    oPropArr(4, 1) = ""
+    
+    oPropArr(5, 0) = "IMP_Criteria_05"
+    oPropArr(5, 1) = ""
+    
+    oPropArr(6, 0) = "IMP_Criteria_06"
+    oPropArr(6, 1) = ""
+    
+    oPropArr(7, 0) = "IMP_Criteria_07"
+    oPropArr(7, 1) = ""
+    
+    oPropArr(8, 0) = "Import_File_Name"
+    oPropArr(8, 1) = CatiaFileName
+    
+    oPropArr(9, 0) = "OEM_Teilenummer"
+    oPropArr(9, 1) = Left(CatiaFileName, 11)
+    
+    oPropArr(10, 0) = "OEM_Aenderungsindex"
+    oPropArr(10, 1) = ""
+    
+    oPropArr(11, 0) = "OEM_Dokumententeil"
+    oPropArr(11, 1) = ""
+    
+    oPropArr(12, 0) = "OEM_Variante"
+    oPropArr(12, 1) = ""
+    
+    oPropArr(13, 0) = "OEM_CAD_Typ"
+    oPropArr(13, 1) = ""
+    
+    oPropArr(14, 0) = "OEM_Status"
+    oPropArr(14, 1) = ""
+    
+    oPropArr(15, 0) = "OEM_Format"
+    oPropArr(15, 1) = ""
+    
+'### 1st Tier Allgemein Kriterium  ### S - Serie & P - Proto & F - Filename ####
+ElseIf InStr(UCase(CATEnv), "VACSG") <> 0 Then
+
+    oPropArr(0, 0) = "ItemType"
+    oPropArr(0, 1) = "A4_Design_CAD"
+    oPropArr(0, 2) = "A4_Drawing_CAD"
+    
+    oPropArr(1, 0) = "IMP_Criteria_01"
+    oPropArr(1, 1) = CatiaFileName
+    
+    oPropArr(2, 0) = "IMP_Criteria_02"
+    oPropArr(2, 1) = ""
+    
+    oPropArr(3, 0) = "IMP_Criteria_03"
+    oPropArr(3, 1) = ""
+    
+    oPropArr(4, 0) = "IMP_Criteria_04"
+    oPropArr(4, 1) = ""
+    
+    oPropArr(5, 0) = "IMP_Criteria_05"
+    oPropArr(5, 1) = ""
+    
+    oPropArr(6, 0) = "IMP_Criteria_06"
+    oPropArr(6, 1) = ""
+    
+    oPropArr(7, 0) = "IMP_Criteria_07"
+    oPropArr(7, 1) = ""
+    
+    oPropArr(8, 0) = "Import_File_Name"
+    oPropArr(8, 1) = CatiaFileName
+    
+    oPropArr(9, 0) = "OEM_Teilenummer"
+    oPropArr(9, 1) = ""
+    
+    oPropArr(10, 0) = "OEM_Aenderungsindex"
+    oPropArr(10, 1) = ""
+    
+    oPropArr(11, 0) = "OEM_Dokumententeil"
+    oPropArr(11, 1) = ""
+    
+    oPropArr(12, 0) = "OEM_Variante"
+    oPropArr(12, 1) = ""
+    
+    oPropArr(13, 0) = "OEM_CAD_Typ"
+    oPropArr(13, 1) = ""
+    
+    oPropArr(14, 0) = "OEM_Status"
+    oPropArr(14, 1) = ""
+    
+    oPropArr(15, 0) = "OEM_Format"
+    oPropArr(15, 1) = ""
+
+End If
+
+'############################################################################################
+'### Cases End ##############################################################################
+'############################################################################################
+
+'### CATPart / CATProduct
+If InStr(oCurrentObject.Name, ".CATDrawing") = 0 Then
+    LogMsg "Properties Count: " & oCurrentObject.UserRefProperties.Count
+        
+    ' ### VSD-76 Overwrite PartNumber with filename -> especially required for BMW
+    oCurrentObject.PartNumber = CatiaFileName
+ 
+    For i = 0 To UBound(oPropArr)
+    
+        On Error Resume Next
+        
+        Set oPara = oCurrentObject.UserRefProperties.Item(oPropArr(i, 0))
+        OldVal = oPara.Value
+        oPara.Value = oPropArr(i, 1)
+        
+        If Err.Number <> 0 Then
+            Set oPara = oCurrentObject.UserRefProperties.CreateString(oPropArr(i, 0), "")
+            oPara.Value = oPropArr(i, 1)
+            LogMsg "Parameter Created: " & oPara.Name & "=" & oPropArr(i, 1)
+        Else
+            LogMsg "Parameter Exist:  " & oPara.Name & "=" & OldVal
+            LogMsg "Parameter Update: " & oPara.Name & "=" & oPropArr(i, 1)
+        End If
+        
+        On Error GoTo 0
+        
+        Err.Number = 0
+        
+        Set oPara = Nothing
+        
+    Next
+    
+    Set oDoc = oCurrentObject.Parent
+    SaveDoc oDoc
+    
+'### CATDrawing
+Else
+    LogMsg "Parameter Count: " & oCurrentObject.parameters.Count
+    
+    'Overwrite Design ItemType with Drawing Itemtype
+    oPropArr(0, 1) = oPropArr(0, 2)
+    
+    For i = 0 To UBound(oPropArr)
+    
+        If i <> 9 Then 'exception for Drawings for Change Index, not exist in data model for Drawings
+    
+            On Error Resume Next
+        
+            Set oPara = oCurrentObject.parameters.Item(oPropArr(i, 0))
+            OldVal = oPara.Value
+            oPara.Value = oPropArr(i, 1)
+        
+            If Err.Number <> 0 Then
+                Set oPara = oCurrentObject.parameters.CreateString(oPropArr(i, 0), "")
+                oPara.Value = oPropArr(i, 1)
+                LogMsg "Parameter Created: " & oPara.Name & "=" & oPropArr(i, 1)
+            Else
+                LogMsg "Parameter Exist:  " & oPara.Name & "=" & OldVal
+                LogMsg "Parameter Update: " & oPara.Name & "=" & oPropArr(i, 1)
+            End If
+        
+            On Error GoTo 0
+        
+            Err.Number = 0
+        
+            Set oPara = Nothing
+            
+        End If
+    Next
+End If
+
+End Function
+
+Function ManageDrawings()
+
+Dim FSO
+Dim P
+Dim F
+
+Dim oDrwDoc As DrawingDocument
+        
+Set FSO = CreateObject("Scripting.FileSystemObject")
+Set P = FSO.GetFolder(WORK_DIR & "\Import")
+      
+oExit = True
+      
+' Open all drawings in import folder
+For Each F In P.Files
+    If Right(F.Path, 11) = ".CATDrawing" Then
+        Set oDrwDoc = CATIA.Documents.Open(F.Path)
+        
+        StatusMsg "Start Function WriteProps() for CATDrawing: " & CATIA.ActiveDocument.Name
+        Call WriteProps(CATIA.ActiveDocument)
+        LogMsg "End Function WriteProps() for CATDrawing: " & CATIA.ActiveDocument.Name
+        
+        Call SaveDoc(oDrwDoc)
+        oDrwDoc.Close
+        
+        oExit = False
+    End If
+Next
+
+End Function
+
+Function SaveDoc(oDoc As Document)
+
+    LogMsg "Start Saving of: " & oDoc.Name
+    On Error Resume Next
+    oDoc.Save
+    If Err.Number <> 0 Then
+        ErrBox "Error during save of document: " & oDoc.Name & " appeared" & Chr(13) & _
+               "Error Number: " & Err.Number & Chr(13) & _
+               "Please check if Document is Read Only"
+        ErrMsg "Error during save of document: " & oDoc.Name & " appeared"
+        ErrMsg "Error Number: " & Err.Number
+        ErrMsg "Please check if Document is Read Only"
+        
+    End If
+    On Error GoTo 0
+
+End Function
+
+'----------------------------------------------------------------------------------------------------------------
+' ************************************  Message & Log Functions ************************************
+'----------------------------------------------------------------------------------------------------------------
+' -----------------------------------------------------------------------------
+' Function: GetTimeStamp
+'           Return the time stamp in string form
+' -----------------------------------------------------------------------------
+Function GetTimeStamp()
+
+    GetTimeStamp = Right("20" & Year(Now()), 4) & "-" & Right("0" & Month(Now()), 2) & "-" & Right("0" & Day(Now()), 2) & _
+            " " & Right("0" & Hour(Now()), 2) & ":" & Right("0" & Minute(Now()), 2) & ":" & Right("0" & Second(Now()), 2)
+            
+End Function
+
+' -----------------------------------------------------------------------------
+' Function: GetTimeStampNoSep
+'           Return the time stamp in string form without separator
+' -----------------------------------------------------------------------------
+Function GetTimeStampNoSep()
+
+    GetTimeStampNoSep = Right("20" & Year(Now()), 4) & Right("0" & Month(Now()), 2) & Right("0" & Day(Now()), 2) & _
+             Right("0" & Hour(Now()), 2) & Right("0" & Minute(Now()), 2) & Right("0" & Second(Now()), 2)
+            
+End Function
+
+' -----------------------------------------------------------------------------
+' Function: StatusMsg
+'           Show the input messages in CATIA status bar and log them, used for main steps
+' Parameter:
+'       strInput:   String that will be shown in CATIA and write to log file
+' -----------------------------------------------------------------------------
+Function StatusMsg(strInput)
+
+    CATIA.StatusBar = "Prepare Structure: " & strInput
+    LogMsg strInput
+    
+End Function
+
+' -----------------------------------------------------------------------------
+' Function: LogMsg
+'           Write input messages to the log file with "LOG:" prefix
+' Parameter:
+'       strInput:   String that will be write to log file
+' -----------------------------------------------------------------------------
+Function LogMsg(strInput)
+   
+    If Not IsEmpty(oLog) And Not (oLog Is Nothing) Then
+        oLog.Write GetTimeStamp() & " LOG : " & strInput & Chr(13) & Chr(10)
+    End If
+
+End Function
+
+' -----------------------------------------------------------------------------
+' Function: WarningBox
+'           Open a dialog to show the info message and log them
+' Parameter:
+'       strInput:   String that will be shown in CATIA and write to log file
+' -----------------------------------------------------------------------------
+Function WarningBox(strInput)
+
+    StatusMsg "WARNING - " & strInput
+    MsgBox strInput, vbExclamation + vbOKOnly, "Prepare Structure - WARNING"
+    
+End Function
+
+' -----------------------------------------------------------------------------
+' Function: ErrBox
+'           Open a dialog to show the error message and log them
+' Parameter:
+'       strInput:   String that will be shown in CATIA and write to log file
+' -----------------------------------------------------------------------------
+Function ErrBox(strInput)
+
+    StatusMsg "ERROR - " & strInput
+    MsgBox strInput, vbCritical, "Prepare Structure - ERROR"
+    
+End Function
+
+' -----------------------------------------------------------------------------
+' Function: ErrMsg
+'           Write input messages to the log file with "ERROR:"
+' Parameter:
+'       strInput:   String that will be write to log file
+' -----------------------------------------------------------------------------
+Function ErrMsg(strInput)
+    
+    If Not IsEmpty(oLog) And Not (oLog Is Nothing) Then
+        oLog.Write GetTimeStamp() & " ERROR : " & strInput & Chr(13) & Chr(10)
+    End If
+    
+End Function

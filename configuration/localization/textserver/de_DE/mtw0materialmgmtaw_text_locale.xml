@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="ISO-8859-1" standalone="yes"?>
+<!--
+===============================================================================
+Copyright 2015.
+Siemens Product Lifecycle Management Software Inc.
+All Rights Reserved.
+===============================================================================
+File description:
+
+            Filename:   mtw0materialmgmtaw_text_locale.xml
+            Module:     mtw0materialmgmtaw
+
+            XML File defining ___ module text/error messages.
+            This was previously done in UIH/UIL/VIL format.
+ -->
+<textsrv filename="mtw0materialmgmtaw_text_locale.xml">
+<key id="mtw0_xrt_materialsection">Werkstoffe</key>
+<key id="mtw0_xrt_materialtab">Zusammenstellung</key>
+<key id="mtw0_xrt_materialsubstanceinfo">Zusammenstellung</key>
+<key id="mtw0_xrt_materialparameters">Parameter</key>
+<key id="mtw0_xrt_materialinheritedparameters">Geerbte Parameter</key>
+<key id="mtw0_xrt_parameterdescriptors">Parameterdeskriptoren</key>
+<key id="mtw0_xrt_singleparameterdescriptors">Parameterdeskriptoren</key>
+<key id="mtw0_xrt_smarttabledescriptors">Intelligente-Tabelle-Deskriptoren</key>
+<key id="mtw0_xrt_materialclasses">Werkstoffklassen</key>
+<key id="mtw0_xrt_compositiontab">Neue Zusammenstellung</key>
+<key id="mtw0_xrt_Partsection">Teile</key>
+</textsrv>

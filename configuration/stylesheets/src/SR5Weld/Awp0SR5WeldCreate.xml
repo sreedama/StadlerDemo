@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+// @<COPYRIGHT>@
+// ==================================================
+// Copyright 2014.
+// Siemens Product Lifecycle Management Software Inc.
+// All Rights Reserved.
+// ==================================================
+// @<COPYRIGHT>@
+-->
+<!-- Style sheet rendering for SR5GenCarPart creation. -->
+<rendering>
+  <page>
+    <section>
+      <property name="item_id" renderingHint="textfield" modifiable="false"/>
+      <property name="revision:item_revision_id" modifiable="false"/>
+      <property name="revision:sr5ExternalRevision" modifiable="false" />
+      <property name="object_name"/>
+      <property name="object_desc" />
+      <break/>
+      <property name="uom_tag"/>
+      <break/>
+      <property name="revision:sr5Dimension"/>
+      <property name="revision:sr5NormNo"/>
+      <break/>
+      <property name="sr5FSFClass"/>
+      <break/>
+      <inject type="dataset" src="Cm1ChangeContextProviderForCreate"/>
+      <property name="revision:awp0ProcessTemplates" />
+    </section>
+  </page>
+</rendering>

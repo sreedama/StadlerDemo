@@ -1,0 +1,56 @@
+@echo off
+setlocal
+
+if not defined TC_ROOT goto ENV_MISSING
+
+cd /d %~dp0
+cd configuration
+
+:SELECT_MODE
+echo #################################################################################################
+echo Please select a valid mode for this script to run in.
+echo Available options are:
+echo:
+echo    full - to update configuration and the Active Workspace client on a single machine
+echo    corp - only updates configuration for the corporate server (4-tier)
+echo    aw - only updates the Active Workspace client and performs a rebuild (No downtime required)
+echo    bin - only exchanges DLLs (No downtime required - warm servers will still use old DLLs)
+echo:
+set /p MODE="Enter mode:"
+
+if "%MODE%"=="full" goto ASK_TC_ENV
+if "%MODE%"=="corp" goto ASK_TC_ENV
+if "%MODE%"=="aw" goto AW_SRC_UPDATE
+if "%MODE%"=="bin" goto EXCHANGE_BINARIES
+
+goto SELECT_MODE
+
+:ASK_TC_ENV
+echo #################################################################################################
+echo Please select on which Teamcenter environment this script is run.
+echo This information is used to update the Teamcenter organization with the correct user lists.
+echo Available options are:
+echo:
+echo    dev - The development environment
+echo    qual - The quality environment
+echo    prod - the production environment
+echo    train - the training environment
+echo    mig - The migration environment
+echo:
+set /p TC_ENV="Enter Teamcenter environment:"
+
+if "%TC_ENV%"=="dev" goto SET_CREDENTIALS
+if "%TC_ENV%"=="qual" goto SET_CREDENTIALS
+if "%TC_ENV%"=="prod" goto SET_CREDENTIALS
+if "%TC_ENV%"=="train" goto SET_CREDENTIALS
+if "%TC_ENV%"=="mig" goto SET_CREDENTIALS
+
+goto ASK_TC_ENV
+
+:SET_CREDENTIALS
+:: ### Provide credentials for infodba
+echo Type in password of "infodba"
+set /P DBAPASS=Password: 
+set UPG_CREDENTIALS_TMP=-u=infodba -p=****** -g=dba
+set UPG_CREDENTIALS=-u=infodba -p=%DBAPASS% -g=dba
+

@@ -1,0 +1,82 @@
+############################################################################################################
+#  CNO Check Definition File
+############################################################################################################
+# Version History
+#
+# Version    Date           Name               Description of Change
+# 1.0        20-01-2022     testu     Initial
+############################################################################################################
+
+#Check Type=SR5MfgEndItemRevision Property=sr5Plant
+SR5MfgEndItemRevision:Plant§not allowed§empty~WARNING:should not be empty
+SR5MfgMajorAssyRevision:Plant§not allowed§empty~WARNING:should not be empty
+SR5MfgInstallKitRevision:Plant§not allowed§empty~WARNING:should not be empty
+
+
+C:ItemRevision>view:bl_rev_last_release_status§not allowed§empty~WARNING: INFO: should not be empty
+C:ItemRevision>view:bl_rev_last_release_status§not allowed§80*~WARNING: INFO: should not contain Part with an Obsolete status
+C:ItemRevision>view:bl_rev_last_release_status§not allowed§90*~WARNING: INFO: should not contain Part with an Discontinued status
+C:ItemRevision>view:bl_rev_last_release_status§not allowed§40*~WARNING: INFO: should not contain Part with an Engineering Release Status
+C:ItemRevision>view:bl_rev_last_release_status§not allowed§20*~WARNING: INFO: should not contain Part with an Frozen status
+
+C:ItemRevision>view:bl_rev_last_release_status§not allowed§30*~WARNING: INFO: should not contain Part with an Pre-release status
+
+
+
+
+SR5MfgEndItemRevision>view:bl_rev_last_release_status§not allowed§empty~WARNING: INFO: should not be empty
+
+SR5MfgEndItemRevision>view:bl_rev_last_release_status§not allowed§80*~WARNING: INFO: should not contain Part with an Obsolete status
+
+SR5MfgEndItemRevision>view:bl_rev_last_release_status§not allowed§90*~WARNING: INFO: should not contain Part with an Discontinued status
+
+SR5MfgEndItemRevision>view:bl_rev_last_release_status§not allowed§40*~WARNING: INFO: should not contain Part with an Engineering Release Status
+
+SR5MfgEndItemRevision>view:bl_rev_last_release_status§not allowed§20*~WARNING: INFO: should not contain Part with an Frozen status
+
+SR5MfgEndItemRevision>view:bl_rev_last_release_status§not allowed§30*~WARNING: INFO: should not contain Part with an Pre-release status
+
+
+
+SR5MfgMajorAssyRevision>view:bl_rev_last_release_status§not allowed§empty~WARNING: INFO: should not be empty
+
+SR5MfgMajorAssyRevision>view:bl_rev_last_release_status§not allowed§80*~WARNING: INFO: should not contain Part with an Obsolete status
+
+SR5MfgMajorAssyRevision>view:bl_rev_last_release_status§not allowed§90*~WARNING: INFO: should not contain Part with an Discontinued status
+
+SR5MfgMajorAssyRevision>view:bl_rev_last_release_status§not allowed§40*~WARNING: INFO: should not contain Part with an Engineering Release Status
+
+SR5MfgMajorAssyRevision>view:bl_rev_last_release_status§not allowed§20*~WARNING: INFO: should not contain Part with an Frozen status
+
+SR5MfgMajorAssyRevision>view:bl_rev_last_release_status§not allowed§30*~WARNING: INFO: should not contain Part with an Pre-release status
+
+
+
+SR5MfgInstallKitRevision>view:bl_rev_last_release_status§not allowed§empty~WARNING: INFO: should not be empty
+
+SR5MfgInstallKitRevision>view:bl_rev_last_release_status§not allowed§80*~WARNING: INFO: should not contain Part with an Obsolete status
+
+SR5MfgInstallKitRevision>view:bl_rev_last_release_status§not allowed§90*~WARNING: INFO: should not contain Part with an Discontinued status
+
+SR5MfgInstallKitRevision>view:bl_rev_last_release_status§not allowed§40*~WARNING: INFO: should not contain Part with an Engineering Release Status
+
+SR5MfgInstallKitRevision>view:bl_rev_last_release_status§not allowed§20*~WARNING: INFO: should not contain Part with an Frozen status
+
+SR5MfgInstallKitRevision>view:bl_rev_last_release_status§not allowed§30*~WARNING: INFO: should not contain Part with an Pre-release status
+#Check Type=SR5GenMfgObjRevision Property=sr5MakeBuy
+C:ItemRevision>view:sr5MakeBuy§not allowed§empty~WARNING:Make/Buy is empty
+#Check Type=SR5HasPlantForm Property=secondary_object
+
+#Check Type=SR5HasPlantForm Property=secondary_object
+#SR5HasPlantForm:Plant Form§exist§*~WARNING: INFO: Plant Form does not Exist
+
+#Check Type=C:Dataset Property=?object_type
+C:Form:Dataset Type§exist§SR5PlantForm~WARNING: INFO: Plant Form does not Exist
+SR5EngArticleRevision:Release Status§not allowed§40*~A minimum 40-Engineering release status is required for MBOM Release
+SR5EngEndItemRevision:Release Status§not allowed§40*~A minimum 40-Engineering release status is required for MBOM Release
+SR5ElectricAssyRevision:Release Status§not allowed§40*~A minimum 40-Engineering release status is required for MBOM Release
+SR5EngMajorAssyRevision:Release Status§not allowed§40*~A minimum 40-Engineering release status is required for MBOM Release
+SR5NonERPArticleRevision:Release Status§not allowed§40*~A minimum 40-Engineering release status is required for MBOM Release
+SR5GenPartRevision:Release Status§not allowed§40*~A minimum 40-Engineering release status is required for MBOM Release
+SR5TechDocumentRevision:Release Status§not allowed§40*~A minimum 40-Engineering release status is required for MBOM Release
+SR5PlantForm:sr5MakeBuy§not allowed§empty~WARNING: INFO: Attribute is not filled

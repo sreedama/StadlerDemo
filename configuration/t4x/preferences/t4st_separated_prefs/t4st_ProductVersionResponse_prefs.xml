@@ -1,0 +1,409 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<preferences version="10.0">
+  <category name="SAP Gateway T4ST">
+	
+    <preference name="T4ST_ProductVersionResponseTypeList" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>Description not provided during import.</preference_description>
+      <context name="Teamcenter">
+        <value>SR5MfgEndItemRevision</value>
+        <value>SR5MfgMajorAssyRevision</value>
+        <value>SR5MfgInstallKitRevision</value>
+        <value>SR5EngArticleRevision</value>
+        <value>SR5ToolRevision</value>
+        <value>SR5GenCatPartRevision</value>
+        <value>SR5MfgObjectRevision</value>
+        <value>SR5LLEndItemRevision</value>
+        <value>SR5LLMajorAssyRevision</value>
+        <value>SR5SRVEndItemRevision</value>
+        <value>SR5SRVMajorAssyRevision</value>
+      </context>
+    </preference>
+	
+    <preference name="T4ST_ProductVersionResponseCondition" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>use a BMIDE condition to skip the transfer. i.e. Ais3_DoProductVersionResponseTransfer or isTrue</preference_description>
+      <context name="Teamcenter">
+        <value>SR5_DoProductVersionTransfer</value>
+      </context>
+    </preference>
+	
+	<!-- Mapping 4 --> 
+    <preference name="T4ST_ProductVersionResponseMapping4SR5EngArticleRevision" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>No description available for this preference</preference_description>
+      <context name="Teamcenter">
+        <value>#__getAllProperties__#:Properties</value>
+      </context>
+    </preference>
+    <preference name="T4ST_ProductVersionResponseMapping4SR5GenCatPartRevision" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>No description available for this preference</preference_description>
+      <context name="Teamcenter">
+        <value>#__getAllProperties__#:Properties</value>
+      </context>
+    </preference>
+    <preference name="T4ST_ProductVersionResponseMapping4SR5LLEndItemRevision" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>No description available for this preference</preference_description>
+      <context name="Teamcenter">
+        <value>#__getAllProperties__#:Properties</value>
+      </context>
+    </preference>
+    <preference name="T4ST_ProductVersionResponseMapping4SR5LLMajorAssyRevision" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>No description available for this preference</preference_description>
+      <context name="Teamcenter">
+        <value>#__getAllProperties__#:Properties</value>
+      </context>
+    </preference>
+    <preference name="T4ST_ProductVersionResponseMapping4SR5MfgEndItemRevision" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>No description available for this preference</preference_description>
+      <context name="Teamcenter">
+        <value>#__getAllProperties__#:Properties</value>
+      </context>
+    </preference>
+    <preference name="T4ST_ProductVersionResponseMapping4SR5MfgInstallKitRevision" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>No description available for this preference</preference_description>
+      <context name="Teamcenter">
+        <value>#__getAllProperties__#:Properties</value>
+      </context>
+    </preference>
+    <preference name="T4ST_ProductVersionResponseMapping4SR5MfgMajorAssyRevision" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>No description available for this preference</preference_description>
+      <context name="Teamcenter">
+        <value>#__getAllProperties__#:Properties</value>
+      </context>
+    </preference>
+    <preference name="T4ST_ProductVersionResponseMapping4SR5MfgObjectRevision" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>No description available for this preference</preference_description>
+      <context name="Teamcenter">
+        <value>#__getAllProperties__#:Properties</value>
+      </context>
+    </preference>
+    <preference name="T4ST_ProductVersionResponseMapping4SR5SRVEndItemRevision" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>No description available for this preference</preference_description>
+      <context name="Teamcenter">
+        <value>#__getAllProperties__#:Properties</value>
+      </context>
+    </preference>
+    <preference name="T4ST_ProductVersionResponseMapping4SR5SRVMajorAssyRevision" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>No description available for this preference</preference_description>
+      <context name="Teamcenter">
+        <value>#__getAllProperties__#:Properties</value>
+      </context>
+    </preference>
+    <preference name="T4ST_ProductVersionResponseMapping4SR5ToolRevision" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>No description available for this preference</preference_description>
+      <context name="Teamcenter">
+        <value>#__getAllProperties__#:Properties</value>
+      </context>
+    </preference>
+	
+    <preference name="T4ST_ProductVersionResponsePropertyListMode4SR5EngArticleRevision" type="Integer" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>AllowList</preference_description>
+      <context name="Teamcenter">
+        <value>2</value>
+      </context>
+    </preference>
+    <preference name="T4ST_ProductVersionResponsePropertyListMode4SR5GenCatPartRevision" type="Integer" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>AllowList</preference_description>
+      <context name="Teamcenter">
+        <value>2</value>
+      </context>
+    </preference>
+    <preference name="T4ST_ProductVersionResponsePropertyListMode4SR5LLEndItemRevision" type="Integer" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>AllowList</preference_description>
+      <context name="Teamcenter">
+        <value>2</value>
+      </context>
+    </preference>
+    <preference name="T4ST_ProductVersionResponsePropertyListMode4SR5LLMajorAssyRevision" type="Integer" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>AllowList</preference_description>
+      <context name="Teamcenter">
+        <value>2</value>
+      </context>
+    </preference>
+    <preference name="T4ST_ProductVersionResponsePropertyListMode4SR5MfgInstallKitRevision" type="Integer" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>AllowList</preference_description>
+      <context name="Teamcenter">
+        <value>2</value>
+      </context>
+    </preference>
+    <preference name="T4ST_ProductVersionResponsePropertyListMode4SR5MfgMajorAssyRevision" type="Integer" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>AllowList</preference_description>
+      <context name="Teamcenter">
+        <value>2</value>
+      </context>
+    </preference>
+    <preference name="T4ST_ProductVersionResponsePropertyListMode4SR5MfgObjectRevision" type="Integer" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>AllowList</preference_description>
+      <context name="Teamcenter">
+        <value>2</value>
+      </context>
+    </preference>
+    <preference name="T4ST_ProductVersionResponsePropertyListMode4SR5MfgEndItemRevision" type="Integer" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>AllowList</preference_description>
+      <context name="Teamcenter">
+        <value>2</value>
+      </context>
+    </preference>
+    <preference name="T4ST_ProductVersionResponsePropertyListMode4SR5SRVEndItemRevision" type="Integer" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>AllowList</preference_description>
+      <context name="Teamcenter">
+        <value>2</value>
+      </context>
+    </preference>
+    <preference name="T4ST_ProductVersionResponsePropertyListMode4SR5SRVMajorAssyRevision" type="Integer" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>AllowList</preference_description>
+      <context name="Teamcenter">
+        <value>2</value>
+      </context>
+    </preference>
+    <preference name="T4ST_ProductVersionResponsePropertyListMode4SR5ToolRevision" type="Integer" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>AllowList</preference_description>
+      <context name="Teamcenter">
+        <value>2</value>
+      </context>
+    </preference>		
+    <preference name="T4ST_ProductVersionResponseProperty2ProcessList4SR5EngArticleRevision" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>AllowList special attributes - defined during implementation</preference_description>
+      <context name="Teamcenter">
+        <value>sr5SAPID</value>
+        <value>sr5SAPTransStatus</value>
+        <value>sr5SAPTransDate</value>
+      </context>
+    </preference>
+    <preference name="T4ST_ProductVersionResponseProperty2ProcessList4SR5GenCatPartRevision" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>AllowList special attributes - defined during implementation</preference_description>
+      <context name="Teamcenter">
+        <value>sr5SAPID</value>
+        <value>sr5SAPTransStatus</value>
+        <value>sr5SAPTransDate</value>
+      </context>
+    </preference>
+    <preference name="T4ST_ProductVersionResponseProperty2ProcessList4SR5LLEndItemRevision" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>AllowList special attributes - defined during implementation</preference_description>
+      <context name="Teamcenter">
+        <value>sr5SAPID</value>
+        <value>sr5SAPTransStatus</value>
+        <value>sr5SAPTransDate</value>
+      </context>
+    </preference>
+    <preference name="T4ST_ProductVersionResponseProperty2ProcessList4SR5LLMajorAssyRevision" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>AllowList special attributes - defined during implementation</preference_description>
+      <context name="Teamcenter">
+        <value>sr5SAPID</value>
+        <value>sr5SAPTransStatus</value>
+        <value>sr5SAPTransDate</value>
+      </context>
+    </preference>
+    <preference name="T4ST_ProductVersionResponseProperty2ProcessList4SR5MfgInstallKitRevision" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>AllowList special attributes - defined during implementation</preference_description>
+      <context name="Teamcenter">
+        <value>sr5SAPID</value>
+        <value>sr5SAPTransStatus</value>
+        <value>sr5SAPTransDate</value>
+      </context>
+    </preference>
+    <preference name="T4ST_ProductVersionResponseProperty2ProcessList4SR5MfgMajorAssyRevision" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>AllowList special attributes - defined during implementation</preference_description>
+      <context name="Teamcenter">
+        <value>sr5SAPID</value>
+        <value>sr5SAPTransStatus</value>
+        <value>sr5SAPTransDate</value>
+      </context>
+    </preference>
+    <preference name="T4ST_ProductVersionResponseProperty2ProcessList4SR5MfgObjectRevision" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>AllowList special attributes - defined during implementation</preference_description>
+      <context name="Teamcenter">
+        <value>sr5SAPID</value>
+        <value>sr5SAPTransStatus</value>
+        <value>sr5SAPTransDate</value>
+      </context>
+    </preference>
+    <preference name="T4ST_ProductVersionResponseProperty2ProcessList4SR5MfgEndItemRevision" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>AllowList special attributes - defined during implementation</preference_description>
+      <context name="Teamcenter">
+        <value>sr5SAPID</value>
+        <value>sr5SAPTransStatus</value>
+        <value>sr5SAPTransDate</value>
+      </context>
+    </preference>
+    <preference name="T4ST_ProductVersionResponseProperty2ProcessList4SR5SRVEndItemRevision" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>AllowList special attributes - defined during implementation</preference_description>
+      <context name="Teamcenter">
+        <value>sr5SAPID</value>
+        <value>sr5SAPTransStatus</value>
+        <value>sr5SAPTransDate</value>
+      </context>
+    </preference>
+    <preference name="T4ST_ProductVersionResponseProperty2ProcessList4SR5SRVMajorAssyRevision" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>AllowList special attributes - defined during implementation</preference_description>
+      <context name="Teamcenter">
+        <value>sr5SAPID</value>
+        <value>sr5SAPTransStatus</value>
+        <value>sr5SAPTransDate</value>
+      </context>
+    </preference>
+    <preference name="T4ST_ProductVersionResponseProperty2ProcessList4SR5ToolRevision" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>AllowList special attributes - defined during implementation</preference_description>
+      <context name="Teamcenter">
+        <value>sr5SAPID</value>
+        <value>sr5SAPTransStatus</value>
+        <value>sr5SAPTransDate</value>
+      </context>
+    </preference>
+	
+	<!-- Mapping 2 -->
+    <preference name="T4ST_ProductVersionResponseFieldMapping2SR5EngArticleRevision" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>No description available for this preference</preference_description>
+      <context name="Teamcenter">
+        <value>sr5SAPID</value>
+        <value>sr5SAPTransStatus</value>
+        <value>sr5SAPTransDate</value>
+      </context>
+    </preference>
+    <preference name="T4ST_ProductVersionResponseFieldMapping2SR5GenCatPartRevision" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>No description available for this preference</preference_description>
+      <context name="Teamcenter">
+        <value>sr5SAPID</value>
+        <value>sr5SAPTransStatus</value>
+        <value>sr5SAPTransDate</value>
+      </context>
+    </preference>
+    <preference name="T4ST_ProductVersionResponseFieldMapping2SR5LLEndItemRevision" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>No description available for this preference</preference_description>
+      <context name="Teamcenter">
+        <value>sr5SAPID</value>
+        <value>sr5SAPTransStatus</value>
+        <value>sr5SAPTransDate</value>
+      </context>
+    </preference>
+    <preference name="T4ST_ProductVersionResponseFieldMapping2SR5LLMajorAssyRevision" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>No description available for this preference</preference_description>
+      <context name="Teamcenter">
+        <value>sr5SAPID</value>
+        <value>sr5SAPTransStatus</value>
+        <value>sr5SAPTransDate</value>
+      </context>
+    </preference>
+    <preference name="T4ST_ProductVersionResponseFieldMapping2SR5MfgEndItemRevision" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>No description available for this preference</preference_description>
+      <context name="Teamcenter">
+        <value>sr5SAPID</value>
+        <value>sr5SAPTransStatus</value>
+        <value>sr5SAPTransDate</value>
+      </context>
+    </preference>
+    <preference name="T4ST_ProductVersionResponseFieldMapping2SR5MfgInstallKitRevision" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>No description available for this preference</preference_description>
+      <context name="Teamcenter">
+        <value>sr5SAPID</value>
+        <value>sr5SAPTransStatus</value>
+        <value>sr5SAPTransDate</value>
+      </context>
+    </preference>
+    <preference name="T4ST_ProductVersionResponseFieldMapping2SR5MfgMajorAssyRevision" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>No description available for this preference</preference_description>
+      <context name="Teamcenter">
+        <value>sr5SAPID</value>
+        <value>sr5SAPTransStatus</value>
+        <value>sr5SAPTransDate</value>
+      </context>
+    </preference>
+    <preference name="T4ST_ProductVersionResponseFieldMapping2SR5MfgObjectRevision" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>No description available for this preference</preference_description>
+      <context name="Teamcenter">
+        <value>sr5SAPID</value>
+        <value>sr5SAPTransStatus</value>
+        <value>sr5SAPTransDate</value>
+      </context>
+    </preference>
+    <preference name="T4ST_ProductVersionResponseFieldMapping2SR5SRVEndItemRevision" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>No description available for this preference</preference_description>
+      <context name="Teamcenter">
+        <value>sr5SAPID</value>
+        <value>sr5SAPTransStatus</value>
+        <value>sr5SAPTransDate</value>
+      </context>
+    </preference>
+    <preference name="T4ST_ProductVersionResponseFieldMapping2SR5SRVMajorAssyRevision" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>No description available for this preference</preference_description>
+      <context name="Teamcenter">
+        <value>sr5SAPID</value>
+        <value>sr5SAPTransStatus</value>
+        <value>sr5SAPTransDate</value>
+      </context>
+    </preference>
+    <preference name="T4ST_ProductVersionResponseFieldMapping2SR5ToolRevision" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>No description available for this preference</preference_description>
+      <context name="Teamcenter">
+        <value>sr5SAPID</value>
+        <value>sr5SAPTransStatus</value>
+        <value>sr5SAPTransDate</value>
+      </context>
+    </preference>
+    <preference name="T4ST_ProductVersionResponseMapping2SR5EngArticleRevision" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>No description available for this preference</preference_description>
+      <context name="Teamcenter">
+        <value>SR5EngArticleRevision</value>
+      </context>
+    </preference>
+    <preference name="T4ST_ProductVersionResponseMapping2SR5GenCatPartRevision" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>No description available for this preference</preference_description>
+      <context name="Teamcenter">
+        <value>SR5GenCatPartRevision</value>
+      </context>
+    </preference>
+    <preference name="T4ST_ProductVersionResponseMapping2SR5LLEndItemRevision" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>No description available for this preference</preference_description>
+      <context name="Teamcenter">
+        <value>SR5LLEndItemRevision</value>
+      </context>
+    </preference>
+    <preference name="T4ST_ProductVersionResponseMapping2SR5LLMajorAssyRevision" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>No description available for this preference</preference_description>
+      <context name="Teamcenter">
+        <value>SR5LLMajorAssyRevision</value>
+      </context>
+    </preference>
+    <preference name="T4ST_ProductVersionResponseMapping2SR5MfgEndItemRevision" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>No description available for this preference</preference_description>
+      <context name="Teamcenter">
+        <value>SR5MfgEndItemRevision</value>
+      </context>
+    </preference>
+    <preference name="T4ST_ProductVersionResponseMapping2SR5MfgInstallKitRevision" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>No description available for this preference</preference_description>
+      <context name="Teamcenter">
+        <value>SR5MfgInstallKitRevision</value>
+      </context>
+    </preference>
+    <preference name="T4ST_ProductVersionResponseMapping2SR5MfgMajorAssyRevision" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>No description available for this preference</preference_description>
+      <context name="Teamcenter">
+        <value>SR5MfgMajorAssyRevision</value>
+      </context>
+    </preference>
+    <preference name="T4ST_ProductVersionResponseMapping2SR5MfgObjectRevision" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>No description available for this preference</preference_description>
+      <context name="Teamcenter">
+        <value>SR5MfgObjectRevision</value>
+      </context>
+    </preference>
+    <preference name="T4ST_ProductVersionResponseMapping2SR5SRVEndItemRevision" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>No description available for this preference</preference_description>
+      <context name="Teamcenter">
+        <value>SR5SRVEndItemRevision</value>
+      </context>
+    </preference>
+    <preference name="T4ST_ProductVersionResponseMapping2SR5SRVMajorAssyRevision" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>No description available for this preference</preference_description>
+      <context name="Teamcenter">
+        <value>SR5SRVMajorAssyRevision</value>
+      </context>
+    </preference>
+    <preference name="T4ST_ProductVersionResponseMapping2SR5ToolRevision" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>No description available for this preference</preference_description>
+      <context name="Teamcenter">
+        <value>SR5ToolRevision</value>
+      </context>
+    </preference>
+
+  </category>
+</preferences>

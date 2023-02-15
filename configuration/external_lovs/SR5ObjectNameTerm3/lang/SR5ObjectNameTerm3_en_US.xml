@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<TcBusinessDataLocalization xmlns="http://teamcenter.com/BusinessModel/TcBusinessDataLocalization" batchXSDVersion="1.0" Date="Mon Sep 28 09:24:15 AM 2015">
+  <Add>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm3{::}125107" status="Approved">attachment</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm3{::}125107" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm3{::}125111" status="Approved">configuration</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm3{::}125111" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm3{::}162875" status="Approved">Construction of</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm3{::}162875" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm3{::}163647" status="Approved">suspension</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm3{::}163647" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm3{::}1539330" status="Approved">base</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm3{::}1539330" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm3{::}127656" status="Approved">assembly</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm3{::}127656" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm3{::}1539423" status="Approved">double</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm3{::}1539423" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm3{::}125231" status="Approved">installation</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm3{::}125231" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm3{::}1539452" status="Approved">unit</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm3{::}1539452" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm3{::}128447" status="Approved">consist</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm3{::}128447" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm3{::}128204" status="Approved">mock-up</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm3{::}128204" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm3{::}162143" status="Approved">top part</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm3{::}162143" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm3{::}1539868" status="Approved">phantom</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm3{::}1539868" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm3{::}1539964" status="Approved">collection</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm3{::}1539964" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm3{::}1499770" status="Approved">sentence</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm3{::}1499770" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm3{::}129009" status="Approved">support</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm3{::}129009" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm3{::}128010" status="Approved">shaft</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm3{::}128010" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm3{::}155629" status="Approved">shaft 2</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm3{::}155629" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm3{::}162089" status="Approved">pre-cut</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm3{::}162089" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5ObjectNameTerm3{::}1540333" status="Approved">twin</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5ObjectNameTerm3{::}1540333" status="Approved"></key>
+  </Add>
+</TcBusinessDataLocalization>

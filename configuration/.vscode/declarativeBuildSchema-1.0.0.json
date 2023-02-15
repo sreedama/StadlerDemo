@@ -1,0 +1,58 @@
+{
+    "$schema": "http://json-schema.org/draft-06/schema#",
+    "description": "This is the schema the declarative build (in JSON format) must adhere to. The Apollo audit check validates all site JSON files against this schema. For explanation of the keywords of this schema, please visit https://ajv.js.org/keywords.html",
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {
+        "transpilers": {
+            "type": "object",
+            "additionalProperties": false,
+            "patternProperties": {
+                "^[a-zA-Z_]+[a-zA-Z0-9_]*$": {
+                    "packageName": {
+                        "type": "string",
+                        "description": "Package name"
+                    },
+                    "outputDirectory": {
+                        "type": "string",
+                        "description": "output directory name"
+                    }
+                },
+                "uniqueItems": true
+            }
+        },
+        "srcPaths": {
+            "type": "array",
+            "description": "Array of the source paths",
+            "items": {
+                "type": "string"
+            },
+            "minItems": 1,
+            "uniqueItems": true
+        },
+        "additionalTasks": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "audit": {
+                    "type": "array",
+                    "description": "Array of additional gulp audit tasks",
+                    "items": {
+                        "type": "string"
+                    },
+                    "minItems": 1,
+                    "uniqueItems": true
+                },
+                "test": {
+                    "type": "array",
+                    "description": "Array of additional gulp test tasks",
+                    "items": {
+                        "type": "string"
+                    },
+                    "minItems": 1,
+                    "uniqueItems": true
+                }
+            }
+        }
+    }
+}

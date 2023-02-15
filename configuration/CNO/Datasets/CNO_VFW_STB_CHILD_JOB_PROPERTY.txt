@@ -1,0 +1,17 @@
+############################################################################################################
+#  CNO Object Property Definition File
+############################################################################################################
+# Version History
+#
+# Version    Date           Name               Description of Change
+# 1.0        21-02-2022     user01     Initial
+############################################################################################################
+
+C:ItemRevision:item_id~item_id
+C:ItemRevision§IR_ID_REV§|:item_id|_|:item_revision_id|
+
+C:ItemRevision>view§BL_ID_REV§|bl_rev_item_id|_|bl_rev_item_revision_id|
+C:ItemRevision>view:bl_rev_last_release_status~bl_rev_last_release_status
+C:ItemRevision>view:bl_level_starting_0~bl_level_starting_0
+
+C:EPMTask:root_target_attachments~root_target_attachments

@@ -1,0 +1,131 @@
+############################################################################################################
+#  CNO Expansion Definition File
+############################################################################################################
+# Version History
+#
+# Version    Date           Name               Description of Change
+# 1.0        02-05-2022     testu     Initial
+############################################################################################################
+
+#process
+C:SR5GenEngObjRevision>>process_stage_list>C:EPMTask
+
+#occurences
+C:ItemRevision>>view;99p:Latest Working/CLOSURE_RULE:BOMExpandSkipStatus30-50>C:ItemRevision
+
+#tech document
+#looks like required document can be attached as Item and not as ItemRevision:
+#SR5EngArticleRevision>IMAN_specification>SR5TechDocumentRevision
+#SR5EngArticleRevision>IMAN_specification>SR5TechDocument
+#new link
+#obsolete
+#SR5EngArticleRevision>SR5HasSpecificationDocument>SR5TechDocumentRevision
+SR5EngArticleRevision>SR5HasSpecificationDocument>SR5TechDocument
+#obsolete
+#SR5EngArticleRevision>SR5HasRequiredDocument>SR5TechDocumentRevision
+SR5EngArticleRevision>SR5HasRequiredDocument>SR5TechDocument
+
+#with filter otherwise link cannot be reuse inside the check
+SR5TechDocument>revision_list/FILTER_LastRev>SR5TechDocumentRevision
+
+
+#desired dataset
+#C:SR5GenEngObjRevision>IMAN_specification>CATPart
+#C:SR5GenEngObjRevision>IMAN_specification>CATProduct
+#C:SR5GenEngObjRevision>IMAN_specification>CATDrawing
+SR5EngEndItemRevision>IMAN_specification>CATPart
+SR5EngMajorAssyRevision>IMAN_specification>CATPart
+SR5EngArticleRevision>IMAN_specification>CATPart
+SR5NonERPArticleRevision>IMAN_specification>CATPart
+#SR5GenCatPartRevision>IMAN_specification>CATPart
+#SR5CatalogPartRevision>IMAN_specification>CATPart
+#SR5EleCatPartRevision>IMAN_specification>CATPart
+#SR5MechCatPartRevision>IMAN_specification>CATPart
+SR5EngArticleARRevision>IMAN_specification>CATPart
+
+SR5EngEndItemRevision>IMAN_specification>CATProduct
+SR5EngMajorAssyRevision>IMAN_specification>CATProduct
+SR5EngArticleRevision>IMAN_specification>CATProduct
+SR5NonERPArticleRevision>IMAN_specification>CATProduct
+#SR5GenCatPartRevision>IMAN_specification>CATProduct
+#SR5CatalogPartRevision>IMAN_specification>CATProduct
+#SR5EleCatPartRevision>IMAN_specification>CATProduct
+#SR5MechCatPartRevision>IMAN_specification>CATProduct
+SR5EngArticleARRevision>IMAN_specification>CATProduct
+
+SR5EngEndItemRevision>IMAN_specification>CATDrawing
+SR5EngMajorAssyRevision>IMAN_specification>CATDrawing
+SR5EngArticleRevision>IMAN_specification>CATDrawing
+SR5NonERPArticleRevision>IMAN_specification>CATDrawing
+#SR5GenCatPartRevision>IMAN_specification>CATDrawing
+#SR5CatalogPartRevision>IMAN_specification>CATDrawing
+#SR5EleCatPartRevision>IMAN_specification>CATDrawing
+#SR5MechCatPartRevision>IMAN_specification>CATDrawing
+SR5EngArticleARRevision>IMAN_specification>CATDrawing
+
+C:SR5GenEngObjRevision>structure_revisions>C:PSBOMViewRevision
+C:SR5GenEngObjRevision>IMAN_master_form_rev>C:Form
+
+#BMIDE is strange: catalog classe is not working
+#SR5EleCatPartRevision>>active_user>User
+#SR5MechCatPartRevision>>active_user>User
+#SR5GenCatPartRevision>>active_user>User
+#at the end only Eng. Art.
+#SR5EngArticleRevision>>active_user>User
+
+#MDM group for Part
+#User<user<GroupMember
+
+#SAP properties
+C:SR5GenEngObjRevision>items_tag>C:Item
+SR5EngArticle>revision_list/FILTER_Rev_Status50>SR5EngArticleRevision
+#not working but not so bad: status50 will be checked and it is so anyway accepted and are remove from targets inside the WF
+#(but leading to issue if we need to compare revision under DWG)
+#SR5EngArticle>revision_list/FILTER_Rev_Status50>SR5EngArticleRevision/ALIAS:SAPRevisionStatus50
+#skip cannot be used because we cannot skip empty and because status 50 will be inside the list of status (not the only status)
+
+
+
+#ccp link
+#ccp not allowed status 70,80,90
+#CATPart>catiaV5_MML>C:SR5GenEngObjRevision
+#CATPart>catiaV5_MMLAssy>C:SR5GenEngObjRevision
+#CATDrawing>catiaV5_DWGLink>C:SR5GenEngObjRevision
+#brainstorming with VFW6.1
+#ccp not status to take with and to fully checked
+#CATPart>catiaV5_MML/FILTER_Rev_NoStatus/ALIAS:MML_NoStatus>C:SR5GenEngObjRevision/ALIAS:MMLRevisionNoStatus
+#CATPart>catiaV5_MMLAssy/FILTER_Rev_NoStatus>C:SR5GenEngObjRevision/ALIAS:ContextualRevisionNoStatus
+#CATDrawing>catiaV5_DWGLink/FILTER_Rev_NoStatus>C:SR5GenEngObjRevision/ALIAS:DWGRevisionNoStatus
+#ccp status 20 to take with
+#CATPart>catiaV5_MML/FILTER_Rev_Status20>C:SR5GenEngObjRevision/ALIAS:MMLRevision
+#CATPart>catiaV5_MMLAssy/FILTER_Rev_Status20>C:SR5GenEngObjRevision/ALIAS:ContextualRevision
+#CATDrawing>catiaV5_DWGLink/FILTER_RevStatus20>C:SR5GenEngObjRevision/ALIAS:DWGRevision
+#cannot work because the query also return object with multiple status 20,30,80
+#CATPart>catiaV5_MML/SKIP:30 - Pre-Release,40 - Engineering Release,50 - Production Release,70 - Superseded,80 - Obsolete,90 - Discontinued/ALIAS:MML_Skipped>C:SR5GenEngObjRevision/ALIAS:MMLRevision
+#CATPart>catiaV5_MMLAssy/SKIP:30 - Pre-Release,40 - Engineering Release,50 - Production Release,70 - Superseded,80 - Obsolete,90 - Discontinued/ALIAS:MML_Skipped>C:SR5GenEngObjRevision/ALIAS:MMLRevision
+#CATDrawing>catiaV5_DWGLink/SKIP:30 - Pre-Release,40 - Engineering Release,50 - Production Release,70 - Superseded,80 - Obsolete,90 - Discontinued/ALIAS:MML_Skipped>C:SR5GenEngObjRevision/ALIAS:MMLRevision
+#ccp not allowed status 70,80,90 and take the correct one with
+#alias on targetted expanded object will not be working because of the same class as the other object: useless & non-sense
+#CATPart>catiaV5_MML/SKIP:30 - Pre-Release,40 - Engineering Release,50 - Production Release>C:SR5GenEngObjRevision
+#CATPart>catiaV5_MMLAssy/SKIP:30 - Pre-Release,40 - Engineering Release,50 - Production Release>C:SR5GenEngObjRevision
+#CATDrawing>catiaV5_DWGLink/SKIP:30 - Pre-Release,40 - Engineering Release,50 - Production Release>C:SR5GenEngObjRevision
+#solution:
+CATPart>catiaV5_MML/SKIP:30 - Pre-Released,Engineering Approved,40 - Engineering Released,50 - Released>C:SR5GenEngObjRevision/ALIAS:MMLRevision
+CATPart>catiaV5_MMLAssy/SKIP:30 - Pre-Released,Engineering Approved,40 - Engineering Released,50 - Released>C:SR5GenEngObjRevision/ALIAS:ContextualRevision
+CATDrawing>catiaV5_DWGLink/SKIP:30 - Pre-Released,Engineering Approved,40 - Engineering Released,50 - Released>C:SR5GenEngObjRevision/ALIAS:DWGRevision
+# +dataset of desired ccp link
+MMLRevision>IMAN_specification>CATProduct/ALIAS:CCPRevisionCVAssy
+MMLRevision>IMAN_specification>CATPart/ALIAS:CCPRevisionCVPart
+MMLRevision>IMAN_specification>CATDrawing/ALIAS:CCPRevisionCVDraw
+ContextualRevision>IMAN_specification>CATProduct/ALIAS:CCPRevisionCVAssy
+ContextualRevision>IMAN_specification>CATPart/ALIAS:CCPRevisionCVPart
+ContextualRevision>IMAN_specification>CATDrawing/ALIAS:CCPRevisionCVDraw
+DWGRevision>IMAN_specification>CATProduct/ALIAS:CCPRevisionCVAssy
+DWGRevision>IMAN_specification>CATPart/ALIAS:CCPRevisionCVPart
+DWGRevision>IMAN_specification>CATDrawing/ALIAS:CCPRevisionCVDraw
+
+
+#AltRep
+SR5EngArticleAR>sr5AltRepList/SKIP:30 - Pre-Released,Engineering Approved,40 - Engineering Released,50 - Released>SR5EngArticleRevision/ALIAS:MasterOfAltRepRev
+
+#

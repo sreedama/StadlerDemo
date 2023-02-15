@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<TcBusinessDataIncludes ActiveRelease="Awp05.1.0" currentTemplateVersion="13.0_0" displayName="Stadler Rail Base Template" enableOpsDataDeploy="true" guid="2518A611B6F72F0806EA164B613195A4" isDescriptionMandatory="false" name="sr4stadlerrailbase" optional="true" prefixes="SR4" teamcenterTemplate="false">
+    <include file="foundation_template.xml"/>
+    <include file="aws2_template.xml"/>
+    <include file="activeworkspacebom_template.xml"/>
+	<include file="cm_template.xml"/>
+	<include file="Cm1cmaws_template.xml"/>
+</TcBusinessDataIncludes>

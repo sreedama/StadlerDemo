@@ -1,0 +1,13 @@
+############################################################################################################
+#  CNO Object Property Definition File
+############################################################################################################
+# Version History
+#
+# Version    Date           Name               Description of Change
+# 1.0        19-08-2021     infodba     Initial
+############################################################################################################
+
+
+
+C:ItemRevision>view:bl_sequence_no
+C:ItemRevision>view§ATTR_COMBINATION§|bl_sequence_no|_|bl_item_item_id|

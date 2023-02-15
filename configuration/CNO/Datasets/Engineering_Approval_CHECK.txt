@@ -1,0 +1,451 @@
+############################################################################################################
+#  CNO Check Definition File
+############################################################################################################
+# Version History
+#
+# Version    Date           Name               Description of Change
+# 1.0        22-04-2022     testu     Initial
+############################################################################################################
+
+
+#Process and unclear behavior of Teamcenter's customization
+C:EPMTask:num_targets§eq§1~Workflow can be start with only one target, [VAL_OBJECT:num_targets] found~1 target
+C:EPMTask:num_targets§count lt 2§*~Object is already inside another workflow, list: [C:EPMTask:object_name]~no active Workflow is running
+
+
+
+#status of selected object
+#C:ItemRevision:last_release_status§allowed§empty||20*||30*~Status is already set to: [VAL_OBJECT:last_release_status]~In work object or with status 20 or 30
+root:C:SR5GenEngObjRevision:last_release_status§allowed§empty||20*||30*~Status is already set to: [VAL_OBJECT:last_release_status]~In work object or with status 20 or 30
+
+#history: not needed anymore
+#C:Item:object_name§count eq 0§*~do not start WF on Item~do not start on Item
+
+
+
+#Status of children
+#origianl solution
+#C:ItemRevision>view:bl_rev_last_release_status§not allowed§70*&&80*&&90*~occurences [VAL_OBJECT:bl_rev_object_string] with status 70 and higher, must be replaced~status on level [VAL_OBJECT:level] is accepted: In Work, 20, 30, 40 or 50
+#solution based on second type of extension
+#C:SR5GenEngObjRevision:last_release_status§not allowed§70*&&80*&&90*~objects with status 70 and higher, must be replaced~status of object is accepted: In Work, 20, 30, 40 or 50. -exception on Catalog-
+#but it is a duplicated check for the ccp objects (have a look at end of this dataset) will be clarified by alias
+#=> back on bom line is not good for WF40 and its concept 1 object per WF + reccursive
+#issue with root catalog => no real good solution => solution must be a compromise
+SR5EngArticleRevision:last_release_status§not allowed§70*&&80*&&90*~objects with status 70 and higher, must be replaced~status of objects is accepted: In Work, 20, 30, 40 or 50
+SR5EngEndItemRevision:last_release_status§not allowed§70*&&80*&&90*~objects with status 70 and higher, must be replaced~status of objects is accepted: In Work, 20, 30, 40 or 50
+SR5EngMajorAssyRevision:last_release_status§not allowed§70*&&80*&&90*~objects with status 70 and higher, must be replaced~status of objects is accepted: In Work, 20, 30, 40 or 50
+SR5NonERPArticleRevision:last_release_status§not allowed§70*&&80*&&90*~objects with status 70 and higher, must be replaced~status of objects is accepted: In Work, 20, 30, 40 or 50
+#SR5GenCatPartRevision:last_release_status§not allowed§70*&&80*&&90*~objects with status 70 and higher, must be replaced~status of objects is accepted: In Work, 20, 30, 40 or 50
+#SR5CatalogPartRevision:last_release_status§not allowed§70*&&80*&&90*~objects with status 70 and higher, must be replaced~status of objects is accepted: In Work, 20, 30, 40 or 50
+#SR5EleCatPartRevision:last_release_status§not allowed§70*&&80*&&90*~objects with status 70 and higher, must be replaced~status of objects is accepted: In Work, 20, 30, 40 or 50
+#SR5MechCatPartRevision:last_release_status§not allowed§70*&&80*&&90*~objects with status 70 and higher, must be replaced~status of objects is accepted: In Work, 20, 30, 40 or 50
+#SR5ColorDefRevision:last_release_status§not allowed§70*&&80*&&90*&&30*&&20*&&empty~Color objects with status 70 and higher, must be replaced - Color objects with status samller than 40, must be released~status of color objects is accepted:  40 or 50
+#Alt. Rep. of Engineering too
+SR5EngArticleARRevision:last_release_status§not allowed§70*&&80*&&90*~objects with status 70 and higher, must be replaced~status of objects is accepted: In Work, 20, 30, 40 or 50
+#engineering Installation Loc
+SR5EngInstallLocRevision:last_release_status§not allowed§70*&&80*&&90*~objects with status 70 and higher, must be replaced~status of objects is accepted: In Work, 20, 30, 40 or 50
+
+#new need for catalog without status inside a BOM: (scope=occurence;)
+#ID=40Child3;CRITERIA=CONDITION;CHECK=C:ItemRevision>view:DB_bl_rev_object_type§allowed§SR5GenCatPartRevision||SR5CatalogPartRevision||SR5EleCatPartRevision||SR5MechCatPartRevision||SR5ColorDefRevision
+#ID=40Child3;CRITERIA=AND;CHECK=C:ItemRevision>view:bl_rev_last_release_status§not allowed§empty&&20*&&30*~Catalog or color occurences [VAL_OBJECT:bl_rev_object_string] with smaller status than 40 on level [VAL_OBJECT:level] is not allowed~status of catalog or color on level [VAL_OBJECT:level] is 40 and higher
+#SR5GenCatPartRevision:last_release_status§not allowed§70*&&80*&&90*&&30*&&20*&&empty~Catalog objects with status 70 and higher, must be replaced - Catalog objects with status lower than 40, must be released~status of catalog objects is accepted:  40 or 50
+#SR5CatalogPartRevision:last_release_status§not allowed§70*&&80*&&90*&&30*&&20*&&empty~Catalog objects with status 70 and higher, must be replaced - Catalog objects with status lower than 40, must be released~status of catalog objects is accepted:  40 or 50
+#SR5EleCatPartRevision:last_release_status§not allowed§70*&&80*&&90*&&30*&&20*&&empty~Catalog objects with status 70 and higher, must be replaced - Catalog objects with status lower than 40, must be released~status of catalog objects is accepted:  40 or 50
+#SR5MechCatPartRevision:last_release_status§not allowed§70*&&80*&&90*&&30*&&20*&&empty~Catalog objects with status 70 and higher, must be replaced - Catalog objects with status lower than 40, must be released~status of catalog objects is accepted:  40 or 50
+#SR5GenCatPartRevision:last_release_status§not allowed§30*&&20*&&empty~
+#SR5CatalogPartRevision:last_release_status§not allowed§30*&&20*&&empty~
+#SR5EleCatPartRevision:last_release_status§not allowed§30*&&20*&&empty~
+#SR5MechCatPartRevision:last_release_status§not allowed§30*&&20*&&empty~
+#SR5GenCatPartRevision:last_release_status§not allowed§70*&&80*&&90*~
+#SR5CatalogPartRevision:last_release_status§not allowed§70*&&80*&&90*~
+#SR5EleCatPartRevision:last_release_status§not allowed§70*&&80*&&90*~
+#SR5MechCatPartRevision:last_release_status§not allowed§70*&&80*&&90*
+SR5GenCatPartRevision:last_release_status§not allowed§80*&&90*&&30*&&20*&&empty~Catalog objects with status 80 and higher, must be replaced - Catalog objects with status lower than 40, must be released~status of catalog objects is accepted:  40 or 50 or 70
+SR5CatalogPartRevision:last_release_status§not allowed§80*&&90*&&30*&&20*&&empty~Catalog objects with status 80 and higher, must be replaced - Catalog objects with status lower than 40, must be released~status of catalog objects is accepted:  40 or 50 or 70
+SR5EleCatPartRevision:last_release_status§not allowed§80*&&90*&&30*&&20*&&empty~Catalog objects with status 80 and higher, must be replaced - Catalog objects with status lower than 40, must be released~status of catalog objects is accepted:  40 or 50 or 70
+SR5MechCatPartRevision:last_release_status§not allowed§80*&&90*&&30*&&20*&&empty~Catalog objects with status 80 and higher, must be replaced - Catalog objects with status lower than 40, must be released~status of catalog objects is accepted:  40 or 50 or 70
+SR5GenCatPartRevision:last_release_status§not allowed§70*~WARNING: Catalog objects with status 70 might be replaced~status of catalog objects is not 70
+SR5CatalogPartRevision:last_release_status§not allowed§70*~WARNING: Catalog objects with status 70 might be replaced~status of catalog objects is not 70
+SR5EleCatPartRevision:last_release_status§not allowed§70*~WARNING: Catalog objects with status 70 might be replaced~status of catalog objects is not 70
+SR5MechCatPartRevision:last_release_status§not allowed§70*~WARNING: Catalog objects with status 70 might be replaced~status of catalog objects is not 70
+#color
+#SR5ColorDefRevision:last_release_status§not allowed§70*&&80*&&90*&&30*&&20*&&empty~Color objects with status 70 and higher, must be replaced - Color objects with status lower than 40, must be released~status of color objects is accepted:  40 or 50
+SR5ColorDefRevision:last_release_status§not allowed§80*&&90*&&30*&&20*&&empty~Color objects with status 80 and higher, must be replaced - Color objects with status lower than 40, must be released~status of color objects is accepted:  40 or 50 or 70
+SR5ColorDefRevision:last_release_status§not allowed§70*~WARNING: Color objects with status 70 and higher, must be replaced~status of color objects is not 70
+#coating
+#SR5CoatingStructRevision:last_release_status§not allowed§70*&&80*&&90*&&30*&&20*&&empty~Coating Structures with status 70 and higher, must be replaced - Coating Structures with status lower than 40, must be released~status of Coating Structures is accepted:  40 or 50
+SR5CoatingStructRevision:last_release_status§not allowed§80*&&90*&&30*&&20*&&empty~Coating Structures with status 80 and higher, must be replaced - Coating Structures with status lower than 40, must be released~status of Coating Structures is accepted:  40 or 50 or 70
+SR5CoatingStructRevision:last_release_status§not allowed§70*~WARNING: Coating Structures with status 70 and higher, must be replaced~status of Coating Structures is not 70
+#semi-finnished product
+#SR5CatDefArticleRevision:last_release_status§not allowed§70*&&80*&&90*&&30*&&20*&&empty~Semi-finnished products with status 70 and higher, must be replaced - Semi-finnished products with status lower than 40, must be released~status of Semi-finnished products is accepted:  40 or 50
+SR5CatDefArticleRevision:last_release_status§not allowed§80*&&90*&&30*&&20*&&empty~Semi-finnished products with status 80 and higher, must be replaced - Semi-finnished products with status lower than 40, must be released~status of Semi-finnished products is accepted:  40 or 50 or 70
+SR5CatDefArticleRevision:last_release_status§not allowed§70*~WARNING: Semi-finnished products with status 70 might be replaced~status of Semi-finnished products is not 70
+#AltRep catalog + semi-finnished product
+#SR5CatDefArtARRevision:last_release_status§not allowed§70*&&80*&&90*&&30*&&20*&&empty~Semi-finnished AltRep products with status 70 and higher, must be replaced - Semi-finnished AltRep products with status lower than 40, must be released~status of Semi-finnished AltRep products is accepted:  40 or 50
+#SR5GenCatPartARRevision:last_release_status§not allowed§70*&&80*&&90*&&30*&&20*&&empty~Catalog AltRep objects with status 70 and higher, must be replaced - Catalog AltRep objects with status lower than 40, must be released~status of Catalog AltRep objects is accepted:  40 or 50
+SR5CatDefArtARRevision:last_release_status§not allowed§80*&&90*&&30*&&20*&&empty~Semi-finnished AltRep products with status 80 and higher, must be replaced - Semi-finnished AltRep products with status lower than 40, must be released~status of Semi-finnished AltRep products is accepted:  40 or 50 or 70
+SR5GenCatPartARRevision:last_release_status§not allowed§80*&&90*&&30*&&20*&&empty~Catalog AltRep objects with status 80 and higher, must be replaced - Catalog AltRep objects with status lower than 40, must be released~status of Catalog AltRep objects is accepted:  40 or 50 or 70
+SR5CatDefArtARRevision:last_release_status§not allowed§70*~WARNING: Semi-finnished AltRep products with status 70 might be replaced~status of Semi-finnished AltRep products is not 70
+SR5GenCatPartARRevision:last_release_status§not allowed§70*~WARNING: Catalog AltRep objects with status 70 might be replaced~status of Catalog AltRep objects is not 70
+#Eng Raw Article Revision
+SR5EngRawArticleRevision:last_release_status§not allowed§70*&&80*&&90*&&30*&&20*&&empty~Eng Raw Article objects with status 70 and higher, must be replaced - Eng Raw Article objects with status lower than 40, must be released~status of Eng Raw Article objects is accepted:  40 or 50
+
+
+
+#Status of related Doc
+#obsolete because link has been moved to Item
+#ID=40DocofChild1;scope=object;CRITERIA=CONDITION;CHECK=C:SR5GenEngObjRevision:last_release_status§allowed§empty||20*||30*
+##ID=40DocofChild1;scope=object;CRITERIA=AND;CHECK=C:SR5GenEngObjRevision>IMAN_specification>SR5TechDocumentRevision:last_release_status§allowed§50*~Doc with specifying relation must have Status 50 ~Doc with specifying relation have Status 50 
+#ID=40DocofChild1;scope=object;CRITERIA=AND;CHECK=C:SR5GenEngObjRevision>SR5HasSpecificationDocument>SR5TechDocumentRevision:last_release_status§allowed§50*~Doc with specifying relation must have Status 50 ~Doc with specifying relation have Status 50 
+
+ID=40DocofChild4;scope=object;CRITERIA=CONDITION;CHECK=C:SR5GenEngObjRevision:last_release_status§allowed§empty||20*||30*
+#ID=40DocofChild4;scope=object;CRITERIA=AND;CHECK=C:SR5GenEngObjRevision>IMAN_specification>SR5TechDocument>revision_list>SR5TechDocumentRevision:last_release_status§allowed§50*~Doc with specifying relation must have Status 50 ~Doc with specifying relation have Status 50 
+ID=40DocofChild4;scope=object;CRITERIA=AND;CHECK=C:SR5GenEngObjRevision>SR5HasSpecificationDocument>SR5TechDocument>revision_list>SR5TechDocumentRevision:last_release_status§allowed§50*~Doc with specifying relation must have Status 50 ~Doc with specifying relation have Status 50 
+
+#obsolete because link has been moved to Item
+#ID=40DocofChild2;scope=object;CRITERIA=CONDITION;CHECK=C:SR5GenEngObjRevision:last_release_status§allowed§empty||20*||30*
+##ID=40DocofChild2;scope=object;CRITERIA=AND;CHECK=C:SR5GenEngObjRevision>IMAN_reference>SR5TechDocumentRevision:last_release_status§allowed§50*~Doc with referencing relation must have Status 50 ~Doc with referencing relation have Status 50 
+#ID=40DocofChild2;scope=object;CRITERIA=AND;CHECK=C:SR5GenEngObjRevision>SR5HasRequiredDocument>SR5TechDocumentRevision:last_release_status§allowed§50*~Doc with required relation must have Status 50 ~Doc with required relation have Status 50 
+
+ID=40DocofChild3;scope=object;CRITERIA=CONDITION;CHECK=C:SR5GenEngObjRevision:last_release_status§allowed§empty||20*||30*
+ID=40DocofChild3;scope=object;CRITERIA=AND;CHECK=C:SR5GenEngObjRevision>SR5HasRequiredDocument>SR5TechDocument>revision_list>SR5TechDocumentRevision:last_release_status§allowed§50*~Doc with required relation must have Status 50 ~Doc with required relation have Status 50 
+
+
+
+#position = BOM sequence
+#because of new expansion
+#ID=1;CRITERIA=CONDITION;CHECK=C:ItemRevision>view:bl_rev_last_release_status§allowed§empty||20*||30*
+
+#ID=40occ;CRITERIA=CONDITION;CHECK=C:ItemRevision>view:bl_rev_last_release_status§allowed§empty||20*||30*
+#ID=40occ;CRITERIA=AND;CHECK=C:ItemRevision>view:position_ID_rec_levBylev§eq§count([C:ItemRevision>view:position_rec_levBylev]_*)~Position and ItemID combination is not valid, position used by different ItemIDs~position and ItemID are unique combination
+#because of Env. + Baseline
+ID=40occ;CRITERIA=CONDITION;CHECK=C:ItemRevision>view(Latest Working):bl_rev_last_release_status§allowed§empty||20*||30*
+ID=40occ;CRITERIA=AND;CHECK=C:ItemRevision>view(Latest Working):position_ID_rec_levBylev§eq§count([C:ItemRevision>view(Latest Working):position_rec_levBylev]_*)~Position and ItemID combination is not valid, position used by different ItemIDs~position and ItemID are unique combination
+#WARNING: INFO: Position and ItemID combination is not valid, the WF 40_EBOM_Release automatically started on its parent will be stopped & then need be manually aborded~position and ItemID are unique combination
+
+#history:
+#ID=2;CRITERIA=CONDITION;CHECK_ID=1
+#ID=2;CRITERIA=AND;CHECK=C:ItemRevision>view:bl_rev_fnd0InProcess§not allowed§regex(^[TtWw][RrAa][UuHh][EeRr]$)~WARNING: INFO: Object is already inside another workflow on level [VAL_OBJECT:level], no WF 40_EBOM_Release will be automatically started on this child~no active Workflow is running
+##WARNING: INFO: Object is already inside another workflow on level [VAL_OBJECT:level], no WF 40_EBOM_Release will be automatically started on this child~no active Workflow is running
+#
+#history:
+#ID=3;CRITERIA=CONDITION;CHECK_ID=1
+#ID=3;CRITERIA=AND;CHECK=C:ItemRevision>view:bl_rev_checked_out§not allowed§Y~WARNING: INFO: Object is checked-out on level [VAL_OBJECT:level], no WF 40_EBOM_Release will be automatically started on this child~Object is checked_in
+##WARNING: INFO: Object is checked-out on level [VAL_OBJECT:level], no WF 40_EBOM_Release will be automatically started on this child~Object is checked_in
+#
+#ID=10;scope=object;CRITERIA=CONDITION;CHECK=C:ItemRevision:last_release_status§allowed§empty||20*||30*
+#
+
+
+
+#Q-Checker (of ccp link as well)
+#ID=40Dataset1;scope=object;CRITERIA=CONDITION;CHECK=C:Dataset:object_type§allowed§CATPart||CATProduct||CATDrawing||CCPRevisionCVPart||CCPRevisionCVAssy||CCPRevisionCVDraw
+#ID=40Dataset1;scope=object;CRITERIA=CONDITION;CHECK=C:Dataset:last_release_status§allowed§empty||20*||30*
+#ID=40Dataset1;scope=object;CRITERIA=AND;CHECK=C:Dataset:sr5QCheckEvaluation§not allowed§empty&&KO~Q-Checker Check is missing or KO~Q-Checker Check ok
+# the alias are not considered as type attribut but only object type
+# requested because contextual ccp link (context assembly) in case of WF40 will be released afterward and separetly
+ID=40Dataset3;scope=object;CRITERIA=CONDITION;CHECK=CATPart:last_release_status§allowed§empty||20*||30*
+ID=40Dataset3;scope=object;CRITERIA=AND;CHECK=CATPart:sr5QCheckEvaluation§not allowed§empty&&KO~Q-Checker Check is missing or KO~Q-Checker Check ok
+
+ID=40Dataset4;scope=object;CRITERIA=CONDITION;CHECK=CATProduct:last_release_status§allowed§empty||20*||30*
+ID=40Dataset4;scope=object;CRITERIA=AND;CHECK=CATProduct:sr5QCheckEvaluation§not allowed§empty&&KO~Q-Checker Check is missing or KO~Q-Checker Check ok
+
+ID=40Dataset5;scope=object;CRITERIA=CONDITION;CHECK=CATDrawing:last_release_status§allowed§empty||20*||30*
+ID=40Dataset5;scope=object;CRITERIA=AND;CHECK=CATDrawing:sr5QCheckEvaluation§not allowed§empty&&KO~Q-Checker Check is missing or KO~Q-Checker Check ok
+
+ID=40Dataset6;scope=object;CRITERIA=CONDITION;CHECK=CCPRevisionCVPart:last_release_status§allowed§empty||20*||30*
+ID=40Dataset6;scope=object;CRITERIA=AND;CHECK=CCPRevisionCVPart:sr5QCheckEvaluation§not allowed§empty&&KO~Q-Checker Check is missing or KO~Q-Checker Check ok
+
+ID=40Dataset7;scope=object;CRITERIA=CONDITION;CHECK=CCPRevisionCVAssy:last_release_status§allowed§empty||20*||30*
+ID=40Dataset7;scope=object;CRITERIA=AND;CHECK=CCPRevisionCVAssy:sr5QCheckEvaluation§not allowed§empty&&KO~Q-Checker Check is missing or KO~Q-Checker Check ok
+
+ID=40Dataset8;scope=object;CRITERIA=CONDITION;CHECK=CCPRevisionCVDraw:last_release_status§allowed§empty||20*||30*
+ID=40Dataset8;scope=object;CRITERIA=AND;CHECK=CCPRevisionCVDraw:sr5QCheckEvaluation§not allowed§empty&&KO~Q-Checker Check is missing or KO~Q-Checker Check ok
+
+ID=40Dataset9;scope=object;CRITERIA=CONDITION;CHECK=CCPContextRevisionCVAssy:last_release_status§allowed§empty||20*||30*
+ID=40Dataset9;scope=object;CRITERIA=AND;CHECK=CCPContextRevisionCVAssy:sr5QCheckEvaluation§not allowed§empty&&KO~WARNING: INFO: Context: Q-Checker Check is missing or KO~Q-Checker Check ok
+
+
+
+#find in process
+ID=40Child0;scope=object;CRITERIA=CONDITION;CHECK=C:SR5GenEngObjRevision:last_release_status§allowed§empty||20*||30*
+ID=40Child0;scope=object;CRITERIA=AND;CHECK=C:SR5GenEngObjRevision:fnd0InProcess§not allowed§regex(^[TtWw][RrAa][UuHh][EeRr]$)~Object is already inside another workflow, no WF 40_EBOM_Release will be automatically started on this child~no active Workflow is running
+
+
+
+#seleted object
+#root:C:ItemRevision:DB_Type§allowed§SR5EngEndItemRevision||SR5EngMajorAssyRevision||SR5EngArticleRevision||SR5NonERPArticleRevision||SR5GenCatPartRevision||SR5CatalogPartRevision||SR5EleCatPartRevision||SR5MechCatPartRevision~only Eng Article or Eng End or Eng Major or non ERP Article or Catalog Part are accepted, [VAL_OBJECT:DB_Type] not accepted~Eng Article or Eng End or Eng Major or non ERP Article or Catalog Part is accepted
+#root:C:ItemRevision:DB_Type§allowed§SR5EngEndItemRevision||SR5EngMajorAssyRevision||SR5EngArticleRevision||SR5NonERPArticleRevision~only Eng Article or Eng End or Eng Major or non ERP Article are accepted, [VAL_OBJECT:DB_Type] not accepted~Eng Article or Eng End or Eng Major or non ERP Article is accepted
+#SR5ColorDefRevision||
+#SR5EngArticleARRevision
+root:C:ItemRevision:DB_Type§allowed§SR5EngEndItemRevision||SR5EngMajorAssyRevision||SR5EngArticleRevision||SR5NonERPArticleRevision||SR5EngArticleARRevision||SR5EngInstallLocRevision~only Eng Article or Eng End or Eng Major or non ERP Article or Alt. Rep. of Eng Article are accepted, [VAL_OBJECT:DB_Type] not accepted~ [VAL_OBJECT:DB_Type] is accepted
+
+
+
+#Group Member
+##Group Member for CatalogPart
+#ID=40Group1;CRITERIA=CONDITION;CHECK=root:C:SR5GenEngObjRevision:DB_Type§allowed§SR5CatalogPartRevision||SR5GenCatPartRevision||SR5EleCatPartRevision||SR5MechCatPartRevision
+#ID=40Group1;CRITERIA=AND;CHECK=GroupMember:group§count gt 0§MDM.Global.Stadler~Only members of MDM group are allowed to set status on Catalog Part~User belongs to MDM Group
+#
+#ID=40Group2;CRITERIA=CONDITION;CHECK=root:C:SR5GenEngObjRevision:DB_Type§allowed§SR5CatalogPartRevision||SR5GenCatPartRevision||SR5EleCatPartRevision||SR5MechCatPartRevision
+#ID=40Group2;CRITERIA=AND;CHECK=C:SR5GenEngObjRevision:Current Group Name§allowed§MDM.Global.Stadler~WARNING: INFO: you are not logged with MDM~Logged in with MDM group
+
+#MCAD.Engineering.*.Stadler / Designer , Approver
+ID=40Group3;scope=object;CRITERIA=CONDITION;CHECK=root:C:SR5GenEngObjRevision:DB_Type§allowed§SR5EngEndItemRevision||SR5EngMajorAssyRevision||SR5EngArticleRevision||SR5NonERPArticleRevision||SR5EngArticleARRevision||SR5EngInstallLocRevision
+#ID=40Group3;scope=object;CRITERIA=AND;CHECK=root:C:SR5GenEngObjRevision:Current Group Name§allowed§regex(^MCAD\.(Engineering|Konstruktion)\.STA.\.Stadler$)~WARNING: INFO: you are not logged with MCAD.Engineering.*.Stadler~Logged in with MCAD.Engineering.*.Stadler group
+ID=40Group3;scope=object;CRITERIA=AND;CHECK=root:C:SR5GenEngObjRevision:Current Group Name§allowed§regex(^MCAD\.(Engineering|Konstruktion)\.Internal\.Stadler$)~WARNING: INFO: you are not logged with MCAD.Engineering.Internal.Stadler~Logged in with MCAD.Engineering.Internal.Stadler group
+#ID=40Group3;scope=object;CRITERIA=AND;CHECK=root:C:SR5GenEngObjRevision:Current Role Name§allowed§Designer||Konstrukteur||Approver~you are not logged with MCAD.Engineering.*.Stadler / Designer , Approver~Logged in with MCAD.Engineering.*.Stadler / Designer , Approver
+
+#if does not need to be "logged with" but only "belongings to" then change  the expansion and use the following:
+ID=40Group4;CRITERIA=CONDITION;CHECK=root:C:SR5GenEngObjRevision:DB_Type§allowed§SR5EngEndItemRevision||SR5EngMajorAssyRevision||SR5EngArticleRevision||SR5NonERPArticleRevision||SR5EngArticleARRevision||SR5EngInstallLocRevision
+#ID=40Group4;CRITERIA=AND;CHECK=GroupMember:group§count gt 0§regex(^MCAD\.(Engineering|Konstruktion)\.STA.\.Stadler$)~Only members of MCAD.Engineering.*.Stadler group are allowed to set status~User belongs to MCAD.Engineering.*.Stadler Group
+ID=40Group4;CRITERIA=AND;CHECK=GroupMember:group§count gt 0§regex(^MCAD\.(Engineering|Konstruktion)\.Internal\.Stadler$)~Only members of MCAD.Engineering.Internal.Stadler group are allowed to set status~User belongs to MCAD.Engineering.Internal.Stadler Group
+
+
+
+#SAP
+#ID=40Child2;scope=object;CRITERIA=CONDITION;CHECK=C:SR5GenEngObjRevision:DB_Type§not allowed§SR5NonERPArticleRevision&&SR5CatDefArticleRevision&&SR5CatDefArtARRevision
+#ID=40Child2;scope=object;CRITERIA=CONDITION;CHECK=C:SR5GenEngObjRevision:last_release_status§allowed§empty||20*||30*
+#ID=40Child2;scope=object;CRITERIA=AND;CHECK=C:SR5GenEngObjRevision:object_desc§allowed§empty||regex(^.{1,30}$)~WARNING: INFO: for SAP compatibility purpose the description must be shorter than 30, if longer only the first 30 charaters will be transfer~lenght of description is compatible with SAP limitation
+
+#only for SR5EngArticleRevision
+#ID=40ItemofChild1;scope=object;CRITERIA=CONDITION;CHECK=C:SR5GenEngObjRevision:DB_Type§not allowed§SR5NonERPArticleRevision&&SR5CatDefArticleRevision&&SR5CatDefArtARRevision
+#ID=40ItemofChild1;scope=object;CRITERIA=CONDITION;CHECK=C:SR5GenEngObjRevision:last_release_status§allowed§empty||20*||30*
+#ID=40ItemofChild1;scope=object;CRITERIA=AND;CHECK=C:SR5GenEngObjRevision>items_tag>C:Item:sr5SAPMaterialType§not allowed§empty~Material Type must be filled~Material Type is not empty
+#ID=40ItemofChild1;scope=object;CRITERIA=CONDITION;CHECK=SR5EngArticleRevision:last_release_status§allowed§empty||20*||30*
+#ID=40ItemofChild1;scope=object;CRITERIA=AND;CHECK=SR5EngArticleRevision>items_tag>C:Item:sr5SAPMaterialType§not allowed§empty~Material Type must be filled~Material Type is not empty
+ID=40ItemofChild1;scope=object;CRITERIA=CONDITION;CHECK=C:SR5GenEngObjRevision:DB_Type§allowed§SR5EngArticleRevision~needed because of Alias inside the expansion
+ID=40ItemofChild1;scope=object;CRITERIA=CONDITION;CHECK=C:SR5GenEngObjRevision:last_release_status§allowed§empty||20*||30*
+ID=40ItemofChild1;scope=object;CRITERIA=AND;CHECK=C:SR5GenEngObjRevision>items_tag>C:Item:sr5SAPMaterialType§not allowed§empty~Material Type must be filled~Material Type is not empty
+
+#ID=40ItemofChild2;scope=object;CRITERIA=CONDITION;CHECK=C:SR5GenEngObjRevision:DB_Type§not allowed§SR5NonERPArticleRevision&&SR5CatDefArticleRevision&&SR5CatDefArtARRevision
+#ID=40ItemofChild2;scope=object;CRITERIA=CONDITION;CHECK=C:SR5GenEngObjRevision:last_release_status§allowed§empty||20*||30*
+#ID=40ItemofChild2;scope=object;CRITERIA=AND;CHECK=C:SR5GenEngObjRevision>items_tag>C:Item:sr5SAPMaterialGroup§not allowed§empty~Material Group must be filled~Material Group is not empty
+#ID=40ItemofChild2;scope=object;CRITERIA=CONDITION;CHECK=SR5EngArticleRevision:last_release_status§allowed§empty||20*||30*
+#ID=40ItemofChild2;scope=object;CRITERIA=AND;CHECK=SR5EngArticleRevision>items_tag>C:Item:sr5SAPMaterialGroup§not allowed§empty~Material Group must be filled~Material Group is not empty
+ID=40ItemofChild2;scope=object;CRITERIA=CONDITION;CHECK=C:SR5GenEngObjRevision:DB_Type§allowed§SR5EngArticleRevision~needed because of Alias inside the expansion
+ID=40ItemofChild2;scope=object;CRITERIA=CONDITION;CHECK=C:SR5GenEngObjRevision:last_release_status§allowed§empty||20*||30*
+ID=40ItemofChild2;scope=object;CRITERIA=AND;CHECK=C:SR5GenEngObjRevision>items_tag>C:Item:sr5SAPMaterialGroup§not allowed§empty~Material Group must be filled~Material Group is not empty
+
+#uom
+#ID=40ItemofChild3;scope=object;CRITERIA=CONDITION;CHECK=C:SR5GenEngObjRevision:DB_Type§not allowed§SR5NonERPArticleRevision&&SR5CatDefArticleRevision&&SR5CatDefArtARRevision
+ID=40ItemofChild3;scope=object;CRITERIA=CONDITION;CHECK=C:SR5GenEngObjRevision:DB_Type§allowed§SR5EngArticleRevision||SR5EngEndItemRevision||SR5EngMajorAssyRevision||SR5EngArticleARRevision
+#||SR5EngInstallLocRevision
+ID=40ItemofChild3;scope=object;CRITERIA=CONDITION;CHECK=C:SR5GenEngObjRevision:last_release_status§allowed§empty||20*||30*
+ID=40ItemofChild3;scope=object;CRITERIA=AND;CHECK=C:SR5GenEngObjRevision>items_tag>C:Item:uom_tag§not allowed§empty&& ~unit of measure cannot be empty~unit of measure defined
+#ID=40ItemofChild3;scope=object;CRITERIA=CONDITION;CHECK=SR5EngArticleRevision:last_release_status§allowed§empty||20*||30*
+#ID=40ItemofChild3;scope=object;CRITERIA=AND;CHECK=SR5EngArticleRevision>items_tag>C:Item:uom_tag§not allowed§empty&& ~unit of measure cannot be empty~unit of measure defined
+
+
+
+#first rev of Catalog Part
+#ID=40Root2;scope=object;CRITERIA=CONDITION;CHECK=root:C:SR5GenEngObjRevision:DB_Type§allowed§SR5CatalogPartRevision||SR5GenCatPartRevision||SR5EleCatPartRevision||SR5MechCatPartRevision
+#ID=40Root2;scope=object;CRITERIA=AND;CHECK=root:C:SR5GenEngObjRevision:Rev§eq§[VAL_OBJECT:Rev_List]~WARNING: INFO: this is not the first revision of this catalog part~first rev of catalog part
+
+
+
+#checked-out
+#ID=40;scope=object;CRITERIA=CONDITION;CHECK=C:Dataset:last_release_status§allowed§empty||20*||30*
+#ID=40;scope=object;CRITERIA=AND;CHECK=C:Dataset:checked_out§not allowed§Y~WARNING: INFO: Object [VAL_OBJECT:object_type] is checked-out~Object is checked_in
+ID=40Dataset2;scope=object;CRITERIA=CONDITION;CHECK=C:Dataset:last_release_status§allowed§empty||20*||30*
+ID=40Dataset2;scope=object;CRITERIA=AND;CHECK=C:Dataset:checked_out§not allowed§Y~Object [VAL_OBJECT:object_type] is checked-out~Object [VAL_OBJECT:object_type] is checked_in
+
+#ID=50;scope=object;CRITERIA=CONDITION;CHECK=C:Form:last_release_status§allowed§empty||20*||30*
+#ID=50;scope=object;CRITERIA=AND;CHECK=C:Form:checked_out§not allowed§Y~WARNING: INFO: Object [VAL_OBJECT:object_type] is checked-out~Object is checked_in
+ID=40Form1;scope=object;CRITERIA=CONDITION;CHECK=C:Form:last_release_status§allowed§empty||20*||30*
+ID=40Form1;scope=object;CRITERIA=AND;CHECK=C:Form:checked_out§not allowed§Y~Object [VAL_OBJECT:object_type] is checked-out~Object [VAL_OBJECT:object_type] is checked_in
+
+#ID=30;scope=object;CRITERIA=CONDITION;CHECK_ID=10
+#ID=30;scope=object;CRITERIA=AND;CHECK=C:ItemRevision:checked_out§not allowed§Y~WARNING: INFO: Object is checked-out, no WF 40_EBOM_Release will be automatically started on this child~Object is checked_in
+ID=40Child1;scope=object;CRITERIA=CONDITION;CHECK=C:SR5GenEngObjRevision:last_release_status§allowed§empty||20*||30*
+ID=40Child1;scope=object;CRITERIA=AND;CHECK=C:SR5GenEngObjRevision:checked_out§not allowed§Y~Object [VAL_OBJECT:DB_Type] is checked-out~Object [VAL_OBJECT:DB_Type] is checked_in
+
+ID=40BOMView1;scope=object;CRITERIA=CONDITION;CHECK=C:PSBOMViewRevision:last_release_status§allowed§empty||20*||30*
+ID=40BOMView1;scope=object;CRITERIA=AND;CHECK=C:PSBOMViewRevision:checked_out§not allowed§Y~Object [VAL_OBJECT:object_type] is checked-out~Object [VAL_OBJECT:object_type] is checked_in
+
+
+
+# ccp linkage
+#  all:
+#      CATPart>catiaV5_MML>C:ItemRevision
+#      CATPart>catiaV5_MMLAssy>C:ItemRevision
+#      CATDrawing>catiaV5_DWGLink>C:ItemRevision
+# case:
+#      A:
+#             CATPart>catiaV5_MML>C:ItemRevision
+#      case 1:
+#             fertig Teil (200025859) cannot be released before the Roh Teil (200025858) is released
+#      case 2:
+#             spiegelbilddiches Teil (200025857) cannot be released before wie gezeichnetes Teil (200025857) is released
+#
+#      B:
+#             CATDrawing>catiaV5_DWGLink>C:ItemRevision
+#      case 3:
+#             wie gezeichnetes Teil (200025857) can be released if spiegelbilddiches Teil (200025857) is already released
+#      case 4:
+#             wie gezeichnetes Teil (200025857) can be released with spiegelbilddiches Teil (200025857) if not released yet (will be add to target)
+#      case 5:
+#             drawing link to other Design: also good
+#             (200025865) is link to itself, as result it wil be already target of WF
+#             (200025866) is link to itself and to (200025867), can be released with this additional link (will be add to target)
+#             (200025868) and (200025869) are not showing linkage in TC (only linked inside CATIA)
+#
+#      C:
+#             CATPart>catiaV5_MMLAssy>C:ItemRevision
+#             context link keep it to the side at first
+#             otherwise we need to have a look on which type of Dataset is attached under it
+#      case 6:
+#             Ziel Part 1 (200025862) can be released if Quellpart (200025863) is already released
+#             +
+#             Ziel Part 1 (200025862) can be released and Baugruppe (200025860) will be released afterward
+
+#ccp: MML link
+##maybe: only of ALL_MAIN not on related von related: otherwise validation of wie gezeichntes can become problematic
+##ID=A;scope=object;CRITERIA=CONDITION;CHECK=
+#ID=A;scope=object;CRITERIA=CONDITION;CHECK=CATPart:last_release_status§allowed§empty||20*||30*
+##ID=A;scope=object;CRITERIA=AND;CHECK=CATPart>catiaV5_MML>C:SR5GenEngObjRevision:last_release_status§allowed§40*||50*~ccp link is not released yet, released it first (-Roh Teil- or -wie gezeichnetes Teil-)~ccp link ok(-Roh Teil- or -wie gezeichnetes Teil-)
+##ID=A;scope=object;CRITERIA=AND;CHECK=CATPart>catiaV5_MML>C:SR5GenEngObjRevision:last_release_status§allowed§40*||50*~WARNING: INFO: ccp link is not released yet, released it first (-Roh Teil- or -wie gezeichnetes Teil-)~ccp link ok(-Roh Teil- or -wie gezeichnetes Teil-)
+##ID=A;scope=object;CRITERIA=AND;CHECK=CATPart>catiaV5_MML>C:SR5GenEngObjRevision:last_release_status§not allowed§70*&&80*&&90*~ccp MML link is obsolete (-Roh Teil- or -wie gezeichnetes Teil- or -Original Teil-)~ccp MML link is ok (-Roh Teil- or -wie gezeichnetes Teil- or -Original Teil-)
+#ID=A;scope=object;CRITERIA=AND;CHECK=CATPart>catiaV5_MML>C:SR5GenEngObjRevision:last_release_status§allowed§40*||50*~WARNING: INFO: ccp MML link is not released yet, released it first (-Roh Teil- or -wie gezeichnetes Teil- or -Original Teil-)~ccp MML link is ok (-Roh Teil- or -wie gezeichnetes Teil- or -Original Teil-)
+# MML link
+#empty and 20 and 30 are an error
+#40-50 are filtered out
+#70+ are an error
+MMLRevision:last_release_status§not allowed§empty&&20*&&30*~ccp MML link is not released yet, released it first (-Roh Teil- or -wie gezeichnetes Teil-)~ccp MML link status is 40 and higher (-Roh Teil- or -wie gezeichnetes Teil- or -Original Teil-)
+MMLRevision:last_release_status§not allowed§70*&&80*&&90*~ccp MML link obsolete with status 70 and higher, must be replaced (-Roh Teil- or -wie gezeichnetes Teil- or -Original Teil-)~ccp MML link status is smaller than 70 (-Roh Teil- or -wie gezeichnetes Teil- or -Original Teil-)
+
+#ccp: DWG link
+##maybe only if it is not itself
+##ID=B;scope=object;CRITERIA=CONDITION;CHECK=
+#ID=B;scope=object;CRITERIA=CONDITION;CHECK=CATDrawing:last_release_status§allowed§empty||20*||30*
+##ID=B;scope=object;CRITERIA=AND;CHECK=CATDrawing>catiaV5_DWGLink>C:SR5GenEngObjRevision:last_release_status§allowed§empty||20*||30*||40*||50*~ccp link obsolete~if ccp link is not released yet, object will be automatically added to worfklow releasing the reference
+##ID=B;scope=object;CRITERIA=AND;CHECK=CATDrawing>catiaV5_DWGLink>C:SR5GenEngObjRevision:last_release_status§allowed§empty||20*||30*||40*||50*~WARNING: INFO: ccp link obsolete~if ccp link is not released yet, object will be automatically added to worfklow releasing the reference
+#ID=B;scope=object;CRITERIA=AND;CHECK=CATDrawing>catiaV5_DWGLink>C:SR5GenEngObjRevision:last_release_status§allowed§empty||20*||30*||40*||50*~WARNING: INFO: ccp DWG link is obsolete (-link zu 3D- or -link zu 3D 2 Artikelnummern- or -spiegelbildliches Teil-)~if ccp DWG link is not released yet, object (-link zu 3D- or -link zu 3D 2 Artikelnummern- or -spiegelbildliches Teil-) will be automatically added to worfklow releasing the reference
+# DWG link
+#empty and 20 and 30 are ok and must be target
+#40-50 are filtered out
+#70+ are an error
+DWGRevision:last_release_status§not allowed§empty&&20*&&30*~WARNING: INFO: ccp DWG link is not released yet, object will be automatically added to worfklow releasing the reference~no ccp DWG link will be automatically added to worfklow releasing the reference
+DWGRevision:last_release_status§not allowed§70*&&80*&&90*~ccp DWG link obsolete with status 70 and higher, must be replaced (-link zu 3D- or -link zu 3D 2 Artkelnummern- or -piegelbildiches Teil-)~ccp DWG link status is ok: smaller than 70 (-link zu 3D- or -link zu 3D 2 Artkelnummern- or -piegelbildiches Teil-)
+
+#ccp: MMLAssy link
+##partial solution for MMLAssy linkage
+##ID=C;scope=object;CRITERIA=CONDITION;CHECK=CATPart:last_release_status§allowed§empty||20*||30*
+##ID=C;scope=object;CRITERIA=AND;CHECK=CATPart>catiaV5_MMLAssy>C:SR5GenEngObjRevision:last_release_status§allowed§40*||50*~WARNING: INFO: contextual link is not automatically validated, you need to care about it manually (check + proper released sequence)~contextual link ok
+#
+#ID=C1;scope=related;CRITERIA=CONDITION;CHECK=CATPart>catiaV5_MMLAssy>C:SR5GenEngObjRevision>IMAN_specification>CATProduct:object_type§exist§*
+#ID=C1;scope=related;CRITERIA=AND;CHECK=CATPart>catiaV5_MMLAssy>C:SR5GenEngObjRevision:last_release_status§allowed§empty||20*||30*~WARNING: INFO: contextual link to assembly (only 1 level) will be released afterward: first all components~contextual link to assembly (only 1 level) ok
+##
+#ID=C2;scope=related;CRITERIA=CONDITION;CHECK=CATPart>catiaV5_MMLAssy>C:SR5GenEngObjRevision>IMAN_specification>CATPart:object_type§exist§*
+##ID=C2;scope=related;CRITERIA=CONDITION;CHECK=CATPart>catiaV5_MMLAssy>C:SR5GenEngObjRevision:last_release_status§allowed§40*||50*~contextual link to reference is not released yet, released it first~contextual link to reference ok
+#ID=C2;scope=related;CRITERIA=CONDITION;CHECK=CATPart>catiaV5_MMLAssy>C:SR5GenEngObjRevision:last_release_status§allowed§40*||50*~WARNING: INFO: contextual link to reference is not released yet, released it first~contextual link to reference ok
+# MMLAssy link
+#empty and 20 and 30 are an error FOR REFERENCE BUT A MUST FOR CONTEXT
+#40-50 are filtered out
+#70+ are an error
+ID=C10;scope=object;CRITERIA=CONDITION;CHECK=ContextualRevision>IMAN_specification>C:Dataset:object_type§eq§CATProduct
+ID=C10;scope=object;CRITERIA=AND;CHECK=ContextualRevision:last_release_status§allowed§empty||20*||30*~WARNING: INFO: contextual link to assembly is not released yet, will be released afterward: first all components~contextual link to assembly have status lower than 40
+
+ID=C11;scope=object;CRITERIA=CONDITION;CHECK=ContextualRevision>IMAN_specification>C:Dataset:object_type§eq§CATProduct
+ID=C11;scope=object;CRITERIA=AND;CHECK=ContextualRevision:last_release_status§not allowed§70*&&80*&&90*~contextual link to assembly is obsolete with status 70 and higher, must be replaced~contextual link to assembly have status smaller than 70
+
+ID=C20;scope=object;CRITERIA=CONDITION;CHECK=ContextualRevision>IMAN_specification>C:Dataset:object_type§eq§CATPart
+ID=C20;scope=object;CRITERIA=AND;CHECK=ContextualRevision:last_release_status§not allowed§70*&&80*&&90*~Contextual link to reference is obsolete with status 70 and higher, must be replaced~contextual link to reference have status smaller than 70
+
+ID=C21;scope=object;CRITERIA=CONDITION;CHECK=ContextualRevision>IMAN_specification>C:Dataset:object_type§eq§CATPart
+ID=C21;scope=object;CRITERIA=AND;CHECK=ContextualRevision:last_release_status§not allowed§empty&&20*&&30*~WARNING: INFO: Contextual link to reference is not released yet, released it first~contextual link to reference yet have status 40 and higher
+
+#contextual link management
+#ID=12
+root:C:ItemRevision>IMAN_specification>CATPart:catiaV5_MMLAssy§allowed§empty|| ~do not start WF-Eng.Appr. on a Part having a contextual Link~selected object is not one with contextual link
+
+ID=C13;scope=object;CRITERIA=CONDITION;CHECK=ContextualRevision>IMAN_specification>C:Dataset:object_type§eq§CATProduct
+ID=C13;scope=object;CRITERIA=AND;CHECK=ContextualRevision:COMBI_item_Rev§allowed§[ALL_MAIN:C:SR5GenEngObjRevision:COMBI_item_Rev]~start the WF-Eng.Appr. on smallest context ASSY having this contextual Link [VAL_OBJECT:COMBI_item_Rev]~selected object is the context of contextual link
+
+
+
+#taking some specific ccp link as target of same WF requested additional checks
+# => same discipline is required
+#cannot be working on child of product structure with [root:C:SR5GenEngObjRevision:DB_sr5...ApprovalFlag]
+#root:
+C:SR5GenEngObjRevision>IMAN_specification>CATDrawing>catiaV5_DWGLink>DWGRevision:DB_sr5ScrewApprovalFlag§eq§[VAL_OBJECT:DB_sr5ScrewApprovalFlag]~ccp DWG link must have the same static flag (-link zu 3D- or -link zu 3D 2 Artkelnummern- or -piegelbildiches Teil-)~static flag is consistent
+C:SR5GenEngObjRevision>IMAN_specification>CATDrawing>catiaV5_DWGLink>DWGRevision:DB_sr5GlueApprovalFlag§eq§[VAL_OBJECT:DB_sr5GlueApprovalFlag]~ccp DWG link must have the same gluw flag (-link zu 3D- or -link zu 3D 2 Artkelnummern- or -piegelbildiches Teil-)~glue flag is consistent
+C:SR5GenEngObjRevision>IMAN_specification>CATDrawing>catiaV5_DWGLink>DWGRevision:DB_sr5WeldApprovalFlag§eq§[VAL_OBJECT:DB_sr5WeldApprovalFlag]~ccp DWG link must have the same weld flag (-link zu 3D- or -link zu 3D 2 Artkelnummern- or -piegelbildiches Teil-)~weld flag is consistent
+
+
+
+#obsolete drawing link
+ID=40ObsoleteDRW;scope=object;CRITERIA=CONDITION;CHECK=DWGRevision:item_id§eq§[SR5EngArticleRevision:item_id]
+#§allowed§[SR5EngArticleRevision:item_id]||[SR5EngArticleARRevision:item_id]
+ID=40ObsoleteDRW;scope=object;CRITERIA=AND;CHECK=DWGRevision:COMBI_item_Rev§eq§[SR5EngArticleRevision:COMBI_item_Rev]~DWG Link not to the same revision, might be not actualized - [VAL_OBJECT:COMBI_item_Rev] - replaced link to 3d by [VAL_VALUE]~DWG Link to the same revision
+#§allowed§[SR5EngArticleRevision:COMBI_item_Rev]||[SR5EngArticleARRevision:COMBI_item_Rev]
+#
+#SRS-1481 + SRS-1371
+#ID=40ObsoleteDRW;scope=object;CRITERIA=CONDITION;CHECK=DWGRevision:item_id§eq§[SR5EngArticleRevision:item_id]
+#ID=40ObsoleteDRW;scope=object;CRITERIA=CONDITION;CHECK=DWGRevision:COMBI_item_Rev§eq§[SR5EngArticleRevision:COMBI_item_PreviousRev]
+#ID=40ObsoleteDRW;scope=object;CRITERIA=AND;CHECK=DWGRevision:COMBI_item_Rev§eq§[SR5EngArticleRevision:COMBI_item_Rev]~WARNING: INFO: DWG Link not to the same revision, might be not actualized - [VAL_OBJECT:COMBI_item_Rev] - replaced link to 3d by [VAL_VALUE]~DWG Link to the same revision
+#
+#ID=40PreviousDRW;scope=object;CRITERIA=CONDITION;CHECK=DWGRevision:item_id§eq§[SR5EngArticleRevision:item_id]
+#ID=40PreviousDRW;scope=object;CRITERIA=AND;CHECK=DWGRevision:COMBI_item_Rev§allowed§[SR5EngArticleRevision:COMBI_item_Rev]||[SR5EngArticleRevision:COMBI_item_PreviousRev]~DWG Link not to the same revision or the previous one~DWG Link to the same revision or the previous one
+
+
+
+#must be connected to change
+#not first rev
+#ID=40NoChange;scope=object;CRITERIA=CONDITION;CHECK=C:SR5GenEngObjRevision:DB_Type§allowed§SR5EngEndItemRevision||SR5EngMajorAssyRevision||SR5EngArticleRevision||SR5NonERPArticleRevision||SR5EngArticleARRevision||SR5EngInstallLocRevision
+##ID=40NoChange;scope=object;CRITERIA=CONDITION;CHECK=C:SR5GenEngObjRevision:last_release_status§allowed§empty||20*||30*||TCM*
+#ID=40NoChange;scope=object;CRITERIA=CONDITION;CHECK=C:SR5GenEngObjRevision:last_release_status§allowed§empty||20*||30*||Engineering Approved
+##customer is changing of logic of revision index frequently
+##ID=40NoChange;scope=object;CRITERIA=CONDITION;CHECK=C:SR5GenEngObjRevision:Rev§not eq§00&&A&&000&&AA&&0000~according to BMIDE: several variants have been defined 
+##object_string can lead to issue in case of specific characters, revision_list can become problematic in case of 665 external rev index + 1000 internal rev index
+##ID=40NoChange;scope=object;CRITERIA=CONDITION;CHECK=C:SR5GenEngObjRevision:ObjectString§not eq§[VAL_OBJECT:RevisionList]
+#ID=40NoChange;scope=object;CRITERIA=CONDITION;CHECK=C:SR5GenEngObjRevision:Current_Rev_Prev§not eq§[VAL_OBJECT:Rev]###~
+#ID=40NoChange;scope=object;CRITERIA=AND;CHECK=C:SR5GenEngObjRevision:Changes§not allowed§empty&& ~article cannot be Eng-released without being linked to a change object~article linked to a change object
+##first rev
+#ID=40NoChange1st;scope=object;CRITERIA=CONDITION;CHECK=C:SR5GenEngObjRevision:DB_Type§allowed§SR5EngEndItemRevision||SR5EngMajorAssyRevision||SR5EngArticleRevision||SR5NonERPArticleRevision||SR5EngArticleARRevision
+##ID=40NoChange1st;scope=object;CRITERIA=CONDITION;CHECK=C:SR5GenEngObjRevision:last_release_status§allowed§empty||20*||30*||TCM*
+#ID=40NoChange1st;scope=object;CRITERIA=CONDITION;CHECK=C:SR5GenEngObjRevision:last_release_status§allowed§empty||20*||30*||Engineering Approved
+##customer is changing of logic of revision index frequently
+##ID=40NoChange1st;scope=object;CRITERIA=CONDITION;CHECK=C:SR5GenEngObjRevision:Rev§eq§00||A||000||AA||0000~according to BMIDE: several variants have been defined 
+##object_string can lead to issue in case of specific characters, revision_list can become problematic in case of 665 external rev index + 1000 internal rev index
+##ID=40NoChange1st;scope=object;CRITERIA=CONDITION;CHECK=C:SR5GenEngObjRevision:ObjectString§eq§[VAL_OBJECT:RevisionList]*~
+#ID=40NoChange1st;scope=object;CRITERIA=CONDITION;CHECK=C:SR5GenEngObjRevision:Current_Rev_Prev§eq§[VAL_OBJECT:Rev]###~
+#ID=40NoChange1st;scope=object;CRITERIA=AND;CHECK=C:SR5GenEngObjRevision:Changes§not allowed§empty&& ~WARNING: INFO: first rev of article should not be Eng-released without being linked to a change object~first rev article linked to a change object
+#all rev
+ID=40NoChange;scope=object;CRITERIA=CONDITION;CHECK=C:SR5GenEngObjRevision:DB_Type§allowed§SR5EngEndItemRevision||SR5EngMajorAssyRevision||SR5EngArticleRevision||SR5NonERPArticleRevision||SR5EngArticleARRevision||SR5EngInstallLocRevision
+ID=40NoChange;scope=object;CRITERIA=CONDITION;CHECK=C:SR5GenEngObjRevision:last_release_status§allowed§empty||20*||30*||Engineering Approved
+ID=40NoChange;scope=object;CRITERIA=AND;CHECK=C:SR5GenEngObjRevision:Changes§not allowed§empty&& ~article cannot be Eng-released without being linked to a change object~article linked to a change object
+
+
+
+#belonging to proper group for pool assignement inside the WF
+#history:
+#ID=40Pool;scope=object;CRITERIA=CONDITION;CHECK=C:SR5GenEngObjRevision:DB_Type§allowed§SR5EngEndItemRevision||SR5EngMajorAssyRevision||SR5EngArticleRevision||SR5NonERPArticleRevision||SR5EngArticleARRevision
+#ID=40Pool;scope=object;CRITERIA=CONDITION;CHECK=C:SR5GenEngObjRevision:last_release_status§allowed§empty||20*||30*
+##ID=40Pool;scope=object;CRITERIA=AND;CHECK=C:SR5GenEngObjRevision:owning_group§allowed§regex(^MCAD\.(Engineering|Konstruktion)\.STA.\.Stadler$)~WARNING: INFO: do not belongs to proper group -MCAD Engineering groups- might be an issue for Engineering-Approval and its pool assignement~Belongs MCAD Engineering groups
+#ID=40Pool;scope=object;CRITERIA=AND;CHECK=C:SR5GenEngObjRevision:owning_group§allowed§regex(^MCAD\.(Engineering|Konstruktion)\.Internal\.Stadler$)~WARNING: INFO: do not belongs to proper group -MCAD Engineering groups- might be an issue for Engineering-Approval and its pool assignement~Belongs MCAD Engineering groups
+#
+#ID=40Pool2;scope=object;CRITERIA=CONDITION;CHECK=SR5EngInstallLocRevision:last_release_status§allowed§empty||20*||30*
+#ID=40Pool2;scope=object;CRITERIA=AND;CHECK=SR5EngInstallLocRevision:owning_group§allowed§regex(^Project\.(Management\.Internal\.Stadler$)~WARNING: INFO: do not belongs to proper group -Project Management groups- might be an issue for Engineering-Approval and its pool assignement~Belongs Project Management groups
+
+
+
+#Env and Baseline
+#  property on bom line needed for both EBOM + Env. + Baseline
+#    C:ItemRevision>view:bl_property
+#  property on bom line needed for EBOM only
+#    C:ItemRevision>view(Latest Working):bl_property
+#  property on bom line needed for Env. + Baseline only
+#    C:ItemRevision>view(Latest Working Env):bl_property
+ID=40Baseline;CRITERIA=CONDITION;CHECK=C:SR5GenEngObjRevision>view(Latest Working Env):level§eq§2
+ID=40Baseline;CRITERIA=CONDITION;CHECK=C:SR5GenEngObjRevision>view(Latest Working Env):DB_bl_rev_object_type§eq§SR5EngEndItemRevision||SR5EngMajorAssyRevision||SR5EngArticleRevision||SR5NonERPArticleRevision
+ID=40Baseline;CRITERIA=AND;CHECK=C:SR5GenEngObjRevision>view(Latest Working Env):bl_rev_last_release_status§allowed§TC mit Baseline||TC Baselined~WARNING: INFO: child of sub-Env must be a Baseline [VAL_OBJECT:bl_rev_object_string]~Base line properly identified
+
+
+
+#AltRep
+SR5EngArticleAR>sr5AltRepList>MasterOfAltRepRev:last_release_status§not allowed§70*&&80*&&90*&&30*&&20*&&empty~Master of Alt. Rep. objects with status 70 and higher, must be replaced - Master of Alt. Rep. objects with status lower than 40, must be released~status of Master of Alt. Rep. objects is accepted:  40 or 50
+
+
+
+#

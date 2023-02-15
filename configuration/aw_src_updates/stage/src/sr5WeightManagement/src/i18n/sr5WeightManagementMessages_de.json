@@ -1,0 +1,6 @@
+{
+    "calculateWeightCmdTitle": "Gewicht berechnen",
+    "calculateWeightCmdDesc": "Berechnet das Gewicht des ausgewählten Objektes",
+    "calculateWeightSuccess": "Das Gewicht für {1} wurde auf {0}kg angepasst.",
+    "calculateWeightFailed": "Die Gewichtsberechnung ist fehlgeschlagen (Fehlercode: {0})\n{1}"
+}

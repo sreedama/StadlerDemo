@@ -1,0 +1,26 @@
+{
+    "misc_indicators_template": {
+        "grids": [],
+        "columns": [
+            "sr5IndicatorsAW"
+        ],
+        "templateUrl": "",
+        "renderFunction": "renderPropertyIndicators",
+        "deps": "propRenderTemplates/miscIndicatorRenderer"
+    },
+    "make_buy_indicator": {
+        "grids": [],
+        "columns": [
+            "sr5MakeBuy"
+        ],
+        "tooltip": [
+            "sr5MakeBuy"
+        ],
+        "template": "",
+        "templateUrl": "/propRenderTemplates/makeBuyIndicatorRenderer.html",
+        "renderFunction": "",
+        "dependentServices": [
+            "soa/kernel/clientDataModel"
+        ]
+    }
+}

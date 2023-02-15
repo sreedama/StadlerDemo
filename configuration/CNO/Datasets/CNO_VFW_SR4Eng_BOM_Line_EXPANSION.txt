@@ -1,0 +1,51 @@
+############################################################################################################
+#  CNO Expansion Definition File
+############################################################################################################
+# Version History
+#
+# Version    Date           Name               Description of Change
+# 1.0        19-08-2021     infodba     Initial
+############################################################################################################
+
+
+
+# ------------------------------------------------------------------
+# Expand to Item
+# ------------------------------------------------------------------
+C:ItemRevision>items_tag>C:Item
+
+# ------------------------------------------------------------------
+# Expand to ItemRevision (required if the Item is selected)
+# >> is used to only expand root objects
+# ------------------------------------------------------------------
+#C:ItemRevision>>items_tag>C:Item
+
+# ------------------------------------------------------------------
+# Item Master Form as some attributes are to be checked
+# ------------------------------------------------------------------
+#C:Item>IMAN_master_form>C:Form
+
+# ------------------------------------------------------------------
+# ItemRevision Master Form as some attributes are to be checked
+# ------------------------------------------------------------------
+#C:ItemRevision>IMAN_master_form_rev>C:Form
+
+# ------------------------------------------------------------------
+# BOM Components (ItemRevision)
+# packed BOM: C:ItemRevision>view;p:Latest Working>C:ItemRevision
+# recursive packed BOM: C:ItemRevision>view;99p:Latest by Creation Date>C:ItemRevision
+# only unpacked BOM (no further expansion) C:ItemRevision>view;u:Any Status>C:ItemRevision
+# Extract only BOM Line attributes, no expansion of the BOM via OED: C:ItemRevision>view;p:Latest by Creation Date>C:ItemRevision;0
+# ------------------------------------------------------------------
+#C:ItemRevision>view;p:Latest by Creation Date>C:ItemRevision
+SR4EngPartRevision>view;p:Latest Working>C:ItemRevision
+# ------------------------------------------------------------------
+# Object type expanding classification relation
+# >> is used to only expand root objects
+# ------------------------------------------------------------------
+C:ItemRevision>>IMAN_classification>icm0
+
+# ------------------------------------------------------------------
+# Expand to all Dataset of the ItemRevision
+# ------------------------------------------------------------------
+C:ItemRevision>*>C:Dataset

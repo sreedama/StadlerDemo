@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TcBusinessData xmlns="http://teamcenter.com/BusinessModel/TcBusinessData" Date="">
+<Add>
+   <Library name="SR5CustomSoa" createRelease="tc13000.3.0" serviceLibrary="false"
+       namespace="" isThirdParty="false" description="Stadler Rail Custom SOA Library">
+     <DependentOn name="metaframework"/>
+     <DependentOn name="sa"/>
+     <DependentOn name="tccore"/>
+     <DependentOn name="tc"/>
+     <DependentOn name="cxpom"/>
+   </Library>
+   <Library name="SR5SoaCustom" createRelease="tc13000.3.0" serviceLibrary="true"
+       namespace="SR5::Soa::Custom" isThirdParty="false" description="Stadler Rail custom SOA service library"/>
+   <ServiceInterface name="WeightManagement" namespace="SR5::Soa::Custom" libraryName="SR5SoaCustom"
+       serviceLibraryRef="" dependencies="" createRelease="tc13000.3.0" description="Weight management service."/>
+   <Struct name="DataResponse" createRelease="tc13000.3.0" scope="SR5::Soa::Custom::WeightManagement"
+       namespace="SR5::Soa::Custom::_2021_12::WeightManagement" isPublished="true">
+     <StructElement name="weight" description="weight">
+       <DataTypeRefParam dataType="double"/>
+     </StructElement>
+   </Struct>
+   <Struct name="ErrorResponse" createRelease="tc13000.3.0" scope="SR5::Soa::Custom::WeightManagement"
+       namespace="SR5::Soa::Custom::_2021_12::WeightManagement" isPublished="true">
+     <StructElement name="errorCode" description="Error code">
+       <DataTypeRefParam dataType="int"/>
+     </StructElement>
+     <StructElement name="errorText" description="Error text">
+       <DataTypeRefParam dataType="std::string"/>
+     </StructElement>
+   </Struct>
+   <Struct name="WeightResponse" createRelease="tc13000.3.0" scope="SR5::Soa::Custom::WeightManagement"
+       namespace="SR5::Soa::Custom::_2021_12::WeightManagement" isPublished="true">
+     <StructElement name="dataResponse" description="Data response">
+       <DataTypeRefParam dataType="SR5::Soa::Custom::_2021_12::WeightManagement::DataResponse"/>
+     </StructElement>
+     <StructElement name="errorResponse" description="Error response">
+       <DataTypeRefParam dataType="SR5::Soa::Custom::_2021_12::WeightManagement::ErrorResponse"/>
+     </StructElement>
+   </Struct>
+   <OperationTemplate id="SR5::Soa::Custom::_2021_12::WeightManagement::WeightResponse#SR5::Soa::Custom::WeightManagement::calculateAndSetWeight#const,std::string"
+       name="SR5::Soa::Custom::WeightManagement::calculateAndSetWeight" returnConst="false"
+       createRelease="tc13000.3.0" description="" const="false" static="false" accessControl="false"
+       returnFreeMemory="false" returnDescription="">
+     <OperationReturnDataTypeRef dataType="SR5::Soa::Custom::_2021_12::WeightManagement::WeightResponse"
+         qualifier=""/>
+     <OperationParameter name="uid" description="Uid" const="true" inputOutput="Input"
+         freeOutputMemory="false" defaultValue="">
+       <OperationParameterDataTypeRef dataType="std::string" qualifier=""/>
+     </OperationParameter>
+   </OperationTemplate>
+   <Operation id="calculateAndSetWeight#const,std::string" name="calculateAndSetWeight"
+       createRelease="tc13000.3.0" description="" opTemplate="SR5::Soa::Custom::_2021_12::WeightManagement::WeightResponse#SR5::Soa::Custom::WeightManagement::calculateAndSetWeight#const,std::string"
+       interface="SR5::Soa::Custom::WeightManagement" isPublished="true" canOverride="false"
+       isPreActionAllowed="false" isPostActionAllowed="false" isPreConditionAllowed="false"
+       returnDescription="" component="" useCase="" dependencies="" exceptionCondition="">
+     <ParameterInfo parameterName="uid" description="Uid"/>
+   </Operation>
+   <TcGlobalConstantAttach constantName="Fnd0SelectedLocales" value="en_US"/>
+   <Functionality name="SR5stadlerrailsoa" displayName="stadlerrailsoa" enabledForVerificationRules="false"
+       description="Component for the template - sr5stadlerrailsoa"/>
+</Add>
+</TcBusinessData>

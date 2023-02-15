@@ -1,0 +1,24 @@
+############################################################################################################
+#  CNO Object Property Definition File
+############################################################################################################
+# Version History
+#
+# Version    Date           Name               Description of Change
+# 1.0        04-03-2022     testu     Initial
+############################################################################################################
+
+C:Item:?object_type~DB_IR_type
+
+#C:ItemRevision>view:bl_SR5GenEngObj_sr5SAPMaterialGroup~bl_SR5GenEngObj_sr5SAPMaterialGroup
+SR5EngArticle:sr5SAPMaterialGroup~sr5SAPMaterialGroup
+SR5EngEndItem:sr5SAPMaterialGroup~sr5SAPMaterialGroup
+SR5EngMajorAssy:sr5SAPMaterialGroup~sr5SAPMaterialGroup
+SR5ElectricAssyMaster:sr5SAPMaterialGroup~sr5SAPMaterialGroup
+SR5EngArticleMaster:sr5SAPMaterialGroup~sr5SAPMaterialGroup
+SR5EngArticleARMaster:sr5SAPMaterialGroup~sr5SAPMaterialGroup
+SR5EngEndItemMaster:sr5SAPMaterialGroup~sr5SAPMaterialGroup
+SR5EngEnvMaster:sr5SAPMaterialGroup~sr5SAPMaterialGroup
+SR5EngInstallLocMaster:sr5SAPMaterialGroup~sr5SAPMaterialGroup
+SR5EngMajorAssyMaster:sr5SAPMaterialGroup~sr5SAPMaterialGroup
+SR5GenEngObj:sr5SAPMaterialGroup~sr5SAPMaterialGroup
+SR5Tool:sr5SAPMaterialGroup~sr5SAPMaterialGroup

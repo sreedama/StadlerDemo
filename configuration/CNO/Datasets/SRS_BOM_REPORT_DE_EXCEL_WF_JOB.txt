@@ -1,0 +1,31 @@
+############################################################################################################
+#  CNO Report JOB Definition File
+############################################################################################################
+# Version History
+#
+# Version   Date         Name            Description of Change
+# 1.00     05.01.2021   Yalcintepe       CVF-907# Reporting Option
+############################################################################################################
+
+#Help text for user interface
+HELP=[en_US={CNO_LOGO}<br><h4>{TC_USERNAME}, Please follow these steps for an BOM Report:</h4><ul><li>Start the process</li><li>Check the Report</li><li>Select a defined Post Action</li></ul>]###[de_DE={CNO_LOGO}<br><h4>{TC_USERNAME}, Bitte f&uuml;hren Sie folgende Schritte f&uuml;r den St&uuml;cklistenvergleich durch:</h4><ul><li>Starten Sie den Prozess</li><li>Pr&uuml;fen Sie den Ergebnisreport</li><li>Selektieren Sie die definierte Postaktion</li></ul>]###
+
+
+#Search and filter configuration
+#QUERY=CNO_VFW_STB_QUERY
+QUERY=CNO_VFW_ITEM_QUERY
+
+#Object expansion configuration
+EXPANSION=SRS_BOM_REPORT_EXCEL_EXPANSION
+
+#Object property definition
+PROPERTY=SRS_BOM_REPORT_EXCEL_PROPERTY
+
+#Template definition
+REPORT_TEMPLATE=SRS_BOM_REPORT_DE_EXCEL_TEMPLATE
+
+#Optional Task for post operations
+TASK=SRS_BOM_REPORT_EXCEL_DE_TASK
+
+#not available yet
+SCRIPT=SRS_BOM_REPORT_DE_EXCEL_SCRIPT

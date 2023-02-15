@@ -1,0 +1,21 @@
+############################################################################################################
+#  CNO Expansion Definition File
+############################################################################################################
+# Version History
+#
+# Version    Date           Name               Description of Change
+# 1.0        22-03-2022     user01     Initial
+############################################################################################################
+
+
+#C:ItemRevision>view;p:Latest Working/CLOSURE_RULE:BOMExpandSkipStatusTCM-50>C:ItemRevision;0
+#because of contextual link management
+C:ItemRevision>>view;p:Latest Working/CLOSURE_RULE:BOMExpandSkipStatusTCM-50>C:ItemRevision
+
+#contextual link management
+#C:SR5GenEngObjRevision>>IMAN_specification>CATPart
+#in order not two check it two time because of CatPart as target of Workflow
+C:SR5GenEngObjRevision>>IMAN_specification>CATPart/ALIAS:CV5Part
+#CATPart>catiaV5_MMLAssy>C:SR5GenEngObjRevision/ALIAS:ContextualRevision
+CV5Part>catiaV5_MMLAssy>C:SR5GenEngObjRevision/ALIAS:ContextualRevision
+ContextualRevision>IMAN_specification>CATPart/ALIAS:CCPRevisionCVPart

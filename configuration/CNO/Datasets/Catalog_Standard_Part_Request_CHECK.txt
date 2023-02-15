@@ -1,0 +1,21 @@
+############################################################################################################
+#  CNO Check Definition File
+############################################################################################################
+# Version History
+#
+# Version    Date           Name               Description of Change
+# 1.0        21-Nov-2022    testu              Initial
+############################################################################################################
+
+#Q-Checker 
+CATPart:sr5QCheckEvaluation§not allowed§empty&&KO~Q-Checker Check is missing or KO~Q-Checker Check ok
+#ID=CV5PartQc;CRITERIA=AND;CHECK=CATPart:sr5QCheckEvaluation§not allowed§empty~Q-Checker Check is missing~Q-Checker Check result exist
+#ID=CV5PartQcKO;CRITERIA=AND;CHECK=CATPart:sr5QCheckEvaluation§not allowed§KO~Q-Checker Check result is KO~Q-Checker Check result is not KO
+
+CATProduct:sr5QCheckEvaluation§not allowed§empty&&KO~Q-Checker Check is missing or KO~Q-Checker Check ok
+#ID=CV5AssyQc;CRITERIA=AND;CHECK=CATProduct:sr5QCheckEvaluation§not allowed§empty~Q-Checker Check is missing~Q-Checker Check result exist
+#ID=CV5AssyQcKO;CRITERIA=AND;CHECK=CATProduct:sr5QCheckEvaluation§not allowed§KO~Q-Checker Check result is KO~Q-Checker Check result is not KO
+
+CATDrawing:sr5QCheckEvaluation§not allowed§empty&&KO~Q-Checker Check is missing or KO~Q-Checker Check ok
+#ID=CV5DrwQc;CRITERIA=AND;CHECK=CATDrawing:sr5QCheckEvaluation§not allowed§empty~Q-Checker Check is missing~Q-Checker Check result exist
+#ID=CV5DrwQcKO;CRITERIA=AND;CHECK=CATPart:sr5QCheckEvaluation§not allowed§KO~Q-Checker Check result is KO~Q-Checker Check result is not KO

@@ -1,0 +1,319 @@
+{
+	"Boilerplate ViewModel": {
+		"scope": "json",
+		"prefix": "awViewModel",
+		"body": [
+			"{",
+			"    \"schemaVersion\": \"1.0.0\",",
+			"    \"imports\": [],",
+			"    \"actions\": {},",
+			"    \"data\": {},",
+			"    \"preferences\": [],",
+			"    \"functions\": {},",
+			"    \"messages\": {},",
+			"    \"conditions\": {},",
+			"    \"i18n\": {},",
+			"    \"editContext\": {},",
+			"    \"onEvent\": [],",
+			"    \"dataParserDefinitions\": {},",
+			"    \"dataProviders\": {},",
+			"    \"columnProviders\": {},",
+			"    \"chartProviders\": {},",
+			"    \"grids\": {},",
+			"    \"editConfig\": {},",
+			"    \"mock\": {},",
+			"    \"ports\": {},",
+			"    \"lifecycleHooks\": {}",
+			"}"
+		]
+	},
+	"Boilerplate commandsViewModel": {
+		"scope": "json",
+		"prefix": "awCmdViewModel",
+		"body": [
+			"{",
+			"    \"schemaVersion\": \"1.0.0\",",
+			"    \"actions\": {},",
+			"    \"data\": {},",
+			"    \"preferences\": [],",
+			"    \"functions\": {},",
+			"    \"messages\": {},",
+			"    \"conditions\": {},",
+			"    \"i18n\": {},",
+			"    \"onEvent\": [],",
+			"    \"dataParserDefinitions\": {},",
+			"    \"dataProviders\": {},",
+			"    \"commands\": {},",
+			"    \"commandHandlers\": {},",
+			"    \"commandPlacements\": {}",
+			"}"
+		]
+	},
+	"Boilerplate command": {
+		"scope": "json",
+		"prefix": "awCmd",
+		"body": [
+			"\"${1}\": {",
+			"    \"iconId\": \"${2}\",",
+			"    \"isGroup\": false,",
+			"    \"title\": \"\",",
+			"    \"description\": \"\",",
+			"    \"extendedTooltip\": {},",
+			"    \"isShuttle\": ${3|false,true|},",
+			"    \"isRibbon\": ${4|false,true|},",
+			"    \"isToggle\": ${5|false,true|}",
+			"}"
+		]
+	},
+	"Boilerplate commandHandler": {
+		"scope": "json",
+		"prefix": "awCmdHandler",
+		"body": [
+			"\"${1}Handler\": {",
+			"    \"id\": \"${1}\",",
+			"    \"action\": \"${2}\",",
+			"    \"activeWhen\": ${3|false,true|},",
+			"    \"visibleWhen\": ${4|false,true|},",
+			"    \"selectWhen\": ${5|false,true|},",
+			"    \"enableWhen\": ${6|false,true|},",
+			"    \"openWhen\": ${7|false,true|}",
+			"}"
+		]
+	},
+	"Boilerplate commandPlacement": {
+		"scope": "json",
+		"prefix": "awCmdPlacement",
+		"body": [
+			"\"${1}${3}\": {",
+			"    \"id\": \"${1}\",",
+			"    \"parentGroupId\": \"${2}\",",
+			"    \"uiAnchor\": \"${3}\",",
+			"    \"priority\": ${4},",
+			"    \"relativeTo\": \"${5}\",",
+			"    \"showGroupSelected\": ${6|false,true|},",
+			"    \"cellDisplay\": {",
+			"        \"hover\": ${7|false,true|},",
+			"        \"position\": \"${8}\",",
+			"        \"selected\": ${9|false,true|}",
+			"    },",
+			"    \"areas\": [${10}],",
+			"    \"isIcon\": ${11|false,true|},",
+			"    \"displayOption\": ${12|\"ON_HOVER\", \"ON_HOVER_AND_SELECTION\", \"ON_SELECTION\", \"ALWAYS\"|},",
+			"    \"position\": \"${13}\"",
+			"}"
+		]
+	},
+	"Boilerplate i18n": {
+		"scope": "json",
+		"prefix": "awI18n",
+		"body": [
+			"\"${1}\": [",
+			"    \"${2}\"",
+			"]"
+		]
+	},
+	"Boilerplate event": {
+		"scope": "json",
+		"prefix": "awEvent",
+		"body": [
+			"{",
+			"    \"eventId\": \"${1}\",",
+			"    \"eventSource\": \"${2}\",",
+			"    \"action\": \"${3}\",",
+			"    \"message\": \"${4}\",",
+			"    \"inputArgs\": {${5}},",
+			"    \"cacheEventData\": ${6|false,true|},",
+			"    \"condition\": \"${7}\",",
+			"    \"eventData\": {${8}}",
+			"}"
+		]
+	},
+	"Boilerplate function": {
+		"scope": "json",
+		"prefix": "awFunc",
+		"body": [
+			"\"${1}\": {",
+			"    \"functionName\": \"${2}\",",
+			"    \"parameters\": [",
+			"        \"${3}\"",
+			"    ],",
+			"    \"deps\": \"${4}\"",
+			"}"
+		]
+	},
+	"Boilerplate message": {
+		"scope": "json",
+		"prefix": "awMsg",
+		"body": [
+			"\"${1}Msg\": {",
+			"    \"messageType\": ${2|\"INFO\",\"WARINING\",\"ERROR\"|},",
+			"    \"messageText\": \"${3}\",",
+			"    \"messageKey\": \"${4}\",",
+			"    \"messageTextParams\": [",
+			"        \"${5}\"",
+			"    ],",
+			"    \"messageTextLinks\": [{}],",
+			"    \"messageData\": {${6}},",
+			"    \"expression\": {${7}},",
+			"    \"navigationOptions\": {",
+			"        \"option\": \"${8}\",",
+			"        \"text\": \"${9}\",",
+			"        \"action\": \"${10}\"",
+			"    }",
+			"}"
+		]
+	},
+	"Boilerplate lifecycleHook": {
+		"scope": "json",
+		"prefix": "awHook",
+		"body": [
+			"\"${1|onInit,onMount,onUnmount|}\": \"${2}\""
+		]
+	},
+	"Boilerplate condition": {
+		"scope": "json",
+		"prefix": "awCond",
+		"body": [
+			"\"${1}\": {",
+			"    \"expression\": \"${2}\",",
+			"    \"trackValues\": ${3|false,true|}",
+			"}"
+		]
+	},
+	"Boilerplate action JSFunction": {
+		"scope": "json",
+		"prefix": "awJSAction",
+		"body": [
+			"\"${1}\": {",
+			"    \"actionType\": \"JSFunction\",",
+			"    \"method\": \"${2}\",",
+			"    \"deps\": \"${3}\",",
+			"    \"inputData\": {${4}},",
+			"    \"outputData\": {${5}}",
+			"}"
+		]
+	},
+	"Boilerplate action aysnc JSFunction": {
+		"scope": "json",
+		"prefix": "awAsyncJSAction",
+		"body": [
+			"\"${1}\": {",
+			"    \"actionType\": \"JSFunctionAsync\",",
+			"    \"method\": \"${2}\",",
+			"    \"deps\": \"${3}\",",
+			"    \"inputData\": {${4}},",
+			"    \"outputData\": {${5}}",
+			"}"
+		]
+	},
+	"Boilerplate action TcSoaService": {
+		"scope": "json",
+		"prefix": "awSoaAction",
+		"body": [
+			"\"${1}\": {",
+			"    \"actionType\": \"TcSoaService\",",
+			"    \"serviceName\": \"${2}\",",
+			"    \"method\": \"${3}\",",
+			"    \"inputData\": {${4}},",
+			"    \"outputData\": {${5}}",
+			"}"
+		]
+	},
+	"Boilerplate action Event": {
+		"scope": "json",
+		"prefix": "awEventAction",
+		"body": [
+			"\"${1}\": {",
+			"    \"actionType\": \"Event\",",
+			"    \"method\": \"Event\",",
+			"    \"inputData\": {",
+			"        \"events\": [",
+			"            ${0}",
+			"        ]",
+			"    }",
+			"}"
+		]
+	},
+	"Javascript Service Angular": {
+		"scope": "javascript",
+		"prefix": "awAngularService",
+		"body": [
+			"/*global",
+			" */",
+			"",
+			"/**",
+			" * ${1}",
+			" * @module js/${TM_FILENAME/(.*)\\..+$/$1/}",
+			" */",
+			"import app from 'app';",
+			"",
+			"let ${TM_FILENAME/(.*)\\..+$/$1/} = {};",
+			"",
+			"${0}",
+			"",
+			"/**",
+			" * ${TM_FILENAME/(.*)\\..+$/$1/}",
+			" * @memberof NgServices",
+			" * @member ${TM_FILENAME}",
+			" */",
+			"export default ${TM_FILENAME/(.*)\\..+$/$1/} = {};",
+			"",
+			"app.factory('${TM_FILENAME/(.*)\\..+$/$1/}', () => exports);"
+		]
+	},
+	"Basic function": {
+		"scope": "javascript",
+		"prefix": "func",
+		"body": [
+			"${1|export const,const|} ${2:Name} = (${3:Params}) => {",
+			"    ${0}",
+			"};"
+		]
+	},
+	"AW common JS imports": {
+		"scope": "javascript",
+		"prefix": "commonImports",
+		"body": "${1|import soa from 'soa/kernel/soaService';,import cdm from 'soa/kernel/clientDataModel';,import eventBus from 'js/eventBus';,import editHandlerService from 'js/editHandlerService';import dmSvc from 'soa/dataManagementService';|}"
+	},
+	"Boilerplate Indicator": {
+		"scope": "json",
+		"prefix": "awIndicator",
+		"body": [
+			"\"${1}\": {",
+			"    \"iconName\": \"${2}\",",
+			"    \"tooltip\": {",
+			"        \"showPropDisplayName\": ${3|false,true|},",
+			"        \"propNames\": [",
+			"            ${4}",
+			"        ]",
+			"    },",
+			"    \"modelTypes\": [",
+			"        ${5}",
+			"    ]",
+			"    ${0}",
+			"}"
+		]
+	},
+	"Boilderplate propertyRenderer": {
+		"scope": "json",
+		"prefix": "awPropRenderer",
+		"body": [
+			"\"${1}\": {",
+			"    \"grids\": [],",
+			"    \"columns\": [",
+			"        ${2}",
+			"    ],",
+			"    \"tooltip\": [",
+			"        ${3}",
+			"    ],",
+			"    \"template\": \"${4}\",",
+			"    \"templateUrl\": \"${4}\",",
+			"    \"renderFunction\": \"${4}\",",
+			"    \"deps\": \"${4}\",",
+			"    \"dependentServices\": [",
+			"        ${3}",
+			"    ]",
+			"}"
+		]
+	}
+}

@@ -1,0 +1,88 @@
+{
+  "Key": "PLMXML-Info",
+  "IsTable": false,
+  "DisplayName": "PLMXML-Info",
+  "Items": [
+    {
+      "Key": "Process",
+      "DisplayName": "Process",
+      "Items": [
+        {
+          "Key": "Item",
+          "Items": [
+            {
+              "Name": "object_type"
+            },
+            {
+              "Name": "item_id"
+            }
+          ]
+        },
+        {
+          "Key": "Revision",
+          "DisplayName": "Revision",
+          "Items": [
+            {
+              "Name": "object_tag"
+            },
+            {
+              "Name": "object_tag_t4xhex"
+            },
+            {
+              "Name": "object_name"
+            },
+            {
+              "Name": "date_released"
+            },
+            {
+              "Name": "item_revision_id"
+            },
+            {
+              "Name": "ais3_ObjectKey1"
+            },
+            {
+              "Name": "ais3_ObjectKey2"
+            },
+            {
+              "Name": "ais3_ObjectKey3"
+            }
+          ]
+        },
+        {
+          "Key": "bl_rev_object_name:lang_list",
+          "IsTable": true,
+          "DisplayName": "bl_rev_object_name:lang_list",
+          "Items": [
+            {
+              "Name": "LanguageIso"
+            },
+            {
+              "Name": "LocalizedValue"
+            },
+            {
+              "Name": "IsDefault",
+              "Type": "bool"
+            }
+          ]
+        },
+        {
+          "Key": "bl_rev_object_desc:lang_list",
+          "IsTable": true,
+          "DisplayName": "bl_rev_object_desc:lang_list",
+          "Items": [
+            {
+              "Name": "LanguageIso"
+            },
+            {
+              "Name": "LocalizedValue"
+            },
+            {
+              "Name": "IsDefault",
+              "Type": "bool"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

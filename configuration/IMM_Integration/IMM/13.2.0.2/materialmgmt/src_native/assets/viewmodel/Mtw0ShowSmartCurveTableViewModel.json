@@ -1,0 +1,265 @@
+{
+    "schemaVersion": "1.0.0",
+    "imports": [
+        "js/aw-panel.directive",
+        "js/aw-panel-body.directive",
+        "js/aw-panel-footer.directive",
+        "js/aw-chart.directive",
+        "js/aw-column.directive",
+        "js/aw-splm-table.directive",
+        "js/aw-command-bar.directive",
+        "js/aw-panel-section.directive"
+    ],
+    "data": {
+        "Mtw0ShowSmartCurveValuesInTable": true,
+        "Mtw0ShowSmartCurveInChart":false
+    },
+    "chartProviders": {
+        "Mtw0SmartCurvesChartProvider": {
+            "title": "",
+            "chartType": "line",
+            "loadDataAction": "Mtw0LoadSmartCurvesDataAction",
+            "chartConfig": {
+                "isChartZoomable": true,
+                "isYAxisLinearOrLogarithmic": "linear",
+                "xAxisLabel": "{{data.chartProviders.Mtw0SmartCurvesChartProvider.chartConfig.xAxisLabel}}",
+                "yAxisLabel": "{{data.chartProviders.Mtw0SmartCurvesChartProvider.chartConfig.yAxisLabel}}",
+                "isDataLabelOnChartEnabled": false
+            }
+        }
+    },
+    "dataProviders": {
+        "Mtw0SmartCurveTableDataProvider": {
+            "action": "Mtw0GetSmartCurveData",
+            "response": "{{data.tableData.rows}}",
+            "totalFound": "{{data.tableData.totalFound}}",
+            "selectionModelMode": "multiple",
+            "editConfig": {
+                "startEditAction": "Mtw0SmartCurveTableStartEditsAction",
+                "saveEditAction": "Mtw0SmartCurveTableSaveEditsAction",
+                "cancelEditAction": "Mtw0SmartCurveTableCancelEditsAction",
+                "cancelEditsAction": "Mtw0SmartCurveTableCancelEditsAction"
+            }
+        }
+    },
+    "grids": {
+        "Mtw0SmartCurveTable": {
+            "dataProvider": "Mtw0SmartCurveTableDataProvider",
+            "columnProvider": "Mtw0SmartCurveTableColumnProvider",
+            "addIconColumn": false,
+            "gridOptions": {
+                "enablePinning": false,
+                "enableSorting": false
+            }
+        }
+    },
+    "columnProviders": {
+        "Mtw0SmartCurveTableColumnProvider": {
+            "loadColumnAction": "Mtw0GetSmartCurveTableColumnsAction",
+            "columns": "{{data.columns}}"
+        }
+    },
+    "actions": {
+        "reveal": {
+            "actionType": "dataProvider",
+            "method": "Mtw0SmartCurveTableDataProvider"
+        },
+        "Mtw0SmartCurveTable_StartEditsEventAction": {
+            "actionType": "dataProvider",
+            "method": "Mtw0SmartCurveTableDataProvider",
+            "inputData": {
+                "action": "startEdit"
+            }
+        },
+        "Mtw0SmartCurveTable_CancelEditsEventAction": {
+            "actionType": "dataProvider",
+            "method": "Mtw0SmartCurveTableDataProvider",
+            "inputData": {
+                "action": "cancelEdits"
+            }
+        },
+        "Mtw0SmartCurveTable_SaveEditsEventAction": {
+            "actionType": "dataProvider",
+            "method": "Mtw0SmartCurveTableDataProvider",
+            "inputData": {
+                "action": "saveEdits"
+            }
+        },
+        "Mtw0SmartCurveTable_AddRowEventAction": {
+            "actionType": "JSFunction",
+            "method": "Mtw0SmartCurveTableAddRow",
+            "inputData": {
+                "data": "{{data}}",
+                "eventData": "{{data.eventData}}"
+            },
+            "deps": "js/Mtw0ShowSmartCurveTable"
+        },
+        "Mtw0SmartCurveTable_DuplicateRowsEventAction": {
+            "actionType": "JSFunction",
+            "method": "Mtw0SmartCurveTableDuplicateRows",
+            "inputData": {
+                "data": "{{data}}",
+                "context": "{{ctx}}",
+                "eventData": "{{data.eventData}}"
+            },
+            "deps": "js/Mtw0ShowSmartCurveTable"
+        },
+        "Mtw0SmartCurveTable_RemoveRowsEventAction": {
+            "actionType": "JSFunction",
+            "method": "Mtw0SmartCurveTableRemoveRows",
+            "inputData": {
+                "data": "{{data}}",
+                "context": "{{ctx}}",
+                "eventData": "{{data.eventData}}"
+            },
+            "deps": "js/Mtw0ShowSmartCurveTable"
+        },
+        "Mtw0SmartCurveTableStartEditsAction": {
+            "actionType": "JSFunction",
+            "method": "Mtw0SmartCurveTableStartEdits",
+            "inputData": {
+                "data": "{{data}}"
+            },
+            "deps": "js/Mtw0ShowSmartCurveTable"
+        },
+        "Mtw0SmartCurveTableSaveEditsAction": {
+            "actionType": "JSFunctionAsync",
+            "method": "Mtw0SmartCurveTableSaveEdits",
+            "inputData": {
+                "data": "{{data}}",
+                "context": "{{ctx}}",
+                "eventData": "{{data.eventData}}"
+            },
+            "deps": "js/Mtw0ShowSmartCurveTable"
+        },
+        "Mtw0SmartCurveTableCancelEditsAction": {
+            "actionType": "JSFunction",
+            "method": "Mtw0SmartCurveTableCancelEdits",
+            "inputData": {
+                "data": "{{data}}",
+                "context": "{{ctx}}",
+                "eventData": "{{data.eventData}}",
+                "commandContext": "{{commandContext}}"
+            },
+            "deps": "js/Mtw0ShowSmartCurveTable"
+        },
+        "Mtw0LoadSmartCurvesDataAction": {
+            "actionType": "JSFunction",
+            "method": "Mtw0LoadSmartCurvesData",
+            "inputData": {
+                "Mtw0SmartCurvesChartProvider": "{{data.chartProviders.s}}",
+                "data": "{{data}}"
+            },
+            "deps": "js/Mtw0ShowSmartCurveTable"
+        },
+        "Mtw0GetSmartCurveData": {
+            "actionType": "TcSoaService",
+            "serviceName": "Core-2006-03-DataManagement",
+            "method": "getProperties",
+            "deps": "js/Mtw0ShowSmartCurveTable",
+            "inputData": {
+                "objects": [
+                    "{{ctx.selected}}"
+                ],
+                "attributes": [
+                    "mat1ValuesX",
+                    "mat1ValuesY"
+                ]
+            },
+            "policy": {
+                "types": [
+                    {
+                        "name": "BusinessObject",
+                        "properties": [
+                            {
+                                "name": "object_string"
+                            },
+                            {
+                                "name": "object_type"
+                            },
+                            {
+                                "name": "object_name"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Mat1SmartCurve",
+                        "properties": [
+                            {
+                                "name": "mat1ValuesX"
+                            },
+                            {
+                                "name": "mat1ValuesY"
+                            },
+                            {
+                                "name": "mat1ListOfRefParameters",
+                                "modifiers": [
+                                    {
+                                        "name": "withProperties",
+                                        "Value": "true"
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "mat1MathFormula"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "outputData": {
+                "tableData": "{{function:Mtw0GetSmartCurveTableData}}"
+            }
+        },
+        "Mtw0GetSmartCurveTableColumnsAction": {
+            "actionType": "JSFunctionAsync",
+            "method": "Mtw0GetSmartCurveTableColumns",
+            "inputData": {
+                "data":"{{data}}",
+                "dataProvider": "{{data.dataProviders.Mtw0SmartCurveTableDataProvider}}"
+            },
+            "deps": "js/Mtw0ShowSmartCurveTable"
+        }
+    },
+    "functions": {
+        "Mtw0GetSmartCurveTableData": {
+            "functionName": "Mtw0GetSmartCurveTableData",
+            "parameters": [
+                "{{data}}",
+                "{{ctx}}"
+            ]
+        }
+
+    },
+    "onEvent": [
+        {
+            "eventId": "Mtw0.SmartCurveTable.StartEdit",
+            "action": "Mtw0SmartCurveTable_StartEditsEventAction"
+        },
+        {
+            "eventId": "Mtw0.SmartCurveTable.SaveEdits",
+            "action": "Mtw0SmartCurveTable_SaveEditsEventAction"
+        },
+        {
+            "eventId": "Mtw0.SmartCurveTable.CancelEdits",
+            "action": "Mtw0SmartCurveTable_CancelEditsEventAction"
+        },
+        {
+            "eventId": "Mtw0.SmartCurveTable.AddRow",
+            "action": "Mtw0SmartCurveTable_AddRowEventAction",
+            "cacheEventData": true
+        },
+        {
+            "eventId": "Mtw0.SmartCurveTable.DuplicateRows",
+            "action": "Mtw0SmartCurveTable_DuplicateRowsEventAction",
+            "cacheEventData": true
+        },
+        {
+            "eventId": "Mtw0.SmartCurveTable.RemoveRows",
+            "action": "Mtw0SmartCurveTable_RemoveRowsEventAction",
+            "cacheEventData": true
+        }
+    ],
+    "messages": {},
+    "i18n": {}
+}

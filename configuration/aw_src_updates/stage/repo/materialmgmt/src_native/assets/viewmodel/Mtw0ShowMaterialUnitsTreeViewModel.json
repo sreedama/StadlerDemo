@@ -1,0 +1,214 @@
+{
+    "schemaVersion": "1.0.0",
+    "imports": [
+        "js/aw-splm-table.directive"
+    ],
+    "data": {
+        "policy": {
+            "types": [
+                {
+                    "name": "BusinessObject",
+                    "properties": [
+                        {
+                            "name": "object_name"
+                        },
+                        {
+                            "name": "object_string"
+                        },
+                        {
+                            "name": "object_type"
+                        }
+                    ]
+                },
+                {
+                    "name": "Mat1UnitAltName",
+                    "properties": [                   
+                        {
+                            "name": "mat1DerivedUnit",
+                            "modifiers": [
+                                {
+                                    "name": "withProperties",
+                                    "Value": "true"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "Mat1BaseUnit",
+                    "properties": [
+                        {
+                            "name": "mat1UnitCategory",
+                            "modifiers": [
+                                {
+                                    "name": "withProperties",
+                                    "Value": "true"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "Mat1DerivedUnit",
+                    "properties": [
+                        {
+                            "name": "mat1BaseUnit",
+                            "modifiers": [
+                                {
+                                    "name": "withProperties",
+                                    "Value": "true"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "actions": {
+        "loadTreeTableChildData": {
+            "actionType": "JSFunction",
+            "method": "loadTreeTableChildData",
+            "inputData": {
+                "node": "{{function:inputNodeForChild}}",
+                "depth": 1,
+                "data": "{{data}}"
+            },
+            "outputData": {
+                "treeLoadResult": ""
+            },
+            "deps": "js/Mtw0ShowUnitsTreeDataService"
+        },
+        "loadData": {
+            "actionType": "JSFunctionAsync",
+            "method": "getMaterialUnitsAttributes",
+            "inputData": {
+                "propertyPolicyOverride": "{{data.policy}}"
+            },
+            "deps": "js/Mtw0ShowUnitsTreeDataService",
+            "outputData": {
+                "treeLoadResult": "{{function:loadUnitsTreeTableData}}"
+            }
+        },
+        "loadPropertiesActionJS": {
+            "actionType": "JSFunctionAsync",
+            "method": "loadPropertiesJS",
+            "inputData": {
+                "dataProvider": "{{data}}",
+                "propertyLoadInput": "request.propertyLoadInput"
+            },
+            "outputData": {},
+            "deps": "js/Mtw0ShowUnitsTreeDataService"
+        },
+        "loadColumns": {
+            "actionType": "JSFunctionAsync",
+            "method": "loadColumns",
+            "inputData": {
+                "dataProvider": "{{data.dataProviders.getUnitsDataProvider}}",
+                "data": "{{data}}"
+            },
+            "deps": "js/Mtw0ShowUnitsTreeDataService"
+        },
+        "reloadUnitTree": {
+            "actionType": "Event",
+            "method": "Event",
+            "inputData": {
+                "events": [
+                    {
+                        "name": "treeGrid.plTable.reload"
+                    }
+                ]
+            }
+        }
+    },
+    "onEvent": [
+        {
+            "eventId": "mtw0MaterialUnits.loadDerivedUnit",
+            "action": "loadDerivedUnits"
+        },
+        {
+            "eventId": "editHandlerStateChange",
+            "condition": "state === 'saved'",
+            "action": "reloadUnitTree",
+            "cacheEventData": true
+        }
+    ],
+    "dataProviders": {
+        "getUnitsDataProvider": {
+            "action": "loadData",
+            "initializeAction": "loadData",
+            "nextAction": "loadTreeTableChildData",
+            "treeLoadResult": "{{data.treeLoadResult}}",
+            "inputData": {
+                "accessMode": "tree",
+                "selectionModel": "{{data.dataProviders.getUnitsDataProvider.selectionModel}}"
+            },
+            "commandsAnchor": "com.siemens.splm.clientfx.tcui.commands.modelObjectCellListActionCommands",
+            "selectionModelMode": "single"
+        },
+        "getUnitsPropertyProvider": {
+            "action": "loadPropertiesActionJS",
+            "propertyLoadResult": "action.result.propertyLoadResult"
+        }
+    },
+    "columnProviders": {
+        "getUnitsColumnProvider": {
+            "columns": [
+                {
+                    "name": "object_name",
+                    "displayName": "{{i18n.Name}}",
+                    "minWidth": 150,
+                    "width": 250,
+                    "isTreeNavigation": true
+                },
+                {
+                    "name": "type",
+                    "displayName": "{{i18n.Type}}",
+                    "minWidth": 150,
+                    "width": 150
+                }
+            ],
+            "frozenColumnIndex": -1
+        },
+        "getUnitsColumn1Provider": {
+            "loadColumnAction": "loadColumns",
+            "columns": "{{data.columns}}",
+            "sortCriteria": []
+        }
+    },
+    "grids": {
+        "treeGrid": {
+            "dataProvider": "getUnitsDataProvider",
+            "columnProvider": "getUnitsColumn1Provider",
+            "propertyProvider": "getUnitsPropertyProvider",
+            "addIconColumn": false,
+            "gridOptions": {
+                "enableGridMenu": false,
+                "enablePinning": false,
+                "enableSorting": false
+            }
+        }
+    },
+    "i18n": {
+        "Name": [
+            "MaterialMgmtMessages"
+        ],
+        "Type": [
+            "MaterialMgmtMessages"
+        ]
+    },
+    "functions": {
+        "loadUnitsTreeTableData": {
+            "functionName": "loadUnitsTreeTableData",
+            "parameters": [
+                "{{data.treeLoadInput}}"
+            ]
+        },
+        "inputNodeForChild": {
+            "functionName": "inputNodeForChild",
+            "parameters": [
+                "{{data.treeLoadInput}}"
+            ]
+        }
+    }
+}

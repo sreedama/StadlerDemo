@@ -1,0 +1,160 @@
+{
+  "Key": "PLMXML-Info",
+  "IsTable": false,
+  "DisplayName": "PLMXML-Info",
+  "Items": [
+    {
+      "Key": "ProcessView",
+      "Items": [
+        {
+          "Key": "HeaderOccurrence",
+          "Items": [
+            {
+              "Key": "Item",
+              "Items": [
+                {
+                  "Name": "object_type"
+                },
+                {
+                  "Name": "item_id"
+                }
+              ]
+            },
+            {
+              "Key": "Revision",
+              "Items": [
+                {
+                  "Name": "object_tag"
+                },
+                {
+                  "Name": "object_tag_t4xhex"
+                },
+                {
+                  "Name": "Label"
+                },
+                {
+                  "Name": "object_name"
+                },
+                {
+                  "Name": "item_revision_id"
+                },
+                {
+                  "Name": "ais3_ObjectKey1"
+                },
+                {
+                  "Name": "ais3_ObjectKey2"
+                },
+                {
+                  "Name": "ais3_ObjectKey3"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "Key": "Occurrences",
+          "IsTable": true,
+          "DisplayName": "Occurrences",
+          "Items": [
+            {
+              "Name": "Type"
+            },
+            {
+              "Name": "Label"
+            },
+            {
+              "Name": "ThreadUID_t4xhex"
+            },
+            {
+              "Name": "SequenceNumber"
+            },
+            {
+              "Name": "bl_occurrence"
+            },
+            {
+              "Name": "bl_item_item_id"
+            },
+            {
+              "Name": "bl_rev_item_revision_id"
+            },
+            {
+              "Name": "bl_rev_object_name"
+            },
+            {
+              "Name": "ais3_cp_IR_ObjectKey1"
+            },
+            {
+              "Name": "bl_quantity"
+            },
+            {
+              "Name": "bl_revision"
+            },
+            {
+              "Name": "bl_rev_fnd0objectId"
+            },
+            {
+              "Name": "bl_usage_address"
+            },
+            {
+              "Name": "bl_occ_effectivities"
+            },
+            {
+              "Name": "ais0bl_formula_as_dict_list"
+            },
+            {
+              "Name": "bl_formula"
+            },
+            {
+              "Key": "ref:bl_uom:Unit",
+              "IsTable": false,
+              "Items": [
+                {
+                  "Name": "symbol"
+                },
+                {
+                  "Name": "object_name"
+                },
+                {
+                  "Name": "unit"
+                }
+              ]
+            },
+            {
+              "Key": "LinkedOccurrence",
+              "IsTable": false,
+              "Items": [
+                {
+                  "Name": "Label"
+                },
+                {
+                  "Name": "ThreadUID_t4xhex"
+                },
+                {
+                  "Name": "bl_sequence_no"
+                },
+                {
+                  "Name": "bl_occ_effectivities"
+                },
+                {
+                  "Key": "ref:bl_uom:Unit",
+                  "IsTable": false,
+                  "Items": [
+                    {
+                      "Name": "symbol"
+                    },
+                    {
+                      "Name": "object_name"
+                    },
+                    {
+                      "Name": "unit"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

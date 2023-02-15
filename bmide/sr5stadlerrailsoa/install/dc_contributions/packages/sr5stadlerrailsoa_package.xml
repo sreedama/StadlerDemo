@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!--
+Copyright 2017 Siemens Product Lifecycle Management Software Inc. All Rights Reserved.
+================================================================================
+Copyright 2017.
+Siemens Product Lifecycle Management Software Inc.
+All Rights Reserved.
+================================================================================
+Copyright 2017 Siemens Product Lifecycle Management Software Inc. All Rights Reserved.
+-->
+<package guid="B52F3FC456A653148C07B4663A81A43F" packageId="sr5stadlerrailsoa">
+    <displayName value="${packageId}.displayName"/>
+    <description value="${packageId}.description"/>
+    <contentType value="application"/>
+    <propertyContribution/>
+    <dependencies/>
+    <artifact artifactType="fnd0_dataModelArtifact" guid="696491230900761C2EA758F2A24CE28B">
+        <deploymentActions>
+            <install>
+                <target description="Perform the file deployment actions including unzip, copy, and delete." name="fileProcessing">
+                    <unzip dest="${Teamcenter_root_path}" src="${Teamcenter_sr5stadlerrailsoa_path}/artifacts/sr5stadlerrailsoa_template.zip"/>
+                    <unzip dest="${Teamcenter_root_path}" src="${Teamcenter_sr5stadlerrailsoa_path}/artifacts/sr5stadlerrailsoa_install.zip"/>
+                    <copy file="${Teamcenter_sr5stadlerrailsoa_path}/artifacts/sr5stadlerrailsoa_icons.zip" todir="${Teamcenter_root_path}/install/sr5stadlerrailsoa"/>
+                </target>
+                <target description="Perform the operations that must be completed prior to the database being updated." name="preDatabaseUpdate">
+                    <TemplateDeploy name="sr5stadlerrailsoa"/>
+                </target>
+                <target description="Perform the operations that are database dependent." name="databaseUpdate"/>
+                <target description="Perform the operations that must be completed after the database update has occurred." name="postDatabaseUpdate"/>
+            </install>
+            <update>
+                <target description="Perform the file deployment actions including unzip, copy, and delete." name="fileProcessing">
+                    <unzip dest="${Teamcenter_root_path}" src="${Teamcenter_sr5stadlerrailsoa_path}/artifacts/sr5stadlerrailsoa_template.zip"/>
+                    <unzip dest="${Teamcenter_root_path}" src="${Teamcenter_sr5stadlerrailsoa_path}/artifacts/sr5stadlerrailsoa_install.zip"/>
+                    <copy file="${Teamcenter_sr5stadlerrailsoa_path}/artifacts/sr5stadlerrailsoa_icons.zip" force="true" overwrite="true" todir="${Teamcenter_root_path}/install/sr5stadlerrailsoa"/>
+                </target>
+                <target description="Perform the operations that must be completed prior to the database being updated." name="preDatabaseUpdate">
+                    <TemplateUpdate name="sr5stadlerrailsoa"/>
+                </target>
+                <target description="Perform the operations that are database dependent." name="databaseUpdate"/>
+                <target description="Perform the operations that must be completed after the database update has occurred." name="postDatabaseUpdate"/>
+            </update>
+        </deploymentActions>
+    </artifact>
+    <artifact artifactType="fnd0_serverArtifact" guid="FEFDAB5E0247AFBC2083087235C985FF">
+        <deploymentActions>
+            <install>
+                <target description="Perform the file deployment actions including unzip, copy, and delete." name="fileProcessing">
+                    <property name="template_rtserver" value="false"/>
+                    <unzip dest="${Teamcenter_root_path}" src="${Teamcenter_sr5stadlerrailsoa_path}/artifacts/sr5stadlerrailsoa_rtserver.zip"/>
+                </target>
+                <target description="Perform the operations that must be completed prior to the database being updated." name="preDatabaseUpdate">
+                    <XInclude destfile="${Teamcenter_root_path}/lang/textserver/no_translation/emh_text.xml" includefile="sr5stadlerrailsoa_errors.xml"/>
+                    <XInclude destfile="${Teamcenter_root_path}/lang/textserver/no_translation/tc_text.xml" includefile="sr5stadlerrailsoa_text.xml"/>
+                </target>
+            </install>
+            <update>
+                <target description="Perform the file deployment actions including unzip, copy, and delete." name="fileProcessing">
+                    <property name="template_rtserver" value="false"/>
+                    <unzip dest="${Teamcenter_root_path}" src="${Teamcenter_sr5stadlerrailsoa_path}/artifacts/sr5stadlerrailsoa_rtserver.zip"/>
+                </target>
+                <target description="Perform the operations that must be completed prior to the database being updated." name="preDatabaseUpdate">
+                    <XInclude destfile="${Teamcenter_root_path}/lang/textserver/no_translation/emh_text.xml" includefile="sr5stadlerrailsoa_errors.xml"/>
+                    <XInclude destfile="${Teamcenter_root_path}/lang/textserver/no_translation/tc_text.xml" includefile="sr5stadlerrailsoa_text.xml"/>
+                </target>
+            </update>
+        </deploymentActions>
+    </artifact>
+</package>

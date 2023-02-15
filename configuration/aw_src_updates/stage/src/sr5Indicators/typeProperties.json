@@ -1,0 +1,50 @@
+{
+    "typeProperties": {
+        "WorkspaceObject": {
+            "additionalProperties": [
+                {
+                    "name": "release_status_list",
+                    "modifiers": [
+                        {
+                            "name": "withProperties",
+                            "Value": "true"
+                        }
+                    ]
+                }
+            ]
+        },
+        "ReleaseStatus": {
+            "additionalProperties": [
+                {
+                    "name": "object_name"
+                },
+                {
+                    "name": "date_released"
+                }
+            ]
+        },
+        "SR5GenDocument": {
+            "additionalProperties": [
+                {
+                    "name": "revision_list",
+                    "modifiers": [
+                        {
+                            "name": "withProperties",
+                            "Value": "true"
+                        }
+                    ]
+                }
+            ]
+        },
+        "SR5GenDocumentRevision": {
+            "additionalProperties": [
+                {
+                    "name": "sr5ExpiryDate"
+                },
+                {
+                    "name": "sr5IsExpired"
+                }
+            ]
+        }
+    }
+}

@@ -1,0 +1,661 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TcBusinessDataLocalization xmlns="http://teamcenter.com/BusinessModel/TcBusinessDataLocalization"
+    Date="">
+<Add>
+   <key locale="de_DE" id="BusinessObject{::}Mat1CompMaterialRevision" status="Approved">Verbundwerkstoff Revision</key>
+   <key locale="de_DE" id="BusinessObject{::}Mat1CompMaterial" status="Approved">Verbundwerkstoff</key>
+   <key locale="de_DE" id="BusinessObject{::}Mat1MatCatalogRevisionMaster" status="Approved">Werkstoffkatalog Revision-Master</key>
+   <key locale="de_DE" id="BusinessObject{::}Mat1MatCatalogRevision" status="Approved">Werkstoffkatalog Revision</key>
+   <key locale="de_DE" id="BusinessObject{::}Mat1MatCatalog" status="Approved">Werkstoffkatalog</key>
+   <key locale="de_DE" id="BusinessObject{::}Mat1MatClassification" status="Approved">Werkstoffklasse</key>
+   <key locale="de_DE" id="BusinessObject{::}Mat1MaterialMaster" status="Approved">Werkstoff-Master</key>
+   <key locale="de_DE" id="BusinessObject{::}Mat1MaterialRanking" status="Approved">Werkstoffrangfolge in der Werkstoffklasse</key>
+   <key locale="de_DE" id="BusinessObject{::}Mat1MaterialRevision" status="Approved">Werkstoff Revision</key>
+   <key locale="de_DE" id="BusinessObject{::}Mat1Material" status="Approved">Werkstoff</key>
+   <key locale="de_DE" id="BusinessObject{::}Mat1Parameter" status="Approved">Werkstoffeigenschaft</key>
+   <key locale="de_DE" id="BusinessObject{::}Mat1UsesMaterialForCoating" status="Approved">Werkstoffe für Beschichtung</key>
+   <key locale="de_DE" id="BusinessObject{::}Mat1UsesMaterial" status="Approved">Werkstoffe</key>
+   <key locale="de_DE" id="BusinessObject{::}SR5CatDefArtARMaster" status="Approved">Katalogdefinitionsartikel AltRep Master</key>
+   <key locale="de_DE" id="BusinessObject{::}SR5CatDefArtARRevisionMaster" status="Approved">Katalogdefinitionsartikel AltRep Revision Master</key>
+   <key locale="de_DE" id="BusinessObject{::}SR5CatDefArtARRevision" status="Invalid">Katalogdefinitionsartikel AltRep Revision</key>
+   <key locale="de_DE" id="BusinessObject{::}SR5CatDefArtAR" status="Approved">Katalogdefinitionsartikel Alternative Repräsentation</key>
+   <key locale="de_DE" id="BusinessObject{::}SR5CatDefArticleMaster" status="Approved">Katalogdefinitionsartikel Master</key>
+   <key locale="de_DE" id="BusinessObject{::}SR5CatDefArticleRevisionMaster" status="Approved">Katalogdefinitionsartikel Revision Master</key>
+   <key locale="de_DE" id="BusinessObject{::}SR5CatDefArticleRevision" status="Approved">Katalogdefinitionsartikel Revision</key>
+   <key locale="de_DE" id="BusinessObject{::}SR5CatDefArticle" status="Approved">Katalogdefinitionsartikel</key>
+   <key locale="de_DE" id="BusinessObject{::}SR5CoatingStructMaster" status="Approved">Beschichtungsstruktur Master</key>
+   <key locale="de_DE" id="BusinessObject{::}SR5CoatingStructRevisionMaster" status="Approved">Beschichtungsstruktur Revision Master</key>
+   <key locale="de_DE" id="BusinessObject{::}SR5CoatingStructRevision" status="Approved">Beschichtungsaufbau Revision</key>
+   <key locale="de_DE" id="BusinessObject{::}SR5CoatingStruct" status="Approved">Beschichtungsaufbau</key>
+   <key locale="de_DE" id="BusinessObject{::}SR5ColorDefRevision" status="Approved">Farbdefinition Revision</key>
+   <key locale="de_DE" id="BusinessObject{::}SR5ColorDef" status="Approved">Farbdefinition</key>
+   <key locale="de_DE" id="BusinessObject{::}SR5DrawingDocMaster" status="Approved">Zeichnungsdokument Master</key>
+   <key locale="de_DE" id="BusinessObject{::}SR5DrawingDocRevisionMaster" status="Approved">Zeichnungsdokument Revision Master</key>
+   <key locale="de_DE" id="BusinessObject{::}SR5DrawingDocRevision" status="Approved">Zeichnungsdokument Revision</key>
+   <key locale="de_DE" id="BusinessObject{::}SR5DrawingDoc" status="Approved">Zeichnungsdokument</key>
+   <key locale="de_DE" id="BusinessObject{::}SR5ElectricAssyRevision" status="Approved">Elektrische Baugruppenänderungsstand</key>
+   <key locale="de_DE" id="BusinessObject{::}SR5ElectricAssy" status="Approved">Elektrische Baugruppe</key>
+   <key locale="de_DE" id="BusinessObject{::}SR5EngRawArticleRevision" status="Approved">Konstruktions-Rohteil Revision</key>
+   <key locale="de_DE" id="BusinessObject{::}SR5EngRawArticle" status="Approved">Konstruktions-Rohteil</key>
+   <key locale="de_DE" id="BusinessObject{::}SR5GenCatPartARMaster" status="Approved">Katalogteil AltRep Revision Master</key>
+   <key locale="de_DE" id="BusinessObject{::}SR5GenCatPartARRevisionMaster" status="Approved">Katalogteil AltRep Revision Master</key>
+   <key locale="de_DE" id="BusinessObject{::}SR5GenCatPartARRevision" status="Approved">Katalogteil AltRep Revision</key>
+   <key locale="de_DE" id="BusinessObject{::}SR5GenCatPartAR" status="Approved">Katalogteil AltRep</key>
+   <key locale="de_DE" id="BusinessObject{::}SR5GenCatPartMaster" status="Approved">Katalogteil Master</key>
+   <key locale="de_DE" id="BusinessObject{::}SR5ManufactPartRevision" status="Approved">Herstellerteileänderungsstand</key>
+   <key locale="de_DE" id="BusinessObject{::}SR5ManufactPart" status="Approved">Herstellerteil</key>
+   <key locale="de_DE" id="BusinessObject{::}SR5ManufacturerRevision" status="Approved">Herstelleränderungsstand</key>
+   <key locale="de_DE" id="BusinessObject{::}SR5Manufacturer" status="Approved">Hersteller</key>
+   <key locale="de_DE" id="BusinessObject{::}SR5MatReqForm" status="Approved">Werkstoffanforderung</key>
+   <key locale="de_DE" id="BusinessObject{::}SR5WeldRevision" status="Approved">Schweissnaht Revision</key>
+   <key locale="de_DE" id="BusinessObject{::}SR5Weld" status="Approved">Schweissnaht</key>
+   <key locale="de_DE" id="LOVValueDescription{::}Mat1UnitsOfMeasure{::}g" status="Approved">Gramm</key>
+   <key locale="de_DE" id="LOVValueDescription{::}Mat1UnitsOfMeasure{::}kg" status="Approved">Kilogramm</key>
+   <key locale="de_DE" id="LOVValueDescription{::}Mat1UnitsOfMeasure{::}mg" status="Approved">Milligramm</key>
+   <key locale="de_DE" id="LOVValueDescription{::}SR5DrawingDCC{::}MTA" status="Approved">Entwurfszeichnungen</key>
+   <key locale="de_DE" id="LOVValueDescription{::}SR5DrawingDCC{::}MTB" status="Approved">Konstruktionszeichnungen</key>
+   <key locale="de_DE" id="LOVValueDescription{::}SR5DrawingDCC{::}MTC" status="Approved">Fertigungs- und Einrichtungszeichnungen</key>
+   <key locale="de_DE" id="LOVValueDescription{::}SR5FastSurfaceProtection{::}OFL001 black"
+       status="Approved">ISO 10683 flZn/nc/TL/x/720h/C u=0.09-0.14</key>
+   <key locale="de_DE" id="LOVValueDescription{::}SR5FastSurfaceProtection{::}OFL002 silver"
+       status="Approved">ISO 10683 flZn/nc/TL/x/720h/C u=0.09-0.14</key>
+   <key locale="de_DE" id="LOVValueDescription{::}SR5FastSurfaceProtection{::}OFL003 silver"
+       status="Approved">ISO 10683 flZn/nc/x/x/480h/x</key>
+   <key locale="de_DE" id="LOVValueDescription{::}SR5FastSurfaceProtection{::}OFL004"
+       status="Approved">ISO 4042 Zn/An/T0/48h</key>
+   <key locale="de_DE" id="LOVValueDescription{::}SR5FastSurfaceProtection{::}OFL005"
+       status="Approved">ISO 4042 Zn8/Gn/T0/72h</key>
+   <key locale="de_DE" id="LOVValueDescription{::}SR5FastSurfaceProtection{::}OFL011 black"
+       status="Approved">ISO 4042 Zn/An/T7/200h/C u=0.09-0.14</key>
+   <key locale="de_DE" id="LOVValueDescription{::}SR5FastSurfaceProtection{::}OFL012"
+       status="Approved">ISO 12683 Zn25M(Fe)</key>
+   <key locale="de_DE" id="LOVValueDescription{::}SR5FastSurfaceProtection{::}OFL013"
+       status="Approved">ISO 1456 Cu/Ni8b</key>
+   <key locale="de_DE" id="LOVValueDescription{::}SR5FastSurfaceProtection{::}OFL014"
+       status="Approved">schwarz chromatieren, DIN EN ISO 4042</key>
+   <key locale="de_DE" id="LOVValueDescription{::}SR5FastSurfaceProtection{::}OFL015 silver"
+       status="Approved">ISO 10683 flZn/nc/TL/x/480h/C u=0.09-0.14</key>
+   <key locale="de_DE" id="LOVValueDescription{::}SR5FastSurfaceProtection{::}OFL021 black"
+       status="Approved">AFC-Deckschicht u=0.09-0.14</key>
+   <key locale="de_DE" id="LOVValueDescription{::}SR5FastSurfaceProtection{::}OFL022"
+       status="Approved">Transparenter Wachs ohne Festschmierstoff u&gt;=0.1</key>
+   <key locale="de_DE" id="LOVValueDescription{::}SR5FastSurfaceProtection{::}OFL023"
+       status="Approved">MIL DTL 13924</key>
+   <key locale="de_DE" id="LOVValueDescription{::}SR5FastSurfaceProtection{::}OFL024"
+       status="Approved">Bruenieren nach DIN 50938</key>
+   <key locale="de_DE" id="LOVValueDescription{::}SR5FastSurfaceProtection{::}OFL025"
+       status="Approved">Phosphatieren nach DIN EN 9717</key>
+   <key locale="de_DE" id="LOVValueDescription{::}SR5FastSurfaceProtection{::}OFL031"
+       status="Approved">DIN 267-28</key>
+   <key locale="de_DE" id="LOVValueDescription{::}SR5FastSurfaceProtection{::}OFL032"
+       status="Approved">DIN 267-27 rot</key>
+   <key locale="de_DE" id="LOVValueDescription{::}SR5FastSurfaceProtection{::}OFL033"
+       status="Approved">DIN 267-27</key>
+   <key locale="de_DE" id="LOVValueDescription{::}SR5FastSurfaceProtection{::}OFL034"
+       status="Approved">Gewinderingbeschichtung WN 903.4</key>
+   <key locale="de_DE" id="LOVValueDescription{::}SR5FastSurfaceProtection{::}OFL041"
+       status="Approved">Unterkopf-Dichtungsbeschichtung</key>
+   <key locale="de_DE" id="LOVValueDescription{::}SR5FastSurfaceProtection{::}OFL051 silver"
+       status="Approved">ISO 10683 flZn/nc/x/x/480h/x, DIN 267-28</key>
+   <key locale="de_DE" id="LOVValueDescription{::}SR5FastSurfaceProtection{::}OFL052 silver"
+       status="Approved">ISO 10683 flZn/nc/x/x/480h/x, DIN 267-27</key>
+   <key locale="de_DE" id="LOVValueDescription{::}SR5FastSurfaceProtection{::}OFL053 silver"
+       status="Approved">ISO 10683 flZn/nc/x/x/480h/x, DIN 267-27</key>
+   <key locale="de_DE" id="LOVValueDescription{::}SR5FastSurfaceProtection{::}OFL054"
+       status="Approved">ISO 4042 Zn/An/T0/48h, DIN 267-28</key>
+   <key locale="de_DE" id="LOVValueDescription{::}SR5FastSurfaceProtection{::}OFL055"
+       status="Approved">ISO 4042 Zn/An/T0/48h, DIN 267-27</key>
+   <key locale="de_DE" id="LOVValueDescription{::}SR5FastSurfaceProtection{::}OFL056"
+       status="Approved">ISO 4042 Zn/An/T0/48h, DIN 267-27</key>
+   <key locale="de_DE" id="LOVValueDescription{::}SR5QCheckEvaluation{::}Defekt" status="Approved">Ist ok mit Defekt</key>
+   <key locale="de_DE" id="LOVValueDescription{::}SR5QCheckEvaluation{::}IO" status="Approved">Ist ok</key>
+   <key locale="de_DE" id="LOVValueDescription{::}SR5QCheckEvaluation{::}KO" status="Approved">Nicht ok</key>
+   <key locale="de_DE" id="LOVValue{::}CM Priority{::}4" status="Approved">Sehr hoch</key>
+   <key locale="de_DE" id="LOVValue{::}Mat1UnitsOfMeasure{::}g" status="Approved">G</key>
+   <key locale="de_DE" id="LOVValue{::}Mat1UnitsOfMeasure{::}kg" status="Approved">KG</key>
+   <key locale="de_DE" id="LOVValue{::}Mat1UnitsOfMeasure{::}mg" status="Approved">MG</key>
+   <key locale="de_DE" id="LOVValue{::}SR5ConfidentialityClass{::}COMMERCIAL" status="Approved">KOMMERZIELL</key>
+   <key locale="de_DE" id="LOVValue{::}SR5ConfidentialityClass{::}CONFIDENTIAL" status="Approved">VERTRAULICH</key>
+   <key locale="de_DE" id="LOVValue{::}SR5ConfidentialityClass{::}FOR INTERNAL USE ONLY"
+       status="Approved">NUR FÜR DEN INTERNEN GEBRAUCH</key>
+   <key locale="de_DE" id="LOVValue{::}SR5ConfidentialityClass{::}PUBLIC" status="Approved">ÖFFENTLICH</key>
+   <key locale="de_DE" id="LOVValue{::}SR5DocumentTemplate{::}Global_DOCX_A4_Document_Landscape_DE"
+       status="Approved">Globales A4 Dokument Quer DE</key>
+   <key locale="de_DE" id="LOVValue{::}SR5DocumentTemplate{::}Global_DOCX_A4_Document_Landscape_EN"
+       status="Approved">Globales A4 Dokument Quer EN</key>
+   <key locale="de_DE" id="LOVValue{::}SR5DocumentTemplate{::}Global_DOCX_A4_Document_Portrait_DE"
+       status="Approved">Globales A4 Dokument Hoch DE</key>
+   <key locale="de_DE" id="LOVValue{::}SR5DocumentTemplate{::}Global_DOCX_A4_Document_Portrait_EN"
+       status="Approved">Globales A4 Dokument Hoch EN</key>
+   <key locale="de_DE" id="LOVValue{::}SR5DocumentTemplate{::}Global_XLSX_A4_Table_Landscape_DE"
+       status="Approved">Globale A4 Tabelle Quer DE</key>
+   <key locale="de_DE" id="LOVValue{::}SR5DocumentTemplate{::}Global_XLSX_A4_Table_Landscape_EN"
+       status="Approved">Globale A4 Tabelle Quer EN</key>
+   <key locale="de_DE" id="LOVValue{::}SR5DocumentTemplate{::}Global_XLSX_A4_Table_Portrait_DE"
+       status="Approved">Globale A4 Tabelle Hoch DE</key>
+   <key locale="de_DE" id="LOVValue{::}SR5DocumentTemplate{::}Global_XLSX_A4_Table_Portrait_EN"
+       status="Approved">Globale A4 Tabelle Hoch EN</key>
+   <key locale="de_DE" id="LOVValue{::}SR5DrawingDCC{::}MTA" status="Approved">MTA</key>
+   <key locale="de_DE" id="LOVValue{::}SR5DrawingDCC{::}MTB" status="Approved">MTB</key>
+   <key locale="de_DE" id="LOVValue{::}SR5DrawingDCC{::}MTC" status="Approved">MTC</key>
+   <key locale="de_DE" id="LOVValue{::}SR5FSFClass{::}1" status="Approved">1 - Bauteil oder Baugruppe mit Bezug auf Stücklisten-/Zeichnungsnummer</key>
+   <key locale="de_DE" id="LOVValue{::}SR5FSFClass{::}2" status="Approved">2 - Bauteil ohne Bezug auf Stücklisten-/Zeichnungsnummer</key>
+   <key locale="de_DE" id="LOVValue{::}SR5FSFClass{::}3" status="Approved">3 - Teile aus Halbfertigmaterial ohne Stückliste oder getrennte Zeichnung (tabellarische Zeichnung)</key>
+   <key locale="de_DE" id="LOVValue{::}SR5FSFClass{::}4" status="Approved">4 - Normteil</key>
+   <key locale="de_DE" id="LOVValue{::}SR5FSFClass{::}5" status="Approved">5 - Katalogteil</key>
+   <key locale="de_DE" id="LOVValue{::}SR5FSFClass{::}6" status="Approved">6 - Elektrisches und elektronisches Bauteil</key>
+   <key locale="de_DE" id="LOVValue{::}SR5FSFClass{::}7" status="Approved">7 - Schweißzusatzwerkstoffe und andere Füllstoffe</key>
+   <key locale="de_DE" id="LOVValue{::}SR5FastSurfaceProtection{::}OFL001 black" status="Approved">OFL001 schwarz</key>
+   <key locale="de_DE" id="LOVValue{::}SR5FastSurfaceProtection{::}OFL002 silver"
+       status="Approved">OFL002 silber</key>
+   <key locale="de_DE" id="LOVValue{::}SR5FastSurfaceProtection{::}OFL003 silver"
+       status="Approved">OFL003 silber</key>
+   <key locale="de_DE" id="LOVValue{::}SR5FastSurfaceProtection{::}OFL004" status="Approved">OFL004</key>
+   <key locale="de_DE" id="LOVValue{::}SR5FastSurfaceProtection{::}OFL005" status="Approved">OFL005</key>
+   <key locale="de_DE" id="LOVValue{::}SR5FastSurfaceProtection{::}OFL011 black" status="Approved">OFL011 schwarz</key>
+   <key locale="de_DE" id="LOVValue{::}SR5FastSurfaceProtection{::}OFL012" status="Approved">OFL012</key>
+   <key locale="de_DE" id="LOVValue{::}SR5FastSurfaceProtection{::}OFL013" status="Approved">OFL013</key>
+   <key locale="de_DE" id="LOVValue{::}SR5FastSurfaceProtection{::}OFL014" status="Approved">OFL014</key>
+   <key locale="de_DE" id="LOVValue{::}SR5FastSurfaceProtection{::}OFL015 silver"
+       status="Approved">OFL015 silber</key>
+   <key locale="de_DE" id="LOVValue{::}SR5FastSurfaceProtection{::}OFL021 black" status="Approved">OFL021 schwarz</key>
+   <key locale="de_DE" id="LOVValue{::}SR5FastSurfaceProtection{::}OFL022" status="Approved">OFL022</key>
+   <key locale="de_DE" id="LOVValue{::}SR5FastSurfaceProtection{::}OFL023" status="Approved">OFL023</key>
+   <key locale="de_DE" id="LOVValue{::}SR5FastSurfaceProtection{::}OFL024" status="Approved">OFL024</key>
+   <key locale="de_DE" id="LOVValue{::}SR5FastSurfaceProtection{::}OFL025" status="Approved">OFL025</key>
+   <key locale="de_DE" id="LOVValue{::}SR5FastSurfaceProtection{::}OFL031" status="Approved">OFL031</key>
+   <key locale="de_DE" id="LOVValue{::}SR5FastSurfaceProtection{::}OFL032" status="Approved">OFL032</key>
+   <key locale="de_DE" id="LOVValue{::}SR5FastSurfaceProtection{::}OFL033" status="Approved">OFL033</key>
+   <key locale="de_DE" id="LOVValue{::}SR5FastSurfaceProtection{::}OFL034" status="Approved">OFL034</key>
+   <key locale="de_DE" id="LOVValue{::}SR5FastSurfaceProtection{::}OFL041" status="Approved">OFL041</key>
+   <key locale="de_DE" id="LOVValue{::}SR5FastSurfaceProtection{::}OFL051 silver"
+       status="Approved">OFL051 silber</key>
+   <key locale="de_DE" id="LOVValue{::}SR5FastSurfaceProtection{::}OFL052 silver"
+       status="Approved">OFL052 silber</key>
+   <key locale="de_DE" id="LOVValue{::}SR5FastSurfaceProtection{::}OFL053 silver"
+       status="Approved">OFL053 silber</key>
+   <key locale="de_DE" id="LOVValue{::}SR5FastSurfaceProtection{::}OFL054" status="Approved">OFL054</key>
+   <key locale="de_DE" id="LOVValue{::}SR5FastSurfaceProtection{::}OFL055" status="Approved">OFL055</key>
+   <key locale="de_DE" id="LOVValue{::}SR5FastSurfaceProtection{::}OFL056" status="Approved">OFL056</key>
+   <key locale="de_DE" id="LOVValue{::}SR5FastSurfaceProtection{::}WIROX" status="Approved">WIROX</key>
+   <key locale="de_DE" id="LOVValue{::}SR5FastSurfaceProtection{::}YELLOX" status="Approved">YELLOX</key>
+   <key locale="de_DE" id="LOVValue{::}SR5FastSurfaceProtection{::}black" status="Approved">schwarz</key>
+   <key locale="de_DE" id="LOVValue{::}SR5FastSurfaceProtection{::}chrome-plated"
+       status="Approved">verchromt</key>
+   <key locale="de_DE" id="LOVValue{::}SR5FastSurfaceProtection{::}cooper-plated"
+       status="Approved">verkupfert</key>
+   <key locale="de_DE" id="LOVValue{::}SR5FastSurfaceProtection{::}ecosysn-MRX" status="Approved">ecosysn-MRX</key>
+   <key locale="de_DE" id="LOVValue{::}SR5FastSurfaceProtection{::}galvanized" status="Approved">verzinkt</key>
+   <key locale="de_DE" id="LOVValue{::}SR5FastSurfaceProtection{::}natural" status="Approved">natur</key>
+   <key locale="de_DE" id="LOVValue{::}SR5FastSurfaceProtection{::}tempering black"
+       status="Approved">verguetungsschwarz</key>
+   <key locale="de_DE" id="LOVValue{::}SR5MATUOM{::}L" status="Approved">Gewicht pro L</key>
+   <key locale="de_DE" id="LOVValue{::}SR5MATUOM{::}ML" status="Approved">Gewicht pro ML</key>
+   <key locale="de_DE" id="LOVValue{::}SR5MATUOM{::}M" status="Approved">Gewicht pro M</key>
+   <key locale="de_DE" id="LOVValue{::}SR5MakeBuy{::}E" status="Approved">E - Eigenfertigung</key>
+   <key locale="de_DE" id="LOVValue{::}SR5MakeBuy{::}F" status="Approved">F - Fremdbeschaffung</key>
+   <key locale="de_DE" id="LOVValue{::}SR5MakeBuy{::}X" status="Approved">X - Beide Beschaffungsarten</key>
+   <key locale="de_DE" id="LOVValue{::}SR5ObjectTypesReduced{::}BOMView Revision"
+       status="Approved">Stücklistenansicht-Änderungsstand</key>
+   <key locale="de_DE" id="LOVValue{::}SR5ObjectTypesReduced{::}BOMView" status="Approved">Stücklistenansicht</key>
+   <key locale="de_DE" id="LOVValue{::}SR5QCheckEvaluation{::}Defekt" status="Approved">Defekt</key>
+   <key locale="de_DE" id="LOVValue{::}SR5QCheckEvaluation{::}IO" status="Approved">IO</key>
+   <key locale="de_DE" id="LOVValue{::}SR5QCheckEvaluation{::}KO" status="Approved">KO</key>
+   <key locale="de_DE" id="LOVValue{::}SR5_CM_CR_Reason{::}Initial Engineering Release"
+       status="Approved">Erstfreigabe Engineering</key>
+   <key locale="de_DE" id="LOVValue{::}SR5_DIN_MPG{::}A" status="Approved">A - Übergeordnete Elemente/Systeme (Zug)</key>
+   <key locale="de_DE" id="LOVValue{::}SR5_DIN_MPG{::}B" status="Approved">B - Fahrzeugkasten</key>
+   <key locale="de_DE" id="LOVValue{::}SR5_DIN_MPG{::}C" status="Approved">C - Fahrzeugausbau</key>
+   <key locale="de_DE" id="LOVValue{::}SR5_DIN_MPG{::}D" status="Approved">D - Fahrzeuginneneinrichtung</key>
+   <key locale="de_DE" id="LOVValue{::}SR5_DIN_MPG{::}E" status="Approved">E - Fahrwerk</key>
+   <key locale="de_DE" id="LOVValue{::}SR5_DIN_MPG{::}F" status="Approved">F - Energieanlage, Antriebsanlage</key>
+   <key locale="de_DE" id="LOVValue{::}SR5_DIN_MPG{::}G" status="Approved">G - Steuerungsanlage für Fahrbetrieb</key>
+   <key locale="de_DE" id="LOVValue{::}SR5_DIN_MPG{::}H" status="Approved">H - Hilfsbetriebsanlage</key>
+   <key locale="de_DE" id="LOVValue{::}SR5_DIN_MPG{::}J" status="Approved">J - Überwachungs- und Sicherheitseinrichtungen</key>
+   <key locale="de_DE" id="LOVValue{::}SR5_DIN_MPG{::}K" status="Approved">K - Beleuchtung</key>
+   <key locale="de_DE" id="LOVValue{::}SR5_DIN_MPG{::}L" status="Approved">L - Klimatisierung</key>
+   <key locale="de_DE" id="LOVValue{::}SR5_DIN_MPG{::}M" status="Approved">M - Nebenbetriebsanlage</key>
+   <key locale="de_DE" id="LOVValue{::}SR5_DIN_MPG{::}N" status="Approved">N - Türen, Einstiege</key>
+   <key locale="de_DE" id="LOVValue{::}SR5_DIN_MPG{::}P" status="Approved">P - Informationseinrichtungen</key>
+   <key locale="de_DE" id="LOVValue{::}SR5_DIN_MPG{::}Q" status="Approved">Q - Pneumatik/Hydraulik</key>
+   <key locale="de_DE" id="LOVValue{::}SR5_DIN_MPG{::}R" status="Approved">R - Bremse</key>
+   <key locale="de_DE" id="LOVValue{::}SR5_DIN_MPG{::}S" status="Approved">S - Fahrzeugverbindungseinrichtungen</key>
+   <key locale="de_DE" id="LOVValue{::}SR5_DIN_MPG{::}T" status="Approved">T - Tragsysteme, Umschliessungen</key>
+   <key locale="de_DE" id="LOVValue{::}SR5_DIN_MPG{::}U" status="Approved">U - Elektrische Leitungsverlegung</key>
+   <key locale="de_DE" id="LOVValue{::}SR5_DIN_SPG_A{::}AB" status="Approved">AB - Übergreifende Systemdokumentation (Zug)</key>
+   <key locale="de_DE" id="LOVValue{::}SR5_DIN_SPG_A{::}AC" status="Approved">AC - Verbindungssysteme mechanisch (übergeordnet)</key>
+   <key locale="de_DE" id="LOVValue{::}SR5_DIN_SPG_A{::}AD" status="Approved">AD - Verbindungssysteme elektrisch (übergeordnet)</key>
+   <key locale="de_DE" id="LOVValue{::}SR5_DIN_SPG_A{::}AE" status="Approved">AE - Kleben und Dichten (übergeordnet)</key>
+   <key locale="de_DE" id="LOVValue{::}SR5_DIN_SPG_A{::}AF" status="Approved">AF - Rohstoffe (Halbzeuge)</key>
+   <key locale="de_DE" id="LOVValue{::}SR5_DIN_SPG_A{::}AG" status="Approved">AG - Werkzeug/Spezialwerkzeug</key>
+   <key locale="de_DE" id="LOVValue{::}SR5_DIN_SPG_A{::}AH" status="Approved">AH - Betriebsmittel</key>
+   <key locale="de_DE" id="LOVValue{::}SR5_DIN_SPG_B{::}BA" status="Approved">BA - Fahrzeugkasten</key>
+   <key locale="de_DE" id="LOVValue{::}SR5_DIN_SPG_B{::}BB" status="Approved">BB - Untergestell</key>
+   <key locale="de_DE" id="LOVValue{::}SR5_DIN_SPG_B{::}BC" status="Approved">BC - Längswände</key>
+   <key locale="de_DE" id="LOVValue{::}SR5_DIN_SPG_B{::}BD" status="Approved">BD - Dach</key>
+   <key locale="de_DE" id="LOVValue{::}SR5_DIN_SPG_B{::}BE" status="Approved">BE - Fahrzeugkopf</key>
+   <key locale="de_DE" id="LOVValue{::}SR5_DIN_SPG_B{::}BF" status="Approved">BF - Stirnwand (Fahrzeugkasten)</key>
+   <key locale="de_DE" id="LOVValue{::}SR5_DIN_SPG_B{::}BG" status="Approved">BG - Anschweissteile, Anbauteile</key>
+   <key locale="de_DE" id="LOVValue{::}SR5_DIN_SPG_B{::}BH" status="Approved">BH - Zwischenboden (Fahrzeugkasten)</key>
+   <key locale="de_DE" id="LOVValue{::}SR5_DIN_SPG_B{::}BJ" status="Approved">BJ - Zwischenwand (tragend)</key>
+   <key locale="de_DE" id="LOVValue{::}SR5_DIN_SPG_C{::}CA" status="Approved">CA - Fahrzeugausbau</key>
+   <key locale="de_DE" id="LOVValue{::}SR5_DIN_SPG_C{::}CB" status="Approved">CB - Fenster</key>
+   <key locale="de_DE" id="LOVValue{::}SR5_DIN_SPG_C{::}CC" status="Approved">CC - Fussboden</key>
+   <key locale="de_DE" id="LOVValue{::}SR5_DIN_SPG_C{::}CD" status="Approved">CD - Innenverkleidung</key>
+   <key locale="de_DE" id="LOVValue{::}SR5_DIN_SPG_C{::}CE" status="Approved">CE - Trennwand</key>
+   <key locale="de_DE" id="LOVValue{::}SR5_DIN_SPG_C{::}CF" status="Approved">CF - Aussenanbauten</key>
+   <key locale="de_DE" id="LOVValue{::}SR5_DIN_SPG_C{::}CG" status="Approved">CG - Fahrzeugbeschichtung</key>
+   <key locale="de_DE" id="LOVValue{::}SR5_DIN_SPG_C{::}CH" status="Approved">CH - Isolierung und Klebstoffe</key>
+   <key locale="de_DE" id="LOVValue{::}SR5_DIN_SPG_C{::}CZ" status="Approved">CZ - Befestigungselemente (Innenraum)</key>
+   <key locale="de_DE" id="LOVValue{::}SR5_DIN_SPG_D{::}DA" status="Approved">DA - Fahrzeuginneneinrichtung</key>
+   <key locale="de_DE" id="LOVValue{::}SR5_DIN_SPG_D{::}DB" status="Approved">DB - Haltestangen, Griffe (Innenraum)</key>
+   <key locale="de_DE" id="LOVValue{::}SR5_DIN_SPG_D{::}DC" status="Approved">DC - Sitze, Liegen, Tische</key>
+   <key locale="de_DE" id="LOVValue{::}SR5_DIN_SPG_D{::}DD" status="Approved">DD - Sanitäreinrichtungen</key>
+   <key locale="de_DE" id="LOVValue{::}SR5_DIN_SPG_D{::}DE" status="Approved">DE - Gepäckablage</key>
+   <key locale="de_DE" id="LOVValue{::}SR5_DIN_SPG_D{::}DF" status="Approved">DF - Zusätzliche Einrichtungen (innen)</key>
+   <key locale="de_DE" id="LOVValue{::}SR5_DIN_SPG_E{::}EA" status="Approved">EA - Fahrwerk</key>
+   <key locale="de_DE" id="LOVValue{::}SR5_DIN_SPG_E{::}EB" status="Approved">EB - Tragende Strukturen Fahrwerk</key>
+   <key locale="de_DE" id="LOVValue{::}SR5_DIN_SPG_E{::}EC" status="Approved">EC - Radsatz, Lager, Führung, Rad</key>
+   <key locale="de_DE" id="LOVValue{::}SR5_DIN_SPG_E{::}ED" status="Approved">ED - Federung, Dämpfung, Ausgleich</key>
+   <key locale="de_DE" id="LOVValue{::}SR5_DIN_SPG_E{::}EE" status="Approved">EE - Lenkungssysteme (aktiv)</key>
+   <key locale="de_DE" id="LOVValue{::}SR5_DIN_SPG_E{::}EF" status="Approved">EF - Anlenkungssysteme (passiv)</key>
+   <key locale="de_DE" id="LOVValue{::}SR5_DIN_SPG_E{::}EG" status="Approved">EG - Schutzanbauteile</key>
+   <key locale="de_DE" id="LOVValue{::}SR5_DIN_SPG_F{::}FA" status="Approved">FA - Energieanlage, Antriebsanlage</key>
+   <key locale="de_DE" id="LOVValue{::}SR5_DIN_SPG_F{::}FB" status="Approved">FB - Energiezuführung</key>
+   <key locale="de_DE" id="LOVValue{::}SR5_DIN_SPG_F{::}FC" status="Approved">FC - Energieerzeugung</key>
+   <key locale="de_DE" id="LOVValue{::}SR5_DIN_SPG_F{::}FD" status="Approved">FD - Energieumsetzung</key>
+   <key locale="de_DE" id="LOVValue{::}SR5_DIN_SPG_F{::}FE" status="Approved">FE - Energieabführung</key>
+   <key locale="de_DE" id="LOVValue{::}SR5_DIN_SPG_F{::}FF" status="Approved">FF - Energiespeicherung</key>
+   <key locale="de_DE" id="LOVValue{::}SR5_DIN_SPG_G{::}GA" status="Approved">GA - Steuerungsanlage für Fahrbetrieb</key>
+   <key locale="de_DE" id="LOVValue{::}SR5_DIN_SPG_G{::}GB" status="Approved">GB - Steuerung für Energiezuführung</key>
+   <key locale="de_DE" id="LOVValue{::}SR5_DIN_SPG_G{::}GC" status="Approved">GC - Steuerung für Fahren und Bremsen</key>
+   <key locale="de_DE" id="LOVValue{::}SR5_DIN_SPG_G{::}GD" status="Approved">GD - Steuerung für Energieerzeugung</key>
+   <key locale="de_DE" id="LOVValue{::}SR5_DIN_SPG_G{::}GE" status="Approved">GE - Systemerfassung</key>
+   <key locale="de_DE" id="LOVValue{::}SR5_DIN_SPG_G{::}GF" status="Approved">GF - Steuerung für Energiespeicherung</key>
+   <key locale="de_DE" id="LOVValue{::}SR5_DIN_SPG_H{::}HA" status="Approved">HA - Hilfsbetriebsanlage</key>
+   <key locale="de_DE" id="LOVValue{::}SR5_DIN_SPG_H{::}HB" status="Approved">HB - Umformereinrichtung</key>
+   <key locale="de_DE" id="LOVValue{::}SR5_DIN_SPG_H{::}HC" status="Approved">HC - Batterieeinrichtung</key>
+   <key locale="de_DE" id="LOVValue{::}SR5_DIN_SPG_H{::}HD" status="Approved">HD - Bordnetz</key>
+   <key locale="de_DE" id="LOVValue{::}SR5_DIN_SPG_H{::}HE" status="Approved">HE - Kühlung für Energie- und Antriebsanlage</key>
+   <key locale="de_DE" id="LOVValue{::}SR5_DIN_SPG_H{::}HF" status="Approved">HF - Notstromerzeugungseinrichtung</key>
+   <key locale="de_DE" id="LOVValue{::}SR5_DIN_SPG_J{::}JA" status="Approved">JA - Überwachungs- und Sicherheitseinrichtungen</key>
+   <key locale="de_DE" id="LOVValue{::}SR5_DIN_SPG_J{::}JB" status="Approved">JB - Mess- und Schutzeinrichtungen</key>
+   <key locale="de_DE" id="LOVValue{::}SR5_DIN_SPG_J{::}JC" status="Approved">JC - Melden, Registrieren, Anzeigen</key>
+   <key locale="de_DE" id="LOVValue{::}SR5_DIN_SPG_J{::}JD" status="Approved">JD - Sicherheitseinrichtungen</key>
+   <key locale="de_DE" id="LOVValue{::}SR5_DIN_SPG_J{::}JE" status="Approved">JE - Datenübertragungseinrichtungen</key>
+   <key locale="de_DE" id="LOVValue{::}SR5_DIN_SPG_J{::}JF" status="Approved">JF - Kommunikationseinrichtungen</key>
+   <key locale="de_DE" id="LOVValue{::}SR5_DIN_SPG_J{::}JG" status="Approved">JG - Zusätzliche Ausstattungen</key>
+   <key locale="de_DE" id="LOVValue{::}SR5_DIN_SPG_K{::}KA" status="Approved">KA - Beleuchtung</key>
+   <key locale="de_DE" id="LOVValue{::}SR5_DIN_SPG_K{::}KB" status="Approved">KB - Aussenbeleuchtungseinrichtungen</key>
+   <key locale="de_DE" id="LOVValue{::}SR5_DIN_SPG_K{::}KC" status="Approved">KC - Innenbeleuchtungseinrichtungen</key>
+   <key locale="de_DE" id="LOVValue{::}SR5_DIN_SPG_L{::}LA" status="Approved">LA - Klimatisierung</key>
+   <key locale="de_DE" id="LOVValue{::}SR5_DIN_SPG_L{::}LB" status="Approved">LB - Ansaugung/Entlüftung</key>
+   <key locale="de_DE" id="LOVValue{::}SR5_DIN_SPG_L{::}LC" status="Approved">LC - Aufbereitung (Klimatisierung)</key>
+   <key locale="de_DE" id="LOVValue{::}SR5_DIN_SPG_L{::}LD" status="Approved">LD - Verteilung (HLK)</key>
+   <key locale="de_DE" id="LOVValue{::}SR5_DIN_SPG_L{::}LE" status="Approved">LE - Regelung (HLK)</key>
+   <key locale="de_DE" id="LOVValue{::}SR5_DIN_SPG_M{::}MA" status="Approved">MA - Nebenbetriebsanlage</key>
+   <key locale="de_DE" id="LOVValue{::}SR5_DIN_SPG_M{::}MB" status="Approved">MB - Besandungsanlage</key>
+   <key locale="de_DE" id="LOVValue{::}SR5_DIN_SPG_M{::}MC" status="Approved">MC - Spurkranz-/Schienenkopfschmierung</key>
+   <key locale="de_DE" id="LOVValue{::}SR5_DIN_SPG_M{::}MD" status="Approved">MD - Weichensteuerung</key>
+   <key locale="de_DE" id="LOVValue{::}SR5_DIN_SPG_M{::}ME" status="Approved">ME - Fahrausweiseinrichtungen</key>
+   <key locale="de_DE" id="LOVValue{::}SR5_DIN_SPG_M{::}MF" status="Approved">MF - Fahrgastzähleinrichtung</key>
+   <key locale="de_DE" id="LOVValue{::}SR5_DIN_SPG_N{::}NA" status="Approved">NA - Türen, Einstiege</key>
+   <key locale="de_DE" id="LOVValue{::}SR5_DIN_SPG_N{::}NB" status="Approved">NB - Aussentür</key>
+   <key locale="de_DE" id="LOVValue{::}SR5_DIN_SPG_N{::}NC" status="Approved">NC - Innentüren</key>
+   <key locale="de_DE" id="LOVValue{::}SR5_DIN_SPG_N{::}ND" status="Approved">ND - Einstiege, Aufstiege (aussen)</key>
+   <key locale="de_DE" id="LOVValue{::}SR5_DIN_SPG_N{::}NE" status="Invalid">NE - Behinderteneinstiege</key>
+   <key locale="de_DE" id="LOVValue{::}SR5_DIN_SPG_P{::}PA" status="Approved">PA - Informationseinrichtungen</key>
+   <key locale="de_DE" id="LOVValue{::}SR5_DIN_SPG_P{::}PB" status="Approved">PB - Fahrgastinformationssystem FIS</key>
+   <key locale="de_DE" id="LOVValue{::}SR5_DIN_SPG_P{::}PC" status="Approved">PC - Optische Informationselemente</key>
+   <key locale="de_DE" id="LOVValue{::}SR5_DIN_SPG_P{::}PD" status="Approved">PD - Unterhaltung</key>
+   <key locale="de_DE" id="LOVValue{::}SR5_DIN_SPG_P{::}PE" status="Approved">PE - Werbung</key>
+   <key locale="de_DE" id="LOVValue{::}SR5_DIN_SPG_P{::}PF" status="Approved">PF - Akustische Informationseinrichtungen</key>
+   <key locale="de_DE" id="LOVValue{::}SR5_DIN_SPG_Q{::}QA" status="Approved">QA - Pneumatik/Hydraulik</key>
+   <key locale="de_DE" id="LOVValue{::}SR5_DIN_SPG_Q{::}QB" status="Approved">QB - Erzeugung (Pneumatik/Hydraulik)</key>
+   <key locale="de_DE" id="LOVValue{::}SR5_DIN_SPG_Q{::}QC" status="Approved">QC - Aufbereitung (Pneumatik/Hydraulik)</key>
+   <key locale="de_DE" id="LOVValue{::}SR5_DIN_SPG_Q{::}QD" status="Approved">QD - Bevorratung (Pneumatik/Hydraulik)</key>
+   <key locale="de_DE" id="LOVValue{::}SR5_DIN_SPG_Q{::}QE" status="Approved">QE - Verteilung (Pneumatik/Hydraulik)</key>
+   <key locale="de_DE" id="LOVValue{::}SR5_DIN_SPG_R{::}RA" status="Approved">RA - Bremse</key>
+   <key locale="de_DE" id="LOVValue{::}SR5_DIN_SPG_R{::}RB" status="Approved">RB - Bremselemente</key>
+   <key locale="de_DE" id="LOVValue{::}SR5_DIN_SPG_R{::}RC" status="Approved">RC - Mechanische Bremskraftübertragung</key>
+   <key locale="de_DE" id="LOVValue{::}SR5_DIN_SPG_S{::}SA" status="Approved">SA - Fahrzeugverbindungseinrichtungen</key>
+   <key locale="de_DE" id="LOVValue{::}SR5_DIN_SPG_S{::}SB" status="Approved">SB - Automatische Kupplungseinrichtung</key>
+   <key locale="de_DE" id="LOVValue{::}SR5_DIN_SPG_S{::}SC" status="Approved">SC - Manuelle Zugeinrichtung</key>
+   <key locale="de_DE" id="LOVValue{::}SR5_DIN_SPG_S{::}SD" status="Approved">SD - Stosseinrichtungen, Puffereinrichtungen</key>
+   <key locale="de_DE" id="LOVValue{::}SR5_DIN_SPG_S{::}SE" status="Approved">SE - Abschleppeinrichtungen</key>
+   <key locale="de_DE" id="LOVValue{::}SR5_DIN_SPG_S{::}SF" status="Approved">SF - Übergänge/Übergangseinrichtung</key>
+   <key locale="de_DE" id="LOVValue{::}SR5_DIN_SPG_S{::}SG" status="Approved">SG - Schnittstelle Fahrzeug-Fahrzeug</key>
+   <key locale="de_DE" id="LOVValue{::}SR5_DIN_SPG_T{::}TA" status="Approved">TA - Silo (Güterwagen)</key>
+   <key locale="de_DE" id="LOVValue{::}SR5_DIN_SPG_T{::}TB" status="Approved">TB - Schränke, Behälter, Container</key>
+   <key locale="de_DE" id="LOVValue{::}SR5_DIN_SPG_T{::}TC" status="Approved">TC - Gerüste/Tafeln</key>
+   <key locale="de_DE" id="LOVValue{::}SR5_DIN_SPG_T{::}TD" status="Approved">TD - Bedien-/Anzeigeeinheit</key>
+   <key locale="de_DE" id="LOVValue{::}SR5_DIN_SPG_T{::}TE" status="Approved">TE - Elektronische Aufbausysteme</key>
+   <key locale="de_DE" id="LOVValue{::}SR5_DIN_SPG_U{::}UA" status="Approved">UA - Elektrische Leitungsverlegung</key>
+   <key locale="de_DE" id="LOVValue{::}SR5_DIN_SPG_U{::}UB" status="Approved">UB - Kabel, Leitungen und Schienen</key>
+   <key locale="de_DE" id="LOVValue{::}SR5_DIN_SPG_U{::}UC" status="Approved">UC - Bezeichnungs- und Anschlussmaterial</key>
+   <key locale="de_DE" id="LOVValue{::}SR5_DIN_SPG_U{::}UD" status="Approved">UD - Verbindungsmaterial elektrisch</key>
+   <key locale="de_DE" id="LOVValue{::}SR5_DIN_SPG_U{::}UE" status="Approved">UE - Durchführungen elektrisch</key>
+   <key locale="de_DE" id="LOVValue{::}SR5_DIN_SPG_U{::}UF" status="Approved">UF - Leitungskanäle, -rohre, -schläuche</key>
+   <key locale="de_DE" id="Property{::}Awb0ConditionalElement{::}sr5ConfidentialityClass"
+       status="Approved">Vertraulichkeitsklasse</key>
+   <key locale="de_DE" id="Property{::}Awb0ConditionalElement{::}sr5Dimension" status="Approved">Abmessung</key>
+   <key locale="de_DE" id="Property{::}Awb0ConditionalElement{::}sr5DocumentContent"
+       status="Approved">Dokumenten Klassifikationscode</key>
+   <key locale="de_DE" id="Property{::}Awb0ConditionalElement{::}sr5E3Transferred"
+       status="Approved">E3 Übertragen</key>
+   <key locale="de_DE" id="Property{::}Awb0ConditionalElement{::}sr5ExpiryDate" status="Approved">Verfallsdatum</key>
+   <key locale="de_DE" id="Property{::}Awb0ConditionalElement{::}sr5IndicatorsAW"
+       status="Approved">Indikatoren</key>
+   <key locale="de_DE" id="Property{::}Awb0ConditionalElement{::}sr5MBOMPosInfo" status="Approved">MBOM Positionsinfo</key>
+   <key locale="de_DE" id="Property{::}Awb0ConditionalElement{::}sr5MakeBuy" status="Approved">Beschaffungsart</key>
+   <key locale="de_DE" id="Property{::}Awb0ConditionalElement{::}sr5Manufacturer"
+       status="Approved">Hersteller</key>
+   <key locale="de_DE" id="Property{::}Awb0ConditionalElement{::}sr5NormNo" status="Approved">Normnummer</key>
+   <key locale="de_DE" id="Property{::}Awb0ConditionalElement{::}sr5ReqVerDocumentContent"
+       status="Approved">Angeforderte Dokumentenklassifikation</key>
+   <key locale="de_DE" id="Property{::}Awb0Element{::}sr5AssemblyUnit" status="Approved">Montageeinheit</key>
+   <key locale="de_DE" id="Property{::}Awb0Element{::}sr5Assignment" status="Approved">Aufstellort EN 15380-3</key>
+   <key locale="de_DE" id="Property{::}Awb0Element{::}sr5Location" status="Approved">Einbauort EN 15380-3</key>
+   <key locale="de_DE" id="Property{::}BOMLine{::}SR5AssemblyUnit" status="Approved">Montageeinheit</key>
+   <key locale="de_DE" id="Property{::}BOMLine{::}SR5Assignment" status="Approved">Aufstellort EN 15380-3</key>
+   <key locale="de_DE" id="Property{::}BOMLine{::}SR5E3Transferred" status="Approved">E3 Übertragen</key>
+   <key locale="de_DE" id="Property{::}BOMLine{::}SR5Location" status="Approved">Einbauort EN 15380-3</key>
+   <key locale="de_DE" id="Property{::}BOMLine{::}SR5MBOMPosInfo" status="Approved">MBOM Positionsinfo</key>
+   <key locale="de_DE" id="Property{::}BOMLine{::}sr5AltRepList" status="Approved">Alternative Repräsentationen</key>
+   <key locale="de_DE" id="Property{::}BOMLine{::}sr5MakeBuy" status="Approved">Beschaffungsart</key>
+   <key locale="de_DE" id="Property{::}ChangeItemRevision{::}CMHasImpactedItem" status="Approved">Betroffene Elemente</key>
+   <key locale="de_DE" id="Property{::}ChangeItemRevision{::}CMHasProblemItem" status="Approved">Problemverursachende Elemente</key>
+   <key locale="de_DE" id="Property{::}ChangeItemRevision{::}CMHasSolutionItem" status="Approved">Lösungselemente</key>
+   <key locale="de_DE" id="Property{::}ChangeItemRevision{::}ChangeImplementationBoard"
+       status="Approved">Change Implementation Board</key>
+   <key locale="de_DE" id="Property{::}ChangeItemRevision{::}ChangeReviewBoard" status="Approved">Change Review Board</key>
+   <key locale="de_DE" id="Property{::}ChangeItemRevision{::}cm0AuthoringChangeRevision"
+       status="Approved">Beschreibende Änderung</key>
+   <key locale="de_DE" id="Property{::}ChangeItemRevision{::}cm0ChangeContributors"
+       status="Approved">Beitragsleister zur Änderung</key>
+   <key locale="de_DE" id="Property{::}ChangeItemRevision{::}object_name" status="Approved">Änderungstitel</key>
+   <key locale="de_DE" id="Property{::}ChangeItemRevision{::}sr5CMAffAreas" status="Approved">Betroffene Zulassungsbereiche</key>
+   <key locale="de_DE" id="Property{::}ChangeItemRevision{::}sr5CMAffArea" status="Approved">Betroffene Zulassungsbereiche</key>
+   <key locale="de_DE" id="Property{::}ChangeItemRevision{::}sr5CMCustDoc" status="Approved">Kundendokumentation</key>
+   <key locale="de_DE" id="Property{::}ChangeItemRevision{::}sr5CMDateOfCustApproval"
+       status="Approved">Datum der Kundengenehmigung</key>
+   <key locale="de_DE" id="Property{::}ChangeItemRevision{::}sr5CMEffortAdmission"
+       status="Approved">Aufwand Zulassung (h)</key>
+   <key locale="de_DE" id="Property{::}ChangeItemRevision{::}sr5CMEffortEng" status="Approved">Aufwand Engineering (h)</key>
+   <key locale="de_DE" id="Property{::}ChangeItemRevision{::}sr5CMEffortIBS" status="Approved">Aufwand IBS (h)</key>
+   <key locale="de_DE" id="Property{::}ChangeItemRevision{::}sr5CMEffortProc" status="Approved">Aufwand Einkauf (Project Currency)</key>
+   <key locale="de_DE" id="Property{::}ChangeItemRevision{::}sr5CMEffortProd" status="Approved">Aufwand Produktion (h)</key>
+   <key locale="de_DE" id="Property{::}ChangeItemRevision{::}sr5CMEffortService" status="Approved">Aufwand Service (h)</key>
+   <key locale="de_DE" id="Property{::}ChangeItemRevision{::}sr5CMEffortWarrenty"
+       status="Approved">Aufwand Gewährleistung (h)</key>
+   <key locale="de_DE" id="Property{::}ChangeItemRevision{::}sr5CMEngArea" status="Approved">Engineeringbereich</key>
+   <key locale="de_DE" id="Property{::}ChangeItemRevision{::}sr5CMImpDevProd" status="Approved">Auswirkung auf gelieferte Teile/Fhg.</key>
+   <key locale="de_DE" id="Property{::}ChangeItemRevision{::}sr5CMProdImps" status="Approved">Auswirkung auf Produkteigenschaften</key>
+   <key locale="de_DE" id="Property{::}ChangeItemRevision{::}sr5CMProdImp" status="Approved">Auswirkung auf Produkteigenschaften</key>
+   <key locale="de_DE" id="Property{::}ChangeItemRevision{::}sr5CMPropEffectivity"
+       status="Approved">Planwert Gültigkeit</key>
+   <key locale="de_DE" id="Property{::}ChangeItemRevision{::}sr5CMRedPenReqDate" status="Approved">Datum Rotstift Änderung</key>
+   <key locale="de_DE" id="Property{::}ChangeItemRevision{::}sr5CMRedPenReq" status="Approved">Rotstift Änderung</key>
+   <key locale="de_DE" id="Property{::}ChangeItemRevision{::}sr5CMRetoReq" status="Approved">Rollkur erforderlich</key>
+   <key locale="de_DE" id="Property{::}ChangeItemRevision{::}sr5CMSAPQN" status="Invalid">Abweichung (Q-) Referenz</key>
+   <key locale="de_DE" id="Property{::}ChangeItemRevision{::}sr5CMSafetyRel" status="Approved">Sicherheitsrelevant</key>
+   <key locale="de_DE" id="Property{::}ChangeItemRevision{::}sr5CMStatusOfCustApproval"
+       status="Approved">Status der Kundengenehmigung</key>
+   <key locale="de_DE" id="Property{::}ChangeItemRevision{::}sr5CMisCustApprReq" status="Approved">Kundengenehmigung erforderlich</key>
+   <key locale="de_DE" id="Property{::}ChangeItemRevision{::}sr5CMisRelIBS" status="Approved">IBS /Typentest relevant</key>
+   <key locale="de_DE" id="Property{::}ChangeItemRevision{::}sr5CMisRelProdReg" status="Approved">Zulassungsrelevant</key>
+   <key locale="de_DE" id="Property{::}ChangeItemRevision{::}sr5CustReqRef" status="Approved">Betroffener Lastenheftpunkt</key>
+   <key locale="de_DE" id="Property{::}ChangeItemRevision{::}sr5ProjectList" status="Invalid">Projekte</key>
+   <key locale="de_DE" id="Property{::}ChangeItemRevision{::}sr5Project" status="Invalid">Projekt Referenz</key>
+   <key locale="de_DE" id="Property{::}ChangeItem{::}object_name" status="Invalid">Übersicht</key>
+   <key locale="de_DE" id="Property{::}ChangeNoticeRevision{::}ChangeImplementationBoard"
+       status="Approved">Change Implementation Board</key>
+   <key locale="de_DE" id="Property{::}ChangeNoticeRevision{::}ChangeReviewBoard"
+       status="Approved">Change Review Board</key>
+   <key locale="de_DE" id="Property{::}ChangeNoticeRevision{::}object_name" status="Invalid">Änderungstitel</key>
+   <key locale="de_DE" id="Property{::}ChangeNotice{::}object_name" status="Invalid">Übersicht</key>
+   <key locale="de_DE" id="Property{::}ChangeRequestRevision{::}CMReason" status="Approved">Änderungsgrund</key>
+   <key locale="de_DE" id="Property{::}ChangeRequestRevision{::}object_name" status="Invalid">Änderungstitel</key>
+   <key locale="de_DE" id="Property{::}ChangeRequestRevision{::}sr5CMApprDueDate"
+       status="Approved">Zieldatum ECR Freigabe</key>
+   <key locale="de_DE" id="Property{::}ChangeRequest{::}object_name" status="Invalid">Übersicht</key>
+   <key locale="de_DE" id="Property{::}Dataset{::}sr5DocLanguage" status="Approved">Dokumentsprache</key>
+   <key locale="de_DE" id="Property{::}Dataset{::}sr5QCheckEvaluation" status="Approved">Beurteilung QChecker</key>
+   <key locale="de_DE" id="Property{::}Dataset{::}sr5QCheckTimestamp" status="Approved">Prüfzeitpunkt QChecker</key>
+   <key locale="de_DE" id="Property{::}ItemRevision{::}sr5ChangeDescription" status="Approved">Änderungsbeschreibung</key>
+   <key locale="de_DE" id="Property{::}ItemRevision{::}sr5ExternalRevision" status="Approved">Externe Revision</key>
+   <key locale="de_DE" id="Property{::}ItemRevision{::}sr5ObjectNameTerm1" status="Approved">Name Begriff 1</key>
+   <key locale="de_DE" id="Property{::}ItemRevision{::}sr5ObjectNameTerm2" status="Approved">Name Begriff 2</key>
+   <key locale="de_DE" id="Property{::}ItemRevision{::}sr5ObjectNameTerm3" status="Approved">Name Begriff 3</key>
+   <key locale="de_DE" id="Property{::}Item{::}sr5ConfidentialityClass" status="Approved">Vertraulichkeitsklasse</key>
+   <key locale="de_DE" id="Property{::}Item{::}sr5CreatedBy" status="Approved">Erstellt von</key>
+   <key locale="de_DE" id="Property{::}Mat1InheritedParameter{::}mat1OwningMaterialRevision"
+       status="Approved">Eigentümerwerkstoffversion</key>
+   <key locale="de_DE" id="Property{::}Mat1MatCatalogRevision{::}mat1MatClassifications"
+       status="Approved">Werkstoffklassen</key>
+   <key locale="de_DE" id="Property{::}Mat1MatCatalogRevision{::}mat1MaterialRevisions"
+       status="Approved">Katalogwerkstoffe</key>
+   <key locale="de_DE" id="Property{::}Mat1MatClassification{::}mat1MatCatalog" status="Approved">Werkstoffkatalog</key>
+   <key locale="de_DE" id="Property{::}Mat1MatClassification{::}mat1MatClassPath"
+       status="Approved">Werkstoffklasse - vollständiger Pfad</key>
+   <key locale="de_DE" id="Property{::}Mat1MaterialRanking{::}mat1MatClassification"
+       status="Approved">Zugehörige Werkstoffklasse</key>
+   <key locale="de_DE" id="Property{::}Mat1MaterialRanking{::}mat1PreferredMaterialRevs"
+       status="Approved">Bevorzugte Werkstoffrevisionen</key>
+   <key locale="de_DE" id="Property{::}Mat1MaterialRevision{::}Mat1HasAlternateMaterial"
+       status="Approved">Alternativer Werkstoff</key>
+   <key locale="de_DE" id="Property{::}Mat1MaterialRevision{::}mat1AlternateNames"
+       status="Approved">Werkstoffbezeichnungen</key>
+   <key locale="de_DE" id="Property{::}Mat1MaterialRevision{::}mat1CumulativeMaterialsMass"
+       status="Approved">Kumulierte Werkstoffmasse</key>
+   <key locale="de_DE" id="Property{::}Mat1MaterialRevision{::}mat1DataVersionInSource"
+       status="Approved">Werkstoffversion in Quelle</key>
+   <key locale="de_DE" id="Property{::}Mat1MaterialRevision{::}mat1MatCatalogRevisions"
+       status="Approved">Referenzwerkstoffkataloge</key>
+   <key locale="de_DE" id="Property{::}Mat1MaterialRevision{::}mat1MatCatalogRev"
+       status="Approved">Hauptwerkstoffkatalogänderungsstand</key>
+   <key locale="de_DE" id="Property{::}Mat1MaterialRevision{::}mat1MatClassifications"
+       status="Approved">Werkstoffklassen</key>
+   <key locale="de_DE" id="Property{::}Mat1MaterialRevision{::}mat1MaterialClasses"
+       status="Approved">Werkstoffklasse</key>
+   <key locale="de_DE" id="Property{::}Mat1MaterialRevision{::}mat1external_import"
+       status="Approved">Ist extern importierter Werkstoff</key>
+   <key locale="de_DE" id="Property{::}Mat1MaterialRevision{::}sr5MaterialNorm" status="Approved">Werkstoffnorm</key>
+   <key locale="de_DE" id="Property{::}Mat1Material{::}mat1DataSource" status="Approved">Name der Werkstoffdatenquelle</key>
+   <key locale="de_DE" id="Property{::}Mat1Material{::}mat1ExternalSource" status="Approved">Werkstoffquelle</key>
+   <key locale="de_DE" id="Property{::}Mat1Material{::}mat1MatCatalog" status="Approved">Werkstoffkatalog</key>
+   <key locale="de_DE" id="Property{::}Mat1Material{::}mat1external_import" status="Approved">Ist extern importierter Werkstoff</key>
+   <key locale="de_DE" id="Property{::}Mat1Material{::}mat1non_library" status="Approved">Ist die Nicht-Werkstoffbibliothek</key>
+   <key locale="de_DE" id="Property{::}Mat1Parameter{::}mat1OwningMaterialRevision"
+       status="Approved">Eigentümerwerkstoffrevision</key>
+   <key locale="de_DE" id="Property{::}Mat1UsesMaterial{::}mat1IsRecylateable" status="Approved">Enthält der Werkstoff Rezyklat?</key>
+   <key locale="de_DE" id="Property{::}Mat1UsesMaterial{::}mat1active_in_external_tool"
+       status="Approved">Ist der Werkstoff im externen Werkzeug aktiv?</key>
+   <key locale="de_DE" id="Property{::}Mat1UsesMaterial{::}mat1external_import" status="Approved">Ist extern importierter Werkstoff</key>
+   <key locale="de_DE" id="Property{::}Mat1UsesMaterial{::}mat1is_preferred" status="Approved">Ist der Werkstoff bevorzugt?</key>
+   <key locale="de_DE" id="Property{::}Mat1UsesMaterial{::}sr5MATUOM" status="Approved">Masseninformation</key>
+   <key locale="de_DE" id="Property{::}PSOccurrence{::}ref_designator" status="Invalid">Betriebsmittel EN 15380-1</key>
+   <key locale="de_DE" id="Property{::}ProblemReportRevision{::}CMSeverityRating"
+       status="Approved">Bewertung Schweregrad</key>
+   <key locale="de_DE" id="Property{::}SR5ArticleReqForm{::}sr5AddInfo" status="Approved">Zusätzliche Informationen</key>
+   <key locale="de_DE" id="Property{::}SR5ArticleReqForm{::}sr5Dimension" status="Approved">Abmessung</key>
+   <key locale="de_DE" id="Property{::}SR5ArticleReqForm{::}sr5FSFClass" status="Approved">FSF Klassifizierung</key>
+   <key locale="de_DE" id="Property{::}SR5ArticleReqForm{::}sr5HazSubstanceFlag" status="Approved">Gefahrstoff</key>
+   <key locale="de_DE" id="Property{::}SR5ArticleReqForm{::}sr5MPN" status="Approved">Hersteller Teilenummer</key>
+   <key locale="de_DE" id="Property{::}SR5ArticleReqForm{::}sr5ManuName" status="Approved">Hersteller Teilename</key>
+   <key locale="de_DE" id="Property{::}SR5ArticleReqForm{::}sr5ManuType" status="Approved">Hersteller Typ</key>
+   <key locale="de_DE" id="Property{::}SR5ArticleReqForm{::}sr5Manufacturer2" status="Approved">Hersteller</key>
+   <key locale="de_DE" id="Property{::}SR5ArticleReqForm{::}sr5Manufacturer" status="Approved">Hersteller</key>
+   <key locale="de_DE" id="Property{::}SR5ArticleReqForm{::}sr5Material" status="Approved">Werkstoff</key>
+   <key locale="de_DE" id="Property{::}SR5ArticleReqForm{::}sr5NewManufacturer2" status="Approved">Hersteller (Neu)</key>
+   <key locale="de_DE" id="Property{::}SR5ArticleReqForm{::}sr5NewManufacturer" status="Approved">Hersteller (Neu)</key>
+   <key locale="de_DE" id="Property{::}SR5ArticleReqForm{::}sr5NormNo" status="Approved">Normnummer</key>
+   <key locale="de_DE" id="Property{::}SR5ArticleReqForm{::}sr5ObjectNameTerm1" status="Approved">Name Begriff 1</key>
+   <key locale="de_DE" id="Property{::}SR5ArticleReqForm{::}sr5ObjectNameTerm2" status="Approved">Name Begriff 2</key>
+   <key locale="de_DE" id="Property{::}SR5ArticleReqForm{::}sr5ObjectNameTerm3" status="Approved">Name Begriff 3</key>
+   <key locale="de_DE" id="Property{::}SR5ArticleReqForm{::}sr5ObjectTypeToCreate"
+       status="Approved">Zu erstellender Typ</key>
+   <key locale="de_DE" id="Property{::}SR5ArticleReqForm{::}sr5Project" status="Approved">Projekt</key>
+   <key locale="de_DE" id="Property{::}SR5ArticleReqForm{::}sr5ProposedClassification"
+       status="Approved">Vorgeschlagene Klassifizierung</key>
+   <key locale="de_DE" id="Property{::}SR5ArticleReqForm{::}sr5ProposedObjectName"
+       status="Approved">Vorgeschlagener Name</key>
+   <key locale="de_DE" id="Property{::}SR5ArticleReqForm{::}sr5SAPMaterialGroup" status="Approved">Warengruppe</key>
+   <key locale="de_DE" id="Property{::}SR5ArticleReqForm{::}sr5TargetReleaseStatus"
+       status="Approved">Ziel-Freigabestatus</key>
+   <key locale="de_DE" id="Property{::}SR5ArticleReqForm{::}sr5UomTag" status="Approved">Mengeneinheit</key>
+   <key locale="de_DE" id="Property{::}SR5Customer{::}sr5CustomerNumber" status="Approved">Kundennummer</key>
+   <key locale="de_DE" id="Property{::}SR5EngArticleRevision{::}sr5FullDimension"
+       status="Approved">komplette Grösse/Abmessung</key>
+   <key locale="de_DE" id="Property{::}SR5EngProject{::}sr5ContractNumber" status="Approved">Auftragsnummer</key>
+   <key locale="de_DE" id="Property{::}SR5EngProject{::}sr5CustomerNumber" status="Approved">Kundennummer</key>
+   <key locale="de_DE" id="Property{::}SR5EngProject{::}sr5Customer" status="Approved">Kunde</key>
+   <key locale="de_DE" id="Property{::}SR5EngProject{::}sr5DesigningPlant" status="Approved">Konstruktionsstandort</key>
+   <key locale="de_DE" id="Property{::}SR5EngProject{::}sr5KindOfEngine" status="Approved">Motortyp</key>
+   <key locale="de_DE" id="Property{::}SR5EngProject{::}sr5ManagingPlant" status="Approved">Abwicklungsstandort</key>
+   <key locale="de_DE" id="Property{::}SR5EngProject{::}sr5NumberOfVehicles" status="Approved">Anzahl Fahrzeuge</key>
+   <key locale="de_DE" id="Property{::}SR5EngProject{::}sr5PowerType" status="Approved">Leistungstyp</key>
+   <key locale="de_DE" id="Property{::}SR5EngProject{::}sr5ProductionPlant" status="Approved">Produktionsstandort</key>
+   <key locale="de_DE" id="Property{::}SR5EngProject{::}sr5ProjectManagerCommercial"
+       status="Approved">Projektleiter Kommerziell</key>
+   <key locale="de_DE" id="Property{::}SR5EngProject{::}sr5ProjectManagerElectrical"
+       status="Approved">Projektleiter Elektrik</key>
+   <key locale="de_DE" id="Property{::}SR5EngProject{::}sr5ProjectManagerMechanical"
+       status="Approved">Projektleiter Mechanik</key>
+   <key locale="de_DE" id="Property{::}SR5EngProject{::}sr5ProjectManager" status="Approved">Projektleiter</key>
+   <key locale="de_DE" id="Property{::}SR5EngProject{::}sr5TypeOfPowerSupply" status="Approved">Art der Energieversorgung</key>
+   <key locale="de_DE" id="Property{::}SR5EngProject{::}sr5TypeOfProduct" status="Approved">Produkttyp</key>
+   <key locale="de_DE" id="Property{::}SR5EngProject{::}sr5VehicleType" status="Approved">Fahrzeugtyp</key>
+   <key locale="de_DE" id="Property{::}SR5GenCatPartRevision{::}sr5MPN" status="Approved">Herstellerteilenummer</key>
+   <key locale="de_DE" id="Property{::}SR5GenCatPartRevision{::}sr5ManuType" status="Approved">Herstellertyp</key>
+   <key locale="de_DE" id="Property{::}SR5GenCatPartRevision{::}sr5TechnicalData"
+       status="Approved">Technische Daten</key>
+   <key locale="de_DE" id="Property{::}SR5GenDocumentRevisionMaster{::}sr5DateReleased"
+       status="Approved">Freigegeben am</key>
+   <key locale="de_DE" id="Property{::}SR5GenDocumentRevisionMaster{::}sr5DateReviewed"
+       status="Approved">Geprüft am</key>
+   <key locale="de_DE" id="Property{::}SR5GenDocumentRevisionMaster{::}sr5ReleasedBy"
+       status="Approved">Freigegeben von</key>
+   <key locale="de_DE" id="Property{::}SR5GenDocumentRevisionMaster{::}sr5ReviewedBy"
+       status="Approved">Geprüft von</key>
+   <key locale="de_DE" id="Property{::}SR5GenDocumentRevision{::}sr5CPBasedOn" status="Approved">Basierend auf (Item)</key>
+   <key locale="de_DE" id="Property{::}SR5GenDocumentRevision{::}sr5CPConfidentialityClass"
+       status="Approved">Vertraulichkeitsklasse</key>
+   <key locale="de_DE" id="Property{::}SR5GenDocumentRevision{::}sr5CPDateReleased"
+       status="Approved">Freigegeben am</key>
+   <key locale="de_DE" id="Property{::}SR5GenDocumentRevision{::}sr5CPDateReviewed"
+       status="Approved">Geprüft am</key>
+   <key locale="de_DE" id="Property{::}SR5GenDocumentRevision{::}sr5CPReleasedBy"
+       status="Approved">Freigegeben von</key>
+   <key locale="de_DE" id="Property{::}SR5GenDocumentRevision{::}sr5CPReviewedBy"
+       status="Approved">Geprüft von</key>
+   <key locale="de_DE" id="Property{::}SR5GenDocumentRevision{::}sr5DocumentContent"
+       status="Approved">Dokumenten Klassifikationscode</key>
+   <key locale="de_DE" id="Property{::}SR5GenDocumentRevision{::}sr5DocumentFormat"
+       status="Approved">Dokumentformat</key>
+   <key locale="de_DE" id="Property{::}SR5GenDocumentRevision{::}sr5DocumentTemplate"
+       status="Approved">Dokumentvorlage</key>
+   <key locale="de_DE" id="Property{::}SR5GenDocumentRevision{::}sr5ExpiryDate" status="Approved">Verfallsdatum</key>
+   <key locale="de_DE" id="Property{::}SR5GenDocumentRevision{::}sr5Manufacturer"
+       status="Approved">Hersteller</key>
+   <key locale="de_DE" id="Property{::}SR5GenDocumentRevision{::}sr5NumberOfSheets"
+       status="Approved">Blattanzahl</key>
+   <key locale="de_DE" id="Property{::}SR5GenDocumentRevision{::}sr5ReqVerDocumentContent"
+       status="Approved">Angeforderte Dokumentenklassifikation</key>
+   <key locale="de_DE" id="Property{::}SR5GenDocument{::}sr5DocumentContent" status="Approved">Dokumenten Klassifikationscode</key>
+   <key locale="de_DE" id="Property{::}SR5GenDocument{::}sr5DocumentTemplate" status="Approved">Dokument Vorlage</key>
+   <key locale="de_DE" id="Property{::}SR5GenDocument{::}sr5ReqVerDocumentContent"
+       status="Approved">Angeforderte Dokumentenklassifikation</key>
+   <key locale="de_DE" id="Property{::}SR5GenEngObjMaster{::}sr5SAPMaterialGroup"
+       status="Approved">Warengruppe</key>
+   <key locale="de_DE" id="Property{::}SR5GenEngObjMaster{::}sr5SerializationRequired"
+       status="Approved">Serialisierung benötigt</key>
+   <key locale="de_DE" id="Property{::}SR5GenEngObjRevision{::}sr5AdjustedWeight"
+       status="Approved">Angepasstes Gewicht in KG</key>
+   <key locale="de_DE" id="Property{::}SR5GenEngObjRevision{::}sr5CATIAName1" status="Approved">FSF Benennung 1</key>
+   <key locale="de_DE" id="Property{::}SR5GenEngObjRevision{::}sr5CATIAName2" status="Approved">FSF Benennung 2</key>
+   <key locale="de_DE" id="Property{::}SR5GenEngObjRevision{::}sr5CATIAReferenceTo"
+       status="Approved">CATIA Verlinkungen zu Objekten</key>
+   <key locale="de_DE" id="Property{::}SR5GenEngObjRevision{::}sr5CATIAReferencedBy"
+       status="Approved">CATIA Verlinkungen auf dieses Teil</key>
+   <key locale="de_DE" id="Property{::}SR5GenEngObjRevision{::}sr5CPBasedOn" status="Approved">Basierend auf (Item)</key>
+   <key locale="de_DE" id="Property{::}SR5GenEngObjRevision{::}sr5CPDateEngineeringRelease"
+       status="Approved">Datum Engineering Release</key>
+   <key locale="de_DE" id="Property{::}SR5GenEngObjRevision{::}sr5CPE3Transferred"
+       status="Approved">E3 Übertragen</key>
+   <key locale="de_DE" id="Property{::}SR5GenEngObjRevision{::}sr5CPEngineeringReleasedBy"
+       status="Approved">Engineering Released von</key>
+   <key locale="de_DE" id="Property{::}SR5GenEngObjRevision{::}sr5CalculatedWeight"
+       status="Approved">Berechnetes Gewicht in KG</key>
+   <key locale="de_DE" id="Property{::}SR5GenEngObjRevision{::}sr5Dimension" status="Approved">Grösse/Abmessung</key>
+   <key locale="de_DE" id="Property{::}SR5GenEngObjRevision{::}sr5DocType" status="Approved">Dokumentart</key>
+   <key locale="de_DE" id="Property{::}SR5GenEngObjRevision{::}sr5FastSurfaceProtectionOFL"
+       status="Approved">Oberflächenschutz Verbindungselemente OFL</key>
+   <key locale="de_DE" id="Property{::}SR5GenEngObjRevision{::}sr5FastSurfaceProtection"
+       status="Approved">Oberflächenschutz Verbindungselemente</key>
+   <key locale="de_DE" id="Property{::}SR5GenEngObjRevision{::}sr5FullDimension" status="Invalid">komplette Grösse/Abmessung</key>
+   <key locale="de_DE" id="Property{::}SR5GenEngObjRevision{::}sr5GlueApprovalFlag"
+       status="Approved">Klebeprüfung benötigt</key>
+   <key locale="de_DE" id="Property{::}SR5GenEngObjRevision{::}sr5HazSubstanceFlag"
+       status="Approved">Gefahrstoff</key>
+   <key locale="de_DE" id="Property{::}SR5GenEngObjRevision{::}sr5IsSupplierPart"
+       status="Approved">Ist Zulieferteil</key>
+   <key locale="de_DE" id="Property{::}SR5GenEngObjRevision{::}sr5Manufacturer" status="Approved">Hersteller</key>
+   <key locale="de_DE" id="Property{::}SR5GenEngObjRevision{::}sr5NoDrawingSheets"
+       status="Approved">Anzahl Zeichnungsblätter</key>
+   <key locale="de_DE" id="Property{::}SR5GenEngObjRevision{::}sr5NormNo" status="Approved">Normnummer</key>
+   <key locale="de_DE" id="Property{::}SR5GenEngObjRevision{::}sr5RefTagEN" status="Approved">Produktgruppe EN 15380-2</key>
+   <key locale="de_DE" id="Property{::}SR5GenEngObjRevision{::}sr5ScrewApprovalFlag"
+       status="Approved">Strukturprüfung benötigt</key>
+   <key locale="de_DE" id="Property{::}SR5GenEngObjRevision{::}sr5WeldApprovalFlag"
+       status="Approved">Schweissprüfung benötigt</key>
+   <key locale="de_DE" id="Property{::}SR5GenEngObj{::}sr5AltRepList" status="Approved">Alternative Repräsentationen</key>
+   <key locale="de_DE" id="Property{::}SR5GenEngObj{::}sr5DrawingDCC" status="Approved">Zeichnung DCC</key>
+   <key locale="de_DE" id="Property{::}SR5GenEngObj{::}sr5DrawingFormat" status="Approved">Zeichnung Format</key>
+   <key locale="de_DE" id="Property{::}SR5GenEngObj{::}sr5E3Transferred" status="Approved">E3 Übertragen</key>
+   <key locale="de_DE" id="Property{::}SR5GenEngObj{::}sr5FSFClass" status="Approved">FSF Klassifizierung</key>
+   <key locale="de_DE" id="Property{::}SR5GenEngObj{::}sr5IsSupplierPart" status="Approved">Ist Zulieferteil</key>
+   <key locale="de_DE" id="Property{::}SR5GenEngObj{::}sr5RefTagEN" status="Approved">Produktgruppe EN 15380-2</key>
+   <key locale="de_DE" id="Property{::}SR5GenEngObj{::}sr5SerializationRequired" status="Approved">Serialisierung benötigt</key>
+   <key locale="de_DE" id="Property{::}SR5GenPartRevisionMaster{::}sr5DateEngineeringRelease"
+       status="Approved">Datum Engineering Release</key>
+   <key locale="de_DE" id="Property{::}SR5GenPartRevisionMaster{::}sr5DateReviewed"
+       status="Approved">Geprüft am</key>
+   <key locale="de_DE" id="Property{::}SR5GenPartRevisionMaster{::}sr5EngineeringReleasedBy"
+       status="Approved">Engineering Released von</key>
+   <key locale="de_DE" id="Property{::}SR5GenPartRevisionMaster{::}sr5GlueReleasedBy"
+       status="Invalid">Fachprüfer Klebfreigabe</key>
+   <key locale="de_DE" id="Property{::}SR5GenPartRevisionMaster{::}sr5GlueReleasedDate"
+       status="Approved">Datum Klebfreigabe</key>
+   <key locale="de_DE" id="Property{::}SR5GenPartRevisionMaster{::}sr5ReleasedBy"
+       status="Approved">Freigegeben von</key>
+   <key locale="de_DE" id="Property{::}SR5GenPartRevisionMaster{::}sr5ReviewedBy"
+       status="Approved">Geprüft von</key>
+   <key locale="de_DE" id="Property{::}SR5GenPartRevisionMaster{::}sr5ScrewReleasedBy"
+       status="Approved">Fachprüfer Schraubfreigabe</key>
+   <key locale="de_DE" id="Property{::}SR5GenPartRevisionMaster{::}sr5ScrewReleasedDate"
+       status="Approved">Datum Schraubfreigabe</key>
+   <key locale="de_DE" id="Property{::}SR5GenPartRevisionMaster{::}sr5WeldReleasedBy"
+       status="Invalid">Fachprüfer Schweissfreigabe</key>
+   <key locale="de_DE" id="Property{::}SR5GenPartRevisionMaster{::}sr5WeldReleasedDate"
+       status="Approved">Datum Schweissfreigabe</key>
+   <key locale="de_DE" id="Property{::}SR5ManufactPartRevision{::}SR5HasRequestForm"
+       status="Approved">Besitzt Request Form</key>
+   <key locale="de_DE" id="Property{::}SR5ManufactPartRevision{::}SR5HasSuccessor"
+       status="Approved">Besitzt Nachfolger</key>
+   <key locale="de_DE" id="Property{::}SR5ManufactPartRevision{::}sr5CPIsStoredInE3"
+       status="Approved">Transferriert nach E3?</key>
+   <key locale="de_DE" id="Property{::}SR5ManufactPartRevision{::}sr5MPN" status="Approved">Hersteller Teile Nummer</key>
+   <key locale="de_DE" id="Property{::}SR5ManufactPartRevision{::}sr5ManuType" status="Approved">Hersteller Typ</key>
+   <key locale="de_DE" id="Property{::}SR5ManufactPartRevision{::}sr5TechnicalData"
+       status="Approved">Technische Daten</key>
+   <key locale="de_DE" id="Property{::}SR5ManufactPart{::}sr5IsStoredInE3" status="Approved">Transferriert nach E3?</key>
+   <key locale="de_DE" id="Property{::}SR5MatReqForm{::}sr5MatReqDescription" status="Approved">Werkstoffbeschreibung</key>
+   <key locale="de_DE" id="Property{::}SR5MfgCN{::}item_id" status="Invalid">MCN-Nummer</key>
+   <key locale="de_DE" id="Property{::}SR5PlantForm{::}sr5MakeBuy" status="Approved">Beschaffungsart</key>
+   <key locale="de_DE" id="Property{::}SR5PlantForm{::}sr5Plant" status="Approved">Werk</key>
+   <key locale="de_DE" id="Property{::}SR5WFCHGEntSAPData{::}sr5SAPMaterialGroup"
+       status="Approved">Warengruppe</key>
+   <key locale="de_DE" id="Property{::}SR5WFMatReqForm{::}sr5MatReqDescription" status="Approved">Anfragebeschreibung</key>
+</Add>
+</TcBusinessDataLocalization>

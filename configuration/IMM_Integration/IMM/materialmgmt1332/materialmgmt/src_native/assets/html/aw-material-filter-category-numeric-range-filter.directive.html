@@ -1,0 +1,12 @@
+<aw-flex-row>
+	<aw-flex-column>
+		<aw-numeric prop="category['minValue']"></aw-numeric>
+	</aw-flex-column>
+	<aw-flex-column offset="1f" align-content="start">
+		<aw-numeric prop="category['maxValue']"></aw-numeric>
+	</aw-flex-column>
+	<aw-flex-column offset="1f">
+		<aw-listbox prop="category['mat1DerivedValueMax']" list="category['mat1DerivedValueMax'].listValues"
+			action="selectionChange"></aw-listbox>
+	</aw-flex-column>
+</aw-flex-row>

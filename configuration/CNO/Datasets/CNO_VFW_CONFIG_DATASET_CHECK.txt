@@ -1,0 +1,23 @@
+############################################################################################################
+#  CNO Check Definition File
+############################################################################################################
+# Version History
+#
+# Version    Date           Name               Description of Change
+# 1.0        28-03-2022     testu     Initial
+############################################################################################################
+
+Text:True§allowed§js(findInString("[VAL_OBJECT:admin-groups]","[VAL_OBJECT:owning_group]"))~owning group does not match preference -admin groups: [VAL_OBJECT:admin-groups] - vs -owning group: [VAL_OBJECT:owning_group]-~groups match -admin groups: [VAL_OBJECT:admin-groups] - vs -owning group: [VAL_OBJECT:owning_group]-
+ 
+Text:ref_types§not allowed§regex(.*,.*)~named reference is not unique~named reference is unique
+#Text>ref_list>ImanFile:byte_size§count lt 2§*~named reference is not unique with count~named reference is unique with count
+ 
+Text:checkedout§not allowed§Y~check-in required~checked in
+ 
+ImanFile:byte_size§gt§0~WARNING: INFO: Corrupt or empty file: smaller than 1b~file size bigger than 0b
+ 
+Text:search§not eq§[QUERY=__VFW_Dataset Name:Dataset Name;RevisionLimit]~dataset must be unique~no duplicate 
+ 
+Text>ref_list>ImanFile:file_name§eq§[VAL_OBJECT:object_name]~WARNING: INFO: file name and dataset name are not matching~names are matching
+ 
+Text:object_name§not allowed§regex(^.*\.txt$)~name of dataset must be without extension .txt~extension .txt not 

@@ -1,0 +1,14 @@
+############################################################################################################
+#  CNO JOB Definition File
+############################################################################################################
+# Version History
+#
+# Version    Date           Name               Description of Change
+# 1.0        22-03-2022     user01     Initial
+############################################################################################################
+
+QUERY=CNO_VFW_QUERY
+EXPANSION=Engineering_Approval-STATUS_EXPANSION
+PROPERTY=Engineering_Approval-STATUS_PROPERTY
+CHECK=Engineering_Approval-STATUS_CHECK
+TASK=Engineering_Approval-STATUS_TASK

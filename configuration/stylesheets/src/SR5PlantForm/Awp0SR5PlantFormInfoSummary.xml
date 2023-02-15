@@ -1,0 +1,30 @@
+<!--
+// @<COPYRIGHT>@
+// ==================================================
+// Copyright 2015.
+// Siemens Product Lifecycle Management Software Inc.
+// All Rights Reserved.
+// ==================================================
+// @<COPYRIGHT>@
+-->
+<rendering xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="XMLRenderingStylesheet_Schema.xsd">
+    <page titleKey="tc_xrt_Summary" visibleWhen="GRMS2P(SR5HasPlantForm,SR5GenPart).sr5IsTransferredToSAP == null">
+        <property name="object_name" modifiable="false"/>
+        <separator/>
+        <property name="sr5Plant" modifiable="false"/>
+        <property name="sr5MakeBuy"/>
+    </page>
+    <page titleKey="tc_xrt_Summary" visibleWhen="GRMS2P(SR5HasPlantForm,SR5GenPart).sr5IsTransferredToSAP == false">
+        <property name="object_name" modifiable="false"/>
+        <separator/>
+        <property name="sr5Plant" modifiable="false"/>
+        <property name="sr5MakeBuy"/>
+    </page>
+    <page titleKey="tc_xrt_Summary" visibleWhen="GRMS2P(SR5HasPlantForm,SR5GenPart).sr5IsTransferredToSAP == true">
+        <property name="object_name" modifiable="false"/>
+        <separator/>
+        <property name="sr5Plant" modifiable="false"/>
+        <property name="sr5MakeBuy" modificable="false"/>
+    </page>
+</rendering>
+

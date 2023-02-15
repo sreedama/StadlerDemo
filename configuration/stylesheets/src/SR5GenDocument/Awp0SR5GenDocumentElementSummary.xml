@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+// @<COPYRIGHT>@
+// ==================================================
+// Copyright 2019.
+// Siemens Product Lifecycle Management Software Inc.
+// All Rights Reserved.
+// ==================================================
+// @<COPYRIGHT>@
+-->
+<rendering>
+  <header>
+    <image source="type"/>
+    <property name="awb0Name"/>
+    <property name="awb0ArchetypeName"/>
+  </header>
+
+  <property name="awb0UnderlyingObjectType" />
+
+  <!-- Overview registration for SR5TechDocumentRevision -->
+  <content visibleWhen="awb0UnderlyingObjectType==SR5TechDocumentRevision">
+    <inject type="dataset" src="Awp0SR5TechDocumentRevSummaryForAssemblyBOM"/>
+  </content>
+
+  <!-- Overview registration for SR5CoatingStructRevision -->
+  <content visibleWhen="awb0UnderlyingObjectType==SR5CoatingStructRevision">
+    <inject type="dataset" src="Awp0SR5CoatingStructRevSummaryForAssemblyBOM"/>
+  </content>
+
+  <!-- Overview registration for SR5BodNodeRevision -->
+  <content visibleWhen="awb0UnderlyingObjectType==SR5BodNodeRevision">
+    <inject type="dataset" src="Awp0SR5BodNodeRevSummaryForAssemblyBOM"/>
+  </content>
+
+  <!-- Display remaining pages defined in persistent BO stylesheets -->
+  <content>
+    <inject type="evaluate" src="awb0UnderlyingObject"/>
+  </content>
+
+</rendering>

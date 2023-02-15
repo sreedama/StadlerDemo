@@ -1,0 +1,35 @@
+<subRendering>
+    <content visibleWhen="ActiveWorkspace:SubLocation == com.siemens.splm.client.occmgmt:OccurrenceManagementSubLocation">    
+        <section titleKey="Collaboration Context" initialstate="collapsed">
+			<objectSet source="REF(awb0UnderlyingObject,SR5GenMfgObjRevision).GRM(SR5HasEBOM,SR5GenEngObjRevision).REF(sr5EBOM_LLBOM_CC,MECollaborationContext),REF(awb0UnderlyingObject,SR5GenMfgObjRevision).GRM(SR5HasEBOM,SR5GenEngObjRevision).REF(sr5EBOM_MBOM_CC,MECollaborationContext),REF(awb0UnderlyingObject,SR5GenMfgObjRevision).GRM(SR5HasEBOM,SR5GenEngObjRevision).REF(sr5EBOM_SRVBOM_CC,MECollaborationContext),REF(awb0UnderlyingObject,SR5GenMfgObjRevision).GRM(SR5HasEBOM,SR5GenEngObjRevision).REF(sr5EBOM_SpareBOM_CC,MECollaborationContext)" sortdirection="ascending" sortby="object_string" defaultdisplay="listDisplay">
+				<listDisplay/>
+				<tableDisplay>
+					<property name="object_string"/>
+					<property name="object_type"/>
+				</tableDisplay>
+			</objectSet>
+        </section>
+    </content>
+    <content visibleWhen="ActiveWorkspace:SubLocation == multiBOMManager:taskPageSubLocation">    
+        <section titleKey="Collaboration Context" initialstate="collapsed">
+			<objectSet source="REF(awb0UnderlyingObject,SR5GenMfgObjRevision).GRM(SR5HasEBOM,SR5GenEngObjRevision).REF(sr5EBOM_LLBOM_CC,MECollaborationContext),REF(awb0UnderlyingObject,SR5GenMfgObjRevision).GRM(SR5HasEBOM,SR5GenEngObjRevision).REF(sr5EBOM_MBOM_CC,MECollaborationContext),REF(awb0UnderlyingObject,SR5GenMfgObjRevision).GRM(SR5HasEBOM,SR5GenEngObjRevision).REF(sr5EBOM_SRVBOM_CC,MECollaborationContext),REF(awb0UnderlyingObject,SR5GenMfgObjRevision).GRM(SR5HasEBOM,SR5GenEngObjRevision).REF(sr5EBOM_SpareBOM_CC,MECollaborationContext)" sortdirection="ascending" sortby="object_string" defaultdisplay="listDisplay">
+				<listDisplay/>
+				<tableDisplay>
+					<property name="object_string"/>
+					<property name="object_type"/>
+				</tableDisplay>
+			</objectSet>
+        </section>
+    </content>
+    <content visibleWhen="ActiveWorkspace:SubLocation != com.siemens.splm.client.occmgmt:OccurrenceManagementSubLocation and ActiveWorkspace:SubLocation != multiBOMManager:taskPageSubLocation">    
+        <section titleKey="Collaboration Context" initialstate="collapsed">
+			<objectSet source="GRM(SR5HasEBOM,SR5GenEngObjRevision).REF(sr5EBOM_LLBOM_CC,MECollaborationContext),GRM(SR5HasEBOM,SR5GenEngObjRevision).REF(sr5EBOM_MBOM_CC,MECollaborationContext),GRM(SR5HasEBOM,SR5GenEngObjRevision).REF(sr5EBOM_SRVBOM_CC,MECollaborationContext),GRM(SR5HasEBOM,SR5GenEngObjRevision).REF(sr5EBOM_SpareBOM_CC,MECollaborationContext)" sortdirection="ascending" sortby="object_string" defaultdisplay="listDisplay">
+				<listDisplay/>
+				<tableDisplay>
+					<property name="object_string"/>
+					<property name="object_type"/>
+				</tableDisplay>
+			</objectSet>
+        </section>
+    </content>    
+</subRendering>

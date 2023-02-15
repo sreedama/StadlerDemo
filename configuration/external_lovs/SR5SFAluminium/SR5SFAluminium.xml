@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TcBusinessData xmlns="http://teamcenter.com/BusinessModel/TcBusinessData" batchXSDVersion="1.0"
+    Date="Mon Jan 17 05:42:07 PM 2022">
+  <Add/>
+  <Change>
+    <TcLOV name="SR5SFAluminium" lovType="ListOfValuesString" usage="Exhaustive" description=""
+        isManagedExternally="true">
+      <TcLOVValue value="DIN EN 485-4" description="Blech s &lt;= 50" conditionName="isTrue"/>
+      <TcLOVValue value="DIN EN 485-3" description="Blech 50 &gt; s &lt;= 120" conditionName="isTrue"/>
+      <TcLOVValue value="DIN EN 755-7" description="Rohr &gt; 8 bis 450" conditionName="isTrue"/>
+      <TcLOVValue value="DIN EN 755-8" description="Rechteckrohr" conditionName="isTrue"/>
+      <TcLOVValue value="DIN EN 755-3" description="Rundstab &gt;= 8 &gt; d &lt;= 320" conditionName="isTrue"/>
+      <TcLOVValue value="DIN EN 755-4" description="Vierkantstab &gt;= 10 &gt; S &lt;= 220" conditionName="isTrue"/>
+      <TcLOVValue value="DIN EN 755-5" description="Rechteckstange &gt;= 4 &gt; t &lt;= 240 und &gt;= 10 &gt; W &lt;= 600" conditionName="isTrue"/>
+      <TcLOVValue value="DIN EN 755-6" description="Sechskantstange &gt;= 10 &gt; S &lt;= 220" conditionName="isTrue"/>
+      <TcLOVValue value="DIN EN 755-9" description="L-Profil scharfkantig und rund / U-Profil scharfkantig und rund / T-Profil"
+          conditionName="isTrue"/>
+    </TcLOV>
+  </Change>
+</TcBusinessData>

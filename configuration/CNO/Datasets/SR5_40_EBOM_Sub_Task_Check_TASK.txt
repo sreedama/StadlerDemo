@@ -1,0 +1,23 @@
+############################################################################################################
+#  CNO Task Definition File
+############################################################################################################
+# Version History
+#
+# Version    Date           Name               Description of Change
+# 1.0        07-03-2022     testu     Initial
+############################################################################################################
+
+[TASK_LIST]
+
+ID=002
+TYPE_LIST=C:ItemRevision
+VALIDATION_STATUS=FAILED
+ACTION_OBJECT=CHILD
+CHK_ID_LIST=001
+ACTION_ID_LIST=001
+
+[ACTION_LIST]
+ID=001
+TYPE=WORKFLOW
+TEMPLATE=40_EBOM_Release_Sub_Task
+OBJECT_COUNT=1

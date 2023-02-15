@@ -1,0 +1,1020 @@
+##
+#===================================================
+# \copyright     2014-2019
+#                Siemens Product Lifecycle Management Software Inc.
+#                All Rights Reserved.
+#===================================================
+#
+# \brief         T4S / Generic GENBOM Mapping
+#
+# \file          t4s_genbom_mapping_template.sd
+#
+# \pre           For the "Generic BOM" transfer the following preferences are used:
+#                  T4S_<GenBom>TypeList
+#                  T4S_<GenBom>Mapping4<ViewType>
+#                  T4S_<GenBom>HeaderTypeList or T4S_<GenBomLine>TypeList
+#                  T4S_<GenBom>HeaderMapping4<ObjectType> or T4S_<GenBomLine>Mapping4<ObjectType>
+#                  T4S_<GenBom>LineMapping4<ObjectType> or T4S_<GenBomLine>Mapping4<ObjectType>
+#                  T4S_<GenBom>OccurrenceNotes4<BOM View>
+#                  T4S_<GenBom>Mapping2<ViewType>
+#                  T4S_<GenBom>FieldMapping2<RelationInformation>
+#
+#                <GenBom> stands for the specified workflow argument "-TargetTypeName" value used in the generic transfer handler
+#                <GenBomLine> stands for the specified workflow argument "-BomHeaderTypeList" value used in the generic transfer handler
+#
+namespace eval ::T4S::GENBOM::CUSTOM::MAPPING {
+  namespace export TC_Object2SAP_Object
+  namespace export TC_Object2SAP_ObjectPostAction
+  namespace export TC_Object2SAP_ObjectPosition
+  namespace export SAP_Object2TC_Object
+  namespace export getObjectInfo
+  namespace export performSapTransfer
+  namespace export callCustomerRuleHandler
+
+  variable BomPositionInfo
+  variable BomHeaderInfo
+
+  # ---------------------------------------------------------------------
+  ##
+  # Method:         ::T4S::GENBOM::CUSTOM::MAPPING::TC_Object2SAP_Object
+  # \brief          Customer specific object mapping function template for TargetTypeName
+  #
+  # \author         kh, 20100305
+  # \param          TransactionId unique ID for the transfer transaction
+  # \param          TargetTypeName specified transaction target type name
+  # \param          ItemType
+  # \param          ItemRevisionType
+  # \param          args not used
+  #
+  # \return         MappingStatus used by the following transfer function.
+  #                 The following values are valid:
+  #                   - OK T4S will continue with the next transfer step
+  #                   - REVERSEMAPPINGONLY T4S will skip the transfer to SAP and will just do the reverse mapping
+  #                   - SKIPPED T4S will skip the transfer to SAP
+  #                   - ERROR T4S will stop transfer and raise an error
+  #
+  #
+  #
+  proc TC_Object2SAP_Object { TransactionId TargetTypeName ItemType ItemRevisionType args } {
+    #
+    set ::errorCode "NONE"
+    set ::errorInfo ""
+		#
+		variable ::BomHeaderPlant
+    #
+    variable TcBOMHeader
+    array unset TcBOMHeader
+    #
+    ::T4X::TRANSLOG::writeCustomMappingLog $TransactionId INFO "---------------------------------------------"
+    ::T4X::TRANSLOG::writeCustomMappingLog $TransactionId INFO " PEO VERSION BOM MAPPING VERSION: 2022-02-10"
+    ::T4X::TRANSLOG::writeCustomMappingLog $TransactionId INFO "---------------------------------------------"
+        
+    # Define default return code
+    set rc "OK"
+        
+    # Store procedure name in variable
+    set FunctionName "[lindex [info level 0] 0]"
+
+    # Write information to session log
+    tpwrite -logchannel [::PL4X::CORE::getSessionLogChannel] -mtype INTERN "$FunctionName starts with $ItemType, $ItemRevisionType"
+
+    set Item                 "$ItemRevisionType:items_tag:$ItemType"
+    set ItemMaster           "$ItemRevisionType:items_tag:$ItemType:IMAN_master_form:$ItemType Master"
+    set ItemRev              $ItemRevisionType
+    set ItemRevMaster        "$ItemRevisionType:IMAN_master_form_rev:$ItemRevisionType Master"
+    set ItemID               [::T4X::TC::MAPPING::IndexedFieldMapping "0" $Item "item_id"]
+
+    #########################################################################################################################################
+    # Read some attributes from Teamcenter object
+    #########################################################################################################################################
+    set TcBOMHeader(ItemId)             [::T4X::TC::MAPPING::IndexedFieldMapping "0" $Item item_id]
+    set TcBOMHeader(ItemRevId)          [::T4X::TC::MAPPING::IndexedFieldMapping "0" $ItemRev item_revision_id]
+    set TcBOMHeader(Plant)              [::T4X::TC::MAPPING::IndexedFieldMapping "0" $Item sr5Plant]
+    set TcBOMHeader(SAPId)              [::T4X::TC::MAPPING::IndexedFieldMapping "0" $ItemRev sr5SAPID]; # contains SAP Id if data exist in SAP
+    # set TcBOMHeader(ERPShortTextEN)   [::T4X::TC::MAPPING::IndexedFieldMapping "0" $ItemRev bus4_erp_short_text_EN]; # ERP Short Text EN (Article Name EN)
+    # set TcBOMHeader(ReleaseStatus)    [::T4X::TC::MAPPING::IndexedFieldMapping "0" $ItemRev last_release_status]; # Last release status of header material
+    # set TcBOMHeader(OwningPlant)      [::T4X::TC::MAPPING::IndexedFieldMapping "0" $ItemRev bus4_owning_plant_wso]; # Owning plant of header material
+    
+		# if {$TcBOMHeader(ItemRevId) eq "00"} {
+			# ::T4X::CORE::storeMessage2 MAPPING "Teamcenter Revision ID '$TcBOMHeader(ItemRevId)' is not allowed to be transferred to SAP" ERROR
+			# set ::SAPDat(CtrlParam:ProhibitedAction) "X"
+			# set rc "ERROR"
+		# }
+    # set TcBOMHeader(Version)            [format "%04d" $TcBOMHeader(ItemRevId)]
+		# set TcBOMHeader(Version)            "0001"
+		
+    # TODO: After IT1 once ECM Transfer is configured, this has to be considered here
+    set TcBOMHeader(ChangeNo)           $::T4S_Defaults(VersionBomDefaultECM)
+
+    set TcBOMHeader(Alternative)				$::T4S_Defaults(VersionBomAlternative)
+		
+		# Mapping the Teamcenter plant to the SAP plant code
+		switch -exact -- $TcBOMHeader(Plant) {
+			STAP	{	set TcBOMHeader(Plant)   "DE10"}
+			STAV	{ set TcBOMHeader(Plant)   "SP10"}
+			default {
+				# set TcBOMHeader(Plant)	"ERROR"
+				# tpwrite -logchannel [::PL4X::CORE::getSessionLogChannel] -mtype ERROR "$FunctionName -> Plant not set on object >$TcBOMHeader(ItemId)<"
+				# return "ERROR"
+				
+				set TcBOMHeader(Plant)	$::T4S_Defaults(VersionBomDefaultPlant)
+				::T4X::TRANSLOG::writeCustomMappingLog $TransactionId WARNING "DEBUG: Plant not set on object >$TcBOMHeader(ItemId)< -> Set plant to (default) value >$TcBOMHeader(Plant)<!"
+			}
+		}
+		set ::BomHeaderPlant $TcBOMHeader(Plant)
+		::T4X::TRANSLOG::writeCustomMappingLog $TransactionId WARNING "DEBUG: ::BomHeaderPlant = >$::BomHeaderPlant<"
+		
+		# Mapping the BOM usage
+		if {$ItemRevisionType eq "SR5LLEndItemRevision" || $ItemRevisionType eq "SR5LLMajorAssyRevision"} {
+			set TcBOMHeader(SAPBomUsage) "P"
+			::T4X::TRANSLOG::writeCustomMappingLog $TransactionId WARNING "BOM Header is of type >$ItemRevisionType< (Long Lead BOM) -> Transfer with BOM usage >$TcBOMHeader(SAPBomUsage)<!"
+		} else {
+			set TcBOMHeader(SAPBomUsage) "V"
+		}
+   
+    #########################################################################################################################################
+    # Check if BOM Header alrady exists in SAP
+    #########################################################################################################################################
+    if {[string trim $TcBOMHeader(SAPId)] eq ""} {
+			::T4X::CORE::storeMessage2 MAPPING "SAP Id is missing for Item Id $TcBOMHeader(ItemId)" ERROR
+			set ::SAPDat(CtrlParam:ProhibitedAction) "X"
+			set rc "ERROR"
+    } elseif {[string toupper $TcBOMHeader(SAPId)] ne [string toupper $TcBOMHeader(ItemId)]} {			
+			if {[string toupper $TcBOMHeader(SAPId)] eq [string toupper [::TPSAP::MM::getInternalMaterialNumber $TcBOMHeader(ItemId)]]} {
+				::T4X::TRANSLOG::writeCustomMappingLog $TransactionId  WARNING "The SAP ID >$TcBOMHeader(SAPId)< for BOM header is defined in the internal format on the TC object -> BOM transfer proceeds but this should be cleaned up!"
+			} elseif {[string toupper $TcBOMHeader(SAPId)] eq [string toupper [string trimleft $TcBOMHeader(ItemId) 0]]} {
+				::T4X::TRANSLOG::writeCustomMappingLog $TransactionId  WARNING "The SAP ID >$TcBOMHeader(SAPId)< for BOM header is defined without leading zeros -> okay for BOM transfer"
+			} else {
+				::T4X::CORE::storeMessage2 MAPPING "SAP Id >$TcBOMHeader(SAPId)< and Teamcenter Item Id >$TcBOMHeader(ItemId)< for BOM header ($TcBOMHeader(ItemId)/$TcBOMHeader(ItemRevId)) are inconsistent" ERROR
+				set ::SAPDat(CtrlParam:ProhibitedAction) "X"
+				set rc "ERROR"
+			}
+    }
+    
+    #########################################################################################################################################
+    # Print TC Data to translog
+    #########################################################################################################################################
+    ::T4X::TRANSLOG::writeCustomMappingLog $TransactionId  INFO ""    
+    ::T4X::TRANSLOG::writeCustomMappingLog $TransactionId  INFO "##### Print the Teamcenter Data for BOM Header #####"
+    
+    foreach elem [::T4X::CORE::sortIndexedInterfaceTable [array names TcBOMHeader *]] {
+			::T4X::TRANSLOG::writeCustomMappingLog $TransactionId  INFO "TcBOMHeader($elem) : $TcBOMHeader($elem)"
+    }
+    ::T4X::TRANSLOG::writeCustomMappingLog $TransactionId  INFO "####################################################"
+    ::T4X::TRANSLOG::writeCustomMappingLog $TransactionId  INFO ""
+    
+    #########################################################################################################################################
+    # Store data to the data exchange array ::SAPDat
+    #########################################################################################################################################
+    
+    # MPE_VERSNBOM_CREATE_VERSION PARAMETER.
+    # set ::SAPDat(VERSNBOM:PARAMETER:IV_NO_COMMIT) "X" ; # # X = No Commit / " " = Commit
+		
+    # /SRAIL/PLM_TC_BOMVERS_MAINT PARAMETER.
+    # set ::SAPDat(VersionBOM:PARAMETER:IT_BOM_DIR) "" ; # Document info record table of version BOM
+    # set ::SAPDat(VersionBOM:PARAMETER:IT_BOM_ITEMS) "" ; # Version BOM item table for creation
+    set ::SAPDat(VersionBOM:PARAMETER:IV_NEW_STATE) "" ; # BOM Version Status ( 1 = In Work / 99 = Released / 90 = Obsolete ) - If parameter is set, only the BOM status is changed -> NO changes to BOM Header or BOM Items!
+    # set ::SAPDat(VersionBOM:PARAMETER:IV_READ_ONLY) "" ; # Flag (X or Blank)
+    # set ::SAPDat(VersionBOM:PARAMETER:IV_TEST_ONLY) "X" ; # X = Test only - no DB Update
+		
+    # IS_BOM_HEADER->Header fields for creating / updating version BOM.
+    set ::SAPDat(VersionBOM:IS_BOM_HEADER:MATNR) [string trim [::TPSAP::MM::getInternalMaterialNumber $TcBOMHeader(SAPId)]] ; # Material
+    set ::SAPDat(VersionBOM:IS_BOM_HEADER:WERKS) $TcBOMHeader(Plant) ; # Plant
+    set ::SAPDat(VersionBOM:IS_BOM_HEADER:STLAN) $TcBOMHeader(SAPBomUsage) ; # BOM Usage
+    set ::SAPDat(VersionBOM:IS_BOM_HEADER:STLAL) "01" ; # Alternative BOM
+    # set ::SAPDat(VersionBOM:IS_BOM_HEADER:STLNR) "" ; # Bill of Material
+    # set ::SAPDat(VersionBOM:IS_BOM_HEADER:BOM_VERSN) $TcBOMHeader(Version) ; # BOM Version - > Will be incremented automatically on each transfer
+    set ::SAPDat(VersionBOM:IS_BOM_HEADER:BMEIN) "ST" ; # Base Unit of Measure
+    set ::SAPDat(VersionBOM:IS_BOM_HEADER:BMENG) "1" ; # Base quantity
+    set ::SAPDat(VersionBOM:IS_BOM_HEADER:CADKZ) "X" ; # CAD Indicator
+    # set ::SAPDat(VersionBOM:IS_BOM_HEADER:LABOR) "" ; # Lab/Office
+    # set ::SAPDat(VersionBOM:IS_BOM_HEADER:LTXSP) "" ; # Long Text Language
+    # set ::SAPDat(VersionBOM:IS_BOM_HEADER:STKTX) "" ; # Alternative Text
+    # set ::SAPDat(VersionBOM:IS_BOM_HEADER:STLST) "" ; # BOM Status
+    # set ::SAPDat(VersionBOM:IS_BOM_HEADER:ALEKZ) "" ; # ALE indicator
+    # set ::SAPDat(VersionBOM:IS_BOM_HEADER:BOM_AIN_IND) "" ; # Relevant for BOM to AIN Handover
+    # set ::SAPDat(VersionBOM:IS_BOM_HEADER:LTXKO) "" ; # Alternative long txt
+    # set ::SAPDat(VersionBOM:IS_BOM_HEADER:EXSTL) "" ; # BOM group
+    # set ::SAPDat(VersionBOM:IS_BOM_HEADER:STLBE) "" ; # Authorization group
+    # set ::SAPDat(VersionBOM:IS_BOM_HEADER:ZTEXT) "" ; # BOM Description
+    # set ::SAPDat(VersionBOM:IS_BOM_HEADER:KBAUS) "" ; # Configurable BOM
+    # set ::SAPDat(VersionBOM:IS_BOM_HEADER:LTXZU) "" ; # BOM long text
+    # set ::SAPDat(VersionBOM:IS_BOM_HEADER:TETYP) "" ; # Technical type
+    # set ::SAPDat(VersionBOM:IS_BOM_HEADER:LOSVN) "" ; # From Lot Size
+    # set ::SAPDat(VersionBOM:IS_BOM_HEADER:LOSBS) "" ; # To Lot Size
+    # set ::SAPDat(VersionBOM:IS_BOM_HEADER:CSLTY) "" ; # Configured material
+
+    # if {$TargetTypeName eq "GenericBom"} {
+
+      
+    # } elseif {[string range $TargetTypeName 0 2] eq "WIZ"} {
+      # ::T4S::GENBOM::WIZ::CUSTOM::MAPPING::TC_Object2SAP_Object $TransactionId $TargetTypeName $ItemType $ItemRevisionType $args
+    # } else {
+      # set BomHeaderInfo $ItemID
+		# }
+
+    tpwrite -logchannel [::PL4X::CORE::getSessionLogChannel] -mtype INTERN "$FunctionName returns $rc"
+    return $rc
+  }
+
+  # ---------------------------------------------------------------------
+  ##
+  # Method:         ::T4S::GENBOM::CUSTOM::MAPPING::TC_Object2SAP_ObjectPostAction
+  # \brief          This function is called AFTER the general mapping and can be used
+  #                 to perform additional steps after the header and position mapping.
+  #
+  # \param          TransactionId Unique ID for the transfer transaction
+  # \param          TargetTypeName specified transaction target type name
+  # \param          ItemType
+  # \param          ItemRevisionType
+  # \param          MappingStatus
+  # \param          args Not used
+  #
+  # \author         kh, 20131022
+  #
+  # \return         OK
+  #
+  #
+  proc TC_Object2SAP_ObjectPostAction { TransactionId TargetTypeName ItemType ItemRevisionType MappingStatus args } {
+    #
+    variable BomPositionInfo
+    variable BomHeaderInfo
+    #
+    set ::errorCode "NONE"
+    set ::errorInfo ""
+    set Status "OK"
+    #
+    set FunctionName "[lindex [info level 0] 0]"
+    #
+    tpwrite -logchannel [::PL4X::CORE::getSessionLogChannel] -mtype INTERN "$FunctionName starts with TransactionId >$TransactionId<, TargetTypeName >$TargetTypeName<, ItemType >$ItemType<, ItemRevisionType >$ItemRevisionType< and MappingStatus >$MappingStatus<"
+    #
+    # Add your code here...
+    #
+    tpwrite -logchannel [::PL4X::CORE::getSessionLogChannel] -mtype INTERN "$FunctionName finished with >$Status<"
+    #
+    return $Status
+  }
+
+  # ---------------------------------------------------------------------
+  ##
+  # Method:         ::T4S::GENBOM::CUSTOM::MAPPING::TC_Object2SAP_ObjectPosition
+  # \brief          Customer specific object mapping function template for TargetTypeName
+  #
+  # \author         kh, 20100305
+  # \param          TransactionId unique ID for the transfer transaction
+  # \param          TargetTypeName specified transaction target type name
+  # \param          TcPositionIndex Tc BOMLine index
+  # \param          ItemType
+  # \param          ItemRevisionType
+  #
+  # \param          args not used
+  #
+  # \return         MappingStatus used by the following transfer function.
+  #                 The following values are valid:
+  #                   - OK T4S will continue with the next transfer step
+  #                   - SKIPPED T4S will skip the transfer to SAP
+  #                   - ERROR T4S will stop transfer and raise an error
+  #
+  #
+  proc TC_Object2SAP_ObjectPosition { TransactionId TargetTypeName TcPositionIndex ItemType ItemRevisionType args } {
+    #
+    variable TcBOMPos
+    array unset TcBOMPos
+    #
+    set rc "OK"
+    #
+    set ::errorCode "NONE"
+    set ::errorInfo ""
+
+    # Store procedure name in variable
+    set FunctionName "[lindex [info level 0] 0]"
+
+    # Write information to session log
+    tpwrite -logchannel [::PL4X::CORE::getSessionLogChannel] -mtype INTERN "$FunctionName starts with $TransactionId $TcPositionIndex $ItemType $ItemRevisionType"
+
+    set Item                 "$ItemRevisionType:items_tag:$ItemType"
+    set ItemMaster           "$ItemRevisionType:items_tag:$ItemType:IMAN_master_form:$ItemType Master"
+    set ItemRev              $ItemRevisionType
+    set ItemRevMaster        "$ItemRevisionType:IMAN_master_form_rev:$ItemRevisionType Master"
+        
+    #########################################################################################################################################
+    # Read some attributes from Teamcenter object
+    #########################################################################################################################################
+    set TcBOMPos(ItemId)                      [::T4X::TC::MAPPING::IndexedFieldMapping $TcPositionIndex $Item "item_id"]
+		# set TcBOMPos(ItemUOM)                     [::T4X::TC::MAPPING::IndexedFieldMapping $TcPositionIndex $Item "ItemUnitOfMeasure"]
+    set TcBOMPos(ItemRevId)                   [::T4X::TC::MAPPING::IndexedFieldMapping $TcPositionIndex $ItemRev "item_revision_id"]
+    set TcBOMPos(ItemName)                    [::T4X::TC::MAPPING::IndexedFieldMapping $TcPositionIndex $ItemRev "object_name"]
+    set TcBOMPos(ItemDesc)                    [::T4X::TC::MAPPING::IndexedFieldMapping $TcPositionIndex $ItemRev "object_desc"]
+    set TcBOMPos(SAPId)                       [::T4X::TC::MAPPING::IndexedFieldMapping $TcPositionIndex $ItemRev "sr5SAPID"];	# contains SAP Id if data exist in SAP
+    set TcBOMPos(BOMLineSeqNo)              	[::T4X::TC::MAPPING::IndexedFieldMapping $TcPositionIndex BOMLine "bl_sequence_no"]
+    set TcBOMPos(SAPQuantity)                 [::T4X::TC::MAPPING::IndexedFieldMapping $TcPositionIndex BOMLine "bl_quantity"];	# Quantity
+		set TcBOMPos(BomLineUOM)              		[string toupper [::T4X::TC::MAPPING::IndexedFieldMapping $TcPositionIndex BOMLine "bl_occ_uom_tag"]]; # BOM Line Occurence Unit of Measure
+		set TcBOMPos(EffectivityString)           [::T4X::TC::MAPPING::IndexedFieldMapping $TcPositionIndex BOMLine "bl_occ_effectivities"];	# Element Effectivity (Unit)
+    set TcBOMPos(bl_ref_designator)           [string toupper [::T4X::TC::MAPPING::IndexedFieldMapping $TcPositionIndex BOMLine "bl_ref_designator"]]
+		
+		if {$TcBOMPos(bl_ref_designator) eq "SKIP"} {
+      return SKIPPED
+    }
+    
+    # TODO: Logic needs to be defined and implemented
+    set TcBOMPos(PositionType) "L"
+		
+		# Set Issue Plant
+		set TcBOMPos(IssuingPlant) $::BomHeaderPlant
+		
+		# Mapping the ItemUOM (we use language independent definition BASE_UOM_ISO)
+		# if {$TcBOMPos(ItemUOM) eq "" || $TcBOMPos(ItemUOM) eq "EA" || $TcBOMPos(ItemUOM) eq "EACH" || $TcBOMPos(ItemUOM) eq "-" || $TcBOMPos(ItemUOM) eq "PC" || $TcBOMPos(ItemUOM) eq "ST"} {
+			# set  TcBOMPos(ItemUOM) "ST"
+			# set  TcBOMPos(ItemUOM_ISO) "PCE" ; # ISO UOM for PC (EN) / ST (DE)
+		# } elseif {$TcBOMPos(ItemUOM) eq "CM2"} {
+			# set  TcBOMPos(ItemUOM_ISO) "CMK" ; # ISO UOM for CM2 (EN) / CM2 (DE)
+		# } elseif {$TcBOMPos(ItemUOM) eq "KG"} {
+			# set  TcBOMPos(ItemUOM_ISO) "KGM" ; # ISO UOM for KG (EN) / KG (DE)
+		# } elseif {$TcBOMPos(ItemUOM) eq "L"} {
+			# set  TcBOMPos(ItemUOM_ISO) "LTR" ; # ISO UOM for L (EN) / L (DE)
+		# } elseif {$TcBOMPos(ItemUOM) eq "M2"} {
+			# set  TcBOMPos(ItemUOM_ISO) "MTK" ; # ISO UOM for M2 (EN) / M2 (DE)
+		# } elseif {$TcBOMPos(ItemUOM) eq "M"} {
+			# set  TcBOMPos(ItemUOM_ISO) "MTR" ; # ISO UOM for M (EN) / M (DE)
+		# } elseif {$TcBOMPos(ItemUOM) eq "MM"} {
+			# set  TcBOMPos(ItemUOM_ISO) "MMT" ; # ISO UOM for MM (EN) / MM (DE)
+		# }
+		# Mapping the BomLineUOM
+		if {$TcBOMPos(BomLineUOM) eq "" 
+				|| $TcBOMPos(BomLineUOM) eq "EA" 
+				|| $TcBOMPos(BomLineUOM) eq "EACH" 
+				|| $TcBOMPos(BomLineUOM) eq "-" 
+				|| $TcBOMPos(BomLineUOM) eq "PC" 
+				|| $TcBOMPos(BomLineUOM) eq "ST" 
+				|| $TcBOMPos(BomLineUOM) eq "PIECE" 
+				|| $TcBOMPos(BomLineUOM) eq "STÜCK"
+				|| $TcBOMPos(BomLineUOM) eq "CADA"
+				|| $TcBOMPos(BomLineUOM) eq "CHAQUE"
+				|| $TcBOMPos(BomLineUOM) eq "OGNI"} {
+			set TcBOMPos(BomLineUOM) "ST"
+		}
+		
+		set ListOfUOMs {ST CM3 G KG L ML M MM M2}
+    if {[lsearch -exact $ListOfUOMs $TcBOMPos(BomLineUOM)] >= 0} {
+      ::T4X::TRANSLOG::writeCustomMappingLog $TransactionId  WARNING "Unit of Measure for BOM position $TcBOMPos(BOMLineSeqNo) (Item Id $TcBOMPos(ItemId)/$TcBOMPos(ItemRevId)) is set to >$TcBOMPos(BomLineUOM)<"
+    }	else {    
+			::T4X::CORE::storeMessage2 MAPPING "Invalid Unit of Measure >$TcBOMPos(BomLineUOM)< for BOM position $TcBOMPos(BOMLineSeqNo) ($TcBOMPos(ItemId)/$TcBOMPos(ItemRevId))" ERROR
+			set ::SAPDat(CtrlParam:ProhibitedAction) "X"
+			set rc "ERROR"
+		}
+        
+    #########################################################################################################################################
+    # Check if BOM Child alrady exists in SAP
+    #########################################################################################################################################
+    if {[string trim $TcBOMPos(SAPId)] eq ""} {
+			if {$::TcData(GatewayMode) eq "Portal" && $::TcData(Portal:Action) eq "DISPLAY"} {
+				#
+				# Only the portal menu action DISPLAY or PSB will work without a material number for a given Teamcenter BOM line
+				#
+			} else {    
+				::T4X::CORE::storeMessage2 MAPPING "SAP Id is missing for BOM position $TcBOMPos(BOMLineSeqNo) (Item Id $TcBOMPos(ItemId)/$TcBOMPos(ItemRevId))" ERROR
+				set ::SAPDat(CtrlParam:ProhibitedAction) "X"
+				set rc "ERROR"
+			}
+    } elseif {[string toupper $TcBOMPos(SAPId)] ne [string toupper $TcBOMPos(ItemId)]} {
+			if {[string toupper $TcBOMPos(SAPId)] eq [string toupper [::TPSAP::MM::getInternalMaterialNumber $TcBOMPos(ItemId)]]} {
+				::T4X::TRANSLOG::writeCustomMappingLog $TransactionId  WARNING "The SAP ID >$TcBOMPos(SAPId)< for BOM position $TcBOMPos(BOMLineSeqNo) is defined in the internal format on the TC object -> BOM transfer proceeds but this should be cleaned up!"
+			} elseif {[string toupper $TcBOMPos(SAPId)] eq [string toupper [string trimleft $TcBOMPos(ItemId) 0]]} {
+				::T4X::TRANSLOG::writeCustomMappingLog $TransactionId  WARNING "The SAP ID >$TcBOMPos(SAPId)< for BOM position $TcBOMPos(BOMLineSeqNo) (Item Id $TcBOMPos(ItemId)/$TcBOMPos(ItemRevId)) is defined without leading zeros -> okay for BOM transfer"
+			} else {
+				::T4X::CORE::storeMessage2 MAPPING "SAP Id >$TcBOMPos(SAPId)< and Teamcenter Item Id >$TcBOMPos(ItemId)< for BOM position $TcBOMPos(BOMLineSeqNo) (Item Id $TcBOMPos(ItemId)/$TcBOMPos(ItemRevId)) are inconsistent" ERROR
+				set ::SAPDat(CtrlParam:ProhibitedAction) "X"
+				set rc "ERROR"
+			}
+    }
+        
+    #########################################################################################################################################
+    # Preparing the values of Teamcenter attributes to match SAP regulations
+    #########################################################################################################################################
+    # Check quantity and set it to 1 if it is empty or zero
+    if {[string trim $TcBOMPos(SAPQuantity)] eq "" || [string trim $TcBOMPos(SAPQuantity)] == 0} {
+			# TO BE REMOVED - Skip positions with zero Quantity for IT2 as there are no Textpositions available in TC
+			if {[string trim $TcBOMPos(SAPQuantity)] == 0} {
+				::T4X::TRANSLOG::writeCustomMappingLog $TransactionId  WARNING "Quantity of BOM position $TcBOMPos(BOMLineSeqNo) (Item Id $TcBOMPos(ItemId)/$TcBOMPos(ItemRevId)) is set to >0< - BOM Position is not transferred!"
+				return SKIPPED
+			} else {
+				set TcBOMPos(SAPQuantity) "1"
+			}
+    }
+    # Force the number to have exactly three decimals; if the input string is longer, then it is rounded
+    set TcBOMPos(SAPQuantity) [format "%0.3f" $TcBOMPos(SAPQuantity)]
+    # Replace the dot in the Quantity string by a comma
+    regsub -all {\.} $TcBOMPos(SAPQuantity)  {,} TcBOMPos(SAPQuantity); # Caution: there may be the need to format it in a different way, depending on the SAP system!
+		# Prepare the Position Number by adding leading zeros
+    set TcBOMPos(SAPPosition) [format "%04d" $TcBOMPos(BOMLineSeqNo)]
+		# Prepare the Sort String by adding leading zeros
+    set TcBOMPos(SAPSortString) [format "%04d" $TcBOMPos(BOMLineSeqNo)]
+		
+		# Prepare the element effectivity
+		set ParameterEffectivityList {}
+		regsub -all " " $TcBOMPos(EffectivityString) "" EffectivityString ; # Remove all whitespaces
+		set EffectivityStringRecords	[split $EffectivityString ")"]
+		foreach Record $EffectivityStringRecords {
+			if {$Record ne ""} {
+				set Effectivity	[lindex [split $Record "("] 0]
+				set MatNumber		[lindex [split $Record "("] 1]
+				set EffectivityList	[split $Effectivity ","]
+				foreach EffectivityRecord $EffectivityList {
+					if {$EffectivityRecord ne ""} {
+						regsub -all {UP} $EffectivityRecord {9999} EffectivityRecord; # Replace UP with 9999
+						regsub -all {SO} $EffectivityRecord {9999} EffectivityRecord; # Replace SO with 9999
+						lappend ParameterEffectivityList $MatNumber
+						lappend ParameterEffectivityList $EffectivityRecord
+					}
+				}
+			}
+		}
+		# if {$lParamEffecRequired eq "true"} {
+			# if {[llength $ParameterEffectivityList] == 0} {
+				# lappend ParameterEffectivityList [string trim [::TPSAP::MM::getInternalMaterialNumber $TcBOMPos(SAPId)]]
+				# lappend ParameterEffectivityList "1-99"
+				# ::T4X::CORE::storeMessage2 "Version BOM Mapping" "Parameter Effectivity is missing for BOM position $TcBOMPos(BOMLineSeqNo) (Item Id $TcBOMPos(ItemId)/$TcBOMPos(ItemRevId))" ERROR
+				# set ::SAPDat(CtrlParam:ProhibitedAction) "X"
+				# set rc "ERROR"
+			# }
+		# }
+		
+		::T4X::TRANSLOG::writeCustomMappingLog $TransactionId  WARNING "DEBUG: ParameterEffectivityList >$ParameterEffectivityList<"
+		
+    #########################################################################################################################################
+    # Print TC Data to translog
+    #########################################################################################################################################
+    ::T4X::TRANSLOG::writeCustomMappingLog $TransactionId  INFO "##### Print the Teamcenter Data for BOM Position #####"
+    
+    foreach elem [::T4X::CORE::sortIndexedInterfaceTable [array names TcBOMPos *]] {
+			::T4X::TRANSLOG::writeCustomMappingLog $TransactionId  INFO "TcBOMPos($elem) : $TcBOMPos($elem)"
+    }
+    ::T4X::TRANSLOG::writeCustomMappingLog $TransactionId  INFO "######################################################"
+    ::T4X::TRANSLOG::writeCustomMappingLog $TransactionId  INFO ""        
+
+    #########################################################################################################################################
+    # Try to find the corresponding BOM position in the list if the bl_ref_designator value is defined
+    #########################################################################################################################################
+    if {[string length $TcBOMPos(bl_ref_designator)] > 0} {
+      set BomLineIndex 0
+      foreach BomLine [array names ::SAPDat Bom:Position:POSNR:*] {
+        if {$::SAPDat($BomLine) == $TcBOMPos(SAPPosition)} {
+          set BomLineIndex [lindex [split $BomLine :] end]
+          break
+        }
+      }
+      if {$BomLineIndex == 0} {
+        if {$::T4S::BOM::MAPPING::CtrlParam(AutoInitOfPositionData) ne "TRUE"} {
+          incr BomPositionInfo(BomLineIndex)
+          ::TPSAP::BOM::initPositionStructure $BomPositionInfo(BomLineIndex)
+          set BomLineIndex $BomPositionInfo(BomLineIndex)
+        } else {
+          set BomLineIndex $TcPositionIndex
+        }
+      }
+    } else {
+      if {$::T4S::BOM::MAPPING::CtrlParam(AutoInitOfPositionData) ne "TRUE"} {
+        incr BomPositionInfo(BomLineIndex)
+        ::TPSAP::BOM::initPositionStructure $BomPositionInfo(BomLineIndex)
+        set BomLineIndex $BomPositionInfo(BomLineIndex)
+      } else {
+        set BomLineIndex $TcPositionIndex
+      }
+    }
+    tpwrite -logchannel [::PL4X::CORE::getSessionLogChannel] -mtype INTERN "++++++++++++++ BomLineIndex: '$BomLineIndex' +++++++++++++++++++++++++++++++++++"
+        
+		#########################################################################################################################################
+		# Store data to the data exchange array ::SAPDat
+		#########################################################################################################################################
+				
+		# IT_BOM_ITEMS->BOM Item fields for creating / updating version BOM.
+		set ::SAPDat(VersionBOM:IT_BOM_ITEMS:IDNRK:$BomLineIndex) [string trim [::TPSAP::MM::getInternalMaterialNumber $TcBOMPos(SAPId)]] ; # BOM component
+		set ::SAPDat(VersionBOM:IT_BOM_ITEMS:MEINS:$BomLineIndex) $TcBOMPos(BomLineUOM) ; # Component Unit of Measure
+		set ::SAPDat(VersionBOM:IT_BOM_ITEMS:MENGE:$BomLineIndex) $TcBOMPos(SAPQuantity) ; # Component Quantity
+		set ::SAPDat(VersionBOM:IT_BOM_ITEMS:SPOSN:$BomLineIndex) $TcBOMPos(SAPPosition) ; # BOM Item Number
+		set ::SAPDat(VersionBOM:IT_BOM_ITEMS:POSNR:$BomLineIndex) $TcBOMPos(SAPPosition) ; # BOM Item Number
+		set ::SAPDat(VersionBOM:IT_BOM_ITEMS:SORTF:$BomLineIndex) $TcBOMPos(SAPSortString) ; # Sort String
+		set ::SAPDat(VersionBOM:IT_BOM_ITEMS:POSTP:$BomLineIndex) $TcBOMPos(PositionType) ; # Item category (bill of material)
+		set ::SAPDat(VersionBOM:IT_BOM_ITEMS:PSWRK:$BomLineIndex) $TcBOMPos(IssuingPlant) ; # Issuing Plant
+		set ::SAPDat(VersionBOM:IT_BOM_ITEMS:CADPO:$BomLineIndex) "X" ; # CAD Indicator
+		# set ::SAPDat(VersionBOM:IT_BOM_ITEMS:POTX1:$BomLineIndex) "This is a test" ; # BOM Item Text (Line 1)
+		
+		# set ::SAPDat(VersionBOM:IT_BOM_ITEMS:ITSOB:$BomLineIndex) "45" ; # Special Procurement Type for BOM Item
+		
+		# if {$ItemRevisionType eq "SR5MfgEndItemRevision" || $ItemRevisionType eq "SR5MfgMajorAssyRevision" || $ItemRevisionType eq "SR5MfgInstallKitRevision"} {
+			# set ::SAPDat(VersionBOM:IT_BOM_ITEMS:MATNR_LO:$BomLineIndex) $TcBOMPos(SAPParamEffectMatNr) ; # Material number - lower limit
+			# set ::SAPDat(VersionBOM:IT_BOM_ITEMS:SERNR_LO:$BomLineIndex) $TcBOMPos(SAPParamEffectLow) ; # Serial number - lower limit
+			# set ::SAPDat(VersionBOM:IT_BOM_ITEMS:SERNR_HI:$BomLineIndex) $TcBOMPos(SAPParamEffectHigh) ; # Serial number - upper limit
+			
+			set idx $BomLineIndex
+			append idx "000"
+			foreach {MaterialNr Effectivity} $ParameterEffectivityList {
+				set SAPParamEffectLow		[lindex [split $Effectivity "-"] 0]
+				set SAPParamEffectHigh	[lindex [split $Effectivity "-"] 1]
+				
+				if {$SAPParamEffectLow ne "" && $SAPParamEffectHigh ne ""} {
+					# Parameter Effectivity Low and High is different (e.g. 1-5) -> set SERNR_LO < SERNR_HI
+					set ::SAPDat(VersionBOM:IT_EFFECTIVITY:IDNRK:$idx) [string trim [::TPSAP::MM::getInternalMaterialNumber $TcBOMPos(SAPId)]] ; # BOM component
+					set ::SAPDat(VersionBOM:IT_EFFECTIVITY:POSNR:$idx) $TcBOMPos(SAPPosition) ; # BOM Item Number
+					set ::SAPDat(VersionBOM:IT_EFFECTIVITY:MATNR_LO:$idx) [string trim [::TPSAP::MM::getInternalMaterialNumber $MaterialNr]] ; # Material number - lower limit
+					set ::SAPDat(VersionBOM:IT_EFFECTIVITY:SERNR_LO:$idx) $SAPParamEffectLow ; # Serial number - lower limit
+					set ::SAPDat(VersionBOM:IT_EFFECTIVITY:SERNR_HI:$idx) $SAPParamEffectHigh ; # Serial number - upper limit
+				} else {
+					if {$Effectivity ne ""} {
+						# Parameter Effectivity Low and High is equal -> set SERNR_LO = SERNR_HI
+						set ::SAPDat(VersionBOM:IT_EFFECTIVITY:IDNRK:$idx) [string trim [::TPSAP::MM::getInternalMaterialNumber $TcBOMPos(SAPId)]] ; # BOM component
+						set ::SAPDat(VersionBOM:IT_EFFECTIVITY:POSNR:$idx) $TcBOMPos(SAPPosition) ; # BOM Item Number
+						set ::SAPDat(VersionBOM:IT_EFFECTIVITY:MATNR_LO:$idx) [string trim [::TPSAP::MM::getInternalMaterialNumber $MaterialNr]] ; # Material number - lower limit
+						set ::SAPDat(VersionBOM:IT_EFFECTIVITY:SERNR_LO:$idx) $Effectivity ; # Serial number - lower limit
+						set ::SAPDat(VersionBOM:IT_EFFECTIVITY:SERNR_HI:$idx) $Effectivity ; # Serial number - upper limit					
+					} else {
+						::T4X::CORE::storeMessage2 "Version BOM Mapping" "Parameter Effectivity is not set correctly for BOM position $TcBOMPos(BOMLineSeqNo) (Item Id $TcBOMPos(ItemId)/$TcBOMPos(ItemRevId))" ERROR
+						set ::SAPDat(CtrlParam:ProhibitedAction) "X"
+						set rc "ERROR"
+					}
+				}
+				
+				incr idx
+			}
+			
+			# ::T4X::TRANSLOG::writeCustomMappingLog $TransactionId  WARNING "DEBUG: ItemRevisionType = $ItemRevisionType -> set Parameter Effectivity!"
+		# } else {
+			# set ::SAPDat(VersionBOM:IT_BOM_ITEMS:AENNR:$BomLineIndex) "500000000000" ; # Change Number
+		# }
+
+    # if {$TargetTypeName eq "GenericBom"} {
+           
+    # } elseif {[string range $TargetTypeName 0 2] eq "WIZ"} {
+      # ::T4S::GENBOM::WIZ::CUSTOM::MAPPING::TC_Object2SAP_ObjectPosition $TransactionId $TargetTypeName $TcPositionIndex $ItemType $ItemRevisionType $args
+    # } else {
+      # set BomPositionInfo($TcPositionIndex) "$TcPositionIndex :: $ItemID :: $Description :: $Quantity "
+    # }
+		
+		
+		
+		# T_EFFECTIVITY_IN->Input Effectivity Values for BOM Items.
+		# set ::SAPDat(VERSNBOM:T_EFFECTIVITY_IN:NEW_ITEM_IDENT:$BomLineIndex) "000001" ; # Unique Identifier for New Item
+		# set ::SAPDat(VERSNBOM:T_EFFECTIVITY_IN:STLKN:$BomLineIndex) "" ; # BOM item node number
+		# set ::SAPDat(VERSNBOM:T_EFFECTIVITY_IN:STPOZ:$BomLineIndex) "" ; # Internal counter
+		# set ::SAPDat(VERSNBOM:T_EFFECTIVITY_IN:STVKN:$BomLineIndex) "" ; # Inherited node number of BOM item
+		# set ::SAPDat(VERSNBOM:T_EFFECTIVITY_IN:MANDT:$BomLineIndex) "" ; # Client
+		# set ::SAPDat(VERSNBOM:T_EFFECTIVITY_IN:AENNR:$BomLineIndex) "500000000000" ; # Change Number
+		# set ::SAPDat(VERSNBOM:T_EFFECTIVITY_IN:AEEFZ:$BomLineIndex) "" ; # Engin. change mgmt: counter in table key
+		# set ::SAPDat(VERSNBOM:T_EFFECTIVITY_IN:DATE_LO:$BomLineIndex) "" ; # Date - lower limit
+		# set ::SAPDat(VERSNBOM:T_EFFECTIVITY_IN:DATE_HI:$BomLineIndex) "" ; # Date - upper limit
+		# set ::SAPDat(VERSNBOM:T_EFFECTIVITY_IN:DATE_OI:$BomLineIndex) "" ; # Date - open interval
+		# set ::SAPDat(VERSNBOM:T_EFFECTIVITY_IN:MATNR_LO:$BomLineIndex) "" ; # Material number - lower limit
+		# set ::SAPDat(VERSNBOM:T_EFFECTIVITY_IN:SERNR_LO:$BomLineIndex) "" ; # Serial number - lower limit
+		# set ::SAPDat(VERSNBOM:T_EFFECTIVITY_IN:SERNR_HI:$BomLineIndex) "" ; # Serial number - upper limit
+		# set ::SAPDat(VERSNBOM:T_EFFECTIVITY_IN:PRODUCT_LO:$BomLineIndex) "" ; # Internal Number (GUID) for Product
+		# set ::SAPDat(VERSNBOM:T_EFFECTIVITY_IN:CLASS_LO:$BomLineIndex) "" ; # Class number
+		# set ::SAPDat(VERSNBOM:T_EFFECTIVITY_IN:CLASSTY_LO:$BomLineIndex) "" ; # Class Type
+		# set ::SAPDat(VERSNBOM:T_EFFECTIVITY_IN:PLANT_LO:$BomLineIndex) "" ; # Plant
+		# set ::SAPDat(VERSNBOM:T_EFFECTIVITY_IN:STARTUP_LO:$BomLineIndex) "" ; # Start-Up Parameters for Effectivity
+		# set ::SAPDat(VERSNBOM:T_EFFECTIVITY_IN:LOCNO_LO:$BomLineIndex) "" ; # Internal location number (customer, supplier or plant)
+		# set ::SAPDat(VERSNBOM:T_EFFECTIVITY_IN:SERNR_OI:$BomLineIndex) "" ; # Serial number - indicator
+		# set ::SAPDat(VERSNBOM:T_EFFECTIVITY_IN:ANDAT:$BomLineIndex) "" ; # Date record created on
+		# set ::SAPDat(VERSNBOM:T_EFFECTIVITY_IN:ANNAM:$BomLineIndex) "" ; # User who created record
+		# set ::SAPDat(VERSNBOM:T_EFFECTIVITY_IN:AEDAT:$BomLineIndex) "" ; # Date of Last Change
+		# set ::SAPDat(VERSNBOM:T_EFFECTIVITY_IN:AENAM:$BomLineIndex) "" ; # Name of person who changed object
+		
+		# T_BOM_ITEMS_IN->Input BOM Items for Initial Version.
+		# set ::SAPDat(VERSNBOM:T_BOM_ITEMS_IN:UPDATE_TYPE:$BomLineIndex) "" ; # Type of Update
+		# set ::SAPDat(VERSNBOM:T_BOM_ITEMS_IN:NEW_ITEM_IDENT:$BomLineIndex) "000001" ; # Unique Identifier for New Item
+		# set ::SAPDat(VERSNBOM:T_BOM_ITEMS_IN:STLKN:$BomLineIndex) "" ; # BOM item node number
+		# set ::SAPDat(VERSNBOM:T_BOM_ITEMS_IN:STPOZ:$BomLineIndex) "" ; # Internal counter
+		# set ::SAPDat(VERSNBOM:T_BOM_ITEMS_IN:STVKN:$BomLineIndex) "" ; # Inherited node number of BOM item
+		# set ::SAPDat(VERSNBOM:T_BOM_ITEMS_IN:IDNRK:$BomLineIndex) $TcBOMPos(SAPId) ; # BOM component
+		# set ::SAPDat(VERSNBOM:T_BOM_ITEMS_IN:PSWRK:$BomLineIndex) "" ; # Issuing Plant
+		# set ::SAPDat(VERSNBOM:T_BOM_ITEMS_IN:POSTP:$BomLineIndex) "L" ; # Item category (bill of material)
+		# set ::SAPDat(VERSNBOM:T_BOM_ITEMS_IN:POSNR:$BomLineIndex) $TcBOMPos(SAPPosition) ; # BOM Item Number
+		# set ::SAPDat(VERSNBOM:T_BOM_ITEMS_IN:SORTF:$BomLineIndex) "" ; # Sort String
+		# set ::SAPDat(VERSNBOM:T_BOM_ITEMS_IN:MEINS:$BomLineIndex) "ST" ; # Component Unit of Measure
+		# set ::SAPDat(VERSNBOM:T_BOM_ITEMS_IN:MENGE:$BomLineIndex) $TcBOMPos(SAPQuantity) ; # Component Quantity
+		# set ::SAPDat(VERSNBOM:T_BOM_ITEMS_IN:FMENG:$BomLineIndex) "" ; # Fixed Quantity
+		# set ::SAPDat(VERSNBOM:T_BOM_ITEMS_IN:AUSCH:$BomLineIndex) "" ; # Component Scrap in Percent
+		# set ::SAPDat(VERSNBOM:T_BOM_ITEMS_IN:AVOAU:$BomLineIndex) "" ; # Operation Scrap
+		# set ::SAPDat(VERSNBOM:T_BOM_ITEMS_IN:NETAU:$BomLineIndex) "" ; # Net Scrap Indicator
+		# set ::SAPDat(VERSNBOM:T_BOM_ITEMS_IN:SCHGT:$BomLineIndex) "" ; # Indicator: bulk material
+		# set ::SAPDat(VERSNBOM:T_BOM_ITEMS_IN:BEIKZ:$BomLineIndex) "" ; # Material Provision Indicator
+		# set ::SAPDat(VERSNBOM:T_BOM_ITEMS_IN:ERSKZ:$BomLineIndex) "" ; # Indicator: Spare Part
+		# set ::SAPDat(VERSNBOM:T_BOM_ITEMS_IN:STKKZ:$BomLineIndex) "" ; # PM assembly indicator
+		# set ::SAPDat(VERSNBOM:T_BOM_ITEMS_IN:REKRI:$BomLineIndex) "" ; # Indicator: BOM is recursive
+		# set ::SAPDat(VERSNBOM:T_BOM_ITEMS_IN:REKRS:$BomLineIndex) "" ; # Indicator: recursiveness allowed
+		# set ::SAPDat(VERSNBOM:T_BOM_ITEMS_IN:CADPO:$BomLineIndex) "" ; # CAD Indicator
+		# set ::SAPDat(VERSNBOM:T_BOM_ITEMS_IN:NLFZT:$BomLineIndex) "" ; # Lead-time offset
+		# set ::SAPDat(VERSNBOM:T_BOM_ITEMS_IN:VERTI:$BomLineIndex) "" ; # Distribution key for component consumption
+		# set ::SAPDat(VERSNBOM:T_BOM_ITEMS_IN:EWAHR:$BomLineIndex) "" ; # Usage Probability in % (Alternative Item)
+		# set ::SAPDat(VERSNBOM:T_BOM_ITEMS_IN:EKGRP:$BomLineIndex) "" ; # Purchasing Group
+		# set ::SAPDat(VERSNBOM:T_BOM_ITEMS_IN:LIFZT:$BomLineIndex) "" ; # Delivery time in days
+		# set ::SAPDat(VERSNBOM:T_BOM_ITEMS_IN:LIFNR:$BomLineIndex) "" ; # Account Number of Vendor or Creditor
+		# set ::SAPDat(VERSNBOM:T_BOM_ITEMS_IN:PREIS:$BomLineIndex) "" ; # Price
+		# set ::SAPDat(VERSNBOM:T_BOM_ITEMS_IN:PEINH:$BomLineIndex) "" ; # Price unit
+		# set ::SAPDat(VERSNBOM:T_BOM_ITEMS_IN:WAERS:$BomLineIndex) "" ; # Currency Key
+		# set ::SAPDat(VERSNBOM:T_BOM_ITEMS_IN:SAKTO:$BomLineIndex) "" ; # Cost element
+		# set ::SAPDat(VERSNBOM:T_BOM_ITEMS_IN:ROANZ:$BomLineIndex) "" ; # Number of variable-size items
+		# set ::SAPDat(VERSNBOM:T_BOM_ITEMS_IN:ROMS1:$BomLineIndex) "" ; # Size 1
+		# set ::SAPDat(VERSNBOM:T_BOM_ITEMS_IN:ROMS2:$BomLineIndex) "" ; # Size 2
+		# set ::SAPDat(VERSNBOM:T_BOM_ITEMS_IN:ROMS3:$BomLineIndex) "" ; # Size 3
+		# set ::SAPDat(VERSNBOM:T_BOM_ITEMS_IN:ROMEI:$BomLineIndex) "" ; # Unit of measure for sizes 1 to 3
+		# set ::SAPDat(VERSNBOM:T_BOM_ITEMS_IN:ROMEN:$BomLineIndex) "" ; # Quantity of variable-size item
+		# set ::SAPDat(VERSNBOM:T_BOM_ITEMS_IN:RFORM:$BomLineIndex) "" ; # Formula Key for Variable-Size Items
+		# set ::SAPDat(VERSNBOM:T_BOM_ITEMS_IN:UPSKZ:$BomLineIndex) "" ; # Indicator: sub-items exist
+		# set ::SAPDat(VERSNBOM:T_BOM_ITEMS_IN:LTXSP:$BomLineIndex) "" ; # Long Text Language, for Creation of a Change Document
+		# set ::SAPDat(VERSNBOM:T_BOM_ITEMS_IN:POTX1:$BomLineIndex) "" ; # BOM Item Text (Line 1)
+		# set ::SAPDat(VERSNBOM:T_BOM_ITEMS_IN:POTX2:$BomLineIndex) "" ; # BOM Item Text (Line 2)
+		# set ::SAPDat(VERSNBOM:T_BOM_ITEMS_IN:OBJTY:$BomLineIndex) "" ; # Object type (BOM item)
+		# set ::SAPDat(VERSNBOM:T_BOM_ITEMS_IN:MATKL:$BomLineIndex) "" ; # Material Group
+		# set ::SAPDat(VERSNBOM:T_BOM_ITEMS_IN:WEBAZ:$BomLineIndex) "" ; # Goods receipt processing time in days
+		# set ::SAPDat(VERSNBOM:T_BOM_ITEMS_IN:DOKAR:$BomLineIndex) "" ; # Document Type
+		# set ::SAPDat(VERSNBOM:T_BOM_ITEMS_IN:DOKNR:$BomLineIndex) "" ; # Document number
+		# set ::SAPDat(VERSNBOM:T_BOM_ITEMS_IN:DOKVR:$BomLineIndex) "" ; # Document Version
+		# set ::SAPDat(VERSNBOM:T_BOM_ITEMS_IN:DOKTL:$BomLineIndex) "" ; # Document Part
+		# set ::SAPDat(VERSNBOM:T_BOM_ITEMS_IN:CLASS:$BomLineIndex) "" ; # Class number
+		# set ::SAPDat(VERSNBOM:T_BOM_ITEMS_IN:KLART:$BomLineIndex) "" ; # Class Type
+		# set ::SAPDat(VERSNBOM:T_BOM_ITEMS_IN:POTPR:$BomLineIndex) "" ; # Resulting item category
+		# set ::SAPDat(VERSNBOM:T_BOM_ITEMS_IN:EKORG:$BomLineIndex) "" ; # Purchasing organization
+		# set ::SAPDat(VERSNBOM:T_BOM_ITEMS_IN:CLOBK:$BomLineIndex) "" ; # Required Component
+		# set ::SAPDat(VERSNBOM:T_BOM_ITEMS_IN:CLMUL:$BomLineIndex) "" ; # Multiple Selection Allowed
+		# set ::SAPDat(VERSNBOM:T_BOM_ITEMS_IN:CLALT:$BomLineIndex) "" ; # Alternative Display Format
+		# set ::SAPDat(VERSNBOM:T_BOM_ITEMS_IN:KNOBJ:$BomLineIndex) "" ; # Number of Object with Assigned Dependencies
+		# set ::SAPDat(VERSNBOM:T_BOM_ITEMS_IN:LGORT:$BomLineIndex) "" ; # Issue Location for Production Order
+		# set ::SAPDat(VERSNBOM:T_BOM_ITEMS_IN:KZKUP:$BomLineIndex) "" ; # Indicator: co-product
+		# set ::SAPDat(VERSNBOM:T_BOM_ITEMS_IN:DSPST:$BomLineIndex) "" ; # Explosion type
+		# set ::SAPDat(VERSNBOM:T_BOM_ITEMS_IN:ALPST:$BomLineIndex) "" ; # Alternative item: strategy
+		# set ::SAPDat(VERSNBOM:T_BOM_ITEMS_IN:ALPRF:$BomLineIndex) "" ; # Alternative item: ranking order
+		# set ::SAPDat(VERSNBOM:T_BOM_ITEMS_IN:ALPGR:$BomLineIndex) "" ; # Alternative item: group
+		# set ::SAPDat(VERSNBOM:T_BOM_ITEMS_IN:KZNFP:$BomLineIndex) "" ; # Indicator: Follow-Up Item
+		# set ::SAPDat(VERSNBOM:T_BOM_ITEMS_IN:NFGRP:$BomLineIndex) "" ; # Follow-up group
+		# set ::SAPDat(VERSNBOM:T_BOM_ITEMS_IN:NFEAG:$BomLineIndex) "" ; # Discontinuation group
+		# set ::SAPDat(VERSNBOM:T_BOM_ITEMS_IN:CLSZU:$BomLineIndex) "" ; # Classification number
+		# set ::SAPDat(VERSNBOM:T_BOM_ITEMS_IN:KZCLB:$BomLineIndex) "" ; # Indicator: classification as selection condition
+		# set ::SAPDat(VERSNBOM:T_BOM_ITEMS_IN:PRVBE:$BomLineIndex) "" ; # Production Supply Area
+		# set ::SAPDat(VERSNBOM:T_BOM_ITEMS_IN:NLFZV:$BomLineIndex) "" ; # Lead-time offset for operation
+		# set ::SAPDat(VERSNBOM:T_BOM_ITEMS_IN:NLFMV:$BomLineIndex) "" ; # Unit for lead-time offset for operation
+		# set ::SAPDat(VERSNBOM:T_BOM_ITEMS_IN:ITMID:$BomLineIndex) "" ; # External identification of an item
+		# set ::SAPDat(VERSNBOM:T_BOM_ITEMS_IN:ITSOB:$BomLineIndex) "" ; # Special Procurement Type for BOM Item
+		# set ::SAPDat(VERSNBOM:T_BOM_ITEMS_IN:RFPNT:$BomLineIndex) "" ; # Reference point for BOM transfer
+		# set ::SAPDat(VERSNBOM:T_BOM_ITEMS_IN:SFWIND:$BomLineIndex) "" ; # Indicator: Software component
+		# set ::SAPDat(VERSNBOM:T_BOM_ITEMS_IN:CUFACTOR:$BomLineIndex) "" ; # CU: Number of CU Instances
+		# set ::SAPDat(VERSNBOM:T_BOM_ITEMS_IN:FUNCID:$BomLineIndex) "" ; # Function Identifier
+		# set ::SAPDat(VERSNBOM:T_BOM_ITEMS_IN:KTEXT:$BomLineIndex) "" ; # Component description
+		# set ::SAPDat(VERSNBOM:T_BOM_ITEMS_IN:ROKME:$BomLineIndex) "" ; # Unit of measure for variable-size component
+		# set ::SAPDat(VERSNBOM:T_BOM_ITEMS_IN:ROAME:$BomLineIndex) "" ; # Unit of measure for variable-size items
+		# set ::SAPDat(VERSNBOM:T_BOM_ITEMS_IN:STLKZ:$BomLineIndex) "" ; # Indicator: assembly
+		# set ::SAPDat(VERSNBOM:T_BOM_ITEMS_IN:SCHKZ:$BomLineIndex) "" ; # Bulk Material Indicator in Material Master
+
+    tpwrite -logchannel [::PL4X::CORE::getSessionLogChannel] -mtype INTERN "$FunctionName returns $rc"
+    return $rc
+  }
+
+  # ---------------------------------------------------------------------
+  ##
+  # Method:         ::T4S::GENBOM::CUSTOM::MAPPING::SAP_Object2TC_Object
+  # \brief          Customer specific object reverse mapping function template for TargetTypeName
+  # \author         kh, 20100305
+  # \param          TransactionId unique ID for the transfer transaction
+  # \param          TargetTypeName specified transaction target type name
+  # \param          Status Transfer Status
+  #                 The following values are valid:
+  #                   - SKIPPED the transfer was skipped
+  #                   - ERROR the transfer was stopped by an error
+  #                   - UNKNOWN the transfer was stopped by an unknown error
+  #                   - UPDATED_WITH_ERROR the transfer was stopped by an minor error in one of the additional transfer steps
+  #                   - CREATED, CHANGED, UPDATED and some other values are used for a successful transfer
+  # \param          ObjectKey
+  #
+  # \param          args not used
+  #
+  # \return         MappingStatus used by the following Tc object update function.
+  #                 The following values are valid:
+  #                   - OK T4S will update the Tc object based on the reverse mapping
+  #                        preferences and the reverse mapping buffer.
+  #                   - SKIPPED T4S will skip the TcData object
+  #                   - ERROR T4S will stop transfer and raise an error
+  #
+  #
+  #
+  proc SAP_Object2TC_Object { TransactionId TargetTypeName Status ObjectKey args } {
+    #
+    set ::errorCode "NONE"
+    set ::errorInfo ""
+		
+		# Define default return code
+    set rc "OK"
+    #
+    tpwrite -logchannel [::PL4X::CORE::getSessionLogChannel] -mtype INTERN "::T4S::GENBOM::CUSTOM::MAPPING::SAP_Object2TC_Object starts with $Status - $ObjectKey"
+    tpwrite -logchannel [::PL4X::CORE::getSessionLogChannel] -mtype INTERN "::T4S::GENBOM::CUSTOM::MAPPING::SAP_Object2TC_Object targettype - $TargetTypeName"
+
+		set BomViewType				$::TcData(ItemInfo:TypeName)
+    set ItemRevisionType 	$::TcData(0:ItemInfo:TypeName)
+		
+    regsub -all "Revision" $ItemRevisionType {} ItemType
+    set ItemType [string trim $ItemType]
+		
+    # Return in case of prohibited action
+    foreach data [array names ::SAPDat "CtrlParam:ProhibitedAction"] {
+      set rc "SKIPPED"
+      tpwrite -logchannel [::PL4X::CORE::getSessionLogChannel] -mtype INTERN "::T4S::GENBOM::CUSTOM::MAPPING::SAP_Object2TC_Object returns $rc"
+      return $rc
+    }
+
+    if {$TargetTypeName eq "GenericBom"} {
+			# Read some attributes from SAP object and define transfer status string
+			#   
+			set ItemTransferStatus [string trim [::T4X::TC::MAPPING::IndexedFieldMapping "0" $ItemRevisionType "sr5SAPTransStatus"]]
+			set listTransferStatus [split $ItemTransferStatus "\n"]
+			if {[llength $listTransferStatus] > 0} {
+				set T4STransferStatusMM [lindex $listTransferStatus 0]
+			} else {
+				set T4STransferStatusMM ""
+			}
+			
+			# Current time stamp
+			set TimeStamp [clock format [clock seconds] -format "%Y-%m-%d %R"]
+			
+			if {($Status eq "ERROR") || ($Status eq "UNKNOWN") || ($Status eq "SKIPPED") || ($Status eq "EMPTY_BOM_ERROR")} {
+				set T4STransferStatus "$T4STransferStatusMM\nBOM transfer $Status - [clock format [clock seconds] -format "%Y-%m-%d %R"]"
+				#
+				# Cut to max. 128 digit and set last digit to '*'
+				if {[string length $T4STransferStatus] > 128} {
+					set T4STransferStatus	[string range $T4STransferStatus 0 126]
+					append T4STransferStatus "*"
+				}
+				#
+				tpwrite -logchannel [::PL4X::CORE::getSessionLogChannel] -mtype INTERN "++++++++++ Reverse mapping value 'sr5SAPTransStatus': '$T4STransferStatus' ++++++++++"  
+				::T4X::TC::MAPPING::storeReverseMappingAttribute BomHeader "${BomViewType}:structure_revisions:$ItemRevisionType" sr5SAPTransStatus $T4STransferStatus
+				#
+			} else {
+				if {$Status eq "UPDATED_WITH_ERROR"} {
+					set T4STransferStatus "$T4STransferStatusMM\nBOM transfer $Status - [clock format [clock seconds] -format "%Y-%m-%d %R"]"
+				} else {
+					# set T4STransferStatus "$T4STransferStatusMM\nBOM transferred to $::T4S::SapInfo(SapSystem)@$::T4S::SapInfo(SapClient) at [clock format [clock seconds] -format "%Y-%m-%d %R"]"
+					set T4STransferStatus "$T4STransferStatusMM\nBOM sent to $::T4S::SapInfo(SapSystem)@$::T4S::SapInfo(SapClient) at [clock format [clock seconds] -format "%Y-%m-%d %R"]"
+					tpwrite -logchannel [::PL4X::CORE::getSessionLogChannel] -mtype INTERN "++++++++++ Reverse mapping value 'sr5SAPBomKey': '$ObjectKey' ++++++++++"  
+					::T4X::TC::MAPPING::storeReverseMappingAttribute BomHeader "${BomViewType}:structure_revisions:$ItemRevisionType" sr5SAPBomKey $ObjectKey
+				}
+				#
+				tpwrite -logchannel [::PL4X::CORE::getSessionLogChannel] -mtype INTERN "++++++++++ Reverse mapping value 'sr5SAPTransDate': '$TimeStamp' ++++++++++"  
+				::T4X::TC::MAPPING::storeReverseMappingAttribute BomHeader "${BomViewType}:structure_revisions:$ItemRevisionType" sr5SAPTransDate $TimeStamp
+				tpwrite -logchannel [::PL4X::CORE::getSessionLogChannel] -mtype INTERN "++++++++++ Reverse mapping value 'sr5SAPTransStatus': '$T4STransferStatus' ++++++++++"  
+				::T4X::TC::MAPPING::storeReverseMappingAttribute BomHeader "${BomViewType}:structure_revisions:$ItemRevisionType" sr5SAPTransStatus $T4STransferStatus
+				
+			}
+    } elseif {[string range $TargetTypeName 0 2] eq "WIZ"} {
+      ::T4S::GENBOM::WIZ::CUSTOM::MAPPING::SAP_Object2TC_Object $TransactionId $TargetTypeName $Status $ObjectKey $args
+    } else {
+      if {[info exists ::TcData(ItemInfo:TypeName)]} {
+        set BomViewType $::TcData(ItemInfo:TypeName)
+        ::T4X::TC::MAPPING::storeReverseMappingAttribute BomHeader "${BomViewType}:structure_revisions:${ItemRevisionType}:IMAN_master_form_rev:${ItemRevisionType} Master" SentBOMToSAP "genbom.txt written"
+      }
+    }
+		tpwrite -logchannel [::PL4X::CORE::getSessionLogChannel] -mtype INTERN "::T4S::GENBOM::CUSTOM::MAPPING::SAP_Object2TC_Object returns $rc"
+    return $rc
+  }
+
+  # ---------------------------------------------------------------------
+  ##
+  # Method:         ::T4S::GENBOM::CUSTOM::MAPPING::getObjectInfo
+  # \brief          Customer specific Mapping function to retrieve the object information from SAP
+  #
+  # \author         kh, 20100305
+  # \param          TransactionId unique ID for the transfer transaction
+  # \param          TargetTypeName specified transaction target type name
+  # \param          ObjectKey
+  #
+  # \return         list of status and object key
+  #
+  #
+  proc getObjectInfo { TransactionId TargetTypeName ObjectKey args } {
+    #
+    set ::errorCode "NONE"
+    set ::errorInfo ""
+    set Status "OK"
+    #
+    tpwrite -logchannel [::PL4X::CORE::getSessionLogChannel] -mtype INTERN "::T4S::GENBOM::CUSTOM::MAPPING::getObjectInfo starts"
+
+    if {$TargetTypeName eq "GenericBom"} {
+       #
+    } elseif {[string range $TargetTypeName 0 2] eq "WIZ"} {
+      ::T4S::GENBOM::WIZ::CUSTOM::MAPPING::getObjectInfo $TransactionId $TargetTypeName $ObjectKey $args
+    } else {
+       if { [file exists "/tmp/genbom.txt"] } {
+          tpwrite -logchannel [::PL4X::CORE::getSessionLogChannel] -mtype INTERN "genbom.txt will be overwritten!"
+       }
+    #
+    }
+    lappend Status $ObjectKey
+    #
+    tpwrite -logchannel [::PL4X::CORE::getSessionLogChannel] -mtype INTERN "::T4S::GENBOM::CUSTOM::MAPPING::getObjectInfo returns with >$Status<"
+    return $Status
+  }
+
+  # ---------------------------------------------------------------------
+  ##
+  # Method:         ::T4S::GENBOM::CUSTOM::MAPPING::performSapTransfer
+  # \brief          Customer specific function to call SAP
+  #
+  # \author         kh, 20100305
+  # \param          TransactionId unique ID for the transfer transaction
+  # \param          TargetTypeName specified transaction target type name
+  # \return         StatusDict dict structure with the following element:
+  #                          - Status OK|ERROR
+  #                          - OBJECT_KEY object key of the resulting object in the external system
+  #                          - ErrorMessage last error message
+  #                          - NoOfMessages 0 or n (optional if more that one error messages needs to be returned)
+  #                          - LogMessageMessage(1 .. n) (optional if more that one error messages needs to be returned)
+  #                          - LogMessageSeverity(1 .. n) (optional if more that one error messages needs to be returned)
+  #
+  #
+  proc performSapTransfer { TransactionId TargetTypeName args } {
+    #
+    set ::errorCode "NONE"
+    set ::errorInfo ""
+    #
+    set rc "OK"
+		set ErrorMessage ""
+
+    dict set StatusDict Status "OK"
+    dict set StatusDict OBJECT_KEY ""
+    dict set StatusDict ErrorMessage ""
+
+    # variable BomPositionInfo
+    # variable BomHeaderInfo
+        
+    # Store procedure name in variable
+    set FunctionName "[lindex [info level 0] 0]"
+
+    tpwrite -logchannel [::PL4X::CORE::getSessionLogChannel] -mtype INTERN "$FunctionName starts with $TargetTypeName"
+		
+		if {$TargetTypeName eq "GenericBom"} {
+			::T4X::TRANSLOG::writeCustomMappingLog $TransactionId  WARNING ""
+			::T4X::TRANSLOG::writeCustomMappingLog $TransactionId  WARNING "DEBUG: ++++++++++++++++++++++++++++++++++++++++++++++++++++"
+			::T4X::TRANSLOG::writeCustomMappingLog $TransactionId  WARNING "DEBUG:  ++++++ SAP BAPI Input Array ::SAPDat +++++++++++++"
+			::T4X::TRANSLOG::writeCustomMappingLog $TransactionId  WARNING "DEBUG: ++++++++++++++++++++++++++++++++++++++++++++++++++++"
+			foreach Element [lsort -command ::T4X::CORE::compareIndexedInterfaceTable [array names ::SAPDat]] {
+				::T4X::TRANSLOG::writeCustomMappingLog $TransactionId  WARNING "DEBUG: ::SAPDat($Element) - $::SAPDat($Element)"
+			}
+			::T4X::TRANSLOG::writeCustomMappingLog $TransactionId  WARNING "DEBUG: ++++++++++++++++++++++++++++++++++++++++++++++++++++"
+					
+			#########################################################################################################################################
+			# Call SAP BAPI
+			#########################################################################################################################################        
+			
+			# Set inputs.      
+			dict set SAPInDataDict SAPFunction      "/SRAIL/PLM_TC_BOMVERS_MAINT" ; # new name according to SR SAP naming convention
+			dict set SAPInDataDict SAPInDataArray   ::SAPDat
+			dict set SAPInDataDict SAPOutDataArray  ::sap_result_array
+			dict set SAPInDataDict Pattern          VersionBOM
+			dict set SAPInDataDict Commit           false
+			dict set SAPInDataDict CaloInit         false
+			dict set SAPInDataDict UseSAPGui        false
+			dict set SAPInDataDict UseSAPCallback   false
+			dict set SAPInDataDict VerifyDataKeys   false
+			dict set SAPInDataDict VerifyDataValues false
+			dict set SAPInDataDict VerifyErrors     true
+			dict set SAPInDataDict CloseConnection  true
+
+			# Call.
+			set SAPOutDataDict [::TPSAP::performSapCall $SAPInDataDict]
+			
+			#########################################################################################################################################   
+			
+			#########################################################################################################################################
+			# Print result to console
+			#########################################################################################################################################
+			# Get outputs.
+			::T4X::TRANSLOG::writeCustomMappingLog $TransactionId  WARNING ""
+			::T4X::TRANSLOG::writeCustomMappingLog $TransactionId  WARNING "DEBUG: SAP function call >/SRAIL/PLM_TC_BOMVERS_MAINT< returns [dict get $SAPOutDataDict "Status"]"
+			if { [dict get $SAPOutDataDict "Status"] eq "OK" } {
+			
+				# Output for Debugging
+				::T4X::TRANSLOG::writeCustomMappingLog $TransactionId  WARNING ""
+				::T4X::TRANSLOG::writeCustomMappingLog $TransactionId  WARNING "DEBUG: ++++++++++++++++++++++++++++++++++++++++++++++++++++"
+				::T4X::TRANSLOG::writeCustomMappingLog $TransactionId  WARNING "DEBUG:  ++++ SAP BAPI Return Array ::sap_result_array ++++"
+				::T4X::TRANSLOG::writeCustomMappingLog $TransactionId  WARNING "DEBUG: ++++++++++++++++++++++++++++++++++++++++++++++++++++"
+				
+				# ::T4X::TRANSLOG::writeCustomMappingLog $TransactionId  WARNING "DEBUG: +"
+				# ::T4X::TRANSLOG::writeCustomMappingLog $TransactionId  WARNING "DEBUG: +"
+				# ::T4X::TRANSLOG::writeCustomMappingLog $TransactionId  WARNING "DEBUG: Header Information"
+				# foreach sElement [lsort -dictionary [array names ::sap_result_array ES_BOM_HEADER:*]] {
+					# ::T4X::TRANSLOG::writeCustomMappingLog $TransactionId  WARNING "DEBUG: ::sap_result_array($sElement)  $::sap_result_array($sElement)"
+				# }
+
+				# ::T4X::TRANSLOG::writeCustomMappingLog $TransactionId  WARNING "DEBUG: +"
+				# ::T4X::TRANSLOG::writeCustomMappingLog $TransactionId  WARNING "DEBUG: +"
+				# ::T4X::TRANSLOG::writeCustomMappingLog $TransactionId  WARNING "DEBUG: + Position Information"
+				# foreach sElement [lsort -dictionary [array names ::sap_result_array ET_BOM_ITEMS:*]] {
+					# ::T4X::TRANSLOG::writeCustomMappingLog $TransactionId  WARNING "DEBUG: ::sap_result_array($sElement)  $::sap_result_array($sElement)"
+				# }
+				
+				# ::T4X::TRANSLOG::writeCustomMappingLog $TransactionId  WARNING "DEBUG: +"
+				# ::T4X::TRANSLOG::writeCustomMappingLog $TransactionId  WARNING "DEBUG: +"
+				# ::T4X::TRANSLOG::writeCustomMappingLog $TransactionId  WARNING "DEBUG: + BAPI Return"
+				foreach sElement [lsort -command ::T4X::CORE::compareIndexedInterfaceTable [array names ::sap_result_array ET_MESSAGES:*]] {
+					if { $::sap_result_array($sElement) ne "" } {
+						::T4X::TRANSLOG::writeCustomMappingLog $TransactionId  WARNING "DEBUG: ::sap_result_array($sElement) - $::sap_result_array($sElement)"
+					}
+				}
+				::T4X::TRANSLOG::writeCustomMappingLog $TransactionId  WARNING "DEBUG: ++++++++++++++++++++++++++++++++++++++++++++++++++++"
+				
+				# Error handling
+				set intErrorIndex -1
+				foreach sElement [lsort -command ::T4X::CORE::compareIndexedInterfaceTable [array names ::sap_result_array ET_MESSAGES:MSGID:*]] {
+					set LineList [split $sElement :]
+					set LineIndex [lindex $LineList end]
+
+					if { $::sap_result_array(ET_MESSAGES:MSGTY:$LineIndex) eq "E" } {
+						set intErrorIndex $LineIndex
+						
+						set rc "ERROR"
+						set PlainMessage ""
+						# set HexMessage ""
+						if { [info exists ::sap_result_array(ET_MESSAGES:MSGTX:$intErrorIndex)] } {
+							set PlainMessage $::sap_result_array(ET_MESSAGES:MSGTX:$intErrorIndex)
+							# set HexMessage [tpco_scanHEX16 $::sap_result_array(ET_MESSAGES:MSGTX:$intErrorIndex)]
+						}
+						::T4X::CORE::storeMessage2 "Version BOM Mapping" "SAP Function >$::sap_result_array(ET_MESSAGES:MSGID:$LineIndex)< returns >$PlainMessage<" ERROR
+						lappend ErrorMessage $PlainMessage
+						# lappend ErrorMessage $HexMessage
+					}
+				}
+				# if { $intErrorIndex == -1 } {
+					# set rc "OK"
+				# } else {
+					# set rc "ERROR"
+					# set PlainMessage ""
+					# # set HexMessage ""
+					# if { [info exists ::sap_result_array(ET_MESSAGES:MSGTX:$intErrorIndex)] } {
+						# set PlainMessage $::sap_result_array(ET_MESSAGES:MSGTX:$intErrorIndex)
+						# # set HexMessage [tpco_scanHEX16 $::sap_result_array(ET_MESSAGES:MSGTX:$intErrorIndex)]
+					# }
+					# lappend rc $PlainMessage
+					# # lappend rc $HexMessage
+					# ::T4X::CORE::storeMessage2 "Version BOM Mapping" "SAP Function >$::sap_result_array(ET_MESSAGES:MSGID:$LineIndex)< returns >$PlainMessage<" ERROR
+				# }
+					
+			} else {
+				set ErrorMessage [dict get $SAPOutDataDict "ErrorMessage"]
+				::T4X::TRANSLOG::writeCustomMappingLog $TransactionId ERROR "ErrorMessage >$ErrorMessage<"
+				::T4X::CORE::storeMessage2 "Version BOM Mapping" "SAP Function >$::sap_result_array(ET_MESSAGES:MSGID:$LineIndex)< returns >$ErrorMessage<" ERROR
+				set rc "ERROR"
+			}
+			
+			set SAPBOMHeader(MatNumber) [string toupper [::TPSAP::MM::getExternalMaterialNumber $::SAPDat(VersionBOM:IS_BOM_HEADER:MATNR)]]
+      dict set StatusDict Status $rc
+      dict set StatusDict OBJECT_KEY "$SAPBOMHeader(MatNumber)_$::SAPDat(VersionBOM:IS_BOM_HEADER:WERKS)_$::SAPDat(VersionBOM:IS_BOM_HEADER:STLAL)_$::SAPDat(VersionBOM:IS_BOM_HEADER:STLAN)"
+      dict set StatusDict ErrorMessage $ErrorMessage	
+			
+		} else {
+      
+      # \details File based transfer example, writes the content of the mapping into a file
+      
+      # set fileId [open "/tmp/genbom.txt" w]
+      # puts $fileId $BomHeaderInfo
+
+      # foreach Posnr [array names BomPositionInfo] {
+        # tpwrite -logchannel [::PL4X::CORE::getSessionLogChannel] -mtype INTERN $BomPositionInfo($Posnr)
+        # puts $fileId $BomPositionInfo($Posnr)
+      # }
+      close $fileId
+      dict set StatusDict Status $rc
+      dict set StatusDict OBJECT_KEY "TEST"
+      dict set StatusDict ErrorMessage ""
+    }
+		#########################################################################################################################################        
+
+    tpwrite -logchannel [::PL4X::CORE::getSessionLogChannel] -mtype INTERN "$FunctionName returns with >$StatusDict<"
+    return $StatusDict
+  }
+  # ---------------------------------------------------------------------
+  ##
+  # Method:         ::T4S::GENBOM::CUSTOM::MAPPING::callCustomerRuleHandler
+  # \brief     Customer specific object RuleHandler function template
+  #
+  # \author         kh, 25.10.2005
+  # \param          TransactionId unique ID for the transfer transaction
+  # \param          Action Work flow action
+  # \param          RuleName specified rule name in the work flow arguments
+  #                 named "-user_rule". If the argument is not specified the value
+  #                 is "Default"
+  # \param          ItemType
+  # \param          ItemRevisionType
+  #
+  # \return         EPM_nogo or EPM_go
+  #
+  #
+  proc callCustomerRuleHandler {TransactionId Action RuleName ItemType ItemRevisionType args} {
+    set ::errorCode "NONE"
+    set ::errorInfo ""
+    tpwrite -logchannel [::PL4X::CORE::getSessionLogChannel] -mtype INTERN "::T4S::GENBOM::CUSTOM::MAPPING::callCustomerRuleHandler Starts with $TransactionId $Action $RuleName $ItemType $ItemRevisionType"
+    set Decision "EPM_nogo"
+    set Status "OK"
+
+    # Here you can add your test conditions (see the other mapping files for examples):
+    set Decision "EPM_go"
+
+    tpwrite -logchannel [::PL4X::CORE::getSessionLogChannel] -mtype INTERN "::T4S::GENBOM::CUSTOM::MAPPING::callCustomerRuleHandler returns $Decision"
+    return $Decision
+  }
+}

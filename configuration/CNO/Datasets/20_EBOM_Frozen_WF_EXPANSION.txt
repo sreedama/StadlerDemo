@@ -1,0 +1,71 @@
+############################################################################################################
+#  CNO Expansion Definition File
+############################################################################################################
+# Version History
+#
+# Version    Date           Name               Description of Change
+# 1.0        28-03-2022     testu     Initial
+############################################################################################################
+
+#process
+C:SR5GenEngObjRevision>>process_stage_list>C:EPMTask
+
+#ocurences
+#C:ItemRevision>view;99p:Latest Working>C:ItemRevision;0
+#C:ItemRevision>view;99p:Latest Working/SKIP:20 - Frozen,30 - Pre-Release,40 - Engineering Release,50 - Production Release>C:ItemRevision;0
+#C:ItemRevision>view;99p:Latest Working/SKIP:20 - Frozen,30 - Pre-Release,40 - Engineering Release,50 - Production Release,70 - Superseded,80 - Obsolete,90 - Discontinued>C:ItemRevision;0
+#C:ItemRevision>view;99p:Latest Working/SKIP:ALL>C:ItemRevision;0
+#change for ccp: flexible part, symmetry, skeleton, contextual link, ...
+#C:ItemRevision>>view;99p:Latest Working/SKIP:ALL>C:ItemRevision
+C:ItemRevision>>view;99p:Latest Working/SKIP:20 - Frozen,30 - Pre-Released,Engineering Approved,40 - Engineering Released,50 - Released,70 - Engineering Superseded,80 - Superseded,90 - Discontinued>C:ItemRevision;0
+                                            
+#history
+#ccp link under some CATIA dataset
+#C:ItemRevision>IMAN_specification>CATPart
+#not needed:
+#C:ItemRevision>IMAN_specification>CATProduct
+#C:ItemRevision>IMAN_specification>CATDrawing
+
+
+#tech document
+#looks like required documents will be attached as Item and not as ItemRevision:
+#C:SR5GenEngObjRevision>IMAN_specification>SR5TechDocumentRevision
+#C:SR5GenEngObjRevision>IMAN_specification>SR5TechDocument
+#new link
+#obsolete
+#C:SR5GenEngObjRevision>SR5HasSpecificationDocument>SR5TechDocumentRevision
+C:SR5GenEngObjRevision>SR5HasSpecificationDocument>SR5TechDocument
+#C:SR5GenEngObjRevision>IMAN_reference>SR5TechDocumentRevision
+#obsolete
+#C:SR5GenEngObjRevision>SR5HasRequiredDocument>SR5TechDocumentRevision
+C:SR5GenEngObjRevision>SR5HasRequiredDocument>SR5TechDocument
+SR5TechDocument<items_tag:Latest Working<SR5TechDocumentRevision
+
+#desired dataset
+C:SR5GenEngObjRevision>IMAN_specification>CATPart
+C:SR5GenEngObjRevision>IMAN_specification>CATProduct
+C:SR5GenEngObjRevision>IMAN_specification>CATDrawing
+C:SR5GenEngObjRevision>structure_revisions>C:PSBOMViewRevision
+C:SR5GenEngObjRevision>IMAN_master_form_rev>C:Form
+
+
+#group
+C:SR5GenEngObjRevision>>active_user>User
+User<user<GroupMember
+
+
+#SAP properties
+C:SR5GenEngObjRevision>items_tag>C:Item
+
+
+#ccp link
+CATPart>catiaV5_MML/FILTER_Rev_NoStatus>C:ItemRevision
+CATPart>catiaV5_MMLAssy/FILTER_Rev_NoStatus>C:ItemRevision/ALIAS:ContextualRevision
+#not needed:
+#CATProduct>catiaV5_MML/FILTER_Rev_NoStatus>C:ItemRevision
+#CATProduct>catiaV5_MMLAssy/FILTER_Rev_NoStatus>C:ItemRevision
+CATDrawing>catiaV5_DWGLink/FILTER_Rev_NoStatus>C:ItemRevision
+
+
+#AltRep
+#SR5EngArticleAR>sr5AltRepList/FILTER_Rev_NoStatus>SR5EngArticleRevision/ALIAS:MasterOfAltRepRev

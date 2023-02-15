@@ -1,0 +1,6 @@
+####################################################################################
+
+ID=glue;scope=object;CRITERIA=CONDITION;CHECK=root:C:ItemRevision:DB_IR_type§eq§SR5EngArticleRevision||SR5NonERPArticleRevision||SR5EleCatPartRevision||SR5ElectricAssyRevision||SR5EngArticleARRevision||SR5EngEndItemRevision||SR5EngEnvRevision||SR5EngInstallLocRevision||SR5EngMajorAssyRevision||SR5GenCatPartRevision||SR5GenEngObjRevision||SR5MechCatPartRevision||SR5ToolRevision
+# not working on QUAL???
+#ID=glue;scope=object;CRITERIA=CONDITION;CHECK=C:ItemRevision:String§eq§[VAL_OBJECT>process_stage_list>C:EPMTask:first_target]
+ID=glue;scope=object;CRITERIA=AND;CHECK=root:C:ItemRevision:DB_sr5GlueApprovalFlag§eq§regex(^[Tt][Rr][Uu][Ee]$)~value is not valid

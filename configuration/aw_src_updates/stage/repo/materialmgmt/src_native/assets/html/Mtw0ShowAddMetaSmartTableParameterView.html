@@ -1,0 +1,20 @@
+ <aw-command-panel caption="i18n.CreateParameterDesriptor" aw-init="data.activeView='Mtw0ShowAddMetaSingleParameter'">
+    <aw-panel-body >
+        <aw-listbox prop="data.category" list="data.categories.dbValue"></aw-listbox>
+        <aw-row>
+            <aw-column>
+                <aw-textbox prop="data.yname"></aw-textbox>
+            </aw-column>
+            <aw-column> Vs </aw-column>
+            <aw-column>
+                <aw-textbox prop="data.xname"></aw-textbox>
+            </aw-column>
+        </aw-row>
+        <aw-textbox prop="data.realName"></aw-textbox>
+        <aw-listbox prop="data.xdimension" list="data.xdimensions.dbValue"></aw-listbox>
+        <aw-listbox prop="data.ydimension" list="data.ydimensions.dbValue"></aw-listbox>
+    </aw-panel-body>
+    <aw-panel-footer> 
+        <aw-button action="createMetaSmartTableParameter" visible-when="conditions.canCreateSmartTableMetaParam"><aw-i18n>i18n.CreateParameterDesriptor</aw-i18n></aw-button>
+    </aw-panel-footer>   
+</aw-command-panel>

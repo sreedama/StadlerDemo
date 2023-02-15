@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<preferences version="10.0">
+  <category name="SAP Gateway">
+    <category_description></category_description>
+        
+    <preference name="T4ST_PropertyListMode4ReleaseStatus" type="Integer" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>No description available for this preference</preference_description>
+      <context name="Teamcenter">
+        <value>2</value>
+      </context>
+    </preference>      
+    <preference name="T4ST_Property2ProcessList4ReleaseStatus" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>No description available for this preference</preference_description>
+      <context name="Teamcenter">
+        <value>object_name</value>
+        <value>date_released</value>
+       </context>
+    </preference>       
+
+  </category>
+</preferences>

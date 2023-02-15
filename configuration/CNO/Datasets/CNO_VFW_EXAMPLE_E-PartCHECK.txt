@@ -1,0 +1,5 @@
+############################################################################################################
+#  CNO Check Definition File
+############################################################################################################
+ID=ObjectNameRequiresObjectDesc;scope=object;CRITERIA=condition;CHECK=SR4EngPart:object_name§eq§Test
+ID=ObjectNameRequiresObjectDesc;scope=object;CRITERIA=and;CHECK=SR4EngPart:object_desc§not allowed§empty~Object description must be defined

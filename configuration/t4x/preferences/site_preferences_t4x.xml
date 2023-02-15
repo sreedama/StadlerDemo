@@ -1,0 +1,1389 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<preferences version="10.0">
+  <category name="SAP Gateway">
+    <category_description></category_description>
+    <preference name="SAP2_T4S_TransActionLog_Rel_relation_primary" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>Indicates the list of valid primary object types for the relation SAP2_T4S_TransActionLog_Rel. Format is &lt;Relation Name&gt;_relation_primary=List of valid primary object types.</preference_description>
+      <context name="Teamcenter">
+        <value>ItemRevision</value>
+        <value>Dataset</value>
+      </context>
+    </preference>
+    <preference name="T4S_Gateway_AutoPerform" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>This preference defines the objects and actions for which auto perform should be enabled.</preference_description>
+      <context name="Teamcenter">
+        <value>MM_DISPLAY</value>
+        <value>BOM_DISPLAY</value>
+        <value>DIR_DISPLAY</value>
+        <value>ECM_DISPLAY</value>
+        <value>EQUI_DISPLAY</value>
+        <value>FCL_DISPLAY</value>
+      </context>
+    </preference>
+    <preference name="T4S_Gateway_Menu_Explorer_Entries" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>This preference defines the sub menu entries of the T4S gateway in My Teamcenter. The following entries are supported:
+						        MM_CREATE_HID
+						        MM_CHANGE_HID
+						        MM_CREATE
+						        MM_CHANGE
+						        MM_DISPLAY
+						        MM_RESERVE
+						        MM_LINK
+						        MM_PSB
+						        BOM_CREATE_HID
+						        BOM_CHANGE_HID
+						        BOM_CREATE
+						        BOM_CHANGE
+						        BOM_DISPLAY
+						        BOM_PSB
+						        DIR_CREATE_HID
+						        DIR_CHANGE_HID
+						        DIR_CREATE
+						        DIR_CHANGE
+						        DIR_LINK
+						        DIR_DISPLAY
+						        DIR_PSB
+						        ECM_CREATE_HID
+						        ECM_CHANGE_HID
+						        ECM_CREATE
+						        ECM_CHANGE
+						        ECM_DISPLAY
+						        ECM_LINK
+						        EQUI_CREATE_HID
+						        EQUI_CHANGE_HID
+						        EQUI_CREATE
+						        EQUI_CHANGE
+						        EQUI_DISPLAY
+						        EQUI_LINK
+						        FCL_CREATE_HID
+						        FCL_CHANGE_HID
+						        FCL_CREATE
+						        FCL_CHANGE
+						        FCL_DISPLAY
+						        FCL_LINK
+						        SAPCONNECT</preference_description>
+      <context name="Teamcenter">
+        <value>SAPCONNECT</value>
+        <!--value>MM_CREATE_HID</value>
+        <value>BOM_CREATE_HID</value>
+        <value>BOM_CHANGE_HID</value-->
+      </context>
+    </preference>
+    <preference name="T4S_SAPLogonSystemClientList" type="String" array="true" disabled="false" protectionScope="User" envEnabled="false">
+      <preference_description>The follwing preference is required to define the selectable SAP connections in the T4S GatewayMenu. The value consits of &lt;System&gt;@&lt;Client&gt;.</preference_description>
+      <context name="Teamcenter">
+        <!-- <value>ES1@403</value> -->
+      </context>
+    </preference>
+
+
+	<!-- 
+	#########################################################################################################################################################################
+	# IDGEN Preferences
+	#########################################################################################################################################################################
+	# -->	
+    <preference name="T4X_IDGEN_TypeList" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>List of valid ItemTypes that will retrieve the item_id by T4S from SAP</preference_description>
+      <context name="Teamcenter">
+        <!-- <value>SR5MfgEndItemRevision</value> -->
+		<value>SR5EngEndItemRevision</value>
+		<value>SR5SRVEndItemRevision</value>
+		<!-- <value>SR5LLEndItemRevision</value> -->
+		<!-- <value>SR5MfgMajorAssyRevision</value> -->
+		<value>SR5EngMajorAssyRevision</value>
+		<value>SR5LLMajorAssyRevision</value>
+		<value>SR5SRVMajorAssyRevision</value>
+		<value>SR5EngInstallLocRevision</value>
+		<value>SR5MfgInstallKitRevision</value>
+		<value>SR5MfgObjectRevision</value>
+		<value>SR5EngArticleRevision</value>
+		<value>SR5GenCatPartRevision</value>
+		<value>SR5SoftwareRevision</value>
+		<value>SR5ToolRevision</value>
+		<value>SR5NonERPArticleRevision</value>
+		<value>SR5CatDefArticleRevision</value>
+		<value>SR5EngRawArticleRevision</value>
+		<value>SR5WeldRevision</value>
+		<value>SR5ColorDefRevision</value>
+		<value>SR5CoatingStructRevision</value>
+		<value>SR5ElectricAssyRevision</value>
+		<value>SR5EngEnvRevision</value>
+		<!-- <value>SR5TechDocumentRevision</value> -->
+      </context>
+    </preference>
+
+    <preference name="T4X_IDGEN_Function4SR5MfgEndItem" type="String" array="false" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>Usage of external System for ID Generator.</preference_description>
+      <context name="Teamcenter">
+        <value>T4X_IDGEN_USE_EXTERNAL_NUMBER</value>
+      </context>
+    </preference>
+    <preference name="T4X_IDGEN_TargetSystem4SR5MfgEndItem" type="String" array="false" disabled="false" protectionScope="System" envEnabled="false">
+      <preference_description>Definition of AIG Produt for ID generation.</preference_description>
+      <context name="Teamcenter">
+        <value>T4ST</value>
+      </context>
+    </preference>
+    <preference name="T4X_IDGEN_Function4SR5EngEndItem" type="String" array="false" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>Usage of external System for ID Generator.</preference_description>
+      <context name="Teamcenter">
+        <value>T4X_IDGEN_USE_EXTERNAL_NUMBER</value>
+      </context>
+    </preference>
+    <preference name="T4X_IDGEN_TargetSystem4SR5EngEndItem" type="String" array="false" disabled="false" protectionScope="System" envEnabled="false">
+      <preference_description>Definition of AIG Produt for ID generation.</preference_description>
+      <context name="Teamcenter">
+        <value>T4ST</value>
+      </context>
+    </preference>
+    <preference name="T4X_IDGEN_Function4SR5SRVEndItem" type="String" array="false" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>Usage of external System for ID Generator.</preference_description>
+      <context name="Teamcenter">
+        <value>T4X_IDGEN_USE_EXTERNAL_NUMBER</value>
+      </context>
+    </preference>
+    <preference name="T4X_IDGEN_TargetSystem4SR5SRVEndItem" type="String" array="false" disabled="false" protectionScope="System" envEnabled="false">
+      <preference_description>Definition of AIG Produt for ID generation.</preference_description>
+      <context name="Teamcenter">
+        <value>T4ST</value>
+      </context>
+    </preference>
+    <preference name="T4X_IDGEN_Function4SR5LLEndItem" type="String" array="false" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>Usage of external System for ID Generator.</preference_description>
+      <context name="Teamcenter">
+        <value>T4X_IDGEN_USE_EXTERNAL_NUMBER</value>
+      </context>
+    </preference>
+    <preference name="T4X_IDGEN_TargetSystem4SR5LLEndItem" type="String" array="false" disabled="false" protectionScope="System" envEnabled="false">
+      <preference_description>Definition of AIG Produt for ID generation.</preference_description>
+      <context name="Teamcenter">
+        <value>T4ST</value>
+      </context>
+    </preference>
+    <preference name="T4X_IDGEN_Function4SR5MfgMajorAssy" type="String" array="false" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>Usage of external System for ID Generator.</preference_description>
+      <context name="Teamcenter">
+        <value>T4X_IDGEN_USE_EXTERNAL_NUMBER</value>
+      </context>
+    </preference>
+    <preference name="T4X_IDGEN_TargetSystem4SR5MfgMajorAssy" type="String" array="false" disabled="false" protectionScope="System" envEnabled="false">
+      <preference_description>Definition of AIG Produt for ID generation.</preference_description>
+      <context name="Teamcenter">
+        <value>T4ST</value>
+      </context>
+    </preference>
+    <preference name="T4X_IDGEN_Function4SR5EngInstallLoc" type="String" array="false" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>Usage of external System for ID Generator.</preference_description>
+      <context name="Teamcenter">
+        <value>T4X_IDGEN_USE_EXTERNAL_NUMBER</value>
+      </context>
+    </preference>
+    <preference name="T4X_IDGEN_TargetSystem4SR5EngInstallLoc" type="String" array="false" disabled="false" protectionScope="System" envEnabled="false">
+      <preference_description>Definition of AIG Produt for ID generation.</preference_description>
+      <context name="Teamcenter">
+        <value>T4ST</value>
+      </context>
+    </preference>
+    <preference name="T4X_IDGEN_Function4SR5EngMajorAssy" type="String" array="false" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>Usage of external System for ID Generator.</preference_description>
+      <context name="Teamcenter">
+        <value>T4X_IDGEN_USE_EXTERNAL_NUMBER</value>
+      </context>
+    </preference>
+    <preference name="T4X_IDGEN_TargetSystem4SR5EngMajorAssy" type="String" array="false" disabled="false" protectionScope="System" envEnabled="false">
+      <preference_description>Definition of AIG Produt for ID generation.</preference_description>
+      <context name="Teamcenter">
+        <value>T4ST</value>
+      </context>
+    </preference>
+    <preference name="T4X_IDGEN_Function4SR5LLMajorAssy" type="String" array="false" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>Usage of external System for ID Generator.</preference_description>
+      <context name="Teamcenter">
+        <value>T4X_IDGEN_USE_EXTERNAL_NUMBER</value>
+      </context>
+    </preference>
+    <preference name="T4X_IDGEN_TargetSystem4SR5LLMajorAssy" type="String" array="false" disabled="false" protectionScope="System" envEnabled="false">
+      <preference_description>Definition of AIG Produt for ID generation.</preference_description>
+      <context name="Teamcenter">
+        <value>T4ST</value>
+      </context>
+    </preference>
+    <preference name="T4X_IDGEN_Function4SR5MfgInstallKit" type="String" array="false" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>Usage of external System for ID Generator.</preference_description>
+      <context name="Teamcenter">
+        <value>T4X_IDGEN_USE_EXTERNAL_NUMBER</value>
+      </context>
+    </preference>
+    <preference name="T4X_IDGEN_TargetSystem4SR5MfgInstallKit" type="String" array="false" disabled="false" protectionScope="System" envEnabled="false">
+      <preference_description>Definition of AIG Produt for ID generation.</preference_description>
+      <context name="Teamcenter">
+        <value>T4ST</value>
+      </context>
+    </preference>
+    <preference name="T4X_IDGEN_Function4SR5MfgObject" type="String" array="false" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>Usage of external System for ID Generator.</preference_description>
+      <context name="Teamcenter">
+        <value>T4X_IDGEN_USE_EXTERNAL_NUMBER</value>
+      </context>
+    </preference>
+    <preference name="T4X_IDGEN_TargetSystem4SR5MfgObject" type="String" array="false" disabled="false" protectionScope="System" envEnabled="false">
+      <preference_description>Definition of AIG Produt for ID generation.</preference_description>
+      <context name="Teamcenter">
+        <value>T4ST</value>
+      </context>
+    </preference>
+    <preference name="T4X_IDGEN_Function4SR5EngArticle" type="String" array="false" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>Usage of external System for ID Generator.</preference_description>
+      <context name="Teamcenter">
+        <value>T4X_IDGEN_USE_EXTERNAL_NUMBER</value>
+      </context>
+    </preference>
+    <preference name="T4X_IDGEN_TargetSystem4SR5EngArticle" type="String" array="false" disabled="false" protectionScope="System" envEnabled="false">
+      <preference_description>Definition of AIG Produt for ID generation.</preference_description>
+      <context name="Teamcenter">
+        <value>T4ST</value>
+      </context>
+    </preference>
+    <preference name="T4X_IDGEN_Function4SR5Software" type="String" array="false" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>Usage of external System for ID Generator.</preference_description>
+      <context name="Teamcenter">
+        <value>T4X_IDGEN_USE_EXTERNAL_NUMBER</value>
+      </context>
+    </preference>
+    <preference name="T4X_IDGEN_TargetSystem4SR5Software" type="String" array="false" disabled="false" protectionScope="System" envEnabled="false">
+      <preference_description>Definition of AIG Produt for ID generation.</preference_description>
+      <context name="Teamcenter">
+        <value>T4ST</value>
+      </context>
+    </preference>
+    <preference name="T4X_IDGEN_Function4SR5MechCatPart" type="String" array="false" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>Usage of external System for ID Generator.</preference_description>
+      <context name="Teamcenter">
+        <value>T4X_IDGEN_USE_EXTERNAL_NUMBER</value>
+      </context>
+    </preference>
+    <preference name="T4X_IDGEN_TargetSystem4SR5MechCatPart" type="String" array="false" disabled="false" protectionScope="System" envEnabled="false">
+      <preference_description>Definition of AIG Produt for ID generation.</preference_description>
+      <context name="Teamcenter">
+        <value>T4ST</value>
+      </context>
+    </preference>
+    <preference name="T4X_IDGEN_Function4SR5EleCatPart" type="String" array="false" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>Usage of external System for ID Generator.</preference_description>
+      <context name="Teamcenter">
+        <value>T4X_IDGEN_USE_EXTERNAL_NUMBER</value>
+      </context>
+    </preference>
+    <preference name="T4X_IDGEN_TargetSystem4SR5EleCatPart" type="String" array="false" disabled="false" protectionScope="System" envEnabled="false">
+      <preference_description>Definition of AIG Produt for ID generation.</preference_description>
+      <context name="Teamcenter">
+        <value>T4ST</value>
+      </context>
+    </preference>
+    <preference name="T4X_IDGEN_Function4SR5GenCatPart" type="String" array="false" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>Usage of external System for ID Generator.</preference_description>
+      <context name="Teamcenter">
+        <value>T4X_IDGEN_USE_EXTERNAL_NUMBER</value>
+      </context>
+    </preference>
+    <preference name="T4X_IDGEN_TargetSystem4SR5GenCatPart" type="String" array="false" disabled="false" protectionScope="System" envEnabled="false">
+      <preference_description>Definition of AIG Produt for ID generation.</preference_description>
+      <context name="Teamcenter">
+        <value>T4ST</value>
+      </context>
+    </preference>
+    <preference name="T4X_IDGEN_Function4SR5Tool" type="String" array="false" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>Usage of external System for ID Generator.</preference_description>
+      <context name="Teamcenter">
+        <value>T4X_IDGEN_USE_EXTERNAL_NUMBER</value>
+      </context>
+    </preference>
+    <preference name="T4X_IDGEN_TargetSystem4SR5Tool" type="String" array="false" disabled="false" protectionScope="System" envEnabled="false">
+      <preference_description>Definition of AIG Produt for ID generation.</preference_description>
+      <context name="Teamcenter">
+        <value>T4ST</value>
+      </context>
+    </preference>
+    <preference name="T4X_IDGEN_Function4SR5NonERPArticle" type="String" array="false" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>Usage of external System for ID Generator.</preference_description>
+      <context name="Teamcenter">
+        <value>T4X_IDGEN_USE_EXTERNAL_NUMBER</value>
+      </context>
+    </preference>
+    <preference name="T4X_IDGEN_TargetSystem4SR5NonERPArticle" type="String" array="false" disabled="false" protectionScope="System" envEnabled="false">
+      <preference_description>Definition of AIG Produt for ID generation.</preference_description>
+      <context name="Teamcenter">
+        <value>T4ST</value>
+      </context>
+    </preference>
+    <preference name="T4X_IDGEN_Function4SR5SRVMajorAssy" type="String" array="false" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>Usage of external System for ID Generator.</preference_description>
+      <context name="Teamcenter">
+        <value>T4X_IDGEN_USE_EXTERNAL_NUMBER</value>
+      </context>
+    </preference>
+    <preference name="T4X_IDGEN_TargetSystem4SR5SRVMajorAssy" type="String" array="false" disabled="false" protectionScope="System" envEnabled="false">
+      <preference_description>Definition of AIG Produt for ID generation.</preference_description>
+      <context name="Teamcenter">
+        <value>T4ST</value>
+      </context>
+    </preference>
+    <preference name="T4X_IDGEN_Function4SR5CatDefArticle" type="String" array="false" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>Usage of external System for ID Generator.</preference_description>
+      <context name="Teamcenter">
+        <value>T4X_IDGEN_USE_EXTERNAL_NUMBER</value>
+      </context>
+    </preference>
+    <preference name="T4X_IDGEN_TargetSystem4SR5CatDefArticle" type="String" array="false" disabled="false" protectionScope="System" envEnabled="false">
+      <preference_description>Definition of AIG Produt for ID generation.</preference_description>
+      <context name="Teamcenter">
+        <value>T4ST</value>
+      </context>
+    </preference>
+    <preference name="T4X_IDGEN_Function4SR5EngRawArticle" type="String" array="false" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>Usage of external System for ID Generator.</preference_description>
+      <context name="Teamcenter">
+        <value>T4X_IDGEN_USE_EXTERNAL_NUMBER</value>
+      </context>
+    </preference>
+    <preference name="T4X_IDGEN_TargetSystem4SR5EngRawArticle" type="String" array="false" disabled="false" protectionScope="System" envEnabled="false">
+      <preference_description>Definition of AIG Produt for ID generation.</preference_description>
+      <context name="Teamcenter">
+        <value>T4ST</value>
+      </context>
+    </preference>
+    <preference name="T4X_IDGEN_Function4SR5Weld" type="String" array="false" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>Usage of external System for ID Generator.</preference_description>
+      <context name="Teamcenter">
+        <value>T4X_IDGEN_USE_EXTERNAL_NUMBER</value>
+      </context>
+    </preference>
+    <preference name="T4X_IDGEN_TargetSystem4SR5Weld" type="String" array="false" disabled="false" protectionScope="System" envEnabled="false">
+      <preference_description>Definition of AIG Produt for ID generation.</preference_description>
+      <context name="Teamcenter">
+        <value>T4ST</value>
+      </context>
+    </preference>
+    <preference name="T4X_IDGEN_Function4SR5ColorDef" type="String" array="false" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>Usage of external System for ID Generator.</preference_description>
+      <context name="Teamcenter">
+        <value>T4X_IDGEN_USE_EXTERNAL_NUMBER</value>
+      </context>
+    </preference>
+    <preference name="T4X_IDGEN_TargetSystem4SR5ColorDef" type="String" array="false" disabled="false" protectionScope="System" envEnabled="false">
+      <preference_description>Definition of AIG Produt for ID generation.</preference_description>
+      <context name="Teamcenter">
+        <value>T4ST</value>
+      </context>
+    </preference>
+    <preference name="T4X_IDGEN_Function4SR5CoatingStruct" type="String" array="false" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>Usage of external System for ID Generator.</preference_description>
+      <context name="Teamcenter">
+        <value>T4X_IDGEN_USE_EXTERNAL_NUMBER</value>
+      </context>
+    </preference>
+    <preference name="T4X_IDGEN_TargetSystem4SR5CoatingStruct" type="String" array="false" disabled="false" protectionScope="System" envEnabled="false">
+      <preference_description>Definition of AIG Produt for ID generation.</preference_description>
+      <context name="Teamcenter">
+        <value>T4ST</value>
+      </context>
+    </preference>
+    <preference name="T4X_IDGEN_Function4SR5ElectricAssy" type="String" array="false" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>Usage of external System for ID Generator.</preference_description>
+      <context name="Teamcenter">
+        <value>T4X_IDGEN_USE_EXTERNAL_NUMBER</value>
+      </context>
+    </preference>
+    <preference name="T4X_IDGEN_TargetSystem4SR5ElectricAssy" type="String" array="false" disabled="false" protectionScope="System" envEnabled="false">
+      <preference_description>Definition of AIG Produt for ID generation.</preference_description>
+      <context name="Teamcenter">
+        <value>T4ST</value>
+      </context>
+    </preference>
+    <preference name="T4X_IDGEN_Function4SR5EngEnv" type="String" array="false" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>Usage of external System for ID Generator.</preference_description>
+      <context name="Teamcenter">
+        <value>T4X_IDGEN_USE_EXTERNAL_NUMBER</value>
+      </context>
+    </preference>
+    <preference name="T4X_IDGEN_TargetSystem4SR5EngEnv" type="String" array="false" disabled="false" protectionScope="System" envEnabled="false">
+      <preference_description>Definition of AIG Produt for ID generation.</preference_description>
+      <context name="Teamcenter">
+        <value>T4ST</value>
+      </context>
+    </preference>
+	
+		<!-- 
+		#########################################################################################################################################################################
+		# Material Master Mapping Preferences 
+		#########################################################################################################################################################################
+		# -->
+<!-- 		<preference name="T4S_MaterialMasterTypeList" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+			<preference_description>Description not provided during import.</preference_description>
+			<context name="Teamcenter">
+				<value>SR5MfgEndItemRevision</value>
+				<value>SR5MfgMajorAssyRevision</value>
+				<value>SR5MfgInstallKitRevision</value>
+				<value>SR5EngArticleRevision</value>
+				<value>SR5GenCatPartRevision</value>
+				<value>SR5SoftwareRevision</value>
+				<value>SR5ToolRevision</value>
+			</context>
+		</preference>	 -->
+		
+		<!-- SR5MfgEndItemRevision -->
+<!--     <preference name="T4S_MaterialMasterMapping4SR5MfgEndItemRevision" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>No description available for this preference</preference_description>
+      <context name="Teamcenter">
+        <value>items_tag:SR5MfgEndItem</value>
+        <value>items_tag:SR5MfgEndItem:IMAN_master_form:SR5MfgEndItem Master</value>
+        <value>items_tag:SR5MfgEndItem:#__getAllProperties__#:Properties</value>
+        <value>IMAN_master_form_rev:SR5MfgEndItemRevisionMaster</value>
+        <value>#__getAllProperties__#:Properties</value>
+				<value>items_tag:SR5MfgEndItem:uom_tag:UnitOfMeasure</value>
+        <value>IMAN_classification:icm0</value>
+      </context>
+    </preference>
+    <preference name="T4S_MaterialMasterFieldMapping2SR5MfgEndItemRevision" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>No description available for this preference</preference_description>
+      <context name="Teamcenter">
+        <value>sr5SAPID</value>
+				<value>sr5SAPTransStatus</value>
+				<value>sr5SAPTransDate</value>
+      </context>
+    </preference>
+    <preference name="T4S_MaterialMasterMapping2SR5MfgEndItemRevision" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>No description available for this preference</preference_description>
+      <context name="Teamcenter">
+        <value>IMAN_master_form_rev:SR5EngArticleRevisionMaster</value>
+        <value>items_tag:SR5MfgEndItem</value>
+        <value>items_tag:SR5MfgEndItem:IMAN_master_form:SR5MfgEndItem Master</value>
+        <value>SR5MfgEndItemRevision</value>
+      </context>
+    </preference> -->
+		
+		<!-- SR5MfgMajorAssyRevision -->
+<!--     <preference name="T4S_MaterialMasterMapping4SR5MfgMajorAssyRevision" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>No description available for this preference</preference_description>
+      <context name="Teamcenter">
+        <value>items_tag:SR5MfgMajorAssy</value>
+        <value>items_tag:SR5MfgMajorAssy:IMAN_master_form:SR5MfgMajorAssy Master</value>
+        <value>items_tag:SR5MfgMajorAssy:#__getAllProperties__#:Properties</value>
+        <value>IMAN_master_form_rev:SR5MfgMajorAssyRevisionMaster</value>
+        <value>#__getAllProperties__#:Properties</value>
+				<value>items_tag:SR5MfgMajorAssy:uom_tag:UnitOfMeasure</value>
+        <value>IMAN_classification:icm0</value>
+      </context>
+    </preference>
+    <preference name="T4S_MaterialMasterFieldMapping2SR5MfgMajorAssyRevision" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>No description available for this preference</preference_description>
+      <context name="Teamcenter">
+        <value>sr5SAPID</value>
+				<value>sr5SAPTransStatus</value>
+				<value>sr5SAPTransDate</value>
+      </context>
+    </preference>
+    <preference name="T4S_MaterialMasterMapping2SR5MfgMajorAssyRevision" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>No description available for this preference</preference_description>
+      <context name="Teamcenter">
+        <value>IMAN_master_form_rev:SR5EngArticleRevisionMaster</value>
+        <value>items_tag:SR5MfgMajorAssy</value>
+        <value>items_tag:SR5MfgMajorAssy:IMAN_master_form:SR5MfgMajorAssy Master</value>
+        <value>SR5MfgMajorAssyRevision</value>
+      </context>
+    </preference> -->
+		
+		<!-- SR5MfgInstallKitRevision -->
+<!--     <preference name="T4S_MaterialMasterMapping4SR5MfgInstallKitRevision" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>No description available for this preference</preference_description>
+      <context name="Teamcenter">
+        <value>items_tag:SR5MfgInstallKit</value>
+        <value>items_tag:SR5MfgInstallKit:IMAN_master_form:SR5MfgInstallKit Master</value>
+        <value>items_tag:SR5MfgInstallKit:#__getAllProperties__#:Properties</value>
+        <value>IMAN_master_form_rev:SR5MfgInstallKitRevisionMaster</value>
+        <value>#__getAllProperties__#:Properties</value>
+				<value>items_tag:SR5MfgInstallKit:uom_tag:UnitOfMeasure</value>
+        <value>IMAN_classification:icm0</value>
+      </context>
+    </preference>
+    <preference name="T4S_MaterialMasterFieldMapping2SR5MfgInstallKitRevision" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>No description available for this preference</preference_description>
+      <context name="Teamcenter">
+        <value>sr5SAPID</value>
+				<value>sr5SAPTransStatus</value>
+				<value>sr5SAPTransDate</value>
+      </context>
+    </preference>
+    <preference name="T4S_MaterialMasterMapping2SR5MfgInstallKitRevision" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>No description available for this preference</preference_description>
+      <context name="Teamcenter">
+        <value>IMAN_master_form_rev:SR5EngArticleRevisionMaster</value>
+        <value>items_tag:SR5MfgInstallKit</value>
+        <value>items_tag:SR5MfgInstallKit:IMAN_master_form:SR5MfgInstallKit Master</value>
+        <value>SR5MfgInstallKitRevision</value>
+      </context>
+    </preference> -->
+		
+		<!-- SR5EngArticleRevision -->
+<!--     <preference name="T4S_MaterialMasterMapping4SR5EngArticleRevision" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>No description available for this preference</preference_description>
+      <context name="Teamcenter">
+        <value>items_tag:SR5EngArticle</value>
+        <value>items_tag:SR5EngArticle:IMAN_master_form:SR5EngArticle Master</value>
+        <value>items_tag:SR5EngArticle:#__getAllProperties__#:Properties</value>
+        <value>IMAN_master_form_rev:SR5EngArticleRevisionMaster</value>
+        <value>#__getAllProperties__#:Properties</value>
+				<value>items_tag:SR5EngArticle:uom_tag:UnitOfMeasure</value>
+        <value>IMAN_classification:icm0</value>
+      </context>
+    </preference>
+    <preference name="T4S_MaterialMasterFieldMapping2SR5EngArticleRevision" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>No description available for this preference</preference_description>
+      <context name="Teamcenter">
+        <value>sr5SAPID</value>
+				<value>sr5SAPTransStatus</value>
+				<value>sr5SAPTransDate</value>
+      </context>
+    </preference>
+    <preference name="T4S_MaterialMasterMapping2SR5EngArticleRevision" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>No description available for this preference</preference_description>
+      <context name="Teamcenter">
+        <value>IMAN_master_form_rev:SR5EngArticleRevisionMaster</value>
+        <value>items_tag:SR5EngArticle</value>
+        <value>items_tag:SR5EngArticle:IMAN_master_form:SR5EngArticle Master</value>
+        <value>SR5EngArticleRevision</value>
+      </context>
+    </preference> -->
+		
+		<!-- SR5MechCatPartRevision -->
+<!--     <preference name="T4S_MaterialMasterMapping4SR5MechCatPartRevision" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>No description available for this preference</preference_description>
+      <context name="Teamcenter">
+        <value>items_tag:SR5MechCatPart</value>
+        <value>items_tag:SR5MechCatPart:IMAN_master_form:SR5MechCatPart Master</value>
+        <value>items_tag:SR5MechCatPart:#__getAllProperties__#:Properties</value>
+        <value>IMAN_master_form_rev:SR5MechCatPartRevisionMaster</value>
+        <value>#__getAllProperties__#:Properties</value>
+				<value>items_tag:SR5MechCatPart:uom_tag:UnitOfMeasure</value>
+        <value>IMAN_classification:icm0</value>
+      </context>
+    </preference>
+    <preference name="T4S_MaterialMasterFieldMapping2SR5MechCatPartRevision" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>No description available for this preference</preference_description>
+      <context name="Teamcenter">
+        <value>sr5SAPID</value>
+				<value>sr5SAPTransStatus</value>
+				<value>sr5SAPTransDate</value>
+      </context>
+    </preference>
+    <preference name="T4S_MaterialMasterMapping2SR5MechCatPartRevision" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>No description available for this preference</preference_description>
+      <context name="Teamcenter">
+        <value>IMAN_master_form_rev:SR5MechCatPartRevisionMaster</value>
+        <value>items_tag:SR5MechCatPart</value>
+        <value>items_tag:SR5MechCatPart:IMAN_master_form:SR5MechCatPart Master</value>
+        <value>SR5MechCatPartRevision</value>
+      </context>
+    </preference> -->
+		
+		<!-- SR5EleCatPartRevision -->
+<!--     <preference name="T4S_MaterialMasterMapping4SR5EleCatPartRevision" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>No description available for this preference</preference_description>
+      <context name="Teamcenter">
+        <value>items_tag:SR5EleCatPart</value>
+        <value>items_tag:SR5EleCatPart:IMAN_master_form:SR5EleCatPart Master</value>
+        <value>items_tag:SR5EleCatPart:#__getAllProperties__#:Properties</value>
+        <value>IMAN_master_form_rev:SR5EleCatPartRevisionMaster</value>
+        <value>#__getAllProperties__#:Properties</value>
+				<value>items_tag:SR5EleCatPart:uom_tag:UnitOfMeasure</value>
+        <value>IMAN_classification:icm0</value>
+      </context>
+    </preference>
+    <preference name="T4S_MaterialMasterFieldMapping2SR5EleCatPartRevision" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>No description available for this preference</preference_description>
+      <context name="Teamcenter">
+        <value>sr5SAPID</value>
+				<value>sr5SAPTransStatus</value>
+				<value>sr5SAPTransDate</value>
+      </context>
+    </preference>
+    <preference name="T4S_MaterialMasterMapping2SR5EleCatPartRevision" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>No description available for this preference</preference_description>
+      <context name="Teamcenter">
+        <value>IMAN_master_form_rev:SR5MechCatPartRevisionMaster</value>
+        <value>items_tag:SR5EleCatPart</value>
+        <value>items_tag:SR5EleCatPart:IMAN_master_form:SR5EleCatPart Master</value>
+        <value>SR5EleCatPartRevision</value>
+      </context>
+    </preference> -->
+		
+		<!-- SR5SoftwareRevision -->
+<!--     <preference name="T4S_MaterialMasterMapping4SR5SoftwareRevision" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>No description available for this preference</preference_description>
+      <context name="Teamcenter">
+        <value>items_tag:SR5Software</value>
+        <value>items_tag:SR5Software:IMAN_master_form:SR5Software Master</value>
+        <value>items_tag:SR5Software:#__getAllProperties__#:Properties</value>
+        <value>IMAN_master_form_rev:SR5SoftwareRevisionMaster</value>
+        <value>#__getAllProperties__#:Properties</value>
+				<value>items_tag:SR5Software:uom_tag:UnitOfMeasure</value>
+        <value>IMAN_classification:icm0</value>
+      </context>
+    </preference>
+    <preference name="T4S_MaterialMasterFieldMapping2SR5SoftwareRevision" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>No description available for this preference</preference_description>
+      <context name="Teamcenter">
+        <value>sr5SAPID</value>
+				<value>sr5SAPTransStatus</value>
+				<value>sr5SAPTransDate</value>
+      </context>
+    </preference>
+    <preference name="T4S_MaterialMasterMapping2SR5SoftwareRevision" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>No description available for this preference</preference_description>
+      <context name="Teamcenter">
+        <value>IMAN_master_form_rev:SR5SoftwareRevisionMaster</value>
+        <value>items_tag:SR5Software</value>
+        <value>items_tag:SR5Software:IMAN_master_form:SR5Software Master</value>
+        <value>SR5SoftwareRevision</value>
+      </context>
+    </preference> -->
+		
+		<!-- SR5ToolRevision -->
+<!--     <preference name="T4S_MaterialMasterMapping4SR5ToolRevision" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>No description available for this preference</preference_description>
+      <context name="Teamcenter">
+        <value>items_tag:SR5Tool</value>
+        <value>items_tag:SR5Tool:IMAN_master_form:SR5Tool Master</value>
+        <value>items_tag:SR5Tool:#__getAllProperties__#:Properties</value>
+        <value>IMAN_master_form_rev:SR5ToolRevisionMaster</value>
+        <value>#__getAllProperties__#:Properties</value>
+				<value>items_tag:SR5Tool:uom_tag:UnitOfMeasure</value>
+        <value>IMAN_classification:icm0</value>
+      </context>
+    </preference>
+    <preference name="T4S_MaterialMasterFieldMapping2SR5ToolRevision" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>No description available for this preference</preference_description>
+      <context name="Teamcenter">
+        <value>sr5SAPID</value>
+				<value>sr5SAPTransStatus</value>
+				<value>sr5SAPTransDate</value>
+      </context>
+    </preference>
+    <preference name="T4S_MaterialMasterMapping2SR5ToolRevision" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>No description available for this preference</preference_description>
+      <context name="Teamcenter">
+        <value>IMAN_master_form_rev:SR5ToolRevisionMaster</value>
+        <value>items_tag:SR5Tool</value>
+        <value>items_tag:SR5Tool:IMAN_master_form:SR5Tool Master</value>
+        <value>SR5ToolRevision</value>
+      </context>
+    </preference> -->
+		
+		<!-- 
+		#########################################################################################################################################################################
+		# Bill of Material Mapping Preferences (normal BOM)
+		#########################################################################################################################################################################
+		# -->
+<!--     <preference name="T4S_BillOfMaterialTypeList" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>No description available for this preference</preference_description>
+      <context name="Teamcenter">
+        <value>view</value>
+      </context>
+    </preference>
+    <preference name="T4S_BillOfMaterialHeaderTypeList" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>No description available for this preference</preference_description>
+      <context name="Teamcenter">		
+				<value>SR5MfgEndItemRevision</value>
+				<value>SR5MfgMajorAssyRevision</value>
+				<value>SR5MfgInstallKitRevision</value>
+				<value>SR5EngArticleRevision</value>
+				<value>SR5GenCatPartRevision</value>
+				<value>SR5SoftwareRevision</value>
+				<value>SR5ToolRevision</value>
+      </context>
+    </preference>
+    <preference name="T4S_BillOfMaterialMapping4view" type="String" array="false" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>No description available for this preference</preference_description>
+      <context name="Teamcenter">
+				<value>Any Status; Working</value>
+      </context>
+    </preference>
+    <preference name="T4S_BillOfMaterialOccurrenceNotes4view" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description></preference_description>
+      <context name="Teamcenter">
+        <value>bl_item_item_id</value>
+        <value>bl_sequence_no</value>
+        <value>bl_quantity</value>
+        <value>bl_ref_designator</value>
+				<value>bl_occ_uom_tag</value>
+      </context>
+    </preference>
+    <preference name="T4S_BillOfMaterialMapping2view" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>No description available for this preference</preference_description>
+      <context name="Teamcenter">
+        <value>structure_revisions:ItemRevision:IMAN_master_form_rev:ItemRevision Master</value>
+      </context>
+    </preference> -->
+		
+	<!-- 
+	#########################################################################################################################################################################
+	# SAP PEO Version Bill of Material Mapping Preferences 
+	#########################################################################################################################################################################
+	# -->
+    <preference name="T4S_GenericBomTypeList" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>No description available for this preference</preference_description>
+      <context name="Teamcenter">
+        <value>view</value>
+      </context>
+    </preference>
+    <preference name="T4S_GenericBomMapping4view" type="String" array="false" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>No description available for this preference</preference_description>
+      <context name="Teamcenter">
+				<value>Any Status; Working</value>
+      </context>
+    </preference>
+    <preference name="T4S_GenericBomHeaderTypeList" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>No description available for this preference</preference_description>
+      <context name="Teamcenter">
+		<value>SR5MfgEndItemRevision</value>
+		<value>SR5LLEndItemRevision</value>
+		<value>SR5MfgMajorAssyRevision</value>
+		<value>SR5LLMajorAssyRevision</value>
+		<value>SR5MfgInstallKitRevision</value>
+		<value>SR5MfgObjectRevision</value>
+		<value>SR5EngArticleRevision</value>
+		<value>SR5GenCatPartRevision</value>
+		<!-- <value>SR5SoftwareRevision</value> -->
+		<!-- <value>SR5ToolRevision</value> -->
+      </context>
+    </preference>
+		<preference name="T4S_GenericBomCondition" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>use a BMIDE condition to skip the transfer. i.e. SR5_DoBomVersionTransfer or isTrue</preference_description>
+      <context name="Teamcenter">
+        <!-- <value>isTrue</value> -->
+        <value>SR5_DoBomVersionTransfer</value>
+      </context>
+    </preference>
+		
+		<!-- SR5MfgEndItemRevision -->
+    <preference name="T4S_GenericBomHeaderMapping4SR5MfgEndItemRevision" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>No description available for this preference</preference_description>
+      <context name="Teamcenter">
+        <value>items_tag:SR5MfgEndItem</value>
+        <value>items_tag:SR5MfgEndItem:#__getAllProperties__#:Properties</value>
+        <value>#__getAllProperties__#:Properties</value>
+      </context>
+    </preference>
+		
+		<!-- SR5MfgMajorAssyRevision -->
+    <preference name="T4S_GenericBomHeaderMapping4SR5MfgMajorAssyRevision" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>No description available for this preference</preference_description>
+      <context name="Teamcenter">
+        <value>items_tag:SR5MfgMajorAssy</value>
+        <value>items_tag:SR5MfgMajorAssy:#__getAllProperties__#:Properties</value>
+        <value>#__getAllProperties__#:Properties</value>
+      </context>
+    </preference>
+    <preference name="T4S_GenericBomLineMapping4SR5MfgMajorAssyRevision" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>No description available for this preference</preference_description>
+      <context name="Teamcenter">
+        <value>items_tag:SR5MfgMajorAssy</value>
+        <value>items_tag:SR5MfgMajorAssy:#__getAllProperties__#:Properties</value>
+        <value>#__getAllProperties__#:Properties</value>
+      </context>
+    </preference>
+		
+		<!-- SR5MfgInstallKitRevision -->
+    <preference name="T4S_GenericBomHeaderMapping4SR5MfgInstallKitRevision" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>No description available for this preference</preference_description>
+      <context name="Teamcenter">
+        <value>items_tag:SR5MfgInstallKit</value>
+        <value>items_tag:SR5MfgInstallKit:#__getAllProperties__#:Properties</value>
+        <value>#__getAllProperties__#:Properties</value>
+      </context>
+    </preference>
+    <preference name="T4S_GenericBomLineMapping4SR5MfgInstallKitRevision" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>No description available for this preference</preference_description>
+      <context name="Teamcenter">
+        <value>items_tag:SR5MfgInstallKit</value>
+        <value>items_tag:SR5MfgInstallKit:#__getAllProperties__#:Properties</value>
+        <value>#__getAllProperties__#:Properties</value>
+      </context>
+    </preference>
+		
+		<!-- SR5EngArticleRevision -->
+    <preference name="T4S_GenericBomHeaderMapping4SR5EngArticleRevision" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>No description available for this preference</preference_description>
+      <context name="Teamcenter">
+        <value>items_tag:SR5EngArticle</value>
+        <value>items_tag:SR5EngArticle:#__getAllProperties__#:Properties</value>
+        <value>#__getAllProperties__#:Properties</value>
+      </context>
+    </preference>
+    <preference name="T4S_GenericBomLineMapping4SR5EngArticleRevision" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>No description available for this preference</preference_description>
+      <context name="Teamcenter">
+        <value>items_tag:SR5EngArticle</value>
+        <value>items_tag:SR5EngArticle:#__getAllProperties__#:Properties</value>
+        <value>#__getAllProperties__#:Properties</value>
+      </context>
+    </preference>
+
+		<!-- SR5GenCatPartRevision -->
+    <preference name="T4S_GenericBomHeaderMapping4SR5GenCatPartRevision" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>No description available for this preference</preference_description>
+      <context name="Teamcenter">
+        <value>items_tag:SR5GenCatPart</value>
+        <value>items_tag:SR5GenCatPart:#__getAllProperties__#:Properties</value>
+        <value>#__getAllProperties__#:Properties</value>
+      </context>
+    </preference>
+    <preference name="T4S_GenericBomLineMapping4SR5GenCatPartRevision" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>No description available for this preference</preference_description>
+      <context name="Teamcenter">
+        <value>items_tag:SR5GenCatPart</value>
+        <value>items_tag:SR5GenCatPart:#__getAllProperties__#:Properties</value>
+        <value>#__getAllProperties__#:Properties</value>
+      </context>
+    </preference>
+		
+		<!-- SR5LLEndItemRevision -->
+    <preference name="T4S_GenericBomHeaderMapping4SR5LLEndItemRevision" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>No description available for this preference</preference_description>
+      <context name="Teamcenter">
+        <value>items_tag:SR5LLEndItem</value>
+        <value>items_tag:SR5LLEndItem:#__getAllProperties__#:Properties</value>
+        <value>#__getAllProperties__#:Properties</value>
+      </context>
+    </preference>
+		
+		<!-- SR5LLMajorAssyRevision -->
+    <preference name="T4S_GenericBomHeaderMapping4SR5LLMajorAssyRevision" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>No description available for this preference</preference_description>
+      <context name="Teamcenter">
+        <value>items_tag:SR5LLMajorAssy</value>
+        <value>items_tag:SR5LLMajorAssy:#__getAllProperties__#:Properties</value>
+        <value>#__getAllProperties__#:Properties</value>
+      </context>
+    </preference>
+    <preference name="T4S_GenericBomLineMapping4SR5LLMajorAssyRevision" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>No description available for this preference</preference_description>
+      <context name="Teamcenter">
+        <value>items_tag:SR5LLMajorAssy</value>
+        <value>items_tag:SR5LLMajorAssy:#__getAllProperties__#:Properties</value>
+        <value>#__getAllProperties__#:Properties</value>
+      </context>
+    </preference>
+		
+		<!-- SR5MfgObjectRevision -->
+    <preference name="T4S_GenericBomHeaderMapping4SR5MfgObjectRevision" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>No description available for this preference</preference_description>
+      <context name="Teamcenter">
+        <value>items_tag:SR5MfgObject</value>
+        <value>items_tag:SR5MfgObject:#__getAllProperties__#:Properties</value>
+        <value>#__getAllProperties__#:Properties</value>
+      </context>
+    </preference>
+    <preference name="T4S_GenericBomLineMapping4SR5MfgObjectRevision" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>No description available for this preference</preference_description>
+      <context name="Teamcenter">
+        <value>items_tag:SR5MfgObject</value>
+        <value>items_tag:SR5MfgObject:#__getAllProperties__#:Properties</value>
+        <value>#__getAllProperties__#:Properties</value>
+      </context>
+    </preference>
+		
+    <preference name="T4S_GenericBomOccurrenceNotes4view" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description></preference_description>
+      <context name="Teamcenter">
+        <value>bl_item_item_id</value>
+        <value>bl_sequence_no</value>
+        <value>bl_quantity</value>
+        <value>bl_ref_designator</value>
+		<value>bl_occ_effectivities</value>
+		<value>bl_occ_uom_tag</value>
+      </context>
+    </preference>
+		
+		<!-- 
+		#########################################################################################################################################################################
+		# DIR Mapping Preferences 
+		#########################################################################################################################################################################
+		# -->		
+<!--     <preference name="T4S_DocumentInfoRecordTypeList" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>No description available for this preference</preference_description>
+      <context name="Teamcenter">
+				<value>SR5TechDocumentRevision</value>
+      </context>
+    </preference> -->
+		
+		<!-- SR5DocumentRevision -->
+<!-- 		<preference name="T4S_DocumentInfoRecordMapping4SR5TechDocumentRevision" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>No description available for this preference</preference_description>
+      <context name="Teamcenter">
+        <value>items_tag:SR5TechDocument</value>
+        <value>items_tag:SR5TechDocument:IMAN_master_form:SR5TechDocumentMaster</value>
+        <value>items_tag:SR5TechDocument:#__getAllProperties__#:Properties</value>
+        <value>IMAN_master_form_rev:SR5TechDocumentRevisionMaster</value>
+        <value>#__getAllProperties__#:Properties</value>
+        <value>IMAN_classification:icm0</value>
+        <value>IMAN_Rendering:DirectModel:ref_list/JTPART:ImanFile</value>
+        <value>IMAN_specification:UGMASTER:ref_list/Graphics-Interface:ImanFile</value>
+        <value>IMAN_specification:ItemRevision:items_tag:Item</value>
+        <value>IMAN_specification:PDF</value>
+        <value>IMAN_specification:PDF:ref_list/pdf:ImanFile</value>
+				<value>IMAN_specification:T4S_DatasetExtensionForm</value>
+      </context>
+    </preference>
+    <preference name="T4S_DocumentInfoRecordMapping2SR5TechDocumentRevision" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>No description available for this preference</preference_description>
+      <context name="Teamcenter">
+				<value>IMAN_master_form_rev:SR5DocumentRevisionMaster</value>
+				<value>sr5SAPID</value>
+				<value>sr5SAPTransStatus</value>
+				<value>sr5SAPTransDate</value>
+      </context>
+    </preference>
+    <preference name="T4S_DocumentInfoRecordDefaultDocumentKey4SR5TechDocumentRevision" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>No description available for this preference</preference_description>
+      <context name="Teamcenter">
+        <value>DRW</value>
+        <value>001</value>
+        <value>00</value>
+      </context>
+    </preference>		 -->				
+
+		<!-- 
+		#########################################################################################################################################################################
+		# Manufacturing Change Mapping Preferences 
+		#########################################################################################################################################################################
+		# -->
+<!--     <preference name="T4S_GenericObjectTypeList" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description></preference_description>
+      <context name="Teamcenter">
+        <value>SR5MfgCNRevision</value>
+      </context>
+    </preference>
+    <preference name="T4S_GenericObjectMapping4SR5MfgCNRevision" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description></preference_description>
+      <context name="Teamcenter">
+        <value>items_tag:SR5MfgCNRevision:#__getAllProperties__#:Properties</value>
+      </context>
+    </preference>
+    <preference name="T4S_GenericObjectMapping2SR5MfgCNRevision" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description></preference_description>
+      <context name="Teamcenter">
+        <value>SR5MfgCNRevision</value>
+      </context>
+    </preference>
+    <preference name="T4S_GenericObjectFieldMapping2SR5MfgCNRevision" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description></preference_description>
+      <context name="Teamcenter">
+        <value>sr5SAPID</value>
+      </context>
+    </preference> -->
+<!--     <preference name="T4S_GenericObjectFieldMapping2items_tag:SR5MfgCN" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description></preference_description>
+      <context name="Teamcenter">
+        <value>object_name</value>
+        <value>object_desc</value>
+      </context>
+    </preference> -->
+		
+	<!-- 
+	#########################################################################################################################################################################
+	# Definition of Allowlist/Blocklist
+	#########################################################################################################################################################################
+	# -->
+	<preference name="T4S_PropertyListMode4SR5MfgEndItem" type="Integer" array="false" disabled="false" protectionScope="Site" envEnabled="false">
+		<preference_description>Defines the processing of the properties specified by the #__getAllProperties__# entry in the preference.
+														0 - process all properties
+														1 - use block-list preference ..Property2IgnoreList4.. (e.g. T4S_MaterialMasterProperty2IgnoreList4ItemRevision or T4X_Property2IgnoreList4ItemRevision)
+														2 - use allow-list preference ..Property2ProcessList4.. (e.g. T4S_MaterialMasterProperty2ProcessList4ItemRevision or T4X_Property2ProcessList4ItemRevision)
+		</preference_description>
+		<context name="Teamcenter">
+			<value>2</value>
+		</context>
+	</preference>
+	<preference name="T4S_Property2ProcessList4SR5MfgEndItem" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+		<preference_description>Generic allow-list</preference_description>
+		<context name="Teamcenter">
+			<value>item_id</value>
+			<!-- <value>sr5Plant</value> -->
+		</context>
+	</preference>
+	<preference name="T4S_PropertyListMode4SR5MfgEndItemRevision" type="Integer" array="false" disabled="false" protectionScope="Site" envEnabled="false">
+		<preference_description>Defines the processing of the properties specified by the #__getAllProperties__# entry in the preference.
+														0 - process all properties
+														1 - use block-list preference ..Property2IgnoreList4.. (e.g. T4S_MaterialMasterProperty2IgnoreList4ItemRevision or T4X_Property2IgnoreList4ItemRevision)
+														2 - use allow-list preference ..Property2ProcessList4.. (e.g. T4S_MaterialMasterProperty2ProcessList4ItemRevision or T4X_Property2ProcessList4ItemRevision)
+		</preference_description>
+		<context name="Teamcenter">
+			<value>2</value>
+		</context>
+	</preference>
+	<preference name="T4S_Property2ProcessList4SR5MfgEndItemRevision" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+		<preference_description>Generic allow-list</preference_description>
+		<context name="Teamcenter">
+			<value>item_revision_id</value>
+			<value>object_name</value>
+			<value>object_desc</value>
+			<value>last_release_status</value>
+			<value>sr5SAPID</value>
+			<value>sr5SAPTransStatus</value>
+		</context>
+	</preference>
+	
+	<preference name="T4S_PropertyListMode4SR5MfgMajorAssy" type="Integer" array="false" disabled="false" protectionScope="Site" envEnabled="false">
+		<preference_description>Defines the processing of the properties specified by the #__getAllProperties__# entry in the preference.
+														0 - process all properties
+														1 - use block-list preference ..Property2IgnoreList4.. (e.g. T4S_MaterialMasterProperty2IgnoreList4ItemRevision or T4X_Property2IgnoreList4ItemRevision)
+														2 - use allow-list preference ..Property2ProcessList4.. (e.g. T4S_MaterialMasterProperty2ProcessList4ItemRevision or T4X_Property2ProcessList4ItemRevision)
+		</preference_description>
+		<context name="Teamcenter">
+			<value>2</value>
+		</context>
+	</preference>
+	<preference name="T4S_Property2ProcessList4SR5MfgMajorAssy" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+		<preference_description>Generic allow-list</preference_description>
+		<context name="Teamcenter">
+			<value>item_id</value>
+			<!-- <value>sr5Plant</value> -->
+		</context>
+	</preference>
+	<preference name="T4S_PropertyListMode4SR5MfgMajorAssyRevision" type="Integer" array="false" disabled="false" protectionScope="Site" envEnabled="false">
+		<preference_description>Defines the processing of the properties specified by the #__getAllProperties__# entry in the preference.
+														0 - process all properties
+														1 - use block-list preference ..Property2IgnoreList4.. (e.g. T4S_MaterialMasterProperty2IgnoreList4ItemRevision or T4X_Property2IgnoreList4ItemRevision)
+														2 - use allow-list preference ..Property2ProcessList4.. (e.g. T4S_MaterialMasterProperty2ProcessList4ItemRevision or T4X_Property2ProcessList4ItemRevision)
+		</preference_description>
+		<context name="Teamcenter">
+			<value>2</value>
+		</context>
+	</preference>
+	<preference name="T4S_Property2ProcessList4SR5MfgMajorAssyRevision" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+		<preference_description>Generic allow-list</preference_description>
+		<context name="Teamcenter">
+			<value>item_revision_id</value>
+			<value>object_name</value>
+			<value>object_desc</value>
+			<value>last_release_status</value>
+			<value>sr5SAPID</value>
+			<value>sr5SAPTransStatus</value>
+		</context>
+	</preference>
+	
+	<preference name="T4S_PropertyListMode4SR5LLEndItem" type="Integer" array="false" disabled="false" protectionScope="Site" envEnabled="false">
+		<preference_description>Defines the processing of the properties specified by the #__getAllProperties__# entry in the preference.
+														0 - process all properties
+														1 - use block-list preference ..Property2IgnoreList4.. (e.g. T4S_MaterialMasterProperty2IgnoreList4ItemRevision or T4X_Property2IgnoreList4ItemRevision)
+														2 - use allow-list preference ..Property2ProcessList4.. (e.g. T4S_MaterialMasterProperty2ProcessList4ItemRevision or T4X_Property2ProcessList4ItemRevision)
+		</preference_description>
+		<context name="Teamcenter">
+			<value>2</value>
+		</context>
+	</preference>
+	<preference name="T4S_Property2ProcessList4SR5LLEndItem" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+		<preference_description>Generic allow-list</preference_description>
+		<context name="Teamcenter">
+			<value>item_id</value>
+			<!-- <value>sr5Plant</value> -->
+		</context>
+	</preference>
+	<preference name="T4S_PropertyListMode4SR5LLEndItemRevision" type="Integer" array="false" disabled="false" protectionScope="Site" envEnabled="false">
+		<preference_description>Defines the processing of the properties specified by the #__getAllProperties__# entry in the preference.
+														0 - process all properties
+														1 - use block-list preference ..Property2IgnoreList4.. (e.g. T4S_MaterialMasterProperty2IgnoreList4ItemRevision or T4X_Property2IgnoreList4ItemRevision)
+														2 - use allow-list preference ..Property2ProcessList4.. (e.g. T4S_MaterialMasterProperty2ProcessList4ItemRevision or T4X_Property2ProcessList4ItemRevision)
+		</preference_description>
+		<context name="Teamcenter">
+			<value>2</value>
+		</context>
+	</preference>
+	<preference name="T4S_Property2ProcessList4SR5LLEndItemRevision" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+		<preference_description>Generic allow-list</preference_description>
+		<context name="Teamcenter">
+			<value>item_revision_id</value>
+			<value>object_name</value>
+			<value>object_desc</value>
+			<value>last_release_status</value>
+			<value>sr5SAPID</value>
+			<value>sr5SAPTransStatus</value>
+		</context>
+	</preference>
+	
+	<preference name="T4S_PropertyListMode4SR5LLMajorAssy" type="Integer" array="false" disabled="false" protectionScope="Site" envEnabled="false">
+		<preference_description>Defines the processing of the properties specified by the #__getAllProperties__# entry in the preference.
+														0 - process all properties
+														1 - use block-list preference ..Property2IgnoreList4.. (e.g. T4S_MaterialMasterProperty2IgnoreList4ItemRevision or T4X_Property2IgnoreList4ItemRevision)
+														2 - use allow-list preference ..Property2ProcessList4.. (e.g. T4S_MaterialMasterProperty2ProcessList4ItemRevision or T4X_Property2ProcessList4ItemRevision)
+		</preference_description>
+		<context name="Teamcenter">
+			<value>2</value>
+		</context>
+	</preference>
+	<preference name="T4S_Property2ProcessList4SR5LLMajorAssy" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+		<preference_description>Generic allow-list</preference_description>
+		<context name="Teamcenter">
+			<value>item_id</value>
+			<!-- <value>sr5Plant</value> -->
+		</context>
+	</preference>
+	<preference name="T4S_PropertyListMode4SR5LLMajorAssyRevision" type="Integer" array="false" disabled="false" protectionScope="Site" envEnabled="false">
+		<preference_description>Defines the processing of the properties specified by the #__getAllProperties__# entry in the preference.
+														0 - process all properties
+														1 - use block-list preference ..Property2IgnoreList4.. (e.g. T4S_MaterialMasterProperty2IgnoreList4ItemRevision or T4X_Property2IgnoreList4ItemRevision)
+														2 - use allow-list preference ..Property2ProcessList4.. (e.g. T4S_MaterialMasterProperty2ProcessList4ItemRevision or T4X_Property2ProcessList4ItemRevision)
+		</preference_description>
+		<context name="Teamcenter">
+			<value>2</value>
+		</context>
+	</preference>
+	<preference name="T4S_Property2ProcessList4SR5LLMajorAssyRevision" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+		<preference_description>Generic allow-list</preference_description>
+		<context name="Teamcenter">
+			<value>item_revision_id</value>
+			<value>object_name</value>
+			<value>object_desc</value>
+			<value>last_release_status</value>
+			<value>sr5SAPID</value>
+			<value>sr5SAPTransStatus</value>
+		</context>
+	</preference>
+	
+	<preference name="T4S_PropertyListMode4SR5MfgInstallKit" type="Integer" array="false" disabled="false" protectionScope="Site" envEnabled="false">
+		<preference_description>Defines the processing of the properties specified by the #__getAllProperties__# entry in the preference.
+														0 - process all properties
+														1 - use block-list preference ..Property2IgnoreList4.. (e.g. T4S_MaterialMasterProperty2IgnoreList4ItemRevision or T4X_Property2IgnoreList4ItemRevision)
+														2 - use allow-list preference ..Property2ProcessList4.. (e.g. T4S_MaterialMasterProperty2ProcessList4ItemRevision or T4X_Property2ProcessList4ItemRevision)
+		</preference_description>
+		<context name="Teamcenter">
+			<value>2</value>
+		</context>
+	</preference>
+	<preference name="T4S_Property2ProcessList4SR5MfgInstallKit" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+		<preference_description>Generic allow-list</preference_description>
+		<context name="Teamcenter">
+			<value>item_id</value>
+			<!-- <value>sr5Plant</value> -->
+		</context>
+	</preference>
+	<preference name="T4S_PropertyListMode4SR5MfgInstallKitRevision" type="Integer" array="false" disabled="false" protectionScope="Site" envEnabled="false">
+		<preference_description>Defines the processing of the properties specified by the #__getAllProperties__# entry in the preference.
+														0 - process all properties
+														1 - use block-list preference ..Property2IgnoreList4.. (e.g. T4S_MaterialMasterProperty2IgnoreList4ItemRevision or T4X_Property2IgnoreList4ItemRevision)
+														2 - use allow-list preference ..Property2ProcessList4.. (e.g. T4S_MaterialMasterProperty2ProcessList4ItemRevision or T4X_Property2ProcessList4ItemRevision)
+		</preference_description>
+		<context name="Teamcenter">
+			<value>2</value>
+		</context>
+	</preference>
+	<preference name="T4S_Property2ProcessList4SR5MfgInstallKitRevision" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+		<preference_description>Generic allow-list</preference_description>
+		<context name="Teamcenter">
+			<value>item_revision_id</value>
+			<value>object_name</value>
+			<value>object_desc</value>
+			<value>last_release_status</value>
+			<value>sr5SAPID</value>
+			<value>sr5SAPTransStatus</value>
+		</context>
+	</preference>
+	
+	<preference name="T4S_PropertyListMode4SR5MfgObject" type="Integer" array="false" disabled="false" protectionScope="Site" envEnabled="false">
+		<preference_description>Defines the processing of the properties specified by the #__getAllProperties__# entry in the preference.
+														0 - process all properties
+														1 - use block-list preference ..Property2IgnoreList4.. (e.g. T4S_MaterialMasterProperty2IgnoreList4ItemRevision or T4X_Property2IgnoreList4ItemRevision)
+														2 - use allow-list preference ..Property2ProcessList4.. (e.g. T4S_MaterialMasterProperty2ProcessList4ItemRevision or T4X_Property2ProcessList4ItemRevision)
+		</preference_description>
+		<context name="Teamcenter">
+			<value>2</value>
+		</context>
+	</preference>
+	<preference name="T4S_Property2ProcessList4SR5MfgObject" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+		<preference_description>Generic allow-list</preference_description>
+		<context name="Teamcenter">
+			<value>item_id</value>
+			<!-- <value>sr5Plant</value> -->
+		</context>
+	</preference>
+	<preference name="T4S_PropertyListMode4SR5MfgObjectRevision" type="Integer" array="false" disabled="false" protectionScope="Site" envEnabled="false">
+		<preference_description>Defines the processing of the properties specified by the #__getAllProperties__# entry in the preference.
+														0 - process all properties
+														1 - use block-list preference ..Property2IgnoreList4.. (e.g. T4S_MaterialMasterProperty2IgnoreList4ItemRevision or T4X_Property2IgnoreList4ItemRevision)
+														2 - use allow-list preference ..Property2ProcessList4.. (e.g. T4S_MaterialMasterProperty2ProcessList4ItemRevision or T4X_Property2ProcessList4ItemRevision)
+		</preference_description>
+		<context name="Teamcenter">
+			<value>2</value>
+		</context>
+	</preference>
+	<preference name="T4S_Property2ProcessList4SR5MfgObjectRevision" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+		<preference_description>Generic allow-list</preference_description>
+		<context name="Teamcenter">
+			<value>item_revision_id</value>
+			<value>object_name</value>
+			<value>object_desc</value>
+			<value>last_release_status</value>
+			<value>sr5SAPID</value>
+			<value>sr5SAPTransStatus</value>
+		</context>
+	</preference>
+	
+	<preference name="T4S_PropertyListMode4SR5EngArticle" type="Integer" array="false" disabled="false" protectionScope="Site" envEnabled="false">
+		<preference_description>Defines the processing of the properties specified by the #__getAllProperties__# entry in the preference.
+														0 - process all properties
+														1 - use block-list preference ..Property2IgnoreList4.. (e.g. T4S_MaterialMasterProperty2IgnoreList4ItemRevision or T4X_Property2IgnoreList4ItemRevision)
+														2 - use allow-list preference ..Property2ProcessList4.. (e.g. T4S_MaterialMasterProperty2ProcessList4ItemRevision or T4X_Property2ProcessList4ItemRevision)
+		</preference_description>
+		<context name="Teamcenter">
+			<value>2</value>
+		</context>
+	</preference>
+	<preference name="T4S_Property2ProcessList4SR5EngArticle" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+		<preference_description>Generic allow-list</preference_description>
+		<context name="Teamcenter">
+			<value>item_id</value>
+			<!-- <value>sr5Plant</value> -->
+		</context>
+	</preference>
+	<preference name="T4S_PropertyListMode4SR5EngArticleRevision" type="Integer" array="false" disabled="false" protectionScope="Site" envEnabled="false">
+		<preference_description>Defines the processing of the properties specified by the #__getAllProperties__# entry in the preference.
+														0 - process all properties
+														1 - use block-list preference ..Property2IgnoreList4.. (e.g. T4S_MaterialMasterProperty2IgnoreList4ItemRevision or T4X_Property2IgnoreList4ItemRevision)
+														2 - use allow-list preference ..Property2ProcessList4.. (e.g. T4S_MaterialMasterProperty2ProcessList4ItemRevision or T4X_Property2ProcessList4ItemRevision)
+		</preference_description>
+		<context name="Teamcenter">
+			<value>2</value>
+		</context>
+	</preference>
+	<preference name="T4S_Property2ProcessList4SR5EngArticleRevision" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+		<preference_description>Generic allow-list</preference_description>
+		<context name="Teamcenter">
+			<value>item_revision_id</value>
+			<value>object_name</value>
+			<value>object_desc</value>
+			<value>last_release_status</value>
+			<value>sr5SAPID</value>
+			<value>sr5SAPTransStatus</value>
+		</context>
+	</preference>
+	
+	<preference name="T4S_PropertyListMode4SR5GenCatPart" type="Integer" array="false" disabled="false" protectionScope="Site" envEnabled="false">
+		<preference_description>Defines the processing of the properties specified by the #__getAllProperties__# entry in the preference.
+														0 - process all properties
+														1 - use block-list preference ..Property2IgnoreList4.. (e.g. T4S_MaterialMasterProperty2IgnoreList4ItemRevision or T4X_Property2IgnoreList4ItemRevision)
+														2 - use allow-list preference ..Property2ProcessList4.. (e.g. T4S_MaterialMasterProperty2ProcessList4ItemRevision or T4X_Property2ProcessList4ItemRevision)
+		</preference_description>
+		<context name="Teamcenter">
+			<value>2</value>
+		</context>
+	</preference>
+	<preference name="T4S_Property2ProcessList4SR5GenCatPart" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+		<preference_description>Generic allow-list</preference_description>
+		<context name="Teamcenter">
+			<value>item_id</value>
+			<!-- <value>sr5Plant</value> -->
+		</context>
+	</preference>
+	<preference name="T4S_PropertyListMode4SR5GenCatPartRevision" type="Integer" array="false" disabled="false" protectionScope="Site" envEnabled="false">
+		<preference_description>Defines the processing of the properties specified by the #__getAllProperties__# entry in the preference.
+														0 - process all properties
+														1 - use block-list preference ..Property2IgnoreList4.. (e.g. T4S_MaterialMasterProperty2IgnoreList4ItemRevision or T4X_Property2IgnoreList4ItemRevision)
+														2 - use allow-list preference ..Property2ProcessList4.. (e.g. T4S_MaterialMasterProperty2ProcessList4ItemRevision or T4X_Property2ProcessList4ItemRevision)
+		</preference_description>
+		<context name="Teamcenter">
+			<value>2</value>
+		</context>
+	</preference>
+	<preference name="T4S_Property2ProcessList4SR5GenCatPartRevision" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+		<preference_description>Generic allow-list</preference_description>
+		<context name="Teamcenter">
+			<value>item_revision_id</value>
+			<value>object_name</value>
+			<value>object_desc</value>
+			<value>last_release_status</value>
+			<value>sr5SAPID</value>
+			<value>sr5SAPTransStatus</value>
+		</context>
+	</preference>		
+
+	<preference name="T4S_PropertyListMode4SR5Software" type="Integer" array="false" disabled="false" protectionScope="Site" envEnabled="false">
+		<preference_description>Defines the processing of the properties specified by the #__getAllProperties__# entry in the preference.
+														0 - process all properties
+														1 - use block-list preference ..Property2IgnoreList4.. (e.g. T4S_MaterialMasterProperty2IgnoreList4ItemRevision or T4X_Property2IgnoreList4ItemRevision)
+														2 - use allow-list preference ..Property2ProcessList4.. (e.g. T4S_MaterialMasterProperty2ProcessList4ItemRevision or T4X_Property2ProcessList4ItemRevision)
+		</preference_description>
+		<context name="Teamcenter">
+			<value>2</value>
+		</context>
+	</preference>
+	<preference name="T4S_Property2ProcessList4SR5Software" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+		<preference_description>Generic allow-list</preference_description>
+		<context name="Teamcenter">
+			<value>item_id</value>
+			<!-- <value>sr5Plant</value> -->
+		</context>
+	</preference>
+	<preference name="T4S_PropertyListMode4SR5SoftwareRevision" type="Integer" array="false" disabled="false" protectionScope="Site" envEnabled="false">
+		<preference_description>Defines the processing of the properties specified by the #__getAllProperties__# entry in the preference.
+														0 - process all properties
+														1 - use block-list preference ..Property2IgnoreList4.. (e.g. T4S_MaterialMasterProperty2IgnoreList4ItemRevision or T4X_Property2IgnoreList4ItemRevision)
+														2 - use allow-list preference ..Property2ProcessList4.. (e.g. T4S_MaterialMasterProperty2ProcessList4ItemRevision or T4X_Property2ProcessList4ItemRevision)
+		</preference_description>
+		<context name="Teamcenter">
+			<value>2</value>
+		</context>
+	</preference>
+	<preference name="T4S_Property2ProcessList4SR5SoftwareRevision" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+		<preference_description>Generic allow-list</preference_description>
+		<context name="Teamcenter">
+			<value>item_revision_id</value>
+			<value>object_name</value>
+			<value>object_desc</value>
+			<value>last_release_status</value>
+			<value>sr5SAPID</value>
+			<value>sr5SAPTransStatus</value>
+		</context>
+	</preference>		
+
+	<preference name="T4S_PropertyListMode4SR5Tool" type="Integer" array="false" disabled="false" protectionScope="Site" envEnabled="false">
+		<preference_description>Defines the processing of the properties specified by the #__getAllProperties__# entry in the preference.
+														0 - process all properties
+														1 - use block-list preference ..Property2IgnoreList4.. (e.g. T4S_MaterialMasterProperty2IgnoreList4ItemRevision or T4X_Property2IgnoreList4ItemRevision)
+														2 - use allow-list preference ..Property2ProcessList4.. (e.g. T4S_MaterialMasterProperty2ProcessList4ItemRevision or T4X_Property2ProcessList4ItemRevision)
+		</preference_description>
+		<context name="Teamcenter">
+			<value>2</value>
+		</context>
+	</preference>
+	<preference name="T4S_Property2ProcessList4SR5Tool" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+		<preference_description>Generic allow-list</preference_description>
+		<context name="Teamcenter">
+			<value>item_id</value>
+			<!-- <value>sr5Plant</value> -->
+		</context>
+	</preference>
+	<preference name="T4S_PropertyListMode4SR5ToolRevision" type="Integer" array="false" disabled="false" protectionScope="Site" envEnabled="false">
+		<preference_description>Defines the processing of the properties specified by the #__getAllProperties__# entry in the preference.
+														0 - process all properties
+														1 - use block-list preference ..Property2IgnoreList4.. (e.g. T4S_MaterialMasterProperty2IgnoreList4ItemRevision or T4X_Property2IgnoreList4ItemRevision)
+														2 - use allow-list preference ..Property2ProcessList4.. (e.g. T4S_MaterialMasterProperty2ProcessList4ItemRevision or T4X_Property2ProcessList4ItemRevision)
+		</preference_description>
+		<context name="Teamcenter">
+			<value>2</value>
+		</context>
+	</preference>
+	<preference name="T4S_Property2ProcessList4SR5ToolRevision" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+		<preference_description>Generic allow-list</preference_description>
+		<context name="Teamcenter">
+			<value>item_revision_id</value>
+			<value>object_name</value>
+			<value>object_desc</value>
+			<value>last_release_status</value>
+			<value>sr5SAPID</value>
+			<value>sr5SAPTransStatus</value>
+		</context>
+	</preference>
+
+  </category>
+</preferences>

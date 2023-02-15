@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TcBusinessDataLocalization xmlns="http://teamcenter.com/BusinessModel/TcBusinessDataLocalization"
+    Date="">
+<Add>
+   <key locale="en_US" id="BusinessObject{::}SR4CatiaDesignMasterS" status="Approved">Catia Design Master Storage</key>
+   <key locale="en_US" id="BusinessObject{::}SR4CatiaDesignMaster" status="Approved">Catia Design Master</key>
+   <key locale="en_US" id="BusinessObject{::}SR4CatiaDesignRevMasterS" status="Approved">Catia Design Revision Master Storage</key>
+   <key locale="en_US" id="BusinessObject{::}SR4CatiaDesignRevisionMaster" status="Approved">Catia Design Revision Master</key>
+   <key locale="en_US" id="BusinessObject{::}SR4CatiaDesignRevision" status="Approved">Catia Design Revision</key>
+   <key locale="en_US" id="BusinessObject{::}SR4CatiaDesign" status="Approved">Catia Design</key>
+   <key locale="en_US" id="BusinessObject{::}SR4EngPartMasterS" status="Approved">Eng Part Master Storage</key>
+   <key locale="en_US" id="BusinessObject{::}SR4EngPartMaster" status="Approved">Eng Part Master</key>
+   <key locale="en_US" id="BusinessObject{::}SR4EngPartRevMasterS" status="Approved">Eng Part Revision Master Storage</key>
+   <key locale="en_US" id="BusinessObject{::}SR4EngPartRevisionMaster" status="Approved">Eng Part Revision Master</key>
+   <key locale="en_US" id="BusinessObject{::}SR4EngPartRevision" status="Approved">Engineering Part Revision</key>
+   <key locale="en_US" id="BusinessObject{::}SR4EngPart" status="Approved">Engineering Part</key>
+   <key locale="en_US" id="BusinessObject{::}SR4GenDesignMasterS" status="Approved">Gen Design Master Storage</key>
+   <key locale="en_US" id="BusinessObject{::}SR4GenDesignMaster" status="Approved">Gen Design Master</key>
+   <key locale="en_US" id="BusinessObject{::}SR4GenDesignRevMasterS" status="Approved">Gen Design Revision Master Storage</key>
+   <key locale="en_US" id="BusinessObject{::}SR4GenDesignRevisionMaster" status="Approved">Gen Design Revision Master</key>
+   <key locale="en_US" id="BusinessObject{::}SR4GenDesignRevision" status="Approved">Gen Design Revision</key>
+   <key locale="en_US" id="BusinessObject{::}SR4GenDesign" status="Approved">Generic Design</key>
+   <key locale="en_US" id="BusinessObject{::}SR4GenPartMasterS" status="Approved">Gen Part Master Storage</key>
+   <key locale="en_US" id="BusinessObject{::}SR4GenPartMaster" status="Approved">Gen Part Master</key>
+   <key locale="en_US" id="BusinessObject{::}SR4GenPartRevMasterS" status="Approved">Gen Part Revision Master Storage</key>
+   <key locale="en_US" id="BusinessObject{::}SR4GenPartRevisionMaster" status="Approved">Gen Part Revision Master</key>
+   <key locale="en_US" id="BusinessObject{::}SR4GenPartRevision" status="Approved">Gen Part Revision</key>
+   <key locale="en_US" id="BusinessObject{::}SR4GenPart" status="Approved">Generic Part</key>
+   <key locale="en_US" id="BusinessObject{::}SR4HasEBOM" status="Approved">Has EBOM</key>
+   <key locale="en_US" id="BusinessObject{::}SR4MfgPartMasterS" status="Approved">Mfg Part Master Storage</key>
+   <key locale="en_US" id="BusinessObject{::}SR4MfgPartMaster" status="Approved">Mfg Part Master</key>
+   <key locale="en_US" id="BusinessObject{::}SR4MfgPartRevMasterS" status="Approved">Mfg Part Revision Master Storage</key>
+   <key locale="en_US" id="BusinessObject{::}SR4MfgPartRevisionMaster" status="Approved">Mfg Part Revision Master</key>
+   <key locale="en_US" id="BusinessObject{::}SR4MfgPartRevision" status="Approved">Manufacturing Part Revision</key>
+   <key locale="en_US" id="BusinessObject{::}SR4MfgPart" status="Approved">Manufacturing Part</key>
+   <key locale="en_US" id="BusinessObject{::}SR4WFPlantFormStorage" status="Approved">SR4WFPlantFormStorage</key>
+   <key locale="en_US" id="BusinessObject{::}SR4WFPlantForm" status="Approved">WF Plant Form</key>
+   <key locale="en_US" id="LOVValueDescription{::}SR4_Plant{::}STAP" status="Approved">STAP - Pankow</key>
+   <key locale="en_US" id="LOVValueDescription{::}SR4_Plant{::}STAR" status="Approved">STAR - Rheinthal</key>
+   <key locale="en_US" id="LOVValueDescription{::}SR4_Plant{::}STAV" status="Approved">STAV - Valencia</key>
+   <key locale="en_US" id="LOVValue{::}SR4_DIN_MPG{::}B" status="Approved">B - Vehicle Body</key>
+   <key locale="en_US" id="LOVValue{::}SR4_DIN_MPG{::}C" status="Approved">C - Vehicle fitting out</key>
+   <key locale="en_US" id="LOVValue{::}SR4_DIN_MPG{::}D" status="Approved">D - Interior appointments</key>
+   <key locale="en_US" id="LOVValue{::}SR4_DIN_MPG{::}E" status="Approved">E - Running gear</key>
+   <key locale="en_US" id="LOVValue{::}SR4_DIN_MPG{::}F" status="Approved">F -Power system, drive unit</key>
+   <key locale="en_US" id="LOVValue{::}SR4_DIN_MPG{::}G" status="Approved">G - Control apparatus for train operations</key>
+   <key locale="en_US" id="LOVValue{::}SR4_DIN_MPG{::}H" status="Approved">H - Auxiliary operating equipment</key>
+   <key locale="en_US" id="LOVValue{::}SR4_DIN_MPG{::}J" status="Approved">J - Monitoring and safety equipment</key>
+   <key locale="en_US" id="LOVValue{::}SR4_DIN_MPG{::}K" status="Approved">K - Lightning</key>
+   <key locale="en_US" id="LOVValue{::}SR4_DIN_MPG{::}L" status="Approved">L - Air conditioning</key>
+   <key locale="en_US" id="LOVValue{::}SR4_DIN_MPG{::}M" status="Approved">M - Ancilliary operating equipment</key>
+   <key locale="en_US" id="LOVValue{::}SR4_DIN_MPG{::}N" status="Approved">N - Doors, entrances</key>
+   <key locale="en_US" id="LOVValue{::}SR4_DIN_MPG{::}P" status="Approved">P - Information facilities</key>
+   <key locale="en_US" id="LOVValue{::}SR4_DIN_MPG{::}Q" status="Approved">Q - Pneumatic/hydraulic equipment</key>
+   <key locale="en_US" id="LOVValue{::}SR4_DIN_MPG{::}R" status="Approved">R - Brake</key>
+   <key locale="en_US" id="LOVValue{::}SR4_DIN_MPG{::}S" status="Approved">S - Vehicle linkage devices</key>
+   <key locale="en_US" id="LOVValue{::}SR4_DIN_MPG{::}T" status="Approved">T - Carrier systems, enclosures</key>
+   <key locale="en_US" id="LOVValue{::}SR4_DIN_MPG{::}U" status="Approved">U - Electrical wiring</key>
+   <key locale="en_US" id="LOVValue{::}SR4_DIN_SPG_B{::}BA" status="Approved">BA - Vehicle body</key>
+   <key locale="en_US" id="LOVValue{::}SR4_DIN_SPG_B{::}BB" status="Approved">BB - Underframe</key>
+   <key locale="en_US" id="LOVValue{::}SR4_DIN_SPG_B{::}BC" status="Approved">BC - Side walls</key>
+   <key locale="en_US" id="LOVValue{::}SR4_DIN_SPG_B{::}BD" status="Approved">BD - Roof</key>
+   <key locale="en_US" id="LOVValue{::}SR4_DIN_SPG_B{::}BE" status="Approved">BE - Head of vehicle</key>
+   <key locale="en_US" id="LOVValue{::}SR4_DIN_SPG_B{::}BF" status="Approved">BF - End walls</key>
+   <key locale="en_US" id="LOVValue{::}SR4_DIN_SPG_B{::}BG" status="Approved">BG - Weld-on / add-on parts</key>
+   <key locale="en_US" id="LOVValue{::}SR4_DIN_SPG_B{::}BH" status="Approved">BH - Intermediate floor</key>
+   <key locale="en_US" id="LOVValue{::}SR4_DIN_SPG_B{::}BJ" status="Approved">BJ - Partitions</key>
+   <key locale="en_US" id="LOVValue{::}SR4_DIN_SPG_C{::}CA" status="Approved">CA - Vehicle fitting out</key>
+   <key locale="en_US" id="LOVValue{::}SR4_DIN_SPG_C{::}CB" status="Approved">CB - Window</key>
+   <key locale="en_US" id="LOVValue{::}SR4_DIN_SPG_C{::}CC" status="Approved">CC - Floor</key>
+   <key locale="en_US" id="LOVValue{::}SR4_DIN_SPG_C{::}CD" status="Approved">CD - Interior panelling</key>
+   <key locale="en_US" id="LOVValue{::}SR4_DIN_SPG_C{::}CE" status="Approved">CE - Partitions</key>
+   <key locale="en_US" id="LOVValue{::}SR4_DIN_SPG_C{::}CF" status="Approved">CF - External additions</key>
+   <key locale="en_US" id="LOVValue{::}SR4_DIN_SPG_C{::}CG" status="Approved">CG - Vehicle paintwork</key>
+   <key locale="en_US" id="LOVValue{::}SR4_DIN_SPG_C{::}CH" status="Approved">CH - Insulation</key>
+   <key locale="en_US" id="LOVValue{::}SR4_DIN_SPG_D{::}DA" status="Approved">DA - Interior appointments</key>
+   <key locale="en_US" id="LOVValue{::}SR4_DIN_SPG_D{::}DB" status="Approved">DB - Rails, handles (inside)</key>
+   <key locale="en_US" id="LOVValue{::}SR4_DIN_SPG_D{::}DC" status="Approved">DC - Seats, sleeping berths, tables</key>
+   <key locale="en_US" id="LOVValue{::}SR4_DIN_SPG_D{::}DD" status="Approved">DD - Sanitary facilities</key>
+   <key locale="en_US" id="LOVValue{::}SR4_DIN_SPG_D{::}DE" status="Approved">DE - Luggage racks</key>
+   <key locale="en_US" id="LOVValue{::}SR4_DIN_SPG_D{::}DF" status="Approved">DF - Additional devices</key>
+   <key locale="en_US" id="LOVValue{::}SR4_DIN_SPG_E{::}EA" status="Approved">EA - Running gear</key>
+   <key locale="en_US" id="LOVValue{::}SR4_DIN_SPG_E{::}EB" status="Approved">EB - Supporting structures</key>
+   <key locale="en_US" id="LOVValue{::}SR4_DIN_SPG_E{::}EC" status="Approved">EC - Wheelsets</key>
+   <key locale="en_US" id="LOVValue{::}SR4_DIN_SPG_E{::}ED" status="Approved">ED - Suspension, damping, balancing gear</key>
+   <key locale="en_US" id="LOVValue{::}SR4_DIN_SPG_E{::}EE" status="Approved">EE - Driving systems (active)</key>
+   <key locale="en_US" id="LOVValue{::}SR4_DIN_SPG_E{::}EF" status="Approved">EF - Driving systems (passive)</key>
+   <key locale="en_US" id="LOVValue{::}SR4_DIN_SPG_E{::}EG" status="Approved">EG - Safety add-ons</key>
+   <key locale="en_US" id="LOVValue{::}SR4_DIN_SPG_F{::}FA" status="Approved">FA - Power system, drive unit</key>
+   <key locale="en_US" id="LOVValue{::}SR4_DIN_SPG_F{::}FB" status="Approved">FB - Power supply</key>
+   <key locale="en_US" id="LOVValue{::}SR4_DIN_SPG_F{::}FC" status="Approved">FC - Power generation</key>
+   <key locale="en_US" id="LOVValue{::}SR4_DIN_SPG_F{::}FD" status="Approved">FD - Power conversion</key>
+   <key locale="en_US" id="LOVValue{::}SR4_DIN_SPG_F{::}FE" status="Approved">FE - Power dissipation</key>
+   <key locale="en_US" id="LOVValue{::}SR4_DIN_SPG_F{::}FF" status="Approved">FF - Power storage</key>
+   <key locale="en_US" id="LOVValue{::}SR4_DIN_SPG_G{::}GA" status="Approved">GA - Control apparatus for train operations</key>
+   <key locale="en_US" id="LOVValue{::}SR4_DIN_SPG_G{::}GB" status="Approved">GB - Power supply controls</key>
+   <key locale="en_US" id="LOVValue{::}SR4_DIN_SPG_G{::}GC" status="Approved">GC - Drive and brake controls</key>
+   <key locale="en_US" id="LOVValue{::}SR4_DIN_SPG_G{::}GD" status="Approved">GD - Power generation controls</key>
+   <key locale="en_US" id="LOVValue{::}SR4_DIN_SPG_G{::}GE" status="Approved">GE - System data acquisition</key>
+   <key locale="en_US" id="LOVValue{::}SR4_DIN_SPG_G{::}GF" status="Approved">GF - Power storage controls</key>
+   <key locale="en_US" id="LOVValue{::}SR4_DIN_SPG_H{::}HA" status="Approved">HA - Auxiliary operating equipment</key>
+   <key locale="en_US" id="LOVValue{::}SR4_DIN_SPG_H{::}HB" status="Approved">HB - Converter equipment</key>
+   <key locale="en_US" id="LOVValue{::}SR4_DIN_SPG_H{::}HC" status="Approved">HC - Battery device</key>
+   <key locale="en_US" id="LOVValue{::}SR4_DIN_SPG_H{::}HD" status="Approved">HD - On-board supply system</key>
+   <key locale="en_US" id="LOVValue{::}SR4_DIN_SPG_H{::}HE" status="Approved">HE - Cooling unit for power and drive systems</key>
+   <key locale="en_US" id="LOVValue{::}SR4_DIN_SPG_H{::}HF" status="Approved">HF - Emergency power generators</key>
+   <key locale="en_US" id="LOVValue{::}SR4_DIN_SPG_J{::}JA" status="Approved">JA - Monotoring and safety devise</key>
+   <key locale="en_US" id="LOVValue{::}SR4_DIN_SPG_J{::}JB" status="Approved">JB - Measuring and protective devices</key>
+   <key locale="en_US" id="LOVValue{::}SR4_DIN_SPG_J{::}JC" status="Approved">JC - Indicating, recording, display devices</key>
+   <key locale="en_US" id="LOVValue{::}SR4_DIN_SPG_J{::}JD" status="Approved">JD - Safety equipment</key>
+   <key locale="en_US" id="LOVValue{::}SR4_DIN_SPG_J{::}JE" status="Approved">JE - Data transmission devices</key>
+   <key locale="en_US" id="LOVValue{::}SR4_DIN_SPG_J{::}JF" status="Approved">JF - Communication equipment</key>
+   <key locale="en_US" id="LOVValue{::}SR4_DIN_SPG_J{::}JG" status="Approved">JG - Miscellaneous equipment</key>
+   <key locale="en_US" id="LOVValue{::}SR4_DIN_SPG_K{::}KA" status="Approved">KA - Lighting</key>
+   <key locale="en_US" id="LOVValue{::}SR4_DIN_SPG_K{::}KB" status="Approved">KB - Exterior lighting equipment</key>
+   <key locale="en_US" id="LOVValue{::}SR4_DIN_SPG_K{::}KC" status="Approved">KC - Interior lighting equipment</key>
+   <key locale="en_US" id="LOVValue{::}SR4_DIN_SPG_L{::}LA" status="Approved">LA - Air conditioning</key>
+   <key locale="en_US" id="LOVValue{::}SR4_DIN_SPG_L{::}LB" status="Approved">LB - Intake/evacuation of air</key>
+   <key locale="en_US" id="LOVValue{::}SR4_DIN_SPG_L{::}LC" status="Approved">LC - Treatment</key>
+   <key locale="en_US" id="LOVValue{::}SR4_DIN_SPG_L{::}LD" status="Approved">LD - Distribution</key>
+   <key locale="en_US" id="LOVValue{::}SR4_DIN_SPG_L{::}LE" status="Approved">LE - Regulation</key>
+   <key locale="en_US" id="LOVValue{::}SR4_DIN_SPG_M{::}MA" status="Approved">MA - Ancillary operating equipment</key>
+   <key locale="en_US" id="LOVValue{::}SR4_DIN_SPG_M{::}MB" status="Approved">MB - Sanding equipment</key>
+   <key locale="en_US" id="LOVValue{::}SR4_DIN_SPG_M{::}MC" status="Approved">MC - Lubricating equipment</key>
+   <key locale="en_US" id="LOVValue{::}SR4_DIN_SPG_M{::}MD" status="Approved">MD - Points operating equipment</key>
+   <key locale="en_US" id="LOVValue{::}SR4_DIN_SPG_M{::}ME" status="Approved">ME - Ticket machines</key>
+   <key locale="en_US" id="LOVValue{::}SR4_DIN_SPG_M{::}MF" status="Approved">MF - Passenger counting device</key>
+   <key locale="en_US" id="LOVValue{::}SR4_DIN_SPG_N{::}NA" status="Approved">NA - Doors, entrances</key>
+   <key locale="en_US" id="LOVValue{::}SR4_DIN_SPG_N{::}NB" status="Approved">NB - External doors</key>
+   <key locale="en_US" id="LOVValue{::}SR4_DIN_SPG_N{::}NC" status="Approved">NC - Internal doors</key>
+   <key locale="en_US" id="LOVValue{::}SR4_DIN_SPG_N{::}ND" status="Approved">ND - Entrances, steps (not inside)</key>
+   <key locale="en_US" id="LOVValue{::}SR4_DIN_SPG_N{::}NE" status="Approved">NE - Entrances for the disabled</key>
+   <key locale="en_US" id="LOVValue{::}SR4_DIN_SPG_P{::}PA" status="Approved">PA - Information facilities</key>
+   <key locale="en_US" id="LOVValue{::}SR4_DIN_SPG_P{::}PB" status="Approved">PB - Visual information facilities</key>
+   <key locale="en_US" id="LOVValue{::}SR4_DIN_SPG_P{::}PC" status="Approved">PC - Visual information elements</key>
+   <key locale="en_US" id="LOVValue{::}SR4_DIN_SPG_P{::}PD" status="Approved">PD - Entertainment</key>
+   <key locale="en_US" id="LOVValue{::}SR4_DIN_SPG_P{::}PE" status="Approved">PE - Advertizing</key>
+   <key locale="en_US" id="LOVValue{::}SR4_DIN_SPG_P{::}PF" status="Approved">PF - Audible information facilities</key>
+   <key locale="en_US" id="LOVValue{::}SR4_DIN_SPG_Q{::}QA" status="Approved">QA - Pneumatic/hydraulic equipment</key>
+   <key locale="en_US" id="LOVValue{::}SR4_DIN_SPG_Q{::}QB" status="Approved">QB - Generation</key>
+   <key locale="en_US" id="LOVValue{::}SR4_DIN_SPG_Q{::}QC" status="Approved">QC - Generation</key>
+   <key locale="en_US" id="LOVValue{::}SR4_DIN_SPG_Q{::}QD" status="Approved">QD - Storage</key>
+   <key locale="en_US" id="LOVValue{::}SR4_DIN_SPG_Q{::}QE" status="Approved">QE - Distribution</key>
+   <key locale="en_US" id="LOVValue{::}SR4_DIN_SPG_R{::}RA" status="Approved">RA - Brake</key>
+   <key locale="en_US" id="LOVValue{::}SR4_DIN_SPG_R{::}RB" status="Approved">RB - Brake components</key>
+   <key locale="en_US" id="LOVValue{::}SR4_DIN_SPG_R{::}RC" status="Approved">RC - Mechanical brake force transmission</key>
+   <key locale="en_US" id="LOVValue{::}SR4_DIN_SPG_S{::}SA" status="Approved">SA - Vehicle linkage devices</key>
+   <key locale="en_US" id="LOVValue{::}SR4_DIN_SPG_S{::}SB" status="Approved">SB - Automatic coupling devices</key>
+   <key locale="en_US" id="LOVValue{::}SR4_DIN_SPG_S{::}SC" status="Approved">SC - Manual coupling devices</key>
+   <key locale="en_US" id="LOVValue{::}SR4_DIN_SPG_S{::}SD" status="Approved">SD - Buffing gear</key>
+   <key locale="en_US" id="LOVValue{::}SR4_DIN_SPG_S{::}SE" status="Approved">SE - Towing gear (emergency couplings)</key>
+   <key locale="en_US" id="LOVValue{::}SR4_DIN_SPG_S{::}SF" status="Approved">SF - Gangways/gangway facilities</key>
+   <key locale="en_US" id="LOVValue{::}SR4_DIN_SPG_S{::}SG" status="Approved">SG - Vehicle-vehicle interface for media, signals, power</key>
+   <key locale="en_US" id="LOVValue{::}SR4_DIN_SPG_T{::}TA" status="Approved">TA - Carrier systems, enclosures</key>
+   <key locale="en_US" id="LOVValue{::}SR4_DIN_SPG_T{::}TB" status="Approved">TB - Cabinets, boxes, containers</key>
+   <key locale="en_US" id="LOVValue{::}SR4_DIN_SPG_T{::}TC" status="Approved">TC - Frames, boards</key>
+   <key locale="en_US" id="LOVValue{::}SR4_DIN_SPG_T{::}TD" status="Approved">TD - Control and display units</key>
+   <key locale="en_US" id="LOVValue{::}SR4_DIN_SPG_T{::}TE" status="Approved">TE - Electronic rack systems</key>
+   <key locale="en_US" id="LOVValue{::}SR4_DIN_SPG_U{::}UA" status="Approved">UA - Electric wiring</key>
+   <key locale="en_US" id="LOVValue{::}SR4_DIN_SPG_U{::}UB" status="Approved">UB - Cables, conductors and bars</key>
+   <key locale="en_US" id="LOVValue{::}SR4_DIN_SPG_U{::}UC" status="Approved">UC - Marking and connection material</key>
+   <key locale="en_US" id="LOVValue{::}SR4_DIN_SPG_U{::}UD" status="Approved">UD - Connecting material</key>
+   <key locale="en_US" id="LOVValue{::}SR4_DIN_SPG_U{::}UE" status="Approved">UE - Bushings</key>
+   <key locale="en_US" id="LOVValue{::}SR4_DIN_SPG_U{::}UF" status="Approved">UF - Cable ducts, pipes and flexible tubes</key>
+   <key locale="en_US" id="LOVValue{::}SR4_Plant{::}STAP" status="Approved">STAP</key>
+   <key locale="en_US" id="LOVValue{::}SR4_Plant{::}STAR" status="Approved">STAR</key>
+   <key locale="en_US" id="LOVValue{::}SR4_Plant{::}STAV" status="Approved">STAV</key>
+   <key locale="en_US" id="Property{::}Awb0ConditionalElement{::}sr4HasCollaborationContexts"
+       status="Approved">Has Collaboration Contexts</key>
+   <key locale="en_US" id="Property{::}Awb0Element{::}sr4DINClassification" status="Approved">DIN Classification</key>
+   <key locale="en_US" id="Property{::}BOMLine{::}sr4RevHasCC" status="Approved">Has Collaboration Context</key>
+   <key locale="en_US" id="Property{::}ItemRevision{::}sr4HasCollaborationContexts"
+       status="Approved">Has Collaboration Contexts</key>
+   <key locale="en_US" id="Property{::}SR4EngPartRevision{::}sr4HasMBOM" status="Approved">Has MBOM</key>
+   <key locale="en_US" id="Property{::}SR4GenPartRevision{::}sr4_DIN_Classification"
+       status="Approved">DIN Classification</key>
+   <key locale="en_US" id="Property{::}SR4MfgPartRevision{::}sr4Plant" status="Approved">Plant</key>
+   <key locale="en_US" id="Property{::}SR4MfgPart{::}sr4Plant" status="Approved">Plant</key>
+   <key locale="en_US" id="Property{::}SR4WFPlantFormStorage{::}sr4Plant" status="Approved">Plant</key>
+   <key locale="en_US" id="Property{::}SR4WFPlantForm{::}sr4Plant" status="Approved">Plant</key>
+</Add>
+</TcBusinessDataLocalization>

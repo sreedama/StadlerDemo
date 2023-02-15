@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<preferences version="10.0">
+    <category name="General">
+        <category_description></category_description>
+        <preference name="TC_allow_remove_owning_project" type="Logical" array="false" disabled="false" protectionScope="Group" envEnabled="false">
+            <preference_description>Allows the removal of a project from the owning_project property of the workspace object in which the object is assigned if the preference value is set to TRUE. The user must create this preference, it does not exist in Teamcenter by default. If the preference does not exist or has a value of FALSE, the project cannot be removed even though the project can be removed from the project_list property.</preference_description>
+            <context name="Teamcenter">
+                <value>true</value>
+            </context>
+        </preference>    
+        <preference name="TC_show_open_in_nx_button" type="Logical" array="false" disabled="false" protectionScope="User" envEnabled="false">
+            <preference_description>Specifies if the &quot;Open in NX&quot; button should be displayed in the Teamcenter Rich Client. Valid values are true/false. true - Displays the button. false - Does not display the button.</preference_description>
+            <context name="Teamcenter">
+                <value>true</value>
+            </context>
+        </preference>
+        <preference name="WhereReferencePOMPref" type="Logical" array="false" disabled="false" protectionScope="User" envEnabled="false">
+            <preference_description>Displays 3rd option in impact analysis Referenced (POM) if value is set to 1</preference_description>
+            <context name="Teamcenter">
+                <value>1</value>
+            </context>
+        </preference>
+    </category>
+    <category name="Workflow">
+        <category_description></category_description>
+        <preference name="CR_allow_alternate_procedures" type="String" array="false" disabled="false" protectionScope="Group" envEnabled="false">
+            <preference_description>Valid values for this preference can be&quot;any&quot;,&quot;Assigned&quot; or&quot;none&quot;. any - New process dialog shows the All/Assigned radio buttons with&quot;All&quot; option pre-selected. Assigned - New process dialog shows the All/Assigned radio buttons with&quot;Assigned&quot; option pre-selected. none - New process dialog does not show the All/Assigned radio buttons. It will populate the process template combobox with the assigned templates. If there are no assigned templates for the group/type in question then the process template combobox will be empty. If you specify&quot;none&quot;, then for a user to initiate a process on an object, you must assign the process template in the Process designer-&gt;Edit-&gt;Template Filter window for that object type.</preference_description>
+            <context name="Teamcenter">
+                <value>Assigned</value>
+            </context>
+        </preference>
+    </category>
+</preferences>

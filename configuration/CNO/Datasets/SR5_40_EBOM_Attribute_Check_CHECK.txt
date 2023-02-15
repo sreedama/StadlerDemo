@@ -1,0 +1,17 @@
+############################################################################################################
+#  CNO Check Definition File
+############################################################################################################
+# Version History
+#
+# Version    Date           Name               Description of Change
+# 1.0        21-02-2022     user01     Initial
+############################################################################################################
+
+#VFW6 seems to have issue in case of C:ItemRevision>view:ID_REV and C:ItemRevision:ID_REV => looks like it is missing object, only possible with different alias /!\
+
+ID=002;CRITERIA=CONDITION;CHECK=C:ItemRevision>view:bl_rev_last_release_status§allowed§empty~value requires
+ID=002;CRITERIA=AND;CHECK=C:ItemRevision>view:BL_ID_REV§allowed§[C:EPMTask>root_target_attachments>C:ItemRevision:IR_ID_REV]~WF failed [VAL_OBJECT:BL_ID_REV] on level [VAL_OBJECT:bl_level_starting_0]~WF ok
+
+#for UI without running WF
+#ID=003;CRITERIA=CONDITION;CHECK=C:ItemRevision>view:bl_rev_last_release_status§allowed§empty~value requires
+#ID=003;CRITERIA=AND;CHECK=C:ItemRevision>view:BL_ID_REV§allowed§[ALL_ROOT:C:ItemRevision:IR_ID_REV]~UI failed [VAL_OBJECT:BL_ID_REV] on level [VAL_OBJECT:bl_level_starting_0]~UI ok

@@ -1,0 +1,89 @@
+##
+#===================================================
+# \copyright     2014-2019
+#                Siemens Product Lifecycle Management Software Inc.
+#                All Rights Reserved.
+#===================================================
+#
+# \file          t4x_user_exit_template.sd
+#
+# \brief         Mapping file for T4x user exit calls
+#
+# \details       This file contains the functions -> 'beforeTransfer' and 'afterTransfer', which can be used to perform
+#                additional actions (user exit calls) before and after each major/data changing ERP call as well as
+#                before and after each JCO call (only relevant for T4S).
+#
+#                Example for T4S -> updateMaterialMaster
+#                Example for T4O -> updateItem_transfer
+#
+# \author        kh, 20150327
+#
+#
+# ------------------------------------------------------------------------------------------------------ 
+
+namespace eval ::T4X::USEREXIT {
+  namespace export beforeTransfer
+  namespace export afterTransfer
+  
+  # ---------------------------------------------------------------------
+  ##
+  # Method:         ::T4X::USEREXIT::beforeTransfer
+  #
+  # \brief          Will be called before each major/data changing ERP call as well as
+  #                 before each JCO call (only relevant for T4S).
+  #
+  #                 Example for T4S -> updateMaterialMaster
+  #                 Example for T4O -> updateItem_transfer
+  #
+  # \author         kh, 20120419
+  #
+  #
+  proc beforeTransfer { FunctionName args } {
+    #
+    tpwrite -logchannel [::PL4X::CORE::getSessionLogChannel] -mtype INTERN "::T4X::USEREXIT::beforeTransfer starts with FunctionName = >$FunctionName<"
+    #
+    switch -exact -- [lindex [::T4X::CORE::tp_split $FunctionName "::"] end] {
+      updateItem_transfer {
+        #
+        # T4O-Example for the updateItem call
+        #
+      }
+      updateMaterialMaster {
+        #
+        # T4S-Example for the updateMaterialMaster call
+        #
+      }
+    }
+  }
+  
+  # ---------------------------------------------------------------------
+  ##
+  # Method:         ::T4X::USEREXIT::afterTransfer
+  #
+  # \brief          Will be called after each major/data changing ERP call as well as
+  #                 before each JCO call (only relevant for T4S).
+  #
+  #                 Example for T4S -> updateMaterialMaster
+  #                 Example for T4O -> updateItem_transfer
+  #
+  # \author         kh, 20120419
+  #
+  #
+  proc afterTransfer { FunctionName Status args } {
+    #
+    tpwrite -logchannel [::PL4X::CORE::getSessionLogChannel] -mtype INTERN "::T4X::USEREXIT::afterTransfer starts with FunctionName = >$FunctionName< and Status = >$Status<"
+    #
+    switch -exact -- [lindex [::T4X::CORE::tp_split $FunctionName "::"] end] {
+      updateItem_transfer {
+        #
+        # T4O-Example for the updateItem call
+        #
+      }
+      updateMaterialMaster {
+        #
+        # T4S-Example for the updateMaterialMaster call
+        #
+      }
+    }
+  }
+}

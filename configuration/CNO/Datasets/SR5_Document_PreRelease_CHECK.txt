@@ -1,0 +1,13 @@
+############################################################################################################
+#  CNO Check Definition File
+############################################################################################################
+# Version History
+#
+# Version    Date           Name               Description of Change
+# 1.0        01-06-2022     testu     Initial
+############################################################################################################
+
+
+#status of selected object
+#WF-30:
+SR5TechDocumentRevision:last_release_status§allowed§empty||20*~Status is already set to: [VAL_OBJECT:last_release_status]~In work object or with status 20

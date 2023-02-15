@@ -1,0 +1,1209 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!--
+=======================================================================
+Copyright 2021.
+Siemens Digital Industries Software.
+All Rights Reserved.
+=======================================================================
+    Filename: RB_UIConfigure.xml
+
+    File used to configure control panel of relation browser.
+=======================================================================
+-->
+<RelationBrowser>
+    <OptionPanel>
+        <view name="General">
+            <ruleName>GenericRule</ruleName>
+            <defaultLayout>Top-to-Bottom</defaultLayout>
+            <group name="relations">
+                <filter name="Attach" parameterSet="Attach" color="(0,95,135)"/>
+                <filter name="Parameter" parameterSet="ParameterRelations" color="(170,180,20)"/>
+                <filter name="DependsOn" parameterSet="DependsOn" color="(135,11,0)"/>
+                <filter name="Folder" parameterSet="FolderRelation" color="(170,170,150)"/>
+                <filter name="Master" parameterSet="Master" color="(115,100,90)"/>
+                <filter name="Simulation" parameterSet="SimulationRelations" color="(80,215,155)"/>
+                <filter name="Traceability" parameterSet="Traceability" color="(255,185,0)" />
+                <filter name="WhereUsed" parameterSet="WhereUsed" color="(190,205,215)"/>
+            </group>
+            <group name="objects">
+                <filter name="Parameter" parameterSet="Parameter" color="(170,180,20)"/>
+                <filter name="File" parameterSet="Dataset" color="(190,205,215)"/>
+                <filter name="Folder" parameterSet="Folder" color="(170,170,150)"/>
+                <filter name="Functional" parameterSet="Functional" color="(255,185,0)"/>
+                <filter name="Logical" parameterSet="Logical" color="(175,35,95)"/>
+                <filter name="Other" parameterSet="WorkspaceObject" color="(100,125,40)"/>
+                <filter name="Physical" parameterSet="Physical" color="(100,25,70)"/>
+                <filter name="Plant" parameterSet="Plant" color="(80,215,155)"/>
+                <filter name="ProjectModel" parameterSet="ProjectModel" color="(0,87,97)"/>
+                <filter name="Requirement" parameterSet="Requirement" color="(0,95,135)"/>
+                <filter name="Simulation" parameterSet="Simulation" color="(80,190,215)"/>
+            </group>
+        </view>
+        <view name="System">
+            <ruleName>GenericRule</ruleName>
+            <defaultLayout>IncrementalHierarchic</defaultLayout>
+            <group name="relations">
+                <filter name="Attach" parameterSet="Attach" color="(64,100,142)"/>
+                <filter name="Folder" parameterSet="FolderRelation" color="(196,189,151)"/>
+                <filter name="Master" parameterSet="Master" color="(167,153,80)"/>
+                <filter name="Traceability" parameterSet="Traceability" color="(255,182,121)" />
+                <filter name="WhereUsed" parameterSet="WhereUsed" color="(149,179,215)"/>
+            </group>
+            <group name="objects">
+                <filter name="File" parameterSet="Dataset" color="(202,216,234)"/>
+                <filter name="Functional" parameterSet="Functional" color="(255,182,121)"/>
+                <filter name="Logical" parameterSet="Logical" color="(191,161,229)"/>
+                <filter name="Physical" parameterSet="Physical" color="(138,66,8)"/>
+                <filter name="Plant" parameterSet="Plant" color="(184,214,150)"/>
+                <filter name="Requirement" parameterSet="Requirement" color="(64,100,142)"/>
+            </group>
+        </view>
+        <view name="Design">
+            <ruleName>GenericRule</ruleName>
+            <defaultLayout>IncrementalHierarchic</defaultLayout>
+            <group name="relations">
+                <filter name="Attach" parameterSet="Attach" color="(64,100,142)"/>
+                <filter name="Impact" parameterSet="Impact" color="(243,130,37)"/>
+                <filter name="Master" parameterSet="Master" color="(167,153,80)"/>
+                <filter name="Traceability" parameterSet="Traceability" color="(255,182,121)"/>
+                <filter name="WhereUsed" parameterSet="WhereUsed" color="(149,179,215)"/>
+            </group>
+            <group name="objects">
+                <filter name="Change" parameterSet="Change" color="(243,130,37)"/>
+                <filter name="File" parameterSet="Dataset" color="(202,216,234)"/>
+                <filter name="Physical" parameterSet="Physical" color="(138,66,8)"/>
+                <filter name="Requirement" parameterSet="Requirement" color="(64,100,142)"/>
+            </group>
+        </view>
+        <view name="Change">
+            <ruleName>GenericRule</ruleName>
+            <defaultLayout>Right-to-Left</defaultLayout>
+            <defaultExpandDirection>all</defaultExpandDirection>
+            <group name="relations">
+                <filter name="Concurrent" parameterSet="ChangeRelations" color="(160,50,40)"/>
+                <filter name="ImpactedItems" parameterSet="ChangeRelations" color="(155,175,190)"/>
+                <filter name="Implements" parameterSet="ChangeRelations" color="(200,90,30)"/>
+                <filter name="Implementsby" parameterSet="ChangeRelations" color="(250,160,10)"/>
+                <filter name="Lineage" parameterSet="ChangeRelations" color="(55,80,15)"/>
+
+                <filter name="PlainItems" parameterSet="ChangeRelations" color="(0,85,120)"/>
+                <filter name="Coordinated" parameterSet="ChangeRelations" color="(140,195,210)"/>
+                <filter name="ProblemItems" parameterSet="ChangeRelations" color="(135,30,80)"/>
+                <filter name="SolutionItems" parameterSet="ChangeRelations" color="(185,90,80)"/>
+            </group>
+            <group name="objects">
+                <filter name="ChangeNotice" parameterSet="ChangeNoticeRelateObj" color="(75,5,0)"/>
+                <filter name="ChangeRequest" parameterSet="ChangeRequestRelateObj" color="(0,75,45)"/>
+                <filter name="ProblemReport" parameterSet="ProblemReportRelateObj" color="(35,55,70)"/>
+                <filter name="Other" parameterSet="WorkspaceObject" color="(238,236,225)"/>
+            </group>
+        </view>
+        <view name="ChangeImpactAnalysis">
+            <ruleName>GenericRule</ruleName>
+            <defaultLayout>Top-to-Bottom</defaultLayout>
+            <group name="relations">
+                <filter name="WhereConfigured" parameterSet="WhereConfigured" color="(160,50,40)"/>
+                <filter name="Traceability" parameterSet="Traceability" color="(255,185,0)" />
+                <filter name="IsDescribedByDocument" parameterSet="IsDescribedByDocument" color="(0,95,135)"/>
+                <filter name="Design_BOM_Relation" parameterSet="Design_BOM_Relation" color="(190,205,215)"/>
+                <filter name="MfgTargets" parameterSet="MfgTargets" color="(184,214,150)"/>
+                <filter name="Specifications" parameterSet="Specifications" color="(221,115,115)"/>
+            </group>
+            <group name="objects">
+                <filter name="Functional" parameterSet="Functional" color="(255,185,0)"/>
+                <filter name="Logical" parameterSet="Logical" color="(175,35,95)"/>
+                <filter name="Physical" parameterSet="Physical" color="(100,25,70)"/>
+                <filter name="Plant" parameterSet="Plant" color="(80,215,155)"/>
+                <filter name="Requirement" parameterSet="Requirement" color="(0,95,135)"/>
+                <filter name="Simulation" parameterSet="Simulation" color="(80,190,215)"/>
+                <filter name="Parameter" parameterSet="Parameter" color="(170,180,20)"/>
+                <filter name="Other" parameterSet="WorkspaceObject" color="(100,125,40)"/>
+            </group>
+        </view>
+        <view name="Program">
+            <ruleName>GenericRule</ruleName>
+            <defaultLayout>Left-to-Right</defaultLayout>
+            <defaultExpandDirection>all</defaultExpandDirection>
+            <group name="relations">
+              <filter name="ProgamRelation" parameterSet="ProgamRelations" color="(170,180,20)"/>
+              <filter name="PrecedingSucceedingRelation" parameterSet="ProgamRelations" color="(170,100,60)"></filter>
+              <filter name="ConcurrentRelation" parameterSet="ProgamRelations" color="(140,195,210)"></filter>
+              <filter name="EventPrgRelation" parameterSet="ProgamRelations" color="(170,50,80)"></filter>
+            </group>
+            <group name="objects">
+                <filter name="ProgramDeliverable" parameterSet="PrgDelRevisionRelatedObj" color="(255,182,121)"/>
+                <filter name="ProgramIssue" parameterSet="ProgramIssueRelatedObj" color="(110,110,110)"/>
+                <filter name="ProgramRisk" parameterSet="ProgramRiskRelatedObj" color="(180,75,40)"/>
+                <filter name="ProgramOpportunity" parameterSet="ProgramOppRelatedObj" color="(32,176,100)"/>
+                <filter name="ChangeNotice" parameterSet="ChangeNoticeRelateObj" color="(255,185,0)"/>
+                <filter name="ChangeRequest" parameterSet="ChangeRequestRelateObj" color="(191,161,229)"/>
+                <filter name="Schedule" parameterSet="ScheduleRelatedObj" color="(60,145,175)"/>
+                <filter name="Checklist" parameterSet="ChecklistRelatedObj" color="(184,214,150)"/>
+                <filter name="Criteria" parameterSet="CriteriaRelatedObj" color="(196,189,151)"/>
+                <filter name="Other" parameterSet="WorkspaceObject" color="(190,205,215)"/>
+            </group>
+        </view>
+        <view name="VerificationMgmt">
+            <ruleName>GenericRule</ruleName>
+            <defaultLayout>Left-to-Right</defaultLayout>
+            <defaultExpandDirection>all</defaultExpandDirection>
+            <group name="objects">
+                <filter name="VerificationRequest" parameterSet="VerificationVerificationRequestObj" color="(0,80,112)"/>
+                <filter name="Run" parameterSet="VerificationRunObj" color="(0,161,226)"/>
+                <filter name="Study" parameterSet="VerificationStudyObj" color="(0,116,162)"/>
+                <filter name="SimulationRequest" parameterSet="VerificationSimulationObj" color="(10,115,225)"/>
+                <filter name="TestRequest" parameterSet="VerificationTestRequestObj" color="(99,139,190)"/>
+                <filter name="TestEvent" parameterSet="VerificationTestEventObj" color="(140,186,210)"/>
+                <filter name="Requirements" parameterSet="VerificationReqObj" color="(60,145,175)"/>
+                <filter name="Parameter" parameterSet="Parameter" color="(170,180,20)"/>
+                <filter name="TestCase" parameterSet="VerificationTestCaseObj" color="(32,176,100)"/>
+                <filter name="TestStep" parameterSet="VerificationTestStepObj" color="(184,214,150)"/>
+                <filter name="TestProcedure" parameterSet="VerificationTestProcedureObj" color="(32,176,100)"/>
+                <filter name="TestMethod" parameterSet="VerificationTestMethodObj" color="(135,30,80)"/>
+                <filter name="MeasurementReq" parameterSet="VerificationMRObj" color="(175,35,95)"/>
+                <filter name="Simulation" parameterSet="Simulation" color="(255,182,25)"/>
+                <filter name="MeasReqRelated" parameterSet="VerificationTestConObj" color="(196,189,151)"/>
+                <filter name="ProdorTestBOM" parameterSet="VerificationProdAndTestBOMObj" color="(235,120,10)"/>
+                <filter name="PhysicalBom" parameterSet="VerificationPhysBOMObj" color="(185,150,12)"/>
+                <filter name="Event" parameterSet="EventObjSet" color="(191,161,229)"/>
+                <filter name="Other" parameterSet="WorkspaceObject" color="(190,205,215)"/>
+            </group>
+            <group name="relations">
+                <filter name="Verification" parameterSet="VerificationMgmt" color="(80,215,155)"/>
+                <filter name="ScopeChildLink" parameterSet="VerificationMgmt" color="(74,110,212)"/>
+                <filter name="Parameter" parameterSet="ParameterRelations" color="(170,180,20)"/>
+                <filter name="TestSteps" parameterSet="VerificationMgmt" color="(115,100,90)"/>
+                <filter name="Event" parameterSet="VerificationMgmt" color="(215,90,56)"/>
+                <filter name="Instrument" parameterSet="VerificationMgmt" color="(255,185,0)"/>
+                <filter name="TestEBOMToProdEBOMRel" parameterSet="VerificationMgmt" color="(200,106,189)"/>
+                <filter name="Report" parameterSet="VerificationMgmt" color="(170,180,20)"/>
+            </group>
+        </view>
+        <view name="CAPA">
+            <ruleName>GenericRule</ruleName>
+            <defaultLayout>Top-to-Bottom</defaultLayout>
+            <defaultExpandDirection>all</defaultExpandDirection>
+            <group name="relations">
+                <filter name="ProblemDefect" parameterSet="DefectRelations" color="(185,150,12)"/>
+                <filter name="RootCause" parameterSet="DefectRelations" color="(185,50,112)"/>
+                <filter name="CauseBy" parameterSet="DefectRelations" color="(185,190,112)"/>
+                <filter name="RelatedWhy" parameterSet="DefectRelations" color="(105,10,225)"/>
+                <filter name="Related5Why" parameterSet="DefectRelations" color="(10,15,225)"/>
+                <filter name="RelatedIshikawa" parameterSet="DefectRelations" color="(10,15,225)"/>
+                <filter name="RelatedMs" parameterSet="DefectRelations" color="(10,15,225)"/>
+                <filter name="Why" parameterSet="DefectRelations" color="(10,115,225)"/>
+                <filter name="ContainmentAction" parameterSet="DefectRelations" color="(0,89,120)"/>
+                <filter name="CorrectiveAction" parameterSet="DefectRelations" color="(140,186,210)"/>
+                <filter name="ConfirmEffectiveness" parameterSet="DefectRelations" color="(135,75,80)"/>
+                <filter name="ImplCorrectiveAction" parameterSet="DefectRelations" color="(135,75,80)"/>
+                <filter name="PreventiveAction" parameterSet="DefectRelations" color="(185,90,116)"/>
+                <filter name="Implements" parameterSet="DefectRelations" color="(195,90,116)"/>
+                <filter name="Implementsby" parameterSet="DefectRelations" color="(205,90,116)"/>
+                <filter name="ProblemItems" parameterSet="DefectRelations" color="(215,90,116)"/>
+                <filter name="SideWhy" parameterSet="DefectRelations" color="(215,90,56)"/>
+            </group>
+            <group name="objects">
+                <filter name="Defect" parameterSet="DefectObj" color="(72,139,151)"/>
+                <filter name="5Why" parameterSet="5WhyObj" color="(153,52,207)"/>
+                <filter name="Ishikawa" parameterSet="IshikawaObj" color="(153,52,207)"/>
+                <filter name="Issue" parameterSet="IssueObj" color="(45,25,126)"/>
+                <filter name="ChangeRequest" parameterSet="ECRObj" color="(55,25,126)"/>
+                <filter name="ChangeNotice" parameterSet="ECNObj" color="(55,25,126)"/>
+                <filter name="ItemRevision" parameterSet="ItemRevObj" color="(65,25,126)"/>
+                <filter name="Actions" parameterSet="ActionObj" color="(65,25,126)"/>
+                <filter name="Other" parameterSet="WorkspaceObject" color="(238,236,225)"/>
+            </group>
+        </view>
+        <view name="Arcadia">
+          <ruleName>GenericRule</ruleName>
+          <defaultLayout>Top-to-Bottom</defaultLayout>
+          <defaultExpandDirection>all</defaultExpandDirection>
+            <group name="objects">
+                <filter name="LogicalComponent" parameterSet="LogicalComponent" color="(150,177,218)"/>
+                <filter name="LogicalFunction" parameterSet="LogicalFunction" color="(197,255,166)"/>
+                <filter name="Other" parameterSet="WorkspaceObject" color="(100,125,40)"/>
+                <filter name="PhysicalComponent" parameterSet="PhysicalComponent" color="(255,253,198)"/>
+                <filter name="PhysicalFunction" parameterSet="PhysicalFunction" color="(197,255,166)"/>
+                <filter name="ProjectModel" parameterSet="ProjectModel" color="(0,87,97)"/>
+                <filter name="Requirement" parameterSet="Requirement" color="(0,95,135)"/>
+                <filter name="System" parameterSet="System" color="(183,215,245)"/>
+                <filter name="SystemFunction" parameterSet="SystemFunction" color="(197,255,166)"/>
+            </group>
+            <group name="relations">
+                <filter name="Allocate" parameterSet="ArcadiaRelations" color="(64,100,42)"/>
+                <filter name="Attach" parameterSet="ArcadiaRelations" color="(0,95,135)"/>
+                <filter name="DependsOn" parameterSet="DependsOn" color="(135,11,0)"/>
+                <filter name="DeploymentLink" parameterSet="ArcadiaRelations" color="(142,52,32)"/>
+                <filter name="Derive" parameterSet="ArcadiaRelations" color="(245,122,0)"/>
+                <filter name="Realize" parameterSet="ArcadiaRelations" color="(0,140,255)"/>
+                <filter name="Refine" parameterSet="ArcadiaRelations" color="(255,153,51)"/>
+                <filter name="Satisfy" parameterSet="ArcadiaRelations" color="(202,216,234)"/>
+                <filter name="TraceLink" parameterSet="ArcadiaRelations" color="(255,15,15)"/>
+                <filter name="Verify" parameterSet="ArcadiaRelations" color="(255,182,121)"/>
+            </group>
+        </view>
+        <view name="IPPE">
+            <ruleName>GenericRule</ruleName>
+            <defaultLayout>Top-to-Bottom</defaultLayout>
+            <group name="relations">
+                <filter name="Event" parameterSet="EventProgramRelation" color="(135,11,0)"/>
+                <filter name="Accomplishment" parameterSet="AccomplishmentRelation" color="(0,95,135)"/>
+                <filter name="Criteria" parameterSet="CriteriaRelation" color="(170,180,20)"/>
+                <filter name="WorkPackage" parameterSet="WorkPackageRelation" color="(170,170,150)"/>
+                <filter name="WhereUsed" parameterSet="WhereUsed" color="(190,205,215)"/>
+            </group>
+            <group name="objects">
+                <filter name="Event" parameterSet="EventObjSet" color="(135,11,0)"/>
+                <filter name="Accomplishment" parameterSet="Accomplishment" color="(0,95,135)"/>
+                <filter name="Criteria" parameterSet="Criteria" color="(170,180,20)"/>
+                <filter name="WorkPackage" parameterSet="WorkPackage" color="(170,170,150)"/>
+                <filter name="Other" parameterSet="WorkspaceObject" color="(100,125,40)"/>
+            </group>
+        </view>
+        <view name="NX">
+            <ruleName>GenericRule</ruleName>
+            <defaultLayout>Top-to-Bottom</defaultLayout>
+            <group name="relations">
+                <filter name="PartFamily" parameterSet="PartFamilyRelation" color="(160,32,240)" />
+                <filter name="WaveExpression" parameterSet="WaveExpressionRelation" color="(170,180,20)" />
+                <filter name="WaveGeometry" parameterSet="WaveGeometryRelation" color="(135,11,0)" />
+                <filter name="WavePosition" parameterSet="WavePositionRelation" color="(170,170,150)" />
+                <filter name="WavePartLink" parameterSet="WavePartLinkRelation" color="(115,100,90)" />
+                <filter name="UDF" parameterSet="UDFRelation" color="(80,215,155)" />
+                <filter name="Promotion" parameterSet="PromotionRelation" color="(255,185,0)" />
+                <filter name="DFA" parameterSet="DFARelation" color="(190,205,215)" />
+                <filter name="DrawingOf" parameterSet="DrawingOfRelation" color="(138,66,8)" />
+                <filter name="DrawingUsing" parameterSet="DrawingUsingRelation" color="(6,46,4)" />
+                <filter name="StagedModel" parameterSet="StagedModelRelation" color="(32,176,100)" />
+                <filter name="Attach" parameterSet="Attach" color="(0,95,135)"/>
+            </group>
+            <group name="objects">
+                <filter name="Item" parameterSet="ItemObj" color="(100,125,40)"/>
+                <filter name="ItemRevision" parameterSet="ItemRevObj" color="(65,25,126)"/>
+                <filter name="StagedSetRevision" parameterSet="StagedSetRevisionObj" color="(32,176,100)"/>
+                <filter name="File" parameterSet="Dataset" color="(190,205,215)"/>
+            </group>
+        </view>
+        <view name="SimulationAndTest">
+            <ruleName>GenericRule</ruleName>
+            <defaultLayout>Top-to-Bottom</defaultLayout>
+            <group name="objects">
+                <filter name="1DObjects" parameterSet="1DObjects" color="(42,108,124)"/>
+                <filter name="3DObjects" parameterSet="3DObjects" color="(21,61,107)"/>
+                <filter name="MDAO" parameterSet="MDAOObjects" color="(157,40,108)"/>
+                <filter name="Configuration" parameterSet="ConfigObjects" color="(220,39,107)"/>
+                <filter name="CAEFile" parameterSet="CAEFilesObjects" color="(80,190,215)"/>
+                <filter name="Other" parameterSet="OtherObjects" color="(85,227,171)"/>
+            </group>
+            <group name="relations">
+                <filter name="CAEDefining" parameterSet="SimulationAndTestRel" color="(250,218,99)"/>
+                <filter name="CAEInclude" parameterSet="SimulationAndTestRel" color="(241,166,101)"/>
+                <filter name="CAEParameter" parameterSet="SimulationAndTestRel" color="(233,114,104)"/>
+                <filter name="CAEResults" parameterSet="SimulationAndTestRel" color="(223,58,108)"/>
+                <filter name="CAESource" parameterSet="SimulationAndTestRel" color="(25,61,107)"/>
+                <filter name="CAETarget" parameterSet="SimulationAndTestRel" color="(142,40,105)"/>
+                <filter name="Derive" parameterSet="SimulationAndTestRel" color="(93,38,103)"/>
+                <filter name="CAEGeneratedBy" parameterSet="SimulationAndTestRel" color="(220,39,107)"/>
+                <filter name="CAEBasedOn" parameterSet="SimulationAndTestRel" color="(46,115,128)"/>
+                <filter name="CAEExtract" parameterSet="SimulationAndTestRel" color="(66,171,149)"/>
+                <filter name="CAEAttach" parameterSet="SimulationAndTestRel" color="(80,190,215)"/>
+                <filter name="Other" parameterSet="SimulationAndTestOtherRel" color="(85,227,171)"/>
+            </group>
+        </view>
+    </OptionPanel>
+    <parameterSets>
+        <parameterSet name="Attach">
+            <clipsfacts>
+                <fact>source=GRM,key=Attach,relationType=TC_Attaches,targetDirection=forward,inputTypes=ItemRevision</fact>
+                <fact>source=GRM,key=Attach,relationType=TC_Attaches,targetDirection=backward,inputTypes=Dataset</fact>
+                <fact>source=GRM,key=Attach,relationType=IMAN_specification,targetDirection=forward,inputTypes=ItemRevision,excludeTypes=FullText</fact>
+                <fact>source=GRM,key=Attach,relationType=IMAN_specification,targetDirection=backward,inputTypes=WorkspaceObject</fact>
+                <fact>source=Property,key=Attach,propertyName=IMAN_Rendering,targetDirection=forward,inputTypes=ItemRevision</fact>
+                <fact>source=Property,key=Attach,propertyName=IMAN_Simulation,targetDirection=forward,inputTypes=ItemRevision</fact>
+                <fact>source=GRM,key=Attach,relationType=Psi0PlanItemSchRelation,targetDirection=forward,inputTypes=WorkspaceObject</fact>
+            </clipsfacts>
+        </parameterSet>
+        <parameterSet name="IsDescribedByDocument">
+            <clipsfacts>
+                <fact>source=GRM,key=IsDescribedByDocument,relationType=Fnd0IsDescribedByDocument,targetDirection=forward,inputTypes=ItemRevision,excludeTypes=FullText</fact>
+            </clipsfacts>
+        </parameterSet>
+        <parameterSet name="MfgTargets">
+            <clipsfacts>
+                <fact>source=GRM,key=MfgTargets,relationType=IMAN_METarget,targetDirection=backward,inputTypes=WorkspaceObject</fact>
+            </clipsfacts>
+        </parameterSet>
+        <parameterSet name="Specifications">
+            <clipsfacts>
+                <fact>source=GRM,key=Specifications,relationType=IMAN_specification,targetDirection=forward,inputTypes=ItemRevision,excludeTypes=Dataset</fact>
+            </clipsfacts>
+        </parameterSet>
+        <parameterSet name="FolderRelation">
+            <clipsfacts>
+                <fact>source=Property,key=Folder,propertyName=contents,targetDirection=forward,inputTypes=Folder</fact>
+                <fact>source=WhereReferenced,key=Folder,level=1,inputTypes=Item|ItemRevision|Folder,outputTypes=Folder</fact>
+            </clipsfacts>
+        </parameterSet>
+        <parameterSet name="Impact">
+            <clipsfacts>
+                <fact>source=GRM,key=Impact,relationType=CMReferences,targetDirection=forward,inputTypes=ChangeItemRevision</fact>
+                <fact>source=GRM,key=Impact,relationType=CMReferences,targetDirection=backward,inputTypes=WorkspaceObject</fact>
+                <fact>source=GRM,key=Impact,relationType=CMHasProblemItem,targetDirection=forward,inputTypes=ChangeItemRevision</fact>
+                <fact>source=GRM,key=Impact,relationType=CMHasProblemItem,targetDirection=backward,inputTypes=WorkspaceObject</fact>
+                <fact>source=GRM,key=Impact,relationType=CMHasWorkBreakdown,targetDirection=forward,inputTypes=ChangeItemRevision</fact>
+                <fact>source=GRM,key=Impact,relationType=CMHasWorkBreakdown,targetDirection=backward,inputTypes=WorkspaceObject</fact>
+                <fact>source=GRM,key=Impact,relationType=CMHasSolutionItem,targetDirection=forward,inputTypes=ChangeItemRevision</fact>
+                <fact>source=GRM,key=Impact,relationType=CMHasSolutionItem,targetDirection=backward,inputTypes=WorkspaceObject</fact>
+                <fact>source=GRM,key=Impact,relationType=CMImplements,targetDirection=forward,inputTypes=ChangeItemRevision</fact>
+                <fact>source=GRM,key=Impact,relationType=CMImplements,targetDirection=backward,inputTypes=WorkspaceObject</fact>
+                <fact>source=GRM,key=Impact,relationType=CMHasImpactedItem,targetDirection=forward,inputTypes=ChangeItemRevision</fact>
+                <fact>source=GRM,key=Impact,relationType=CMHasImpactedItem,targetDirection=backward,inputTypes=WorkspaceObject</fact>
+            </clipsfacts>
+        </parameterSet>
+        <parameterSet name="ChangeRelations">
+            <clipsfacts>
+                <fact>source=GRM,key=Coordinated,relationType=Cm0BeforeDependency,targetDirection=backward,inputTypes=ChangeItemRevision</fact>
+                <fact>source=GRM,key=Coordinated,relationType=Cm0BeforeDependency,targetDirection=forward,inputTypes=ChangeItemRevision</fact>
+                <fact>source=GRM,key=Concurrent,relationType=Cm0ConcurrentDependency,targetDirection=forward,inputTypes=ChangeItemRevision</fact>
+                <fact>source=GRM,key=Concurrent,relationType=Cm0ConcurrentDependency,targetDirection=backward,inputTypes=ChangeItemRevision</fact>
+                <fact>source=GRM,key=ImpactedItems,relationType=CMHasImpactedItem,targetDirection=forward,inputTypes=ItemRevision</fact>
+                <fact>source=GRM,key=ProblemItems,relationType=CMHasProblemItem,targetDirection=forward,inputTypes=ItemRevision</fact>
+                <fact>source=GRM,key=SolutionItems,relationType=CMHasSolutionItem,targetDirection=forward,inputTypes=ItemRevision</fact>
+
+                <fact>source=GRM,key=PlainItems,relationType=CMHasWorkBreakdown,targetDirection=forward,inputTypes=ChangeItemRevision</fact>
+                <fact>source=GRM,key=Implements,relationType=CMImplements,targetDirection=forward,inputTypes=ChangeItemRevision</fact>
+                <fact>source=Property,key=Implementsby,propertyName=CMImplementedBy,targetDirection=forward,inputTypes=ChangeItemRevision</fact>
+                <fact>source=GRM,key=Lineage,relationType=CMSolutionToImpacted,targetDirection=forward,inputTypes=ItemRevision</fact>
+            </clipsfacts>
+        </parameterSet>
+        <parameterSet name="DefectRelations">
+            <clipsfacts>
+                <fact>source=GRM,key=ProblemDefect,relationType=CPA0ProblemDescription,targetDirection=forward,inputTypes=WorkspaceObject</fact>
+                <fact>source=GRM,key=RootCause,relationType=CPA0RootCause,targetDirection=forward,inputTypes=WorkspaceObject</fact>
+                <fact>source=GRM,key=CauseBy,relationType=CAW0CausedBy,targetDirection=forward,inputTypes=WorkspaceObject</fact>
+                <fact>source=GRM,key=RelatedWhy,relationType=CAW0RelatedWhy,targetDirection=forward,inputTypes=WorkspaceObject</fact>
+                <fact>source=GRM,key=Related5Why,relationType=CAW0Related5Why,targetDirection=forward,inputTypes=WorkspaceObject</fact>
+                <fact>source=GRM,key=Why,relationType=CAW0Why,targetDirection=forward,inputTypes=WorkspaceObject</fact>
+                <fact>source=GRM,key=ContainmentAction,relationType=CPA0ContainmentAction,targetDirection=forward,inputTypes=WorkspaceObject</fact>
+                <fact>source=GRM,key=CorrectiveAction,relationType=CPA0CorrectiveAction,targetDirection=forward,inputTypes=WorkspaceObject</fact>
+                <fact>source=Property,key=ConfirmEffectiveness,propertyName=qam0DependentQualityActions,targetDirection=forward,inputTypes=WorkspaceObject</fact>
+                <fact>source=GRM,key=ImplCorrectiveAction,relationType=CPA0ImplCorrAction,targetDirection=forward,inputTypes=WorkspaceObject</fact>
+                <fact>source=GRM,key=PreventiveAction,relationType=CPA0PreventiveAction,targetDirection=forward,inputTypes=WorkspaceObject</fact>
+                <fact>source=GRM,key=Implements,relationType=CMImplements,targetDirection=forward,inputTypes=WorkspaceObject</fact>
+                <fact>source=Property,key=Implementsby,propertyName=CMImplementedBy,targetDirection=forward,inputTypes=WorkspaceObject</fact>
+                <fact>source=GRM,key=ProblemItems,relationType=CMHasProblemItem,targetDirection=forward,inputTypes=WorkspaceObject</fact>
+                <fact>source=GRM,key=RelatedIshikawa,relationType=CAW0RelatedIshikawa,targetDirection=forward,inputTypes=WorkspaceObject</fact>
+                <fact>source=GRM,key=RelatedMs,relationType=CAW0RelatedMs,targetDirection=forward,inputTypes=WorkspaceObject</fact>                
+                <fact>source=GRM,key=SideWhy,relationType=CAW0SideWhy,targetDirection=forward,inputTypes=WorkspaceObject</fact>
+            </clipsfacts>
+        </parameterSet>
+        <parameterSet name="Master">
+            <clipsfacts>
+                <fact>source=Property,key=Master,propertyName=items_tag,targetDirection=backward,inputTypes=ItemRevision</fact>
+            </clipsfacts>
+        </parameterSet>
+        <parameterSet name="Design_BOM_Relation">
+            <clipsfacts>
+                <fact>source=GRM,key=Design_BOM_Relation,relationType=Fnd0DesignToBomRelation,targetDirection=forward,inputTypes=WorkspaceObject</fact>
+            </clipsfacts>
+        </parameterSet>
+        <parameterSet name="WhereUsed">
+            <clipsfacts>
+                <fact>source=Property,key=WhereUsed,propertyName=ps_parents,targetDirection=backward,inputTypes=ItemRevision</fact>
+            </clipsfacts>
+        </parameterSet>
+        <parameterSet name="WhereConfigured">
+            <clipsfacts>
+                <fact>source=WhereConfigured,key=WhereConfigured,propertyName=ps_parents,targetDirection=backward,inputTypes=ItemRevision</fact>
+            </clipsfacts>
+        </parameterSet>
+        <parameterSet name="Traceability">
+            <clipsfacts>
+                <fact>source=GRM,key=Traceability,relationType=FND_TraceLink,targetDirection=backward,inputTypes=WorkspaceObject</fact>
+                <fact>source=GRM,key=Traceability,relationType=FND_TraceLink,targetDirection=forward,inputTypes=WorkspaceObject</fact>
+            </clipsfacts>
+            <typesForCreation>
+                <type>FND_TraceLink</type>
+            </typesForCreation>
+        </parameterSet>
+        <parameterSet name="PartFamilyRelation">
+            <clipsfacts>
+                <fact>source=GRM,key=PartFamily,relationType=IMAN_UG_part_family_link,targetDirection=backward,inputTypes=ItemRevision,outputTypes=ItemRevision</fact>
+                <fact>source=GRM,key=PartFamily,relationType=IMAN_UG_part_family_link,targetDirection=forward,inputTypes=ItemRevision,outputTypes=ItemRevision</fact>
+            </clipsfacts>
+            <typesForCreation>
+                <type>IMAN_UG_part_family_link</type>
+            </typesForCreation>
+        </parameterSet>
+        <parameterSet name="WaveExpressionRelation">
+            <clipsfacts>
+                <fact>source=GRM,key=WaveExpression,relationType=IMAN_UG_expression,targetDirection=backward,inputTypes=Item,outputTypes=ItemRevision</fact>
+                <fact>source=GRM,key=WaveExpression,relationType=IMAN_UG_expression,targetDirection=forward,inputTypes=ItemRevision,outputTypes=Item</fact>
+            </clipsfacts>
+            <typesForCreation>
+                <type>IMAN_UG_expression</type>
+            </typesForCreation>
+        </parameterSet>
+        <parameterSet name="WaveGeometryRelation">
+            <clipsfacts>
+                <fact>source=GRM,key=WaveGeometry,relationType=IMAN_UG_wave_geometry,targetDirection=backward,inputTypes=Item,outputTypes=ItemRevision</fact>
+                <fact>source=GRM,key=WaveGeometry,relationType=IMAN_UG_wave_geometry,targetDirection=forward,inputTypes=ItemRevision,outputTypes=Item</fact>
+            </clipsfacts>
+            <typesForCreation>
+                <type>IMAN_UG_wave_geometry</type>
+            </typesForCreation>
+        </parameterSet>
+        <parameterSet name="WavePositionRelation">
+            <clipsfacts>
+                <fact>source=GRM,key=WavePosition,relationType=IMAN_UG_wave_position,targetDirection=backward,inputTypes=Item,outputTypes=ItemRevision</fact>
+                <fact>source=GRM,key=WavePosition,relationType=IMAN_UG_wave_position,targetDirection=forward,inputTypes=ItemRevision,outputTypes=Item</fact>
+            </clipsfacts>
+            <typesForCreation>
+                <type>IMAN_UG_wave_position</type>
+            </typesForCreation>
+        </parameterSet>
+        <parameterSet name="WavePartLinkRelation">
+            <clipsfacts>
+                <fact>source=GRM,key=WavePartLink,relationType=IMAN_UG_wave_part_link,targetDirection=backward,inputTypes=Item,outputTypes=ItemRevision</fact>
+                <fact>source=GRM,key=WavePartLink,relationType=IMAN_UG_wave_part_link,targetDirection=forward,inputTypes=ItemRevision,outputTypes=Item</fact>
+            </clipsfacts>
+            <typesForCreation>
+                <type>IMAN_UG_wave_part_link</type>
+            </typesForCreation>
+        </parameterSet>
+        <parameterSet name="UDFRelation">
+            <clipsfacts>
+                <fact>source=GRM,key=UDF,relationType=IMAN_UG_udf,targetDirection=backward,inputTypes=ItemRevision,outputTypes=ItemRevision</fact>
+                <fact>source=GRM,key=UDF,relationType=IMAN_UG_udf,targetDirection=forward,inputTypes=ItemRevision,outputTypes=ItemRevision</fact>
+            </clipsfacts>
+            <typesForCreation>
+                <type>IMAN_UG_udf</type>
+            </typesForCreation>
+        </parameterSet>
+        <parameterSet name="PromotionRelation">
+            <clipsfacts>
+                <fact>source=GRM,key=Promotion,relationType=IMAN_UG_promotion,targetDirection=backward,inputTypes=ItemRevision,outputTypes=ItemRevision</fact>
+                <fact>source=GRM,key=Promotion,relationType=IMAN_UG_promotion,targetDirection=forward,inputTypes=ItemRevision,outputTypes=ItemRevision</fact>
+            </clipsfacts>
+            <typesForCreation>
+                <type>IMAN_UG_promotion</type>
+            </typesForCreation>
+        </parameterSet>
+        <parameterSet name="DFARelation">
+            <clipsfacts>
+                <fact>source=GRM,key=DFA,relationType=IMAN_UG_dfa,targetDirection=backward,inputTypes=ItemRevision,outputTypes=ItemRevision</fact>
+                <fact>source=GRM,key=DFA,relationType=IMAN_UG_dfa,targetDirection=forward,inputTypes=ItemRevision,outputTypes=ItemRevision</fact>
+            </clipsfacts>
+            <typesForCreation>
+                <type>IMAN_UG_dfa</type>
+            </typesForCreation>
+        </parameterSet>
+        <parameterSet name="DrawingOfRelation">
+            <clipsfacts>
+                <fact>source=GRM,key=DrawingOf,relationType=TC_DrawingOf,targetDirection=backward,inputTypes=ItemRevision,outputTypes=ItemRevision</fact>
+                <fact>source=GRM,key=DrawingOf,relationType=TC_DrawingOf,targetDirection=forward,inputTypes=ItemRevision,outputTypes=ItemRevision</fact>
+            </clipsfacts>
+            <typesForCreation>
+                <type>TC_DrawingOf</type>
+            </typesForCreation>
+        </parameterSet>
+        <parameterSet name="DrawingUsingRelation">
+            <clipsfacts>
+                <fact>source=GRM,key=DrawingUsing,relationType=TC_DrawingUsing,targetDirection=backward,inputTypes=ItemRevision,outputTypes=ItemRevision</fact>
+                <fact>source=GRM,key=DrawingUsing,relationType=TC_DrawingUsing,targetDirection=forward,inputTypes=ItemRevision,outputTypes=ItemRevision</fact>
+            </clipsfacts>
+            <typesForCreation>
+                <type>TC_DrawingUsing</type>
+            </typesForCreation>
+        </parameterSet>
+        <parameterSet name="StagedModelRelation">
+            <clipsfacts>
+                <fact>source=GRM,key=StagedModel,relationType=NXB0StageSetRelation,targetDirection=backward,inputTypes=ItemRevision,outputTypes=NXB0StageSetRevision</fact>
+                <fact>source=GRM,key=StagedModel,relationType=NXB0StageSetRelation,targetDirection=forward,inputTypes=NXB0StageSetRevision,outputTypes=ItemRevision</fact>
+            </clipsfacts>
+            <typesForCreation>
+                <type>NXB0StageSetRelation</type>
+            </typesForCreation>
+        </parameterSet>
+        <parameterSet name="Requirement">
+            <clipsfacts>
+                <fact>Requirement</fact>
+                <fact>Requirement Revision</fact>
+                <fact>RequirementSpec</fact>
+                <fact>RequirementSpec Revision</fact>
+                <fact>BOMLine</fact>
+            </clipsfacts>
+            <typesForCreation>
+                <type>Requirement</type>
+                <type>RequirementSpec</type>
+            </typesForCreation>
+        </parameterSet>
+        <parameterSet name="Functional">
+            <clipsfacts>
+                <fact>Functionality</fact>
+                <fact>FunctionalityRevision</fact>
+                <fact>BOMLine</fact>
+            </clipsfacts>
+            <typesForCreation>
+                <type>Functionality</type>
+            </typesForCreation>
+        </parameterSet>
+        <parameterSet name="Logical">
+            <clipsfacts>
+                <fact>Fnd0LogicalBlock</fact>
+                <fact>Fnd0LogicalBlockRevision</fact>
+                <fact>BOMLine</fact>
+            </clipsfacts>
+            <typesForCreation>
+                <type>Fnd0LogicalBlock</type>
+            </typesForCreation>
+        </parameterSet>
+        <parameterSet name="Physical">
+            <clipsfacts>
+                <fact>Part</fact>
+                <fact>Part Revision</fact>
+                <fact>Design</fact>
+                <fact>Design Revision</fact>
+                <fact>BOMLine</fact>
+            </clipsfacts>
+            <typesForCreation>
+                <type>Part</type>
+                <type>Design</type>
+            </typesForCreation>
+        </parameterSet>
+        <parameterSet name="Dataset">
+            <clipsfacts>
+                <fact>Dataset</fact>
+            </clipsfacts>
+        </parameterSet>
+        <parameterSet name="Plant">
+            <clipsfacts>
+                <fact>MEWorkarea</fact>
+                <fact>MEWorkareaRevision</fact>
+                <fact>BOMLine</fact>
+            </clipsfacts>
+        </parameterSet>
+        <parameterSet name="Folder">
+            <clipsfacts>
+                <fact>Folder</fact>
+            </clipsfacts>
+        </parameterSet>
+        <parameterSet name="StagedSetRevisionObj">
+            <clipsfacts>
+                <fact>NXB0StageSetRevision</fact>
+            </clipsfacts>
+        </parameterSet>
+        <parameterSet name="WorkspaceObject">
+            <clipsfacts>
+                <fact>WorkspaceObject</fact>
+            </clipsfacts>
+        </parameterSet>
+        <parameterSet name="ChangeNoticeRelateObj">
+            <clipsfacts>
+                <fact>ChangeNoticeRevision</fact>
+            </clipsfacts>
+            <!--set attribute 'allSubTypes' to true if need all sub types-->
+            <typesForCreation allSubTypes="true"/>
+        </parameterSet>
+        <parameterSet name="ChangeRequestRelateObj">
+            <clipsfacts>
+                <fact>ChangeRequestRevision</fact>
+                <fact>Cm0DevRqstRevision</fact>
+            </clipsfacts>
+            <!--set attribute 'allSubTypes' to true if need all sub types-->
+            <typesForCreation allSubTypes="true"/>
+        </parameterSet>
+        <parameterSet name="ProblemReportRelateObj">
+            <clipsfacts>
+                <fact>ProblemReportRevision</fact>
+            </clipsfacts>
+            <!--set attribute 'allSubTypes' to true if need all sub types-->
+            <typesForCreation allSubTypes="true"/>
+        </parameterSet>
+        <parameterSet name="DefectObj">
+            <clipsfacts>
+                <fact>CAW0Defect</fact>
+            </clipsfacts>
+            <!--set attribute 'allSubTypes' to true if need all sub types-->
+            <typesForCreation allSubTypes="true"/>
+        </parameterSet>
+        <parameterSet name="5WhyObj">
+            <clipsfacts>
+                <fact>CAW05Why</fact>
+            </clipsfacts>
+            <!--set attribute 'allSubTypes' to true if need all sub types-->
+            <typesForCreation allSubTypes="true"/>
+        </parameterSet>
+        <parameterSet name="IshikawaObj">
+            <clipsfacts>
+                <fact>CAW0Ishikawa</fact>
+            </clipsfacts>
+            <!--set attribute 'allSubTypes' to true if need all sub types-->
+            <typesForCreation allSubTypes="true"/>
+        </parameterSet>
+        <parameterSet name="IssueObj">
+            <clipsfacts>
+                <fact>C2IssueRevision</fact>
+            </clipsfacts>
+            <!--set attribute 'allSubTypes' to true if need all sub types-->
+            <typesForCreation allSubTypes="true"/>
+        </parameterSet>
+        <parameterSet name="ECRObj">
+            <clipsfacts>
+                <fact>ChangeRequestRevision</fact>
+                <fact>C2IssueRevision</fact>
+            </clipsfacts>
+            <!--set attribute 'allSubTypes' to true if need all sub types-->
+            <typesForCreation allSubTypes="true"/>
+        </parameterSet>
+        <parameterSet name="ECNObj">
+            <clipsfacts>
+                <fact>ChangeNoticeRevision</fact>
+            </clipsfacts>
+            <!--set attribute 'allSubTypes' to true if need all sub types-->
+            <typesForCreation allSubTypes="true"/>
+        </parameterSet>
+        <parameterSet name="ItemRevObj">
+            <clipsfacts>
+                <fact>ItemRevision</fact>
+            </clipsfacts>
+            <!--set attribute 'allSubTypes' to true if need all sub types-->
+            <typesForCreation allSubTypes="true"/>
+        </parameterSet>
+        <parameterSet name="ItemObj">
+            <clipsfacts>
+                <fact>Item</fact>
+            </clipsfacts>
+            <!--set attribute 'allSubTypes' to true if need all sub types-->
+            <typesForCreation allSubTypes="true"/>
+        </parameterSet>
+        <parameterSet name="ActionObj">
+            <clipsfacts>
+                <fact>Qam0QualityAction</fact>
+            </clipsfacts>
+            <!--set attribute 'allSubTypes' to true if need all sub types-->
+            <typesForCreation allSubTypes="true"/>
+        </parameterSet>
+        <parameterSet name="Change">
+            <clipsfacts>
+                <fact>ProblemReport</fact>
+                <fact>ProblemReportRevision</fact>
+                <fact>ChangeRequest</fact>
+                <fact>ChangeRequestRevision</fact>
+                <fact>ChangeNotice</fact>
+                <fact>ChangeNoticeRevision</fact>
+                <fact>Schedule</fact>
+            </clipsfacts>
+            <!--set attribute 'allSubTypes' to true if need all sub types-->
+            <typesForCreation allSubTypes="false"/>
+        </parameterSet>
+        <parameterSet name="VerificationTestProcedureObj">
+            <clipsfacts>
+                <fact>IAV0TestProcedur</fact>
+                <fact>IAV0TestProcedurRevision</fact>
+            </clipsfacts>
+         </parameterSet>
+
+
+        <parameterSet name="VerificationTestRequestObj">
+            <clipsfacts>
+                <fact>IAV0TestStudy</fact>
+                <fact>IAV0TestStudyRevision</fact>
+            </clipsfacts>
+         </parameterSet>
+
+        <parameterSet name="VerificationTestEventObj">
+            <clipsfacts>
+                <fact>IAV0TestRun</fact>
+                <fact>IAV0TestRunRevision</fact>
+            </clipsfacts>
+         </parameterSet>
+
+        <parameterSet name="VerificationTestMethodObj">
+            <clipsfacts>
+                <fact>IAV0TestRequest</fact>
+                <fact>IAV0TestRequestRevision</fact>
+            </clipsfacts>
+         </parameterSet>
+
+        <parameterSet name="VerificationVerificationRequestObj">
+            <clipsfacts>
+                <fact>Crt0VldnContractRevision</fact>
+                <fact>Crt0VerifRequestRevision</fact>
+            </clipsfacts>
+         </parameterSet>
+
+        <parameterSet name="VerificationStudyObj">
+            <clipsfacts>
+                <fact>Crt0Study</fact>
+                <fact>Crt0StudyRevision</fact>
+            </clipsfacts>
+         </parameterSet>
+
+        <parameterSet name="VerificationRunObj">
+            <clipsfacts>
+                <fact>Crt0Run</fact>
+                <fact>Crt0RunRevision</fact>
+            </clipsfacts>
+         </parameterSet>
+
+        <parameterSet name="VerificationSimulationObj">
+            <clipsfacts>
+                <fact>Crt0SimStudy</fact>
+                <fact>Crt0SimStudyRevision</fact>
+            </clipsfacts>
+         </parameterSet>
+
+        <parameterSet name="VerificationMRObj">
+            <clipsfacts>
+                <fact>IAV0MeasureReqmt</fact>
+                <fact>IAV0MeasureReqmtRevision</fact>
+            </clipsfacts>
+         </parameterSet>
+
+        <parameterSet name="VerificationReqObj">
+            <clipsfacts>
+                <fact>Requirement</fact>
+                <fact>Requirement Revision</fact>
+                <fact>RequirementSpec</fact>
+                <fact>RequirementSpec Revision</fact>
+            </clipsfacts>
+         </parameterSet>
+        <parameterSet name="VerificationTestConObj">
+            <clipsfacts>
+                <fact>IAV0TestCond</fact>
+                <fact>IAV0TestCondRevision</fact>
+            </clipsfacts>
+         </parameterSet>
+        <parameterSet name="VerificationTestStepObj">
+            <clipsfacts>
+                <fact>IAV0TestStep</fact>
+                <fact>IAV0TestStepRevision</fact>
+            </clipsfacts>
+         </parameterSet>
+
+        <parameterSet name="VerificationTestCaseObj">
+            <clipsfacts>
+                <fact>IAV0TestCase</fact>
+                <fact>IAV0TestCaseRevision</fact>
+            </clipsfacts>
+         </parameterSet>
+
+        <parameterSet name="VerificationPhysBOMObj">
+            <clipsfacts>
+                <fact>PhysicalPartRevision</fact>
+            </clipsfacts>
+         </parameterSet>
+         
+        <parameterSet name="VerificationProdAndTestBOMObj">
+            <clipsfacts>
+                <fact>Part</fact>
+                <fact>Part Revision</fact>
+                <fact>Design</fact>
+                <fact>Design Revision</fact>
+                <fact>BOMLine</fact>
+            </clipsfacts>
+        </parameterSet>
+        
+        <parameterSet name="Simulation">
+            <clipsfacts>
+                <fact>CAEItem</fact>
+                <fact>CAEItemRevision</fact>
+            </clipsfacts>
+            <typesForCreation allSubTypes="true"/>
+        </parameterSet>
+        <parameterSet name="SimulationRelations">
+            <clipsfacts>
+                <fact>source=GRM,key=Simulation,relationType=CAE0BasedOn,targetDirection=forward,inputTypes=CAEAnalysisRevision</fact>
+                <fact>source=GRM,key=Simulation,relationType=TC_CAE_Include,targetDirection=forward,inputTypes=CAEAnalysisRevision</fact>
+                <fact>source=GRM,key=Simulation,relationType=TC_CAE_Source,targetDirection=forward,inputTypes=CAEAnalysisRevision</fact>
+                <fact>source=GRM,key=Simulation,relationType=TC_CAE_Defining,targetDirection=forward,inputTypes=CAEAnalysisRevision</fact>
+                <fact>source=GRM,key=Simulation,relationType=TC_CAE_Results,targetDirection=forward,inputTypes=CAEAnalysisRevision</fact>
+                <fact>source=GRM,key=Simulation,relationType=TC_CAE_Target,targetDirection=forward,inputTypes=CAEAnalysisRevision</fact>
+                <fact>source=GRM,key=Simulation,relationType=TC_CAE_Include,targetDirection=backward,inputTypes=CAEAnalysisRevision</fact>
+                <fact>source=GRM,key=Simulation,relationType=CAE0Extract,targetDirection=forward,inputTypes=CAEAnalysisRevision</fact>
+                <fact>source=GRM,key=Simulation,relationType=TC_CAE_Target,targetDirection=forward,inputTypes=CAEGeometryRevision</fact>
+                <fact>source=GRM,key=Simulation,relationType=TC_CAE_Source,targetDirection=forward,inputTypes=CAEGeometryRevision</fact>
+                <fact>source=GRM,key=Simulation,relationType=TC_CAE_Source,targetDirection=backward,inputTypes=CAEGeometryRevision</fact>
+                <fact>source=GRM,key=Simulation,relationType=TC_CAE_Source,targetDirection=forward,inputTypes=CAEModelRevision</fact>
+                <fact>source=GRM,key=Simulation,relationType=TC_CAE_Target,targetDirection=forward,inputTypes=CAEModelRevision</fact>
+                <fact>source=GRM,key=Simulation,relationType=TC_CAE_Defining,targetDirection=backward,inputTypes=CAEModelRevision</fact>
+                <fact>source=GRM,key=Simulation,relationType=CAE0Extract,targetDirection=forward,inputTypes=CAEResultRevision</fact>
+                <fact>source=GRM,key=Simulation,relationType=CAE0BasedOn,targetDirection=forward,inputTypes=CAEResultRevision</fact>
+                <fact>source=GRM,key=Simulation,relationType=TC_CAE_Results,targetDirection=backward,inputTypes=CAEResultRevision</fact>
+                <fact>source=GRM,key=Simulation,relationType=CAE0BasedOn,targetDirection=backward,inputTypes=CAE0AnaTemplateRevision</fact>
+                <fact>source=GRM,key=Simulation,relationType=TC_CAE_Include,targetDirection=backward,inputTypes=CAE0BCRevision</fact>
+                <fact>source=GRM,key=Simulation,relationType=CAE0Extract,targetDirection=backward,inputTypes=CAE0BCRevision</fact>
+                <fact>source=GRM,key=Simulation,relationType=CAE0BasedOn,targetDirection=forward,inputTypes=CAE0CollectorRevision</fact>
+                <fact>source=GRM,key=Simulation,relationType=CAE0BasedOn,targetDirection=forward,inputTypes=CAE0MDOAnalysisRevision</fact>
+                <fact>source=GRM,key=Simulation,relationType=CAE0BasedOn,targetDirection=backward,inputTypes=CAE0MDOTemplateRevision</fact>
+                <fact>source=GRM,key=Simulation,relationType=CAE0BasedOn,targetDirection=backward,inputTypes=CAE0ResTemplateRevision</fact>
+                <fact>source=GRM,key=Simulation,relationType=CAE0BasedOn,targetDirection=backward,inputTypes=CAE0ResTemplateRevision</fact>
+                <fact>source=GRM,key=Simulation,relationType=TC_CAE_Target,targetDirection=backward,inputTypes=ItemRevision</fact>
+                <fact>source=GRM,key=Simulation,relationType=TC_CAE_Source,targetDirection=backward,inputTypes=ItemRevision</fact>
+                <fact>source=GRM,key=Simulation,relationType=CAE0BasedOn,targetDirection=backward,inputTypes=ItemRevision</fact>
+                <fact>source=GRM,key=Simulation,relationType=TC_CAE_Defining,targetDirection=forward,inputTypes=CAE01DAnalysisRevision</fact>
+                <fact>source=GRM,key=Simulation,relationType=TC_CAE_Defining,targetDirection=backward,inputTypes=CAE01DModelRevision</fact>
+                <fact>source=GRM,key=Simulation,relationType=IMAN_based_on,targetDirection=forward,inputTypes=CAEModelRevision</fact>
+                <fact>source=GRM,key=Simulation,relationType=IMAN_based_on,targetDirection=backward,inputTypes=CAEModelRevision</fact>
+            </clipsfacts>
+        </parameterSet>
+        <parameterSet name="Parameter">
+            <clipsfacts>
+                <fact>Att0MeasurableAttributeInt</fact>
+                <fact>Att0MeasurableAttributeDbl</fact>
+                <fact>Att0MeasurableAttributeStr</fact>
+                <fact>Att0MeasurableAttributeBool</fact>
+                <fact>Att0MeasurableAttributePnt</fact>
+            </clipsfacts>
+        </parameterSet>
+        <parameterSet name="ParameterRelations">
+            <clipsfacts>
+                <fact>source=GRM,key=Parameter,relationType=Att0AttrRelation,targetDirection=backward,inputTypes=Att0MeasurableAttribute</fact>
+                <fact>source=GRM,key=Parameter,relationType=Att0AttrRelation,targetDirection=forward,inputTypes=WorkspaceObject</fact>
+                <fact>source=GRM,key=Parameter,relationType=Att0HasParamValue,targetDirection=backward,inputTypes=Att0MeasurableAttribute</fact>
+                <fact>source=GRM,key=Parameter,relationType=Att0HasParamValue,targetDirection=forward,inputTypes=WorkspaceObject</fact>
+            </clipsfacts>
+        </parameterSet>
+        <parameterSet name="PrgDelRevisionRelatedObj">
+            <clipsfacts>
+                <fact>Psi0PrgDelRevision</fact>
+            </clipsfacts>
+            <!--set attribute 'allSubTypes' to true if need all sub types-->
+            <typesForCreation allSubTypes="true"/>
+        </parameterSet>
+        <parameterSet name="ProgramRiskRelatedObj">
+            <clipsfacts>
+                <fact>Psi0ProgramRisk</fact>
+            </clipsfacts>
+            <!--set attribute 'allSubTypes' to true if need all sub types-->
+            <typesForCreation allSubTypes="true"/>
+        </parameterSet>
+        <parameterSet name="ProgramIssueRelatedObj">
+            <clipsfacts>
+                <fact>Psi0ProgramIssue</fact>
+            </clipsfacts>
+            <!--set attribute 'allSubTypes' to true if need all sub types-->
+            <typesForCreation allSubTypes="true"/>
+        </parameterSet>
+        <parameterSet name="ProgramOppRelatedObj">
+            <clipsfacts>
+                <fact>Psi0ProgramOpp</fact>
+            </clipsfacts>
+            <!--set attribute 'allSubTypes' to true if need all sub types-->
+            <typesForCreation allSubTypes="true"/>
+        </parameterSet>
+        <parameterSet name="ScheduleRelatedObj">
+            <clipsfacts>
+                <fact>Schedule</fact>
+            </clipsfacts>
+            <!--set attribute 'allSubTypes' to true if need all sub types-->
+            <typesForCreation allSubTypes="true"/>
+        </parameterSet>
+        <parameterSet name="ChecklistRelatedObj">
+            <clipsfacts>
+                <fact>Psi0AbsChecklist</fact>
+            </clipsfacts>
+            <!--set attribute 'allSubTypes' to true if need all sub types-->
+            <typesForCreation allSubTypes="true"/>
+        </parameterSet>
+        <parameterSet name="CriteriaRelatedObj">
+            <clipsfacts>
+                <fact>Prg0AbsCriteria</fact>
+            </clipsfacts>
+            <!--set attribute 'allSubTypes' to true if need all sub types-->
+            <typesForCreation allSubTypes="true"/>
+        </parameterSet>
+         <parameterSet name="ProgamRelations">
+            <clipsfacts>
+            <fact>source=GRM,key=ProgamRelation,relationType=Psi0ProgramRelation,targetDirection=forward,inputTypes=WorkspaceObject</fact>
+            <fact>source=GRM,key=ProgamRelation,relationType=Psi0ProgramRelation,targetDirection=backward,inputTypes=WorkspaceObject</fact>
+            <fact>source=GRM,key=PrecedingSucceedingRelation,relationType=Psi0BeforeDependency,targetDirection=backward,inputTypes=Psi0PrgDelRevision</fact>
+            <fact>source=GRM,key=PrecedingSucceedingRelation,relationType=Psi0BeforeDependency,targetDirection=forward,inputTypes=Psi0PrgDelRevision</fact>
+            <fact>source=GRM,key=ConcurrentRelation,relationType=Psi0ConcurrentDependency,targetDirection=backward,inputTypes=Psi0PrgDelRevision</fact>
+            <fact>source=GRM,key=ConcurrentRelation,relationType=Psi0ConcurrentDependency,targetDirection=forward,inputTypes=Psi0PrgDelRevision</fact>
+            <fact>source=GRM,key=EventPrgRelation,relationType=Psi0EventPrgDel,targetDirection=forward,inputTypes=WorkspaceObject</fact>
+           </clipsfacts>
+        </parameterSet>
+        <parameterSet name="VerificationMgmt">
+            <clipsfacts>
+                <fact>source=GRM,key=Verification,relationType=Crt0ValidationLink,targetDirection=forward,inputTypes=WorkspaceObject</fact>
+                <fact>source=Property,key=ScopeChildLink,propertyName=crt0ChildrenStudies,targetDirection=forward,inputTypes=WorkspaceObject</fact>                             
+                <fact>source=GRM,key=Verification,relationType=IAV0VerificationTL,targetDirection=backward,inputTypes=WorkspaceObject</fact>
+                <fact>source=GRM,key=Verification,relationType=IAV0VerificationTL,targetDirection=forward,inputTypes=WorkspaceObject</fact>
+                <fact>source=GRM,key=Report,relationType=IAV0DataTL,targetDirection=backward,inputTypes=WorkspaceObject</fact>
+                <fact>source=GRM,key=Report,relationType=IAV0DataTL,targetDirection=forward,inputTypes=WorkspaceObject</fact>
+                <fact>source=GRM,key=Report,relationType=IMAN_specification,targetDirection=forward,inputTypes=WorkspaceObject</fact>
+                <fact>source=GRM,key=Report,relationType=IMAN_specification,targetDirection=forward,inputTypes=WorkspaceObject</fact>
+                <fact>source=GRM,key=Report,relationType=IAV0ReportTL,targetDirection=backward,inputTypes=WorkspaceObject</fact>
+                <fact>source=GRM,key=Report,relationType=IAV0ReportTL,targetDirection=forward,inputTypes=WorkspaceObject</fact>
+                <fact>source=GRM,key=Event,relationType=Psi0EventPrgDel,targetDirection=backward,inputTypes=WorkspaceObject</fact>
+                <fact>source=GRM,key=Event,relationType=Psi0EventPrgDel,targetDirection=forward,inputTypes=WorkspaceObject</fact>
+                <fact>source=GRM,key=TestEBOMToProdEBOMRel,relationType=IAV0TestEBOMToProdEBOMRel,targetDirection=forward,inputTypes=WorkspaceObject</fact>
+                <fact>source=GRM,key=TestEBOMToProdEBOMRel,relationType=IAV0TestEBOMToProdEBOMRel,targetDirection=forward,inputTypes=WorkspaceObject</fact>              
+                <fact>source=Property,key=TestSteps,propertyName=ps_children,targetDirection=forward,inputTypes=IAV0TestCaseRevision</fact>                
+                <fact>source=Property,key=TestSteps,propertyName=ps_children,targetDirection=forward,inputTypes=IAV0TestProcedurRevision</fact>                
+                <fact>source=Property,key=Instrument,propertyName=ps_children,targetDirection=forward,inputTypes=IAV0TestRequestRevision</fact>                
+            </clipsfacts>
+            <typesForCreation>
+                <type>FND_TraceLink</type>
+            </typesForCreation>
+        </parameterSet>
+
+        <!-- parameterSets for Arcadia legend view -->
+        <parameterSet name="ArcadiaRelations">
+            <clipsfacts>
+                <fact>source=GRM,key=Verify,relationType=IAV0Verify,targetDirection=backward,inputTypes=WorkspaceObject</fact>
+                <fact>source=GRM,key=Verify,relationType=IAV0Verify,targetDirection=forward,inputTypes=WorkspaceObject</fact>
+                <fact>source=GRM,key=Derive,relationType=Seg0Derive,targetDirection=backward,inputTypes=WorkspaceObject</fact>
+                <fact>source=GRM,key=Derive,relationType=Seg0Derive,targetDirection=forward,inputTypes=WorkspaceObject</fact>
+                <fact>source=GRM,key=Satisfy,relationType=Seg0Satisfy,targetDirection=backward,inputTypes=WorkspaceObject</fact>
+                <fact>source=GRM,key=Satisfy,relationType=Seg0Satisfy,targetDirection=forward,inputTypes=WorkspaceObject</fact>
+                <fact>source=GRM,key=Refine,relationType=Seg0Refine,targetDirection=backward,inputTypes=WorkspaceObject</fact>
+                <fact>source=GRM,key=Refine,relationType=Seg0Refine,targetDirection=forward,inputTypes=WorkspaceObject</fact>
+                <fact>source=GRM,key=Allocate,relationType=Seg0Allocate,targetDirection=backward,inputTypes=WorkspaceObject</fact>
+                <fact>source=GRM,key=Allocate,relationType=Seg0Allocate,targetDirection=forward,inputTypes=WorkspaceObject</fact>
+                <fact>source=GRM,key=DeploymentLink,relationType=Sys0DeploymentLink,targetDirection=backward,inputTypes=WorkspaceObject</fact>
+                <fact>source=GRM,key=DeploymentLink,relationType=Sys0DeploymentLink,targetDirection=forward,inputTypes=WorkspaceObject</fact>
+                <fact>source=GRM,key=Realize,relationType=Seg0Realize,targetDirection=backward,inputTypes=WorkspaceObject</fact>
+                <fact>source=GRM,key=Realize,relationType=Seg0Realize,targetDirection=forward,inputTypes=WorkspaceObject</fact>
+                <fact>source=GRM,key=TraceLink,relationType=FND_TraceLink,targetDirection=backward,inputTypes=WorkspaceObject</fact>
+                <fact>source=GRM,key=TraceLink,relationType=FND_TraceLink,targetDirection=forward,inputTypes=WorkspaceObject</fact>
+                <fact>source=GRM,key=Attach,relationType=TC_Attaches,targetDirection=forward,inputTypes=ItemRevision,outputTypes=Seg0Diagram</fact>
+            </clipsfacts>
+            <typesForCreation>
+                <type>FND_TraceLink</type>
+            </typesForCreation>
+        </parameterSet>
+        <parameterSet name="DependsOn">
+            <clipsfacts>
+                <fact>source=GRM,key=DependsOn,relationType=Uml0DependsOn,targetDirection=backward,inputTypes=WorkspaceObject</fact>
+                <fact>source=GRM,key=DependsOn,relationType=Uml0DependsOn,targetDirection=forward,inputTypes=WorkspaceObject</fact>
+            </clipsfacts>
+        </parameterSet>
+        <parameterSet name="System">
+          <clipsfacts>
+              <fact>Sys0System</fact>
+              <fact>Sys0SystemRevision</fact>
+          </clipsfacts>
+        </parameterSet>
+        <parameterSet name="LogicalComponent">
+          <clipsfacts>
+              <fact>Sys0LogicalComp</fact>
+              <fact>Sys0LogicalCompRevision</fact>
+          </clipsfacts>
+        </parameterSet>
+        <parameterSet name="PhysicalComponent">
+          <clipsfacts>
+              <fact>Sys0PhysNodeComp</fact>
+              <fact>Sys0PhysNodeCompRevision</fact>
+          </clipsfacts>
+        </parameterSet>
+        <parameterSet name="SystemFunction">
+          <clipsfacts>
+              <fact>Sys0SystemFunc</fact>
+              <fact>Sys0SystemFuncRevision</fact>
+          </clipsfacts>
+        </parameterSet>
+        <parameterSet name="LogicalFunction">
+          <clipsfacts>
+              <fact>Sys0LogicalFunc</fact>
+              <fact>Sys0LogicalFuncRevision</fact>
+          </clipsfacts>
+        </parameterSet>
+        <parameterSet name="PhysicalFunction">
+          <clipsfacts>
+              <fact>Sys0PhysicalFunc</fact>
+              <fact>Sys0PhysicalFuncRevision</fact>
+          </clipsfacts>
+        </parameterSet>
+        <parameterSet name="ProjectModel">
+          <clipsfacts>
+              <fact>Uml0MLModel</fact>
+              <fact>Uml0MLModelRevision</fact>
+          </clipsfacts>
+        </parameterSet>
+        <parameterSet name="EventProgramRelation">
+            <clipsfacts>
+                <fact>source=Property,key=Event,propertyName=psi0PlanEventTagList,targetDirection=forward,inputTypes=WorkspaceObject</fact>
+            </clipsfacts>
+        </parameterSet>
+        <parameterSet name="AccomplishmentRelation">
+            <clipsfacts>
+                <fact>source=GRM,key=Accomplishment,relationType=Ipp0HasAccompRel,targetDirection=forward,inputTypes=WorkspaceObject</fact>
+                <fact>source=GRM,key=Accomplishment,relationType=Ipp0HasAccompRel,targetDirection=backward,inputTypes=WorkspaceObject</fact>
+            </clipsfacts>
+        </parameterSet>
+        <parameterSet name="CriteriaRelation">
+            <clipsfacts>
+                <fact>source=GRM,key=Criteria,relationType=Ipp0HasCriteriaRel,targetDirection=forward,inputTypes=WorkspaceObject</fact>
+                <fact>source=GRM,key=Criteria,relationType=Ipp0HasCriteriaRel,targetDirection=backward,inputTypes=WorkspaceObject</fact>
+            </clipsfacts>
+        </parameterSet>
+        <parameterSet name="WorkPackageRelation">
+            <clipsfacts>
+                <fact>source=GRM,key=WorkPackage,relationType=Ipp0HasWorkPackageRel,targetDirection=forward,inputTypes=WorkspaceObject</fact>
+                <fact>source=Property,key=PS_children,propertyName=ps_children,targetDirection=forward,inputTypes=WorkPackage</fact>
+                <fact>source=GRM,key=WorkPackage,relationType=Ipp0HasWorkPackageRel,targetDirection=backward,inputTypes=WorkspaceObject</fact>
+                <fact>source=GRM,key=WorkPackage,relationType=Psi0PredecessorWorkElement,targetDirection=backward,inputTypes=WorkspaceObject</fact>
+                <fact>source=GRM,key=WorkPackage,relationType=Psi0PredecessorWorkElement,targetDirection=forward,inputTypes=WorkspaceObject</fact>
+            </clipsfacts>
+        </parameterSet>
+        <parameterSet name="EventObjSet">
+            <clipsfacts>
+                <fact>Prg0AbsEvent</fact>
+            </clipsfacts>
+         </parameterSet>
+         <parameterSet name="Accomplishment">
+            <clipsfacts>
+                <fact>Ipp0IMPAccomplishment</fact>
+            </clipsfacts>
+         </parameterSet>
+         <parameterSet name="Criteria">
+            <clipsfacts>
+                <fact>Ipp0IMPCriteria</fact>
+            </clipsfacts>
+         </parameterSet>
+         <parameterSet name="WorkPackage">
+            <clipsfacts>
+                <fact>Wbs0ElementRevision</fact>
+            </clipsfacts>
+         </parameterSet>
+        <parameterSet name="3DObjects">
+            <clipsfacts>
+                <fact>CAE0BCRevision</fact>
+                <fact>CAE0BC</fact>
+                <fact>CAE0AnaTemplateRevision</fact>
+                <fact>CAE0AnaTemplate</fact>
+                <fact>CAE0ResTemplateRevision</fact>
+                <fact>CAE0ResTemplate</fact>
+                <fact>CAE0CollectorRevision</fact>
+                <fact>CAE0Collector</fact>
+                <fact>CAEAnalysisRevision</fact>
+                <fact>CAEAnalysis</fact>
+                <fact>CAEGeometryRevision</fact>
+                <fact>CAEGeometry</fact>
+                <fact>CAEModelRevision</fact>
+                <fact>CAEModel</fact>
+                <fact>CAEResultRevision</fact>
+                <fact>CAEResult</fact>
+            </clipsfacts>
+            <typesForCreation allSubTypes="true"/>
+        </parameterSet>
+        <parameterSet name="1DObjects">
+            <clipsfacts>
+                <fact>CAE01DAnalysis</fact>
+                <fact>CAE01DAnalysisRevision</fact>
+                <fact>CAE01DModel</fact>
+                <fact>CAE01DModelRevision</fact>
+            </clipsfacts>
+            <typesForCreation allSubTypes="true"/>
+        </parameterSet>
+        <parameterSet name="MDAOObjects">
+            <clipsfacts>
+                <fact>CAE0MDOTemplateRevision</fact>
+                <fact>CAE0MDOTemplate</fact>
+                <fact>CAE0MDOAnalysisRevision</fact>
+                <fact>CAE0MDOAnalysis</fact>
+            </clipsfacts>
+            <typesForCreation allSubTypes="true"/>
+        </parameterSet>
+        <parameterSet name="ConfigObjects">
+            <clipsfacts>
+                <fact>CAE0StrMapFilterRevision</fact>
+                <fact>CAE0StrMapFilter</fact>
+                <fact>StructureMapRevision</fact>
+                <fact>StructureMap</fact>
+            </clipsfacts>
+            <typesForCreation allSubTypes="true"/>
+        </parameterSet>
+        <parameterSet name="CAEFilesObjects">
+            <clipsfacts>
+                <fact>CAE0FileCollection</fact>
+                <fact>Dataset</fact>
+            </clipsfacts>
+            <typesForCreation allSubTypes="true"/>
+        </parameterSet>
+        <parameterSet name="OtherObjects">
+            <clipsfacts>
+                <fact>ItemRevision</fact>
+                <fact>WorkspaceObject</fact>
+            </clipsfacts>
+            <typesForCreation allSubTypes="true"/>
+        </parameterSet>
+        <parameterSet name="SimulationAndTestRel">
+            <clipsfacts>
+                <fact>source=GRM,key=CAEDefining,relationType=TC_CAE_Defining,targetDirection=forward,inputTypes=CAE01DAnalysisRevision</fact>
+                <fact>source=GRM,key=CAEDefining,relationType=TC_CAE_Defining,targetDirection=backward,inputTypes=CAE01DModelRevision</fact>
+                <fact>source=GRM,key=CAEExtract,relationType=CAE0Extract,targetDirection=forward,inputTypes=CAE0BCRevision</fact>
+                <fact>source=GRM,key=CAEExtract,relationType=CAE0Extract,targetDirection=backward,inputTypes=CAE0BCRevision</fact>
+                <fact>source=GRM,key=CAEInclude,relationType=TC_CAE_Include,targetDirection=backward,inputTypes=CAE0BCRevision</fact>
+                <fact>source=GRM,key=CAEBasedOn,relationType=CAE0BasedOn,targetDirection=backward,inputTypes=CAE0AnaTemplateRevision</fact>
+                <fact>source=GRM,key=CAEBasedOn,relationType=CAE0BasedOn,targetDirection=backward,inputTypes=CAE0MDOTemplateRevision</fact>
+                <fact>source=GRM,key=CAEBasedOn,relationType=CAE0BasedOn,targetDirection=backward,inputTypes=CAE0ResTemplateRevision</fact>
+                <fact>source=GRM,key=CAEBasedOn,relationType=CAE0BasedOn,targetDirection=forward,inputTypes=CAE0CollectorRevision</fact>
+                <fact>source=GRM,key=CAEBasedOn,relationType=CAE0BasedOn,targetDirection=forward,inputTypes=CAEAnalysisRevision</fact>
+                <fact>source=GRM,key=CAEDefining,relationType=TC_CAE_Defining,targetDirection=forward,inputTypes=CAEAnalysisRevision</fact>
+                <fact>source=GRM,key=CAEInclude,relationType=TC_CAE_Include,targetDirection=forward,inputTypes=CAEAnalysisRevision</fact>
+                <fact>source=GRM,key=CAEResults,relationType=TC_CAE_Results,targetDirection=forward,inputTypes=CAEAnalysisRevision</fact>
+                <fact>source=GRM,key=CAEExtract,relationType=CAE0Extract,targetDirection=forward,inputTypes=CAEAnalysisRevision</fact>
+                <fact>source=GRM,key=CAEInclude,relationType=TC_CAE_Include,targetDirection=backward,inputTypes=CAEAnalysisRevision</fact>
+                <fact>source=GRM,key=CAESource,relationType=TC_CAE_Source,targetDirection=forward,inputTypes=CAEAnalysisRevision</fact>
+                <fact>source=GRM,key=CAETarget,relationType=TC_CAE_Target,targetDirection=forward,inputTypes=CAEAnalysisRevision</fact>
+                <fact>source=GRM,key=CAEBasedOn,relationType=CAE0BasedOn,targetDirection=forward,inputTypes=CAE0MDOAnalysisRevision</fact>
+                <fact>source=GRM,key=CAETarget,relationType=TC_CAE_Target,targetDirection=forward,inputTypes=CAEGeometryRevision</fact>
+                <fact>source=GRM,key=CAESource,relationType=TC_CAE_Source,targetDirection=forward,inputTypes=CAEGeometryRevision</fact>
+                <fact>source=GRM,key=CAESource,relationType=TC_CAE_Source,targetDirection=backward,inputTypes=CAEGeometryRevision</fact>
+                <fact>source=GRM,key=CAESource,relationType=TC_CAE_Source,targetDirection=forward,inputTypes=CAEModelRevision</fact>
+                <fact>source=GRM,key=CAETarget,relationType=TC_CAE_Target,targetDirection=forward,inputTypes=CAEModelRevision</fact>
+                <fact>source=GRM,key=CAEDefining,relationType=TC_CAE_Defining,targetDirection=backward,inputTypes=CAEModelRevision</fact>
+                <fact>source=GRM,key=CAEDeck,relationType=CAE0TCCAEDeck,targetDirection=forward,inputTypes=CAEModelRevision</fact>
+                <fact>source=GRM,key=CAEMaster,relationType=CAE0TCCAEMaster,targetDirection=forward,inputTypes=CAEModelRevision</fact>
+                <fact>source=GRM,key=CAEExtract,relationType=CAE0Extract,targetDirection=forward,inputTypes=CAEResultRevision</fact>
+                <fact>source=GRM,key=CAEBasedOn,relationType=CAE0BasedOn,targetDirection=forward,inputTypes=CAEResultRevision</fact>
+                <fact>source=GRM,key=CAEResults,relationType=TC_CAE_Results,targetDirection=backward,inputTypes=CAEResultRevision</fact>
+                <fact>source=GRM,key=CAEExtract,relationType=CAE0Extract,targetDirection=backward,inputTypes=CAEResultRevision</fact>
+                <fact>source=GRM,key=CAEBasedOn,relationType=CAE0BasedOn,targetDirection=backward,inputTypes=ItemRevision</fact>
+                <fact>source=GRM,key=CAETarget,relationType=TC_CAE_Target,targetDirection=backward,inputTypes=ItemRevision</fact>
+                <fact>source=GRM,key=CAESource,relationType=TC_CAE_Source,targetDirection=backward,inputTypes=ItemRevision</fact>
+                <fact>source=GRM,key=CAEGeneratedBy,relationType=Fnd0CAE_GeneratedBy,targetDirection=forward,inputTypes=StructureMapRevision</fact>
+                <fact>source=GRM,key=CAEGeneratedBy,relationType=Fnd0CAE_GeneratedBy,targetDirection=backward,inputTypes=StructureMapRevision</fact>
+                <fact>source=GRM,key=CAEGeneratedBy,relationType=Fnd0CAE_GeneratedBy,targetDirection=forward,inputTypes=ItemRevision</fact>
+                <fact>source=GRM,key=Derive,relationType=IMAN_based_on,targetDirection=forward,inputTypes=ItemRevision</fact>
+                <fact>source=GRM,key=Derive,relationType=IMAN_based_on,targetDirection=backward,inputTypes=ItemRevision</fact>
+                <fact>source=GRM,key=CAEParameter,relationType=Att0HasParamValue,targetDirection=forward,inputTypes=CAEItemRevision</fact>
+                <fact>source=GRM,key=CAESource,relationType=TC_CAE_Source,targetDirection=forward,inputTypes=CAE01DModelRevision</fact>
+                <fact>source=GRM,key=CAETarget,relationType=TC_CAE_Target,targetDirection=forward,inputTypes=CAE01DModelRevision</fact>
+                <fact>source=GRM,key=CAETarget,relationType=TC_CAE_Target,targetDirection=backward,inputTypes=NXP0Run</fact>
+                <fact>source=GRM,key=CAESource,relationType=TC_CAE_Source,targetDirection=backward,inputTypes=NXP0Run</fact>
+                <fact>source=GRM,key=CAEParameter,relationType=Att0HasParamValue,targetDirection=forward,inputTypes=WorkspaceObject</fact>
+                <fact>source=Property,key=CAEAttach,propertyName=CAE0FileCollectionContents,targetDirection=forward,inputTypes=ItemRevision</fact>
+                <fact>source=Property,key=CAEAttach,propertyName=cae0Folders,targetDirection=forward,inputTypes=CAE0FileCollection</fact>
+                <fact>source=GRM,key=CAEAttach,relationType=IMAN_specification,targetDirection=forward,inputTypes=CAEItemRevision</fact>
+                <fact>source=GRM,key=CAEAttach,relationType=IMAN_Simulation,targetDirection=forward,inputTypes=CAEItemRevision</fact>
+                <fact>source=GRM,key=CAEAttach,relationType=IMAN_Rendering,targetDirection=forward,inputTypes=CAEItemRevision</fact>
+            </clipsfacts>
+        </parameterSet>
+        <parameterSet name="SimulationAndTestOtherRel">
+            <clipsfacts>
+                <fact>source=GRM,key=Other,relationType=Fnd0CAE_TargetOccurrence,targetDirection=forward,inputTypes=ItemRevision</fact>
+                <fact>source=GRM,key=Other,relationType=Fnd0CAE_TargetOccurrence,targetDirection=backward,inputTypes=ItemRevision</fact>
+                <fact>source=GRM,key=Other,relationType=TC_CAE_Criteria,targetDirection=forward,inputTypes=ItemRevision</fact>
+                <fact>source=GRM,key=Other,relationType=TC_CAE_Criteria,targetDirection=backward,inputTypes=ItemRevision</fact>
+                <fact>source=GRM,key=Other,relationType=TC_CAE_migrated,targetDirection=forward,inputTypes=ItemRevision</fact>
+                <fact>source=GRM,key=Other,relationType=TC_CAE_migrated,targetDirection=backward,inputTypes=ItemRevision</fact>
+                <fact>source=GRM,key=Other,relationType=CAE0StrMapFilterRelation,targetDirection=forward,inputTypes=CAE0StrMapFilterRevision</fact>
+                <fact>source=GRM,key=Other,relationType=CAE0StrMapFilterRelation,targetDirection=backward,inputTypes=CAE0StrMapFilterRevision</fact>
+                <fact>source=GRM,key=Other,relationType=Mat1UsesMaterial,targetDirection=forward,inputTypes=CAEGeometryRevision</fact>
+                <fact>source=GRM,key=Other,relationType=Mat1UsesMaterial,targetDirection=backward,inputTypes=Mat1MaterialRevision</fact>
+                <fact>source=GRM,key=Other,relationType=Mat1UsesMaterial,targetDirection=forward,inputTypes=CAEModelRevision</fact>
+                <fact>source=GRM,key=Other,relationType=Mat1UsesMaterial,targetDirection=forward,inputTypes=ItemRevision</fact>
+                <fact>source=GRM,key=Other,relationType=IAV0ReportTL,targetDirection=forward,inputTypes=CAEAnalysisRevision</fact>
+                <fact>source=GRM,key=Other,relationType=TC_CAE_Param,targetDirection=forward,inputTypes=ItemRevision</fact>
+                <fact>source=GRM,key=Other,relationType=TC_CAE_Param,targetDirection=backward,inputTypes=ItemRevision</fact>
+                <fact>source=GRM,key=Other,relationType=Crt0ValidationLink,targetDirection=backward,inputTypes=CAEItemRevision</fact>
+                <fact>source=GRM,key=Other,relationType=Crt0ValidationLink,targetDirection=forward,inputTypes=Crt0VldnContractRevision,outputTypes=Requirement Revision</fact>
+            </clipsfacts>
+        </parameterSet>
+    </parameterSets>
+</RelationBrowser>

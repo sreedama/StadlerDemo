@@ -1,0 +1,12 @@
+GroupMember:UserGroup§not eq§dba~You are loged in with dba roles as result you are not allowed to start post action~You are allowed to start post-action 
+
+#Check Type=SR5TechDocumentRevision Property=owning_group
+SR5TechDocumentRevision:Gruppen-ID§not allowed§dba~WARNING: INFO: DBA group is not allowed
+
+#Check Type=SR5TechDocumentRevision Property=last_release_status
+SR5TechDocumentRevision:Letzter Freigabestatus§not allowed§80 - Discontinued~WARNING: INFO: should not contain Doc with an Discontinued status
+
+
+
+SR5TechDocumentRevision:Letzter Freigabestatus§not allowed§90 - Obsolete~WARNING: INFO: should not contain Part with an Obsolete status
+

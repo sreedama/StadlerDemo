@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!--=================================================================================================
+
+                                             HEADER
+
+====================================================================================================
+File description:
+
+            Filename: loadmanager.xml
+
+            Teamcenter Manager for CATIA V5 load manager panel customization XML File.
+====================================================================================================
+Quick help:
+
+==================================================================================================-->
+<UIApplication class="com.ebsolutions.loadmanagerpanel.LMApplication"
+             nameRef="Load Manager"
+             image="/com/ebsolutions/uimanager/modules/images/load.png"
+             sizex="430" sizey="650"
+			 lang="">
+
+
+  <!-- SAVE MODULE -->
+    <Module nameRef="Load Manager Module"
+    name="lm_module"
+    moduleHandler="com.ebsolutions.uimanager.handlers.LoadModuleHandler"
+    image="/com/ebsolutions/uimanager/modules/images/load.png"
+    class="com.ebsolutions.loadmanagerpanel.LMModule">
+
+        <!-- Commands definition -->
+	    <Command name="load_selection"/> 	
+	    <!--<Command name="activate_shape"/>	
+	    <Command name="export_active_shapes"/>-->	
+	    <!--<Command name="load_as_cgr"/>-->	
+	    <Command name="lus_options"/>
+	    <Command name="load"/>	
+	    <Command name="load_compare"/>	
+	    <Command name="load_consulting"/>	
+	    <Command name="lus"/>	
+	    <Command name="create_exp_spreadsheet"/>	
+	    <Command name="export"/>	
+	    <Command name="save_assy_config"/>
+	    <Command name="load_as_ref"/>	
+	    <Command name="export_as_ref"/>
+	    <!--<Command name="export_to_directory"/>-->
+
+
+    </Module>
+	
+</UIApplication>

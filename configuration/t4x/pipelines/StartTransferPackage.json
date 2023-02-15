@@ -1,0 +1,504 @@
+{
+  "TransferType": "PIPELINE_ENGINE",
+  "TransferAction": "TRANSFER",
+  "TransferMode": "JOB",
+  "Logging": true,
+  "Monitoring": true,
+  "ExecuteSynchronous": false,
+  "ExecuteAsynchronous": false,
+  "Name": "StartTransferPackage",
+  "BusinessObject": "ProductVersion",
+  "Direction": "TC2SAP",
+  "Description": "StartTransferPackage",
+  "SchemaVersion": 211,
+  "Steps": [
+    {
+      "ID": "e9413736e18440d09cb2c48c3d1d824c",
+      "StepType": "ReadStep",
+      "Description": "Reads Teamcenter TransferPackage Data.\nInput is not needed in workflow execution, because a TcData array already exists. Otherwise it retrieves the TcData array using information from the \"TCObjectData\" data element.",
+      "Name": "Read TC TransferPackage",
+      "Procedure": "::T4X::PIPELINE::STEPS::readTCData",
+      "Group": "Teamcenter Steps",
+      "Critical": true,
+      "Resistant": false,
+      "ExecuteWhen": [],
+      "InputSchemaGenerationParameters": {},
+      "OutputSchemaGenerationParameters": {
+        "-TargetTypeName": "TransferPackage",
+        "-ProductKey": "T4ST",
+        "-Operation": "Update",
+        "-TransferType": "GENOBJ",
+        "+language": "en"
+      },
+      "Input": {
+        "DataSource": "Generic",
+        "RootDataElement": {
+          "Key": "TCObjectData",
+          "IsTable": false,
+          "DisplayName": "TCObjectData",
+          "Name": "TCObjectData",
+          "ParentKey": "",
+          "Description": "",
+          "Items": [
+            {
+              "Name": "TransferType",
+              "Type": "string",
+              "Nullable": true,
+              "DisplayName": "TransferType",
+              "Description": "GENOBJ, GENBOM, MM, ... The specific type of the transfer.",
+              "ParentKey": "TCObjectData",
+              "IsStatic": false
+            },
+            {
+              "Name": "TargetTypeName",
+              "Type": "string",
+              "Nullable": true,
+              "DisplayName": "TargetTypeName",
+              "Description": "The TargetTypeName of the transfer (as used in preferences). This is only useful for the generic TransferTypes. It defaults to the value provided during step generation.",
+              "ParentKey": "TCObjectData",
+              "IsStatic": false
+            },
+            {
+              "Name": "ProductKey",
+              "Type": "string",
+              "Nullable": true,
+              "DisplayName": "ProductKey",
+              "Description": "The AIG product name (e.g. T4S, T4EA, ...). It defaults to the value provided during step generation.",
+              "ParentKey": "TCObjectData",
+              "IsStatic": false
+            },
+            {
+              "Name": "object_tag",
+              "Type": "string",
+              "Nullable": false,
+              "DisplayName": "object_tag",
+              "Description": "The hexed PUID of the Teamcenter object to retrieve. It defaults to the value provided during step generation.",
+              "ParentKey": "TCObjectData",
+              "IsStatic": false
+            },
+            {
+              "Name": "BomLineTargetTypeName",
+              "Type": "string",
+              "Nullable": true,
+              "DisplayName": "BomLineTargetTypeName",
+              "Description": " Only if the TransferType is \"GENBOM\" then this parameter is required and the object\n    is assumed to be an item revision with a \"view\" BVR. If such a BVR does not exist, \n    then no TcData will be created and no error will be thrown (empty BOM).\n    It defaults to the value provided during step generation.",
+              "ParentKey": "TCObjectData",
+              "IsStatic": false
+            },
+            {
+              "Name": "args",
+              "Type": "string",
+              "Nullable": true,
+              "DisplayName": "args",
+              "Description": "Optional parameters for data extraction.",
+              "ParentKey": "TCObjectData",
+              "IsStatic": false
+            }
+          ]
+        }
+      },
+      "Output": {
+        "DataSource": "Teamcenter",
+        "RootDataElement": {
+          "Key": "TcData",
+          "IsTable": false,
+          "DisplayName": "TransferPackage_read",
+          "Name": "TcData",
+          "ParentKey": "",
+          "Description": "",
+          "Items": [
+            {
+              "Name": "TypeName",
+              "Type": "string",
+              "Nullable": true,
+              "DisplayName": "TypeName",
+              "Description": "",
+              "ParentKey": "TcData",
+              "IsStatic": false
+            },
+            {
+              "Key": "ItemInfo",
+              "IsTable": false,
+              "DisplayName": "ItemInfo",
+              "Name": "ItemInfo",
+              "ParentKey": "TcData",
+              "Description": "",
+              "Items": [
+                {
+                  "Name": "ObjectTagString",
+                  "Type": "string",
+                  "Nullable": true,
+                  "DisplayName": "ObjectTagString",
+                  "Description": "",
+                  "ParentKey": "TcData->ItemInfo",
+                  "IsStatic": false
+                },
+                {
+                  "Name": "TypeName",
+                  "Type": "string",
+                  "Nullable": true,
+                  "DisplayName": "TypeName",
+                  "Description": "",
+                  "ParentKey": "TcData->ItemInfo",
+                  "IsStatic": false
+                }
+              ]
+            },
+            {
+              "Key": "Workflow",
+              "IsTable": false,
+              "DisplayName": "Workflow",
+              "Name": "Workflow",
+              "ParentKey": "TcData",
+              "Description": "",
+              "Items": [
+                {
+                  "Key": "Argument",
+                  "IsTable": true,
+                  "DisplayName": "Argument",
+                  "Name": "Argument",
+                  "ParentKey": "TcData->Workflow",
+                  "Description": "",
+                  "Items": [
+                    {
+                      "Name": "Name",
+                      "Type": "string",
+                      "Nullable": true,
+                      "DisplayName": "Name",
+                      "Description": "",
+                      "ParentKey": "TcData->Workflow->Argument",
+                      "IsStatic": false
+                    },
+                    {
+                      "Name": "Value",
+                      "Type": "string",
+                      "Nullable": true,
+                      "DisplayName": "Value",
+                      "Description": "",
+                      "ParentKey": "TcData->Workflow->Argument",
+                      "IsStatic": false
+                    }
+                  ]
+                },
+                {
+                  "Name": "JobDescription",
+                  "Type": "string",
+                  "Nullable": true,
+                  "DisplayName": "JobDescription",
+                  "Description": "",
+                  "ParentKey": "TcData->Workflow",
+                  "IsStatic": false
+                },
+                {
+                  "Name": "JobName",
+                  "Type": "string",
+                  "Nullable": true,
+                  "DisplayName": "JobName",
+                  "Description": "",
+                  "ParentKey": "TcData->Workflow",
+                  "IsStatic": false
+                },
+                {
+                  "Name": "JobTag",
+                  "Type": "string",
+                  "Nullable": true,
+                  "DisplayName": "JobTag",
+                  "Description": "",
+                  "ParentKey": "TcData->Workflow",
+                  "IsStatic": false
+                },
+                {
+                  "Name": "RootTaskDescription",
+                  "Type": "string",
+                  "Nullable": true,
+                  "DisplayName": "RootTaskDescription",
+                  "Description": "",
+                  "ParentKey": "TcData->Workflow",
+                  "IsStatic": false
+                },
+                {
+                  "Name": "RootTaskName",
+                  "Type": "string",
+                  "Nullable": true,
+                  "DisplayName": "RootTaskName",
+                  "Description": "",
+                  "ParentKey": "TcData->Workflow",
+                  "IsStatic": false
+                },
+                {
+                  "Name": "RootTaskTag",
+                  "Type": "string",
+                  "Nullable": true,
+                  "DisplayName": "RootTaskTag",
+                  "Description": "",
+                  "ParentKey": "TcData->Workflow",
+                  "IsStatic": false
+                },
+                {
+                  "Name": "TaskDescription",
+                  "Type": "string",
+                  "Nullable": true,
+                  "DisplayName": "TaskDescription",
+                  "Description": "",
+                  "ParentKey": "TcData->Workflow",
+                  "IsStatic": false
+                },
+                {
+                  "Name": "TaskName",
+                  "Type": "string",
+                  "Nullable": true,
+                  "DisplayName": "TaskName",
+                  "Description": "",
+                  "ParentKey": "TcData->Workflow",
+                  "IsStatic": false
+                },
+                {
+                  "Name": "TaskTag",
+                  "Type": "string",
+                  "Nullable": true,
+                  "DisplayName": "TaskTag",
+                  "Description": "",
+                  "ParentKey": "TcData->Workflow",
+                  "IsStatic": false
+                },
+                {
+                  "Name": "Action",
+                  "Type": "string",
+                  "Nullable": true,
+                  "DisplayName": "Action",
+                  "Description": "",
+                  "ParentKey": "TcData->Workflow",
+                  "IsStatic": false
+                }
+              ]
+            },
+            {
+              "Key": "EPMTask",
+              "IsTable": false,
+              "DisplayName": "EPMTask",
+              "Name": "EPMTask",
+              "ParentKey": "TcData",
+              "Description": "",
+              "Items": [
+                {
+                  "Name": "object_name",
+                  "Type": "string",
+                  "Nullable": true,
+                  "DisplayName": "Name",
+                  "Description": "",
+                  "ParentKey": "TcData->EPMTask",
+                  "IsStatic": false
+                },
+                {
+                  "Name": "object_tag",
+                  "Type": "string",
+                  "Nullable": true,
+                  "DisplayName": "PUID (HEX16, \\\"object_tag\\\")",
+                  "Description": "",
+                  "ParentKey": "TcData->EPMTask",
+                  "IsStatic": false
+                },
+                {
+                  "Name": "parent_tag",
+                  "Type": "string",
+                  "Nullable": true,
+                  "DisplayName": "PUID of extraction parent",
+                  "Description": "",
+                  "ParentKey": "TcData->EPMTask",
+                  "IsStatic": false
+                },
+                {
+                  "Key": "fnd0RootTask",
+                  "IsTable": false,
+                  "DisplayName": "fnd0RootTask",
+                  "Name": "fnd0RootTask",
+                  "ParentKey": "TcData->EPMTask",
+                  "Description": "",
+                  "Items": [
+                    {
+                      "Key": "EPMTask",
+                      "IsTable": true,
+                      "DisplayName": "EPMTask",
+                      "Name": "EPMTask",
+                      "ParentKey": "TcData->EPMTask->fnd0RootTask",
+                      "Description": "",
+                      "Items": [
+                        {
+                          "Name": "object_name",
+                          "Type": "string",
+                          "Nullable": true,
+                          "DisplayName": "Name",
+                          "Description": "",
+                          "ParentKey": "TcData->EPMTask->fnd0RootTask->EPMTask",
+                          "IsStatic": false
+                        },
+                        {
+                          "Name": "object_tag",
+                          "Type": "string",
+                          "Nullable": true,
+                          "DisplayName": "PUID (HEX16, \\\"object_tag\\\")",
+                          "Description": "",
+                          "ParentKey": "TcData->EPMTask->fnd0RootTask->EPMTask",
+                          "IsStatic": false
+                        },
+                        {
+                          "Name": "parent_tag",
+                          "Type": "string",
+                          "Nullable": true,
+                          "DisplayName": "PUID of extraction parent",
+                          "Description": "",
+                          "ParentKey": "TcData->EPMTask->fnd0RootTask->EPMTask",
+                          "IsStatic": false
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "ID": "6a875db72073cd0c2158d462d216d88a",
+      "StepType": "MapStep",
+      "Description": "Allows mappings of fields from one data element to another. \nIt can map between fields in simple data elements or fields in table data elements (loop field mapping).  Transformations can be applied to field mappings by using functions.",
+      "Name": "Map Step",
+      "Procedure": "::PLBD::MAPPER::STEPS::apply_mapping",
+      "Group": "Mapping Steps",
+      "Critical": true,
+      "Resistant": false,
+      "ExecuteWhen": [],
+      "InputSchemaGenerationParameters": {},
+      "OutputSchemaGenerationParameters": {},
+      "MappingDefinition": [
+        {
+          "SourceType": "Attribute",
+          "FX": [],
+          "SourceAttribute": {
+            "Name": "JobTag",
+            "Type": "string",
+            "Nullable": true,
+            "DisplayName": "JobTag",
+            "Description": "",
+            "ParentKey": "TcData->Workflow",
+            "IsStatic": false
+          },
+          "TargetAttribute": {
+            "Name": "AliasId",
+            "Type": "string",
+            "Nullable": true,
+            "DisplayName": "AliasId",
+            "Description": "",
+            "ParentKey": "PackageInformation",
+            "IsStatic": false
+          }
+        },
+        {
+          "SourceType": "Attribute",
+          "FX": [],
+          "SourceAttribute": {
+            "IsStatic": true,
+            "Name": "LOGON_OK",
+            "DisplayName": "LOGON_OK",
+            "ParentKey": "Static Values"
+          },
+          "TargetAttribute": {
+            "Name": "EALogonStatus",
+            "Type": "string",
+            "Nullable": true,
+            "DisplayName": "EALogonStatus",
+            "Description": "EALogonStatus",
+            "ParentKey": "Input",
+            "IsStatic": false
+          }
+        }
+      ]
+    },
+    {
+      "ID": "24da5c596de5e7390e3a22e989d26c57",
+      "StepType": "FunctionalStep",
+      "Description": "This step generates a new transfer package",
+      "Name": "Start Transfer Package",
+      "Procedure": "::T4ST::OBJECT::PACKAGING::startTransferPackage",
+      "Group": "Predefined Steps",
+      "Critical": true,
+      "Resistant": false,
+      "ExecuteWhen": [],
+      "InputSchemaGenerationParameters": {},
+      "OutputSchemaGenerationParameters": {},
+      "Input": {
+        "DataSource": "Generic",
+        "RootDataElement": {
+          "Key": "PackageInformation",
+          "IsTable": false,
+          "DisplayName": "PackageInformation",
+          "Name": "PackageInformation",
+          "ParentKey": "",
+          "Description": "",
+          "Items": [
+            {
+              "Name": "AliasId",
+              "Type": "string",
+              "Nullable": true,
+              "DisplayName": "AliasId",
+              "Description": "",
+              "ParentKey": "PackageInformation",
+              "IsStatic": false
+            }
+          ]
+        }
+      },
+      "Output": {
+        "DataSource": "Generic",
+        "RootDataElement": {
+          "Key": "PackageInformation",
+          "IsTable": false,
+          "DisplayName": "PackageInformation",
+          "Name": "PackageInformation",
+          "ParentKey": "",
+          "Description": "",
+          "Items": [
+            {
+              "Name": "PackageId",
+              "Type": "string",
+              "Nullable": false,
+              "DisplayName": "PackageId",
+              "Description": "",
+              "ParentKey": "PackageInformation",
+              "IsStatic": false
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "DomainModel": [
+    {
+      "DataSource": "Generic",
+      "IsEditable": true,
+      "RootDataElement": {
+        "Key": "Input",
+        "IsTable": false,
+        "DisplayName": "Input",
+        "Name": "Input",
+        "ParentKey": "",
+        "Description": "cccc",
+        "Items": [
+          {
+            "Name": "EALogonStatus",
+            "Type": "string",
+            "Nullable": true,
+            "DisplayName": "EALogonStatus",
+            "Description": "EALogonStatus",
+            "ParentKey": "Input",
+            "IsStatic": false
+          }
+        ]
+      }
+    }
+  ],
+  "PipelineInputs": [],
+  "PipelineOutputs": []
+}

@@ -1,0 +1,13 @@
+ <aw-command-panel caption="i18n.CreateParameterDesriptor" aw-init="data.activeView='Mtw0ShowAddMetaSingleParameter'">
+    <aw-panel-body >
+        <aw-listbox prop="data.category" list="data.categories.dbValue"></aw-listbox>
+        <aw-listbox prop="data.proptype" list="data.proptypes.dbValue"></aw-listbox>        
+        <aw-textbox prop="data.name"></aw-textbox>
+        <aw-textbox prop="data.realName"></aw-textbox>
+        <aw-listbox prop="data.dimension" list="data.dimensions.dbValue"></aw-listbox>
+        <!--aw-listbox prop="data.unit" list="data.units.dbValue"-->
+    </aw-panel-body>
+    <aw-panel-footer> 
+        <aw-button action="createMetaSingleParameter" visible-when="conditions.canCreateSingleMetaParam"><aw-i18n>i18n.AddParameter</aw-i18n></aw-button>
+    </aw-panel-footer>   
+</aw-command-panel>

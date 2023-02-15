@@ -1,0 +1,72 @@
+Test User MCAD|testu1||MCAD.Engineering.Internal.Stadler|Designer|defaultgroup|MCAD.Engineering.Internal.Stadler|licenselevel|author
+Test User MCAD|testu1||MCAD.Engineering.Internal.Stadler|Reviewer
+Test User MCAD|testu1||MCAD.Engineering.Internal.Stadler|Approver
+Test User ECAD|testu2||ECAD.Engineering.Internal.Stadler|Designer|defaultgroup|ECAD.Engineering.Internal.Stadler|licenselevel|author
+Test User ECAD|testu2||ECAD.Engineering.Internal.Stadler|Reviewer
+Test User ECAD|testu2||ECAD.Engineering.Internal.Stadler|Approver
+Test User Software|testu3||Software.Engineering.Internal.Stadler|Designer|defaultgroup|Software.Engineering.Internal.Stadler|licenselevel|author
+Test User Software|testu3||Software.Engineering.Internal.Stadler|Reviewer
+Test User Software|testu3||Software.Engineering.Internal.Stadler|Approver
+Test User Requirements|testu4||Requirements.Engineering.Internal.Stadler|Designer|defaultgroup|Requirements.Engineering.Internal.Stadler|licenselevel|author
+Test User Requirements|testu4||Requirements.Engineering.Internal.Stadler|Reviewer
+Test User Requirements|testu4||Requirements.Engineering.Internal.Stadler|Approver
+Test User Manufacturing|testu5||Manufacturing.Internal.Stadler|Designer|defaultgroup|Manufacturing.Internal.Stadler|licenselevel|author
+Test User Manufacturing|testu5||Manufacturing.Internal.Stadler|Consumer
+Test User Change Management|testu6||Change Management.Global.Stadler|Change Manager|defaultgroup|Change Management.Global.Stadler|licenselevel|author
+Test User Project Management|testu7||Project Management.Internal.Stadler|Designer|defaultgroup|Project Management.Internal.Stadler|licenselevel|author
+Test User Project Management|testu7||Project Management.Internal.Stadler|Reviewer
+Test User Project Management|testu7||Project Management.Internal.Stadler|Approver
+Test User Services|testu8||Services.Global.Stadler|Designer|defaultgroup|Services.Global.Stadler|licenselevel|author
+Test User Services|testu8||Services.Global.Stadler|Consumer
+Test User R&D|testu9||R&D.Global.Stadler|Designer|defaultgroup|R&D.Global.Stadler|licenselevel|author
+Test User R&D|testu9||R&D.Global.Stadler|Reviewer
+Test User R&D|testu9||R&D.Global.Stadler|Approver
+Test User Bid Packaging|testu10||Bid Packaging.Global.Stadler|Designer|defaultgroup|Bid Packaging.Global.Stadler|licenselevel|author
+Test User Bid Packaging|testu10||Bid Packaging.Global.Stadler|Reviewer
+Test User Bid Packaging|testu10||Bid Packaging.Global.Stadler|Approver
+Test User MDM|testu11||MDM.Global.Stadler|Designer|defaultgroup|MDM.Global.Stadler|licenselevel|author
+Test User MDM|testu11||MDM.Global.Stadler|E3 Admin
+Test User Welding|testu12||Welding.Special Processes.Global.Stadler|Reviewer|defaultgroup|Welding.Special Processes.Global.Stadler|licenselevel|author
+Test User Structural|testu13||Structural.Special Processes.Global.Stadler|Reviewer|defaultgroup|Structural.Special Processes.Global.Stadler|licenselevel|author
+Test User Adhesive Bonding|testu14||Adhesive Bonding.Special Processes.Global.Stadler|Reviewer|defaultgroup|Adhesive Bonding.Special Processes.Global.Stadler|licenselevel|author
+Test User Business Partner|testu15||Business Partner.External.Stadler|Designer|defaultgroup|Business Partner.External.Stadler|licenselevel|author
+Test User Business Partner|testu15||Business Partner.External.Stadler|Reviewer
+Test User Engineering Supplier|testu16||Engineering Supplier.External.Stadler|Designer|defaultgroup|Engineering Supplier.External.Stadler|licenselevel|author
+Test User Engineering Supplier|testu16||Engineering Supplier.External.Stadler|Reviewer
+Test User Material Management|testu17||Material Management.Global.Stadler|Material Analyst|defaultgroup|Material Management.Global.Stadler|licenselevel|author
+Test User General|testu18||Material Management.Global.Stadler|Material Analyst|
+Test User General|testu18||R&D.Global.Stadler|Designer
+Test User General|testu18||R&D.Global.Stadler|Reviewer
+Test User General|testu18||R&D.Global.Stadler|Approver
+Test User General|testu18||Bid Packaging.Global.Stadler|Designer
+Test User General|testu18||Bid Packaging.Global.Stadler|Reviewer
+Test User General|testu18||Bid Packaging.Global.Stadler|Approver
+Test User General|testu18||MDM.Global.Stadler|Designer
+Test User General|testu18||MDM.Global.Stadler|E3 Admin
+Test User General|testu18||Change Management.Global.Stadler|Change Manager
+Test User General|testu18||Services.Global.Stadler|Designer
+Test User General|testu18||Services.Global.Stadler|Consumer
+Test User General|testu18||Welding.Special Processes.Global.Stadler|Reviewer
+Test User General|testu18||Structural.Special Processes.Global.Stadler|Reviewer
+Test User General|testu18||Adhesive Bonding.Special Processes.Global.Stadler|Reviewer
+Test User General|testu18||Business Partner.External.Stadler|Designer
+Test User General|testu18||Business Partner.External.Stadler|Reviewer
+Test User General|testu18||Engineering Supplier.External.Stadler|Designer
+Test User General|testu18||Engineering Supplier.External.Stadler|Reviewer
+Test User General|testu18||Project Management.Internal.Stadler|Designer
+Test User General|testu18||Project Management.Internal.Stadler|Reviewer
+Test User General|testu18||Project Management.Internal.Stadler|Approver
+Test User General|testu18||Manufacturing.Internal.Stadler|Designer
+Test User General|testu18||Manufacturing.Internal.Stadler|Consumer
+Test User General|testu18||MCAD.Engineering.Internal.Stadler|Designer
+Test User General|testu18||MCAD.Engineering.Internal.Stadler|Reviewer
+Test User General|testu18||MCAD.Engineering.Internal.Stadler|Approver
+Test User General|testu18||ECAD.Engineering.Internal.Stadler|Designer|defaultgroup|MCAD.Engineering.Internal.Stadler|licenselevel|author
+Test User General|testu18||ECAD.Engineering.Internal.Stadler|Reviewer
+Test User General|testu18||ECAD.Engineering.Internal.Stadler|Approver
+Test User General|testu18||Software.Engineering.Internal.Stadler|Designer
+Test User General|testu18||Software.Engineering.Internal.Stadler|Reviewer
+Test User General|testu18||Software.Engineering.Internal.Stadler|Approver
+Test User General|testu18||Requirements.Engineering.Internal.Stadler|Designer
+Test User General|testu18||Requirements.Engineering.Internal.Stadler|Reviewer
+Test User General|testu18||Requirements.Engineering.Internal.Stadler|Approver

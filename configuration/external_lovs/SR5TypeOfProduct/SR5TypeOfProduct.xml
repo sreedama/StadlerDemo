@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<TcBusinessData xmlns="http://teamcenter.com/BusinessModel/TcBusinessData" batchXSDVersion="1.0" Date="Mon Sep 28 09:24:15 AM 2015">
+  <Add>
+  </Add>
+  <Change>
+      <TcLOV name="SR5TypeOfProduct" lovType="ListOfValuesString" usage="Exhaustive" description="" isManagedExternally="true">
+          <TcLOVValue value="SMILE" description="" conditionName="isTrue"/>
+          <TcLOVValue value="FLIRT" description="" conditionName="isTrue"/>
+          <TcLOVValue value="WINK" description="" conditionName="isTrue"/>
+          <TcLOVValue value="KISS" description="" conditionName="isTrue"/>
+          <TcLOVValue value="METRO" description="" conditionName="isTrue"/>
+          <TcLOVValue value="TINA" description="" conditionName="isTrue"/>
+          <TcLOVValue value="TRAMLINK" description="" conditionName="isTrue"/>
+          <TcLOVValue value="TANGO" description="" conditionName="isTrue"/>
+          <TcLOVValue value="VARIOBAHN" description="" conditionName="isTrue"/>
+          <TcLOVValue value="CITYLINK" description="" conditionName="isTrue"/>
+          <TcLOVValue value="METELITSA" description="" conditionName="isTrue"/>
+          <TcLOVValue value="SPATZ" description="" conditionName="isTrue"/>
+          <TcLOVValue value="KOMET" description="" conditionName="isTrue"/>
+          <TcLOVValue value="GTW" description="" conditionName="isTrue"/>
+          <TcLOVValue value="REGIO-SHUTTLE" description="" conditionName="isTrue"/>
+          <TcLOVValue value="EURO3000" description="" conditionName="isTrue"/>
+          <TcLOVValue value="EURO4000" description="" conditionName="isTrue"/>
+          <TcLOVValue value="EUROLIGHT" description="" conditionName="isTrue"/>
+          <TcLOVValue value="EURODUAL" description="" conditionName="isTrue"/>
+          <TcLOVValue value="TAILOR-MADE" description="" conditionName="isTrue"/>
+      </TcLOV>
+  </Change>
+</TcBusinessData>

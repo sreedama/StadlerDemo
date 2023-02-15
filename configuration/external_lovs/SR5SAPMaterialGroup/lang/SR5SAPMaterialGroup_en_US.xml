@@ -1,0 +1,439 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<TcBusinessDataLocalization xmlns="http://teamcenter.com/BusinessModel/TcBusinessDataLocalization" batchXSDVersion="1.0" Date="Mon Sep 28 09:24:15 AM 2015">
+  <Add>
+    <key locale="en_US" id="LOVValue{::}SR5SAPMaterialGroup{::}1001" status="Approved">1001 - Air dryer</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5SAPMaterialGroup{::}1001" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5SAPMaterialGroup{::}1002" status="Approved">1002 - Air duct</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5SAPMaterialGroup{::}1002" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5SAPMaterialGroup{::}1003" status="Approved">1003 - Air filter</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5SAPMaterialGroup{::}1003" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5SAPMaterialGroup{::}1004" status="Approved">1004 - Alternator / Generator</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5SAPMaterialGroup{::}1004" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5SAPMaterialGroup{::}1005" status="Approved">1005 - Auto. selective door operating system</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5SAPMaterialGroup{::}1005" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5SAPMaterialGroup{::}1006" status="Approved">1006 - Automatic front coupler</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5SAPMaterialGroup{::}1006" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5SAPMaterialGroup{::}1007" status="Approved">1007 - Automatic train control system </key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5SAPMaterialGroup{::}1007" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5SAPMaterialGroup{::}1008" status="Approved">1008 - Auxiliary converter</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5SAPMaterialGroup{::}1008" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5SAPMaterialGroup{::}1009" status="Approved">1009 - Auxiliary transformer</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5SAPMaterialGroup{::}1009" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5SAPMaterialGroup{::}1010" status="Approved">1010 - Battery</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5SAPMaterialGroup{::}1010" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5SAPMaterialGroup{::}1011" status="Approved">1011 - Battery charger</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5SAPMaterialGroup{::}1011" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5SAPMaterialGroup{::}1012" status="Approved">1012 - Bioreactor</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5SAPMaterialGroup{::}1012" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5SAPMaterialGroup{::}1013" status="Approved">1013 - Bistro electronical equipment</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5SAPMaterialGroup{::}1013" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5SAPMaterialGroup{::}1014" status="Approved">1014 - Bistro furniture</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5SAPMaterialGroup{::}1014" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5SAPMaterialGroup{::}1015" status="Approved">1015 - Blowers</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5SAPMaterialGroup{::}1015" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5SAPMaterialGroup{::}1016" status="Approved">1016 - Bogie</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5SAPMaterialGroup{::}1016" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5SAPMaterialGroup{::}1017" status="Approved">1017 - Brake control</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5SAPMaterialGroup{::}1017" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5SAPMaterialGroup{::}1018" status="Approved">1018 - Brake resistors</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5SAPMaterialGroup{::}1018" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5SAPMaterialGroup{::}1019" status="Approved">1019 - Brake system</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5SAPMaterialGroup{::}1019" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5SAPMaterialGroup{::}1020" status="Approved">1020 - Buffer</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5SAPMaterialGroup{::}1020" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5SAPMaterialGroup{::}1021" status="Approved">1021 - Bulk cables</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5SAPMaterialGroup{::}1021" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5SAPMaterialGroup{::}1022" status="Approved">1022 - Bulk head panelling</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5SAPMaterialGroup{::}1022" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5SAPMaterialGroup{::}1023" status="Approved">1023 - Buttons</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5SAPMaterialGroup{::}1023" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5SAPMaterialGroup{::}1024" status="Approved">1024 - Cable duct</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5SAPMaterialGroup{::}1024" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5SAPMaterialGroup{::}1025" status="Approved">1025 - Cable glands</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5SAPMaterialGroup{::}1025" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5SAPMaterialGroup{::}1026" status="Approved">1026 - Cable ties</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5SAPMaterialGroup{::}1026" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5SAPMaterialGroup{::}1027" status="Approved">1027 - Cables preassembled</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5SAPMaterialGroup{::}1027" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5SAPMaterialGroup{::}1028" status="Approved">1028 - Cantilever</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5SAPMaterialGroup{::}1028" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5SAPMaterialGroup{::}1029" status="Approved">1029 - Car body</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5SAPMaterialGroup{::}1029" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5SAPMaterialGroup{::}1030" status="Approved">1030 - Catalog dampers, buffers and springs</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5SAPMaterialGroup{::}1030" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5SAPMaterialGroup{::}1031" status="Approved">1031 - Ceiling system driver's cab</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5SAPMaterialGroup{::}1031" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5SAPMaterialGroup{::}1032" status="Approved">1032 - Ceiling system passenger compartment</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5SAPMaterialGroup{::}1032" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5SAPMaterialGroup{::}1033" status="Approved">1033 - Circuit breakers, contactors, fuses</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5SAPMaterialGroup{::}1033" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5SAPMaterialGroup{::}1034" status="Approved">1034 - Clamps and flanges</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5SAPMaterialGroup{::}1034" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5SAPMaterialGroup{::}1035" status="Approved">1035 - Compressed air tank</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5SAPMaterialGroup{::}1035" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5SAPMaterialGroup{::}1036" status="Approved">1036 - Compressor</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5SAPMaterialGroup{::}1036" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5SAPMaterialGroup{::}1037" status="Approved">1037 - Connectors</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5SAPMaterialGroup{::}1037" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5SAPMaterialGroup{::}1038" status="Approved">1038 - Control panel equipped</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5SAPMaterialGroup{::}1038" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5SAPMaterialGroup{::}1039" status="Approved">1039 - Control panel plane</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5SAPMaterialGroup{::}1039" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5SAPMaterialGroup{::}1040" status="Approved">1040 - Cooling system</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5SAPMaterialGroup{::}1040" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5SAPMaterialGroup{::}1041" status="Approved">1041 - Current / voltage converter</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5SAPMaterialGroup{::}1041" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5SAPMaterialGroup{::}1042" status="Approved">1042 - Dead man pedal and foot rest</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5SAPMaterialGroup{::}1042" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5SAPMaterialGroup{::}1043" status="Approved">1043 - Diagnostic display</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5SAPMaterialGroup{::}1043" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5SAPMaterialGroup{::}1044" status="Approved">1044 - Diesel accessories</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5SAPMaterialGroup{::}1044" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5SAPMaterialGroup{::}1045" status="Approved">1045 - Diesel engine</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5SAPMaterialGroup{::}1045" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5SAPMaterialGroup{::}1046" status="Approved">1046 - Diesel preheater</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5SAPMaterialGroup{::}1046" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5SAPMaterialGroup{::}1047" status="Approved">1047 - Diesel tank</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5SAPMaterialGroup{::}1047" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5SAPMaterialGroup{::}1048" status="Approved">1048 - Door entrance system</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5SAPMaterialGroup{::}1048" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5SAPMaterialGroup{::}1049" status="Approved">1049 - Door system internal</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5SAPMaterialGroup{::}1049" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5SAPMaterialGroup{::}1050" status="Approved">1050 - Draw gear</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5SAPMaterialGroup{::}1050" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5SAPMaterialGroup{::}1051" status="Approved">1051 - Draw hook</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5SAPMaterialGroup{::}1051" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5SAPMaterialGroup{::}1052" status="Approved">1052 - Drawing based piping</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5SAPMaterialGroup{::}1052" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5SAPMaterialGroup{::}1053" status="Approved">1053 - Driver assistance system, remote control</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5SAPMaterialGroup{::}1053" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5SAPMaterialGroup{::}1054" status="Approved">1054 - Driver's cab access door</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5SAPMaterialGroup{::}1054" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5SAPMaterialGroup{::}1055" status="Approved">1055 - Driver's seat</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5SAPMaterialGroup{::}1055" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5SAPMaterialGroup{::}1056" status="Approved">1056 - Earthing switch</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5SAPMaterialGroup{::}1056" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5SAPMaterialGroup{::}1057" status="Approved">1057 - Electric item mechanic, cable protection</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5SAPMaterialGroup{::}1057" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5SAPMaterialGroup{::}1058" status="Approved">1058 - Emergency / adapter coupler</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5SAPMaterialGroup{::}1058" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5SAPMaterialGroup{::}1059" status="Approved">1059 - Energy absorbing device</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5SAPMaterialGroup{::}1059" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5SAPMaterialGroup{::}1060" status="Approved">1060 - Energy measurement</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5SAPMaterialGroup{::}1060" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5SAPMaterialGroup{::}1061" status="Approved">1061 - Exhaust system</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5SAPMaterialGroup{::}1061" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5SAPMaterialGroup{::}1062" status="Approved">1062 - Fastening elements</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5SAPMaterialGroup{::}1062" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5SAPMaterialGroup{::}1063" status="Approved">1063 - Fastening rails</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5SAPMaterialGroup{::}1063" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5SAPMaterialGroup{::}1064" status="Approved">1064 - Fiberglass (GFRP) structures</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5SAPMaterialGroup{::}1064" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5SAPMaterialGroup{::}1065" status="Approved">1065 - Fire detector and extinguishing system</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5SAPMaterialGroup{::}1065" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5SAPMaterialGroup{::}1066" status="Approved">1066 - Fittings </key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5SAPMaterialGroup{::}1066" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5SAPMaterialGroup{::}1067" status="Approved">1067 - Floor covering</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5SAPMaterialGroup{::}1067" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5SAPMaterialGroup{::}1068" status="Approved">1068 - Folding bellows various</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5SAPMaterialGroup{::}1068" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5SAPMaterialGroup{::}1069" status="Approved">1069 - Front lighting</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5SAPMaterialGroup{::}1069" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5SAPMaterialGroup{::}1070" status="Approved">1070 - Fuel level</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5SAPMaterialGroup{::}1070" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5SAPMaterialGroup{::}1071" status="Approved">1071 - Fuel level gauge</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5SAPMaterialGroup{::}1071" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5SAPMaterialGroup{::}1072" status="Approved">1072 - Fuel pumps</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5SAPMaterialGroup{::}1072" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5SAPMaterialGroup{::}1073" status="Approved">1073 - Gangway</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5SAPMaterialGroup{::}1073" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5SAPMaterialGroup{::}1074" status="Approved">1074 - Gaskets, edge protection, rubber profile</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5SAPMaterialGroup{::}1074" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5SAPMaterialGroup{::}1075" status="Approved">1075 - Glas partition</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5SAPMaterialGroup{::}1075" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5SAPMaterialGroup{::}1076" status="Approved">1076 - GRP front and front skirt</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5SAPMaterialGroup{::}1076" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5SAPMaterialGroup{::}1077" status="Approved">1077 - Handrails interior</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5SAPMaterialGroup{::}1077" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5SAPMaterialGroup{::}1078" status="Approved">1078 - Head end power trafo</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5SAPMaterialGroup{::}1078" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5SAPMaterialGroup{::}1079" status="Approved">1079 - Heater and convector</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5SAPMaterialGroup{::}1079" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5SAPMaterialGroup{::}1080" status="Approved">1080 - High speed and vacuum circuit breaker</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5SAPMaterialGroup{::}1080" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5SAPMaterialGroup{::}1081" status="Approved">1081 - Hoses</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5SAPMaterialGroup{::}1081" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5SAPMaterialGroup{::}1082" status="Approved">1082 - HVAC driver's cab</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5SAPMaterialGroup{::}1082" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5SAPMaterialGroup{::}1083" status="Approved">1083 - HVAC passenger compartment</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5SAPMaterialGroup{::}1083" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5SAPMaterialGroup{::}1084" status="Approved">1084 - Hydrogen power unit</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5SAPMaterialGroup{::}1084" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5SAPMaterialGroup{::}1085" status="Approved">1085 - IMU </key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5SAPMaterialGroup{::}1085" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5SAPMaterialGroup{::}1086" status="Approved">1086 - Inertial filters</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5SAPMaterialGroup{::}1086" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5SAPMaterialGroup{::}1087" status="Approved">1087 - Insulation</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5SAPMaterialGroup{::}1087" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5SAPMaterialGroup{::}1088" status="Approved">1088 - Intercar articulation system, dampers</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5SAPMaterialGroup{::}1088" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5SAPMaterialGroup{::}1089" status="Approved">1089 - Intercar couplers</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5SAPMaterialGroup{::}1089" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5SAPMaterialGroup{::}1090" status="Approved">1090 - Interior others</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5SAPMaterialGroup{::}1090" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5SAPMaterialGroup{::}1091" status="Approved">1091 - Intermodal transport control system</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5SAPMaterialGroup{::}1091" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5SAPMaterialGroup{::}1092" status="Approved">1092 - IT ethernet network (IT-NET)</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5SAPMaterialGroup{::}1092" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5SAPMaterialGroup{::}1093" status="Approved">1093 - Jumper cable</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5SAPMaterialGroup{::}1093" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5SAPMaterialGroup{::}1094" status="Approved">1094 - Lift system</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5SAPMaterialGroup{::}1094" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5SAPMaterialGroup{::}1095" status="Approved">1095 - Lighting exterior exkl. front</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5SAPMaterialGroup{::}1095" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5SAPMaterialGroup{::}1096" status="Approved">1096 - Lighting interior</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5SAPMaterialGroup{::}1096" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5SAPMaterialGroup{::}1097" status="Approved">1097 - Lock, hinges and latches</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5SAPMaterialGroup{::}1097" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5SAPMaterialGroup{::}1098" status="Approved">1098 - Locking system</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5SAPMaterialGroup{::}1098" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5SAPMaterialGroup{::}1099" status="Approved">1099 - Luggage rack</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5SAPMaterialGroup{::}1099" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5SAPMaterialGroup{::}1100" status="Approved">1100 - Machine room framework and panelling</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5SAPMaterialGroup{::}1100" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5SAPMaterialGroup{::}1101" status="Approved">1101 - Main transformer</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5SAPMaterialGroup{::}1101" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5SAPMaterialGroup{::}1102" status="Approved">1102 - Manning</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5SAPMaterialGroup{::}1102" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5SAPMaterialGroup{::}1103" status="Approved">1103 - Manometers</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5SAPMaterialGroup{::}1103" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5SAPMaterialGroup{::}1104" status="Approved">1104 - Master controller</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5SAPMaterialGroup{::}1104" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5SAPMaterialGroup{::}1105" status="Approved">1105 - Mechanical processing aluminium</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5SAPMaterialGroup{::}1105" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5SAPMaterialGroup{::}1106" status="Approved">1106 - Mechanical processing steel</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5SAPMaterialGroup{::}1106" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5SAPMaterialGroup{::}1107" status="Approved">1107 - Mechanical standard part various</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5SAPMaterialGroup{::}1107" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5SAPMaterialGroup{::}1108" status="Approved">1108 - Miscellaneous equipment</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5SAPMaterialGroup{::}1108" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5SAPMaterialGroup{::}1109" status="Approved">1109 - Mobile Repeater System</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5SAPMaterialGroup{::}1109" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5SAPMaterialGroup{::}1110" status="Approved">1110 - Obstacle deflector</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5SAPMaterialGroup{::}1110" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5SAPMaterialGroup{::}1111" status="Approved">1111 - On-board power supply</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5SAPMaterialGroup{::}1111" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5SAPMaterialGroup{::}1112" status="Approved">1112 - Outsourcing of surface treatment</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5SAPMaterialGroup{::}1112" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5SAPMaterialGroup{::}1113" status="Approved">1113 - Painting and coating</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5SAPMaterialGroup{::}1113" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5SAPMaterialGroup{::}1114" status="Approved">1114 - Panelling aluminium</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5SAPMaterialGroup{::}1114" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5SAPMaterialGroup{::}1115" status="Approved">1115 - Panelling fiberglass (GFRP)</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5SAPMaterialGroup{::}1115" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5SAPMaterialGroup{::}1116" status="Approved">1116 - Pantograph</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5SAPMaterialGroup{::}1116" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5SAPMaterialGroup{::}1117" status="Approved">1117 - Partition exkl. glass</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5SAPMaterialGroup{::}1117" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5SAPMaterialGroup{::}1118" status="Approved">1118 - Passenger counting system (PCS)</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5SAPMaterialGroup{::}1118" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5SAPMaterialGroup{::}1119" status="Approved">1119 - Passenger information system (PIS)</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5SAPMaterialGroup{::}1119" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5SAPMaterialGroup{::}1120" status="Approved">1120 - Passenger internet system (PWLAN)</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5SAPMaterialGroup{::}1120" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5SAPMaterialGroup{::}1121" status="Approved">1121 - Pictogramme and labelling</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5SAPMaterialGroup{::}1121" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5SAPMaterialGroup{::}1122" status="Approved">1122 - Pneumatic small parts</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5SAPMaterialGroup{::}1122" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5SAPMaterialGroup{::}1123" status="Approved">1123 - Radar</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5SAPMaterialGroup{::}1123" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5SAPMaterialGroup{::}1124" status="Approved">1124 - Rear view mirror</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5SAPMaterialGroup{::}1124" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5SAPMaterialGroup{::}1125" status="Approved">1125 - Rear-view system (RVS)</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5SAPMaterialGroup{::}1125" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5SAPMaterialGroup{::}1126" status="Approved">1126 - Relays</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5SAPMaterialGroup{::}1126" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5SAPMaterialGroup{::}1127" status="Approved">1127 - Roof cover</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5SAPMaterialGroup{::}1127" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5SAPMaterialGroup{::}1128" status="Approved">1128 - Sanding equipment</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5SAPMaterialGroup{::}1128" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5SAPMaterialGroup{::}1129" status="Approved">1129 - Sandwich and aluminium floor</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5SAPMaterialGroup{::}1129" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5SAPMaterialGroup{::}1130" status="Approved">1130 - Screw coupler</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5SAPMaterialGroup{::}1130" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5SAPMaterialGroup{::}1131" status="Approved">1131 - Seating passenger compartment</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5SAPMaterialGroup{::}1131" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5SAPMaterialGroup{::}1132" status="Approved">1132 - Sensors</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5SAPMaterialGroup{::}1132" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5SAPMaterialGroup{::}1133" status="Approved">1133 - Shock absorbing elements diesel engine</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5SAPMaterialGroup{::}1133" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5SAPMaterialGroup{::}1134" status="Approved">1134 - Signalhorn</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5SAPMaterialGroup{::}1134" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5SAPMaterialGroup{::}1135" status="Approved">1135 - Sliding and folding step</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5SAPMaterialGroup{::}1135" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5SAPMaterialGroup{::}1136" status="Approved">1136 - Speed measurement system</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5SAPMaterialGroup{::}1136" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5SAPMaterialGroup{::}1137" status="Approved">1137 - Stairs</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5SAPMaterialGroup{::}1137" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5SAPMaterialGroup{::}1138" status="Approved">1138 - Surge arrestor</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5SAPMaterialGroup{::}1138" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5SAPMaterialGroup{::}1139" status="Approved">1139 - Switches</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5SAPMaterialGroup{::}1139" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5SAPMaterialGroup{::}1140" status="Approved">1140 - Tables</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5SAPMaterialGroup{::}1140" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5SAPMaterialGroup{::}1141" status="Approved">1141 - Tachymeter and event recorder system</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5SAPMaterialGroup{::}1141" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5SAPMaterialGroup{::}1142" status="Approved">1142 - Terminal block</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5SAPMaterialGroup{::}1142" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5SAPMaterialGroup{::}1143" status="Approved">1143 - Ticket validator / ticket machine</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5SAPMaterialGroup{::}1143" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5SAPMaterialGroup{::}1144" status="Approved">1144 - Toilet system / wet cells</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5SAPMaterialGroup{::}1144" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5SAPMaterialGroup{::}1145" status="Approved">1145 - Traction battery</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5SAPMaterialGroup{::}1145" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5SAPMaterialGroup{::}1146" status="Approved">1146 - Traction converter</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5SAPMaterialGroup{::}1146" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5SAPMaterialGroup{::}1147" status="Approved">1147 - Traction motor</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5SAPMaterialGroup{::}1147" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5SAPMaterialGroup{::}1148" status="Approved">1148 - Traction motor incl. gearbox</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5SAPMaterialGroup{::}1148" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5SAPMaterialGroup{::}1149" status="Approved">1149 - Train Control and Monitoring System TCMS</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5SAPMaterialGroup{::}1149" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5SAPMaterialGroup{::}1150" status="Approved">1150 - Train radio</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5SAPMaterialGroup{::}1150" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5SAPMaterialGroup{::}1151" status="Approved">1151 - Train wayside control (AWC)</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5SAPMaterialGroup{::}1151" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5SAPMaterialGroup{::}1152" status="Approved">1152 - Video surveillance system (VSS)</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5SAPMaterialGroup{::}1152" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5SAPMaterialGroup{::}1153" status="Approved">1153 - Welded sheet metal structures</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5SAPMaterialGroup{::}1153" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5SAPMaterialGroup{::}1154" status="Approved">1154 - Welding wire</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5SAPMaterialGroup{::}1154" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5SAPMaterialGroup{::}1155" status="Approved">1155 - Window driver's cab</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5SAPMaterialGroup{::}1155" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5SAPMaterialGroup{::}1156" status="Approved">1156 - Window passenger compartment</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5SAPMaterialGroup{::}1156" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5SAPMaterialGroup{::}1157" status="Approved">1157 - Window rubber seal</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5SAPMaterialGroup{::}1157" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5SAPMaterialGroup{::}1158" status="Approved">1158 - Windscreen</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5SAPMaterialGroup{::}1158" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5SAPMaterialGroup{::}1159" status="Approved">1159 - Windscreen wiper- and washer system</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5SAPMaterialGroup{::}1159" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5SAPMaterialGroup{::}1160" status="Approved">1160 - Wooden floor parts</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5SAPMaterialGroup{::}1160" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5SAPMaterialGroup{::}1999" status="Approved">1999 - To be defined</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5SAPMaterialGroup{::}1999" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5SAPMaterialGroup{::}2001" status="Approved">2001 - Energy electicity</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5SAPMaterialGroup{::}2001" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5SAPMaterialGroup{::}2002" status="Approved">2002 - Energy natural gas</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5SAPMaterialGroup{::}2002" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5SAPMaterialGroup{::}2003" status="Approved">2003 - Energy technical gases</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5SAPMaterialGroup{::}2003" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5SAPMaterialGroup{::}2004" status="Approved">2004 - Energy various </key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5SAPMaterialGroup{::}2004" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5SAPMaterialGroup{::}2005" status="Approved">2005 - Water</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5SAPMaterialGroup{::}2005" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5SAPMaterialGroup{::}2101" status="Approved">2101 - Acceptances, type testing, examinations</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5SAPMaterialGroup{::}2101" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5SAPMaterialGroup{::}2102" status="Approved">2102 - Books, newspapers, magazines</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5SAPMaterialGroup{::}2102" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5SAPMaterialGroup{::}2103" status="Approved">2103 - Catering (extern)</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5SAPMaterialGroup{::}2103" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5SAPMaterialGroup{::}2104" status="Approved">2104 - Consultants and legal services</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5SAPMaterialGroup{::}2104" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5SAPMaterialGroup{::}2105" status="Approved">2105 - Contribution, fees and duties</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5SAPMaterialGroup{::}2105" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5SAPMaterialGroup{::}2106" status="Approved">2106 - Engineering and construction services</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5SAPMaterialGroup{::}2106" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5SAPMaterialGroup{::}2107" status="Approved">2107 - Financial services</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5SAPMaterialGroup{::}2107" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5SAPMaterialGroup{::}2108" status="Approved">2108 - IT services</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5SAPMaterialGroup{::}2108" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5SAPMaterialGroup{::}2109" status="Approved">2109 - Maintenance, repair, calibration (no FM)</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5SAPMaterialGroup{::}2109" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5SAPMaterialGroup{::}2110" status="Approved">2110 - Marketing, mechandising</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5SAPMaterialGroup{::}2110" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5SAPMaterialGroup{::}2111" status="Approved">2111 - Occupational medicine, safety and health</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5SAPMaterialGroup{::}2111" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5SAPMaterialGroup{::}2112" status="Approved">2112 - Print material and services</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5SAPMaterialGroup{::}2112" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5SAPMaterialGroup{::}2113" status="Approved">2113 - Recruiting services</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5SAPMaterialGroup{::}2113" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5SAPMaterialGroup{::}2114" status="Approved">2114 - Temporary employment and labour</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5SAPMaterialGroup{::}2114" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5SAPMaterialGroup{::}2115" status="Approved">2115 - Training</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5SAPMaterialGroup{::}2115" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5SAPMaterialGroup{::}2116" status="Approved">2116 - Translations and documentation</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5SAPMaterialGroup{::}2116" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5SAPMaterialGroup{::}2201" status="Approved">2201 - Building mgmt, maintenance, repair, move</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5SAPMaterialGroup{::}2201" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5SAPMaterialGroup{::}2202" status="Approved">2202 - Catering (intern)</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5SAPMaterialGroup{::}2202" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5SAPMaterialGroup{::}2203" status="Approved">2203 - Cleaning services/ materials, buildings</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5SAPMaterialGroup{::}2203" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5SAPMaterialGroup{::}2204" status="Approved">2204 - Disposal</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5SAPMaterialGroup{::}2204" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5SAPMaterialGroup{::}2205" status="Approved">2205 - Lump sum operating costs</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5SAPMaterialGroup{::}2205" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5SAPMaterialGroup{::}2206" status="Approved">2206 - Insurances</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5SAPMaterialGroup{::}2206" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5SAPMaterialGroup{::}2207" status="Approved">2207 - Office furnishings</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5SAPMaterialGroup{::}2207" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5SAPMaterialGroup{::}2208" status="Approved">2208 - Security services</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5SAPMaterialGroup{::}2208" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5SAPMaterialGroup{::}2209" status="Approved">2209 - Stationery</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5SAPMaterialGroup{::}2209" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5SAPMaterialGroup{::}2210" status="Approved">2210 - Vehicle cleaning (Stadler product)</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5SAPMaterialGroup{::}2210" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5SAPMaterialGroup{::}2301" status="Approved">2301 - Hardware costs</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5SAPMaterialGroup{::}2301" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5SAPMaterialGroup{::}2302" status="Approved">2302 - Software licences</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5SAPMaterialGroup{::}2302" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5SAPMaterialGroup{::}2303" status="Approved">2303 - Software maintenance</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5SAPMaterialGroup{::}2303" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5SAPMaterialGroup{::}2304" status="Approved">2304 - Telephone and communication costs</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5SAPMaterialGroup{::}2304" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5SAPMaterialGroup{::}2401" status="Approved">2401 - Adhesives and sealants</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5SAPMaterialGroup{::}2401" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5SAPMaterialGroup{::}2402" status="Approved">2402 - Clothing</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5SAPMaterialGroup{::}2402" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5SAPMaterialGroup{::}2403" status="Approved">2403 - Hand tools and small devices</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5SAPMaterialGroup{::}2403" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5SAPMaterialGroup{::}2404" status="Approved">2404 - Maintenance and cleaning of machines</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5SAPMaterialGroup{::}2404" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5SAPMaterialGroup{::}2405" status="Approved">2405 - Oils and lubricants</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5SAPMaterialGroup{::}2405" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5SAPMaterialGroup{::}2406" status="Approved">2406 - OSH-wearables</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5SAPMaterialGroup{::}2406" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5SAPMaterialGroup{::}2407" status="Approved">2407 - Production consumables various</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5SAPMaterialGroup{::}2407" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5SAPMaterialGroup{::}2501" status="Approved">2501 - Rent, lease and investments building</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5SAPMaterialGroup{::}2501" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5SAPMaterialGroup{::}2502" status="Approved">2502 - Rent, lease and investments logistics</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5SAPMaterialGroup{::}2502" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5SAPMaterialGroup{::}2503" status="Approved">2503 - Rent, lease and investments production</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5SAPMaterialGroup{::}2503" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5SAPMaterialGroup{::}2601" status="Approved">2601 - In- and Outbound Logistik parcel</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5SAPMaterialGroup{::}2601" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5SAPMaterialGroup{::}2602" status="Approved">2602 - In- and Outbound Logistik rail</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5SAPMaterialGroup{::}2602" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5SAPMaterialGroup{::}2603" status="Approved">2603 - In- and Outbound Logistik sea</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5SAPMaterialGroup{::}2603" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5SAPMaterialGroup{::}2604" status="Approved">2604 - In- and Outbound Logistik truck</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5SAPMaterialGroup{::}2604" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5SAPMaterialGroup{::}2605" status="Approved">2605 - Packaging_reusable containers</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5SAPMaterialGroup{::}2605" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5SAPMaterialGroup{::}2606" status="Approved">2606 - Packaging_single use</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5SAPMaterialGroup{::}2606" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5SAPMaterialGroup{::}2701" status="Approved">2701 - Car fleet_insurance and tax costs</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5SAPMaterialGroup{::}2701" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5SAPMaterialGroup{::}2702" status="Approved">2702 - Car fleet_leasing costs</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5SAPMaterialGroup{::}2702" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5SAPMaterialGroup{::}2703" status="Approved">2703 - Car fleet_purchase and other costs</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5SAPMaterialGroup{::}2703" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5SAPMaterialGroup{::}2704" status="Approved">2704 - Events</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5SAPMaterialGroup{::}2704" status="Approved"></key>
+    <key locale="en_US" id="LOVValue{::}SR5SAPMaterialGroup{::}2705" status="Approved">2705 - Travel Management (Travel and Hotel)</key>
+    <key locale="en_US" id="LOVValueDescription{::}SR5SAPMaterialGroup{::}2705" status="Approved"></key>
+  </Add>
+</TcBusinessDataLocalization>

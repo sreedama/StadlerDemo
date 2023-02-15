@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="us-ascii" standalone="yes"?>
+<!--
+===============================================================================
+                Copyright (c) 2012 Siemens Industry Software
+                   Unpublished - All Rights Reserved
+===============================================================================
+File description:
+
+            Filename:   materialmgmt_text_locale.xml
+            Module:     materialmgmt
+
+            XML File defining Material Management module text messages.
+@<DEL>@
+===============================================================================
+   Date      Name                    Description of Change
+06-Mar-2012  Chaitanya Godbole       Initial Implementation
+$HISTORY$
+===============================================================================
+@<DEL>@ -->
+<textsrv filename="materialmgmt_text_locale.xml">
+<key id="k_materialmgmt_item_revisions">Material Management - Item Revisions...</key>
+<key id="k_materialmgmt_item_revisions_desc">Find Item Revisions by Material Management attributes</key>
+<key id="k_materialmgmt_materialrevs">Material Management - Material Revisions...</key>
+<key id="k_materialmgmt_materialrevs_desc">Find Material Revisions</key>
+<key id="k_materialmgmt_substabces">Material Management - Substances...</key>
+<key id="k_materialmgmt_substabces_desc">Find Substances</key>
+<key id="k_materialmgmt_substance_name">Substance Name</key>
+<key id="k_materialmgmt_materialid">Material ID</key>
+<key id="k_materialmgmt_materialexternalid">Material External Identifier</key>
+<key id="k_materialmgmt_materialname">Material Name</key>
+<key id="k_materialmgmt_materialteamcenterid">Material Teamcenter Unique Identifier</key>
+<key id="k_materialmgmt_materialcas_number">Material CAS Number</key>
+<key id="k_materialmgmt_substancecas_number">Substance CAS Number</key>
+<key id="k_materialmgmt_substanceteamcenterid">Substance Teamcenter Unique Identifier</key>
+<key id="k_materialmgmt_substanceexternalid">Substance External Identifier</key>
+<key id="k_materialmgmt_approvalstatus">Approval Status</key>
+<key id="k_materialmgmt_teamcenterid">Teamcenter Unique Identifier</key>
+<key id="k_materialmgmt_externalid">External Identifier</key>
+<key id="k_materialmgmt_cas_number">CAS Number</key>
+<key id="k_materialmgmt_isthenonlibrary">Is the material non-library</key>
+<key id="k_materialmgmt_substancesk_materialmgmt_substances">Substances</key>
+<key id="k_materialmgmt_alternatematerials">Alternate Materials</key>
+<key id="k_materialmgmt_materialclasses">Material Classes</key>
+<key id="k_materialmgmt_smarttableparameters">Table Parameters</key>
+<key id="k_materialmgmt_materialsforcoating">Materials for Coating</key>
+</textsrv>

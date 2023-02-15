@@ -1,0 +1,586 @@
+{
+    "schemaVersion": "1.0.0",
+    "imports": [
+        "js/aw-compare2.directive",
+        "js/aw-panel-body.directive",
+        "js/aw-flex-row.directive",
+        "js/aw-panel.directive"
+    ],
+    "actions": {
+        "Mtw0GetParameterList": {
+            "actionType": "TcSoaService",
+            "serviceName": "Core-2006-03-DataManagement",
+            "method": "getProperties",
+            "deps": "js/Mtw0CompareMaterialParameterService",
+            "inputData": {
+                "objects": "{{ctx.mselected}}",
+                "attributes": [
+                    "mat1Parameters",
+                    "mat1InheritedParameters"
+                ]
+            },
+            "policy": {
+                "types": [
+                    {
+                        "name": "BusinessObject",
+                        "properties": [
+                            {
+                                "name": "object_string"
+                            },
+                            {
+                                "name": "object_type"
+                            },
+                            {
+                                "name": "object_name"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Mat1MaterialRevision",
+                        "properties": [
+                            {
+                                "name": "mat1Parameters",
+                                "modifiers": [
+                                    {
+                                        "name": "withProperties",
+                                        "Value": "true"
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "mat1InheritedParameters",
+                                "modifiers": [
+                                    {
+                                        "name": "withProperties",
+                                        "Value": "true"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Mat1ParameterDouble",
+                        "properties": [
+                            {
+                                "name": "mat1Value"
+                            },
+                            {
+                                "name": "mat1ValueMax"
+                            },
+                            {
+                                "name": "mat1SessionValue"
+                            },
+                            {
+                                "name": "mat1SessionValueMax"
+                            },
+                            {
+                                "name": "mat1SessionUnit",
+                                "modifiers": [
+                                    {
+                                        "name": "withProperties",
+                                        "Value": "true"
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "mat1ListOfRefParameters",
+                                "modifiers": [
+                                    {
+                                        "name": "withProperties",
+                                        "Value": "true"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Mat1ParameterString",
+                        "properties": [
+                            {
+                                "name": "mat1Value"
+                            },
+                            {
+                                "name": "mat1ListOfRefParameters",
+                                "modifiers": [
+                                    {
+                                        "name": "withProperties",
+                                        "Value": "true"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Mat1InheritedParamDouble",
+                        "properties": [
+                            {
+                                "name": "mat1Parameter",
+                                "modifiers": [
+                                    {
+                                        "name": "withProperties",
+                                        "Value": "true"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Mat1InheritedParamString",
+                        "properties": [
+                            {
+                                "name": "mat1Parameter",
+                                "modifiers": [
+                                    {
+                                        "name": "withProperties",
+                                        "Value": "true"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Mat1DerivedUnit",
+                        "properties": [
+                            {
+                                "name": "mat1DerivedUnitSymbol"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "outputData": {
+                "Mtw0CompareParameterTables": "{{function:Mtw0GenerateMaterialComparatorData}}"
+            }
+        },
+        "loadData": {
+            "actionType": "JSFunctionAsync",
+            "deps": "js/awCompare.service",
+            "method": "getViewModelObjects",
+            "inputData": {
+                "0": "{{subPanelContext.selection}}",
+                "1": "{{data.dataProviders.compareDataProvider.columnConfig.columns}}"
+            },
+            "outputData": {
+                "totalFound": "totalFound",
+                "searchResults": "searchResults"
+            }
+        },
+        "doArrangeEvent": {
+            "actionType": "JSFunctionAsync",
+            "method": "arrangeColumns",
+            "inputData": {
+                "dataProvider": "{{data.dataProviders.compareDataProvider}}",
+                "columnProvider": "{{data.columnProviders.compareColumnProvider}}",
+                "gridId": "multiSelectCompare",
+                "declViewModel": "{{data}}",
+                "ctx": "{{ctx}}",
+                "eventData": "{{data.eventData}}",
+                "subPanelContext": "{{subPanelContext}}"
+            },
+            "deps": "js/awCompare.service"
+        },
+        "loadColumns": {
+            "actionType": "TcSoaService",
+            "serviceName": "Core-2006-03-DataManagement",
+            "method": "getProperties",
+            "deps": "js/Mtw0CompareMaterialParameterService",
+            "inputData": {
+                "objects": "{{ctx.mselected}}",
+                "attributes": [
+                    "mat1Parameters",
+                    "mat1InheritedParameters"
+                ]
+            },
+            "policy": {
+                "types": [
+                    {
+                        "name": "BusinessObject",
+                        "properties": [
+                            {
+                                "name": "object_string"
+                            },
+                            {
+                                "name": "object_type"
+                            },
+                            {
+                                "name": "object_name"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Mat1MaterialRevision",
+                        "properties": [
+                            {
+                                "name": "mat1Parameters",
+                                "modifiers": [
+                                    {
+                                        "name": "withProperties",
+                                        "Value": "true"
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "mat1InheritedParameters",
+                                "modifiers": [
+                                    {
+                                        "name": "withProperties",
+                                        "Value": "true"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Mat1ParameterDouble",
+                        "properties": [
+                            {
+                                "name": "mat1Value"
+                            },
+                            {
+                                "name": "mat1ValueMax"
+                            },
+                            {
+                                "name": "mat1SessionValue"
+                            },
+                            {
+                                "name": "mat1SessionValueMax"
+                            },
+                            {
+                                "name": "mat1SessionUnit",
+                                "modifiers": [
+                                    {
+                                        "name": "withProperties",
+                                        "Value": "true"
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "mat1ListOfRefParameters",
+                                "modifiers": [
+                                    {
+                                        "name": "withProperties",
+                                        "Value": "true"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Mat1ParameterString",
+                        "properties": [
+                            {
+                                "name": "mat1Value"
+                            },
+                            {
+                                "name": "mat1ListOfRefParameters",
+                                "modifiers": [
+                                    {
+                                        "name": "withProperties",
+                                        "Value": "true"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Mat1InheritedParamDouble",
+                        "properties": [
+                            {
+                                "name": "mat1Parameter",
+                                "modifiers": [
+                                    {
+                                        "name": "withProperties",
+                                        "Value": "true"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Mat1InheritedParamString",
+                        "properties": [
+                            {
+                                "name": "mat1Parameter",
+                                "modifiers": [
+                                    {
+                                        "name": "withProperties",
+                                        "Value": "true"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Mat1DerivedUnit",
+                        "properties": [
+                            {
+                                "name": "mat1DerivedUnitSymbol"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "outputData": {
+                "dataProviders.compareDataProvider.columnConfig": "{{function:Mtw0MaterialParameterList}}",
+                "dataProviders.compareDataProvider.columnConfigId": ""
+            }
+        },
+        "resetCompare": {
+            "actionType": "TcSoaService",
+            "serviceName": "Core-2006-03-DataManagement",
+            "method": "getProperties",
+            "deps": "js/Mtw0CompareMaterialParameterService",
+            "inputData": {
+                "objects": "{{ctx.mselected}}",
+                "attributes": [
+                    "mat1Parameters",
+                    "mat1InheritedParameters"
+                ]
+            },
+            "policy": {
+                "types": [
+                    {
+                        "name": "BusinessObject",
+                        "properties": [
+                            {
+                                "name": "object_string"
+                            },
+                            {
+                                "name": "object_type"
+                            },
+                            {
+                                "name": "object_name"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Mat1MaterialRevision",
+                        "properties": [
+                            {
+                                "name": "mat1Parameters",
+                                "modifiers": [
+                                    {
+                                        "name": "withProperties",
+                                        "Value": "true"
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "mat1InheritedParameters",
+                                "modifiers": [
+                                    {
+                                        "name": "withProperties",
+                                        "Value": "true"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Mat1ParameterDouble",
+                        "properties": [
+                            {
+                                "name": "mat1Value"
+                            },
+                            {
+                                "name": "mat1ValueMax"
+                            },
+                            {
+                                "name": "mat1SessionValue"
+                            },
+                            {
+                                "name": "mat1SessionValueMax"
+                            },
+                            {
+                                "name": "mat1SessionUnit",
+                                "modifiers": [
+                                    {
+                                        "name": "withProperties",
+                                        "Value": "true"
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "mat1ListOfRefParameters",
+                                "modifiers": [
+                                    {
+                                        "name": "withProperties",
+                                        "Value": "true"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Mat1ParameterString",
+                        "properties": [
+                            {
+                                "name": "mat1Value"
+                            },
+                            {
+                                "name": "mat1ListOfRefParameters",
+                                "modifiers": [
+                                    {
+                                        "name": "withProperties",
+                                        "Value": "true"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Mat1InheritedParamDouble",
+                        "properties": [
+                            {
+                                "name": "mat1Parameter",
+                                "modifiers": [
+                                    {
+                                        "name": "withProperties",
+                                        "Value": "true"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Mat1InheritedParamString",
+                        "properties": [
+                            {
+                                "name": "mat1Parameter",
+                                "modifiers": [
+                                    {
+                                        "name": "withProperties",
+                                        "Value": "true"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Mat1DerivedUnit",
+                        "properties": [
+                            {
+                                "name": "mat1DerivedUnitSymbol"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "outputData": {
+                "dataProviders.compareDataProvider.columnConfig": "{{function:Mtw0MaterialParameterList}}",
+                "dataProviders.compareDataProvider.columnConfigId": ""
+            },
+            "events": {
+                "success": [
+                    {
+                        "name": "multiSelectCompare1.plTable.reload"
+                    }
+                ]
+            }
+        },
+        "saveColumnAndLoadAction": {
+            "actionType": "TcSoaService",
+            "serviceName": "Internal-AWS2-2016-03-UiConfig",
+            "method": "saveUIColumnConfigs",
+            "inputData": {
+                "columnConfigurations": [
+                    {
+                        "clientScopeURI": "{{ctx.sublocation.clientScopeURI}}",
+                        "columnConfigId": "{{data.dataProviders.compareDataProvider.columnConfigId}}",
+                        "columns": "{{data.dataProviders.compareDataProvider.newColumns}}",
+                        "scope": "LoginUser",
+                        "scopeName": ""
+                    }
+                ]
+            },
+            "outputData": {}
+        },
+        "resetColumns": {
+            "actionType": "JSFunctionAsync",
+            "deps": "js/awCompare.service",
+            "method": "getTypesAndCallSoa",
+            "inputData": {
+                "serviceName": "Internal-AWS2-2017-06-UiConfig",
+                "operationName": "getOrResetUIColumnConfigs2",
+                "soaInput": {
+                    "getOrResetUiConfigsIn": [
+                        {
+                            "scope": "LoginUser",
+                            "clientName": "AWClient",
+                            "resetColumnConfig": true,
+                            "columnConfigQueryInfos": [
+                                {
+                                    "clientScopeURI": "{{ctx.sublocation.clientScopeURI}}",
+                                    "operationType": "{{data.eventData.operationType}}",
+                                    "typeNames": "{{types}}"
+                                }
+                            ],
+                            "businessObjects": "{{subPanelContext.selection}}"
+                        }
+                    ]
+                },
+                "modelObjects": "{{subPanelContext.selection}}",
+                "columnProvider": "{{data.columnProviders.compareColumnProvider}}",
+                "data": "{{data}}"
+            },
+            "outputData": {
+                "dataProviders.compareDataProvider.columnConfig": "columnConfigurations.0.columnConfigurations.0"
+            }
+        }
+    },
+    "columnProviders": {
+        "compareColumnProvider": {
+            "name": "compareGridView",
+            "loadColumnAction": "loadColumns"
+        }
+    },
+    "dataProviders": {
+        "compareDataProvider": {
+            "action": "Mtw0GetParameterList",
+            "response": "{{data.Mtw0CompareParameterTables.searchResults}}",
+            "totalFound": "{{data.Mtw0CompareParameterTables.totalFound}}",
+            "inputData": {},
+            "gridOptions": {
+                "enableSorting": true,
+                "isFilteringEnabled": true
+            }
+        }
+    },
+    "grids": {
+        "multiSelectCompare1": {
+            "dataProvider": "compareDataProvider",
+            "columnProvider": "compareColumnProvider",
+            "enableArrangeMenu": true,
+            "gridOptions": {
+                "enableGridMenu": true,
+                "enableArrangeMenu": true,
+                "selectionModelMode": "none"
+            }
+        }
+    },
+    "functions": {
+        "Mtw0MaterialParameterList": {
+            "functionName": "Mtw0MaterialParameterList",
+            "parameters": [
+                "{{data}}"
+            ]
+        },
+        "Mtw0GenerateMaterialComparatorData": {
+            "functionName": "Mtw0GenerateMaterialComparatorData",
+            "parameters": [
+                "{{data}}"
+            ]
+        }
+    },
+    "onEvent": [
+        {
+            "eventId": "primaryWorkArea.selectionChangeEvent",
+            "action": "resetCompare"
+        },
+        {
+            "eventId": "columnArrange",
+            "cacheEventData": true,
+            "action": "doArrangeEvent"
+        }
+    ]
+}

@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+// @<COPYRIGHT>@
+// ==================================================
+// Copyright 2019.
+// Siemens Product Lifecycle Management Software Inc.
+// All Rights Reserved.
+// =================================================
+// @<COPYRIGHT>@
+-->
+<rendering>
+    <page titleKey="tc_xrt_Overview">
+        <column width="50%">
+            <section titleKey="tc_xrt_Properties">
+                <property name="awb0ArchetypeId"/>
+                <property name="awb0ArchetypeRevId"/>
+                <property name="REF(awb0UnderlyingObject,SR5GenEngObjRevision).sr5ExternalRevision" modifiable="false" />
+                <property name="REF(awb0UnderlyingObject,SR5GenEngObjRevision).sr5CPBasedOn" />
+                <property name="REF(awb0UnderlyingObject,SR5GenEngObjRevision).based_on" />
+                <break/>
+                <property name="REF(awb0UnderlyingObject,SR5GenEngObjRevision).object_name" modifiable="false"/>
+                <property name="awb0ArchetypeRevDescription"/>
+                <property name="awb0UnderlyingObjectType" />
+                <property name="awb0Sequence"/>
+                <property name="awb0Quantity"/>
+                <property name="awb0UoM" renderingHint="lovcombobox"/>
+                <separator />
+                <content visibleWhen="REF(awb0UnderlyingObject,SR5GenEngObjRevision).release_status_list==null">
+                    <property name="REF(awb0UnderlyingObject,SR5GenEngObjRevision).REF(items_tag,SR5GenEngObj).sr5DrawingDCC" />
+                    <property name="REF(awb0UnderlyingObject,SR5GenEngObjRevision).REF(items_tag,SR5GenEngObj).sr5FSFClass" />
+                </content>
+                <content visibleWhen="REF(awb0UnderlyingObject,SR5GenEngObjRevision).release_status_list!=null">
+                    <property name="REF(awb0UnderlyingObject,SR5GenEngObjRevision).REF(items_tag,SR5GenEngObj).sr5DrawingDCC" modifiable="false" />
+                    <property name="REF(awb0UnderlyingObject,SR5GenEngObjRevision).REF(items_tag,SR5GenEngObj).sr5FSFClass" modifiable="false"/>
+                </content>
+                <separator />
+                <property name="REF(awb0UnderlyingObject,SR5GenEngObjRevision).sr5Dimension"/>
+                <property name="REF(awb0UnderlyingObject,SR5GenEngObjRevision).sr5NormNo"/>
+                <break/>
+                <property name="REF(awb0UnderlyingObject,SR5GenEngObjRevision).sr5FastSurfaceProtectionOFL" />
+                <property name="REF(awb0UnderlyingObject,SR5GenEngObjRevision).sr5FastSurfaceProtection" modifiable="false" renderingHint="label" />
+                <break/>
+                <property name="REF(awb0UnderlyingObject,SR5GenEngObjRevision).sr5Manufacturer"/>
+                <property name="REF(awb0UnderlyingObject,SR5GenEngObjRevision).sr5MPN"/>
+                <property name="REF(awb0UnderlyingObject,SR5GenEngObjRevision).sr5ManuType"/>
+                <separator />
+                <property name="awb0ArchetypeRevOwningUser" renderingHint="objectlink" modifiable="false"/>
+                <property name="awb0ArchetypeRevOwningGroup" renderingHint="objectlink" modifiable="false"/>
+                <property name="awb0ArchetypeRevLastModUser"/>
+                <property name="REF(awb0UnderlyingObject,SR5GenEngObjRevision).checked_out_user" renderingHint="label"/>
+            </section>
+        </column>
+        <column>
+            <inject type="dataset" src="SR5RevisionList" />
+            <inject type="dataset" src="SR5ObjectNameTerminology"/>
+            <section titleKey="Lifecycle" initialstate="collapsed">
+                <property name="REF(awb0UnderlyingObject,SR5GenEngObjRevision).REF(item_master_tag,SR5GenPartRevisionMaster).sr5DateEngineeringRelease" renderingHint="label" />
+                <property name="REF(awb0UnderlyingObject,SR5GenEngObjRevision).REF(item_master_tag,SR5GenPartRevisionMaster).sr5EngineeringReleasedBy" renderingHint="label" />
+            </section>
+            <inject type="dataset" src="SR5GenEngObjCollaborationContext" />
+            <section titleKey="ECAD Data" initialstate="collapsed">
+                <property name="REF(awb0UnderlyingObject,SR5GenEngObjRevision).sr5TechnicalData"/>
+                <property name="REF(awb0UnderlyingObject,SR5GenEngObjRevision).sr5CPE3Transferred" modifiable="false"  />
+            </section>
+            <content visibleWhen="REF(awb0UnderlyingObject,SR5GenEngObjRevision).GRM(IMAN_specification,CATDrawing).object_name!=null">
+                <section titleKey="Drawing Data" initialstate="collapsed">
+                    <property name="REF(awb0UnderlyingObject,SR5GenEngObjRevision).sr5NoDrawingSheets" />
+                    <content visibleWhen="REF(awb0UnderlyingObject,SR5GenEngObjRevision).release_status_list==null">
+                        <property name="REF(awb0UnderlyingObject,SR5GenEngObjRevision).REF(items_tag,SR5GenEngObj).sr5DrawingFormat" />
+                    </content>
+                    <content visibleWhen="REF(awb0UnderlyingObject,SR5GenEngObjRevision).release_status_list!=null">
+                        <property name="REF(awb0UnderlyingObject,SR5GenEngObjRevision).REF(items_tag,SR5GenEngObj).sr5DrawingFormat" modifiable="false" />
+                    </content>
+                </section>
+            </content>
+            <inject type="dataset" src="SR5GenCatPartSAPData"/>
+            <inject type="dataset" src="SR5PlantSpecificData"/>
+        </column>
+    </page>
+</rendering>

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<TCXML xmlns="http://www.tcxml.org/Schemas/TCXMLSchema" format="high_level">
+<ClosureRule clauses="CLASS.ImanFile:CLASS.*:ATTRIBUTE.original_file_name:PROCESS:,TYPE.PIESession:CLASS.CCObject:PROPERTY.target_list:TRAVERSE:,TYPE.PIESession:CLASS.StructureContext:PROPERTY.target_list:TRAVERSE:,TYPE.PIESession:CLASS.*:PROPERTY.target_list:TRAVERSE_AND_PROCESS:,TYPE.PIESession:TYPE.*:PROPERTY.target_list:TRAVERSE_AND_PROCESS:,CLASS.Item:CLASS.*:PROPERTY.uom_tag:TRAVERSE_AND_PROCESS:,CLASS.Item:CLASS.icm0:PROPERTY.IMAN_classification:TRAVERSE_AND_PROCESS:,CLASS.ItemRevision:CLASS.icm0:PROPERTY.IMAN_classification:TRAVERSE_AND_PROCESS:,CLASS.icm0:CLASS.Item:PROPERTY.WSO:TRAVERSE_AND_PROCESS:,CLASS.icm0:CLASS.ItemRevision:PROPERTY.WSO:TRAVERSE_AND_PROCESS:,CLASS.CCObject:TYPE.CfgAttachmentLine:PROPERTY.top_line:TRAVERSE_AND_PROCESS:,CLASS.StructureContext:TYPE.CfgAttachmentLine:PROPERTY.top_line:TRAVERSE_AND_PROCESS:,TYPE.CfgActivityLine:TYPE.*:PROPERTY.me_cl_source:PROCESS:,TYPE.CfgActivityLine:TYPE.*:PROPERTY.me_cl_child_lines:TRAVERSE_AND_PROCESS:,TYPE.CfgAttachmentLine:CLASS.Dataset:PROPERTY.me_cl_source:TRAVERSE_AND_PROCESS:,TYPE.CfgAbsOccAttachmentLine:TYPE.*:PROPERTY.al_absocc_rootline:TRAVERSE_AND_PROCESS:,TYPE.CfgAbsOccAttachmentLine:CLASS.Dataset:PROPERTY.me_cl_source:TRAVERSE_AND_PROCESS:,TYPE.CfgAttachmentLine:TYPE.CfgAttachmentLine:PROPERTY.me_cl_child_lines:TRAVERSE_AND_PROCESS:((SECONDARY.al_source_class!=&quot;PseudoFolder&quot;) &amp;&amp; (SECONDARY.al_context!=&quot;IMAN_PublishingPageAssetContext&quot;)),TYPE.CfgAttachmentLine:TYPE.*:PROPERTY.al_structure_line:TRAVERSE_AND_PROCESS:,TYPE.CfgAttachmentLine:TYPE.*:PROPERTY.me_cl_source:PROCESS:,TYPE.MEAppearanceGroupLine:CLASS.AppearanceGroup:PROPERTY.me_cl_source:TRAVERSE_AND_PROCESS:,TYPE.MEAppearanceLine:TYPE.GDELine:PROPERTY.me_apprl_bom_line:TRAVERSE_AND_PROCESS:,TYPE.MEAppearanceGroupLine:TYPE.*:PROPERTY.me_cl_child_lines:TRAVERSE_AND_PROCESS:,TYPE.MEAppearanceGroupLine:TYPE.CfgAttachmentLine:PROPERTY.me_vl_attachments:TRAVERSE_AND_PROCESS:SECONDARY.al_source_class==&quot;Dataset&quot;,TYPE.MEAppearanceGroupLine:TYPE.CfgAttachmentLine:PROPERTY.me_vl_attachments:TRAVERSE_AND_PROCESS:SECONDARY.al_source_class==&quot;Form&quot;,TYPE.MEAppearanceGroupLine:TYPE.CfgAttachmentLine:PROPERTY.me_vl_attachments:TRAVERSE_AND_PROCESS:SECONDARY.al_source_class==&quot;Folder&quot;,TYPE.BOMWindow:TYPE.*:PROPERTY.top_line:TRAVERSE_AND_PROCESS:,CLASS.ImanItemLine:TYPE.*:PROPERTY.bl_all_child_lines:TRAVERSE_AND_PROCESS:$bom_cb != &quot;1&quot; &amp;&amp; PRIMARY.bl_window_is_BOPWin==&quot;false&quot;,CLASS.ImanItemLine:CLASS.MEAppearancePathNode:PROPERTY.bl_appearance_path_node:TRAVERSE_AND_PROCESS:PRIMARY.bl_window_is_BOPWin==&quot;false&quot;,CLASS.ImanItemLine:CLASS.PSOccurrenceThread:PROPERTY.bl_occurrence:TRAVERSE_AND_PROCESS:PRIMARY.bl_window_is_BOPWin==&quot;false&quot;,CLASS.ImanItemLine:TYPE.*:PROPERTY.bl_attachments:TRAVERSE_AND_PROCESS:SECONDARY.al_source_class==&quot;Dataset&quot; &amp;&amp; PRIMARY.bl_window_is_BOPWin==&quot;false&quot;,CLASS.ImanItemLine:TYPE.*:PROPERTY.bl_attachments:TRAVERSE_AND_PROCESS:SECONDARY.al_source_class==&quot;Form&quot; &amp;&amp; PRIMARY.bl_window_is_BOPWin==&quot;false&quot;,CLASS.ImanItemLine:TYPE.*:PROPERTY.bl_attachments:TRAVERSE_AND_PROCESS:SECONDARY.al_source_class==&quot;Folder&quot; &amp;&amp; PRIMARY.bl_window_is_BOPWin==&quot;false&quot;,CLASS.ImanItemLine:TYPE.*:PROPERTY.bl_revision:TRAVERSE_AND_PROCESS:PRIMARY.bl_window_is_BOPWin==&quot;false&quot;,CLASS.ImanItemLine:TYPE.*:PROPERTY.bl_connected_lines_tags:TRAVERSE_AND_PROCESS:PRIMARY.bl_window_is_BOPWin==&quot;false&quot;,TYPE.GDELine:TYPE.*:PROPERTY.bl_connected_lines_tags:TRAVERSE_AND_PROCESS:,TYPE.GDELine:CLASS.MEAppearancePathNode:PROPERTY.bl_appearance_path_node:TRAVERSE_AND_PROCESS:,TYPE.GDELine:CLASS.PSOccurrenceThread:PROPERTY.bl_occurrence:TRAVERSE_AND_PROCESS:,TYPE.GDELine:TYPE.*:PROPERTY.bl_line_object:TRAVERSE_AND_PROCESS:,TYPE.GDELine:TYPE.*:PROPERTY.bl_all_child_lines:TRAVERSE_AND_PROCESS:$bom_cb != &quot;1&quot;,CLASS.ImanItemBOPLine:TYPE.CfgActivityLine:PROPERTY.bl_me_activity_lines:TRAVERSE_AND_PROCESS:PRIMARY.bl_me_appgroup==&quot;0&quot;,CLASS.ImanItemBOPLine:CLASS.PSOccurrenceThread:PROPERTY.bl_occurrence:TRAVERSE_AND_PROCESS:PRIMARY.bl_me_appgroup==&quot;0&quot;,CLASS.ImanItemBOPLine:TYPE.*:PROPERTY.bl_all_child_lines:TRAVERSE_AND_PROCESS:$bom_cb != &quot;1&quot; &amp;&amp; PRIMARY.bl_me_appgroup==&quot;0&quot;,CLASS.ImanItemBOPLine:TYPE.*:PROPERTY.bl_revision:TRAVERSE_AND_PROCESS:PRIMARY.bl_me_appgroup==&quot;0&quot;,CLASS.ImanItemBOPLine:CLASS.MEAppearancePathNode:PROPERTY.bl_me_refobj:TRAVERSE_AND_PROCESS:PRIMARY.bl_me_appgroup==&quot;0&quot;,CLASS.ImanItemBOPLine:CLASS.ImanItemLine:PROPERTY.bl_me_refline:REFERENCE:$reference==&quot;true&quot; &amp;&amp; PRIMARY.bl_me_appgroup==&quot;0&quot; &amp;&amp; SECONDARY.bl_window_is_BOPWin==&quot;false&quot;,CLASS.ImanItemBOPLine:CLASS.ImanItemLine:PROPERTY.bl_me_refline:TRAVERSE_AND_PROCESS:PRIMARY.bl_me_appgroup==&quot;0&quot; &amp;&amp; SECONDARY.bl_window_is_BOPWin==&quot;false&quot;,CLASS.ImanItemBOPLine:TYPE.*:PROPERTY.bl_attachments:TRAVERSE_AND_PROCESS:SECONDARY.al_source_class==&quot;Dataset&quot; &amp;&amp; PRIMARY.bl_me_appgroup==&quot;0&quot;,CLASS.ImanItemBOPLine:TYPE.*:PROPERTY.bl_attachments:TRAVERSE_AND_PROCESS:SECONDARY.al_source_class==&quot;Form&quot; &amp;&amp; PRIMARY.bl_me_appgroup==&quot;0&quot;,CLASS.ImanItemBOPLine:TYPE.*:PROPERTY.bl_attachments:TRAVERSE_AND_PROCESS:SECONDARY.al_source_class==&quot;Folder&quot; &amp;&amp; PRIMARY.bl_me_appgroup==&quot;0&quot;,CLASS.ImanItemBOPLine:CLASS.MEAppearancePathNode:PROPERTY.bl_appearance_path_node:TRAVERSE_AND_PROCESS:PRIMARY.bl_me_appgroup==&quot;0&quot;,TYPE.GDEBOPLine:CLASS.PSOccurrenceThread:PROPERTY.bl_occurrence:TRAVERSE_AND_PROCESS:,TYPE.GDEBOPLine:TYPE.*:PROPERTY.bl_all_child_lines:TRAVERSE_AND_PROCESS:$bom_cb != &quot;1&quot;,TYPE.GDEBOPLine:TYPE.*:PROPERTY.bl_revision:TRAVERSE_AND_PROCESS:,TYPE.GDEBOPLine:CLASS.MEAppearancePathNode:PROPERTY.bl_me_refobj:TRAVERSE_AND_PROCESS:,TYPE.GDEBOPLine:TYPE.*:PROPERTY.bl_attachments:TRAVERSE_AND_PROCESS:SECONDARY.al_source_class==&quot;Dataset&quot;,TYPE.GDEBOPLine:TYPE.*:PROPERTY.bl_attachments:TRAVERSE_AND_PROCESS:SECONDARY.al_source_class==&quot;Form&quot;,TYPE.GDEBOPLine:TYPE.*:PROPERTY.bl_attachments:TRAVERSE_AND_PROCESS:SECONDARY.al_source_class==&quot;Folder&quot;,TYPE.GDEBOPLine:TYPE.GDELine:PROPERTY.bl_me_refline:REFERENCE:$reference==&quot;true&quot;,TYPE.GDEBOPLine:CLASS.ImanItemLine:PROPERTY.bl_me_refline:REFERENCE:$reference==&quot;true&quot; &amp;&amp; SECONDARY.bl_window_is_BOPWin==&quot;false&quot;,TYPE.GDEBOPLine:TYPE.GDELine:PROPERTY.bl_me_refline:TRAVERSE_AND_PROCESS:,TYPE.GDEBOPLine:CLASS.ImanItemLine:PROPERTY.bl_me_refline:TRAVERSE_AND_PROCESS:SECONDARY.bl_window_is_BOPWin==&quot;false&quot;,CLASS.AppGroupBOPLine:TYPE.MEAppearanceGroupLine:PROPERTY.appgrpbl_get_appgrpline:REFERENCE:$reference==&quot;true&quot;,CLASS.AppGroupBOPLine:TYPE.MEAppearanceGroupLine:PROPERTY.appgrpbl_get_appgrpline:TRAVERSE_AND_PROCESS:,CLASS.MEActivity:CLASS.*:PROPERTY.contents:TRAVERSE_AND_PROCESS:,CLASS.MEAppearancePathNode:CLASS.MEAppearancePathRoot:PROPERTY.path_root:TRAVERSE_AND_PROCESS:,CLASS.MEAppearancePathRoot:CLASS.Item:PROPERTY.tracked_item:PROCESS:,CLASS.MEAppearancePathRoot:CLASS.PSBOMView:PROPERTY.tracked_bv:PROCESS:,CLASS.MEAppearancePathNode:CLASS.AbsOccurrence:PROPERTY.abs_occ:PROCESS:,CLASS.AppearanceGroup:CLASS.MEAppearancePathRoot:PROPERTY.app_path_root:TRAVERSE_AND_PROCESS:,TYPE.CATPart:CLASS.ImanFile:ATTRIBUTE.ref_list:TRAVERSE_AND_PROCESS:,TYPE.CATProduct:CLASS.ImanFile:ATTRIBUTE.ref_list:PROCESS+TRAVERSE:,TYPE.CATDrawing:CLASS.ImanFile:ATTRIBUTE.ref_list:PROCESS+TRAVERSE:,TYPE.CATCache:CLASS.ImanFile:ATTRIBUTE.ref_list:PROCESS+TRAVERSE:,TYPE.UGMASTER:CLASS.ImanFile:ATTRIBUTE.ref_list:PROCESS+TRAVERSE:,TYPE.V4_CGR_Visualization:CLASS.ImanFile:ATTRIBUTE.ref_list:PROCESS+TRAVERSE:,TYPE.catia:CLASS.ImanFile:ATTRIBUTE.ref_list:PROCESS+TRAVERSE:,CLASS.Folder:CLASS.WorkspaceObject:ATTRIBUTE.contents:TRAVERSE_AND_PROCESS:,CLASS.TypeCannedMethod:CLASS.ImanParameters:PROPERTY.method_options:TRAVERSE_AND_PROCESS:,CLASS.NameRule:CLASS.NameCounter:PROPERTY.counter_tags:TRAVERSE_AND_PROCESS:,CLASS.NameField:CLASS.NameRule:PROPERTY.rule_tag:TRAVERSE_AND_PROCESS:,CLASS.ItemRevision:CLASS.Dataset:PROPERTY.IMAN_specification:TRAVERSE_AND_PROCESS:,CLASS.ItemRevision:CLASS.Dataset:PROPERTY.IMAN_Rendering:TRAVERSE_AND_PROCESS:,CLASS.ItemRevision:CLASS.Dataset:PROPERTY.IMAN_manifestation:PROCESS+TRAVERSE:,CLASS.ItemRevision:TYPE.MSExcel:RELATIONP2S.IMAN_reference:PROCESS+TRAVERSE:,CLASS.ItemRevision:CLASS.Item:PROPERTY.items_tag:TRAVERSE_AND_PROCESS:,CLASS.ItemRevision:CLASS.VariantExpressionBlock:PROPERTY.variant_expression_block:TRAVERSE_NO_PROCESS:,CLASS.VariantExpressionBlock:CLASS.VariantExpression:PROPERTY.expressions:TRAVERSE_AND_PROCESS:,CLASS.WorkspaceObject:CLASS.icm0:PROPERTY.IMAN_classification:TRAVERSE_AND_PROCESS:,CLASS.VariantRevision:CLASS.Variant:PROPERTY.parent_variant:TRAVERSE_AND_PROCESS:,CLASS.icm0:CLASS.smlb0:PROPERTY.ICSUserClass:TRAVERSE_AND_PROCESS:,CLASS.ImanItemLine:CLASS.CfgAttachmentLine:PROPERTY.bl_attachments:TRAVERSE_AND_PROCESS:SECONDARY.al_source_class==&quot;Seg0Budget&quot;,CLASS.CfgAttachmentLine:CLASS.Seg0Budget:PROPERTY.me_cl_source:TRAVERSE_AND_PROCESS:" description="ConfiguredData With Iman Files ExportDefault for CATIA only." elemId="id8" name="SR5_ConfiguredDataFilesExpCATIA" owning_site="#id2" schema_format="0" scope="0" transient_island_id="1">
+
+  <GSIdentity elemId="id5" label="AlIAAMTBJ1DyLA"/>
+
+</ClosureRule>
+<Filter clauses="" description="" elemId="id9" name="ConfiguredDataExportDefault" owning_site="#id2" schema_format="0" scope="0" transient_island_id="1">
+
+  <GSIdentity elemId="id6" label="QINAAAQwJ1DyLA"/>
+
+</Filter>
+<Group elemId="id12" list_of_role="#id10 #id11" name="dba" owning_site="#id2" transient_island_id="3">
+
+  <GSIdentity elemId="id4" label="AkCAAAA4J1DyLA"/>
+
+</Group>
+<POM_imc elemId="id13" name="IMC--1798075216" owning_site="#id2" site_id="-1798075216" transient_island_id="0">
+
+  <GSIdentity elemId="id2" label="gSCAAAAEJ1DyLA"/>
+
+</POM_imc>
+<PropertySet clauses="CLASS.ItemRevision:PROPERTY.last_mod_date:DO,CLASS.ItemRevision:PROPERTY.object_string:DO,CLASS.ExcelTemplate:PROPERTY.excel_template_rules:DO" description="" elemId="id14" name="ConfiguredDataExportDefault" owning_site="#id2" scope="0" transient_island_id="1">
+
+  <GSIdentity elemId="id7" label="QMBAAAQwJ1DyLA"/>
+
+</PropertySet>
+<TransferMode action_list="" closure_rules="#id5" config_objs="" context_string="DEFAULT_PIE_CONTEXT_STRING" direction="0" elemId="id15" filters="#id6" fnd0RevisionId="" gov_classification="" incremental="Y" ip_classification="" license_list="" multi_site="N" object_desc="Custom transfer mode for CATIA data export." object_name="SR5_ConfiguredCATIADataFilesExport" owning_site="#id2" project_list="" prop_sets="#id7" schema_format="0" transient_island_id="1">
+
+  <GSIdentity elemId="id1" label="ApCAAMTBJ1DyLA"/>
+
+</TransferMode>
+<User elemId="id16" owning_site="#id2" transient_island_id="2" user_id="infodba">
+
+  <GSIdentity elemId="id3" label="QACAAAA4J1DyLA"/>
+
+</User>
+<Role elemId="id17" owning_site="#id2" role_name="DBA" transient_island_id="0">
+
+  <GSIdentity elemId="id10" label="AYIAAAA4J1DyLA"/>
+
+</Role>
+<Role elemId="id18" owning_site="#id2" role_name="Designer" transient_island_id="0">
+
+  <GSIdentity elemId="id11" label="AdNAAAA4J1DyLA"/>
+
+</Role>
+<Header author="infodba" date="2022-03-30" elemId="id19" originatingSite="-1798075216" targetSite="" time="11:21:37" version="Teamcenter V13000.2.0.20210518.00">
+
+  <TransferFormula elemId="id20">
+    <SessionOptions elemId="id21">
+      <Option elemId="id22" name="is_scope_rules_export" value="yes"/>
+      <Option elemId="id23" name="transactionID" value="Wed Mar 30 11:21:37 2022"/>
+      <Option elemId="id24" name="tcxmlArrayDataDelimiter" value=","/>
+      <Option elemId="id25" name="rootObjs" value="ApCAAMTBJ1DyLA"/>
+    </SessionOptions>
+    <TransferMode elemId="id26" fnd0RevisionId="" gov_classification="" ip_classification="" license_list="" object_name="PLMXMLAdminDataExport" owning_site="id2" project_list=""/>
+    <Reason elemId="id27"></Reason>
+  </TransferFormula>
+
+  <TraverseRootRefs>#id1</TraverseRootRefs>
+
+</Header></TCXML>

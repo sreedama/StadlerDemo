@@ -1,0 +1,140 @@
+{
+    "schemaVersion": "1.0.0",
+    "imports":
+    [
+        "js/aw-command-panel.directive",
+        "js/aw-file-upload.directive",
+        "js/aw-panel-body.directive",
+        "js/aw-panel-footer.directive",
+        "js/aw-form.directive",
+        "js/aw-listbox.directive",
+        "js/aw-textbox.directive",
+        "js/aw-xrt.directive",
+        "js/aw-button.directive",
+        "js/visible-when.directive",
+        "js/exist-when.directive",
+        "js/aw-i18n.directive",
+        "js/aw-break.directive",
+        "js/aw-label.directive",
+        "js/aw-column.directive",
+        "js/aw-row.directive"
+    ],
+    "data":{
+        "selectFile": {
+            "displayName": "{{i18n.Mtw0SelectFile}}",
+            "isRequired": "true",
+            "type": "STRING"
+        }
+    },
+    "actions": {
+        "openSummaryLog": {
+            "actionType": "JSFunction",
+            "method": "openFile",
+            "inputData": {
+                "data": "{{data.fileTicket}}"
+            },
+            "deps": "js/fmsUtils"
+        },    
+      "openMultipleFilesFromTickets": {
+        "actionType": "JSFunction",
+        "method": "openFiles",
+        "deps": "js/fmsUtils",
+        "inputData": {
+          "fileTickets": "{{data.fileNamesAndTickets}}"
+        }
+      },
+        "getFMSFileTicket": {
+            "actionType": "TcSoaService",
+            "serviceName": "Core-2007-01-FileManagement",
+            "method": "getTransientFileTicketsForUpload",
+            "inputData": {
+                "transientFileInfos": [ {
+                    "fileName": "{{data.fileName}}",
+                    "isBinary": true,
+                    "deleteFlag": true
+                } ]
+            },
+
+            "outputData": {
+                "fmsTicket": "transientFileTicketInfos[0].ticket"
+            },
+
+            "events": {
+                "success": [ {
+                    "name": "fmsTicket.update"
+                } ]
+            }
+        },
+        "updateFormData": {
+            "actionType": "JSFunction",
+            "method": "updateFormData",
+            "inputData": {
+                "fileData": {
+                    "key": "fmsTicket",
+                    "value": "{{data.fmsTicket}}"
+                },
+                "data": "{{data}}"
+            },
+            "events": {
+                "success": [ {
+                        "name": "ImportUnits.gotTransientFileTicket"
+                    } ]
+            },
+            "deps": "js/declUtils"
+        },
+        "uploadFile": {
+            "actionType": "RESTService",
+            "serviceName": "",
+            "method": "POST",
+            "inputData": {
+                "request": {
+                    "method": "POST",
+                    "url": "{{Constants.fmsUrl}}",
+                    "headers": {
+                        "Content-type": "undefined"
+                    },
+
+                    "data": "{{data.formData}}"
+                }
+            },
+            "events": {
+                "success": [ {
+                    "name": "ImportUnits.importUnits"
+                } ]
+            }
+        },
+        "importUnits": {
+            "actionType": "JSFunction",
+            "method": "importUnits",
+            "inputData": {
+                "data": "{{data}}"
+            },
+            "deps": "js/Mtw0ImportUnits"
+        }
+    },
+    "onEvent":
+    [    
+        {
+            "eventId": "fmsTicket.update",
+            "action": "updateFormData"
+        },
+        {
+            "eventId": "ImportUnits.gotTransientFileTicket",
+            "action": "uploadFile"
+        },
+        {
+            "eventId": "ImportUnits.importUnits",
+            "action": "importUnits"
+        }        
+    ],
+    "i18n": {    
+        "Mtw0ImportUnits": [
+            "MaterialMgmtMessages"
+        ],
+        "Mtw0SelectFile": [
+            "MaterialMgmtMessages"
+        ]
+    },
+    "preferences": [
+    ]
+}

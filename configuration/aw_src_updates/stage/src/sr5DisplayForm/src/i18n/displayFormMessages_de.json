@@ -1,0 +1,9 @@
+{
+    "displayMasterFormCmdCmdName": "Grunddaten bearbeiten",
+    "displayMasterFormCmdDesc": "SAP-Grunddaten anzeigen und bearbeiten.",
+    "displayPlantFormCmdCmdName": "Werksspezifische Daten bearbeiten",
+    "displayPlantFormCmdDesc": "Werksspezifische SAP-Daten anzeigen und bearbeiten.",
+    "objectInformationLabel": "Information",
+    "startEditButtonText": "Bearbeiten",
+    "save": "Speichern"
+}

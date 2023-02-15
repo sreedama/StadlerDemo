@@ -1,0 +1,38 @@
+Migration User|miguser||dba|DBA|defaultgroup|dba|licenselevel|author
+testu|testu||dba|DBA|defaultgroup|dba|licenselevel|author
+testu|testu||Material Management.Global.Stadler|Material Analyst
+testu|testu||R&D.Global.Stadler|Designer
+testu|testu||R&D.Global.Stadler|Reviewer
+testu|testu||R&D.Global.Stadler|Approver
+testu|testu||Bid Packaging.Global.Stadler|Designer
+testu|testu||Bid Packaging.Global.Stadler|Reviewer
+testu|testu||Bid Packaging.Global.Stadler|Approver
+testu|testu||MDM.Global.Stadler|Designer|defaultgroup
+testu|testu||MDM.Global.Stadler|E3 Admin
+testu|testu||Change Management.Global.Stadler|Change Manager
+testu|testu||Services.Global.Stadler|Designer
+testu|testu||Services.Global.Stadler|Consumer
+testu|testu||Welding.Special Processes.Global.Stadler|Reviewer
+testu|testu||Structural.Special Processes.Global.Stadler|Reviewer
+testu|testu||Adhesive Bonding.Special Processes.Global.Stadler|Reviewer
+testu|testu||Business Partner.External.Stadler|Designer
+testu|testu||Business Partner.External.Stadler|Reviewer
+testu|testu||Engineering Supplier.External.Stadler|Designer
+testu|testu||Engineering Supplier.External.Stadler|Reviewer
+testu|testu||Project Management.Internal.Stadler|Designer
+testu|testu||Project Management.Internal.Stadler|Reviewer
+testu|testu||Project Management.Internal.Stadler|Approver
+testu|testu||Manufacturing.Internal.Stadler|Author
+testu|testu||Manufacturing.Internal.Stadler|Consumer
+testu|testu||MCAD.Engineering.Internal.Stadler|Designer
+testu|testu||MCAD.Engineering.Internal.Stadler|Reviewer
+testu|testu||MCAD.Engineering.Internal.Stadler|Approver
+testu|testu||ECAD.Engineering.Internal.Stadler|Designer
+testu|testu||ECAD.Engineering.Internal.Stadler|Reviewer
+testu|testu||ECAD.Engineering.Internal.Stadler|Approver
+testu|testu||Software.Engineering.Internal.Stadler|Designer
+testu|testu||Software.Engineering.Internal.Stadler|Reviewer
+testu|testu||Software.Engineering.Internal.Stadler|Approver
+testu|testu||Requirements.Engineering.Internal.Stadler|Designer
+testu|testu||Requirements.Engineering.Internal.Stadler|Reviewer
+testu|testu||Requirements.Engineering.Internal.Stadler|Approver

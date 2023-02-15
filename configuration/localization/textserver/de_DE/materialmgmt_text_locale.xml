@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="ISO-8859-1" standalone="yes"?>
+<!--
+===============================================================================
+                Copyright (c) 2012 Siemens Industry Software
+                   Unpublished - All Rights Reserved
+===============================================================================
+File description:
+
+            Filename:   materialmgmt_text_locale.xml
+            Module:     materialmgmt
+
+            XML File defining Material Management module text messages.
+@<DEL>@
+===============================================================================
+   Date      Name                    Description of Change
+06-Mar-2012  Chaitanya Godbole       Initial Implementation
+$HISTORY$
+===============================================================================
+@<DEL>@ -->
+<textsrv filename="materialmgmt_text_locale.xml">
+<key id="k_materialmgmt_item_revisions">Werkstoffverwaltung - Revisionen...</key>
+<key id="k_materialmgmt_item_revisions_desc">Revisionen nach Werkstoffverwaltungs-Attributen suchen</key>
+<key id="k_materialmgmt_materialrevs">Werkstoffverwaltung - Materialänderungsstände...</key>
+<key id="k_materialmgmt_materialrevs_desc">Nach Werkstoff Revisionen suchen</key>
+<key id="k_materialmgmt_substabces">Werkstoffverwaltung - Substanzen...</key>
+<key id="k_materialmgmt_substabces_desc">Substanzen suchen</key>
+<key id="k_materialmgmt_substance_name">Substanz-Name</key>
+<key id="k_materialmgmt_materialid">Werkstoff-ID</key>
+<key id="k_materialmgmt_materialexternalid">Werkstoff - Externe ID</key>
+<key id="k_materialmgmt_materialname">Werkstoffname</key>
+<key id="k_materialmgmt_materialteamcenterid">Werkstoff - Teamcenter-UID</key>
+<key id="k_materialmgmt_materialcas_number">Werkstoff - CAS-Nummer</key>
+<key id="k_materialmgmt_substancecas_number">Substanz-CAS-Nummer</key>
+<key id="k_materialmgmt_substanceteamcenterid">Substanz - Teamcenter-UID</key>
+<key id="k_materialmgmt_substanceexternalid">Substanz - Externe ID</key>
+<key id="k_materialmgmt_approvalstatus">Genehmigungsstatus</key>
+<key id="k_materialmgmt_teamcenterid">Teamcenter-UID</key>
+<key id="k_materialmgmt_externalid">Externe Kennung</key>
+<key id="k_materialmgmt_cas_number">CAS-Nummer</key>
+<key id="k_materialmgmt_isthenonlibrary">Ist die Nicht-Werkstoffbibliothek</key>
+<key id="k_materialmgmt_substancesk_materialmgmt_substances">Substanzen</key>
+<key id="k_materialmgmt_alternatematerials">Alternative Werkstoffe</key>
+<key id="k_materialmgmt_materialclasses">Werkstoffklassen</key>
+<key id="k_materialmgmt_smarttableparameters">Tabellenparameter</key>
+<key id="k_materialmgmt_materialsforcoating">Werkstoffe für Beschichtung</key>
+</textsrv>

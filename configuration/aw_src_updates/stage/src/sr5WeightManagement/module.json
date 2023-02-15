@@ -1,0 +1,6 @@
+{
+  "name": "sr5WeightManagement",
+  "description": "This is the sr5WeightManagement module",
+  "skipTest": true,
+  "skipAudit": true
+}

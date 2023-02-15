@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<preferences version="10.0">
+  <category name="General">
+    <category_description>No description available for this category.</category_description>
+    <preference name="TC_customization_libraries" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>For VendorManagement library initialization</preference_description>
+      <context name="Teamcenter">
+        <value>libt4s</value>
+        <value>libt4x_idgen</value>
+        <value>libt4st</value>
+        <value>libt4x_cls</value>
+        <value>libSR5Custom</value>
+      </context>
+    </preference>
+
+    <preference name="ETS.TRANSLATORS.SIEMENS" type="String" array="true" disabled="false" protectionScope="User" envEnabled="false">
+      <preference_description>This preference lists the available translators for a given provider for the translation services.</preference_description>
+      <context name="Teamcenter">
+        <value>msofficetopdf</value>
+        <value>qchecker</value>
+        <value>catiav5topdf</value>
+        <value>catiav5lus</value>
+        <value>catpart2step</value>
+        <value>catproduct2step</value>
+      </context>
+    </preference>
+
+  </category>
+
+  <category name="Active Workspace.BOM">
+    <category_description>Active Workspace BOM specific preferences.</category_description>
+    <preference name="AWS_Discovery_FullTextSearch_FacetFilters_ObjectData" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>Contains the list of Item Revision facet filters to be used during Smart Discovery search. The preference should contain Item Revision properties which are relevant for Smart Discovery search. The property with Awp0SearchCanFilter and Awp0SearchIsIndexed property constants are set to TRUE will be considered as a valid property.</preference_description>
+      <context name="Teamcenter">
+        <value>SR4GenPartRevision.sr4_DIN_Classification</value>
+      </context>
+    </preference>
+  </category>
+
+  <category name="PSM">
+    <category_description>No description available for this category.</category_description>
+    <preference name="ClosureRulesForBomExpansion" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>Structure Manager allows the user to limit expansion of the product structure if a full expansion is not required. 
+For example, you may not want to expand a subassembly if it is not assigned to your current project. Use this preference to specify one or more existing closure rules containing expansion constraints from which the user can select when expanding the structure.
+Valid Values:
+Accepts one or more strings as values. Each string must be the name of a valid closure rule of type export.</preference_description>
+      <context name="Teamcenter">
+        <value>BOMExpandSkipStatus30-50</value>
+        <value>BOMExpandSkipStatusTCM-50</value>
+        <value>BOMExpandSkipNONERP</value>
+      </context>
+    </preference>
+  </category>
+
+
+  <category name="Active Workspace">
+    <preference name="AWC_use_item_not_configured_rev" type="String" array="true" disabled="false" protectionScope="Site" envEnabled="false">
+      <preference_description>Defines the list of business object types for which system should use their Item object and not the configured revision.
+Business object types defined in this preference would be excluded to switch to the configured revision while dealing with the favorites and the tiles.
+Valid values are: Internal names of the business object of type Item or its subtype.</preference_description>
+      <context name="Teamcenter">
+        <value>SR5Plant</value>
+        <value>SR5Manufacturer</value>
+      </context>
+    </preference>
+  </category>
+
+</preferences>

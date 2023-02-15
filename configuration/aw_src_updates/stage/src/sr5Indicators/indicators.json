@@ -1,0 +1,191 @@
+{
+    "ExpiredDocument": {
+        "iconName": "SR5Expired",
+        "tooltip": {
+            "showPropDisplayName": true,
+            "propNames": ["sr5ExpiryDate"]
+        },
+        "conditions": {
+            "sr5IsExpired": {
+                "$eq": [1]
+            }
+        },
+        "modelTypes": ["SR5GenDocumentRevision"]
+    },
+    "SR5EngApproved": {
+        "iconName": "Released",
+        "tooltip": {
+            "showPropDisplayName": false,
+            "propNames": ["object_name", "date_released"]
+        },
+        "prop": {
+            "names": ["release_status_list"],
+            "type": {
+                "names": ["ReleaseStatus"],
+                "prop": {
+                    "names": ["object_name"],
+                    "conditions": {
+                        "object_name": {
+                            "$eq": ["SR5EngApproved"]
+                        }
+                    }
+                }
+            }
+        },
+        "modelTypes": ["WorkspaceObject"]
+    },
+    "SR5Status20": {
+        "iconName": "SR5Status20Flag",
+        "tooltip": {
+            "showPropDisplayName": false,
+            "propNames": ["object_name", "date_released"]
+        },
+        "prop": {
+            "names": ["release_status_list"],
+            "type": {
+                "names": ["ReleaseStatus"],
+                "prop": {
+                    "names": ["object_name"],
+                    "conditions": {
+                        "object_name": {
+                            "$eq": ["SR5Status20"]
+                        }
+                    }
+                }
+            }
+        },
+        "modelTypes": ["WorkspaceObject"]
+    },
+    "SR5Status30": {
+        "iconName": "SR5Status30Flag",
+        "tooltip": {
+            "showPropDisplayName": false,
+            "propNames": ["object_name", "date_released"]
+        },
+        "prop": {
+            "names": ["release_status_list"],
+            "type": {
+                "names": ["ReleaseStatus"],
+                "prop": {
+                    "names": ["object_name"],
+                    "conditions": {
+                        "object_name": {
+                            "$eq": ["SR5Status30"]
+                        }
+                    }
+                }
+            }
+        },
+        "modelTypes": ["WorkspaceObject"]
+    },
+    "SR5Status40": {
+        "iconName": "SR5Status40Flag",
+        "tooltip": {
+            "showPropDisplayName": false,
+            "propNames": ["object_name", "date_released"]
+        },
+        "prop": {
+            "names": ["release_status_list"],
+            "type": {
+                "names": ["ReleaseStatus"],
+                "prop": {
+                    "names": ["object_name"],
+                    "conditions": {
+                        "object_name": {
+                            "$eq": ["SR5Status40"]
+                        }
+                    }
+                }
+            }
+        },
+        "modelTypes": ["WorkspaceObject"]
+    },
+    "SR5Status50": {
+        "iconName": "SR5Status50Flag",
+        "tooltip": {
+            "showPropDisplayName": false,
+            "propNames": ["object_name", "date_released"]
+        },
+        "prop": {
+            "names": ["release_status_list"],
+            "type": {
+                "names": ["ReleaseStatus"],
+                "prop": {
+                    "names": ["object_name"],
+                    "conditions": {
+                        "object_name": {
+                            "$eq": ["SR5Status50"]
+                        }
+                    }
+                }
+            }
+        },
+        "modelTypes": ["WorkspaceObject"]
+    },
+    "SR5Status70": {
+        "iconName": "SR5Status70Flag",
+        "tooltip": {
+            "showPropDisplayName": false,
+            "propNames": ["object_name", "date_released"]
+        },
+        "prop": {
+            "names": ["release_status_list"],
+            "type": {
+                "names": ["ReleaseStatus"],
+                "prop": {
+                    "names": ["object_name"],
+                    "conditions": {
+                        "object_name": {
+                            "$eq": ["SR5Status70"]
+                        }
+                    }
+                }
+            }
+        },
+        "modelTypes": ["WorkspaceObject"]
+    },
+    "SR5Status80": {
+        "iconName": "SR5Status80Flag",
+        "tooltip": {
+            "showPropDisplayName": false,
+            "propNames": ["object_name", "date_released"]
+        },
+        "prop": {
+            "names": ["release_status_list"],
+            "type": {
+                "names": ["ReleaseStatus"],
+                "prop": {
+                    "names": ["object_name"],
+                    "conditions": {
+                        "object_name": {
+                            "$eq": ["SR5Status80"]
+                        }
+                    }
+                }
+            }
+        },
+        "modelTypes": ["WorkspaceObject"]
+    },
+    "SR5Status90": {
+        "iconName": "SR5Status90Flag",
+        "tooltip": {
+            "showPropDisplayName": false,
+            "propNames": ["object_name", "date_released"]
+        },
+        "prop": {
+            "names": ["release_status_list"],
+            "type": {
+                "names": ["ReleaseStatus"],
+                "prop": {
+                    "names": ["object_name"],
+                    "conditions": {
+                        "object_name": {
+                            "$eq": ["SR5Status90"]
+                        }
+                    }
+                }
+            }
+        },
+        "modelTypes": ["WorkspaceObject"]
+    }
+}
