@@ -3,12 +3,12 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                bat label: '', script: 'teamcenter-server\\live-deployment\\build.bat'
+                bat label: '', script: 'configuration\\build.bat'
             }
             post {
                 success {
 				script{
-					zip archive: true, dir: 'teamcenter-server/live-deployment/', glob: 'deploy/**', zipFile: 'deploy.zip'
+					zip archive: true, dir: 'configuration/', glob: 'deploy/**', zipFile: 'deploy.zip'
                     jiraSendBuildInfo branch: "${scm.branches[0]}".replaceFirst(~/origin\//, ""), site: 'citplm.atlassian.net'
                    
 				  }                   
