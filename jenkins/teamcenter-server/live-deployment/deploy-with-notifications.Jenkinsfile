@@ -26,7 +26,7 @@ pipeline {
                 axes {
                     axis {
                        name 'NODE_TO_DEPLOY'
-                       values 'ch00sa600' // development
+                       values 'Teamcenter' // development
 
                    }
                 }
@@ -67,7 +67,7 @@ pipeline {
                         }
                         post {
                             always {
-                                jiraSendDeploymentInfo site: 'citplm.atlassian.net', environmentId: "$params.Environment", environmentName: "$params.Environment", environmentType: "$params.Environment" == "Production" || "$params.Environment" == "Training" ? 'production' : "$params.Environment" == "Quality" ? 'staging' : "$params.Environment" == "Integration" ? 'testing' : 'development'
+                                jiraSendDeploymentInfo site: 'citplm.atlassian.net', environmentId: "$params.Environment", environmentName: "$params.Environment", environmentType: "$params.Environment" == "Production" || "$params.Environment" == "Training" ? 'production' : "$params.Environment" == "LOCAL" ? 'staging' : "$params.Environment" == "Integration" ? 'testing' : 'development'
                                 archiveArtifacts 'deploy-*.log'
                             }
                             success {
@@ -79,9 +79,5 @@ pipeline {
             }
         }
     }
-    post {
-        always {
-            emailext body: "<p>Jenkins deploy of ${params.Branch} to ${params.Environment} has finished with status: ${currentBuild.currentResult}</p><p>Check console output at <a href=\"${currentBuild.absoluteUrl}\">${currentBuild.absoluteUrl}</a> to view the results.</p>", mimeType: 'text/html', recipientProviders: [buildUser(), culprits(), developers(), requestor(), brokenBuildSuspects(), brokenTestsSuspects(), upstreamDevelopers()], replyTo: 'no-reply-jenkins@mt.com', subject: "Jenkins build #${currentBuild.number} of ${currentBuild.fullProjectName}: ${currentBuild.currentResult}", to: '\'Bartosz.Blaszkiewicz@mt.com\', \'saratChandra.kanduri2@mt.com\''
-        }
-    }
+   
 }
