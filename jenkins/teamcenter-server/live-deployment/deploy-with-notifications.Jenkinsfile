@@ -47,7 +47,7 @@ pipeline {
                         steps {
                            
                             fileOperations([folderRenameOperation(destination: 'customizations', source: 'deploy')])
-                            copyArtifacts filter: "deploy.zip", fingerprintArtifacts: true, projectName: "Subtasks/TC12-build-git/${"${scm.branches[0]}".replaceFirst(~/origin\//, "").replaceFirst(~/\//, "%2F")}"
+                            copyArtifacts filter: "deploy.zip", fingerprintArtifacts: true, projectName: "Pipe_multi/${"${scm.branches[0]}".replaceFirst(~/origin\//, "").replaceFirst(~/\//, "%2F")}"
                             unzip dir: '', glob: '', quiet: true, zipFile: 'deploy.zip'
                             bat label: '', script: '''call deploy\\deploy.bat
                                 @echo errorlevel: %errorlevel%
