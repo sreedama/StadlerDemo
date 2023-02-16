@@ -1,7 +1,7 @@
 pipeline {
-    agent { label 'LOCAL' }
+    agent { label 'Teamcenter' }
     parameters {
-        choice(name: 'Environment', choices: ['', 'LOCAL'], description: 'Deploy to chosen environment')
+        choice(name: 'Environment', choices: ['', 'Teamcenter'], description: 'Deploy to chosen environment')
     }
     stages {
         stage('Update job properties') {
@@ -26,7 +26,7 @@ pipeline {
                 axes {
                     axis {
                        name 'NODE_TO_DEPLOY'
-                       values 'Teamcenter' // development
+                       values 'LOCAL' // development
 
                    }
                 }
