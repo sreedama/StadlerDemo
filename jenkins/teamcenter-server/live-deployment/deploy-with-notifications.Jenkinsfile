@@ -64,16 +64,7 @@ pipeline {
                                 exit /B 1 
                                 ) else ( exit /B 0
                                 )'''
-                        }
-                        post {
-                            always {
-                                jiraSendDeploymentInfo site: 'citplm.atlassian.net', environmentId: "$params.Environment", environmentName: "$params.Environment", environmentType: "$params.Environment" == "Production" || "$params.Environment" == "Training" ? 'production' : "$params.Environment" == "LOCAL" ? 'staging' : "$params.Environment" == "Integration" ? 'testing' : 'development'
-                                archiveArtifacts 'deploy-*.log'
-                            }
-                            success {
-                                cleanWs()
-                            }
-                        }
+                        }                       
                     }
                 }
             }
