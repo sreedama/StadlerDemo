@@ -21,7 +21,7 @@
       <preference_description>This is a define for the display text for objects of a specific ItemType used for the CNO Framework display_string xml property. This can be a group or site Preference.</preference_description>
       <context name="Teamcenter">
         <value>ALL={$object_string}</value>
-        <!--<value>ALL_ITEM={$item_id} ({$object_name})</value>-->
+        <!--<value>ALL_ITEM={$item_id} ({$object_name})</value> Test-->
         <!--<value>ALL_REVISION={$item_id}/{$item_revision_id} ({$object_name})</value>-->
         <!--<value>Design={$item_id} ({$object_name})</value>-->
         <!--<value>Design Revision={$item_id}/{$item_revision_id} ({$object_name})</value>-->
