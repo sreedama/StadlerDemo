@@ -10,7 +10,7 @@ mkdir deploy
 
 (
 	echo @if not defined ST4_ENVIRONMENT ^(
-	echo 	echo ERROR: Variable "MT4_ENVIRONMENT" is not defined
+	echo 	echo ERROR: Variable "ST4_ENVIRONMENT" is not defined
 	echo 	exit /B 1
 	echo ^)
 	echo @echo Deploy Workflows to %%ST4_ENVIRONMENT%%
