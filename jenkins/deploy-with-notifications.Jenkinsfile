@@ -1,5 +1,5 @@
 pipeline {
-    agent { label 'LOCAL' }
+    agent any
     parameters {
         choice(name: 'ENV', choices: ['', 'Teamcenter'], description: 'Deploy to chosen environment')
     }
