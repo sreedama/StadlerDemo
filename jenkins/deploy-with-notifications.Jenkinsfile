@@ -1,7 +1,7 @@
 pipeline {
     agent { label 'LOCAL' }
     parameters {
-        choice(name: 'Environment', choices: ['', 'Teamcenter'], description: 'Deploy to chosen environment')
+        choice(name: 'ENV', choices: ['', 'Teamcenter'], description: 'Deploy to chosen environment')
     }
     stages {
         stage('Update job properties') {
