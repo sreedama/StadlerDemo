@@ -1,5 +1,5 @@
 pipeline {
-	agent { label 'MasterNode' }   
+	agent { label 'Teamcenter' }   
     stages {
         stage('Build') {
             steps {
