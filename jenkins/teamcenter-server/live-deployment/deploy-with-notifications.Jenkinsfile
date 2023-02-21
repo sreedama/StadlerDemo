@@ -1,7 +1,7 @@
 pipeline {
     agent { label 'Development' } 
     parameters {
-        choice(name: 'Environment', choices: ['master'], description: 'Deploy to chosen environment')		
+        choice(name: 'Environment', choices: ['DEV'], description: 'Deploy to chosen environment')		
     }
     stages {
         stage('Update job properties') {
