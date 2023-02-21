@@ -1,5 +1,5 @@
 pipeline {
-    agent {label 'LOCAL'}
+    agent Master-Node
     stages {
         stage('Build') {
             steps {

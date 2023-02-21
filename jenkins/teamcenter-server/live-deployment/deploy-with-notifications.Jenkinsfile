@@ -1,5 +1,5 @@
 pipeline {
-    agent { label 'LOCAL' }
+    agent Master-Node
     parameters {
         choice(name: 'Environment', choices: ['LOCAL'], description: 'Deploy to chosen environment')		
     }
