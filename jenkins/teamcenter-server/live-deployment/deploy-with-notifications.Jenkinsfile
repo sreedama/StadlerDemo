@@ -47,10 +47,10 @@ pipeline {
                         steps {
                             fileOperations([fileDeleteOperation(excludes: '', includes: 'deploy.zip'), folderDeleteOperation('deploy')])
                             echo "Deploying in ${ST4_ENVIRONMENT}/${NODE_TO_DEPLOY} from ${scm.branches[0]} as ${"${scm.branches[0]}".replaceFirst(~/origin\//, "")}"
-                            copyArtifacts filter: "deploy.zip", fingerprintArtifacts: true, projectName: "Pipe_multi/${"${scm.branches[0]}".replaceFirst(~/origin\//, "").replaceFirst(~/\//, "%2F")}"
+                            copyArtifacts filter: "deploy.zip", fingerprintArtifacts: true, projectName: "TC-build-configurations-git/${"${scm.branches[0]}".replaceFirst(~/origin\//, "").replaceFirst(~/\//, "%2F")}"
                             unzip dir: '', glob: '', quiet: true, zipFile: 'deploy.zip'
                            
-                            copyArtifacts filter: "deploy.zip", fingerprintArtifacts: true, projectName: "Pipe_multi/${"${scm.branches[0]}".replaceFirst(~/origin\//, "").replaceFirst(~/\//, "%2F")}"
+                            copyArtifacts filter: "deploy.zip", fingerprintArtifacts: true, projectName: "TC-build-configurations-git/${"${scm.branches[0]}".replaceFirst(~/origin\//, "").replaceFirst(~/\//, "%2F")}"
                             unzip dir: '', glob: '', quiet: true, zipFile: 'deploy.zip'
                             bat label: '', script: '''call deploy\\deploy.bat
                                 @echo errorlevel: %errorlevel%
