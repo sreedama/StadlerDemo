@@ -33,7 +33,7 @@ exit /B 0
 
 :start
 
-for %%F in ("*.xml") do call :build_one "%%F"
+for /R %%F in ("*.xml") do call :build_one "%%F"
 
 
 (
