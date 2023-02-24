@@ -1,0 +1,41 @@
+<subRendering>
+    <content visibleWhen="ActiveWorkspace:SubLocation == com.siemens.splm.client.occmgmt:OccurrenceManagementSubLocation and REF(awb0UnderlyingObject,SR5GenPartRevision).REF(items_tag,SR5GenPart).SR5HasPlantForm!=null">    
+        <section titleKey="SAP Plant Specific Data" initialstate="collapsed">
+            <objectSet source="REF(awb0UnderlyingObject,SR5GenPartRevision).REF(items_tag,SR5GenPart).GRM(SR5HasPlantForm,SR5PlantForm)" sortdirection="ascending" sortby="last_mod_date" defaultdisplay="tableDisplay">
+                <tableDisplay>
+                    <property name="sr5Plant" modifiable="false"/>
+                    <property name="sr5MakeBuy" modifiable="false"/>
+                </tableDisplay>
+                <thumbnailDisplay/>
+                <listDisplay/>
+                <command commandId="Awp0ObjectInfo"/>
+            </objectSet>
+        </section>
+    </content>
+    <content visibleWhen="ActiveWorkspace:SubLocation == multiBOMManager:taskPageSubLocation and REF(awb0UnderlyingObject,SR5GenPartRevision).REF(items_tag,SR5GenPart).SR5HasPlantForm!=null">    
+        <section titleKey="SAP Plant Specific Data" initialstate="collapsed">
+            <objectSet source="REF(awb0UnderlyingObject,SR5GenPartRevision).REF(items_tag,SR5GenPart).GRM(SR5HasPlantForm,SR5PlantForm)" sortdirection="ascending" sortby="last_mod_date" defaultdisplay="tableDisplay">
+                <tableDisplay>
+                    <property name="sr5Plant" modifiable="false"/>
+                    <property name="sr5MakeBuy" modifiable="false"/>
+                </tableDisplay>
+                <thumbnailDisplay/>
+                <listDisplay/>
+                <command commandId="Awp0ObjectInfo"/>
+            </objectSet>
+        </section>
+    </content>
+    <content visibleWhen="ActiveWorkspace:SubLocation != com.siemens.splm.client.occmgmt:OccurrenceManagementSubLocation and ActiveWorkspace:SubLocation != multiBOMManager:taskPageSubLocation and REF(items_tag,SR5GenPart).SR5HasPlantForm!=null">    
+        <section titleKey="SAP Plant Specific Data" initialstate="collapsed">
+            <objectSet source="REF(items_tag,SR5GenPart).GRM(SR5HasPlantForm,SR5PlantForm)" sortdirection="ascending" sortby="last_mod_date" defaultdisplay="tableDisplay">
+                <tableDisplay>
+                    <property name="sr5Plant" modifiable="false"/>
+                    <property name="sr5MakeBuy" modifiable="false"/>
+                </tableDisplay>
+                <thumbnailDisplay/>
+                <listDisplay/>
+                <command commandId="Awp0ObjectInfo"/>
+            </objectSet>
+        </section>
+    </content>    
+</subRendering>

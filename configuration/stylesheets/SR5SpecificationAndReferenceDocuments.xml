@@ -1,0 +1,52 @@
+<subRendering>
+    <section titleKey="strxrt_specifyingdocuments">
+        <objectSet source="SR5HasSpecificationDocument.SR5GenDocument" sortdirection="ascending" sortby="object_string" defaultdisplay="tableDisplay" showConfiguredRev="true">
+            <tableDisplay>
+                <property name="object_string" />
+                <property name="sr5DocumentContent" modifiable="false" />
+                <property name="release_status_list" />
+                <property name="date_released" />
+                <property name="owning_user" />
+            </tableDisplay>
+            <thumbnailDisplay />
+            <treeDisplay>
+                <property name="object_string" />
+                <property name="sr5DocumentContent" modifiable="false" />
+                <property name="release_status_list" />
+                <property name="date_released" />
+                <property name="owning_user" />
+            </treeDisplay>
+            <listDisplay />
+            <command actionKey="newBusinessObjectContextualAction" commandId="com.teamcenter.rac.common.AddNew" renderingHint="commandbutton" />
+            <command actionKey="pasteAction" commandId="com.teamcenter.rac.viewer.pastewithContext" renderingHint="commandbutton" />
+            <command actionKey="cutAction" commandId="org.eclipse.ui.edit.cut" renderingHint="commandbutton">
+                <parameter name="localSelection" value="true" />
+            </command>
+        </objectSet>
+    </section>
+    <section titleKey="strxrt_referencingdocuments">
+        <objectSet source="IMAN_reference.SR5GenDocument" sortdirection="ascending" sortby="object_string" defaultdisplay="tableDisplay" showConfiguredRev="true">
+            <tableDisplay>
+                <property name="object_string" />
+                <property name="sr5DocumentContent" modifiable="false" />
+                <property name="release_status_list" />
+                <property name="date_released" />
+                <property name="owning_user" />
+            </tableDisplay>
+            <thumbnailDisplay />
+            <treeDisplay>
+                <property name="object_string" />
+                <property name="sr5DocumentContent" modifiable="false" />
+                <property name="release_status_list" />
+                <property name="date_released" />
+                <property name="owning_user" />
+            </treeDisplay>
+            <listDisplay />
+            <command actionKey="newBusinessObjectContextualAction" commandId="com.teamcenter.rac.common.AddNew" renderingHint="commandbutton" />
+            <command actionKey="pasteAction" commandId="com.teamcenter.rac.viewer.pastewithContext" renderingHint="commandbutton" />
+            <command actionKey="cutAction" commandId="org.eclipse.ui.edit.cut" renderingHint="commandbutton">
+                <parameter name="localSelection" value="true" />
+            </command>
+        </objectSet>
+    </section>
+</subRendering>

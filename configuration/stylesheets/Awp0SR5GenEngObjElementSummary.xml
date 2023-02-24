@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+// @<COPYRIGHT>@
+// ==================================================
+// Copyright 2019.
+// Siemens Product Lifecycle Management Software Inc.
+// All Rights Reserved.
+// ==================================================
+// @<COPYRIGHT>@
+-->
+<rendering>
+  <header>
+    <image source="type"/>
+    <property name="awb0Name"/>
+    <property name="awb0ArchetypeName"/>
+  </header>
+
+  <!-- Overview registration for SR5ElectricAssyRevision -->
+  <content visibleWhen="awb0UnderlyingObjectType==SR5ElectricAssyRevision">
+    <inject type="dataset" src="Awp0SR5GenEngObjElementSummaryForAssenblyBOM"/>
+  </content>
+
+  <!-- Overview registration for SR5EngArticleRevision -->
+  <content visibleWhen="awb0UnderlyingObjectType==SR5EngArticleRevision">
+    <inject type="dataset" src="Awp0SR5EngArticleRevSummaryForAssemblyBOM"/>
+  </content>
+  
+  <!-- Overview registration for SR5EngRawArticleRevision -->
+  <content visibleWhen="awb0UnderlyingObjectType==SR5EngRawArticleRevision">
+    <inject type="dataset" src="Awp0SR5EngRawArticleRevSummaryForAssemblyBOM"/>
+  </content>
+
+  <!-- Overview registration for SR5EngArticleARRevision -->
+  <content visibleWhen="awb0UnderlyingObjectType==SR5EngArticleARRevision">
+    <inject type="dataset" src="Awp0SR5EngArticleRevSummaryForAssemblyBOM"/>
+  </content>
+
+  <!-- Overview registration for SR5EngEndItemRevision -->
+  <content visibleWhen="awb0UnderlyingObjectType==SR5EngEndItemRevision">
+    <inject type="dataset" src="Awp0SR5GenEngObjElementSummaryForAssenblyBOM"/>
+  </content>
+
+  <!-- Overview registration for SR5EngEnvRevision -->
+  <content visibleWhen="awb0UnderlyingObjectType==SR5EngEnvRevision">
+    <inject type="dataset" src="Awp0SR5GenEngObjElementSummaryForAssenblyBOM"/>
+  </content>
+
+  <!-- Overview registration for SR5EngInstallLocRevision -->
+  <content visibleWhen="awb0UnderlyingObjectType==SR5EngInstallLocRevision">
+    <inject type="dataset" src="Awp0SR5EngInstallLocElementSummaryForAssenblyBOM"/>
+  </content>
+
+  <!-- Overview registration for SR5EngMajorAssyRevision -->
+  <content visibleWhen="awb0UnderlyingObjectType==SR5EngMajorAssyRevision">
+    <inject type="dataset" src="Awp0SR5GenEngObjElementSummaryForAssenblyBOM"/>
+  </content>
+
+  <!-- Overview registration for SR5GenCatPartRevision -->
+  <content visibleWhen="awb0UnderlyingObjectType==SR5GenCatPartRevision">
+    <inject type="dataset" src="Awp0SR5GenCatPartRevSummaryForAssemblyBOM"/>
+  </content>
+
+  <!-- Overview registration for SR5CatDefArticleRevision -->
+  <content visibleWhen="awb0UnderlyingObjectType==SR5CatDefArticleRevision">
+    <inject type="dataset" src="Awp0SR5CatDefArticleRevSummaryForAssemblyBOM"/>
+  </content>
+
+  <!-- Overview registration for SR5GenCatPartARRevision -->
+  <content visibleWhen="awb0UnderlyingObjectType==SR5GenCatPartARRevision">
+    <inject type="dataset" src="Awp0SR5GenCatPartRevSummaryForAssemblyBOM"/>
+  </content>
+
+  <!-- Overview registration for SR5NonERPArticleRevision -->
+  <content visibleWhen="awb0UnderlyingObjectType==SR5NonERPArticleRevision">
+    <inject type="dataset" src="Awp0SR5NonERPArticleRevSummaryForAssemblyBOM"/>
+  </content>
+
+  <!-- Overview registration for SR5SoftwareRevision -->
+  <content visibleWhen="awb0UnderlyingObjectType==SR5SoftwareRevision">
+    <inject type="dataset" src="Awp0SR5GenEngObjElementSummaryForAssenblyBOM"/>
+  </content>
+
+  <!-- Overview registration for SR5ToolRevision -->
+  <content visibleWhen="awb0UnderlyingObjectType==SR5ToolRevision">
+    <inject type="dataset" src="Awp0SR5GenEngObjElementSummaryForAssenblyBOM"/>
+  </content>
+
+  <!-- Overview registration for SR5Weld -->
+  <content visibleWhen="awb0UnderlyingObjectType==SR5WeldRevision">
+    <inject type="dataset" src="Awp0SR5WeldRevSummaryForAssemblyBOM"/>
+  </content>
+
+  <!-- Display remaining pages defined in persistent BO stylesheets -->
+  <content>
+    <inject type="evaluate" src="awb0UnderlyingObject"/>
+  </content>
+</rendering>

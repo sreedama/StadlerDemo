@@ -1,0 +1,6 @@
+<rendering xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="XMLRenderingStylesheet_Schema.xsd">
+    <page>
+        <property name="sr5Project" />
+        <property name="sr5RequirementDocument" />
+    </page>
+</rendering>

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+// @<COPYRIGHT>@
+// ==================================================
+// Copyright 2019.
+// Siemens Product Lifecycle Management Software Inc.
+// All Rights Reserved.
+// =================================================
+// @<COPYRIGHT>@
+-->
+<rendering>
+    <page titleKey="tc_xrt_Overview">
+        <column width="50%">
+            <section titleKey="tc_xrt_Properties" >
+                <property name="awb0ArchetypeId"/>
+                <property name="awb0ArchetypeRevId"/>
+                <property name="awb0ArchetypeRevName"/>
+                <property name="awb0ArchetypeRevDescription"/>
+                <property name="awb0UnderlyingObjectType" />
+                <!-- <property name="awb0IsPrecise"/> -->
+                <!-- <property name="awb0OccName"/> -->
+                <!-- <property name="awb0LogicalDesignator"/> -->
+                <!-- <property name="awb0ArchetypeRevEffText" renderingHint="label"/> -->
+                <!-- <property name="awb0ElementEffId" renderingHint="label"/> -->
+                <!-- <property name="awb0EffectivityFormula" renderingHint="label"/> -->
+                <property name="awb0Sequence"/>
+                <property name="awb0Quantity"/>
+                <property name="awb0UoM" renderingHint="lovcombobox"/>
+                <separator/>
+                <property name="REF(awb0UnderlyingObject,SR5GenMfgObjRevision).REF(items_tag,SR5GenMfgObj).sr5Plant" modifiable="false"/>
+                <separator/>
+                <property name="awb0ArchetypeRevOwningUser" renderingHint="objectlink" modifiable="false"/>
+                <property name="awb0ArchetypeRevOwningGroup" renderingHint="objectlink" modifiable="false"/>
+                <property name="awb0ArchetypeRevLastModUser"/>
+                <property name="REF(awb0UnderlyingObject,SR5GenMfgObjRevision).checked_out" renderingHint="label"/>
+                <property name="REF(awb0UnderlyingObject,SR5GenMfgObjRevision).checked_out_user" renderingHint="label"/>
+             </section>
+        </column>
+        <column>
+            <inject type="dataset" src="SR5RevisionList"/>
+            <inject type="dataset" src="SR5PlantSpecificData"/>
+            <inject type="dataset" src="SR5GenMfgObjCollaborationContext"/>
+            <inject type="dataset" src="SR5GenMfgObjSAPData"/>
+            <inject type="dataset" src="SR5MfgObjectGlobalData"/>
+        </column>
+    </page>
+</rendering>

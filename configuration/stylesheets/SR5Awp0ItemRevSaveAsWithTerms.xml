@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- =====================================================================================
+                Copyright (c) 2014 Siemens Product Lifecycle Management Software Inc.
+                   Unpublished - All Rights Reserved =====================================================================================
+
+    Filename: Awp0ItemRevSaveAs.xml
+
+    This is the SaveAs stylesheet for ItemRevision data types.
+ -->
+
+<rendering>
+    <page>
+        <section>
+            <separator/>
+            <label textKey="strxrt_name_definition" text="Name Definition:" />
+            <property name="sr5ObjectNameTerm1" />
+            <property name="sr5ObjectNameTerm2" />
+            <property name="sr5ObjectNameTerm3" />
+            <separator/>
+            <property name="object_desc" />
+            <inject type="dataset" src="Ads1OriginalCageCodePropertySaveAs"/>
+            <inject type="dataset" src="Cm1ChangeContextProviderForSaveAsAndRevise"/>
+        </section>
+    </page>
+</rendering>

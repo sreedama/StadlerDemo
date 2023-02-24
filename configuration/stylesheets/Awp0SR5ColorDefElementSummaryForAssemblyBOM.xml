@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+// @<COPYRIGHT>@
+// ==================================================
+// Copyright 2019.
+// Siemens Product Lifecycle Management Software Inc.
+// All Rights Reserved.
+// ==================================================
+// @<COPYRIGHT>@
+-->
+<rendering>
+    <page titleKey="tc_xrt_Overview">
+        <column width="55%">
+            <section titleKey="tc_xrt_Properties">
+                <property name="awb0ArchetypeId"/>
+                <property name="awb0ArchetypeRevId"/>
+                <property name="REF(awb0UnderlyingObject,SR5ColorDefRevision).REF(items_tag,SR5ColorDef).based_on" />
+                <property name="awb0ArchetypeRevName"/>
+                <property name="awb0ArchetypeRevDescription"/>
+                <property name="awb0UnderlyingObjectType" />
+                <property name="awb0Sequence"/>
+                <property name="awb0Quantity"/>
+                <property name="awb0UoM" renderingHint="lovcombobox"/>
+                <separator/>
+                <property name="awb0ArchetypeRevRelStatus" renderingHint="label"/>
+                <property name="awb0ArchetypeRevReleaseDate" renderingHint="label"/>
+                <separator/>
+                <property name="awb0ArchetypeRevOwningUser" renderingHint="objectlink" modifiable="false"/>
+                <property name="awb0ArchetypeRevOwningGroup" renderingHint="objectlink" modifiable="false"/>
+                <property name="awb0ArchetypeRevLastModUser"/>
+                <property name="REF(awb0UnderlyingObject,SR5ColorDefRevision).checked_out_user" renderingHint="label"/>
+                <property name="REF(awb0UnderlyingObject,SR5ColorDefRevision).checked_out_date" renderingHint="label"/>
+            </section>
+        </column>
+    </page>
+</rendering>

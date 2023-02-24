@@ -1,0 +1,50 @@
+<subRendering>
+    <content visibleWhen="ActiveWorkspace:SubLocation == com.siemens.splm.client.occmgmt:OccurrenceManagementSubLocation">    
+        <section titleKey="SAP Global Data" initialstate="collapsed">
+            <objectSet source="REF(awb0UnderlyingObject,SR5GenMfgObjRevision).GRM(TC_Is_Represented_By,SR5GenEngObjRevision)" sortdirection="ascending" sortby="last_mod_date" defaultdisplay="tableDisplay">
+                <tableDisplay>
+                    <property name="object_string"/>
+                    <property name="release_status_list"/>
+                    <property name="date_released" hidden="true"/>
+                    <property name="owning_user"/>
+                    <property name="last_mod_date"/>
+                </tableDisplay>
+                <thumbnailDisplay/>
+                <listDisplay/>
+                <command commandId="Awp0ObjectInfo"/>
+            </objectSet>
+        </section>
+    </content>
+    <content visibleWhen="ActiveWorkspace:SubLocation == multiBOMManager:taskPageSubLocation">    
+        <section titleKey="SAP Global Data" initialstate="collapsed">
+            <objectSet source="REF(awb0UnderlyingObject,SR5GenMfgObjRevision).GRM(TC_Is_Represented_By,SR5GenEngObjRevision)" sortdirection="ascending" sortby="last_mod_date" defaultdisplay="tableDisplay">
+                <tableDisplay>
+                    <property name="object_string"/>
+                    <property name="release_status_list"/>
+                    <property name="date_released" hidden="true"/>
+                    <property name="owning_user"/>
+                    <property name="last_mod_date"/>
+                </tableDisplay>
+                <thumbnailDisplay/>
+                <listDisplay/>
+                <command commandId="Awp0ObjectInfo"/>
+            </objectSet>
+        </section>
+    </content>
+    <content visibleWhen="ActiveWorkspace:SubLocation != com.siemens.splm.client.occmgmt:OccurrenceManagementSubLocation and ActiveWorkspace:SubLocation != multiBOMManager:taskPageSubLocation">    
+        <section titleKey="SAP Global Data" initialstate="collapsed">
+            <objectSet source="GRM(TC_Is_Represented_By,SR5GenEngObjRevision)" sortdirection="ascending" sortby="last_mod_date" defaultdisplay="tableDisplay">
+                <tableDisplay>
+                    <property name="object_string"/>
+                    <property name="release_status_list"/>
+                    <property name="date_released" hidden="true"/>
+                    <property name="owning_user"/>
+                    <property name="last_mod_date"/>
+                </tableDisplay>
+                <thumbnailDisplay/>
+                <listDisplay/>
+                <command commandId="Awp0ObjectInfo"/>
+            </objectSet>
+        </section>
+    </content>    
+</subRendering>

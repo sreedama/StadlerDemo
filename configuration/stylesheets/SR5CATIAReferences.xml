@@ -1,0 +1,68 @@
+<subRendering>
+	<content visibleWhen="ActiveWorkspace:SubLocation == com.siemens.splm.client.occmgmt:OccurrenceManagementSubLocation and REF(awb0UnderlyingObject,SR5GenEngObjRevision).REF(sr5CATIAReferencedBy,SR5GenEngObjRevision).object_type!=null">
+		<section titleKey="strxrt_CATIAReferencedBy" initialstate="collapsed">
+			<objectSet source="REF(awb0UnderlyingObject,SR5GenEngObjRevision).REF(sr5CATIAReferencedBy,SR5GenEngObjRevision)" sortdirection="ascending" sortby="object_string" defaultdisplay="tableDisplay">
+				<listDisplay/>
+				<tableDisplay>
+					<property name="object_string"/>
+					<property name="object_type"/>
+				</tableDisplay>
+			</objectSet>
+		</section>
+	</content>
+	<content visibleWhen="ActiveWorkspace:SubLocation == com.siemens.splm.client.occmgmt:OccurrenceManagementSubLocation and REF(awb0UnderlyingObject,SR5GenEngObjRevision).REF(sr5CATIAReferenceTo,SR5GenEngObjRevision).object_type!=null">
+		<section titleKey="strxrt_CATIAReferenceTo" initialstate="collapsed">
+			<objectSet source="REF(awb0UnderlyingObject,SR5GenEngObjRevision).REF(sr5CATIAReferenceTo,SR5GenEngObjRevision)" sortdirection="ascending" sortby="object_string" defaultdisplay="tableDisplay">
+				<listDisplay/>
+				<tableDisplay>
+					<property name="object_string"/>
+					<property name="object_type"/>
+				</tableDisplay>
+			</objectSet>
+		</section>
+	</content>
+	<content visibleWhen="ActiveWorkspace:SubLocation == multiBOMManager:taskPageSubLocation and REF(awb0UnderlyingObject,SR5GenEngObjRevision).REF(sr5CATIAReferencedBy,SR5GenEngObjRevision).object_type!=null">
+		<section titleKey="strxrt_CATIAReferencedBy" initialstate="collapsed">
+			<objectSet source="REF(awb0UnderlyingObject,SR5GenEngObjRevision).REF(sr5CATIAReferencedBy,SR5GenEngObjRevision)" sortdirection="ascending" sortby="object_string" defaultdisplay="tableDisplay">
+				<listDisplay/>
+				<tableDisplay>
+					<property name="object_string"/>
+					<property name="object_type"/>
+				</tableDisplay>
+			</objectSet>
+		</section>
+	</content>
+	<content visibleWhen="ActiveWorkspace:SubLocation == multiBOMManager:taskPageSubLocation and REF(awb0UnderlyingObject,SR5GenEngObjRevision).REF(sr5CATIAReferenceTo,SR5GenEngObjRevision).object_type!=null">
+		<section titleKey="strxrt_CATIAReferenceTo" initialstate="collapsed">
+			<objectSet source="REF(awb0UnderlyingObject,SR5GenEngObjRevision).REF(sr5CATIAReferenceTo,SR5GenEngObjRevision)" sortdirection="ascending" sortby="object_string" defaultdisplay="tableDisplay">
+				<listDisplay/>
+				<tableDisplay>
+					<property name="object_string"/>
+					<property name="object_type"/>
+				</tableDisplay>
+			</objectSet>
+		</section>
+	</content>
+	<content visibleWhen="ActiveWorkspace:SubLocation != com.siemens.splm.client.occmgmt:OccurrenceManagementSubLocation and ActiveWorkspace:SubLocation != multiBOMManager:taskPageSubLocation and REF(sr5CATIAReferencedBy,SR5GenEngObjRevision).object_type!=null">
+		<section titleKey="strxrt_CATIAReferencedBy" initialstate="collapsed">
+			<objectSet source="REF(sr5CATIAReferencedBy,SR5GenEngObjRevision)" sortdirection="ascending" sortby="object_string" defaultdisplay="tableDisplay">
+				<listDisplay/>
+				<tableDisplay>
+					<property name="object_string"/>
+					<property name="object_type"/>
+				</tableDisplay>
+			</objectSet>
+		</section>
+	</content>
+	<content visibleWhen="ActiveWorkspace:SubLocation != com.siemens.splm.client.occmgmt:OccurrenceManagementSubLocation and ActiveWorkspace:SubLocation != multiBOMManager:taskPageSubLocation and REF(sr5CATIAReferenceTo,SR5GenEngObjRevision).object_type!=null">
+		<section titleKey="strxrt_CATIAReferenceTo" initialstate="collapsed">
+			<objectSet source="REF(sr5CATIAReferenceTo,SR5GenEngObjRevision)" sortdirection="ascending" sortby="object_string" defaultdisplay="tableDisplay">
+				<listDisplay/>
+				<tableDisplay>
+					<property name="object_string"/>
+					<property name="object_type"/>
+				</tableDisplay>
+			</objectSet>
+		</section>
+	</content>
+</subRendering>

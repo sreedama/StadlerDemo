@@ -1,0 +1,50 @@
+<subRendering>
+    <content visibleWhen="ActiveWorkspace:SubLocation == com.siemens.splm.client.occmgmt:OccurrenceManagementSubLocation">    
+        <section titleKey="SAP Basic Data" initialstate="collapsed">
+            <objectSet source="REF(awb0UnderlyingObject,SR5GenMfgObjRevision).REF(items_tag,SR5GenMfgObj).REF(item_master_tag,SR5GenMfgObjMaster)" sortdirection="ascending" sortby="last_mod_date" defaultdisplay="tableDisplay">
+                <tableDisplay>
+                    <property name="sr5SAPMaterialType" modifiable="false" renderingHint="label"/>
+                </tableDisplay>
+                <thumbnailDisplay/>
+                <listDisplay/>
+                <command commandId="Awp0ObjectInfo"/>
+            </objectSet>
+            <break/>
+            <property name="REF(awb0UnderlyingObject,SR5GenMfgObjRevision).sr5SAPID" modifiable="false"/>
+            <property name="REF(awb0UnderlyingObject,SR5GenMfgObjRevision).sr5SAPTransDate" modifiable="false"/>
+            <property name="REF(awb0UnderlyingObject,SR5GenMfgObjRevision).sr5SAPTransStatus" modifiable="false"/>
+        </section>
+    </content>
+    <content visibleWhen="ActiveWorkspace:SubLocation == multiBOMManager:taskPageSubLocation">    
+        <section titleKey="SAP Basic Data" initialstate="collapsed">
+            <objectSet source="REF(awb0UnderlyingObject,SR5GenMfgObjRevision).REF(items_tag,SR5GenMfgObj).REF(item_master_tag,SR5GenMfgObjMaster)" sortdirection="ascending" sortby="last_mod_date" defaultdisplay="tableDisplay">
+                <tableDisplay>
+                    <property name="sr5SAPMaterialType" modifiable="false" renderingHint="label"/>
+                </tableDisplay>
+                <thumbnailDisplay/>
+                <listDisplay/>
+                <command commandId="Awp0ObjectInfo"/>
+            </objectSet>
+            <break/>
+            <property name="REF(awb0UnderlyingObject,SR5GenMfgObjRevision).sr5SAPID" modifiable="false"/>
+            <property name="REF(awb0UnderlyingObject,SR5GenMfgObjRevision).sr5SAPTransDate" modifiable="false"/>
+            <property name="REF(awb0UnderlyingObject,SR5GenMfgObjRevision).sr5SAPTransStatus" modifiable="false"/>
+        </section>
+    </content>
+    <content visibleWhen="ActiveWorkspace:SubLocation != com.siemens.splm.client.occmgmt:OccurrenceManagementSubLocation and ActiveWorkspace:SubLocation != multiBOMManager:taskPageSubLocation">    
+        <section titleKey="SAP Basic Data" initialstate="collapsed">
+            <objectSet source="REF(items_tag,SR5GenMfgObj).REF(item_master_tag,SR5GenMfgObjMaster)" sortdirection="ascending" sortby="last_mod_date" defaultdisplay="tableDisplay">
+                <tableDisplay>
+                    <property name="sr5SAPMaterialType" modifiable="false" renderingHint="label"/>
+                </tableDisplay>
+                <thumbnailDisplay/>
+                <listDisplay/>
+                <command commandId="Awp0ObjectInfo"/>
+            </objectSet>
+            <break/>
+            <property name="sr5SAPID" modifiable="false"/>
+            <property name="sr5SAPTransDate" modifiable="false"/>
+            <property name="sr5SAPTransStatus" modifiable="false"/>
+        </section>
+    </content>    
+</subRendering>
