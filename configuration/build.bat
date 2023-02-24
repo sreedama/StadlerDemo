@@ -10,7 +10,7 @@ if exist deploy (
 mkdir deploy
 
 :: process all except customisations
-for /D %%D in (jenkins,workflows) do (
+for /D %%D in (jenkins,workflows,stylesheets) do (
 	if exist "%%D\build.bat" (
 		pushd "%%D"
 		cmd /C build.bat & if errorlevel 1 echo Error building "%%D" & exit /B 1
